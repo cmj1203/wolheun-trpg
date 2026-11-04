@@ -1,0 +1,8 @@
+# 2026-11-04 12:43 tsc + bun test (10차·13차 READY)
+TSC_EXIT 0
+(pass) 게임 실행 코드에 외부 네트워크 호출이 없다 > 앱 서버는 127.0.0.1 에만 열리고, 화면은 같은 출처만 허용하는 CSP 를 받는다 [5.28ms]
+
+ 191 pass
+ 0 fail
+ 1120 expect() calls
+Ran 191 tests across 6 files. [109.00ms]

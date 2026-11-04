@@ -1,0 +1,15 @@
+{
+  "name": "wolheun-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "./run.sh",
+    "server": "bun src/server/main.ts",
+    "test": "bun test tests",
+    "e2e": "bun e2e/autoplay.ts",
+    "eval": "bun eval/run_eval.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4"
+  }
+}

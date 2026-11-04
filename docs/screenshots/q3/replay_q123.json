@@ -1,0 +1,1495 @@
+{
+  "q1_hood_off_block": [
+    {
+      "who": "GM",
+      "t": "북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "(서술)",
+      "t": "뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(하아… 하아…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(길을 헤맨 지 벌써 일주일째야…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(사방이 온통 모래뿐이라 길을 알 수가 없어…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(심지어 물도 다 떨어져 가고…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "지도는 낡았어도 별은 그대로야. 밤이 되면 쓸 데가 있을걸.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "아시나 말투로 적어도 되고, 행동으로 적어도 돼.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "입력",
+      "t": "남은 물을 한 모금만 마신다",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "판정",
+      "t": "남은 물을 아껴 마신다 · 체력 판정 · 5 + 4 +0(체력) = 9 / 목표 10 → 대가 있는 성공",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "5+4에 체력 +0, 합 9. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "5+4에 체력 +0, 합 9. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(딱 한 모금만 마셔야 해. 아, 앗…!)",
+      "gmWritten": true,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "타들어 가는 목구멍을 이기지 못하고 결국 두 모금을 꿀꺽 마셔 버렸다. 그래도 물통 바닥에는 아주 조금 남겨 두었다.",
+      "gmWritten": true,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "귀찌가 뜨겁게 달아올랐다. 변장이 버틸 시간이 줄고 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "귀찌 수명이 7로 줄었어. 3 이하면 손이 떨려서 판정에 -1이야.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_01.png"
+    },
+    {
+      "who": "아시나",
+      "t": "응?",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_02.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(저건…)",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_03.png"
+    },
+    {
+      "who": "아시나",
+      "t": "사람?!",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_04.png"
+    },
+    {
+      "who": "GM",
+      "t": "남대륙 사막 한복판에서 만난 사람이라면 페시안 사람일 가능성이 크다. 반가운 만큼 조심해야 한다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_05.png"
+    },
+    {
+      "who": "입력",
+      "t": "달려가서 길을 묻는다",
+      "scene": "사람?!"
+    },
+    {
+      "who": "판정",
+      "t": "달려가서 길을 묻는다 · 체력 판정 · 3 + 4 +0(체력) = 7 / 목표 10 → 대가 있는 성공",
+      "scene": "사람?!"
+    },
+    {
+      "who": "(서술)",
+      "t": "모래 언덕을 향해 급히 발을 내디뎠다. 하지만 발을 뗄 때마다 발목까지 모래가 푹푹 빠져들었다.",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_06.png"
+    },
+    {
+      "who": "아시나",
+      "t": "앗!",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_07.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "비틀거리며 중심을 잡으려 애쓰며 겨우 그들 앞까지 달려갔다.",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_08.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "……",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_09.png"
+    },
+    {
+      "who": "아시나",
+      "t": "저… 저기…",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_10.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "정말이지 난, 그저 길을 물어봤을 뿐이었다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_11.png"
+    },
+    {
+      "who": "GM",
+      "t": "터번과 곡도. 페시안 사람이다. 북쪽 말씨를 들키면 곤란하다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_12.png"
+    },
+    {
+      "who": "GM",
+      "t": "저 터번의 붉은 보석, 눈에 밟히지? 기억해 둬.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_13.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "그리고 현재.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "마지막으로 할 말은 있나?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "(다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "(억울해…)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "없다면, 잘 가라.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "잠깐만요, 잠깐! 제 말 좀 들어 봐요!",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "……왜지?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "(서술)",
+      "t": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "입력",
+      "t": "미인계를 쓴다",
+      "scene": "왜지?"
+    },
+    {
+      "who": "판정",
+      "t": "미인계를 쓴다 · 매력 판정 · 5 + 5 +2(매력) = 12 / 목표 10 → 성공",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "5+5에 매력 +2, 합 12. 10 이상이면 원하는 대로 돼.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "5+5에 매력 +2, 합 12. 10 이상이면 원하는 대로 돼.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "아시나",
+      "t": "(미인계다!)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "…뭐?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "(서술)",
+      "t": "싸아… 사막 한가운데에 서늘한 침묵이 내려앉았다.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "(서술)",
+      "t": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_14.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "하.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_15.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "웃기는 여자군.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_16.png"
+    },
+    {
+      "who": "아시나",
+      "t": "그게…",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_17.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "마지막으로 남길 말인가?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_18.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(미친―! 피해야 돼!!)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_19.png"
+    },
+    {
+      "who": "입력",
+      "t": "가방을 방패 삼아 막는다",
+      "scene": "마지막으로 남길 말인가"
+    },
+    {
+      "who": "판정",
+      "t": "가방을 방패 삼아 막는다 · 손재주 판정 · 6 + 1 +1(손재주) = 8 / 목표 10 → 대가 있는 성공",
+      "scene": "마지막으로 남길 말인가"
+    },
+    {
+      "who": "아시나",
+      "t": "앗!",
+      "gmWritten": true,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_20.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "곡도가 가방을 강하게 때렸다. 툭, 소리와 함께 가방끈이 끊어지더니 가방 안에서 나올 수 없는 엄청난 양의 짐들이 모래 위로 쏟아져 나왔다.",
+      "gmWritten": true,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_21.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(마법 가방인 거 들켰으려나…!)",
+      "gmWritten": true,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_22.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "하. 가방 하나는 꽤나 무겁군.",
+      "gmWritten": true,
+      "bg": "desert_blade.png",
+      "scene": "마지막으로 남길 말인가",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q1_hood_off_block_23.png"
+    },
+    {
+      "who": "아시나",
+      "t": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "반칙"
+    },
+    {
+      "who": "아시나",
+      "t": "반칙이지!!!",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "반칙"
+    }
+  ],
+  "q2_watch_q3_night": [
+    {
+      "who": "GM",
+      "t": "북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "(서술)",
+      "t": "뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(하아… 하아…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(길을 헤맨 지 벌써 일주일째야…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(사방이 온통 모래뿐이라 길을 알 수가 없어…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(심지어 물도 다 떨어져 가고…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "지도는 낡았어도 별은 그대로야. 밤이 되면 쓸 데가 있을걸.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "아시나 말투로 적어도 되고, 행동으로 적어도 돼.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "입력",
+      "t": "남은 물을 한 모금만 마신다",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "판정",
+      "t": "남은 물을 아껴 마신다 · 체력 판정 · 2 + 4 +0(체력) = 6 / 목표 10 → 실패",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "2+4에 체력 +0, 합 6. 6 이하는 실패야. 그래도 이야기는 이어져.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "남은 행운 6. 모자란 1만큼 메울 수 있어. 행운 1로 성공으로 바꿀까? 대가는 붙어.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(조금만, 아주 조금만 마시는 거야.)",
+      "gmWritten": true,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "아껴 마시려던 물병이 손안에서 파르르 떨렸다. 왈칵 쏟아진 물줄기가 입가를 타고 흘러내렸고, 메마른 모래는 그것마저 순식간에 삼켜 버렸다.",
+      "gmWritten": true,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "귀찌가 뜨겁게 달아올랐다. 변장이 버틸 시간이 줄고 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "귀찌 수명이 7로 줄었어. 3 이하면 손이 떨려서 판정에 -1이야.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "괜찮아, 이런 판이 더 기억에 남아.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_01.png"
+    },
+    {
+      "who": "아시나",
+      "t": "응?",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_02.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(저건…)",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_03.png"
+    },
+    {
+      "who": "아시나",
+      "t": "사람?!",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_04.png"
+    },
+    {
+      "who": "GM",
+      "t": "남대륙 사막 한복판에서 만난 사람이라면 페시안 사람일 가능성이 크다. 반가운 만큼 조심해야 한다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_05.png"
+    },
+    {
+      "who": "입력",
+      "t": "모래 언덕 뒤에 숨어서 지켜본다",
+      "scene": "사람?!"
+    },
+    {
+      "who": "판정",
+      "t": "모래 언덕 뒤에서 먼저 살핀다 · 재치 판정 · 6 + 6 +1(재치) = 13 / 목표 10 → 성공",
+      "scene": "사람?!"
+    },
+    {
+      "who": "GM",
+      "t": "6+6에 재치 +1, 합 13. 10 이상이면 원하는 대로 돼.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_06.png"
+    },
+    {
+      "who": "GM",
+      "t": "6+6에 재치 +1, 합 13. 10 이상이면 원하는 대로 돼.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_07.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "모래 언덕 뒤로 몸을 낮췄다. 숨을 죽인 채 멀리 있는 세 사람을 살폈다. 가운데 남자의 터번에는 붉은 보석이 박혀 있었고, 양옆의 호위들은 그를 지키듯 위압적으로 서 있었다.",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_08.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(보통 신분은 아니야. 호위가 둘이나 있고, 한 사람은 복면까지 썼잖아.)",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_09.png"
+    },
+    {
+      "who": "아시나",
+      "t": "흡.",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_10.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "그러다 결국 들키고 말았다. 호위 하나가 내 팔을 붙잡아 세 사람 앞으로 끌어냈다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_11.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "……",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_12.png"
+    },
+    {
+      "who": "아시나",
+      "t": "저… 저기…",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_13.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "무슨 말을 꺼내기도 전이었다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_14.png"
+    },
+    {
+      "who": "GM",
+      "t": "터번과 곡도. 페시안 사람이다. 북쪽 말씨를 들키면 곤란하다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_15.png"
+    },
+    {
+      "who": "GM",
+      "t": "저 터번의 붉은 보석, 눈에 밟히지? 기억해 둬.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_16.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "그리고 현재.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "마지막으로 할 말은 있나?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "(다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "(억울해…)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "없다면, 잘 가라.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "……왜지?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "(서술)",
+      "t": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "입력",
+      "t": "칼날을 밀어내고 모래를 차서 도망친다",
+      "scene": "왜지?"
+    },
+    {
+      "who": "판정",
+      "t": "칼을 밀어내고 몸을 뺀다 · 체력 판정 · 4 + 3 +0(체력) = 7 / 목표 10 → 대가 있는 성공",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "GM",
+      "t": "4+3에 체력 +0, 합 7. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "아시나",
+      "t": "앗!",
+      "gmWritten": true,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "(서술)",
+      "t": "칼날을 밀어내고 모래를 차며 몸을 뺐다. 하지만 발이 푹푹 빠지는 모래 위에서 몇 번이나 중심을 잃고 넘어졌다.",
+      "gmWritten": true,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "(서술)",
+      "t": "거칠게 숨을 몰아쉬며 달아나는 등 뒤로, 남자의 서늘한 시선이 박혔다.",
+      "gmWritten": true,
+      "bg": "desert_blade.png",
+      "scene": "왜지?"
+    },
+    {
+      "who": "(서술)",
+      "t": "나는 뒤도 돌아보지 않고 모래 언덕을 향해 내달렸다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "등 뒤의 붉은 눈"
+    },
+    {
+      "who": "(서술)",
+      "t": "등 뒤에서 호위가 움직이는 기척이 났다. 그러나 곧 멈췄다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "등 뒤의 붉은 눈"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "내버려 둬라. 사막이 대신 할 일이다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "등 뒤의 붉은 눈"
+    },
+    {
+      "who": "아시나",
+      "t": "(뭐야, 왜 안 쫓아와…? 아니, 지금은 뛰어!)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "등 뒤의 붉은 눈"
+    },
+    {
+      "who": "(서술)",
+      "t": "식어 가는 모래가 발바닥에 닿았다. 기우는 해, 첫 별, 바위 그늘.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_17.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "해가 기울자 모래가 빠르게 식기 시작했다. 낮에는 살을 태우던 사막이 이제는 뼈를 시리게 했다.",
+      "gmWritten": false,
+      "bg": "desert_dusk.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_18.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(물도 힘도 얼마 안 남았어. 어떻게든 오늘 밤을 넘겨야 해.)",
+      "gmWritten": false,
+      "bg": "desert_dusk.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_19.png"
+    },
+    {
+      "who": "GM",
+      "t": "가진 것: 마법 가방, 마법 귀찌, 낡은 지도 / 알아낸 것: 사막의 세 사람, 붉은 눈의 남자, 호위 둘",
+      "gmWritten": false,
+      "bg": "desert_dusk.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_20.png"
+    },
+    {
+      "who": "GM",
+      "t": "이걸 쓸 계획이 있으면 적어 봐. 그냥 움직여도 돼.",
+      "gmWritten": false,
+      "bg": "desert_dusk.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_21.png"
+    },
+    {
+      "who": "입력",
+      "t": "별을 보고 남쪽을 찾는다",
+      "scene": "해가 지는 모래"
+    },
+    {
+      "who": "GM",
+      "t": "그걸 기억하고 있었네! 보정 +1이야.",
+      "gmWritten": false,
+      "bg": "desert_dusk.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_22.png"
+    },
+    {
+      "who": "판정",
+      "t": "별을 보고 방향을 잡는다 · 교양 판정 · 1 + 5 +1(교양) +1(기억해 둔 것) = 8 / 목표 10 → 대가 있는 성공",
+      "scene": "해가 지는 모래"
+    },
+    {
+      "who": "(서술)",
+      "t": "밤하늘에 떠오른 별들을 하나하나 짚으며 남쪽을 가늠했다. 방향은 대강 맞았으나, 모래 언덕을 지나치게 돌아온 탓에 다리가 천근만근이었다.",
+      "gmWritten": true,
+      "bg": "desert_dusk.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_23.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(아, 너무 돌아왔나… 기운이 하나도 없어….)",
+      "gmWritten": true,
+      "bg": "desert_dusk.png",
+      "scene": "해가 지는 모래",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_24.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "별이 가득 뜰 무렵, 모래 언덕 위에 그림자 하나가 서 있었다.",
+      "gmWritten": false,
+      "bg": "desert_dusk.png",
+      "scene": "쥐치고는",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_25.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "쥐치고는 멀리 왔군.",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "쥐치고는",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_26.png"
+    },
+    {
+      "who": "아시나",
+      "t": "다, 당신은 아까 그…! 여긴 어떻게…!",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "쥐치고는",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_27.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "이 사막에서 내가 찾지 못할 것은 없다.",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "쥐치고는",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_28.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "남자는 품에서 물주머니를 꺼내 내 발치에 던졌다.",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "쥐치고는",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_29.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "죽는 것도, 살아남는 것도 네 몫이다. 여자.",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "쥐치고는",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_30.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "물주머니를 끌어안고 걷기를 한참, 지평선 끝에 작은 불빛들이 떠올랐다.",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "크라차로 가는 길",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_31.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(저건… 마을이야. 진짜로 건넜어!)",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "크라차로 가는 길",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_32.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "그런데도 나는 몇 번이나 뒤를 돌아보았다. 등 뒤의 시선이 도무지 사라지지 않았다.",
+      "gmWritten": false,
+      "bg": "desert_night.png",
+      "scene": "크라차로 가는 길",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_watch_q3_night_33.png"
+    }
+  ],
+  "q2_sing": [
+    {
+      "who": "GM",
+      "t": "북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "GM",
+      "t": "살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "여는 글"
+    },
+    {
+      "who": "(서술)",
+      "t": "뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(하아… 하아…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(길을 헤맨 지 벌써 일주일째야…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(사방이 온통 모래뿐이라 길을 알 수가 없어…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(심지어 물도 다 떨어져 가고…)",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "지도는 낡았어도 별은 그대로야. 밤이 되면 쓸 데가 있을걸.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "아시나 말투로 적어도 되고, 행동으로 적어도 돼.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "입력",
+      "t": "남은 물을 한 모금만 마신다",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "판정",
+      "t": "남은 물을 아껴 마신다 · 체력 판정 · 5 + 4 +0(체력) = 9 / 목표 10 → 대가 있는 성공",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "5+4에 체력 +0, 합 9. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "5+4에 체력 +0, 합 9. 7~9는 해내지만 대가가 붙어.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "아시나",
+      "t": "(딱 한 모금만 마셔야 해. 아, 앗…!)",
+      "gmWritten": true,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "타들어 가는 목구멍을 이기지 못하고 결국 두 모금을 꿀꺽 마셔 버렸다. 그래도 물통 바닥에는 아주 조금 남겨 두었다.",
+      "gmWritten": true,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "귀찌가 뜨겁게 달아올랐다. 변장이 버틸 시간이 줄고 있다.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "GM",
+      "t": "귀찌 수명이 7로 줄었어. 3 이하면 손이 떨려서 판정에 -1이야.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "길 잃은 지 일주일"
+    },
+    {
+      "who": "(서술)",
+      "t": "바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.",
+      "gmWritten": false,
+      "bg": "desert_wide.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_01.png"
+    },
+    {
+      "who": "아시나",
+      "t": "응?",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_02.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(저건…)",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_03.png"
+    },
+    {
+      "who": "아시나",
+      "t": "사람?!",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_04.png"
+    },
+    {
+      "who": "GM",
+      "t": "남대륙 사막 한복판에서 만난 사람이라면 페시안 사람일 가능성이 크다. 반가운 만큼 조심해야 한다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_05.png"
+    },
+    {
+      "who": "입력",
+      "t": "(아무 말 없이 노래를 부른다)",
+      "scene": "사람?!"
+    },
+    {
+      "who": "GM",
+      "t": "이 상황에 노래라니, 너 진짜 낙천적이다!",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_06.png"
+    },
+    {
+      "who": "판정",
+      "t": "노래를 부른다 · 매력 판정 · 3 + 4 +2(매력) = 9 / 목표 10 → 대가 있는 성공",
+      "scene": "사람?!"
+    },
+    {
+      "who": "아시나",
+      "t": "음음, 으음―",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_07.png"
+    },
+    {
+      "who": "아시나",
+      "t": "(조금만 더 힘을 내보자. 노래라도 부르면 좀 나아질지도 몰라!)",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_08.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "입술을 달싹이며 콧노래를 흥얼거렸다. 아주 잠깐은 기분이 나아지는 듯했지만, 그만큼 입안은 바짝 말라갔고 해는 속절없이 기울었다.",
+      "gmWritten": true,
+      "bg": "desert_meet.png",
+      "scene": "사람?!",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_09.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "그러다 결국 들키고 말았다. 호위 하나가 내 팔을 붙잡아 세 사람 앞으로 끌어냈다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_10.png"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "……",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_11.png"
+    },
+    {
+      "who": "아시나",
+      "t": "저… 저기…",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_12.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "무슨 말을 꺼내기도 전이었다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_13.png"
+    },
+    {
+      "who": "GM",
+      "t": "터번과 곡도. 페시안 사람이다. 북쪽 말씨를 들키면 곤란하다.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_14.png"
+    },
+    {
+      "who": "GM",
+      "t": "저 터번의 붉은 보석, 눈에 밟히지? 기억해 둬.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "길을 물어봤을 뿐인데",
+      "shot": "/Users/choeminju/월흔_trpg/docs/screenshots/q3/q2_sing_15.png"
+    },
+    {
+      "who": "(서술)",
+      "t": "그리고 현재.",
+      "gmWritten": false,
+      "bg": "desert_meet.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "마지막으로 할 말은 있나?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "(다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "(억울해…)",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "없다면, 잘 가라.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "아시나",
+      "t": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    },
+    {
+      "who": "붉은 눈의 남자",
+      "t": "……왜지?",
+      "gmWritten": false,
+      "bg": "desert_blade.png",
+      "scene": "그리고 현재"
+    }
+  ]
+}

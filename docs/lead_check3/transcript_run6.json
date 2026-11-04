@@ -1,0 +1,211 @@
+{
+ "lines": [
+  {
+   "who": ">> 입력",
+   "t": "나는 상인이에요"
+  },
+  {
+   "who": "[주사위]",
+   "t": "말재주로 둘러댄다 · 재치 판정 | 1 + 4 +1(재치) = 6 | 실패 | 6 이하 · 실패해도 이야기는 이어진다"
+  },
+  {
+   "who": "아시나",
+   "t": "저, 저는 그냥 상인이에요!",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(이거, 말주변이 좀 부족했나…?)",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "하. 첩자다운 뻔한 거짓말이군.",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "서늘한 칼끝이 목을 압박하며 한층 더 바짝 다가왔다.",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "하.",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "그것뿐인가?",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "그게…",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "마지막으로 남길 말인가?",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(미친―! 피해야 돼!!)",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_swing_hood.png\")",
+   "sp": "asina_hood_surprised.png,behidat_wary.png"
+  },
+  {
+   "who": ">> 입력",
+   "t": "몸을 던져 칼날을 피한다"
+  },
+  {
+   "who": "[주사위]",
+   "t": "몸을 던져 칼날을 피한다 · 체력 판정 | 4 + 4 +0(체력) = 8 | 대가 있는 성공 | 7~9 · 해내지만 대가가 따른다"
+  },
+  {
+   "who": "(서술)",
+   "t": "칼바람에 휘청이다 모래 위로 나동그라졌다. 후드가 벗겨졌다.",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "반칙이지!!!",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "반칙?",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "남는 것은 살아남는 자와 죽는 자.",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "그 둘뿐이다.",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(어떻게… 사람 눈이 저렇게 강렬할 수 있지?)",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(마치… 한여름의 태양 같아.)",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "터벅, 터벅. 남자가 천천히 다가오더니 몸을 숙여 내 얼굴을 들여다보았다.",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_lean.png\")",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(뭐, 뭐야. 설마 다시 죽이려는 건 아니겠…)",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  }
+ ],
+ "lat": [
+  {
+   "text": "나는 상인이에요",
+   "sec": 2.4
+  },
+  {
+   "text": "몸을 던져 칼날을 피한다",
+   "sec": 1.8
+  }
+ ],
+ "geo": []
+}

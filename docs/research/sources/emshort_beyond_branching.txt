@@ -1,0 +1,648 @@
+SOURCE: https://emshort.blog/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
+FETCHED: 2026-11-04T06:07:01.981Z
+
+Beyond Branching: Quality-Based, Salience-Based, and Waypoint Narrative Structures &#8211; Emily Short&#039;s Interactive Storytelling 
+ Skip to content 
+ Emily Short&#039;s Interactive Storytelling 
+ Narrative in games and new media
+ Menu 
+ Contact and FAQ 
+ IF Meetup Recording 
+ My Work 
+ Games 
+ Tools 
+ Publications 
+ Talks 
+ Consulting Services 
+ Beyond Branching: Quality-Based, Salience-Based, and Waypoint Narrative Structures
+ This blog post has a more than usually technical title, for which I apologize. It's inspired by some recent conversations in which I hear people saying "branching narrative" to mean "narrative that is not linear and in which the player has some control over story outcome," apparently without realizing that there are many other ways of organizing and presenting such stories.
+ There is a fair amount of craft writing about how to make branching narrative thematically powerful, incorporate stats, and  avoid combinatorial explosions , as well as just minimizing the amount of branching relative to the number of choices offered . Jay Taylor-Laird did a talk on branching structures at GDC 2016 , which includes among other things a map of Heavy Rain. And whenever I mention this topic, I am obligated to link Sam Kabo Ashwell's famous post on CYOA structures .
+ This post is not about those methods of refining branching narrative; instead it's describing three of the (many!) other options for managing the following very basic problem:
+ My story is made of pieces of content. How do I choose which piece to show the player next? 
+ In this selection I've aimed to include solutions that can offer the player a moderate to high degree of control over how the story turns out, as opposed to affect or control over how the story is told .
+ I've also picked approaches that are not primarily based on a complex simulation, since those — from Dwarf Fortress to Façade — tend to have a lot of specialist considerations depending on what is being simulated, and often they're not conceived of the same way in the first place. So with those caveats in place&#8230;
+ Quality-based narrative is the term invented by Failbetter Games to refer to interactive narratives structured around storylets unlocked by qualities .* A storylet is typically a paragraph or two of text followed by a choice for the user (each option is referred to as a branch in Failbetter parlance) and text describing the outcome of that choice. Qualities are numerical variables that can go up or down during play, and represent absolutely everything from inventory (how many bottles of laudanum are you carrying?) to skills (what is your Dangerous skill level?) to story progress (how far have you gotten in your relationship to your Aunt?). The StoryNexus tool implements QBN; so did Varytale , while that was still around, though in a hybrid form that allowed storylets themselves to contain CYOA-styled segments.
+ A major advantage of QBN is that it allows a lot of short stories to slot together in interesting ways. Fallen London , the archetypal piece of quality-based narrative, contains many many narrative arcs about different characters and situations scattered around the city. Some arcs are basically one storylet long: something happens, you respond, you get an outcome, the end. Your skills may determine whether you succeed or fail at a given challenge, and the outcome of the branch you chose may adjust your stats, but the narrative consequences may be slight or rather loosely coupled. Other arcs are much longer, especially in the Exceptional Stories, which are premium content for paying users: my story The Frequently Deceased includes roughly a hundred branches' worth of content.
+ A storylet in one place may require you to use a resource that you got somewhere else, but the connection between resource-acquisition and resource-use is often up to the player, and you may not even remember what the chain of causality is.
+ On the other hand, sometimes those chains form up together in colorful ways: one storylet demands a resource you know you can get somewhere else in the city, so you go and acquire it, then come back, and you've effectively woven together a new sidequest that wasn't necessarily intended to be part of the same story flow. There's a lot of cool potential here, potential that replicates some of the fun of procedural narrative but puts the control in the player's hands rather than in the hands of an algorithm. Say I'm trying to make friends with a bishop, but in order to raise funds to donate to his church, I go off and do a bunch of odd jobs for Hell: that's a bit of player-implemented irony that is implicitly possible in the system but left totally open-ended.
+ Another thing I like about QBN is the way it leaves room open for later stories to introduce small, special callbacks to earlier content. Several of my stories have unique branches that open up if the player has exactly the right inventory from an earlier adventure: these generally accomplish the same goals the player would otherwise be able to accomplish, but in a special way, with some unique text, or maybe even with a small extra inventory reward.
+ QBN does pose some challenges of scale at both the high and the low end. I think StoryNexus is hard on new authors because the content tends to be uninteresting until there are a fair number of storylets in the database, so it's hard to feel like you're really rolling until you've spent quite a bit of time in the tool. Conversely, when you've got very large amounts of content, you may find that the list of available storylets gets overwhelming for the player. A number of FL's more recent features have been introduced to deal with this problem: ways for storylet authors to specify where they rank on the page, different colors for important storylets, etc. For any longer story, such as the Exceptional Friends stories, it becomes an issue to think about how to surface these elements.
+ In the mid-range, though, it's possible to drop in modular elements of new content alongside old content and be relatively sanguine about how you're affecting the rest of the system. This is vitally important for a system with episodic content and a large number of contributing authors.
+ It's also much better than traditional CYOA structures at handling cases where we want to, say, let the player acquire three pieces of information in any order. Naive branching narrative would handle this with a lot of ugly repetition as
+ find out means
+ next find motive
+ next find opportunity
+ next find opportunity
+ next find motive
+ find out motive
+ next find means
+ next find opportunity
+ next find opportunity
+ next find means
+ find out opportunity
+ next find means
+ next find motive
+ next find motive
+ next find means
+ whereas QBN can handle this as four storylets one of which is gated:
+ find out means
+ find out motive
+ find out opportunity
+ accuse murderer (available when qualities show we've accomplished 1-3)
+ Certainly many branching narrative systems are in practice capable of setting up a loop and variables to manage the same thing: in ChoiceScript you could keep redirecting the player into the same evidence-gathering node until all the evidence had been found, for instance. But in ChoiceScript the re-enterable node is the exceptional case, whereas in QBN this sort of thing is the norm.
+ Another trick about QBN is that, at least as implemented in StoryNexus, it requires the author to track story progression very much by hand. If you have a narrative spine for your story — A happens, then some other items in random order, then B, then more events in any order, then C — you have to manually set a quality that corresponds to A being available; then another value meaning it's complete; then another value meaning B is available; then that B is complete&#8230; you get the idea. It's a lot of bookkeeping for functionality that many other systems provide automatically as a function of the way the script is written. (I think this may arise because multi-storylet story arcs weren't as common in the early days of Fallen London .)
+ My impression from the documentation is that Storyspace 3 &#8216;s Sculptural Hypertext features might also be related to QBN structures, but I haven't used the tool myself.
+ (* Failbetter themselves have entirely stopped using the name quality-based narrative, since it sounds like it's implying that other narrative types lack quality; but in the absence of a better name for it, I'm sticking with the old terminology.)
+ Salience-based narrative is a term I just made up to refer to interactive narratives that pick a bit of content out of a large pool depending on which content element is judged to be most applicable at the moment. Like QBN, this approach is agnostic about what kind of information matters: just as a quality in Fallen London could be pretty much anything, salience narrative can be tied to pretty much any testable information in the world state.
+ Where QBN lets the player choose the best element to see next out of all the elements that are currently legal, the salience-based approach makes that decision itself.
+ For example, if we have dialogue tagged as follows
+ (location = kitchen) "Hey, anybody hungry?"
+ (location = kitchen, pantry = empty) "Huh, looks like someone already cleared this place out."
+ (location = kitchen, stove = burning ) "Hand me your torch and I'll light it."
+ we look for the dialogue that best fits our current situation. If we're in the kitchen and the pantry is empty and the stove is burning, statement 1 is less salient than 2 or 3, but 2 and 3 are equally salient, so we would pick randomly between those.
+ An excellent example of this is Elan Ruskin's dialogue system for Left4Dead , and more recently it was picked up by Firewatch . Both of these games allow the player to traverse a 3D world and encounter different situations, and they need to be able to feed in dialogue chosen to match those situations tightly.
+ An advantage of salience-based systems is that it's relatively easy to build a rudimentary set of content with sensible, broad defaults, and then gradually add new, more salient content for individual situations. You're never committed to having uniform coverage for every possible situation. It's also relatively easy for authors to think about: you play the game, you see a situation that deserves some special acknowledgement, you build a rule describing that situation and drop it in place, and you're done; typically, if this is well-implemented, you don't have to worry about that many secondary effects of such a choice.
+ It's not coincidental that both of the "salience-based" applications I mentioned are for triggering dialogue specifically, and that they're handling a narrative layer transposed on an otherwise explorable environment. I gather that Firewatch has a lot of flags under the surface, but it's also relying a lot on player location and adjacent objects, which provide a bunch of independently-modeled world state. (In contrast, in a QBN system, the qualities are the world state. Even location is sort of a quality, and the player can be in exactly one location at a time.)
+ Meanwhile, a lot of the dialogue is not itself changing the 3D world state afterward, though it might be setting flags for later dialogue, and Firewatch does take care to create physical callbacks for a few interactions. Still, there's not a huge amount of consequence tied to most of these choices, which again makes it safer to add in more variants without having to worry too much about breaking other parts of the game. In the parser world, this is similar to having a reactive NPC like the fish in A Day for Fresh Sushi : characters that comment on what the player does without making the conversation the main point of interaction. But this can be a pretty effective way of adding an emotional layer that's responsive to what the player has done so far.
+ A much more extreme version of this is Doug Sharp's  The King of Chicago  (you should really read this article if you haven't — it's fascinating). The King of Chicago is not just generating suitable dialogue but actually sequencing what should happen next in the story from a collection of possible scenes, based on everything that has occurred so far. It's also using numerical rather than boolean state variables to measure salience.
+ On the face of it, plotting this way suggests an obvious design vulnerability.  Left4Dead and  Firewatch  both have a gameplay arc that exists outside the salience-matching and that provides context and an overall shape for things. If you're actually sequencing the events of your game, you could imagine something where the player plays along happily for an act or two and then more or less accidentally winds up satisfying all the preconditions for their character to be whacked by mobsters: a bad ending that might be effective and powerful if it were placed by an author in a reasonably planned way, but not necessarily guaranteed to be so effective when selected by a salience match. It's not clear to me that TKoC did anything to address this (though I haven't had a chance to try the remake), but I think it could be addressed if some of the state variables considered in making salience matches were based on dramatic arc considerations rather than others.
+ Indeed, it's quite likely that somewhere in the academic interactive story literature there are more experiments with this kind of thing than I'm aware of (if you know of some, please feel free to comment below).
+ We now have the computing power to address some of the other issues in this kind of design. Doug Sharp in his talk mentions that it was hard to test his system rigorously, but now you could run a few thousand randomized playthroughs and use some visualization tools to see whether there were sequences that never got hit and whether there were some that seemed to be overused that you might want to split out into multiple categories.
+ Meanwhile, there's also the tuning challenge of figuring out what scores to assign to possible sequences to see whether they match up with what you want to do next; instead of having this constructed and tweaked by a human hand, it might now be possible to apply machine learning techniques to a corpus of best-next-matches chosen by a human author.
+ Waypoint narrative . Again, I'm making this term up, but it corresponds to the method I used for  Glass . In Glass , the interaction is all about conversation. Both the players and the NPCs are able to change the current conversation topic. Finally, there are trigger topics that advance the story to a new state whenever we reach them.
+ Particular lines of dialogue are associated not with the topics themselves but with transitions between one topic and another — so an NPC might have a way of changing the subject from Royalty to God, for instance — and it's possible to pathfind between topics depending on where viable transitions exist. For example, perhaps our conversation net looks like this:
+ What that means is that the system can dynamically pathfind its way towards the next trigger topic. If the player changes the topic to something that itself sets off a particular result, then you can get a scene change out of that, and this can divert the course of the story from how it's otherwise going. There are a few topics that only the player will ever get to, since they're not "on the way" to anything the NPCs want to talk about. But if the player doesn't hit one of those trigger topics, they can still shift where on the topic map we are, and thus what gets narrated on the way to the next designated trigger topic.
+ To work out the example: we have five possible topics of conversation here, and several bits of dialogue that link those topics; we're starting from The People as our initial conversation topic, and the NPCs would like to work their way around to talking about Royalty. If they get there, we trigger the default next scene. However, there's also an alternative next scene that could happen if we start talking about the risk of revolution. The NPCs will never get to that topic themselves, but the player can bring it up. From there, the conversation might play out like this:
+ As a first move, the NPC pathfinds People -&gt; God -&gt; Royalty and says the quip associated with the People -&gt; God transition. However, the player makes a move and brings the topic back to People.
+ At that point, the NPC has already used up the People -&gt; God path, so it's negatively weighted for future pathfinding — to preserve robustness of the system, we have some default text we could play here if absolutely necessary, but the NPC will never go to that unless they have no other options. So instead, to pathfind towards Royalty they're now forced to try routing through Government:
+ In the process, they've just mentioned Popular Unrest. Doing so clues the player in that Risk of Revolution is a possible topic on the board, so the player can now raise that move, triggering an alternate scene outcome to the one they would have gotten otherwise.
+ If the player had not intervened at this point, though, the NPC would next have been able to talk about royal advisors and conclude the scene in the standard way by landing on Royalty.
+ A few final refinements: one might wonder why the conversation net bothers to provide transitions that go the opposite direction from the way the NPC wants to move; but we might also want to include situations in which the NPC's conversational goal changes partway through in response to some stimulus, and in this case we want a conversation net robust enough to support these changes. It's also possible (though I've skipped this for simplicity) to have multiple quips associated with a single transition, for instance three or four different quips about how the royalty interacts with the government, and just go through them in order as needed.
+ This system was designed to provide a sense that the NPCs were changing what they said based on your input, but the primary responsibility for story progression was on them, not on the player. It also put the protagonist in a somewhat transgressive position, since the main way you can make interesting things happen is to mention topics that the NPCs don't really want to discuss: your role is to sit there surfacing the subtext in the dialogue. And sometimes it's also tactically useful to wait a move or two and let the NPCs talk, then jump the dialogue from a new starting point.
+ I did of course stick a narrative frame on this: the protagonist of Glass is actually a parrot in a room full of humans, so there's a good narrative reason why you shouldn't have or be expected to have the same kind of agency that the others do.
+ In a way, this is the opposite of combinatorially-exploding branching narrative, where as an author you're punished for writing new content because it commits you to writing yet more content down the line. In Glass , the story engine is constantly trying to heal the story, to move from the player's chaotic input back towards the next authored beat. The more content I added, the more ways there were to move through the topic space and the more efficient and responsive the story-healing could be.
+ While the Glass case is about doing this in conversation, another application for this structure might be a story with a strong narrative voice or a narrator who is unreliable or hiding things: the player might say what they want to hear about next and the narrator might respond by filling in a relevant anecdote, then transitioning back towards what their preferred subjects. So I think it's a viable model for an interactive story that is basically a player-narrator tug of war.
+ *
+ A corollary of all this: Twine is a fabulous tool both for finished work and for prototyping, but it is not really designed for some of these structures. In particular, we should totally be teaching students about Twine and how to use it, but we shouldn't teach them that that's the only way to prototype an interactive story, or the way to prototype all forms of interactive story. Otherwise, they're likely to get stuck on combinatorial explosions that could be solved using another system with more robust state tracking. (I had several iterations of this conversation with students just in the past month.)
+ *
+ Naturally there are a lot of other options besides these, including but not limited to the familiar map-based format ( 80 Days ; or the puzzle-gated variant used by many parser IF games); database-research games such as Her Story or  Analogue: A Hate Story ; holographic games that expand, alter, or overwrite text in place to delve deeper into different aspects of a story, sometimes while keeping the entire narrative arc in view from the beginning (see my recent post on  Sisters of Claro Largo , or PRY ); and card-deck based narrative games which leave the ordering to the player. (I have a couple of card narratives on hand to review, and I'll be coming back to them in a future post.)
+ *
+ Elsewhere: Mark Rickerby has recently posted about his experiences with graphing narrative elements for an espionage game . And on the puzzle-gating point, here's a neat article about puzzle visualization .
+ Share this:
+ Share on X (Opens in new window) 
+ X 
+ Share on Facebook (Opens in new window) 
+ Facebook 
+ Like Loading... 
+ Related 
+ Author emshortif Posted on April 12, 2016 August 2, 2017 Categories Conversation modeling , craft , interactive fiction , quality-based narrative 
+ 52 thoughts on "Beyond Branching: Quality-Based, Salience-Based, and Waypoint Narrative Structures" 
+ polm23 says: 
+ April 13, 2016 at 6:17 am 
+ In the King of Chicago, Doug Sharp mentions he had groups of "episodes" &#8211; in the mid-game those corresponded to different character or story arcs, but there were also groups for the early and late game. Presumably something outside the system of global variables that influced the Narratron made sure you got a beginning, middle, and end.
+ Reply 
+ Stephen G. Ware says: 
+ April 13, 2016 at 7:35 pm 
+ Hi Emily! Great post! I really enjoy these technical discussions. You do a nice job of providing approachable explanations along with an analysis of the strengths and weaknesses.
+ The academic world has indeed studies salience-based narratives. Check out Rogelio E. Cardona-Rivera's work on Indexter ( https://nil.cs.uno.edu/publications/papers/cardonarivera2012indexter.pdf ).
+ I've also done some past work on measuring salience in stories ( https://nil.cs.uno.edu/publications/papers/kives2015pairwise.pdf ) and I've got a paper coming out later this year on using salience measures to predict which ending you will pick in an interactive CYOA. I'll try to remember to post a link to it once it's officially published.
+ Reply 
+ Emily Short says: 
+ April 13, 2016 at 7:44 pm 
+ Thanks, Stephen!
+ Reply 
+ Stephen G. Ware says: 
+ November 19, 2016 at 5:53 pm 
+ It's now officially published: https://nil.cs.uno.edu/publications/papers/farrell2016predicting.pdf 
+ I hope you'll find it interesting! We showed that we can often predict what ending a user will choose in a Twine story based on its salience as defined by previous choices.
+ Felicity Banks says: 
+ April 14, 2016 at 9:03 am 
+ "Choices: And The Sun Went Out" (Tin Man Games) works on a filter system. A particular character appeared in four different contexts (with or without a name) early on in the story (and some strands didn't see them at all) and it was relatively easy to have each new meeting appear as either an introduction or a continuation of what had gone before. The information to be extracted was relatively simple, however: The character's name and their status as baddie.
+ NPC agency, even just in the form of conversation, is so tricky.
+ Felicity Banks
+ Reply 
+ Dan Kline says: 
+ April 16, 2016 at 9:52 pm 
+ Fantastic! Thanks!
+ Reply 
+ Pingback: Script Lock podcast with me, Rob Morgan | Emily Short&#039;s Interactive Storytelling 
+ Pingback: The Sunday Papers | Rock, Paper, Shotgun 
+ Joshua Vorderman says: 
+ April 24, 2016 at 7:20 pm 
+ Heya, just found out about this article via RPS, and thank you! It's a very good article.
+ Reply 
+ Pingback: The Sunday Papers - Jacob watson 
+ Steven Vass says: 
+ April 25, 2016 at 9:09 am 
+ &gt; Meanwhile, there’s also the tuning challenge of figuring out what scores to assign to possible sequences to see whether they match up with what you want to do next; instead of having this constructed and tweaked by a human hand, it might now be possible to apply machine learning techniques to a corpus of best-next-matches chosen by a human author.
+ Can you clarify what you mean by "what you want to do next"? Sorry, I'm naive when it comes to the methodologies you're discussing. This makes it seem like each branch would have a weight that changes based on prior events, and the game would choose the option (NPC response, game event, etc.) with the highest weight. Then rather than weighting all possible branches by hand (because there would be an explosion of possibilities as the game gets longer), you tag a few, and let the system designate the values to the previously unexplored branches as the player finds them.
+ Is that accurate?
+ I'm working on a text-based game to prototype some mechanics, and I have experience with machine learning. Kind of a happy coincidence I came across your post, it's given me a lot to research and consider.
+ Reply 
+ Emily Short says: 
+ April 28, 2016 at 11:04 am 
+ Sorry for the delay answering: it's been a busy couple of days.
+ What I mean is that, in the case of King of Chicago, there are values assigned to the various tags, as in the example "Episode 1 has Lola_happiness at 15 and Boss_rep at 30, while episode 7 is looking for a GANG_MORALE of 40 and a BOSS_REP of 50." So the question is not just "did this happen or did it not?" but "how much of this sort of thing has happened?" (The article goes into some detail about how those numbers are used, which I won't attempt to re-explain here.)
+ Presumably these numbers, 15, 30, 40, and 50, were selected by a human hand, but do we know that they are actually the best numbers to represent the way the author wants the system to behave? It's hard to say for sure. Maybe the calculated stories would in general be better if GANG_MORALE were 35, or 43, or something else entirely.
+ In my experience working with systems that involve a lot of numerical values to determine content precedence or validity, authors often guess a number that "feels" right and then tweak in response to obviously problematic outputs, but there aren't always clear and well-articulated ideas about how those numbers should be set. 
+ I personally tend to start by picking three constants that represent "a little", "a medium amount", and "a lot", since often that is the degree of granularity that my authorial intuition is able to deal with when I'm first using a new system. Then I move the constants up and down, or possibly apply a multiplier depending on where we are in the story, until I start to get results that feel right to me. I only break out additional settings (e.g. "almost none" and "REALLY a lot") if I find that the granularity is not enough. 
+ I'm usually also doing experiments with running random tests through the system or visualizing the content in some fashion in order to see how my numerical choices are paying off. 
+ However, this is almost always a trial and error process because things are too complicated and interdependent for me always to reason from first principles about what the numbers should be. For instance: by the time they get to episode 7, what is the average GANG_MORALE that most players have? Are most of them going to be close to that number, or far away? Is it going to be common or rare for those players also to have a BOSS_REP near 50? These values are all interdependent with other values set earlier during play. If I run some random tests, I can work out the relevant player stats and move the numbers accordingly.
+ However, with machine learning, one could imagine allowing the system itself to tweak these values during a training phase, receiving feedback from the author about whether its salience choices were good or bad and then altering its own numbers in response to training. This might be faster and converge to better results than human iteration on the same principles; and a mature toolset that offered this functionality might make some of the more procedural types of narrative more accessible to non-technical authors. I hypothesize, anyway.
+ Reply 
+ Pingback: Notes on New and experimental IF Tools | Emily Short&#039;s Interactive Storytelling 
+ Mark Bernstein says: 
+ April 27, 2016 at 3:28 pm 
+ Yes &#8212; Storyspace 3’s sculptural hypertext can certainly be used for quality-based story structures.
+ Reply 
+ Pingback: Mark Bernstein on Hypertext Narrative | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Card-Deck Narratives | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Building the plot structure &#8211; Imperia &#8211; The First 5X Space Strategy Game Ever 
+ Danielle Mesa - Critical Game Analysis says: 
+ May 25, 2016 at 8:59 pm 
+ Very informative, Emily. As someone who is currently working on an interactive story, it's always helpful to see different ways and approaches to construct a narrative and deciding which suits the story best.
+ Reply 
+ Pingback: Tools of the trade &#8211; Cognitive Discodance 
+ Pingback: Standard Patterns in Choice-Based Games | These Heterogenous Tasks 
+ Pingback: Interactive Digital Narrative: Theory | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Narrative Structure in Operator &#8211; "SOME OF THIS IS TRUE AND SOME OF IT IS NOT."–ALLEN 
+ Pingback: References from a talk on AI and procedural narrative | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Inquisitor is a hypertext engine that puts spatiality first | lamurdiwoblog 
+ Pingback: Mid-December Link Assortment | Emily Short&#039;s Interactive Storytelling 
+ Pingback: IF Tool Development in general | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Mid-April Link Assortment | Emily Short&#039;s Interactive Storytelling 
+ Pingback: IF Only: Alcyone on Kickstarter | Rock, Paper, Shotgun 
+ Pingback: IF Only: Alcyone on Kickstarter |TTI | Scoopster 
+ Pingback: Mailbag: Writing for Versu | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Mailbag: High-Agency Narrative Systems | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Firewatch &#8211; Estructuras Narrativas 
+ Pingback: Chris Crawford on Interactive Storytelling, second edition (Chris Crawford) | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Interactive Storytelling: Techniques for 21st Century Fiction (Andrew Glassner) | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Dagstuhl Workshop on Narrative and Social Graphs | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Mailbag: QBN System Variants | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Next-Generation Design Tools for Narrative Content | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Writing for Video Games (Steve Ince) | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Survey of Storylets-based Design | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Mailbag: Self-Training in Narrative Design | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Mailbag: Knowledge-driven Dialogue in Inform | Emily Short&#039;s Interactive Storytelling 
+ Pingback: End of June Link Assortment | Emily Short&#039;s Interactive Storytelling 
+ Pingback: Links and Structures from Michael Joyce to Twine &#8211; Emily Short&#039;s Interactive Storytelling 
+ Pingback: Storylets: You Want Them &#8211; Emily Short&#039;s Interactive Storytelling 
+ Pingback: Working with TinyQBN: Part 1: Terms and Concepts &#8211; Digital Ephemera 
+ Pingback: Designing game content architectures &#8211; LOSTGARDEN 
+ Pingback: Blog: Writing slapstick and narrative as one - ALL ABOUT GAMES 
+ Pingback: Les narramiettes (storylets) dans Twine 2 &#8211; Fiction-interactive.fr 
+ Pingback: Gamasutra: Pietro Polsinelli&#039;s Blog - Writing Slapstick And Narrative As One - Gamasutra - Hello Marketer 
+ Pingback: What does your narrative system need to do? &#8211; Emily Short&#039;s Interactive Storytelling 
+ Pingback: Débuter avec Dendry &#8211; Fiction-interactive.fr 
+ Pingback: Tracking Progress in EZD with Badges - Future Proof Games 
+ Leave a Reply Cancel reply 
+ Comment 
+ Name 
+ Email 
+ Website 
+ Turn on JavaScript to leave a comment.
+ &#916; 
+ Post navigation
+ Previous Previous post: Spring Thing 2016: Ms. Lojka, Tangaroa Deep, Sisters of Claro Largo 
+ Next Next post: Spring Thing 2016: Dr Sourpuss is Not A Choice-Based Game; Three-Card Trick 
+ Email Subscription 
+ Enter your email address to subscribe to this blog and receive notifications of new posts by email.
+ Email Address: 
+ Sign me up! 
+ Join 1,466 other subscribers 
+ Search for: 
+ Search 
+ Categories
+ Categories 
+ Select Category 
+ academic (30) 
+ AI (8) 
+ announcements (161) 
+ audio (9) 
+ board games (4) 
+ books (58) 
+ characterization in games (13) 
+ commercial IF (44) 
+ community (91) 
+ competition (3) 
+ Competitions (214) 
+ Conversation modeling (48) 
+ craft (80) 
+ Creation Tools (46) 
+ CYOA (211) 
+ ebooks (18) 
+ education (26) 
+ events (40) 
+ game lists (26) 
+ gamebooks (9) 
+ graphic adventure (1) 
+ hardcasual (3) 
+ IF history (8) 
+ IF outreach (29) 
+ Inform 7 (92) 
+ interactive comics (9) 
+ interactive epistolary (2) 
+ interactive erotica (5) 
+ interactive fiction (1,402) 
+ interactive film (10) 
+ interactive nonfiction (9) 
+ interactive poetry (10) 
+ interactive romance (29) 
+ interactive theater (6) 
+ interviews (19) 
+ lifestyle (7) 
+ literary hypertext (7) 
+ mailbag (38) 
+ mobile platforms (55) 
+ multiplayer (9) 
+ my work (19) 
+ narrative of objects (20) 
+ new media (24) 
+ new work (12) 
+ non-review (9) 
+ Online play (1) 
+ parser (131) 
+ parser v choice (13) 
+ persuasive games (20) 
+ plot and narrative structure (41) 
+ procedural map (2) 
+ procedural narrative (20) 
+ procedural text (15) 
+ prose and text in games (47) 
+ publication announcements (2) 
+ puzzles (29) 
+ quality-based narrative (33) 
+ resource list (1) 
+ review (5) 
+ Reviews (648) 
+ rides (1) 
+ tabletop games (28) 
+ talks (5) 
+ teasers (4) 
+ testing (7) 
+ theory (61) 
+ tie-ins (1) 
+ transmedia (2) 
+ Uncategorized (5) 
+ user interface (33) 
+ versu (7) 
+ video games (165) 
+ visual novel (20) 
+ visual novels (7) 
+ world-building (14) 
+ Archives
+ Archives 
+ Select Month 
+ November 2023 (1) 
+ August 2023 (1) 
+ March 2023 (1) 
+ October 2022 (2) 
+ September 2022 (4) 
+ August 2022 (2) 
+ July 2022 (4) 
+ June 2022 (1) 
+ May 2022 (2) 
+ April 2022 (3) 
+ March 2022 (2) 
+ February 2022 (2) 
+ January 2022 (2) 
+ December 2021 (2) 
+ November 2021 (2) 
+ October 2021 (3) 
+ September 2021 (3) 
+ August 2021 (4) 
+ July 2021 (3) 
+ June 2021 (2) 
+ May 2021 (2) 
+ April 2021 (2) 
+ March 2021 (2) 
+ February 2021 (2) 
+ January 2021 (2) 
+ December 2020 (2) 
+ November 2020 (2) 
+ October 2020 (2) 
+ September 2020 (2) 
+ August 2020 (2) 
+ July 2020 (2) 
+ June 2020 (2) 
+ May 2020 (3) 
+ April 2020 (3) 
+ March 2020 (3) 
+ February 2020 (6) 
+ January 2020 (9) 
+ December 2019 (6) 
+ November 2019 (7) 
+ October 2019 (5) 
+ September 2019 (8) 
+ August 2019 (9) 
+ July 2019 (9) 
+ June 2019 (8) 
+ May 2019 (8) 
+ April 2019 (8) 
+ March 2019 (8) 
+ February 2019 (8) 
+ January 2019 (6) 
+ December 2018 (8) 
+ November 2018 (9) 
+ October 2018 (6) 
+ September 2018 (9) 
+ August 2018 (7) 
+ July 2018 (6) 
+ June 2018 (11) 
+ May 2018 (7) 
+ April 2018 (12) 
+ March 2018 (7) 
+ February 2018 (8) 
+ January 2018 (6) 
+ December 2017 (8) 
+ November 2017 (7) 
+ October 2017 (6) 
+ September 2017 (4) 
+ August 2017 (4) 
+ July 2017 (13) 
+ June 2017 (16) 
+ May 2017 (9) 
+ April 2017 (12) 
+ March 2017 (5) 
+ February 2017 (9) 
+ January 2017 (4) 
+ December 2016 (8) 
+ November 2016 (7) 
+ October 2016 (12) 
+ September 2016 (13) 
+ August 2016 (7) 
+ July 2016 (4) 
+ June 2016 (13) 
+ May 2016 (10) 
+ April 2016 (18) 
+ March 2016 (14) 
+ February 2016 (10) 
+ January 2016 (15) 
+ December 2015 (8) 
+ November 2015 (19) 
+ October 2015 (50) 
+ September 2015 (16) 
+ August 2015 (16) 
+ July 2015 (15) 
+ June 2015 (13) 
+ May 2015 (16) 
+ April 2015 (12) 
+ March 2015 (6) 
+ February 2015 (10) 
+ January 2015 (9) 
+ December 2014 (14) 
+ November 2014 (14) 
+ October 2014 (53) 
+ September 2014 (8) 
+ August 2014 (7) 
+ July 2014 (2) 
+ June 2014 (5) 
+ May 2014 (11) 
+ April 2014 (6) 
+ March 2014 (16) 
+ February 2014 (7) 
+ January 2014 (4) 
+ December 2013 (1) 
+ November 2013 (5) 
+ October 2013 (42) 
+ September 2013 (2) 
+ July 2013 (2) 
+ June 2013 (2) 
+ May 2013 (7) 
+ April 2013 (14) 
+ March 2013 (3) 
+ February 2013 (3) 
+ January 2013 (7) 
+ December 2012 (4) 
+ November 2012 (20) 
+ October 2012 (24) 
+ September 2012 (3) 
+ August 2012 (3) 
+ July 2012 (4) 
+ June 2012 (8) 
+ May 2012 (6) 
+ March 2012 (3) 
+ February 2012 (4) 
+ December 2011 (3) 
+ November 2011 (4) 
+ October 2011 (38) 
+ September 2011 (8) 
+ August 2011 (3) 
+ July 2011 (22) 
+ June 2011 (6) 
+ May 2011 (4) 
+ April 2011 (15) 
+ March 2011 (13) 
+ February 2011 (9) 
+ January 2011 (14) 
+ December 2010 (4) 
+ November 2010 (15) 
+ October 2010 (20) 
+ September 2010 (7) 
+ August 2010 (6) 
+ July 2010 (8) 
+ June 2010 (9) 
+ May 2010 (6) 
+ April 2010 (15) 
+ March 2010 (5) 
+ February 2010 (5) 
+ January 2010 (12) 
+ December 2009 (9) 
+ November 2009 (23) 
+ October 2009 (27) 
+ September 2009 (9) 
+ August 2009 (17) 
+ July 2009 (16) 
+ June 2009 (16) 
+ May 2009 (13) 
+ April 2009 (19) 
+ March 2009 (10) 
+ February 2009 (18) 
+ January 2009 (12) 
+ December 2008 (20) 
+ November 2008 (20) 
+ October 2008 (49) 
+ September 2008 (9) 
+ August 2008 (9) 
+ July 2008 (17) 
+ June 2008 (18) 
+ May 2008 (14) 
+ April 2008 (13) 
+ March 2008 (13) 
+ February 2008 (17) 
+ January 2008 (7) 
+ December 2007 (10) 
+ November 2007 (9) 
+ October 2007 (37) 
+ September 2007 (9) 
+ August 2007 (12) 
+ July 2007 (7) 
+ June 2007 (3) 
+ May 2007 (7) 
+ April 2007 (9) 
+ March 2007 (4) 
+ February 2007 (4) 
+ January 2007 (1) 
+ December 2006 (5) 
+ November 2006 (1) 
+ October 2006 (1) 
+ August 2006 (1) 
+ March 2006 (1) 
+ August 2004 (1) 
+ July 2004 (1) 
+ April 2004 (1) 
+ March 2004 (1) 
+ January 2004 (1) 
+ November 2003 (1) 
+ September 2003 (1) 
+ May 2003 (1) 
+ February 2003 (1) 
+ November 2002 (1) 
+ Recent Posts
+ Dialogue Expressiveness in Mask of the Rose 
+ End of August Links 
+ Status 
+ End of October Link Assortment 
+ Mid-October Link Assortment 
+ Recent Comments
+ Joseph Limbaugh on Status 
+ Lukasz on Dialogue Expressiveness in Mask of the Rose 
+ Emily Short on Inform extension updating 
+ Emily Short on Restless 
+ Baseball Bros on IF Comp 2011: Fan Interference 
+ On Planet-IF 
+ An error has occurred; the feed is probably down. Try again later.
+ Blogroll
+ Clash of the Type-Ins (podcast) 
+ Electric Archaeology 
+ Homer in Silicon (archival) 
+ IF Technology Foundation 
+ Inform 7 Extensions feed 
+ Inky Path (archival) 
+ NarraScope 
+ Pissy Little Sausages 
+ Planet IF 
+ Renga in Blue 
+ Sibyl Moon 
+ The Gaming Philosopher 
+ The Stack 
+ Titans of Text (podcast) 
+ Z-Machine Matter 
+ Zarfhome 
+ Collections
+ @philomela_twine 
+ ELO Directory 
+ IF Interfaces 
+ IFDB 
+ MIT Docubase 
+ Textadventures 
+ Commercial IF
+ Choice of Games 
+ Codename Cygnus 
+ Cubus Games 
+ Darned Sock Productions 
+ Failbetter Games 
+ inkle 
+ Six To Start 
+ Sub-Q Magazine 
+ Tin Man Games 
+ Versu (archival) 
+ Competitions
+ IF Comp 
+ Introcomp 
+ NaNoGenMo 
+ Saugus Halloween Contest 
+ Spring Thing 
+ Windhammer Prize 
+ XYZZY Awards 
+ Conferences and Events
+ AdventureX 
+ Foundations of Digital Games 
+ ICCC 
+ ICIDS 
+ Wordplay 
+ Creation Tools
+ "Another IF Engine List" 
+ ADRIFT 
+ Alan 
+ Axma Story Maker 
+ ChoiceScript 
+ Choose Your Story 
+ Fungus 
+ Inform 6 
+ Inform 7 
+ ink 
+ Quest 
+ Ren&#039;Py 
+ TADS 2 and 3 
+ Tiny QBN 
+ Twine 
+ TyranoBuilder 
+ Vorple 
+ Windrift 
+ Yarn Spinner 
+ Design Articles
+ ifwiki 
+ Past RAIF Threads 
+ XYZZYNews 
+ Forums
+ ADRIFT Forum 
+ CAAD (Spanish) 
+ ifMUD 
+ ifwiki 
+ Interactive Fiction Facebook group 
+ intfiction.org 
+ Quest Forum 
+ Local Groups
+ Baltimore/Washington DC 
+ Oxford and London IF Group 
+ People&#039;s Republic of IF (Boston) 
+ San Francisco Bay Area IF 
+ Seattle 
+ Online play
+ Adventure Cow 
+ ifiction 
+ ifMUD 
+ Reviews
+ IF-Review 
+ SPAC (Spanish) 
+ SPAG 
+ Walkthroughs
+ Classic Adventure Solution Archive 
+ David Welbourn’s Walkthroughs 
+ Meta
+ Create account 
+ Log in 
+ Entries feed 
+ Comments feed 
+ WordPress.com 
+ Contact and FAQ 
+ IF Meetup Recording 
+ My Work 
+ Games 
+ Tools 
+ Publications 
+ Talks 
+ Consulting Services 
+ Emily Short&#039;s Interactive Storytelling 
+ Blog at WordPress.com. 
+ Comment 
+ Reblog 
+ Subscribe 
+ Subscribed 
+ Emily Short&#039;s Interactive Storytelling 
+ Join 1,466 other subscribers
+ Sign me up 
+ Have a WordPress.com account? Log in now. 
+ Emily Short&#039;s Interactive Storytelling 
+ Copy shortlink View post in Reader 
+ Manage subscriptions Sign up Log in 
+ Report this content 
+ Collapse this bar 
+ Loading Comments... 
+ Write a Comment... 
+ Email (Required) 
+ Name (Required) 
+ Website 
+ %d

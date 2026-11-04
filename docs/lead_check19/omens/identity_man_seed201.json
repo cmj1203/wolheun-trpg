@@ -1,0 +1,912 @@
+{
+ "path": "identity_man",
+ "seed": 201,
+ "session": "b4260bd5-ed6b-4793-b386-aca3b02bcc28",
+ "start": [
+  {
+   "type": "scene",
+   "beat": "b00_open",
+   "title": "여는 글",
+   "bg": "desert_wide",
+   "cast": {
+    "left": null,
+    "center": null,
+    "right": null
+   },
+   "sprites": {}
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.",
+   "by": "script"
+  },
+  {
+   "type": "scene",
+   "beat": "b01_sand",
+   "title": "길 잃은 지 일주일",
+   "bg": "desert_wide",
+   "cast": {
+    "left": null,
+    "center": "아시나",
+    "right": null
+   },
+   "sprites": {}
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "하아… 하아…",
+   "by": "script",
+   "sfx": "휘이이잉"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "길을 헤맨 지 벌써 일주일째야…",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "사방이 온통 모래뿐이라 길을 알 수가 없어…",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "심지어 물도 다 떨어져 가고…",
+   "by": "script",
+   "sfx": "꿀꺽",
+   "face": "wary",
+   "cg": "cg_drink"
+  },
+  {
+   "type": "note",
+   "id": "stars",
+   "name": "별과 길"
+  },
+  {
+   "type": "scene",
+   "beat": "b02_people",
+   "title": "사람?!",
+   "bg": "desert_meet",
+   "cast": {
+    "left": null,
+    "center": "아시나",
+    "right": null
+   },
+   "sprites": {}
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "귀찌가 뜨겁게 달아올랐다. 변장이 버틸 시간이 줄고 있다.",
+   "by": "script"
+  },
+  {
+   "type": "tracks",
+   "changes": [
+    {
+     "key": "귀찌",
+     "from": 8,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "아시나",
+   "display": "아시나",
+   "style": "speech",
+   "text": "응?",
+   "by": "script",
+   "sfx": "흠칫",
+   "face": "surprised"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "저건…",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "아시나",
+   "display": "아시나",
+   "style": "speech",
+   "text": "사람?!",
+   "by": "script",
+   "face": "surprised"
+  },
+  {
+   "type": "note",
+   "id": "strangers",
+   "name": "사막의 세 사람"
+  }
+ ],
+ "turns": [
+  {
+   "n": 1,
+   "beat": "b02_people",
+   "action": {
+    "type": "approach",
+    "id": "run"
+   },
+   "events": [
+    {
+     "type": "roll",
+     "label": "달려가서 길을 묻는다",
+     "stat": "체력",
+     "statValue": 0,
+     "mods": [],
+     "dice": [
+      3,
+      6
+     ],
+     "total": 9,
+     "tier": "mixed",
+     "tierLabel": "대가 있는 성공"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "이봐요! 저기요!",
+     "by": "script",
+     "sfx": "탓",
+     "face": "smile"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "모래에 발이 푹푹 빠졌다. 그들 앞에 닿았을 땐 숨이 턱까지 차올랐다.",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "해가 한 뼘 더 기울었다. 귀찌가 미지근해진다.",
+     "by": "script"
+    },
+    {
+     "type": "price",
+     "id": "sun",
+     "tag": "시간",
+     "text": "해가 한 뼘 더 기울었다. 귀찌가 미지근해진다."
+    },
+    {
+     "type": "tracks",
+     "changes": [
+      {
+       "key": "귀찌",
+       "from": 7,
+       "to": 6
+      }
+     ]
+    },
+    {
+     "type": "tracks",
+     "changes": [
+      {
+       "key": "귀찌",
+       "from": 6,
+       "to": 5
+      }
+     ]
+    },
+    {
+     "type": "scene",
+     "beat": "b03_ask",
+     "title": "길을 물어봤을 뿐인데",
+     "bg": "desert_meet",
+     "cast": {
+      "left": "아시나",
+      "center": null,
+      "right": "남자"
+     },
+     "sprites": {}
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "……",
+     "by": "script",
+     "face": "wary"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "저… 저기…",
+     "by": "script",
+     "face": "wary"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "혹시 크라차까지 가는 길을 아시나요?",
+     "by": "script",
+     "if": "flag:길_물음 && !flag:이미_길_물음",
+     "face": "smile"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "정말이지 난, 그저 길을 물어봤을 뿐이었다.",
+     "by": "script",
+     "if": "flag:길_물음"
+    },
+    {
+     "type": "note",
+     "id": "man",
+     "name": "붉은 눈의 남자"
+    },
+    {
+     "type": "note",
+     "id": "guards",
+     "name": "호위 둘"
+    },
+    {
+     "type": "scene",
+     "beat": "b04_blade",
+     "title": "그리고 현재",
+     "bg": "desert_wide",
+     "cast": {
+      "left": "아시나",
+      "center": null,
+      "right": "남자"
+     },
+     "sprites": {}
+    },
+    {
+     "type": "tracks",
+     "changes": [
+      {
+       "key": "의심",
+       "from": 0,
+       "to": 3
+      }
+     ]
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "그리고 현재.",
+     "by": "script",
+     "fx": "flash",
+     "sfx": "스릉",
+     "cg": "cg_now"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "마지막으로 할 말은 있나?",
+     "by": "script",
+     "fx": "shake",
+     "face": "neutral",
+     "cg": "cg_last"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "억울해…",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "없다면, 잘 가라.",
+     "by": "script",
+     "fx": "shake",
+     "sfx": "화악",
+     "face": "neutral"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "잠깐만요, 잠깐! 제 말 좀 들어 봐요!",
+     "by": "script",
+     "if": "flag:말함 || flag:이미_길_물음 || flag:다가감",
+     "sfx": "다급",
+     "face": "surprised"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+     "by": "script",
+     "face": "wary"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "……왜지?",
+     "by": "script",
+     "face": "wary"
+    },
+    {
+     "type": "scene",
+     "beat": "b05_why",
+     "title": "왜지?",
+     "bg": "desert_wide",
+     "cast": {
+      "left": "아시나",
+      "center": null,
+      "right": "남자"
+     },
+     "sprites": {}
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+     "by": "script"
+    }
+   ],
+   "tracks": {
+    "의심": 3,
+    "집착": 0,
+    "호감": 0,
+    "귀찌": 5,
+    "탈주": 0,
+    "행운": 6
+   },
+   "error": null,
+   "ms": 1
+  },
+  {
+   "n": 2,
+   "beat": "b05_why",
+   "action": {
+    "type": "approach",
+    "id": "plead"
+   },
+   "events": [
+    {
+     "type": "roll",
+     "label": "결백을 호소한다",
+     "stat": "매력",
+     "statValue": 2,
+     "mods": [],
+     "dice": [
+      5,
+      3
+     ],
+     "total": 10,
+     "tier": "hit",
+     "tierLabel": "성공"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "억울해요! 전 정말 길을 물어본 것밖에 없다고요!",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "남자는 한참 동안 내 눈을 들여다보았다. 목에 닿아 있던 칼끝이 손가락 한 마디만큼 물러났다.",
+     "by": "script"
+    },
+    {
+     "type": "tracks",
+     "changes": [
+      {
+       "key": "의심",
+       "from": 3,
+       "to": 2
+      },
+      {
+       "key": "호감",
+       "from": 0,
+       "to": 1
+      }
+     ]
+    },
+    {
+     "type": "scene",
+     "beat": "b06_swing",
+     "title": "마지막으로 남길 말인가",
+     "bg": "desert_wide",
+     "cast": {
+      "left": "아시나",
+      "center": null,
+      "right": "남자"
+     },
+     "sprites": {}
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "하.",
+     "by": "script",
+     "sfx": "피식"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "그것뿐인가?",
+     "by": "script",
+     "if": "!flag:미소녀",
+     "face": "wary"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "그게…",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "마지막으로 남길 말인가?",
+     "by": "script",
+     "fx": "shake",
+     "sfx": "휘익"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "미친―! 피해야 돼!!",
+     "by": "script",
+     "fx": "shake",
+     "sfx": "부웅",
+     "face": "surprised",
+     "cg": "cg_swing_hood"
+    }
+   ],
+   "tracks": {
+    "의심": 2,
+    "집착": 0,
+    "호감": 1,
+    "귀찌": 5,
+    "탈주": 0,
+    "행운": 6
+   },
+   "error": null,
+   "ms": 1
+  },
+  {
+   "n": 3,
+   "beat": "b06_swing",
+   "action": {
+    "type": "approach",
+    "id": "dodge"
+   },
+   "events": [
+    {
+     "type": "roll",
+     "label": "몸을 던져 칼날을 피한다",
+     "stat": "체력",
+     "statValue": 0,
+     "mods": [],
+     "dice": [
+      6,
+      1
+     ],
+     "total": 7,
+     "tier": "mixed",
+     "tierLabel": "대가 있는 성공"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "간신히 피했지만 모래 위로 나동그라졌다. 후드가 벗겨지고, 귀찌가 뜨겁게 달아올랐다.",
+     "by": "script",
+     "sfx": "콰당"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "피하지 않았으면 베었을 거야…",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "호위 둘이 한 발씩 거리를 좁혔다.",
+     "by": "script"
+    },
+    {
+     "type": "price",
+     "id": "guards_close",
+     "tag": "상대행동",
+     "text": "호위 둘이 한 발씩 거리를 좁혔다."
+    },
+    {
+     "type": "sprite",
+     "cast": "아시나",
+     "sprite": "asina"
+    },
+    {
+     "type": "tracks",
+     "changes": [
+      {
+       "key": "집착",
+       "from": 0,
+       "to": 1
+      },
+      {
+       "key": "귀찌",
+       "from": 5,
+       "to": 3
+      }
+     ]
+    },
+    {
+     "type": "tracks",
+     "changes": [
+      {
+       "key": "의심",
+       "from": 2,
+       "to": 3
+      }
+     ]
+    },
+    {
+     "type": "scene",
+     "beat": "b07_rule",
+     "title": "반칙",
+     "bg": "desert_wide",
+     "cast": {
+      "left": "아시나",
+      "center": null,
+      "right": "남자"
+     },
+     "sprites": {
+      "아시나": "asina"
+     }
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+     "by": "script",
+     "face": "surprised"
+    },
+    {
+     "type": "line",
+     "speaker": "아시나",
+     "display": "아시나",
+     "style": "speech",
+     "text": "반칙이지!!!",
+     "by": "script",
+     "fx": "shake",
+     "sfx": "버럭",
+     "face": "surprised"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "반칙?",
+     "by": "script",
+     "face": "smile"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "남는 것은 살아남는 자와 죽는 자.",
+     "by": "script",
+     "sfx": "저벅"
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "그 둘뿐이다.",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "마치… 한여름의 태양 같아.",
+     "by": "script",
+     "fx": "flash",
+     "sfx": "오싹",
+     "face": "surprised"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "터벅, 터벅. 남자가 천천히 다가오더니 몸을 숙여 내 얼굴을 들여다보았다.",
+     "by": "script",
+     "sfx": "터벅",
+     "cg": "cg_lean"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "뭐, 뭐야. 설마 다시 죽이려는 건 아니겠…",
+     "by": "script"
+    },
+    {
+     "type": "scene",
+     "beat": "b08_gaze",
+     "title": "한여름의 태양",
+     "bg": "desert_wide",
+     "cast": {
+      "left": "아시나",
+      "center": null,
+      "right": "남자"
+     },
+     "sprites": {
+      "아시나": "asina"
+     }
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+     "by": "script"
+    }
+   ],
+   "tracks": {
+    "의심": 3,
+    "집착": 1,
+    "호감": 1,
+    "귀찌": 3,
+    "탈주": 0,
+    "행운": 6
+   },
+   "error": null,
+   "ms": 1
+  },
+  {
+   "n": 4,
+   "beat": "b08_gaze",
+   "action": {
+    "type": "free",
+    "text": "나는 웰든 공녀다"
+   },
+   "events": [
+    {
+     "type": "echo",
+     "text": "나는 웰든 공녀다"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "웰든이란 이름이 목까지 올라왔다. 여긴 적국이다.",
+     "by": "script"
+    },
+    {
+     "type": "tracks",
+     "changes": [
+      {
+       "key": "의심",
+       "from": 3,
+       "to": 6
+      }
+     ]
+    },
+    {
+     "type": "line",
+     "speaker": "남자",
+     "display": "붉은 눈의 남자",
+     "style": "speech",
+     "text": "공녀라니.",
+     "by": "gm",
+     "face": "smile"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "남자가 짧게 비웃음을 흘렸다. 그의 입술 끝이 비틀리며 차가운 조소를 머금었다.",
+     "by": "gm"
+    }
+   ],
+   "tracks": {
+    "의심": 6,
+    "집착": 1,
+    "호감": 1,
+    "귀찌": 3,
+    "탈주": 0,
+    "행운": 6
+   },
+   "error": null,
+   "ms": 14311
+  }
+ ],
+ "found": {
+  "turn": 4,
+  "ok": true,
+  "notes": [
+   "의심 3→6 (이 턴 변화 합 3)",
+   "남자 대답 있음"
+  ]
+ }
+}

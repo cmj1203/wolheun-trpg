@@ -1,0 +1,448 @@
+SOURCE: https://thealexandrian.net/wordpress/4411/roleplaying-games/the-art-of-pacing
+FETCHED: 2026-11-04T06:07:03.287Z
+
+The Alexandrian &raquo; The Art of Pacing 
+ The Art of Pacing 
+ July 15th, 2013 
+ Roleplaying games are a relatively new medium. And like most fresh-faced mediums, this means that a lot of advice given for creating and using the medium is being borrowed from existing mediums. It also means that most of this advice is wrong because the similarities between the old and new mediums is usually a lot more superficial than it may initially appear. (For example, it took decades before screenplays fully stopped mimicking theatrical scripts.)
+ At the moment, the subject of pacing in RPGs is a good example of this. A lot of the GMing advice you’ll find for pacing right now revolves around borrowing terms and concepts directly from film or television. Like a screenplay written using the techniques for live theater, some of this stuff works, but a lot of it doesn’t because film pacing is primarily about controlling the presentation of predetermined action and RPGs don’t (or at least arguably shouldn’t) have predetermined action .
+ (If you want an extreme example of this, consider Christopher Nolan’s Memento : The pacing of that film is entirely based on the careful presentation of information known to the writer / filmmaker. I can certainly imagine mimicking a Memento -like experience in an RPG, but the techniques you’d use to achieve it would be radically different from those Nolan used in the creation, filming, and editing of Memento .)
+ Understanding film pacing (as opposed to theatrical pacing) requires one to understand one of the fundamental principles of film as a medium: The ability to cut the film and splice it together.
+ Similarly, understanding pacing for an RPG requires one to understand the fundamental principle of the RPG medium: The conversation of meaningful choices.
+ THE CONVERSATION OF MEANINGFUL CHOICES 
+ As I’ve said in the past , a roleplaying game is self-evidently about playing a role . Playing a role is about making choices as if you were the character. And those choices are made as part of a conversation .
+ As D. Vincent Baker said in Apocalypse World :
+ Roleplaying is a conversation. You and the other players go back and forth, talking about these fictional characters in their fictional circumstances doing whatever it is that they do. Like any conversation, you take turns, but it’s not like taking turns , right? Sometimes you talk over each other, interrupt, build on each others’ ideas, monopolize. All fine. 
+ Or, to put it another way, the fundamental interaction of an RPG can be boiled down to:
+ GM : What do you want to do?
+ Player : I want to do X.
+ GM : When you try to do that, this happens. What do you want to do?
+ In actual practice, of course, the GM’s question is often implied, the conversation isn’t tidy, multiple players are involved, the rules can reshape the structure of the conversation, and so forth. But that’s the heart and core of everything that happens in a roleplaying game: The GM presents a situation; the players respond to that situation by making a choice; the GM adjudicates the outcome of that choice (and thus presents a new situation to which the players respond).
+ Regardless of how you try to fancy that interaction up, it’s fundamentally a loop. And the GM’s ability to control pacing sits specifically at the moment of his response (“when you try to do that, this happens”).
+ EMPTY TIME 
+ Although the art of pacing in a roleplaying game is unique compared to other mediums, in practice it can be remarkably simple. The GM must identify and then eliminate, conflate, or (in advanced techniques) manipulate what I’m going to refer to as empty time : The gap between one set of meaningful decisions and the next meaningful choice.
+ Or, to put it another way, you want to skip over the “boring bits” where nothing is happening. And the trick to doing that is moving the players efficiently to the next moment in which they can make an interesting and meaningful choice without taking away such choices by skipping over them.
+ I find it most convenient to think of the treatment of empty time as a continuum. At one end of this continuum, for example, you have gameplay like that found in a pure, old school dungeoncrawl: Essentially no time is skipped and every action is catalogued because the density of meaningful decisions is incredibly high. (In by-the-book OD&D, for example, a wandering monster check is made every single turn. Because of this, even if you ignore the high density of geographically-significant navigation decisions being made, the decision to take or not take a single action remains incredibly significant .)
+ This, by the way, is another reason why dungeoncrawls are such an effective scenario structure for new GMs : They basically eliminate any need for the GM to think about pacing. It’s an entire body of techniques that the GM can simply ignore while running the dungeoncrawl with confidence.
+ Once a GM leaves the dungeon, however, they’ll quickly realize that this technique doesn’t work. For example, imagine we were playing a game of Vampire: The Masquerade and I decided to handle the process of leaving my house and driving downtown like this:
+ GM : What do you want to do?
+ Player : I want to head downtown.
+ GM : How are you getting there?
+ Player : I’ll drive my car.
+ GM: Okay, you pull your car out of the garage and start driving down the alley. Do you want to turn left or right at the end of the alley?
+ Player: Left.
+ GM: Okay, you go half a block down to 10 th Street. Which way do you want to go?
+ Player: Straight.
+ GM: Okay, you go another block down to Elliot. Which way do you want to go?
+ Player: Straight.
+ GM: Okay, you go another block down to Chicago Avenue. There’s a stoplight. It’s red. What do you want to do?
+ Player: I’ll wait for the light to turn green and then turn right.
+ That’s self-evidently moronic. None of those decisions are meaningful. Nobody is having fun. And that’s how we end up with interactions that look like this:
+ GM : You’re at the city gate. What do you want to do?
+ Player: We go to the Tavern of the Lonely Wench.
+ GM: Okay. As you walk through the doors of the Lonely Wench…
+ Whoa. What just happened? We skipped over a whole bunch of stuff and – BAM! – we’ve suddenly framed a new scene at the tavern.
+ INTENTIONS vs. INTERRUPTIONS / OBSTACLES 
+ We’re going to be taking a closer look at what it means to frame a scene later, but first I want to focus on how the new scene was selected. We’ve moved slightly up the scene-framing continuum here by skipping to the intention : The players said they wanted to achieve something and the GM skipped to the moment at which they’d achieved it.
+ If you’re the GM, this basically involves asking yourself two questions: What is the current intention of the PCs? And does anything interrupt that intention?
+ In this example, identifying the intention is really easy: The player told you, point-blank, what they wanted to achieve. Interruptions (which you can also think of as obstacles standing between the PCs and their desired outcome) could take any number of forms: Do they get ambushed by assassins? Or run into an old friend? Or have an opportunity to pick a rich nobleman’s pocket? Or spot a rare tome of lore at bargain basement prices?
+ In determining these interruptions and obstacles, we begin to see the motivations and techniques of the GM coming into play: Does the interruption happen because you’re using a random table of simulated events? Because you need to key the next plot arc? Because the next event on your prepared timeline is due to occur? Because you have a creative whim? Because you want to activate a tag on one of your PCs?
+ So, to sum up:
+ Identify the intention
+ Choose obstacles
+ Skip to the next meaningful choice
+ In the Art of Rulings I wrote that, “When in doubt, look for the meaningful choice.” And the same principle applies here.
+ As we continue moving up the continuum of scene-framing, what basically happens is that the threshold of interest required to frame the next beat is cranked up. For example, if we nudge it up just a tick:
+ GM: You’re at the city gate. What do you want to do?
+ Player: We go looking for a tavern.
+ GM: Okay, you’re in the Tavern of the Lonely Wench.
+ Spot the difference? The GM decided that the choice of which tavern the PCs wanted to go to was irrelevant, so he skipped it, picked the tavern for them, and started the next scene. If he’d decided not to frame the scene quite so hard, he could have asked, “You want an upscale joint or a downscale joint?” Or offered them a selection of different taverns and allowed them to choose. (Or both.)
+ (And, conversely, by asking those questions, the GM is basically saying, “Either you or I or both of us care about whether the tavern is upscale or downscale.” Either because that choice tells us something interesting about the characters; or changes the amount of gold they will spend; or determines the likely encounters they’ll have there; or makes it easier to spot the spies tailing them; or any number of other possibilities.)
+ The harder the frame, the higher the level of interest needs to be before we stop fast-forwarding (and the more decisions get skipped). For example, maybe the GM decides that the tavern is completely boring and instead we get:
+ GM: You’re at the city gate.
+ Player: We go looking for a tavern.
+ GM: You party long and hard into the night, so you’re still a little hung-over the next morning when you’re shopping for supplies at Dink’s store and spot a shoplifter slipping a gold watch into his pocket.
+ And we can keep cranking:
+ Player: Okay, we’re done at the dungeon. Let’s head back to town.
+ GM: It’s two weeks later and you’re shopping for supplies in Dink’s store. You spot a shoplifter slipping a gold watch into his pocket. You shout, “STOP THIEF!” and he starts running for the door. What do you do?
+ The more you crank it up – the harder you frame the scene – the more latitude the GM has for expressing their creative agenda and the larger their influence over the course of the game becomes. This is because the decision to skip “empty time” is hiding a railroad… it’s just that you’re “railroading” past decisions that everyone at the table agrees are irrelevant.
+ The risk, of course, is that you skip past a decision that is important to someone at the table. The Smallville RPG, which advocates for strong and aggressive scene-framing, offers this advice:
+ If, despite your best efforts, you skip a little too far ahead and a player says, “But I wanted to—“ just hand him a Plot Point. Tell him to spend it on revealing his planned preparations in the middle of the scene. With luck, he’ll surprise the rest of the table with an unforeseen turn of events. 
+ This sort of solution is not unusual. In fact, the more you crank it up, the more typical it becomes for the game or the GM to start introducing more STG / narrative control mechanics and techniques: The GM is taking so much control away from the players that it becomes necessary to compensate by giving them back control in other ways.
+ Of course, in actual practice GMs will vary the pace of their scene-framing considerably depending on context and circumstance. But basically “skip the boring stuff and get to the next meaningful choice” is all you really need to know about pacing in an RPG.
+ The difficult part, of course, is putting that simple maxim into effective practice.
+ Go to Part 2: Scene-Framing 
+ THE ART OF PACING 
+ Part 2: Scene-Framing 
+ Part 3: Filling the Frame 
+ Part 4: Closing the Frame 
+ Part 5: Advanced Techniques 
+ Part 6: More Advanced Techniques 
+ SUPPLEMENTAL READING – THE ART OF PACING 
+ Film Banging: The Avengers 
+ Film Banging: Alien 
+ Film Banging: The Matrix 
+ The Art of Pacing: Prepping Bangs 
+ The Art of Pacing: Running Awesome Scenes 
+ The Art of Pacing: How NOT to Frame a Scene 
+ Filed under: Roleplaying Games Comments (15) 
+ Article tags: art of pacing , Arts of the GM 
+ 15 Responses to "The Art of Pacing"
+ Chris says: 
+ I have a couple issues with this sort of thinking. I'm trying to figure out why I strongly prefer a game like D&D over story games, and I think this points out a couple of issues that I have. 
+ 1. As you point out at the end of the post, it decreases the narrative control of the players. Giving them a &#8216;plot point' or some other sort of bennie just shifts where their control is being impacted. Even if they get to do a big reveal in the middle of your scene, the stage is still being set-up by the DM.
+ It reminds me of the movement implicit in 3rd edition of DnD, and explicit in 4E, away from dungeon-crawling and towards set piece encounters. By the end of 3E, it was clear that there wasn't much point in actual dungeon-crawling, because all of the cool stuff you could do, in most cases, was combat oriented. And this was made explicit in 4E, where you were just moving from set encounter to set encounter. The fact that in a story game, the set encounters are less likely to be strictly combat oriented doesn't change the result. Which leads me to my second point.
+ 2. It reduces player involvement in the world in two ways. First, by making the world revolve around the players, you reduce how real the world is to them. Random, unplanned encounters are important to give players the sense that there is an external &#8216;reality' around their characters where things happen. Second, any time you force them into a scene, you reduce the number of chances for the players to express themselves in their role. Your framing example assumes that the characters will automatically want to stop the thief, but what if they don't care? Or if they want to use it for blackmail, or negotiate a reward first?
+ I don't think that some skipping forward is a bad thing. To use your initial example, I typically let people just tell me where they want to go in town, rather than having to give me directions. But your examples indicate that you are willing to go far further than I am in railroading the players.
+ July 16th, 2013 - 8:17 am 
+ Justin Alexander says: 
+ I think you've misread my discussion of the full range of possible techniques as an endorsement of one extreme in that range. In fact, what I actually said in the essay is that you generally DON'T want to use extremely hard scene-framing techniques in a traditional RPG specifically because they take too much control away from the players. You need STG mechanics in order to make those hard scene-framing techniques palatable (and often those STG mechanics will take the form of actually controlling the scene-framing itself).
+ Similarly, you don't want to go too far to the other extreme and leave a lot of empty time in your game. (Because that's incredibly boring.)
+ Ignoring these extremes, there's still a huge middle ground that gives you a lot of flexibility. And the threshold for what constitutes a "meaningful choice" that should be skipped to instead of being skipped past will vary depending on the game, the setting, the players, and the circumstances.
+ July 16th, 2013 - 1:55 pm 
+ gaynorvader says: 
+ I've DMed D&D3 for a fair few years, and I don't think I've *ever* run a campaign where I've been in charge. All I generally do is make a world, add a few vague plot hooks, link them to the player character's past and then settle down to referee the ensuing story. Players always find something to do and some reason to do it. I remember making the mistake of not letting the sorcerer use his new spell, glitterdust, straight away so he cast it on an elven army that was marching to war, ensuring he was captured (which led to a mission where the rest of the party had to rescue him).
+ July 16th, 2013 - 2:47 pm 
+ pdunwin says: 
+ Good stuff. I generally frame pretty hard, because I find it's too easy to get bogged down in the turn-by-turn details you mentioned. 
+ I feel like a good dose of hard framing increases the involvement of my players with the world, because things are actually happening to them in the world. They don't have to go through every single action, and make every single meaningless choice on the off chance that it will offer interesting insight to the world. We get right to the stuff that's guaranteed to be interesting, and the smaller details about the world can spin off from there.
+ My players' narrative control is very high due to the collaborative nature of our games, but that's a separate issue from framing.
+ July 22nd, 2013 - 6:55 pm 
+ Pacing and Worlds - TPK says: 
+ [&#8230;] the last #rpgchat I found out about this excellent series of posts on the Alexandrian about pacing in rpgs. This six part series has a lot to teach about managing scenes, time, and [&#8230;]
+ September 14th, 2013 - 8:45 am 
+ #RPGChat Archive, 12 September 2013: Pacing and Tempo | The Illuminerdy says: 
+ [&#8230;] One last blog-pimp for The Alexandrian "The Art of Pacing" series. Read the whole thing. Amazing. http://thealexandrian.net/wordpress/31509/roleplaying-games/the-art-of-pacing … [&#8230;]
+ September 29th, 2013 - 6:52 am 
+ In Defense of Boxed Text | ars phantasia says: 
+ [&#8230;] is often a welcome reminder.  Finally, as Justin Alexander observes in his wonderful series on the art of pacing, one of the tricks to a well paced campaign is to skip over empty time (&#8216;the boring bits in [&#8230;]
+ December 10th, 2013 - 10:54 pm 
+ Tip: You Talking is a Cutscene. &#8211; Ty Runs Tabletop RPG&#039;s says: 
+ [&#8230;] think the Alexandrian did a great job discussing it here. I highly recommend their content on GMing [&#8230;]
+ May 24th, 2017 - 10:41 pm 
+ heromedel says: 
+ oh wow, some of those wouldn't stand for a second with my gaming group or me. To tell you the truth we come pretty close to the example of asking which way you turn especially in a new city they aren't familiar with.
+ We avoid any assumption of a players actions. I mean if a player said to me I wander through town looking for a tavern I would ask which direction do you wander first, then I might suggest a general clockwise pattern or mention a city district or imply the character might go downhill but I wouldn't for one second say You do this.
+ In fact we had a guy try to DM our group once and when a player said in combat that goes after a specific enemy during the players turn and then the DM said on the enemies turn, he runs into a building and you follow him inside and then up a flight of stairs and into a room&#8230; that was it we were done, we were like oh hell no her character doesn't do that.. The campaign ended right then and there partly because it wasn't the first time but partly because her character was ambushed in said room and was being played by a very cautious player who prefers to hang back and would never have agreed.
+ Unless our characters are possessed or charmed we never jump further then the current decision. I go down the hall. How far? to the end of it. Ok you arrive uneventfully which direction do you look when you arrive at the junction?
+ Complete and absolute player agency for us. With suggestions on how the character might act.
+ February 19th, 2018 - 4:38 am 
+ Clay says: 
+ Are Plot Points a 100% dissociative mechanic?
+ June 16th, 2020 - 4:41 am 
+ Unifex says: 
+ I wish I found this advice when I was first learning to GM! I've had times where I tried to explain every unimportant thing that happened along the journey and it was such a snoozefest. I could tell my players were not having a great time. After watching some Tablestory shows, I picked up on framing sessions into scenes, and how they transitioned between scenes, skipping the unimportant minutae. That instantly levelled up my GMing.
+ Also I can't believe that there is a Smallville RPG, I can't believe that someone read it to quote it in a blog, and I cant believe that it's actually usable advice. Lmao
+ November 22nd, 2020 - 12:52 am 
+ Justin Alexander says: 
+ Smallville is actually a really, really important RPG!
+ When Cam Banks took over development of the Cortex System (which had been used in the Serenity, Battlestar Galactica, and Supernatural RPGs) in 2009, Smallville was actually the first Cortex Plus game released in 2010.
+ Cam has just this past month released Cortex Prime, which takes the innovations of Smallville (along with Leverage, Marvel Heroic Roleplaying, and the Firefly RPG), and combines them into a coherent game system.
+ Cortex Prime is going to be used as the core engine for the forthcoming Tales of Xadia and Legends of Grayskull RPGs.
+ The plot-mapping material in Smallville was also a significant influence on Jeremy Keller's Technoir RPG.
+ November 22nd, 2020 - 5:22 pm 
+ On Time &#8211; Slice of Beef says: 
+ [&#8230;] think there's a science to it. Maybe an &#8216;art' &#8211; people have tried, bloggers have written dozens of articles about it, and while there are definitely plenty of tips that you can (and should) follow, like "bring [&#8230;]
+ June 17th, 2022 - 2:35 pm 
+ El Ritmo en las Partidas de Rol (1/2) &#8211; Espacio Rolero says: 
+ [&#8230;] The Art of Pacing, James Alexander en The Alexandrian [&#8230;]
+ December 10th, 2023 - 5:58 am 
+ El Ritmo en las Partidas de Rol (2/2) &#8211; Espacio Rolero says: 
+ [&#8230;] The Art of Pacing, James Alexander en The Alexandrian [&#8230;]
+ December 18th, 2023 - 11:43 am 
+ Leave a Reply
+ Name (required) 
+ Mail (will not be published) (required) 
+ Website 
+ XHTML: You can use these tags: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; 
+-->
+ you MUST enable javascript to be able to comment 
+ &#916; 
+ JUSTIN ALEXANDER
+ About - Bibliography Acting Resume 
+ROLEPLAYING GAMES
+ Gamemastery 101 
+ RPG Scenarios 
+ RPG Cheat Sheets 
+ RPG Miscellaneous 
+ Dungeons & Dragons 
+ Ptolus: Shadow of the Spire 
+ Alexandrian Auxiliary 
+ Check These Out 
+ Essays 
+ Other Games 
+ Reviews 
+ Shakespeare Sunday 
+ Thoughts of the Day 
+ Videos 
+ Patrons 
+ Open Game License 
+ Bluesky • Mastodon • Twitter 
+ Archives
+ Archives 
+ Select Month 
+ October 2026 (12) 
+ September 2026 (9) 
+ August 2026 (13) 
+ July 2026 (13) 
+ June 2026 (10) 
+ May 2026 (10) 
+ April 2026 (13) 
+ March 2026 (8) 
+ February 2026 (10) 
+ January 2026 (9) 
+ December 2025 (16) 
+ November 2025 (12) 
+ October 2025 (16) 
+ September 2025 (14) 
+ August 2025 (11) 
+ July 2025 (17) 
+ June 2025 (16) 
+ May 2025 (11) 
+ April 2025 (14) 
+ March 2025 (14) 
+ February 2025 (16) 
+ January 2025 (16) 
+ December 2024 (13) 
+ November 2024 (11) 
+ October 2024 (13) 
+ September 2024 (14) 
+ August 2024 (16) 
+ July 2024 (16) 
+ June 2024 (14) 
+ May 2024 (16) 
+ April 2024 (17) 
+ March 2024 (17) 
+ February 2024 (16) 
+ January 2024 (18) 
+ December 2023 (15) 
+ November 2023 (16) 
+ October 2023 (14) 
+ September 2023 (16) 
+ August 2023 (12) 
+ July 2023 (12) 
+ June 2023 (13) 
+ May 2023 (19) 
+ April 2023 (15) 
+ March 2023 (15) 
+ February 2023 (13) 
+ January 2023 (16) 
+ December 2022 (14) 
+ November 2022 (15) 
+ October 2022 (13) 
+ September 2022 (15) 
+ August 2022 (15) 
+ July 2022 (16) 
+ June 2022 (17) 
+ May 2022 (19) 
+ April 2022 (19) 
+ March 2022 (12) 
+ February 2022 (9) 
+ January 2022 (14) 
+ December 2021 (10) 
+ November 2021 (13) 
+ October 2021 (11) 
+ September 2021 (13) 
+ August 2021 (13) 
+ July 2021 (11) 
+ June 2021 (14) 
+ May 2021 (12) 
+ April 2021 (12) 
+ March 2021 (14) 
+ February 2021 (14) 
+ January 2021 (18) 
+ December 2020 (16) 
+ November 2020 (13) 
+ October 2020 (16) 
+ September 2020 (13) 
+ August 2020 (11) 
+ July 2020 (12) 
+ June 2020 (12) 
+ May 2020 (15) 
+ April 2020 (13) 
+ March 2020 (13) 
+ February 2020 (12) 
+ January 2020 (13) 
+ December 2019 (7) 
+ November 2019 (6) 
+ October 2019 (8) 
+ September 2019 (15) 
+ August 2019 (9) 
+ July 2019 (8) 
+ June 2019 (9) 
+ May 2019 (15) 
+ April 2019 (20) 
+ March 2019 (11) 
+ February 2019 (13) 
+ January 2019 (12) 
+ December 2018 (5) 
+ November 2018 (19) 
+ October 2018 (20) 
+ September 2018 (16) 
+ August 2018 (18) 
+ July 2018 (20) 
+ June 2018 (17) 
+ May 2018 (18) 
+ April 2018 (7) 
+ March 2018 (14) 
+ February 2018 (16) 
+ January 2018 (19) 
+ December 2017 (1) 
+ October 2017 (1) 
+ September 2017 (2) 
+ August 2017 (4) 
+ July 2017 (4) 
+ June 2017 (2) 
+ April 2017 (7) 
+ February 2017 (1) 
+ December 2016 (1) 
+ November 2016 (5) 
+ October 2016 (12) 
+ September 2016 (7) 
+ August 2016 (8) 
+ June 2016 (1) 
+ May 2016 (8) 
+ April 2016 (5) 
+ March 2016 (5) 
+ February 2016 (15) 
+ January 2016 (3) 
+ December 2015 (2) 
+ November 2015 (12) 
+ October 2015 (12) 
+ September 2015 (6) 
+ August 2015 (14) 
+ July 2015 (13) 
+ June 2015 (14) 
+ May 2015 (19) 
+ April 2015 (18) 
+ March 2015 (25) 
+ February 2015 (28) 
+ January 2015 (29) 
+ December 2014 (20) 
+ November 2014 (13) 
+ October 2014 (10) 
+ September 2014 (11) 
+ August 2014 (8) 
+ July 2014 (7) 
+ June 2014 (3) 
+ May 2014 (6) 
+ April 2014 (3) 
+ February 2014 (4) 
+ January 2014 (1) 
+ December 2013 (3) 
+ November 2013 (1) 
+ October 2013 (7) 
+ September 2013 (11) 
+ August 2013 (20) 
+ July 2013 (27) 
+ June 2013 (2) 
+ April 2013 (4) 
+ March 2013 (6) 
+ February 2013 (11) 
+ January 2013 (5) 
+ December 2012 (7) 
+ November 2012 (14) 
+ October 2012 (12) 
+ September 2012 (3) 
+ August 2012 (6) 
+ July 2012 (2) 
+ June 2012 (14) 
+ May 2012 (21) 
+ April 2012 (22) 
+ March 2012 (4) 
+ February 2012 (17) 
+ January 2012 (31) 
+ December 2011 (18) 
+ November 2011 (25) 
+ October 2011 (28) 
+ September 2011 (27) 
+ August 2011 (27) 
+ July 2011 (8) 
+ June 2011 (16) 
+ May 2011 (22) 
+ April 2011 (28) 
+ March 2011 (38) 
+ February 2011 (29) 
+ January 2011 (14) 
+ November 2010 (6) 
+ September 2010 (4) 
+ August 2010 (7) 
+ July 2010 (20) 
+ June 2010 (22) 
+ May 2010 (17) 
+ April 2010 (1) 
+ January 2010 (11) 
+ December 2009 (3) 
+ November 2009 (2) 
+ September 2009 (1) 
+ August 2009 (2) 
+ July 2009 (3) 
+ June 2009 (3) 
+ May 2009 (2) 
+ April 2009 (8) 
+ March 2009 (30) 
+ February 2009 (29) 
+ January 2009 (11) 
+ December 2008 (1) 
+ November 2008 (4) 
+ October 2008 (22) 
+ September 2008 (23) 
+ August 2008 (9) 
+ July 2008 (23) 
+ June 2008 (23) 
+ May 2008 (31) 
+ April 2008 (1) 
+ March 2008 (7) 
+ February 2008 (2) 
+ January 2008 (2) 
+ December 2007 (1) 
+ November 2007 (4) 
+ October 2007 (7) 
+ September 2007 (7) 
+ August 2007 (10) 
+ July 2007 (13) 
+ June 2007 (7) 
+ May 2007 (11) 
+ April 2007 (6) 
+ March 2007 (5) 
+ February 2007 (4) 
+ January 2007 (2) 
+ December 2006 (5) 
+ November 2006 (6) 
+ June 2006 (9) 
+ May 2006 (5) 
+ April 2006 (9) 
+ March 2006 (25) 
+ November 2005 (6) 
+ October 2005 (3) 
+ August 2005 (17) 
+ July 2005 (25) 
+ Recent Posts
+ Pyramid Review &#8211; Demon City Shinjuku 
+ Pyramid Review &#8211; Diomin 
+ Chaos Lorebook &#8211; Book of the Elder Brood: Tilaxic 
+ Pyramid Review &#8211; Lost Cities 
+ Mothership &#8211; System Cheat Sheet (Gamma) 
+ Recent Comments
+ stargazer on The Vladaam Affair &#8211; Part 14C: Crypts of the Brotherhood 
+ BP on Pyramid Review &#8211; Demon City Shinjuku 
+ Patrick Walsh on Pyramid Review &#8211; Lost Cities 
+ Wanderer on Pyramid Review &#8211; Demon City Shinjuku 
+ Justin Alexander on Pyramid Review &#8211; Diomin 
+ Grundsätzliches (3.1): Spiel-Kultur-Typ-Stil-Art-Analyse &#8211; RPGnosis on Thought of the Day &#8211; What is a Trad RPG? 
+ ThothofMythos on Pyramid Review &#8211; Diomin 
+ Lanessar on Mothership: Thinking About Combat 
+ Tobias on Pyramid Review &#8211; Lost Cities 
+ James on Ask the Alexandrian #26: (Not So) Lost in the Wilderness 
+ Author Read Now! - Audio Book 
+ Author 
+ PDF Edition 
+ City Supplement 1: Dweredell 
+ City Supplement 2: Aerie 
+ City Supplement 3: Anyoc 
+ Rule Supplement 1: Mounted Combat 
+ Adventure: Complex of Zombies 
+ Adventure: The Black Mist 
+ Spells of Light and Darkness 
+ Mythos Audio Library: Call of Cthulhu 
+ Copyright &copy; The Alexandrian . All rights reserved.

@@ -1,0 +1,222 @@
+[
+ {
+  "key": "b_hood",
+  "beat": null,
+  "speaker": "아시나",
+  "text": "(",
+  "slots": {
+   "left": null,
+   "center": {
+    "src": "asina_hood_neutral.png",
+    "r": {
+     "x": 488,
+     "y": 137,
+     "w": 464,
+     "h": 697,
+     "b": 834
+    }
+   },
+   "right": null
+  },
+  "dialog": {
+   "x": 72,
+   "y": 575,
+   "w": 1051,
+   "h": 170,
+   "b": 746
+  },
+  "gm": null,
+  "vh": 810
+ },
+ {
+  "key": "c_face_hood_surprised",
+  "beat": "b01_sand",
+  "speaker": "아시나",
+  "text": "응",
+  "slots": {
+   "left": null,
+   "center": {
+    "src": "asina_hood_surprised.png",
+    "r": {
+     "x": 488,
+     "y": 138,
+     "w": 464,
+     "h": 697,
+     "b": 834
+    }
+   },
+   "right": null
+  },
+  "dialog": {
+   "x": 72,
+   "y": 575,
+   "w": 1051,
+   "h": 170,
+   "b": 746
+  },
+  "gm": null,
+  "vh": 810
+ },
+ {
+  "key": "c_face_hood_smile",
+  "speaker": "아시나",
+  "text": "혹",
+  "slots": {
+   "left": {
+    "src": "asina_hood_smile.png",
+    "r": {
+     "x": 113,
+     "y": 130,
+     "w": 464,
+     "h": 697,
+     "b": 827
+    }
+   },
+   "center": null,
+   "right": {
+    "src": "behidat_wary.png",
+    "r": {
+     "x": 646,
+     "y": 137,
+     "w": 464,
+     "h": 697,
+     "b": 833
+    }
+   }
+  },
+  "dialog": {
+   "x": 72,
+   "y": 575,
+   "w": 1051,
+   "h": 170,
+   "b": 746
+  },
+  "gm": null,
+  "vh": 810
+ },
+ {
+  "key": "a_blade_two",
+  "speaker": "붉은 눈의 남자",
+  "text": "……",
+  "slots": {
+   "left": {
+    "src": "asina_hood_neutral.png",
+    "r": {
+     "x": 113,
+     "y": 138,
+     "w": 464,
+     "h": 697,
+     "b": 834
+    },
+    "op": "1",
+    "slotOp": "1"
+   },
+   "center": null,
+   "right": {
+    "src": "behidat_wary.png",
+    "r": {
+     "x": 646,
+     "y": 129,
+     "w": 464,
+     "h": 697,
+     "b": 826
+    },
+    "op": "1",
+    "slotOp": "1"
+   }
+  },
+  "dialog": {
+   "x": 72,
+   "y": 575,
+   "w": 1051,
+   "h": 170,
+   "b": 746
+  },
+  "gm": null,
+  "vh": 810
+ },
+ {
+  "key": "c_face_smile",
+  "beat": "b05_why",
+  "speaker": "아시나",
+  "text": "(미인계다!)",
+  "slots": {
+   "left": {
+    "src": "asina_smile.png",
+    "r": {
+     "x": 113,
+     "y": 129,
+     "w": 464,
+     "h": 697,
+     "b": 826
+    },
+    "op": "1",
+    "slotOp": "1"
+   },
+   "center": null,
+   "right": {
+    "src": "behidat_neutral.png",
+    "r": {
+     "x": 646,
+     "y": 138,
+     "w": 464,
+     "h": 697,
+     "b": 834
+    },
+    "op": "1",
+    "slotOp": "1"
+   }
+  },
+  "dialog": {
+   "x": 72,
+   "y": 575,
+   "w": 1051,
+   "h": 170,
+   "b": 746
+  },
+  "gm": null,
+  "vh": 810
+ },
+ {
+  "key": "c_face_surprised",
+  "beat": "b06_swing",
+  "speaker": "내레이션",
+  "text": "간신히 피했지만 모래 위로 나동그라졌다. 후드가 벗겨지고, 귀찌가 뜨겁게 달아올랐다.",
+  "slots": {
+   "left": {
+    "src": "asina_surprised.png",
+    "r": {
+     "x": 113,
+     "y": 138,
+     "w": 464,
+     "h": 697,
+     "b": 834
+    },
+    "op": "1",
+    "slotOp": "1"
+   },
+   "center": null,
+   "right": {
+    "src": "behidat_smile.png",
+    "r": {
+     "x": 646,
+     "y": 138,
+     "w": 464,
+     "h": 697,
+     "b": 834
+    },
+    "op": "1",
+    "slotOp": "1"
+   }
+  },
+  "dialog": {
+   "x": 72,
+   "y": 575,
+   "w": 1051,
+   "h": 170,
+   "b": 746
+  },
+  "gm": null,
+  "vh": 810
+ }
+]

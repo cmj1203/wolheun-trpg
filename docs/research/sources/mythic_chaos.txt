@@ -1,0 +1,182 @@
+SOURCE: https://oldhobsgameroom.blogspot.com/2025/04/mythic-rpg-project-chapter-7b-chaos.html
+FETCHED: 2026-11-04T06:07:02.576Z
+
+Wizard Dad's Workshop: Mythic RPG Project: Chapter 7b: Chaos Factor, Running Scenes, Altered Scenes, Interrupt Scenes, and Scene wrap up. 
+Wizard Dad's Workshop
+ This is an RPG blog with a focus on Solo play in many styles. Explorations of popular game engines, lesser known games, and the author's fancies. With deep thanks to Tana Pigeon for encouragement and her Mythic solo engine for inspiration. 
+ Monday, April 7, 2025 
+Mythic RPG Project: Chapter 7b: Chaos Factor, Running Scenes, Altered Scenes, Interrupt Scenes, and Scene wrap up.
+ Return to ToC The next section is what really makes the Mythic RPG stand out from all other solo games: Chaos Factor, Altered Scenes, and Interrupt Scenes. 
+ Chaos Factor 
+ Besides being a valuable memory aid Lists play a crucial role in Random Events, and Chaos Factor plays a crucial role in when you will have Random Events. Chaos Factor is essentially just a number 1-9, that shifts up or down depending on how "in control" you feel the scene was at the time of its conclusion. Chaos factor starts at the beginning of an adventure at 5. If the events of the scene are hectic, unpredictable, or overwhelming during the next scene you raise it by a +1. If the events of the scene were well managed, under control, or ended with a strong character advantage you lower it by a -1. "Chaos in an adventure has a way of building like a 
+ snowball. In the beginning of the adventure there may be 
+ little chaos and few random events. But as the scenes roll 
+ on, the chaos factor will likely jump, which will encourage 
+ more chaotic scenes, increasing the factor higher and so on 
+ until the adventure comes to its climactic end." pg. 71
+ If you pull up your Fate Chart, you will see a row of numbers along the bottom ranging 1-9 and under them, Difficulty Rank/Chaos. When asking a yes or no question you start with the Chaos number that is current for your Scene (Chaos doesn't change mid scene), then pair it with the Odds along the right side. Where the two intersect is your chance of a Yes answer to any question asked during the scene. As you can see at 5 there is no weight to one side or the other, but as your Chaos Factor (number) decreases the chance of a Yes answer does as well. As the Chaos Factor (CF) increases so does your chance of a Yes answer. These changes can have a strong effect on the Odds questions asked during the Scene. If you are at CF 3 and ask a 50/50 chance question you only have a 25% chance of a Yes. If you were at CF 5 then your chance would be 50%, but if your CF were an 8 your chance of a Yes would be 85%. Now before you start thinking that a high Chaos Factor indicates greater chance of success, think about how you naturally ask questions. For example when you come to a door you may ask if it is locked or if it is unlocked. Go with which ever one comes to mind first, don't game it for your advantage, but if you suspect that the growling in the room is possibly a guard dog, you would probably ask "Is the growling a guard dog". In that case that 85% Yes is probably not working in your favor. ( Editor: I have found that I tend to seesaw between a 3 and 7 and only the wildest adventures reach 8 or 9. Could you cheat the Chaos Factor by carefully wording your questions. Certainly. I have found that by sticking with the first phrasing of a question that comes to mind is the best way not to take advantage of this tool). The point of this up and down scale of CF is that it shows the growing hectic nature of adventure, and the seesaw nature of events. There is a tendency as adventures grow more intense to drift towards those higher Chaos Factors, but as you duck out and cool off (assuming your adventure can allow for that) the CF will frequently cool off as well. Chaos Factor plays a very large part in Our next topic, so lets jump straight into it. Running Scenes 
+ " You've got your first scene setup. Now its time to say "Action!" An entire Mythic adventure is nothing more than 
+ a series of scenes which the characters travel through one at a 
+ time. Each scene leads to the next, until you reach the very 
+ last scene where the central conflict of the adventure is 
+ resolved. " pg. 72
+ There is no way I could have better worded that, but let me toss in some insights from playing. An adventure, and the conflict within it, doesn't have to be violent or fantastic. The adventure just needs to be dramatic and draw your character in, and the conflict has to matter to the character. I have played everything from fighting off pirate attacks to how a date went between two fantasy adventures ( very well by the way, until the ninja attack ). In the pirate attack driving away the pirates was the central conflict. In the date the central conflict was convincing the suspicious partner that of my I wasn't interested in her just for her wealth and fame. Both scenes were fun and full of tension, and both used the same rules for resolution. There are several steps to running a scene, but after a few sessions they will be second nature. 1. Setting the Scene 
+ We have already went over setting the starting scene. The scenes that follow will build on the context of that first scene. If the scene ended with urgency to go in a particular direction (First Scene witness a crime, following Scene talking to the police) follow your instincts, and set up the appropriate scene based on that context. If there is no immediately necessary follow up scene, then consider what to do next based on the context of the character, the setting and the outcome of the first scene. Modify the Scene (if necessary) 
+ " You've got your scene setup, but don't jump into the scene 
+ just yet. After a scene setup has been floated, it's time to see if 
+ that idea is modified. Roll 1D10. If you roll chaos factor or 
+ less then the scene is modified. If you roll higher, then the 
+ scene begins just as expected." pg. 72
+ Here we see the second use of the Chaos Factor. The lower it is the more likely you are going to have the next scene turn out as expected, but when rolling a single d10, every roll is as likely to be a 10 as a 1, so don't go into too much detail on that Expected Scene until you know it is what you are playing out. " If you rolled an odd value number (1,3,5,7,9) then the 
+ scene setup is modified into an altered scene. If you rolled an 
+ even number (2,4,6,8) then it's an interrupt scene. " pg. 73
+ Altered Scenes play out much like the expected scene, excepting that some detail is changed. It could be the persons involved, the location it happens in, some variation on the intended activity. Using the previous example of having witnessed a crime and expecting next to talk to the police, maybe instead you are first approached by the building security for a statement, or if you took an action during the crime to attempt to prevent it you are instead approached by the victim. The core concept, talk about the crime, remains the same, but who you speak to first is changed, and in doing so it changes the whole scene. When Altering a Scene it is frequently useful to go with the first thing that comes to mind, as long as the changed detail doesn't completely rewrite the scene (that is more of a Interrupt Scene as we will see momentarily), but if your stumped, you can ask a few Fate Chart Questions to narrow down your options or get a selection of prompts from the Subject and Action charts and see if that trips an idea. In an Interrupt Scene the next scene takes you off in a new direction all together. It is assumed you were moving towards (figuratively or literally) your Intended Scene, but something happens to "interrupt" your arrival. To simulate this entire unexpected event you roll up a Random Event (see Chapter 6) which totally replaces your Intended Scene. The outcome of this Interrupt Scene may send you off in an entirely new direction. 2. Play out the Scene 
+ " This is the heart of the adventure, where all the action 
+ unfolds. The scene has been determined. Now what 
+ happens? 
+ That's pretty much up to the players. The scene begins as 
+ dictated by the setup or the modifications. But, that's just 
+ the beginning of the scene. Now it's up to the players to 
+ begin asking fate questions and resolving conflicts. Likely, 
+ the first set of questions will involve clarifying details about 
+ the beginning of the scene itself. " pg. 74
+ This part of the scene is were the adventure takes place. Ask enough questions and use your context and random word pairs to set the details in your mind. Then find the conflict and resolve it. This is where you as a solo player have get to live out your adventure. Take your time with it and relish the details, the drama, and the conflict. This maybe a short scene that transitions to a bigger scene or it could play out for a lengthy exchange. Most of that is up to you, but to keep things interesting during a scene there is always a chance of a Random Event popping up. Random Events happen during a scene when you are asking the Fate Chart questions or using it to resolve tasks and you get doubles on your percentile dice in which the digits are equal to or under the current Chaos Factor. For example if your CF is 7 a 77, 66, 55, 44, 33, 22, or 11 would all trigger the Random event, but an 88, 99, or 00 will not. These Random events fit within the context of the current scene, so if you are at a bar having a drink and get a random event, it will probably take place in the bar. If it involves an NPC, that isn't at the bar perhaps they walk through the door. Go through all the steps of all of the steps from Chapter 6, but keep the current context, that you are in the midst of playing, in mind as the Random event unfolds. When the drama and conflict of the scene have been as thoroughly wrung out of it as you like, it is time to move on to the next scene, but first... 3. End the Scene, update the Lists and Chaos Factor 
+ Add any new Characters or Threads to their appropriate List. Next decide how out of control or in control the scene was. If you can't scope out the whole scene focus on how it ended, and adjust your Chaos Factor up or down accordingly. ( If you feel pretty neutral about the scene then it probably would go down.) Lastly, award Favors (remember Favors are meta currency that effect d100 rolls on a 1/1 basis as noted in Character Creation) based on how well you feel you approached a goal in the scene. If you moved towards completing or did complete a minor thread, then the suggested Favor Award is around 10 points. If you made headway on or resolved a major thread 25 points would be reasonable. Afterwards Assuming that the scene didn't resolve your Major Thread or goal of play for the session, go back to the beginning of this list and set up the next scene. The chain of scenes, one to the next, make up your adventure. And there you have it. All the major mechanical parts of Playing Mythic RPG. There is plenty more to the book though, and we will explore it all. Next up, Chapter 8: GM Emulation, where we switch hats from Solo Player to partner with Mythic to form a full gaming experience. 
+Posted by
+ Old Hob&#39;s Game Room 
+at
+ 1:58&#8239;PM 
+ Email This BlogThis! Share to X Share to Facebook Share to Pinterest 
+ No comments:
+ Post a Comment
+ Newer Post 
+ Older Post 
+ Home 
+Subscribe to:
+ Post Comments (Atom) 
+ Featured Post
+ Myth Maker: Project Update 1 
+Return to ToC I will continue to drop drafts for the yet unnamed Solo game/setting here as a living writing diary as I get them free of typo...
+ About Me
+Old Hob's Game Room
+ View my complete profile 
+ Blog Archive
+ &#9658;&#160;
+2026
+ (17) 
+ &#9658;&#160;
+May
+ (1) 
+ &#9658;&#160;
+April
+ (9) 
+ &#9658;&#160;
+March
+ (2) 
+ &#9658;&#160;
+January
+ (5) 
+ &#9660;&#160;
+2025
+ (76) 
+ &#9658;&#160;
+December
+ (3) 
+ &#9658;&#160;
+November
+ (1) 
+ &#9658;&#160;
+October
+ (1) 
+ &#9658;&#160;
+September
+ (3) 
+ &#9658;&#160;
+August
+ (11) 
+ &#9658;&#160;
+July
+ (7) 
+ &#9658;&#160;
+June
+ (7) 
+ &#9658;&#160;
+May
+ (4) 
+ &#9660;&#160;
+April
+ (16) 
+ Mythic RPG: Ideas and Addendums 5: Simplified Vill... 
+ Mythic RPG: Ideas and Addendums 4: Mythic RPG and ... 
+ Mythic RPG: Ideas and Addendums 3: Setting Designe... 
+ Mythic RPG: Ideas and Addendums 2: The Unexpected ... 
+ Mythic RPG: Ideas and Addendums 1, an Alternative... 
+ Mythic Musings 5: Mythic RPG Project 2; Ideas and ... 
+ Mythic RPG Project: Chapter 11 through 13 and Back... 
+ Mythic RPG Project: Chapter 10b: ... and Decline 
+ Mythic RPG Project: Chapter 10a: Character Advance... 
+ Mythic RPG Project: Chapter 9: World Creation 
+ Mythic RPG Project: Chapter 8: GM Emulator 
+ Mythic RPG Project: Chapter 7b: Chaos Factor, Runn... 
+ Mythic RPG Project: Chapter 7a: The Adventure: Sce... 
+ Mythic RPG Project: Chapter 6: Randomness 
+ Mythic RPG Project: Chapter 5c: Ranged Combat Example 
+ Wizard Dad&#39;s Workshop: Voyage of the Yggdrasil: A ... 
+ &#9658;&#160;
+March
+ (18) 
+ &#9658;&#160;
+February
+ (4) 
+ &#9658;&#160;
+January
+ (1) 
+ &#9658;&#160;
+2024
+ (78) 
+ &#9658;&#160;
+December
+ (11) 
+ &#9658;&#160;
+November
+ (7) 
+ &#9658;&#160;
+October
+ (14) 
+ &#9658;&#160;
+September
+ (9) 
+ &#9658;&#160;
+August
+ (7) 
+ &#9658;&#160;
+July
+ (3) 
+ &#9658;&#160;
+June
+ (9) 
+ &#9658;&#160;
+May
+ (15) 
+ &#9658;&#160;
+April
+ (3) 
+ &#9658;&#160;
+2020
+ (1) 
+ &#9658;&#160;
+January
+ (1) 
+ &#9658;&#160;
+2019
+ (11) 
+ &#9658;&#160;
+July
+ (2) 
+ &#9658;&#160;
+June
+ (4) 
+ &#9658;&#160;
+May
+ (5) 
+Simple theme. Powered by Blogger .

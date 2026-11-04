@@ -1,0 +1,11 @@
+35 |       if (state.ending) break;
+36 |       ({ state } = await engine.act(state, action));
+37 |     }
+38 |     if (state.beat === beat && state.free) return { state, seed: s };
+39 |   }
+40 |   throw new Error(`${beat} 에 닿는 시드를 찾지 못했습니다`);
+                 ^
+error: r4_prove 에 닿는 시드를 찾지 못했습니다
+      at stateAt (/Users/choeminju/월흔_trpg/work/demo-slice/check14_quick.ts:40:13)
+
+Bun v1.4.2 (macOS arm64)

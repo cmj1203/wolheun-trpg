@@ -1,0 +1,200 @@
+{
+  "route": "3",
+  "title": "혼자 걷는 사막",
+  "seed": "1",
+  "model": null,
+  "bootMs": 103,
+  "wallMs": 4411,
+  "result": {
+    "scenarioTitle": "죽음의 사막 지르다",
+    "episode": "1화 · 사막 조우",
+    "ending": {
+      "id": "road",
+      "title": "크라차로 가는 길",
+      "summary": "아시나는 혼자 힘으로 사막을 건넜다. 그 남자는 잡지 않았고, 물주머니 하나를 남겼다.",
+      "nextHook": "다음 장면은 크라차 쪽 마을이다. 붙잡히지 않은 대신, 그 남자가 언제 다시 나타날지 모른다.",
+      "bad": false
+    },
+    "playMs": 2397,
+    "startedAt": 1793780319531,
+    "decisions": [
+      {
+        "beatTitle": "사람?!",
+        "kind": "input",
+        "text": "달려가서 길을 묻는다",
+        "detail": "자유 입력 → 달려가서 길을 묻는다",
+        "playMs": 596
+      },
+      {
+        "beatTitle": "왜지?",
+        "kind": "input",
+        "text": "칼날을 밀어내고 모래를 차서 도망친다",
+        "detail": "자유 입력 → 칼을 밀어내고 몸을 뺀다",
+        "playMs": 2048
+      },
+      {
+        "beatTitle": "해가 지는 모래",
+        "kind": "input",
+        "text": "별을 보고 남쪽을 찾는다",
+        "detail": "자유 입력 → 별을 보고 방향을 잡는다",
+        "playMs": 2397
+      }
+    ],
+    "checks": [
+      {
+        "label": "달려가서 길을 묻는다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          2,
+          4
+        ],
+        "total": 6,
+        "tier": "miss",
+        "beatTitle": "사람?!",
+        "tierLabel": "실패",
+        "playMs": 596
+      },
+      {
+        "label": "칼을 밀어내고 몸을 뺀다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          6,
+          6
+        ],
+        "total": 12,
+        "tier": "hit",
+        "beatTitle": "왜지?",
+        "tierLabel": "성공",
+        "playMs": 2048
+      },
+      {
+        "label": "별을 보고 방향을 잡는다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [
+          {
+            "label": "기억해 둔 것",
+            "value": 1
+          }
+        ],
+        "dice": [
+          4,
+          3
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "beatTitle": "해가 지는 모래",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 2397
+      }
+    ],
+    "tracks": [
+      {
+        "key": "의심",
+        "label": "의심",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+        "value": 4
+      },
+      {
+        "key": "집착",
+        "label": "집착",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+        "value": 1
+      },
+      {
+        "key": "호감",
+        "label": "호감",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게 품은 호감",
+        "value": 0
+      },
+      {
+        "key": "귀찌",
+        "label": "귀찌 수명",
+        "max": 10,
+        "unit": "",
+        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
+        "value": 3
+      },
+      {
+        "key": "탈주",
+        "label": "탈주 준비도",
+        "max": 10,
+        "unit": "",
+        "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+        "value": 2
+      },
+      {
+        "key": "행운",
+        "label": "행운",
+        "max": 10,
+        "unit": "",
+        "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+        "value": 6
+      }
+    ],
+    "items": [
+      {
+        "id": "magic_bag",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+      },
+      {
+        "id": "earring",
+        "name": "마법 귀찌",
+        "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+      },
+      {
+        "id": "map",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+      },
+      {
+        "id": "pin",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀."
+      }
+    ],
+    "gm": {
+      "calls": 6,
+      "retries": 0,
+      "blocked": 6,
+      "fallbacks": 6,
+      "llmMs": 0
+    },
+    "fork": true
+  },
+  "gmLines": 0,
+  "savedAndLoaded": false,
+  "loadDialogMs": -1,
+  "cpuBeforeLoad": "",
+  "net": {
+    "pids": [
+      66099
+    ],
+    "samples": 9,
+    "endpoints": [
+      "TCP 127.0.0.1:18191 (LISTEN)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65003 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65014 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65015 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65016 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65017 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65018 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65019 (ESTABLISHED)"
+    ],
+    "external": [],
+    "publicListeners": []
+  },
+  "sandboxProbeExit": 6,
+  "failures": []
+}

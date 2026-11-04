@@ -1,0 +1,897 @@
+{
+ "lines": [
+  {
+   "who": "GM",
+   "t": "북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.",
+   "gmBadge": false,
+   "prompt": "여는 글",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "GM",
+   "t": "두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.",
+   "gmBadge": false,
+   "prompt": "여는 글",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "GM",
+   "t": "아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.",
+   "gmBadge": false,
+   "prompt": "여는 글",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "GM",
+   "t": "본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.",
+   "gmBadge": false,
+   "prompt": "여는 글",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "GM",
+   "t": "남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.",
+   "gmBadge": false,
+   "prompt": "여는 글",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "GM",
+   "t": "귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.",
+   "gmBadge": false,
+   "prompt": "여는 글",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "GM",
+   "t": "살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.",
+   "gmBadge": false,
+   "prompt": "여는 글",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "(서술)",
+   "t": "꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―",
+   "gmBadge": false,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.",
+   "gmBadge": false,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(하아… 하아…)",
+   "gmBadge": false,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(길을 헤맨 지 벌써 일주일째야…)",
+   "gmBadge": false,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(사방이 온통 모래뿐이라 길을 알 수가 없어…)",
+   "gmBadge": false,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(심지어 물도 다 떨어져 가고…)",
+   "gmBadge": false,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "cg_drink.png\")",
+   "sp": "asina_hood_wary.png"
+  },
+  {
+   "who": ">> 입력",
+   "t": "귀찌가 제대로 붙어 있는지 확인한다"
+  },
+  {
+   "who": "GM",
+   "t": "주사위 두 개의 합에 손재주 수치(+1)를 더한다. 10 이상이면 성공, 7~9는 대가 있는 성공, 6 이하는 실패.",
+   "gmBadge": false,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_wary.png"
+  },
+  {
+   "who": "[주사위]",
+   "t": "귀찌를 확인한다 · 손재주 판정 | 3 + 5 +1(손재주) = 9 | 대가 있는 성공 | 7~9 · 해내지만 대가가 따른다"
+  },
+  {
+   "who": "(서술)",
+   "t": "손을 뻗어 귓가에 매달린 귀찌를 조심스레 만져보았다. 귀찌는 제자리에 붙어 있었지만, 살을 태울 듯한 열기가 손끝을 타고 전해졌다.",
+   "gmBadge": true,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(이 더위에 귀찌까지 뜨거워지면 어떡해... 괜찮은 거겠지?)",
+   "gmBadge": true,
+   "prompt": "길 잃은 지 일주일",
+   "bg": "desert_wide.png\")",
+   "cg": "",
+   "sp": "asina_hood_wary.png"
+  },
+  {
+   "who": "GM",
+   "t": "남대륙 사막 한복판에서 만난 사람이라면 페시안 사람일 가능성이 크다. 반가운 만큼 조심해야 한다.",
+   "gmBadge": true,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "응?",
+   "gmBadge": false,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(저건…)",
+   "gmBadge": false,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png"
+  },
+  {
+   "who": "아시나",
+   "t": "사람?!",
+   "gmBadge": false,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png"
+  },
+  {
+   "who": ">> 입력",
+   "t": "달려가서 길을 묻는다"
+  },
+  {
+   "who": "[주사위]",
+   "t": "달려가서 길을 묻는다 · 체력 판정 | 2 + 1 +0(체력) = 3 | 실패 | 6 이하 · 실패해도 이야기는 이어진다"
+  },
+  {
+   "who": "(서술)",
+   "t": "반가운 마음에 발을 내디뎠지만, 몇 걸음 못 가 모래 언덕에 고꾸라졌다. 콰당!",
+   "gmBadge": true,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(아, 진짜...! 창피해 죽겠네...!)",
+   "gmBadge": true,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "모래를 털며 간신히 고개를 들자, 세 사람의 시선이 약속이라도 한 듯 나에게 꽂혀 있었다.",
+   "gmBadge": true,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png"
+  },
+  {
+   "who": "아시나",
+   "t": "하, 하하... 안녕하세요...",
+   "gmBadge": true,
+   "prompt": "사람?!",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png"
+  },
+  {
+   "who": "GM",
+   "t": "터번과 곡도. 페시안 사람이다. 북쪽 말씨를 들키면 곤란하다.",
+   "gmBadge": true,
+   "prompt": "길을 물어봤을 뿐인데",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "……",
+   "gmBadge": false,
+   "prompt": "길을 물어봤을 뿐인데",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "저… 저기…",
+   "gmBadge": false,
+   "prompt": "길을 물어봤을 뿐인데",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_wary.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "혹시 크라차까지 가는 길을 아시나요?",
+   "gmBadge": false,
+   "prompt": "길을 물어봤을 뿐인데",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_smile.png,behidat_wary.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "정말이지 난, 그저 길을 물어봤을 뿐이었다.",
+   "gmBadge": false,
+   "prompt": "길을 물어봤을 뿐인데",
+   "bg": "desert_meet.png\")",
+   "cg": "",
+   "sp": "asina_hood_smile.png,behidat_wary.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "그리고 현재.",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_last.png\")",
+   "sp": "asina_hood_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "마지막으로 할 말은 있나?",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_last.png\")",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…)",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(억울해…)",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "없다면, 잘 가라.",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_neutral.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_surprised.png,behidat_wary.png"
+  },
+  {
+   "who": "아시나",
+   "t": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_wary.png,behidat_wary.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "……왜지?",
+   "gmBadge": false,
+   "prompt": "그리고 현재",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_hood_wary.png,behidat_wary.png"
+  },
+  {
+   "who": ">> 입력",
+   "t": "후드를 벗고 생긋 웃으며 말한다. 대륙에서 하나뿐인 미소녀를 죽이면 대륙의 손해라고요!"
+  },
+  {
+   "who": "[주사위]",
+   "t": "미인계를 쓴다 · 매력 판정 | 6 + 4 +2(매력) = 12 | 성공 | 10 이상 · 원하는 대로 된다"
+  },
+  {
+   "who": "아시나",
+   "t": "(미인계다!)",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_beauty.png\")",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "대륙에서 하나뿐인 미소녀를 죽이면 대륙의 손해라고요!",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_beauty.png\")",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "생긋 웃으며 대답하는 내 모습에 사막 위로 서늘한 침묵이 내려앉았다. 남자의 곡끝이 아주 미세하게 흔들렸다.",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_beauty.png\")",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "...뭐?",
+   "gmBadge": true,
+   "prompt": "왜지?",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_beauty.png\")",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "하.",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "웃기는 여자군.",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "그게…",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "마지막으로 남길 말인가?",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(미친―! 피해야 돼!!)",
+   "gmBadge": false,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_swing.png\")",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": ">> 입력",
+   "t": "몸을 던져 칼날을 피한다"
+  },
+  {
+   "who": "[주사위]",
+   "t": "몸을 던져 칼날을 피한다 · 체력 판정 | 3 + 5 +0(체력) = 8 | 대가 있는 성공 | 7~9 · 해내지만 대가가 따른다"
+  },
+  {
+   "who": "아시나",
+   "t": "(피하지 않았으면 정말 베였을 거야...!)",
+   "gmBadge": true,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "날카로운 칼날을 피해 모래 바닥으로 몸을 던졌다. 콰당, 거친 모래 먼지가 일며 온몸이 바닥에 부딪혔다.",
+   "gmBadge": true,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "정신을 차리기도 전에 귓가에 닿은 귀찌가 불에 데인 듯 뜨겁게 달아올랐다.",
+   "gmBadge": true,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "하. 제법 빠르군.",
+   "gmBadge": true,
+   "prompt": "마지막으로 남길 말인가",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "반칙이지!!!",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "반칙?",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "남는 것은 살아남는 자와 죽는 자.",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "그 둘뿐이다.",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(어떻게… 사람 눈이 저렇게 강렬할 수 있지?)",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(마치… 한여름의 태양 같아.)",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "터벅, 터벅. 남자가 천천히 다가오더니 몸을 숙여 내 얼굴을 들여다보았다.",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "cg_lean.png\")",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "아시나",
+   "t": "(뭐, 뭐야. 설마 다시 죽이려는 건 아니겠…)",
+   "gmBadge": false,
+   "prompt": "반칙",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": ">> 입력",
+   "t": "붉은 눈을 피하지 않고 똑바로 마주 본다"
+  },
+  {
+   "who": "[주사위]",
+   "t": "눈을 피하지 않는다 · 매력 판정 | 2 + 6 +2(매력) = 10 | 성공 | 10 이상 · 원하는 대로 된다"
+  },
+  {
+   "who": "아시나",
+   "t": "(여기서 눈을 피하면 지는 거야. 절대 먼저 안 피할 테니까!)",
+   "gmBadge": true,
+   "prompt": "한여름의 태양",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "나는 숨을 죽인 채 그의 강렬한 시선을 정면으로 마주 보았다. 붉은 눈동자가 내 눈동자 속을 집요하게 파고들었다.",
+   "gmBadge": true,
+   "prompt": "한여름의 태양",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "(서술)",
+   "t": "한참 동안 이어진 침묵 끝에, 그의 입가에 아주 옅은 흥미가 스쳐 지나갔다.",
+   "gmBadge": true,
+   "prompt": "한여름의 태양",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "하.",
+   "gmBadge": false,
+   "prompt": "마음이 바뀌었다",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "도대체 어디가 아름답다는 거지?",
+   "gmBadge": false,
+   "prompt": "마음이 바뀌었다",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_neutral.png,behidat_neutral.png"
+  },
+  {
+   "who": "아시나",
+   "t": "뭬야?!",
+   "gmBadge": false,
+   "prompt": "마음이 바뀌었다",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "…바로 죽일까 했는데,",
+   "gmBadge": false,
+   "prompt": "마음이 바뀌었다",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_neutral.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "마음이 바뀌었다.",
+   "gmBadge": false,
+   "prompt": "마음이 바뀌었다",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "그러니… 이대로 살려주는 것만으로도 감사히 여겨라.",
+   "gmBadge": false,
+   "prompt": "마음이 바뀌었다",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "여자.",
+   "gmBadge": false,
+   "prompt": "마음이 바뀌었다",
+   "bg": "desert_blade.png\")",
+   "cg": "",
+   "sp": "asina_surprised.png,behidat_smile.png"
+  },
+  {
+   "who": "붉은 눈의 남자",
+   "t": "데려가라. 깨어나면 그 입이 얼마나 더 떠드는지 들어 보지.",
+   "gmBadge": false,
+   "prompt": "흥미로운 여자",
+   "bg": "blackout.svg\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "(서술)",
+   "t": "붉은 눈은 끝까지 나를 놓아주지 않았다. 그게 사막에서의 마지막 기억이었다.",
+   "gmBadge": false,
+   "prompt": "흥미로운 여자",
+   "bg": "blackout.svg\")",
+   "cg": "",
+   "sp": ""
+  },
+  {
+   "who": "[결말]",
+   "t": "흥미로운 여자 | 그 남자는 아시나에게 흥미를 느꼈다. 끌려가는 신세지만, 그가 다시 찾아올지도 모른다."
+  }
+ ],
+ "lat": [
+  {
+   "text": "귀찌가 제대로 붙어 있는지 확인한다",
+   "sec": 1.4
+  },
+  {
+   "text": "달려가서 길을 묻는다",
+   "sec": 2.5
+  },
+  {
+   "text": "후드를 벗고 생긋 웃으며 말한다. 대륙에서 하나뿐인 미소녀를 죽이면 대륙의 손해라고요!",
+   "sec": 1.8
+  },
+  {
+   "text": "몸을 던져 칼날을 피한다",
+   "sec": 1.5
+  },
+  {
+   "text": "붉은 눈을 피하지 않고 똑바로 마주 본다",
+   "sec": 1.6
+  }
+ ],
+ "geo": [
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    248
+   ],
+   "mascot": [
+    130,
+    106,
+    266,
+    248
+   ],
+   "sprites": []
+  },
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    248
+   ],
+   "mascot": [
+    130,
+    106,
+    266,
+    248
+   ],
+   "sprites": []
+  },
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    248
+   ],
+   "mascot": [
+    130,
+    106,
+    266,
+    248
+   ],
+   "sprites": []
+  },
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    253
+   ],
+   "mascot": [
+    130,
+    109,
+    266,
+    251
+   ],
+   "sprites": []
+  },
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    248
+   ],
+   "mascot": [
+    130,
+    106,
+    266,
+    248
+   ],
+   "sprites": []
+  },
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    248
+   ],
+   "mascot": [
+    130,
+    106,
+    266,
+    248
+   ],
+   "sprites": []
+  },
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    248
+   ],
+   "mascot": [
+    130,
+    106,
+    266,
+    248
+   ],
+   "sprites": []
+  },
+  {
+   "gm": [
+    130,
+    106,
+    1066,
+    248
+   ],
+   "mascot": [
+    130,
+    106,
+    266,
+    248
+   ],
+   "sprites": [
+    [
+     480,
+     150,
+     960,
+     871
+    ]
+   ]
+  },
+  {
+   "gm": [
+    130,
+    111,
+    1066,
+    253
+   ],
+   "mascot": [
+    130,
+    111,
+    266,
+    253
+   ],
+   "sprites": [
+    [
+     480,
+     158,
+     960,
+     879
+    ]
+   ]
+  },
+  {
+   "gm": [
+    130,
+    112,
+    1066,
+    254
+   ],
+   "mascot": [
+    130,
+    112,
+    266,
+    254
+   ],
+   "sprites": [
+    [
+     105,
+     158,
+     586,
+     879
+    ],
+    [
+     638,
+     158,
+     1119,
+     879
+    ]
+   ]
+  }
+ ]
+}

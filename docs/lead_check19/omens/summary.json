@@ -1,0 +1,82 @@
+{
+ "identity_alone": [
+  {
+   "seed": 201,
+   "session": "32d77a67-48d2-4098-919a-294d6b978c8a",
+   "turns": 1,
+   "found": {
+    "turn": 1,
+    "ok": true,
+    "notes": [
+     "의심 0→0",
+     "의심 변화 없음"
+    ]
+   },
+   "file": "/Users/choeminju/월흔_trpg/docs/lead_check19/omens/identity_alone_seed201.json"
+  }
+ ],
+ "barehand": [
+  {
+   "seed": 201,
+   "session": "0d82ad44-21e5-46fe-bacb-dc3bdef14cb2",
+   "turns": 4,
+   "found": {
+    "turn": 4,
+    "ok": true,
+    "notes": [
+     "징조 줄 위치 1",
+     "판정 위치 2",
+     "확인·여우 줄 없음"
+    ]
+   },
+   "file": "/Users/choeminju/월흔_trpg/docs/lead_check19/omens/barehand_seed201.json"
+  }
+ ],
+ "identity_man": [
+  {
+   "seed": 201,
+   "session": "b4260bd5-ed6b-4793-b386-aca3b02bcc28",
+   "turns": 4,
+   "found": {
+    "turn": 4,
+    "ok": true,
+    "notes": [
+     "의심 3→6 (이 턴 변화 합 3)",
+     "남자 대답 있음"
+    ]
+   },
+   "file": "/Users/choeminju/월흔_trpg/docs/lead_check19/omens/identity_man_seed201.json"
+  }
+ ],
+ "spy7": [
+  {
+   "seed": 6,
+   "session": "0a13baa9-737d-4ebe-b55b-9265fb5e874b",
+   "turns": 3,
+   "found": {
+    "turn": 3,
+    "ok": true,
+    "notes": [
+     "의심 7"
+    ]
+   },
+   "file": "/Users/choeminju/월흔_trpg/docs/lead_check19/omens/spy7_seed6.json"
+  }
+ ],
+ "earring2": [
+  {
+   "seed": 48,
+   "session": "10efa5ac-a1f4-4dfb-9f52-39e25b3afdad",
+   "turns": 4,
+   "found": {
+    "turn": 4,
+    "ok": true,
+    "notes": [
+     "귀찌 2",
+     "속마음 있음"
+    ]
+   },
+   "file": "/Users/choeminju/월흔_trpg/docs/lead_check19/omens/earring2_seed48.json"
+  }
+ ]
+}

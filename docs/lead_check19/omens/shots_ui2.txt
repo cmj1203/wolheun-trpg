@@ -1,0 +1,10 @@
+1. 화면 free b02_people ← {"type":"free","text":"하늘이 너무 파랗네…"} (API 비트 b02_people)
+2. 화면 free b02_people ← {"type":"free","text":"엄마… 보고 싶다."} (API 비트 b02_people)
+3. 화면 free b02_people ← {"type":"approach","id":"run"} (API 비트 b02_people)
+4. 화면 free b05_why ← {"type":"approach","id":"resist"} (API 비트 b05_why)
+찍음 docs/screenshots/lead_check19/omen_earring2.png · 여우 말풍선 안 보임 · 대사 "귀찌가 귓불에서 차갑게 식어 갔다."
+찍음 docs/screenshots/lead_check19/omen_earring2_next.png · 여우 말풍선 안 보임 · 대사 "(…오래 못 버티겠어.)"
+세션 f68426c9-0348-43d0-8a26-ce925a8f1ddc
+====
+찍음 docs/screenshots/lead_check19/ask_mode.png · 여우 말풍선 보임 · 대사 "사람?!"
+여우 답 "행운은 판정에 실패했을 때 모자란 만큼 메우는 점수야. 쓰면 대가 있는 성공으로 바뀌어. 지금은 6이야."

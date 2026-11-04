@@ -1,0 +1,200 @@
+{
+  "route": "4",
+  "title": "길잡이 계약",
+  "seed": "1",
+  "model": null,
+  "bootMs": 103,
+  "wallMs": 3992,
+  "result": {
+    "scenarioTitle": "죽음의 사막 지르다",
+    "episode": "1화 · 사막 조우",
+    "ending": {
+      "id": "deal",
+      "title": "길잡이 계약",
+      "summary": "아시나는 쓸모를 팔아 목숨을 샀다. 포로도 손님도 아닌 채로 남자 일행과 함께 걷는다.",
+      "nextHook": "다음 장면에서는 일행 안에서 움직인다. 쓸모를 계속 증명하면서, 일행이 어디로 가는지 알아내야 한다.",
+      "bad": false
+    },
+    "playMs": 2379,
+    "startedAt": 1793780323958,
+    "decisions": [
+      {
+        "beatTitle": "사람?!",
+        "kind": "input",
+        "text": "달려가서 길을 묻는다",
+        "detail": "자유 입력 → 달려가서 길을 묻는다",
+        "playMs": 595
+      },
+      {
+        "beatTitle": "왜지?",
+        "kind": "input",
+        "text": "저를 살려 주시면 크라차까지 길잡이를 해 드리고 보상도 드릴게요",
+        "detail": "자유 입력 → 말재주로 둘러댄다",
+        "playMs": 2063
+      },
+      {
+        "beatTitle": "그럼 증명해라",
+        "kind": "input",
+        "text": "지도를 펼쳐 크라차 쪽 길을 짚어 보인다",
+        "detail": "자유 입력 → 지도와 해로 길을 읽어 보인다",
+        "playMs": 2379
+      }
+    ],
+    "checks": [
+      {
+        "label": "달려가서 길을 묻는다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          2,
+          4
+        ],
+        "total": 6,
+        "tier": "miss",
+        "beatTitle": "사람?!",
+        "tierLabel": "실패",
+        "playMs": 595
+      },
+      {
+        "label": "말재주로 둘러댄다",
+        "stat": "재치",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          6,
+          6
+        ],
+        "total": 13,
+        "tier": "hit",
+        "beatTitle": "왜지?",
+        "tierLabel": "성공",
+        "playMs": 2063
+      },
+      {
+        "label": "지도와 해로 길을 읽어 보인다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [
+          {
+            "label": "계획",
+            "value": 1
+          }
+        ],
+        "dice": [
+          4,
+          3
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "beatTitle": "그럼 증명해라",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 2379
+      }
+    ],
+    "tracks": [
+      {
+        "key": "의심",
+        "label": "의심",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+        "value": 6
+      },
+      {
+        "key": "집착",
+        "label": "집착",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+        "value": 1
+      },
+      {
+        "key": "호감",
+        "label": "호감",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게 품은 호감",
+        "value": 0
+      },
+      {
+        "key": "귀찌",
+        "label": "귀찌 수명",
+        "max": 10,
+        "unit": "",
+        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
+        "value": 6
+      },
+      {
+        "key": "탈주",
+        "label": "탈주 준비도",
+        "max": 10,
+        "unit": "",
+        "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+        "value": 0
+      },
+      {
+        "key": "행운",
+        "label": "행운",
+        "max": 10,
+        "unit": "",
+        "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+        "value": 6
+      }
+    ],
+    "items": [
+      {
+        "id": "magic_bag",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+      },
+      {
+        "id": "earring",
+        "name": "마법 귀찌",
+        "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+      },
+      {
+        "id": "map",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+      },
+      {
+        "id": "pin",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀."
+      }
+    ],
+    "gm": {
+      "calls": 6,
+      "retries": 0,
+      "blocked": 6,
+      "fallbacks": 6,
+      "llmMs": 0
+    },
+    "fork": true
+  },
+  "gmLines": 0,
+  "savedAndLoaded": false,
+  "loadDialogMs": -1,
+  "cpuBeforeLoad": "",
+  "net": {
+    "pids": [
+      66262
+    ],
+    "samples": 8,
+    "endpoints": [
+      "TCP 127.0.0.1:18191 (LISTEN)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65075 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65085 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65086 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65087 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65088 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65089 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:65090 (ESTABLISHED)"
+    ],
+    "external": [],
+    "publicListeners": []
+  },
+  "sandboxProbeExit": 6,
+  "failures": []
+}

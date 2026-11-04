@@ -1,0 +1,66 @@
+SOURCE: https://fate-srd.com/fate-core/four-outcomes
+FETCHED: 2026-11-04T06:07:03.827Z
+
+Four Outcomes • Fate Core Skip to content The official 
+ The official 
+ Rules Core Rules Fate Core Fate Accelerated Fate Condensed Toolkits Fate System Toolkit Fate Accessibility Toolkit Fate Adversary Toolkit Fate Horror Toolkit Fate Space Toolkit Fate World Books Atomic Robo Venture City War of Ashes #iHunt Worlds of Adventure Frontier Spirit Gods and Monsters Sails Full of Stars Three Rocketeers Fate Codex Volume 1 Volume 2 Volume 3 Odds & Ends The Book of Hanz Odds & Ends Previous versions of Fate Fate 3.0 Era (SOTC, DFRPG) Fate 2.0 Era Fate 1.0 Era 
+ Extras More Fate Stuff for You Games & Products Downloads 
+ Actual Play Watch, Listen, and Enjoy! Learn to Play Fate Series Actual Play List 
+ Communities Discuss Fate Around the Web Fate Tabletop RPGs FATErpg Reddit Fate Core / Accelerated RPG Fate Community 
+ Store 
+ Search 
+ Fate Core
+ Four Outcomes
+ When you roll the dice, either you’re going to fail, tie, succeed, or succeed with style. 
+ Every roll you make in a Fate game results in one of four outcomes, generally speaking. The specifics may change a little depending on what kind of action you’re taking , but all the game actions fit this general pattern.
+ Fail
+ If you roll lower than your opposition, you fail. 
+ This means one of several things: you don’t get what you want, you get what you want at a serious cost , or you suffer some negative mechanical consequence. Sometimes, it means more than one of those. It’s the [GM]’s job to determine an appropriate cost.
+ Tie
+ If you roll the same as your opposition, you tie. 
+ This means you get what you want, but at a minor cost, or you get a lesser version of what you wanted.
+ Succeed
+ If you roll higher than your opposition by 1 or 2 shifts, you succeed. 
+ This means you get what you want at no cost.
+ Succeed with Style
+ If you roll higher than your opposition by 3 or more shifts, you succeed with style. 
+ This means that you get what you want, but you also get an added benefit on top of that.
+ For the [GM]: Serious Cost Vs. Minor Cost
+ When you’re thinking about costs, think both about the story in play and the game mechanics to help you figure out what would be most appropriate.
+ A serious cost should make the current situation worse somehow, either by creating a new problem or exacerbating an existing one. Bring in another source of opposition in this scene or the next one (such as a new opposing [NPC] or an obstacle to overcome), or ask the player to take a consequence at their lowest free level, or give someone who opposes the [PC] an advantage with a free invocation.
+ A minor cost should add a story detail that’s problematic or bad for the [PC], but doesn’t necessarily endanger progress. You could also ask the [PC] to take stress or give someone who opposes the [PC]s a boost.
+ It’s okay if the minor cost is mainly a narrative detail, showing how the [PC] just barely scratched by. See more advice about dealing with costs on in Running the Game .
+ For the [GM]: How Hard Should Skill Rolls Be?
+ For active opposition, you don’t really need to worry about how hard the roll is—just use the [NPC]’s skill level and roll the dice like the players do, letting the chips fall where they may. There are guidelines about [NPC] skill levels in Running the Game .
+ For passive opposition, you have to decide what rank on the ladder the player has to beat. It’s more an art than a science, but there are some guidelines to help you.
+ Anything that’s two or more steps higher than the [PC]’s skill level—Fair (+2) skill and Great (+4) opposition, for example— means that the player will probably fail or need to invoke aspects to succeed.
+ Anything that’s two or more steps lower than the [PC]’s skill level—Fair (+2) skill and Mediocre (+0) opposition, for example—means that the player will probably not need to invoke aspects and have a good chance of succeeding with style.
+ Between that range, there’s a roughly equal chance that they’ll tie or succeed, and a roughly equal chance that they will or won’t need to invoke aspects to do so.
+ Therefore, low difficulties are best when you want to give the [PC]s a chance to show off and be awesome, difficulties near their skill levels are best when you want to provide tension but not overwhelm them, and high difficulties are best when you want to emphasize how dire or unusual the circumstances are and make them pull out all the stops.
+ Finally, a couple of quick axioms:
+ Average is called Average for a reason—if nothing about the opposition sticks out, then the difficulty doesn’t need more than a +1.
+ If you can think of at least one reason why the opposition sticks out, but otherwise just can’t decide what the difficulty should be, pick Fair (+2). It’s in the middle of a [PC]’s range of skills, so it provides a decent challenge for every skill level except Great (+4), and you want to give [PC]s a chance to show off their peak skill anyway.
+ Fate Core 
+ Where to Buy
+ YouTube 
+ Patreon 
+ About This Site 
+ Contact Us 
+ Official Licensing 
+ Privacy Policy 
+ Fate SRD in German 
+ Fate SRD in Italian 
+ Fate SRD in French 
+ Fate SRD in Brazilian Portuguese 
+ Fate SRD in Korean 
+ Fate SRD in Japanese 
+ Fate SRD in Chinese 
+ Fate SRD in Czech (+Slovak) 
+ Fate Condensed in Turkish 
+ Evil Hat Productions, creators of the Fate role-playing game system, officially endorses the Fate SRD website as the definitive source for all Fate System Reference Documents. This endorsement affirms the site’s commitment to providing comprehensive and accurate resources for the Fate gaming community.
+ This site is copyright 2013– 2026   Amazing Rando Design , except where otherwise noted. It is only possible because of the generous nature of Evil Hat Productions, LLC, who, in their wisdom, opened up the system to improve the Fate RPG ecosystem. Give them monies.
+ This work is based on Fate Core System and Fate Accelerated Edition, products of Evil Hat Productions, LLC, developed, authored, and edited by Leonard Balsera, Brian Engard, Jeremy Keller, Ryan Macklin, Mike Olson, Clark Valentine, Amanda Valentine, Fred Hicks, and Rob Donoghue, and licensed for our use under the Creative Commons Attribution 3.0 Unported license .
+ Fate™ is a trademark of Evil Hat Productions, LLC. The Powered by Fate logo is © Evil Hat Productions, LLC and is used with permission.
+ The Fate Core font is © Evil Hat Productions, LLC and is used with permission. The Four Actions icons were designed by Jeremy Keller.
+ This work is based on Fate Condensed (found at https://www.faterpg.com/ ), a product of Evil Hat Productions, LLC, developed, authored, and edited by PK Sullivan, Lara Turner, Fred Hicks, Richard Bellingham, Robert Hanz, and Sophie Lagacé, and licensed for our use under the Creative Commons Attribution 3.0 Unported license. .
+ Content from #iHunt is licensed under a Creative Commons Attribution-ShareAlike 3.0 United States License .

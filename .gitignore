@@ -1,0 +1,25 @@
+# 큰 자료·생성물은 올리지 않는다(클라우드 세션용 코드·문서 저장소)
+models/
+assets/
+work/
+tools/
+node_modules/
+logs/
+saves/
+saves-*/
+eval/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+*.bin
+.DS_Store

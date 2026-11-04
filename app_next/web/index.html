@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>월흔 TRPG 데모 · 1화 사막 조우</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <main id="stage" class="stage" data-phase="title">
+      <div id="bg" class="bg"></div>
+      <div id="bg-next" class="bg next"></div>
+      <div class="vignette"></div>
+      <div class="sprites">
+        <figure id="slot-left" class="slot left"></figure>
+        <figure id="slot-center" class="slot center"></figure>
+        <figure id="slot-right" class="slot right"></figure>
+      </div>
+      <div id="cg" class="cg" aria-hidden="true">
+        <div id="cg-blur" class="cg-blur"></div>
+        <div id="cg-art" class="cg-art"></div>
+      </div>
+      <div id="flash" class="flash"></div>
+      <div id="sfx" class="sfx" aria-hidden="true"></div>
+      <p id="temp-badge" class="temp-badge" hidden></p>
+
+      <header class="topbar">
+        <span id="episode" class="chip episode"></span>
+        <span id="beat-title" class="beat-title"></span>
+        <span id="clock" class="chip clock" hidden></span>
+        <span class="spacer"></span>
+        <span id="gm-status" class="gm-status" title="로컬 GM 상태"></span>
+        <nav class="menu">
+          <button id="btn-notes" type="button">수첩</button>
+          <button id="btn-log" type="button">기록</button>
+          <button id="btn-save" type="button">저장</button>
+          <button id="btn-load" type="button">불러오기</button>
+        </nav>
+      </header>
+
+      <aside id="hud" class="hud" aria-label="진행 수치">
+        <h2 id="tracks-head">그 남자의 마음</h2>
+        <ul id="tracks" class="tracks"></ul>
+        <h2>아시나</h2>
+        <ul id="abilities" class="abilities"></ul>
+        <ul id="items" class="items"></ul>
+      </aside>
+
+      <section id="choices" class="choices" hidden></section>
+
+      <section id="gm-box" class="gm-box" hidden aria-live="polite">
+        <figure id="gm-mascot" class="gm-mascot" aria-hidden="true"><img alt="" /></figure>
+        <div class="gm-bubble">
+          <p class="gm-name">GM</p>
+          <p id="gm-text" class="gm-text"></p>
+          <span id="gm-more" class="more" hidden>▼</span>
+        </div>
+      </section>
+
+      <section id="dialog" class="dialog" data-style="narration" aria-live="polite">
+        <p id="name" class="nameplate" hidden></p>
+        <span id="gm-badge" class="gm-badge" hidden title="로컬 GM이 쓴 대사">GM</span>
+        <p id="echo" class="echo" hidden></p>
+        <p id="text" class="text"></p>
+        <span id="more" class="more" hidden>▼</span>
+        <div id="free" class="free" hidden>
+          <p id="free-aim" class="free-aim" hidden><span class="free-aim-label">아시나가 바라는 것</span><span id="free-aim-text"></span></p>
+          <p id="free-prompt" class="free-prompt"></p>
+          <p id="free-meta" class="free-meta"></p>
+          <div class="approach-wrap">
+            <span class="approach-label">또는 행동 고르기</span>
+            <div id="approaches" class="approaches"></div>
+          </div>
+          <p id="thinking" class="thinking" hidden>GM이 장면을 쓰는 중<span class="dots"></span></p>
+        </div>
+      </section>
+
+      <form id="say" class="say" hidden autocomplete="off">
+        <input id="free-input" name="free" maxlength="200" aria-label="말하거나 행동하기" placeholder="말하거나 행동하기" />
+        <button id="free-send" type="submit">말하기</button>
+      </form>
+
+      <div id="dice" class="dice" hidden>
+        <div class="dice-card">
+          <p id="dice-label" class="dice-label"></p>
+          <div class="dice-row">
+            <div id="die-a" class="die" data-face="1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div id="die-b" class="die" data-face="1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <p id="dice-formula" class="dice-formula"></p>
+          <p id="dice-tier" class="dice-tier"></p>
+          <p id="dice-note" class="dice-note"></p>
+          <p class="dice-hint">눌러서 계속</p>
+        </div>
+      </div>
+
+      <div id="ending" class="ending" hidden>
+        <p class="ending-kicker">결말</p>
+        <h2 id="ending-title">결말</h2>
+        <p id="ending-summary"></p>
+        <p class="dice-hint">눌러서 결과 보기</p>
+      </div>
+
+      <section id="title" class="screen title-screen">
+        <div class="title-inner">
+          <p class="title-kicker">비주얼 노벨 TRPG · 피칭 데모</p>
+          <h1 id="title-text" class="logo">월흔</h1>
+          <img id="title-logo" class="title-logo" alt="월흔" hidden />
+          <p id="title-sub" class="title-sub"></p>
+          <p class="credit credit-line">그림 하나비 / 각색 미예 / 원작 윤슬 / 채색 및 보정 루라키 / 도움 팀 나비, 파아란</p>
+          <div class="title-buttons">
+            <button id="btn-new" type="button" class="primary">처음부터</button>
+            <button id="btn-continue" type="button">이어하기</button>
+            <button id="btn-map" type="button">이야기 지도</button>
+            <button id="btn-atlas-clear" type="button">기록 지우기</button>
+          </div>
+          <p id="title-status" class="title-status"></p>
+        </div>
+        <span class="rating">15</span>
+      </section>
+
+      <dialog id="atlas" class="atlas-dialog">
+        <h2>이야기 지도</h2>
+        <div id="atlas-map" class="atlas-map"></div>
+        <p id="atlas-hint" class="atlas-hint" hidden><img id="atlas-hint-img" alt="" /><span id="atlas-hint-text"></span></p>
+        <div class="atlas-actions">
+          <button id="atlas-new" type="button" class="primary">처음부터 다시</button>
+          <button id="atlas-close" type="button">닫기</button>
+        </div>
+      </dialog>
+
+      <section id="result" class="screen result-screen" hidden>
+        <div class="result-inner">
+          <header class="result-head">
+            <p class="result-kicker">결과 · <span id="result-episode"></span></p>
+            <h1 id="result-title">결과</h1>
+            <p id="result-summary" class="result-summary"></p>
+            <div class="locked">
+              <span class="lock-icon" aria-hidden="true"></span>
+              <div>
+                <p class="locked-title">다음 장면 · 잠김</p>
+                <p id="result-hook"></p>
+              </div>
+            </div>
+          </header>
+          <div class="result-grid">
+            <section>
+              <h2>판정 기록</h2>
+              <table class="checks">
+                <thead><tr><th>장면</th><th>판정</th><th>계산</th><th>결과</th></tr></thead>
+                <tbody id="result-checks"></tbody>
+              </table>
+              <h2>선택과 입력</h2>
+              <ol id="result-decisions" class="decisions"></ol>
+            </section>
+            <section>
+              <h2>최종 진행 수치</h2>
+              <ul id="result-tracks" class="tracks result-tracks"></ul>
+              <h2>플레이 기록</h2>
+              <ul id="result-stats" class="result-stats"></ul>
+              <div class="result-buttons">
+                <button id="btn-again" type="button" class="primary">다시 하기</button>
+                <button id="btn-map-result" type="button">이야기 지도</button>
+                <button id="btn-home" type="button">타이틀로</button>
+              </div>
+            </section>
+          </div>
+          <p class="result-credit credit-line">그림 하나비 / 각색 미예 / 원작 윤슬 / 채색 및 보정 루라키 / 도움 팀 나비, 파아란</p>
+        </div>
+      </section>
+
+      <dialog id="slots" class="sheet">
+        <h2 id="slots-title">저장 칸</h2>
+        <ul id="slots-list" class="slot-list"></ul>
+        <button id="slots-close" type="button">닫기</button>
+      </dialog>
+
+      <dialog id="notes" class="sheet">
+        <h2>아시나의 수첩</h2>
+        <div id="notes-list" class="notes-list"></div>
+        <button id="notes-close" type="button">닫기</button>
+      </dialog>
+
+      <dialog id="log" class="sheet">
+        <h2>대사 기록</h2>
+        <ol id="log-list" class="log-list"></ol>
+        <button id="log-close" type="button">닫기</button>
+      </dialog>
+
+      <p id="toast" class="toast" hidden></p>
+    </main>
+  </body>
+</html>

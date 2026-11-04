@@ -1,0 +1,860 @@
+SOURCE: https://thealexandrian.net/wordpress/1118/roleplaying-games/three-clue-rule
+FETCHED: 2026-11-04T06:07:03.469Z
+
+The Alexandrian &raquo; Three Clue Rule 
+ Three Clue Rule 
+ May 8th, 2008 
+ Mystery scenarios for roleplaying games have earned a reputation for turning into unmitigated disasters: The PCs will end up veering wildly off-course or failing to find a particular clue and the entire scenario will grind to a screeching halt or go careening off the nearest cliff. The players will become unsure of what they should be doing. The GM will feel as if they've done something wrong. And the whole evening will probably end in either boredom or frustration or both.
+ Here's a typical example: When the PCs approach a murder scene they don't search outside the house, so they never find the wolf tracks which transform into the tracks of a human. They fail the Search check to find the hidden love letters, so they never realize that both women were being courted by the same man. They find the broken crate reading DANNER'S MEATS, but rather than going back to check on the local butcher they spoke to earlier they decide to go stake out the nearest meat processing plant instead.
+ As a result of problems like these, many people reach an erroneous conclusion: Mystery scenarios in RPGs are a bad idea. In a typical murder mystery, for example, the protagonist is a brilliant detective. The players are probably not brilliant detectives. Therefore, mysteries are impossible.
+ Or, as someone else once put it to me: "The players are not Sherlock Holmes."
+ Although the conclusion is incorrect, there's an element of truth in this. For example, in A Study in Scarlet , Sherlock Holmes is investigating the scene of a murder. He discovers a small pile of ashes in the corner of the room. He studies them carefully and is able to conclude that the ashes have come from a Trichinopoly cigar.
+ Now, let's analyze how this relatively minor example of Holmesian deduction would play out at the game table:
+ (1) The players would need to successfully search the room.
+ (2) They would need to care enough about the ashes to examine them.
+ (3) They would need to succeed at a skill check to identify them.
+ (4) They would need to use that knowledge to reach the correct conclusion.
+ That's four potential points of failure: The PCs could fail to search the room (either because the players don't think to do it or because their skill checks were poor). The PCs could fail to examine the ashes (because they don't think them important). The PCs could fail the skill check to identify them. The PCs could fail to make the correct deduction.
+ If correctly understanding this clue is, in fact, essential to the adventure proceeding &#8212; if, for example, the PCs need to go to the nearest specialty cigar shop and start asking questions &#8212; then the clue serves as chokepoint: Either the PCs understand the clue or the PCs slam into a wall.
+ Chokepoints in adventure design are always a big problem and need to be avoided, but we can see that when it comes to a mystery scenario the problem is much worse: Each clue is not just one chokepoint, it's actually multiple chokepoints.
+ So the solution here is simple: Remove the chokepoints.
+ THE BREAD CRUMB TRAIL 
+ For the GUMSHOE system (used in The Esoterrorists , Fear Itself , and The Trail of Cthulhu ), Robin D. Laws decided to get rid of the concept of needing to find clues. In each "scene" of an investigation scenario, there is a "clue". It's automatically assumed that the investigators will find this clue.
+ This removes three of our four chokepoints, leaving only the necessity of using the clue to make the correct deduction (i.e., the deduction which moves you onto the next "scene" where the next clue can be imparted). And, in the case of the GUMSHOE system, even this step can be tackled mechanically (with the players committing points from their character's skills to receive increasingly accurate "deductions" from the GM).
+ This is a mechanical solution to the problem. But while it may result in a game session which superficially follows the structure of a mystery story, I think it fails because it doesn't particularly feel as if you're playing a mystery.
+ Laws' fundamental mistake, I think, is in assuming that a mystery story is fundamentally about following a "bread crumb trail" of clues. Here's a quote from a design essay on the subject:
+ I'd argue, first of all, that these fears are misplaced, and arise from a fundamental misperception. The trail of clues, or bread crumb plot, is not the story, and does not constitute a pre-scripted experience. What the PCs choose to do, and how they interact with each other as they solve the mystery, is the story. As mentioned in The Esoterrorist rules, we saw this at work during playtest, as all of the groups had very different experiences of the sample scenario, as each GM and player combo riffed in their own unique ways off the situations it suggested.
+ But, in point of fact, this type of simplistic "A leads to B leads to C leads to D" plotting is not typical of the mystery genre. For a relatively simplistic counter-example, let's return to Sherlock Holmes in A Study in Scarlet :
+ WATSON: "That seems simple enough," said I; but how about the other man's height?"
+ HOLMES: "Why, the height of a man, in nine cases out of ten, can be told from the length of his stride. It is a simple calculation enough, though there is no use my boring you with figures. I had this fellow's stride both on the clay outside and on the dust within. Then I had a way of checking my calculation. When a man writes on a wall, his instinct leads him to write above the level of his own eyes. Now that writing was just over six feet from the ground. It was child's play."
+ This is just one small deduction in a much larger mystery, but you'll note that Holmes has in fact gathered several clues, studied them, and then distilled a conclusion out of them. And this is, in fact, the typical structure of the mystery genre: The detective slowly gathers a body of evidence until, finally, a conclusion emerges. In the famous words of Holmes himself, "When you have eliminated the impossible, whatever remains, however improbable, must be the truth."
+ What is true, however, is that in many cases it is necessary for many smaller deductions to be made in order for all of the evidence required to solve the mystery to be gathered. However, as the example from A Study in Scarlet demonstrates, even these smaller deductions can be based on a body of evidence and not just one clue in isolation.
+ This observation leads us, inexorably, to the solution we've been looking for.
+ THE THREE CLUE RULE 
+ Whenever you're designing a mystery scenario, you should invariably follow the Three Clue Rule:
+ For any conclusion you want the PCs to make, include at least three clues. 
+ Why three? Because the PCs will probably miss the first; ignore the second; and misinterpret the third before making some incredible leap of logic that gets them where you wanted them to go all along.
+ I'm kidding, of course. But if you think of each clue as a plan (the PCs will find A, conclude B, and go to C), then when you have three clues you've not only got a plan &#8212; you've also got two backup plans. And when you realize that your plans never survive contact with the players, the need for those backup plans becomes clear.
+ In a best case scenario, of course, the players will find all three clues. There's nothing wrong with that. They can use those clues to confirm their suspicions and reinforce their conclusions (just like Sherlock Holmes).
+ In a worst case scenario, they should be able to use at least one of these clues to reach the right conclusion and keep the adventure moving.
+ And here's an important tip: There are no exceptions to the Three Clue Rule.
+ "But Justin!" I hear you say. "This clue is really obvious . There is no way the players won't figure it out."
+ In my experience, you're probably wrong. For one thing, you're the one designing the scenario. You already know what the solution to the mystery is. This makes it very difficult for you to objectively judge whether something is obvious or not.
+ And even if you're right, so what? Having extra clues isn't going to cause any problems. Why not be safe rather than sorry?
+ EXTENDING THE THREE CLUE RULE 
+ If you think about it in a broader sense, the Three Clue Rule is actually a good idea to keep in mind when you're designing any scenario.
+ Richard Garriott, the designer of the Ultima computer games and Tabula Rasa , once said that his job as a game designer was to make sure that at least one solution to a problem was possible without preventing the player from finding other solutions on their own. For example, if you find a locked door in an Ultima game then there will be a key for that door somewhere. But you could also hack your way through it; or pick the lock; or pull a cannon up to it and blow it away.
+ Warren Spector, who started working with Garriott on Ultima VI , would later go on to design Deus Ex . He follows the same design philosophy and speaks glowingly of the thrill he would get watching someone play his game and thinking, "Wait&#8230; is that going to work?"
+ When designing an adventure, I actually try to take this design philosophy one step further: For any given problem, I make sure there's at least one solution and remain completely open to any solutions the players might come up with on their own.
+ But, for any chokepoint problem , I make sure there's at least three solutions.
+ By a chokepoint, I mean any problem that must be solved in order for the adventure to continue.
+ For example, let's say that there's a secret door behind which is hidden some random but ultimately unimportant treasure. Finding the secret door is a problem, but it's not a chokepoint, so I only need to come up with one solution. In D&D this solution is easy because it's built right into the rules: The secret door can be found with a successful Search check.
+ But let's say that, instead of some random treasure, there is something of absolutely vital importance behind that door. For the adventure to work, the PCs must find that secret door.
+ The secret door is now a chokepoint problem and so I'll try to make sure that there are at least three solutions. The first solution remains the same: A successful Search check. To this we could add a note in a different location where a cultist is instructed to "hide the artifact behind the statue of Ra" (where the secret door is); a badly damaged journal written by the designer of the complex which refers to the door; a second secret door leading to the same location (this counts as a separate solution because it immediately introduces the possibility of a second Search check); a probable scenario in which the main villain will attempt to flee through the secret door; the ability to interrogate captured cultists; and so forth.
+ Once you identify a chokepoint like this, it actually becomes quite trivial to start adding solutions like this.
+ I've seen some GMs argue that this makes things "too easy". But the reality is that alternative solutions like this tend to make the scenario more interesting, not less interesting. Look at our secret door, for example: Before we started adding alternative solutions, it was just a dice roll. Now it's designed by a specific person; used by cultists; and potentially exploited as a get-away.
+ As you begin layering these Three Clue Rule techniques, you'll find that your scenarios become even more robust. For example, let's take a murder mystery in which the killer is a werewolf who seeks out his ex-lovers. We come up with three possible ways to identify the killer:
+ (1) Patrol the streets of the small town on the night of the full moon.
+ (2) Identify the victims as all being former lovers of the same man.
+ (3) Go to the local butcher shop where the killer works and find his confessions of nightmare and sin written in blood on the walls of the back room.
+ For each of these conclusions (he's a werewolf; he's a former lover; we should check out the butcher shop) we'll need three clues.
+ HE'S A WEREWOLF : Tracks that turn from wolf paw prints to human footprints. Over-sized claw marks on the victims. One of the victims owned a handgun loaded with silver bullets.
+ HE'S A FORMER LOVER : Love letters written by the same guy. A diary written by one victim describing how he cheated on her with another victim. Pictures of the same guy either on the victims or kept in their houses somewhere.
+ CHECK OUT THE BUTCHER SHOP : A broken crate reading DANNER'S MEATS at one of the crime scenes. A note saying "meet me at the butcher shop" crumpled up and thrown in a wastepaper basket. A jotted entry saying "meet P at butcher shop" in the day planner of one of the victims.
+ And just like that you've created a scenario with nine different paths to success. And if you keep your mind open to the idea of "more clues are always better" as you're designing the adventure, you'll find even more opportunities. For example, how trivial would it be to drop a reference to the butcher shop into one of those love letters? Or to fill that diary with half-mad charcoal sketches of wolves?
+ The fun part of all this is, once you've given yourself permission to include lots of clues, you've given yourself the opportunity to include some really esoteric and subtle clues. If the players figure them out, then they'll feel pretty awesome for having done so. If they don't notice them or don't understand them, that's OK, too: You've got plenty of other clues for them to pursue (and once they do solve the mystery, they'll really enjoy looking back at those esoteric clues and understanding what they meant).
+ COROLLARY: PERMISSIVE CLUE-FINDING 
+ The maxim "more clues are always better" is an important one. There is a natural impulse when designing a mystery, I think, to hold back information. This is logical inclination: After all, a mystery is essentially defined by a lack of information. And there's a difference between having lots of clues and having the murderer write his home address in blood on the wall.
+ But the desire to hold back information does more harm than good, I think. Whenever you hold back a piece of information, you are essentially closing off a path towards potential success. This goes back to Garriott's advice: Unless there's some reason why the door should be cannon-proof, the player should be rewarded for their clever thinking. Or, to put it another way: Just because you shouldn't leave the key to a locked door laying on the floor in front of the door, it doesn't mean that there shouldn't be multiple ways to get past the locked door.
+ With that in mind, you should consciously open yourself to permissive clue-finding. By this I mean that, if the players come up with a clever approach to their investigation, you should be open to the idea of giving them useful information as a result.
+ Here's another way of thinking about it: Don't treat the list of clues you came up with during your prep time as a straitjacket. Instead, think of that prep work as your safety net.
+ I used to get really attached to a particularly clever solution when I would design it. I would emotionally invest in the idea of my players discovering this clever solution that I had designed. As a result, I would tend to veto other potential solutions the players came up with &#8212; after all, if those other solutions worked they would never discover the clever solution I had come up with.
+ Over time, I've learned that it's actually a lot more fun when the players surprise me . It's the same reason I avoid fudging dice rolls to preserve whatever dramatic conceit I came up with. As a result, I now tend to think of my predesigned solution as a worst case scenario &#8212; the safety net that snaps into place when my players fail to come up with anything more interesting.
+ In order to be open to permissive clue-finding you first have to understand the underlying situation. (Who is the werewolf? How did he kill this victim? Why did he kill them? When did he kill them?) Then embrace the unexpected ideas and approaches the PCs will have, and lean on the permissive side when deciding whether or not they can find a clue you had never thought about before.
+ COROLLARY: PROACTIVE CLUES 
+ A.K.A. Bash Them On the Head With It.
+ Sometimes, despite your best efforts, the players will work themselves into a dead-end: They don't know what the clues mean or they're ignoring the clues or they've used the clues to reach an incorrect conclusion and are now heading in completely the wrong direction. (When I'm using the Three Clue Rule, I find this will most often happen when the PCs don't realize that there's actually a mystery that needs to be solved &#8212; not every mystery is as obvious as a dead body, after all.)
+ This is when having a backup plan is useful. The problem in this scenario is that the PCs are being too passive &#8212; either because they don't have the information they need or because they're using the information in the wrong way. The solution, therefore, is to have something active happen to them.
+ Raymond Chandler's advice for this kind of impasse was, "Have a guy with a gun walk through the door."
+ My typical fallback is in the same vein: The bad guy finds out they're the ones investigating the crime and sends someone to kill them or bribe them.
+ Another good one is "somebody else dies". Or, in a more general sense, "the next part of the bad guy's plan happens". This has the effect of proactively creating a new location or event for the PCs to interact with.
+ The idea with all of these, of course, is not simply "have something happen". You specifically want to have the event give them a new clue (or, better yet, multiple clues) that they can follow up on.
+ In a worst case scenario, though, you can design a final "Get Out of Jail Free" card that you can use to bring the scenario to a satisfactory close no matter how badly the PCs get bolloxed up. For example, in our werewolf mystery &#8212; if the PCs get completely lost &#8212; you could simply have the werewolf show up and try to kill them (because he thinks they're "getting too close"). This is usually less than satisfactory, but at least it gets you out of a bad situation. It's the final backup when all other backups have failed.
+ COROLLARY: RED HERRINGS ARE OVERRATED 
+ Red herrings are a classic element of the mystery genre: All the evidence points towards X, but it's a red herring! The real murderer is Y!
+ When it comes to designing a scenario for an RPG, however, red herrings are overrated. I'm not going to go so far as to say that you should never use them, but I will go so far as to say that you should only use them with extreme caution.
+ There are two reasons for this:
+ First, getting the players to make the deductions they're supposed to make is hard enough. Throwing in a red herring just makes it all the harder. More importantly, however, once the players have reached a conclusion they'll tend to latch onto it. It can be extremely difficult to convince them to let it go and re-assess the evidence. (One of the ways to make a red herring work is to make sure that there will be an absolutely incontrovertible refutation of it: For example, the murders continue even after the PCs arrest a suspect. Unfortunately, your concept of an "incontrovertible refutation" may hold just as much water as your concept of a "really obvious clue that cannot be missed.)
+ Second, there's really no need for you to make up a red herring: The players are almost certainly going to take care of it for you. If you fill your adventure with nothing but clues pointing conclusively and decisively at the real killer, I can virtually guarantee you that the players will become suspicious of at least three other people before they figure out who's really behind it all. They will become very attached to these suspicions and begin weaving complicated theories explaining how the evidence they have fits the suspect they want.
+ In other words, the big trick in designing a mystery scenario is to try to avoid a car wreck. Throwing red herrings into the mix is like boozing the players before putting them behind the wheel of the car.
+ COROLLARY: NOTHING IS FOOLPROOF 
+ You've carefully laid out a scenario in which there are multiple paths to the solution with each step along each path supported by dozens of clues. You've even got a couple of proactive backup plans designed to get the PCs back on track if things should go awry.
+ Nothing could possibly go wrong!
+ &#8230; why do you even say things like that?
+ The truth is that you are either a mouse or a man and, sooner or later, your plans are going to go awry. When that happens, you're going to want to be prepared for the possibility of spinning out new backup plans on the fly.
+ Here's a quote from an excellent essay by Ben Robbins :
+ Normal weapons can't kill the zombies. MicroMan doesn't trust Captain Fury. The lake monster is really Old Man Wiggins in a rubber mask. 
+ These are Revelations. They are things you want the players to find out so that they can make good choices or just understand what is going on in the game. Revelations advance the plot and make the game dramatically interesting. If the players don't find them out (or don't find them out at the right time) they can mess up your game.
+ I recommend this essay highly. It says pretty much everything I was planning to include in my discussion of this final corollary, so I'm not going to waste my time rephrasing something that's already been written so well. Instead, I'll satisfy myself by just quoting this piece of advice from it:
+ Write Your Revelations : Writing out your revelations ahead of time shows you how the game is going to flow. Once play starts things can get a little hectic &#8211; you may accidentally have the evil mastermind show up and deliver his ultimatum and stomp off again without remembering to drop that one key hint that leads the heroes to his base. If you're lucky you recognize the omission and can backtrack. If you're unlucky you don't notice it at all, and you spend the rest of the game wondering why the players have such a different idea of what is going on than you do.
+ As we've discussed, one way to avoid this type of problem is to avoid having "one key hint" on which the adventure hinges. But the advice of "writing out your revelations ahead of time" is an excellent one. As Robbins says, this "should be a checklist or a trigger, not the whole explanation".
+ What I recommend is listing each conclusion you want the players to reach. Under each conclusion, list every clue that might lead them to that conclusion. (This can also serve as a good design checklist to make sure you've got enough clues supporting every conclusion.) As the PCs receive the clues, check them off. (This lets you see, at a glance, if there are areas where the PCs are missing too many clues.)
+ Finally, listen carefully to what the players are saying to each other. When they've actually reached a particular conclusion, you can check the whole conclusion off your list. (Be careful not to check it off as soon as they consider it as a possibility. Only check it off once they've actually concluded that it's true.)
+ If you see that too many clues for a conclusion are being missed, or that all the clues have been found but the players still haven't figured it out, then you'll know it's probably time to start thinking about new clues that can be worked into the adventure.
+ THE FINAL WORD 
+ Basically, what all of this boils down to is simple: Plan multiple paths to success. Encourage player ingenuity. Give yourself a failsafe.
+ And remember the Three Clue Rule:
+ For any conclusion you want the PCs to make, include at least three clues. 
+ FURTHER READING 
+ Don't Prep Plots 
+ Using Revelation Lists 
+ Making Clues 
+ Running Mysteries 
+ Node-Based Scenario Design 
+ Gamemastery 101 
+ Filed under: Roleplaying Games Comments (124) 
+ Article tags: gumshoe , random gm tips , scenario design , three clue rule 
+ 124 Responses to "Three Clue Rule"
+ Justin Alexander says: 
+ If you enjoyed this article, you may want to check out Prep Tips for the Beginning DM , Don't Prep Plots , and Node-Based Scenario Design to take your scenario design to the next level.
+ The Three Clue Rule came about as a direct result of The Masks of Nyarlathotep . Read about it here .
+ January 28th, 2011 - 11:36 pm 
+ Fred Fnord says: 
+ How do you keep a role-playing gamer in suspense?
+ Another good one is “somebody else dies”. Or, in a more general sense, “the next 
+ part of the bad guy’s plan happens”. This has the effect of
+ The idea with all of these, of course, is not simply “have something happen”.
+ You bastard.
+ In other news, I find it's often more fun to put in one clue, and assume that the players *won't* find it. Have there be good consequences if they do, but mostly just expect them *not* to skip the two optional encounters that drives the point home in a way that even they can't miss. That way, when they do find it, they're justly proud of themselves.
+ February 4th, 2011 - 2:31 pm 
+ Justin Alexander says: 
+ LOL. I've fixed the essay.
+ Re: "Clues you don't expect them to find." Absolutely. This is something I also touch on in Node-Based Scenario Design : In a breadcrumb-style design, a dead-end or a missed clue is a disaster. Something has gone terribly wrong. But once you loosen things up, dead ends are fine; leads can fail to pan out and there will still be other leads to pursue. And, as you say, as long as it's not crucial you can deliberately make it harder to find &#8212; easter eggs and "scenario boosts" can be fun.
+ February 4th, 2011 - 3:54 pm 
+ Porthos says: 
+ GREAT read. This will definitely help me running games. Thanks for taking the time to think it through and write it up!
+ February 4th, 2011 - 4:02 pm 
+ The Three Clue Rule | Jasper&#039;s Rantings says: 
+ [&#8230;] just wanted a hard link reference to this article concerning running mysteries in RPGs. The Three Clue Rule This entry was posted in Uncategorized. Bookmark the permalink. &larr; Order of the Stick [&#8230;]
+ March 2nd, 2011 - 6:48 pm 
+ Jason says: 
+ So, how would one go about scaling this principle up, so to speak? Say the whole campaign is based on several layers of secrets and conspiracies that the players are supposed to unravel.
+ In my case, it's two big factions of divine-level bad guys that are fighting against each other. One side is commonly thought to be the altruistic gods of the world, and they have devoted a lot of effort to hide the very existence of the other side (the actual gods, who've gone completely insane during their imprisonment). Would trying to drop hints about both revelations at once be asking for a train wreck? Would I be better off guiding the group toward solving only one part of the mystery at a time? Or would I be inviting even more trouble presenting the big mystery in discrete chunks due to players thinking the first part was the whole story, or worse that the second part means the first was simply wrong?
+ November 23rd, 2011 - 5:33 pm 
+ Justin Alexander says: 
+ You want Node-Based Scenario Design .
+ The second act of my current campaign revolves around two largely unconnected arcs. I talk about how using a "second track" like this can actually be a really effective way to add complexity to a scenario without necessarily burying the players in insoluble mysteries here .
+ If you've got a really huge conspiracy, what I'd suggest is trying to figure out how you can "chunk" that into a series of smaller mysteries which can be successfully resolved. This will both help with comprehension and also help the players feel like they're actually accomplishing something instead of just getting lost at sea.
+ November 23rd, 2011 - 5:52 pm 
+ Glenn P. says: 
+ Three-Clue Rule??? Only THREE???
+ Ha! I suggest SEVEN!!! 🙂 🙂 🙂
+ April 2nd, 2012 - 3:15 pm 
+ Eric says: 
+ I really appreciate you writing this article &#8211; I always had such a hard time running any kind of "mystery" adventure, because clues I thought were obvious or at most challenging proved impossible, and PCs just ended up going to an inn and starting a brawl until I made the bad guy walk in.
+ July 18th, 2012 - 4:06 pm 
+ rogue_pirate says: 
+ Your article has almost certainly been a game-saver! I've been stuck with writer's block for *months* trying to figure out how to DM an investigation-style segment of my game with my players without it being the boring find-a-clue-and-have-the-DM-tell-you-what-it-means or straight skill challenge methods we've used in the past. They'll all be very grateful to you in the months ahead!
+ November 13th, 2012 - 2:49 pm 
+ qbauer says: 
+ This — and the node-based article — is one of the best articles I've ever read on adventure design. Really fantastic stuff. I hope you got paid for it.
+ February 16th, 2013 - 10:22 pm 
+ Scott says: 
+ Played the L2 Assassins Knot D&D module by leonard lakofka. It was all red herrings. When looked at in a normal real world context when three residents of Garotteton show up in Restenford and the baron is murdered that night and three clues pointing to the three visitors are at the murder site it screams frame-up. But Dungeons and Dragons adventurers are used to simple clues and rumours whose only function is to push them towards the "Dungeon". I played this module twice and then tried Dming it. Never got close to solving it as a player and couldn't drag the party I was dming for near a solution. they killed a couple of assassins by mistake and a whack of innocent residents. If I ever find a party willing to try it again will try your 3 clue method. Starting with interviews of the locals from the three locales the murder suspects visited. I don't know if it will work but I've got a hate on for that module and I know at least three bored parties who feel the same about it, ever since their eviction from the Lendore Islands. I want the mystery to work and I think the prevalence of red herrings and lack of other clues were why it didn't.
+ March 5th, 2013 - 10:19 am 
+ D.A Lascelles says: 
+ A lot of good advice in here and a well written article.
+ I've played and run mysteries in live action roleplay and a lot of the same issues apply. In LRP it is even worse than tabletop. In tabletop the players are usually a coherent party who are working together so they usually share clues when they find them (having them sitting around the same table all the time helps) but in LRP there can be 15 &#8211; several thousand players on the field and there are often factions involved (where a person from faction A will not share info with faction B because they do not trust them&#8230;). So a single clue can easily be lost &#8211; held onto by one player and kept hidden so that it is never matched with other clues and conclusions drawn.
+ So, in LRP you may need even more than three clues for each mystery point.
+ One way I have seen investigations done well in LRP was using coloured tags or ribbons with codes on them. A ref prepares a site where something has happened with these ribbons and if you have &#8216;investigation level 1' you will have a book of codes that translate the codes on the green ribbons, if you have level 2 you can also translate the blue ones and if you have level 3 the red ones and so on.
+ So, using the examples given above, a referee may prepare a murder scene with:
+ A green ribbon which tells the player reading it that it is some form of ash 
+A blue ribbon which says the ash is from a cigar 
+A red ribbon which tells them that the ash is from a specific type of cigar only purchased from a particular shop.
+ And there may be many such clues prepared like this &#8211; the more you can do the better. The fact that there is a ribbon of any colour on something tends to eliminate the &#8216;the players will miss this' aspect. Players without the required skill get very good at ignoring ribbons but those who have them will spot them and investigate them and therefore get the information they should based on how good a detective they are. And in many cases if they have say level one, they may go &#8216;Hmmm, this seems to be some form of ash' and then call over the more experienced detective with level 2 or 3 to see what they think&#8230;
+ It works really well&#8230; though does require a lot of advanced prep to prepare the ribbons.
+ March 12th, 2013 - 3:48 pm 
+ Grom says: 
+ Regarding your section on red herring, Sherlock Holmes has another excellent quote regarding the fallacy of jumping to conclusions. Sir Arthur Conan Doyle's A Scandal in Bohemia
+ "It is a capital mistake to theorise before one has data. Insensibly one begins to twist facts to suit theories, instead of theories to suit facts."
+ People are all too willing to satisfy themselves with a bad answer quickly than make a great effort for a correct one.
+ April 16th, 2013 - 1:57 pm 
+ Day 16: Investigation and Mysteries says: 
+ [&#8230;] to get hints as to how to interpret those clues they have found. Other systems recommend the "three clue rule," which involves seeding the same "clue" into three different incarnations, [&#8230;]
+ October 17th, 2013 - 9:12 pm 
+ Oren Leifer says: 
+ This is a really important corollary. If you don't follow it close enough, either you have to railroad players, which is no fun for anyone, or you have player manage to wander out of the plot. I actually had players once wander entirely out of a plot, get interested in the society of a hastily-build world, and decide, instead of solving the murder mystery, to cause societal upheaval and revamp the society. Just, whatever you do, make sure there are lots of clues and a reason for players to want to stay focused on the mystery instead of the setting itself.
+ December 12th, 2013 - 11:59 am 
+ Review: Eureka (from Engine Publishing) | Keith Davies &#8212; In My Campaign - Keith&#039;s thoughts on RPG design and play. says: 
+ [&#8230;] to The Alexandrian for Justin's Three Clue Rule to resolve this, it's better to plan for multiple ways of getting certain information to the [&#8230;]
+ February 7th, 2014 - 2:51 pm 
+ Plot Hook Distribution | Drraagh&#039;s Desktop says: 
+ [&#8230;] get the plot point you need at that time. The Alexandrian introduced me to the Three Clue Rule in http://thealexandrian.net/wordpress/1118/roleplaying-games/three-clue-rule where a player could fail sufficiently enough that they may never find, or understand the [&#8230;]
+ April 16th, 2014 - 1:59 am 
+ My personal rules for GMing (that I still keep forgetting all the time) | Spriggan&#039;s Den says: 
+ [&#8230;] Three Clue Rule: Very good advice. Obvious connections between things are only obvious if you already know what they are. To players who don't already know the whole backstory of an adventure, even the most obvious clue that should lead them to their next task might not be obvious at all. So if you want the players to make a conclusion about something and act on it, always place at least three clues that can be found by the PCs. Worst case scenario, they find all three clues and think them terribly obvious, but they still understand what they have to do next. But very often they won't and even if they completely fail to find one clue and draw a totally wrong conclusion from the second one, there's still a good chance they will find and correctly interpret the third one. [&#8230;]
+ April 22nd, 2014 - 10:15 am 
+ My favorite articles on Gamemastering | Spriggan&#039;s Den says: 
+ [&#8230;] Three Clue Rule by The Alexandrian [&#8230;]
+ April 23rd, 2014 - 2:28 pm 
+ Miscellany | Department V says: 
+ [&#8230;] the Three Clue Rule from The Alexandrian, a GUMSHOE [&#8230;]
+ May 3rd, 2014 - 6:22 am 
+ d47 says: 
+ Three Clue Rule discussed on Happy Jacks podcast. 
+ http://www.happyjacks.org/hjrp1207/ 
+ July 4th, 2014 - 8:02 pm 
+ &#8212; #Теория — Правило Трёх Улик (перевод) says: 
+ [&#8230;] С оригиналом статьи Вы можете ознакомиться здесь. [&#8230;]
+ August 25th, 2014 - 6:34 am 
+ Structured Fantasy &raquo; Blog Archive &raquo; Design Resources says: 
+ [&#8230;] The Three Clue Rule [&#8230;]
+ October 12th, 2014 - 8:46 am 
+ RPT#660: The Adventure Checklist Part II - Roleplaying Tips says: 
+ [&#8230;] excellent approach is the 3 Clue Rule: "For any conclusion you want the PCs to make, include at least three [&#8230;]
+ June 8th, 2015 - 8:18 am 
+ Player Tricks: Solving RPG Mysteries | System sans Setting says: 
+ [&#8230;] and/or is trying to lock the PCs into only one avenue of investigation; see this post of mine and this from The Alexandrian for ideas on how to break those habits), or it's just that the players don't realize [&#8230;]
+ August 3rd, 2015 - 11:03 am 
+ Bobo says: 
+ This was phenomenal. I've begun writing my own scenarios, and this rule will prove invaluable.
+ There have been many investigative scenarios I've played over the years, and I've loved some and despised others. Generally, I couldn't really express what the problems were in the latter category, and now I feel I have a lexicon to discuss them intelligently.
+ Chokepoints are a concept of primary importance in interactive storytelling media.
+ October 5th, 2015 - 1:03 pm 
+ Adventure's Checklist | From the Brain of Ronnie Roberts says: 
+ [&#8230;] excellent approach is the 3 Clue Rule: “For any conclusion you want the PCs to make, include at least three [&#8230;]
+ November 12th, 2015 - 7:00 pm 
+ Aeryk says: 
+ I love your articles man. I've come to many of the same conclusions simply throught trial and error in DM'ing, but I love how you've really expanded upon these ideas and analyzed them. Thanks!
+ December 14th, 2015 - 8:54 pm 
+ A Regra das Três Pistas, parte I &#8211; O problema com aventuras de mistério | dadosmalditos says: 
+ [&#8230;] Texto original de Justin Alexander, publicado em 8 de maio de 2008 no blog "The Alexandrian" Traduzido e adaptado por Thales Ramon [&#8230;]
+ January 21st, 2016 - 9:47 pm 
+ AceOfSpade says: 
+ I once had a player litteraly walk on a clue and the party still managed to miss it. It wasn't a choke point in the plot, in fact it wasn't even a mystery scenario but still! You've got three adventurers walking in the mud, one of them in heavy armor, his weight make the hidden bones of previous adventurer crack. They should have got info about the monsters in the area from that, and a nice little magic dagger&#8230;
+ The party's reaction? "We're under attack!" And when no attack came, because they weren't in fact under attack (seriously where did they get that idea) they simply resumed walking. I was bewildered. Seriously, when something crack under my foot my first reaction is to look down&#8230;
+ January 27th, 2016 - 11:16 am 
+ Falando sobre RPG #28 &#8211; Não prepare enredos | Cogumelando says: 
+ [&#8230;] DAS TRÊS PISTAS: Eu já escrevi um artigo bastante específico sobre a Regra das Três Pistas. Basicamente essa regra diz: Para qualquer conclusão que você quer [&#8230;]
+ February 12th, 2016 - 3:03 pm 
+ Thirteen Trap Signs&#8230; Or Are You Just Paranoid? &#8211; AnarchyDice says: 
+ [&#8230;] it should be enough for clever players, but I treat my trap hints like I treat my mysteries, with a three clue average. Often times, the players are too curious and too impatient to stop and investigate every clue, [&#8230;]
+ February 12th, 2016 - 4:45 pm 
+ Obsidian Portal - Thursday Feature - Plotting a Mystery - Words In The DarkWords In The Dark says: 
+ [&#8230;] Three clue rule states: For any conclusion you want the PCs to make, include at least three clues. In addition, each of these clues should be available to the party through more than one way each. [&#8230;]
+ February 25th, 2016 - 2:17 pm 
+ The Uses of Uncertainty | Ludus Ludorum says: 
+ [&#8230;] Justin Alexander's The Three-Clue Rule [&#8230;]
+ March 14th, 2016 - 11:56 pm 
+ RPT#692: Triage 101: Five Ways To Get Players Unstuck Without Forcing Them - Roleplaying Tips says: 
+ [&#8230;] This article by Jason Alexander provides a wonderful idea: [&#8230;]
+ March 19th, 2016 - 11:13 am 
+ The Evil They Do &#8211; Strange Flight says: 
+ [&#8230;] technique for this is to use a variation of The Three Clue Rule : (for every conclusion you wish the players to reach you need to provide at least three clues that [&#8230;]
+ March 27th, 2016 - 4:21 am 
+ Ryyme says: 
+ On May 4th you Tweeted:
+ "Writing the boring shit that I need to finish before I can write the exciting bits."
+ As a long time editor I have heard this many times to which my response is always:
+ "If it's boring to you, the writer, I can guarantee you it will be boring to me, the reader."
+ May 7th, 2016 - 12:29 pm 
+ Justin Alexander says: 
+ Possibly so. But RPG manuals are utilitarian. You don't need to find an index thrilling to read. And the one page summary of character creation is useful, but not that exciting for me to write.
+ May 7th, 2016 - 11:12 pm 
+ Dark Heresy Travellerized | gameystuff says: 
+ [&#8230;] Three Clue Rule [&#8230;]
+ August 17th, 2016 - 6:25 am 
+ J.L. Duncan says: 
+ Great posts don't age.
+ Thank you for posting this. 
+ I was referred while reading Beneath the Banshee Tree which a link to this post is featured. I also read a decent GURPs supplement a number of years ago ("Mysteries," I think) which gives a good outline of running mystery style RPG, but this post is the best I've seen on the subject.
+ I use a different rule, but the principle is the same I call it: Eight is Great. Keep in mind I don't write or play mystery style RPGs so the eight (clues) rule is for putting a mystery within a space opera or fantasy RPG. That is, it may take a bit before the PCs realize that they're in a mystery&#8230;
+ September 4th, 2016 - 10:53 pm 
+ Isikyus says: 
+ I've wanted to run mystery/investigation adventures since before I took up D&D (well, Pathfinder), and this (along with node-based structure) is the advice I needed to make it work.
+ I have a feeling this is one of those ideas that seem simple but is actually really deep. It gripped me the first time I read it, but my first attempts to use it didn't really work, as my clues were nowhere near obvious enough (nor were the players motivated to follow up on them).
+ To future readers of this comment: I would strongly recommend following The Alexandrian and reading through some of the adventures that use the Three Clue Rule; this gave me a much clearer understanding of how to apply it.
+ December 8th, 2016 - 4:16 am 
+ Chekov's Prophecy &#8211; AnarchyDice says: 
+ [&#8230;] event you plan to foreshadow absolutely must have a minimum of three leading clues. As the Alexandrian puts it, your players will miss one clue, ignore the second, and misinterpret the third before making a [&#8230;]
+ January 20th, 2017 - 7:35 pm 
+ Systems for Investigative RPGs | The DM&#039;s Apprentice says: 
+ [&#8230;] session, or campaign.  Even D&D or Pathfinder.  The best advice for doing so is to follow the Three Clue Rule, as outlined here.  (On a side note, I've found The Alexandrian blog to be extremely helpful with regards to [&#8230;]
+ January 24th, 2017 - 1:32 pm 
+ SunlessNick says: 
+ Necromancy, I know. But it's a great article.
+ One observation regarding red herrings, if you make a deliberate one, it's probably worth making it a subplot. If a suspect has clues pointing in their direction, then have them still up to something shady, or at least would rather not see disclosed; that way, if the players follow the false trail, they still have *a* success at the end, even if it's not *the* success. And a lot of the classic mysteries are packed with subplots.
+ January 29th, 2017 - 6:55 am 
+ 127: I've Got a Bad Feeling About This | Looking For Playable Video Games says: 
+ [&#8230;] my usual research (procrastination) habit of browsing rpg subreddits, I came across an article (linked here) about the Rule of Three Clues and how it could be used to tie narrative to mechanic. Seeing as [&#8230;]
+ March 9th, 2017 - 1:30 pm 
+ icekatze says: 
+ hi hi
+ Three clues are good, more might be better, but sometimes too many is dithering.
+ In some of my recent games, I've tried to play up the issue of point of view, where each account given is colored by the actor's own point of view. Not quote red herrings, but by doing it consistently enough, I've found it does keep the players on their toes rather than fixating on one pet theory. By slightly twisting each of the many accounts with a point of view, you can give a whole lot of information, and sometimes players end up being really good at pattern recognition.
+ One disclaimer: I find it helpful to never try to trick the players. Tricking the player characters is fair game, but like the difference between perfidy and a ruse, never give any out of character encouragement for the ruse, if you as a game master want to maintain trust between you and your players.
+ Even saying something like: "You see this scene in front of you, but something doesn't sit right about it." can provide the characters with the knowledge that they shouldn't take it at face value. Though it will differ from group to group.
+ However, in addition to providing three paths to success, I think it is important sometimes to allow for failure. At some point along the line, the game master may end up going from "trying to make the story a success," straight to "I'm dithering about the action you chose, and am doing everything in my power to stop it." If a game master beats their players over the head with clues and they refuse to take the hint, sometimes it might be better to let them be the agents of their own story and go from there.
+ I'm currently running a game where I gave the players all kinds of opportunities to unravel the big bad's plot and save the world. They decided to skip all of those, so now we're eight days past doomsday and things are really starting to get interesting. 🙂
+ April 12th, 2017 - 12:19 am 
+ Gamosopher says: 
+ Cool video referencing this article, and others from your blog. The general approach is very good, I think : doing a mystery adventure is NOT like reading a mystery novel or watching a mystery movie. 
+ https://www.youtube.com/watch?v=nBK6RYrtNss 
+ June 23rd, 2017 - 11:13 am 
+ 149 Lapse Between Game Sessions - Gaming and BS RPG Podcast says: 
+ [&#8230;] Skanes offers up a helpful blog run by Justin [&#8230;]
+ July 18th, 2017 - 12:06 pm 
+ Tales of the Hungry GM #1: Preparing L5R "Legacy of Disaster" &#8211; Abstract Reality says: 
+ [&#8230;] That just leaves the footprints leading from the window to the daisho stand. This is a valid clue because, if followed, it can lead the players right to Wachimasu (another major node). However, as stated by The Alexandrian, [&#8230;]
+ July 20th, 2017 - 12:26 am 
+ On The Case &#8211; Aboard The Airship says: 
+ [&#8230;] back to those clues. Take a look at this article about an idea called the Three Clue Rule which  talks about clue placement for player encounters.  The idea is that there will be multiple [&#8230;]
+ September 19th, 2017 - 12:37 pm 
+ Jhansenhimself says: 
+ My favorite thing about using this technique (and your node-based scenario design) is the way my player's eyes ABSOLUTELY LIGHT UP when they find the clue that clinches the mystery for them. It doesn't even matter how pivotal it is &#8211; finding the mechanism that opens a secret door, figuring out who murdered Lord Fancypants, finally uncovering the world-shaking conspiracy the entire campaign was built on &#8211; it all gives them a level of enjoyment that's incredibly gratifying to see, and it invests all of us in the game and the story much more than any other technique I've tried.
+ It's also been really useful in reducing preparation time while paradoxically increasing verisimilitude. Because all I really need to know is the clues and the basic description of the area they're located in (as well as the basic personalities and knowledge of any NPCs found there), I can just prep those mechanics and then improvise the details in-game depending on what the players are interested in. This also allows me to incorporate player input while building the scene, which gives them a no-pressure way of contributing some world-building now and again. 
+ So I guess this is all to say: Thank you!
+ September 21st, 2017 - 3:23 pm 
+ Clues As Fate Aspects &#8211; Telling Stories Together says: 
+ [&#8230;] one comes from The Alexandrian, and I've gotten some mileage out of it. Simply put, for each thing you want the players to [&#8230;]
+ November 1st, 2017 - 8:34 am 
+ Common Problems in 4e D&D Adventures &#8211; Campaign Under Deconstruction says: 
+ [&#8230;] The Alexandrian also had articles for addressing these issues which begin here. [&#8230;]
+ November 4th, 2017 - 11:37 am 
+ Cómo evitar frustraciones &#8211; Attack of Opportunity says: 
+ [&#8230;] Vamos a examinar un poco más en detalle el método de las tres pistas que vi una vez en the Alexandrian (el link no está funcionando, no se porque). Primero: para cada desafía en particular debe [&#8230;]
+ February 23rd, 2018 - 4:08 pm 
+ Railroad vs. Sandbox &#8211; ThinkDM says: 
+ [&#8230;] to scatter clues wide. One of the best articles you can read on this is Justin Alexander's Three Clue Rule, which [&#8230;]
+ July 7th, 2018 - 7:53 am 
+ Information Pathways &#8211; Yet Another DMs Blog says: 
+ [&#8230;] you've not already ready The Three Clue Rule by The Alexandrian, you absolutely [&#8230;]
+ September 21st, 2018 - 7:57 am 
+ The four levels of success - The Impossible Emporium says: 
+ [&#8230;] and. This is a fumble, critical failure, or similar. Here's where The Alexandrian's Three Clue Rule becomes critical as it can avoid the impassible roadblock. So still resolve the disaster of action [&#8230;]
+ October 10th, 2018 - 10:08 pm 
+ Dungeon Masters, Instead of Plots, Prepare Secrets, Clues, and Leads | DMDavid says: 
+ [&#8230;] Blogger and game designer Justin Alexander has a rule for giving clues: [&#8230;]
+ October 30th, 2018 - 6:01 am 
+ Kryminalne zagadki Novigradu – scenariusz do FAE &#8211; Castelviator says: 
+ [&#8230;] starałem się uwzględnić rady ze znakomitego bloga The Alexandrian, w szczególności tego i tego tekstu, a także chęć zapewnienia graczom możliwie dużej swobody [&#8230;]
+ December 16th, 2018 - 4:31 pm 
+ Carl Hoopingarner II says: 
+ This just took a HUGE amount of anxiety of a new DM, I'll thank you again (I'm also a Patron) I only wish I had more time in a day so I could read all of this sooner than I do have time for.
+ February 27th, 2019 - 10:12 am 
+ Information Pathways &#8211; The Elder Nerds says: 
+ [&#8230;] we go any further, if you've not already ready The Three Clue Rule by The Alexandrian, you absolutely must. I cannot agree more. What I have to say is meant to expound on [&#8230;]
+ March 21st, 2019 - 7:18 am 
+ How to have a Courthouse session - Tribality says: 
+ [&#8230;] is an NPC the players want to help, let them do the investigation themselves by making use of the Three Clues Rule. The players get to feel like professional detectives and, if successful, can get some future [&#8230;]
+ March 26th, 2019 - 8:00 am 
+ The Adventure Checklist Part II — RPT#660 - Roleplaying Tips says: 
+ [&#8230;] excellent approach is the 3 Clue Rule: "For any conclusion you want the PCs to make, include at least three [&#8230;]
+ July 4th, 2019 - 12:59 am 
+ Caleb says: 
+ This is probably the best DM advice I've ever come across. Some of it I've painstakingly deduced over years of DMing. I'd like to highlight the point that sometimes the players will come up with something much more clever or interesting that you came up with when it comes to solving a problem or getting past a challenge. Maybe that brilliant solution won't actually work for some reason that only you know, but as far as the players know, their solution is a genius one that should work. Let me be clear&#8230; *Make it work* Whatever you have to do, move Earth and stone to make their solution actually work and to be just as brilliant as they thought it was when they thought of it. Dynamically change things accordingly, as needed. And here's the most important part&#8230; *Never* tell them that you changed things to make that solution work. You may feel proud of doing it to make the session more fun and make the players feel like genius detectives, but as soon as you tell them that it shouldn't have worked and you moved heaven and hell to make it work, you've cheapened the scenario and made the players feel like dumb zombies that you just move stuff around for to make them feel smart. Don't do it.
+ July 13th, 2019 - 11:21 am 
+ Andrea Martin says: 
+ I translated the article in Italian and I add the reference to this original post. I hope you will appreciate it. 
+The article can be found at this address: https://criticointerrastraniera.blogspot.com/2019/08/la-regola-dei-tre-indizi.html 
+If there are problems, I can remove the post.
+ September 2nd, 2019 - 3:29 am 
+ Regola dei tre indizi in D&D 5e &ndash; D&D 5e | Gilda del d20 says: 
+ [&#8230;] questa "regola dei tre indizi", è stata creata da Justin Alexander sul proprio blog The Alexandrian. Se fossi interessato, ti invito a [&#8230;]
+ November 25th, 2019 - 6:24 am 
+ Alien@System says: 
+ I love this essay, and implementing this rule at my table had resulted in one really awesome investigation session a the table (it formed the capstone for a sequence of sessions that my players now lovingly reminisce about as the time they bought a priceless cultural artefact of immense power for a piece of cheese).
+ But I'd also like to point people at one specific element of the Planet Mercenary RPG by Alan Bahr and Howard Taylor, which for me and my group has lubricated play regularly and is basically complementary to the Gumshoe Clue-Finding thing: Insight.
+ The idea is quite simple: If the players have found a clue at a scene, but have no idea what that clue is pointing at, the GM can ask them for an Insight roll to tell them. In PM, Insight is a skill, but the general idea can of course be adapted to other RPGs easily (Wisdom roll for D20 for example). This prevents the failure state that Justin identified as Gumshoe not properly closing with their clue-finding rule.
+ The caveat of course is that Insight is somewhat of a dangerous tool: Used wrongly, it can facilitate railroading and GM prompting. It can also at some level feel very meta: It's less of the characters having a certain skill they're using in the game world as the players asking the GM to help them out here. (On the other hand, some people are better at the kind of lateral thinking that allows them to consider different solutions, so to some extend you can argue that Insight is modelling a character trait the same way as Intelligence is)
+ But I think when used with rigorous adherence to the rules of "Player expertise activates character expertise" (So the players have to ask you as GM for an Insight roll, never you them) and the Matryoshka Search Technique (So you don't give them the entire solution, just a pointer of "try over there") it can be good lubrication for those moments when the "Nothing is Foolproof" corollary rears its head.
+ January 10th, 2020 - 3:44 am 
+ Du Dé au Micro: Episode 1 - Du Dé au Clavier says: 
+ [&#8230;] Règle des trois indices:article en français (article original en anglais) [&#8230;]
+ July 11th, 2020 - 9:49 am 
+ How to make D&D puzzles - The Level Up Corner says: 
+ [&#8230;] you are interested in reading the source material here it is, but I am going to summarize it for [&#8230;]
+ September 25th, 2020 - 6:58 pm 
+ How To Create Wicked Rumour Tables - Roleplaying Tips says: 
+ [&#8230;] can think of it as the Three Clue Rule meets GM [&#8230;]
+ September 29th, 2020 - 7:11 pm 
+ How The World Ought to Work and Investigations in your Campaign - CourtGames: The Website says: 
+ [&#8230;] The "3 Clues" rule [&#8230;]
+ November 16th, 2020 - 3:09 am 
+ The Fastest Way to Prepare RPG Sessions | Listen to the Gods says: 
+ [&#8230;] developed the basis for this structure years ago from Justin Alexander's excellent Three Clue Rule and Node-Based Scenario Design articles, though I filtered and refined it over the years to better [&#8230;]
+ December 13th, 2020 - 5:48 pm 
+ Aeshdan says: 
+ One of my favorite things about the Three Clue Rule is that it allows the PCs to be *wrong*. See, something I really love in stories is dramatic irony, when the characters in a story make a deduction that seems logical and reasonable to them, but we the readers know what's really going on and know that these characters have misconstrued everything. I even love this *as* a PC: to look at the evidence the GM gives us, conclude X, and then only later find out that I was expected to conclude Y is one of my absolute favorite things in an RPG. (Incidentally, this is why I disagree with Caleb's advice up above. To find out that the solution I've proposed absolutely positively *can't* work makes a world feel real to me like almost nothing else).
+ The problem, of course, is that in a breadcrumb mystery this crashes the game. You give the PCs clue A, expecting them to reach conclusion X, but instead they conclude Y. Either you let the get stuck, or you have to give them the correct answer out of character. Both ruin the game.
+ But with the Three-Clue Rule, you have prepared for this. The PCs find Clue A, but instead of concluding X they conclude Y. But then, continuing to investigate, they find clues B and C, which are incompatible with conclusion Y and point them back towards X. Even if they still believe Y to be true based on their misreading of Clue A, they have also discovered that X is true, and can advance to the next scene.
+ December 26th, 2020 - 1:55 pm 
+ Jen says: 
+ I am a noob GM. Been trying to implement this, but I am suffering the fact that with multiple clues, my players tend to split the party really frequently in search of this clues simultaneously to cover my ground.
+ Is there any advice in the three clues system (or the node design approach) with the potential triggering of splitting the team and offering multiple paths? How is a good way to play with this as separating the team tends to bog down the game sometimes.
+ January 14th, 2021 - 6:30 am 
+ Justin Alexander says: 
+ I talk about splitting the party over here (you may want to start from the beginning of the Art of Pacing series).
+ January 14th, 2021 - 6:35 pm 
+ Vince says: 
+ @Jen: basically, let them (since in this case they can more efficiently gather clues, and the split-up groups might come to different conclusions depending on the stuff they find). To make it feel engaging: 
+&#8211; For individual nodes, balance or design them assuming that the entire party will be engaging the node. If the PCs decide to split up and pursue multiple leads, this now becomes a real choice as they are choosing to give up capability in terms of investigating a node in the name of efficiency. The PCs might still be doing it, but now the possibility that the fighter and wizard might come across a node that has content that requires the rogue will make them think a bit more about whether to do it since it's no longer strictly optimal. Alternatively, if the clue leads to a node that's just super simple, realize that you may be in a situation where it's more efficient if the party splits up (e.g. if only the wizard needs to go to the library to check some records, it makes sense for the party to split up so the fighter can do something that they're more capable of to move the investigation forward, rather than leaving everyone in one place) and let it happen. 
+&#8211; Check "The Art of Pacing: Advanced Techniques" to get some advice on how to handle split parties. TL;DR: Split parties open up the possibility of sharp cuts, which you can use to reduce dead space, and crossovers, which engage the people who aren't currently being focused on since they get to see the effects of their section play out in the other section. 
+&#8211; If the nodes are supposed to be fast, you can even use a montage technique and frame what the characters are doing really quickly (for instance: characters get a bunch of clues from the crime scene, so one character asks passersby while the other goes to the library to look up what those weird cult signs are supposed to mean)
+ January 14th, 2021 - 7:52 pm 
+ Vince says: 
+ aaaaaand I just ended up repeating what Justin said, sorry! (I think the page wasn't refreshed when I put my comment in, so I didn't end up seeing his reply earlier)
+ January 14th, 2021 - 8:07 pm 
+ Justin Alexander says: 
+ Good to pull those thoughts into the discussion here instead of just my lazy link! 😉
+ January 15th, 2021 - 2:54 am 
+ Blood Rain &#8211; The Koryo Hall of Adventures says: 
+ [&#8230;] wanted to attempt it, you’d need to simplify the mystery, and would be well advised to consider Justin Alexander’s advice on structuring investigative scenarios. Still, it’s an inspiring film for anyone interested in a grim and gritty take on the small, [&#8230;]
+ February 21st, 2021 - 7:09 pm 
+ Lost Mine of Phandelver Remix: A Brief Interlude about Node-Based Scenarios | The Cool Mama says: 
+ [&#8230;] the Inverted Three Clue Rule to seed clues in each node that lead to other [&#8230;]
+ May 25th, 2021 - 9:27 am 
+ Milton Diogo says: 
+ Hi, Mr. Alexander.
+ I love your article. It helped me a lot in make my adventures more investigative.
+ I really would know if you allow me to translate this post to portuguese, with the due credits, sir.
+ Best regards
+ June 21st, 2021 - 8:01 pm 
+ Kaique says: 
+ @Milton: Someone has already done this. Look for "Regra das Três Pistas" on google.
+ June 22nd, 2021 - 11:07 am 
+ DanDare2050 says: 
+ @Justin, I was just doing some work on a 5E Hex Crawl. I found myself using the 3 clue rule to create links between nodes at different scales. I suddenly found myself wondering about the difference between adventure hooks and clues. In my thinking I also pulled in a bang to see how it is different. I am using them roughly interchangeably, so I can have 2 adventure hooks and a clue to drive players to a conclusion. It felt like distinguishing the concepts from one another would be useful and here is what I came up with.
+ Clue: Information or evidence that leads a player toward a conclusion. 
+Hook: A form of clue that includes a call to action toward doing something about the conclusion. 
+Bang: A form of clue that forces an immediate reaction.
+ I found this useful. Generic clues can be passive. Such clues get collected. Players may build a case for doing something or not. The other two forms of clue involve action. That is a nice toolkit. By treating each as a clue then the three clue rule produces a mix of passive and active points. 
+I did consider adding another form of clue, called &#8216;lead' that doesn't provide information about the conclusion by directs the PCs to where such information can be found.
+ August 11th, 2021 - 9:29 pm 
+ Aspen says: 
+ Great article! I was recommended this while working on a small mystery for a oneshot I'm writing, and this really helped nail down how I wanted to present information to the party. Will definitely be sharing this around
+ January 3rd, 2022 - 12:23 pm 
+ "Houston, we have a problem:" running "technical" sci-fi RPGs &#8211; Staggered Amusements says: 
+ [&#8230;] Therefore, mapping and running a technical problem like an investigation (using techniques like the Three Clue Rule, Node-Based Design, Relationship Maps, and Progress Clocks) actually makes some sense. If we want [&#8230;]
+ April 29th, 2022 - 12:22 pm 
+ Maski Nyarlathotepa na jedną stronę &#8211; krokodyl z oczami na szypułkach says: 
+ [&#8230;] do przeszukiwania Kairu, Szanghaju, Londynu&#8230; Więcej o poszlakach mówił Justin Alexander TUTAJ, zresztą pisząc ten tekst, inspirował się właśnie [&#8230;]
+ June 20th, 2022 - 6:55 pm 
+ DanDare2050 says: 
+ Further experience has also led me to consider "clues to clues".
+ For example Call of Cthulhu has always had this routine, players check libraries and newspapers etc. for clues. However, players don't generally do that unless you tell them to. In real world expectations it doesn't make sense if you start with an extant mystery to go looking for clues in those places.
+ So with my new players, instead of telling them to do that, I am including things like "this clue can be found in book X in the library" as part of my revelation list. Then I give 3 clues for that in places where the players are likely to actually be looking.
+ August 11th, 2022 - 7:25 am 
+ Mi forma de preparar sesiones &#8211; TTRPG Fantasia says: 
+ [&#8230;] Alexandrian es una renombrada página con contenido de rol para todo tipo de sistemas. En una de sus publicaciones, presenta la que él denomina la regla de las tres pistas. La regla dice [&#8230;]
+ September 20th, 2022 - 9:30 pm 
+ DanDare2050 says: 
+ Further to the "Clues to Clues" an example. 
+In my copy of The Assylum & Other Tales (1983) there is a diary of an English officer in the library from 1812. It is a clue about Squatters, their history and the creature they worship and summon. There is nothing in the scenario to lead players to seek the diary, or indeed go to the town library. 
+So I added a new character, Clara Klempt, great granddaughter of one of the Swiss settlers who split from the original group of squatter ancestors. She is constantly badgering Chief Constable White to do something about the squatters. If asked by anyone why she is particularly offended by the squatters she can tell them that her grandfather had known of them as evil, and had helped in driving them out of Ferenfield in 1812. She points out there are books in the library that tell everything. If asked which books she confesses she doesn't know, but her late father certainly read them. 
+And Elmore Nottland, anthropologist, interested in the history and culture of the Micmac Indians. He is following their references to an offshoot language group that may have built obscure monuments in and around this area. He is frequently in the library and in Amanda's Rest tea rooms. He is very personable and will tell the players that the old library has a few excellent books about local history. He is planning to try and find out more about the monuments in the vicinity of Greenwood. 
+Finally I made an inmate, James Fits-Hugh who is a descendant of Captain James Fits-Hugh, who came to Greenwood to get the diary and who his been forced into the asylum for finding out too much. His mind is now broken but he clings to the idea that "grandad James' diary has the answers!".
+ September 30th, 2022 - 2:52 am 
+ Puzzle Design – is it possible to try to make a (more) rigorous system? | Goblin&#039;s Henchman says: 
+ [&#8230;] &#8211; (using the Alexandrian 3 clue rule probably makes sense [&#8230;]
+ December 22nd, 2022 - 4:05 pm 
+ Thoughts on Horror Roleplaying: Clues Behind Rolls &#8211; Roll to Doubt says: 
+ [&#8230;] many of these clues are given, and I randomly determine which are given. I put an upper limit of three clues, following Justin Alexander’s [&#8230;]
+ April 17th, 2023 - 8:06 am 
+ John H. says: 
+ This post and discussion is tremendously helpful! I'm not exaggerating when I say that you've changed my way of thinking. Thank you! I'm working on a series of small investigation adventures and I can't wait to see how this plays out.
+ August 29th, 2023 - 2:07 pm 
+ Tibor says: 
+ Really wonderful and well-argued read. Helps a lot!
+ November 19th, 2023 - 3:24 pm 
+ Richard K says: 
+ Thanks for a great series @Justin! In your experience is the same clue in three different locations as good as three different clues? Node 1, Tavernkeep: "Yeah an old guy died here the other night, Bob buried him." Node 2, Headman: "An old traveler died at the inn the other night, I had Bob bury him." Node 3, Cleric: "I hear a traveler died at the inn the other night, Bob probably buried him."
+ January 6th, 2024 - 8:40 pm 
+ Dirigiendo Waterdeep Dragon Heist (1/2) &#8211; Espacio Rolero says: 
+ [&#8230;] McGuffin de esta historia, la Piedra de Golorr. Hubiera sido muy útil aplicar  la regla de las Tres Pistas  -que desconocía en ese momento- y hubiera puesto más énfasis en que la información más [&#8230;]
+ January 20th, 2024 - 12:04 pm 
+ Highbrowbarian says: 
+ @Richard: 
+You should check out the article (linked at the end of this one) Making Clues! Part 2 talks about the exact scenario you're asking about.
+ January 21st, 2024 - 1:20 am 
+ Essential Resources You Need to Know About (for any game system) &#8211; Points of Inspiration says: 
+ [&#8230;] special experience for each group that delves in. Other amazing articles from Alexander include the Three Clue Rule and Don’t Prep [&#8230;]
+ February 12th, 2024 - 12:28 am 
+ Lessons from Collaboration 2: Mysteries &#8211; Goblin Brains says: 
+ [&#8230;] at the reasoning behind simplifying the mystery, beautifully illustrated by the Alexandrian in this post. They introduce a few different ideas derived from this principle, most notably the Three Clue [&#8230;]
+ March 11th, 2024 - 4:27 am 
+ Idea: Death on the Reik as a sandbox adventure &#8211; Ill Met by Morrslieb says: 
+ [&#8230;] clues to the above strands in the settlements. I'd recommend using Justin Alexander's Three Clue Rule to minimise the risk of PCs running into a dead end &#8211; if they miss one clue, there's at [&#8230;]
+ April 18th, 2024 - 1:22 pm 
+ RPGaDAY2025 &#8211; Day 14 &#8211; Mystery &#8211; The Three Mysteries &#8211; Polyhedral Nonsense says: 
+ [&#8230;] they can't solve the mystery. There are ways to deal with this; the Alexandrian's Three Clue Rule is probably the best known [&#8230;]
+ August 14th, 2025 - 12:17 am 
+ The Best D&D Blogs in 2025 ... Chosen by a Blogger! says: 
+ [&#8230;] recycled by fellow content creators. I still like to go to the source, whenever possible: check out the Three Clue Rule for an example of one of his much cited game theories. [&#8230;]
+ October 12th, 2025 - 1:19 pm 
+ Review: Litanies of the Lost (Wrath & Glory) &#8211; Ill Met by Morrslieb says: 
+ [&#8230;] climax. As an investigation its fairly basic, but I appreciate that it follows the precepts of the Three Clue Rule and is not just a linear [&#8230;]
+ October 15th, 2025 - 9:58 am 
+ Candles, Dice, and Case Files: Writing a Murder Mystery &#8211; Playful Time Machines says: 
+ [&#8230;] tips from the amazing blog The Alexandrian, I am designing an outline for the storyline and clues. This ‘node-based’ structure essentially [&#8230;]
+ November 5th, 2025 - 5:51 am 
+ The OSR Onion &#8211; The Dododecahedron says: 
+ [&#8230;] about designing such systems all along. "Landmark, Hidden, Secret" and the "Three Clue Rule," for example, are both approaches to designing systems of secrecy and [&#8230;]
+ December 1st, 2025 - 3:47 am 
+ How to Actually Improvise at the Table &#x2d; monkeyX&#039;s games blog says: 
+ [&#8230;] lot of mystery advice online talks about the “three clue rule”: for any important conclusion, give the players multiple, redundant clues, so missing one [&#8230;]
+ December 8th, 2025 - 12:03 pm 
+ A Contract with a Devil - Melestrua's Musings says: 
+ [&#8230;] A gang member they knew was involved in the demon summoning was trailed to a building near the docks. They staged a raid on this building…and I decided they were too certain in what they were doing, and turned it around so that they had invaded a random secret location of a completely separate organisation. They encountered a character inspired by Lord Vetinari from the Discworld novels, who welcomed them, offered them coffee, and then contracted them for a mission (the same mission they had already taken on for someone else – remember the Alexandrian Three Clue Rule). [&#8230;]
+ January 1st, 2026 - 9:31 am 
+ Russ says: 
+ Are you aware of a publicly available/published adventure, preferably in Dungeons & Dragons or OSR format that effectively illustrates and implements the three clue rule?
+ March 14th, 2026 - 8:57 am 
+ A Love Letter to Mysteries &#8211; Mickey the Pilgrim says: 
+ [&#8230;] going through a standard pre-written Call of Cthulu scenario, creating a custom mystery with The Alexandrian's 3 Clue Rule, or theorizing the mystery mid-game in a CfB game, Mysteries engage the player in a [&#8230;]
+ March 27th, 2026 - 8:22 pm 
+ William says: 
+ How do you handle the dissonance between the GM's goal (PCs solve mystery) and the bad guy's goal (PCs fail to solve mystery)? There's no dissonance for mysteries with no cover-up, sure. Where did the patrol of soldiers who arrested the heroic rebel leader go? Why, the way their tracks lead, which is the place they drunkenly complain about when off duty often enough that the bartender knows, which is also the place that the rebel leader was supposed to scout when he was captured).
+ But how about things someone is trying to keep secret? The GM wants clues laid, the smart bad guy wants no clues, and there's only so far you can push inept subordinates, coincidental witnesses and people not burning the important bits of letters labeled BURN WHEN READ before it starts to look like the bad guy is kind of inept. At some point everyone having written instructions starts to strain credibility. How do you make your smart villains leave clues?
+ April 11th, 2026 - 2:28 am 
+ JWH says: 
+ @William,
+ For me, everything everyone does leaves some kind of clue in the real world e.g. https://en.wikipedia.org/wiki/Locard%27s_exchange_principle , smarter villains just make them harder to find. 
+If there is a cover-up, then although the thing being covered-up will be harder to uncover, the fact of there being a cover-up then gets pushed forward. Reducing the number and legibility of messages necessarily increases the number of meetings and witnesses involved in F2F co-ordination. Reducing both necessarily increases the level of personal involvement by the bad guys at the heart of it. 
+In both real-life and fiction then, the layered approach tends to work well, since the easiest bits to uncover are furthest away from the criminal. You want to bag a smart bad guy? Best get climbing that conspryamid!
+ April 12th, 2026 - 2:09 am 
+ Justin Alexander says: 
+ See The Fallacy of the Perfect Crime .
+ April 12th, 2026 - 11:40 pm 
+ Betrayals in TTRPGs &#8211; Dice Goblin says: 
+ [&#8230;] common maxim for mysteries is the Three Clue Rule, which is solid, I think. The framework A POUND OF MYSTERIES by Talison Crosby as featured in [&#8230;]
+ April 13th, 2026 - 1:55 pm 
+ Review: Warhammer 40,000: Imperium Maledictum rulebook &#8211; Ill Met by Morrslieb says: 
+ [&#8230;] not locking clues behind skill checks (a wonderful way to dead-end an adventure!), and using the three-clue rule, i.e. making sure there are multiple options to find the most vital pieces of information. [&#8230;]
+ April 22nd, 2026 - 3:29 am 
+ Comedy-Horror One-Shot Review: The Silver Lining (D&D 5e) says: 
+ [&#8230;] by RPG theorist Justin Alexander: every conclusion the players need is supported by at least three independent clues, so a single missed detail never stalls the [&#8230;]
+ June 9th, 2026 - 3:10 am 
+ Dwarven Dungeon Crawl 5e: The Gilded Warren One-Shot says: 
+ [&#8230;] a lot of sessions. (If you have not run an investigation this way before, Justin Alexander's Three-Clue Rule is the principle it is built [&#8230;]
+ June 22nd, 2026 - 9:18 am 
+ Landmarks, Rumors, and Discovery: Keeping Exploration Fresh &#8211; The Rpg Gazette says: 
+ [&#8230;] going, do not make discovering it a matter of a single die roll or a single NPC. This is when the Three Clue Rule, made famous by Justin Alexander of The Alexandrian, proves itself even beyond mysteries: for any [&#8230;]
+ July 31st, 2026 - 9:46 am 
+ Як створити детективну пригоду для настільної рольової гри says: 
+ [&#8230;] дизайну детективів у настільній рольовій грі — Three Clue Rule (правило трьох підказок) — звучить дуже просто: для [&#8230;]
+ August 10th, 2026 - 4:16 pm 
+ How to Make Haggling Fun - Roleplaying Tips says: 
+ [&#8230;] And haggling offers a nice backup channel for the Three Clue Rule. [&#8230;]
+ August 10th, 2026 - 9:34 pm 
+ A Cebola da OSR &#8211; Café com Dungeon says: 
+ [&#8230;] desses sistemas desde sempre. “Landmark, Hidden, Secret” (Referência, Oculto, Secreto) e a “Three Clue Rule” (Regra das Três Pistas), por exemplo, são abordagens para a concepção de sistemas tanto de [&#8230;]
+ August 17th, 2026 - 2:54 pm 
+ Call of Cthulhu vorbereiten &#8211; aus OSR-Perspektive &#8211; Kritischer Fehlschlag says: 
+ [&#8230;] und fand einmal seine Artikelserie zu Node-based design (quasi “Netzwerkknotendesign”) und der Three-Clue Rule (“Regel der Hinweise”) [&#8230;]
+ September 10th, 2026 - 12:25 am 
+ Detective Case File Games: What Makes a Good One? | Hardcover Coffee Club says: 
+ [&#8230;] influential mystery-game design principle is Justin Alexander's Three Clue Rule: important conclusions are more robust when multiple clues can lead players toward them. A [&#8230;]
+ September 12th, 2026 - 10:48 pm 
+ Lazy GM Prep: A 20-Minute Method for Busy Game Masters · The Organized Forge says: 
+ [&#8230;] Alexander's Three Clue Rule is the classic fix: for any conclusion you want the players to reach, include at least three clues. [&#8230;]
+ October 11th, 2026 - 12:20 pm 
+ Dungeon Masters Should Stop Overpreparing says: 
+ [&#8230;] mysteries, I recommend studying Justin Alexander's Three Clue Rule. Its fundamental principle is that important conclusions should generally have several discoverable [&#8230;]
+ October 20th, 2026 - 9:40 pm 
+ Leave a Reply
+ Name (required) 
+ Mail (will not be published) (required) 
+ Website 
+ XHTML: You can use these tags: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; 
+-->
+ you MUST enable javascript to be able to comment 
+ &#916; 
+ JUSTIN ALEXANDER
+ About - Bibliography Acting Resume 
+ROLEPLAYING GAMES
+ Gamemastery 101 
+ RPG Scenarios 
+ RPG Cheat Sheets 
+ RPG Miscellaneous 
+ Dungeons & Dragons 
+ Ptolus: Shadow of the Spire 
+ Alexandrian Auxiliary 
+ Check These Out 
+ Essays 
+ Other Games 
+ Reviews 
+ Shakespeare Sunday 
+ Thoughts of the Day 
+ Videos 
+ Patrons 
+ Open Game License 
+ Bluesky • Mastodon • Twitter 
+ Archives
+ Archives 
+ Select Month 
+ October 2026 (12) 
+ September 2026 (9) 
+ August 2026 (13) 
+ July 2026 (13) 
+ June 2026 (10) 
+ May 2026 (10) 
+ April 2026 (13) 
+ March 2026 (8) 
+ February 2026 (10) 
+ January 2026 (9) 
+ December 2025 (16) 
+ November 2025 (12) 
+ October 2025 (16) 
+ September 2025 (14) 
+ August 2025 (11) 
+ July 2025 (17) 
+ June 2025 (16) 
+ May 2025 (11) 
+ April 2025 (14) 
+ March 2025 (14) 
+ February 2025 (16) 
+ January 2025 (16) 
+ December 2024 (13) 
+ November 2024 (11) 
+ October 2024 (13) 
+ September 2024 (14) 
+ August 2024 (16) 
+ July 2024 (16) 
+ June 2024 (14) 
+ May 2024 (16) 
+ April 2024 (17) 
+ March 2024 (17) 
+ February 2024 (16) 
+ January 2024 (18) 
+ December 2023 (15) 
+ November 2023 (16) 
+ October 2023 (14) 
+ September 2023 (16) 
+ August 2023 (12) 
+ July 2023 (12) 
+ June 2023 (13) 
+ May 2023 (19) 
+ April 2023 (15) 
+ March 2023 (15) 
+ February 2023 (13) 
+ January 2023 (16) 
+ December 2022 (14) 
+ November 2022 (15) 
+ October 2022 (13) 
+ September 2022 (15) 
+ August 2022 (15) 
+ July 2022 (16) 
+ June 2022 (17) 
+ May 2022 (19) 
+ April 2022 (19) 
+ March 2022 (12) 
+ February 2022 (9) 
+ January 2022 (14) 
+ December 2021 (10) 
+ November 2021 (13) 
+ October 2021 (11) 
+ September 2021 (13) 
+ August 2021 (13) 
+ July 2021 (11) 
+ June 2021 (14) 
+ May 2021 (12) 
+ April 2021 (12) 
+ March 2021 (14) 
+ February 2021 (14) 
+ January 2021 (18) 
+ December 2020 (16) 
+ November 2020 (13) 
+ October 2020 (16) 
+ September 2020 (13) 
+ August 2020 (11) 
+ July 2020 (12) 
+ June 2020 (12) 
+ May 2020 (15) 
+ April 2020 (13) 
+ March 2020 (13) 
+ February 2020 (12) 
+ January 2020 (13) 
+ December 2019 (7) 
+ November 2019 (6) 
+ October 2019 (8) 
+ September 2019 (15) 
+ August 2019 (9) 
+ July 2019 (8) 
+ June 2019 (9) 
+ May 2019 (15) 
+ April 2019 (20) 
+ March 2019 (11) 
+ February 2019 (13) 
+ January 2019 (12) 
+ December 2018 (5) 
+ November 2018 (19) 
+ October 2018 (20) 
+ September 2018 (16) 
+ August 2018 (18) 
+ July 2018 (20) 
+ June 2018 (17) 
+ May 2018 (18) 
+ April 2018 (7) 
+ March 2018 (14) 
+ February 2018 (16) 
+ January 2018 (19) 
+ December 2017 (1) 
+ October 2017 (1) 
+ September 2017 (2) 
+ August 2017 (4) 
+ July 2017 (4) 
+ June 2017 (2) 
+ April 2017 (7) 
+ February 2017 (1) 
+ December 2016 (1) 
+ November 2016 (5) 
+ October 2016 (12) 
+ September 2016 (7) 
+ August 2016 (8) 
+ June 2016 (1) 
+ May 2016 (8) 
+ April 2016 (5) 
+ March 2016 (5) 
+ February 2016 (15) 
+ January 2016 (3) 
+ December 2015 (2) 
+ November 2015 (12) 
+ October 2015 (12) 
+ September 2015 (6) 
+ August 2015 (14) 
+ July 2015 (13) 
+ June 2015 (14) 
+ May 2015 (19) 
+ April 2015 (18) 
+ March 2015 (25) 
+ February 2015 (28) 
+ January 2015 (29) 
+ December 2014 (20) 
+ November 2014 (13) 
+ October 2014 (10) 
+ September 2014 (11) 
+ August 2014 (8) 
+ July 2014 (7) 
+ June 2014 (3) 
+ May 2014 (6) 
+ April 2014 (3) 
+ February 2014 (4) 
+ January 2014 (1) 
+ December 2013 (3) 
+ November 2013 (1) 
+ October 2013 (7) 
+ September 2013 (11) 
+ August 2013 (20) 
+ July 2013 (27) 
+ June 2013 (2) 
+ April 2013 (4) 
+ March 2013 (6) 
+ February 2013 (11) 
+ January 2013 (5) 
+ December 2012 (7) 
+ November 2012 (14) 
+ October 2012 (12) 
+ September 2012 (3) 
+ August 2012 (6) 
+ July 2012 (2) 
+ June 2012 (14) 
+ May 2012 (21) 
+ April 2012 (22) 
+ March 2012 (4) 
+ February 2012 (17) 
+ January 2012 (31) 
+ December 2011 (18) 
+ November 2011 (25) 
+ October 2011 (28) 
+ September 2011 (27) 
+ August 2011 (27) 
+ July 2011 (8) 
+ June 2011 (16) 
+ May 2011 (22) 
+ April 2011 (28) 
+ March 2011 (38) 
+ February 2011 (29) 
+ January 2011 (14) 
+ November 2010 (6) 
+ September 2010 (4) 
+ August 2010 (7) 
+ July 2010 (20) 
+ June 2010 (22) 
+ May 2010 (17) 
+ April 2010 (1) 
+ January 2010 (11) 
+ December 2009 (3) 
+ November 2009 (2) 
+ September 2009 (1) 
+ August 2009 (2) 
+ July 2009 (3) 
+ June 2009 (3) 
+ May 2009 (2) 
+ April 2009 (8) 
+ March 2009 (30) 
+ February 2009 (29) 
+ January 2009 (11) 
+ December 2008 (1) 
+ November 2008 (4) 
+ October 2008 (22) 
+ September 2008 (23) 
+ August 2008 (9) 
+ July 2008 (23) 
+ June 2008 (23) 
+ May 2008 (31) 
+ April 2008 (1) 
+ March 2008 (7) 
+ February 2008 (2) 
+ January 2008 (2) 
+ December 2007 (1) 
+ November 2007 (4) 
+ October 2007 (7) 
+ September 2007 (7) 
+ August 2007 (10) 
+ July 2007 (13) 
+ June 2007 (7) 
+ May 2007 (11) 
+ April 2007 (6) 
+ March 2007 (5) 
+ February 2007 (4) 
+ January 2007 (2) 
+ December 2006 (5) 
+ November 2006 (6) 
+ June 2006 (9) 
+ May 2006 (5) 
+ April 2006 (9) 
+ March 2006 (25) 
+ November 2005 (6) 
+ October 2005 (3) 
+ August 2005 (17) 
+ July 2005 (25) 
+ Recent Posts
+ Pyramid Review &#8211; Demon City Shinjuku 
+ Pyramid Review &#8211; Diomin 
+ Chaos Lorebook &#8211; Book of the Elder Brood: Tilaxic 
+ Pyramid Review &#8211; Lost Cities 
+ Mothership &#8211; System Cheat Sheet (Gamma) 
+ Recent Comments
+ stargazer on The Vladaam Affair &#8211; Part 14C: Crypts of the Brotherhood 
+ BP on Pyramid Review &#8211; Demon City Shinjuku 
+ Patrick Walsh on Pyramid Review &#8211; Lost Cities 
+ Wanderer on Pyramid Review &#8211; Demon City Shinjuku 
+ Justin Alexander on Pyramid Review &#8211; Diomin 
+ Grundsätzliches (3.1): Spiel-Kultur-Typ-Stil-Art-Analyse &#8211; RPGnosis on Thought of the Day &#8211; What is a Trad RPG? 
+ ThothofMythos on Pyramid Review &#8211; Diomin 
+ Lanessar on Mothership: Thinking About Combat 
+ Tobias on Pyramid Review &#8211; Lost Cities 
+ James on Ask the Alexandrian #26: (Not So) Lost in the Wilderness 
+ Author Read Now! - Audio Book 
+ Author 
+ PDF Edition 
+ City Supplement 1: Dweredell 
+ City Supplement 2: Aerie 
+ City Supplement 3: Anyoc 
+ Rule Supplement 1: Mounted Combat 
+ Adventure: Complex of Zombies 
+ Adventure: The Black Mist 
+ Spells of Light and Darkness 
+ Mythos Audio Library: Call of Cthulhu 
+ Copyright &copy; The Alexandrian . All rights reserved.

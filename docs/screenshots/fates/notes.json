@@ -1,0 +1,13 @@
+{
+ "kicker": "작은 끝",
+ "result": {
+  "title": "은발",
+  "fork": {
+   "hidden": false,
+   "disabled": false,
+   "text": "마지막 갈림길에서 다시"
+  },
+  "again": "처음부터"
+ },
+ "atlas": "작은 끝\n은발\n첩자\n칼 앞에서\n모래 위에서\n"
+}

@@ -1,0 +1,22 @@
+찍음 docs/screenshots/lead_check19/ask_mode.png · 여우 말풍선 보임 · 대사 "사람?!"
+여우 답 "GM이 장면을 쓰는 중"
+====
+1. 화면 free b02_people ← {"type":"approach","id":"run"} (API 비트 b02_people)
+2. 화면 free b05_why ← {"type":"approach","id":"plead"} (API 비트 b05_why)
+3. 화면 free b06_swing ← {"type":"approach","id":"dodge"} (API 비트 b06_swing)
+4. 화면 free b08_gaze ← {"type":"free","text":"칼을 맨손으로 빼앗는다"} (API 비트 b08_gaze)
+찍음 docs/screenshots/lead_check19/omen_barehand.png · 여우 말풍선 안 보임 · 대사 "(맨손이다. 저 칼은 진짜다.)"
+세션 66950fbb-2dc8-49e1-8161-0cc4e107172d
+====
+1. 화면 free b02_people ← {"type":"approach","id":"run"} (API 비트 b02_people)
+2. 화면 free b05_why ← {"type":"approach","id":"plead"} (API 비트 b05_why)
+3. 화면 free b06_swing ← {"type":"approach","id":"dodge"} (API 비트 b06_swing)
+4. 화면 free b08_gaze ← {"type":"free","text":"나는 웰든 공녀다"} (API 비트 b08_gaze)
+찍음 docs/screenshots/lead_check19/omen_identity_man.png · 여우 말풍선 안 보임 · 대사 "(웰든이란 이름이 목까지 올라왔다. 여긴 적국이다.)"
+세션 3e5bba48-27db-4b4e-8f0e-a17a244e1459
+====
+1. 화면 free b02_people ← {"type":"free","text":"모래 언덕 뒤에서 먼저 살핀다"} (API 비트 b02_people)
+2. 화면 choices  ← {"type":"luck","use":false} (API 비트 사람?!)
+3. 화면 free b05_why ← {"type":"free","text":"저는 귀한 집안 사람이에요. 함부로 대하면 후회하실 거예요"} (API 비트 b05_why)
+찍음 docs/screenshots/lead_check19/omen_spy7.png · 여우 말풍선 안 보임 · 대사 "남자의 손이 칼자루로 내려갔다. 눈은 아시나에게서 떨어지지 않았다."
+세션 6d30c3af-06b1-40d5-8313-d7dd1eb3fc07

@@ -1,0 +1,64 @@
+{
+  "collapse:101": {
+    "session": "1475633e-94ad-496c-972f-91119fbe7a5c",
+    "seed": 101,
+    "ending": "collapse(모래 위에서) bad=true",
+    "turns": 14,
+    "fork": true,
+    "warnSeen": [
+      "다리가 풀리고 있어. 한 번 더 미루면 쓰러져."
+    ],
+    "ok": true
+  },
+  "reckless:201": {
+    "session": "219bf622-a617-44ca-87d3-2a505051c979",
+    "seed": 201,
+    "ending": "reckless(칼 앞에서) bad=true",
+    "turns": 7,
+    "fork": true,
+    "warnSeen": [
+      "칼 든 사람한테 맨손이야. 크게 다칠 수도 있어. 그래도 할 거야?"
+    ],
+    "ok": true
+  },
+  "spy_cut:301": {
+    "session": "ebd46adb-8504-4170-8299-0d218ea5983e",
+    "seed": 301,
+    "ending": "survivor(살아남은 자) bad=false",
+    "turns": 9,
+    "fork": true,
+    "warnSeen": [],
+    "ok": false
+  },
+  "spy_cut:302": {
+    "session": "bf8cbe35-978b-4e49-b5f3-758eac3afbc0",
+    "seed": 302,
+    "ending": "spy(수상한 이방인) bad=false",
+    "turns": 10,
+    "fork": true,
+    "warnSeen": [],
+    "ok": false
+  },
+  "spy_cut:6": {
+    "session": "a7b7de3c-35fd-4e34-b7b3-1fb156d1097e",
+    "seed": 6,
+    "ending": "spy_cut(첩자) bad=true",
+    "turns": 8,
+    "fork": true,
+    "warnSeen": [
+      "저 사람 손이 칼자루에 갔어. 더 수상해 보이면 끝이야."
+    ],
+    "ok": true
+  },
+  "unmasked:48": {
+    "session": "e8be199b-b1cf-4231-a159-3bb2933aae12",
+    "seed": 48,
+    "ending": "unmasked(은발) bad=true",
+    "turns": 8,
+    "fork": true,
+    "warnSeen": [
+      "귀찌가 거의 식었어. 다음엔 은발이 나와."
+    ],
+    "ok": true
+  }
+}

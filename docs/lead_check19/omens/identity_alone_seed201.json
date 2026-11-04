@@ -1,0 +1,282 @@
+{
+ "path": "identity_alone",
+ "seed": 201,
+ "session": "32d77a67-48d2-4098-919a-294d6b978c8a",
+ "start": [
+  {
+   "type": "scene",
+   "beat": "b00_open",
+   "title": "여는 글",
+   "bg": "desert_wide",
+   "cast": {
+    "left": null,
+    "center": null,
+    "right": null
+   },
+   "sprites": {}
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "GM",
+   "display": "GM",
+   "style": "gm",
+   "text": "살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.",
+   "by": "script"
+  },
+  {
+   "type": "scene",
+   "beat": "b01_sand",
+   "title": "길 잃은 지 일주일",
+   "bg": "desert_wide",
+   "cast": {
+    "left": null,
+    "center": "아시나",
+    "right": null
+   },
+   "sprites": {}
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "하아… 하아…",
+   "by": "script",
+   "sfx": "휘이이잉"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "길을 헤맨 지 벌써 일주일째야…",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "사방이 온통 모래뿐이라 길을 알 수가 없어…",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "심지어 물도 다 떨어져 가고…",
+   "by": "script",
+   "sfx": "꿀꺽",
+   "face": "wary",
+   "cg": "cg_drink"
+  },
+  {
+   "type": "note",
+   "id": "stars",
+   "name": "별과 길"
+  },
+  {
+   "type": "scene",
+   "beat": "b02_people",
+   "title": "사람?!",
+   "bg": "desert_meet",
+   "cast": {
+    "left": null,
+    "center": "아시나",
+    "right": null
+   },
+   "sprites": {}
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "귀찌가 뜨겁게 달아올랐다. 변장이 버틸 시간이 줄고 있다.",
+   "by": "script"
+  },
+  {
+   "type": "tracks",
+   "changes": [
+    {
+     "key": "귀찌",
+     "from": 8,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "type": "line",
+   "speaker": "나레이션",
+   "display": "",
+   "style": "narration",
+   "text": "바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "아시나",
+   "display": "아시나",
+   "style": "speech",
+   "text": "응?",
+   "by": "script",
+   "sfx": "흠칫",
+   "face": "surprised"
+  },
+  {
+   "type": "line",
+   "speaker": "속마음",
+   "display": "아시나",
+   "style": "thought",
+   "text": "저건…",
+   "by": "script"
+  },
+  {
+   "type": "line",
+   "speaker": "아시나",
+   "display": "아시나",
+   "style": "speech",
+   "text": "사람?!",
+   "by": "script",
+   "face": "surprised"
+  },
+  {
+   "type": "note",
+   "id": "strangers",
+   "name": "사막의 세 사람"
+  }
+ ],
+ "turns": [
+  {
+   "n": 1,
+   "beat": "b02_people",
+   "action": {
+    "type": "free",
+    "text": "나는 웰든 공녀다"
+   },
+   "events": [
+    {
+     "type": "echo",
+     "text": "나는 웰든 공녀다"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "웰든이란 이름이 목까지 올라왔다. 여긴 적국이다.",
+     "by": "script"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "미쳤어, 미쳤어! 지금 이 상황에서 그 이름을 입 밖으로 꺼내다니!",
+     "by": "gm",
+     "face": "surprised"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "제정신이야, 아시나? 여긴 크롬웰이 아니라 페시안 땅이라고!",
+     "by": "gm",
+     "face": "wary"
+    }
+   ],
+   "tracks": {
+    "의심": 0,
+    "집착": 0,
+    "호감": 0,
+    "귀찌": 7,
+    "탈주": 0,
+    "행운": 6
+   },
+   "error": null,
+   "ms": 9767
+  }
+ ],
+ "found": {
+  "turn": 1,
+  "ok": true,
+  "notes": [
+   "의심 0→0",
+   "의심 변화 없음"
+  ]
+ }
+}

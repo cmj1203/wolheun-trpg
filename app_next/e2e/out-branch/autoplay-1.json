@@ -1,0 +1,270 @@
+{
+  "route": "1",
+  "title": "마음이 바뀌었다",
+  "seed": "4",
+  "model": {
+    "key": "gemma-4-26b-a4b",
+    "label": "Gemma 4 26B-A4B it MoE (UD-IQ4_XS)",
+    "license": "Apache-2.0"
+  },
+  "bootMs": 2024,
+  "wallMs": 56905,
+  "result": {
+    "scenarioTitle": "죽음의 사막 지르다",
+    "episode": "1화 · 사막 조우",
+    "ending": {
+      "id": "curious",
+      "title": "흥미로운 여자",
+      "summary": "그 남자는 아시나에게 흥미를 느꼈다. 끌려가는 신세지만, 그가 다시 찾아올지도 모른다.",
+      "nextHook": "다음 장면에서는 아무도 아시나를 함부로 대하지 못한다. 대신 그 남자의 눈길이 탈주를 더 어렵게 만든다."
+    },
+    "playMs": 45677,
+    "startedAt": 1793685213266,
+    "decisions": [
+      {
+        "beatTitle": "길 잃은 지 일주일",
+        "kind": "input",
+        "text": "귀찌가 제대로 붙어 있는지 확인한다",
+        "detail": "자유 입력 → 귀찌를 확인한다",
+        "playMs": 711
+      },
+      {
+        "beatTitle": "사람?!",
+        "kind": "input",
+        "text": "달려가서 길을 묻는다",
+        "detail": "자유 입력 → 달려가서 길을 묻는다",
+        "playMs": 7580
+      },
+      {
+        "beatTitle": "왜지?",
+        "kind": "input",
+        "text": "너 몇 살이야?",
+        "detail": "자유 입력 → 대화",
+        "playMs": 15764
+      },
+      {
+        "beatTitle": "왜지?",
+        "kind": "input",
+        "text": "후드를 벗고 생긋 웃으며 말한다. 대륙에서 하나뿐인 미소녀를 죽이면 대륙의 손해라고요!",
+        "detail": "자유 입력 → 미인계를 쓴다",
+        "playMs": 20762
+      },
+      {
+        "beatTitle": "마지막으로 남길 말인가",
+        "kind": "input",
+        "text": "몸을 던져 칼날을 피한다",
+        "detail": "자유 입력 → 몸을 던져 칼날을 피한다",
+        "playMs": 33641
+      },
+      {
+        "beatTitle": "한여름의 태양",
+        "kind": "input",
+        "text": "붉은 눈을 피하지 않고 똑바로 마주 본다",
+        "detail": "자유 입력 → 눈을 피하지 않는다",
+        "playMs": 45677
+      }
+    ],
+    "checks": [
+      {
+        "label": "귀찌를 확인한다",
+        "stat": "손재주",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "beatTitle": "길 잃은 지 일주일",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 711
+      },
+      {
+        "label": "달려가서 길을 묻는다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          2,
+          1
+        ],
+        "total": 3,
+        "tier": "miss",
+        "beatTitle": "사람?!",
+        "tierLabel": "실패",
+        "playMs": 7580
+      },
+      {
+        "label": "미인계를 쓴다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [],
+        "dice": [
+          6,
+          4
+        ],
+        "total": 12,
+        "tier": "hit",
+        "beatTitle": "왜지?",
+        "tierLabel": "성공",
+        "playMs": 20762
+      },
+      {
+        "label": "몸을 던져 칼날을 피한다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 8,
+        "tier": "mixed",
+        "beatTitle": "마지막으로 남길 말인가",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 33641
+      },
+      {
+        "label": "눈을 피하지 않는다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [],
+        "dice": [
+          2,
+          6
+        ],
+        "total": 10,
+        "tier": "hit",
+        "beatTitle": "한여름의 태양",
+        "tierLabel": "성공",
+        "playMs": 45677
+      }
+    ],
+    "tracks": [
+      {
+        "key": "의심",
+        "label": "의심",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+        "value": 4
+      },
+      {
+        "key": "집착",
+        "label": "집착",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+        "value": 4
+      },
+      {
+        "key": "호감",
+        "label": "호감",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게 품은 호감",
+        "value": 3
+      },
+      {
+        "key": "귀찌",
+        "label": "귀찌 수명",
+        "max": 10,
+        "unit": "",
+        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
+        "value": 3
+      },
+      {
+        "key": "탈주",
+        "label": "탈주 준비도",
+        "max": 10,
+        "unit": "",
+        "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+        "value": 0
+      }
+    ],
+    "items": [
+      {
+        "id": "magic_bag",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+      },
+      {
+        "id": "earring",
+        "name": "마법 귀찌",
+        "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+      },
+      {
+        "id": "map",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+      },
+      {
+        "id": "pin",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀."
+      }
+    ],
+    "gm": {
+      "calls": 12,
+      "retries": 2,
+      "blocked": 3,
+      "fallbacks": 0,
+      "llmMs": 47578
+    }
+  },
+  "gmLines": 21,
+  "savedAndLoaded": true,
+  "net": {
+    "pids": [
+      77413,
+      77488
+    ],
+    "samples": 123,
+    "endpoints": [
+      "TCP 127.0.0.1:18180 (LISTEN)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58351 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58410 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58525 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58543 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58654 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58673 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58786 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58824 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:58964 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:59059 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:59068 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:59078 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:59158 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:59243 (ESTABLISHED)",
+      "TCP 127.0.0.1:18180->127.0.0.1:59261 (ESTABLISHED)",
+      "TCP 127.0.0.1:18181 (LISTEN)",
+      "TCP 127.0.0.1:18181->127.0.0.1:58350 (ESTABLISHED)",
+      "TCP 127.0.0.1:18181->127.0.0.1:58370 (ESTABLISHED)",
+      "TCP 127.0.0.1:18181->127.0.0.1:58372 (ESTABLISHED)",
+      "TCP 127.0.0.1:18181->127.0.0.1:58373 (ESTABLISHED)",
+      "TCP 127.0.0.1:18181->127.0.0.1:58374 (ESTABLISHED)",
+      "TCP 127.0.0.1:18181->127.0.0.1:58375 (ESTABLISHED)",
+      "TCP 127.0.0.1:18181->127.0.0.1:58376 (ESTABLISHED)",
+      "TCP 127.0.0.1:58351->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58410->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58525->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58543->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58654->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58673->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58786->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58824->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:58964->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:59059->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:59068->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:59078->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:59158->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:59243->127.0.0.1:18180 (ESTABLISHED)",
+      "TCP 127.0.0.1:59261->127.0.0.1:18180 (ESTABLISHED)"
+    ],
+    "external": [],
+    "publicListeners": []
+  },
+  "sandboxProbeExit": 6,
+  "failures": []
+}

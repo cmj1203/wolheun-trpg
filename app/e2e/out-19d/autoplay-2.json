@@ -1,0 +1,244 @@
+{
+  "route": "2",
+  "title": "수상한 이방인",
+  "seed": "4",
+  "model": null,
+  "bootMs": 102,
+  "wallMs": 5738,
+  "result": {
+    "scenarioTitle": "죽음의 사막 지르다",
+    "episode": "1화 · 사막 조우",
+    "ending": {
+      "id": "spy",
+      "title": "수상한 이방인",
+      "summary": "목숨은 건졌지만 그 남자는 아시나를 첩자로 굳게 의심한다. 마법 가방을 빼앗긴 채 끌려간다.",
+      "nextHook": "다음 장면에서는 감시가 삼엄해진다. 가방 없이, 몸에 지닌 것만으로 빠져나갈 길을 찾아야 한다.",
+      "bad": false
+    },
+    "playMs": 3951,
+    "startedAt": 1793780313793,
+    "decisions": [
+      {
+        "beatTitle": "사람?!",
+        "kind": "input",
+        "text": "모래 언덕 뒤에 숨어서 지켜본다",
+        "detail": "자유 입력 → 모래 언덕 뒤에서 먼저 살핀다",
+        "playMs": 602
+      },
+      {
+        "beatTitle": "왜지?",
+        "kind": "input",
+        "text": "저는 귀한 집안 사람이에요. 함부로 대하면 후회하실 거예요",
+        "detail": "자유 입력 → 신분과 교양을 내세운다",
+        "playMs": 1971
+      },
+      {
+        "beatTitle": "마지막으로 남길 말인가",
+        "kind": "input",
+        "text": "가방을 방패 삼아 막는다",
+        "detail": "자유 입력 → 가방을 방패 삼아 막는다",
+        "playMs": 2472
+      },
+      {
+        "beatTitle": "한여름의 태양",
+        "kind": "input",
+        "text": "머리카락으로 귀찌를 가린다",
+        "detail": "자유 입력 → 귀찌를 머리카락으로 가린다",
+        "playMs": 3535
+      },
+      {
+        "beatTitle": "묶인 손목",
+        "kind": "input",
+        "text": "아무도 안 보냈어요. 전 그냥 여행자예요",
+        "detail": "자유 입력 → 끝까지 결백을 주장한다",
+        "playMs": 3951
+      }
+    ],
+    "checks": [
+      {
+        "label": "모래 언덕 뒤에서 먼저 살핀다",
+        "stat": "재치",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "beatTitle": "사람?!",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 602
+      },
+      {
+        "label": "신분과 교양을 내세운다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          2,
+          1
+        ],
+        "total": 4,
+        "tier": "miss",
+        "beatTitle": "왜지?",
+        "tierLabel": "실패",
+        "playMs": 1971
+      },
+      {
+        "label": "가방을 방패 삼아 막는다",
+        "stat": "손재주",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          6,
+          4
+        ],
+        "total": 11,
+        "tier": "hit",
+        "beatTitle": "마지막으로 남길 말인가",
+        "tierLabel": "성공",
+        "playMs": 2472
+      },
+      {
+        "label": "귀찌를 머리카락으로 가린다",
+        "stat": "손재주",
+        "statValue": 1,
+        "mods": [
+          {
+            "label": "계획",
+            "value": 1
+          }
+        ],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 10,
+        "tier": "hit",
+        "beatTitle": "한여름의 태양",
+        "tierLabel": "성공",
+        "playMs": 3535
+      },
+      {
+        "label": "끝까지 결백을 주장한다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [
+          {
+            "label": "입력한 말",
+            "value": 1
+          }
+        ],
+        "dice": [
+          2,
+          6
+        ],
+        "total": 11,
+        "tier": "hit",
+        "beatTitle": "묶인 손목",
+        "tierLabel": "성공",
+        "playMs": 3951
+      }
+    ],
+    "tracks": [
+      {
+        "key": "의심",
+        "label": "의심",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+        "value": 8
+      },
+      {
+        "key": "집착",
+        "label": "집착",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+        "value": 2
+      },
+      {
+        "key": "호감",
+        "label": "호감",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게 품은 호감",
+        "value": 1
+      },
+      {
+        "key": "귀찌",
+        "label": "귀찌 수명",
+        "max": 10,
+        "unit": "",
+        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
+        "value": 6
+      },
+      {
+        "key": "탈주",
+        "label": "탈주 준비도",
+        "max": 10,
+        "unit": "",
+        "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+        "value": 1
+      },
+      {
+        "key": "행운",
+        "label": "행운",
+        "max": 10,
+        "unit": "",
+        "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+        "value": 6
+      }
+    ],
+    "items": [
+      {
+        "id": "earring",
+        "name": "마법 귀찌",
+        "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+      },
+      {
+        "id": "map",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+      },
+      {
+        "id": "pin",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀."
+      }
+    ],
+    "gm": {
+      "calls": 10,
+      "retries": 0,
+      "blocked": 9,
+      "fallbacks": 9,
+      "llmMs": 0
+    },
+    "fork": true
+  },
+  "gmLines": 0,
+  "savedAndLoaded": false,
+  "loadDialogMs": -1,
+  "cpuBeforeLoad": "",
+  "net": {
+    "pids": [
+      66000
+    ],
+    "samples": 12,
+    "endpoints": [
+      "TCP 127.0.0.1:18191 (LISTEN)",
+      "TCP 127.0.0.1:18191->127.0.0.1:64922 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:64925 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:64934 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:64935 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:64936 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:64937 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:64938 (ESTABLISHED)"
+    ],
+    "external": [],
+    "publicListeners": []
+  },
+  "sandboxProbeExit": 6,
+  "failures": []
+}

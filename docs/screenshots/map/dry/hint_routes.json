@@ -1,0 +1,1277 @@
+{
+ "routes": {
+  "deal": {
+   "tries": [
+    "deal"
+   ],
+   "hit": {
+    "seed": 1,
+    "ending": "deal",
+    "title": "길잡이 계약",
+    "inputs": [
+     "[b01_sand] (버튼) 지도를 펼쳐 방향을 가늠한다",
+     "[b02_people] 달려가서 길을 묻는다",
+     "[b05_why] 살려 두면 쓸모가 있을 거예요. 지도도 읽을 줄 알아요",
+     "[r4_prove] 지도를 펼쳐 길을 짚어 보인다"
+    ]
+   }
+  },
+  "value": {
+   "tries": [
+    "value"
+   ],
+   "hit": {
+    "seed": 1,
+    "ending": "value",
+    "title": "값을 매긴 여자",
+    "inputs": [
+     "[b01_sand] (버튼) 지도를 펼쳐 방향을 가늠한다",
+     "[b02_people] 달려가서 길을 묻는다",
+     "[b05_why] 저는 대단한 집안 사람이에요. 함부로 하면 후회할걸요",
+     "[r5_claim] 궁정식으로 인사한다"
+    ]
+   }
+  },
+  "road": {
+   "tries": [
+    "road"
+   ],
+   "hit": {
+    "seed": 1,
+    "ending": "road",
+    "title": "크라차로 가는 길",
+    "inputs": [
+     "[b01_sand] (버튼) 지도를 펼쳐 방향을 가늠한다",
+     "[b02_people] 몰래 돌아서 달아난다",
+     "[r3_dusk] 별을 보고 남쪽을 찾는다"
+    ]
+   }
+  },
+  "spy": {
+   "tries": [
+    "survivor",
+    "spy"
+   ],
+   "hit": {
+    "seed": 2,
+    "ending": "spy",
+    "title": "수상한 이방인",
+    "inputs": [
+     "[b01_sand] (버튼) 지도를 펼쳐 방향을 가늠한다",
+     "[b02_people] 달려가서 길을 묻는다",
+     "[b05_why] 핸드폰을 꺼내 수상하게 만지작거린다",
+     "[b06_swing] 가방에 손을 넣어 뭔가 꺼내려 한다",
+     "[b08_gaze] 귀찌를 감추며 수상하게 고개를 돌린다",
+     "[r2_bind] 아무도 안 보냈다고 말한다"
+    ]
+   }
+  },
+  "curious": {
+   "tries": [
+    "survivor",
+    "curious"
+   ],
+   "hit": {
+    "seed": 2,
+    "ending": "curious",
+    "title": "흥미로운 여자",
+    "inputs": [
+     "[b01_sand] (버튼) 지도를 펼쳐 방향을 가늠한다",
+     "[b02_people] 달려가서 길을 묻는다",
+     "[b05_why] 대륙에서 하나뿐인 미소녀니까요",
+     "[b06_swing] 몸을 던져 칼날을 피한다",
+     "[b08_gaze] 붉은 눈을 끝까지 똑바로 마주 본다"
+    ]
+   }
+  },
+  "survivor": {
+   "tries": [
+    "survivor"
+   ],
+   "hit": {
+    "seed": 1,
+    "ending": "survivor",
+    "title": "살아남은 자",
+    "inputs": [
+     "[b01_sand] (버튼) 지도를 펼쳐 방향을 가늠한다",
+     "[b02_people] 달려가서 길을 묻는다",
+     "[b05_why] 억울하다고 호소한다",
+     "[b06_swing] 몸을 숙여 피한다",
+     "[b08_gaze] 고개를 숙이고 조용히 있는다"
+    ]
+   }
+  }
+ },
+ "map": {
+  "m0_empty": {
+   "cols": 5,
+   "rows": 7,
+   "nodes": [
+    {
+     "key": "n0",
+     "col": 0,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n1",
+     "col": 1,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n2",
+     "col": 2,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n3",
+     "col": 3,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n4",
+     "col": 2,
+     "row": 0,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n5",
+     "col": 2,
+     "row": 1,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n6",
+     "col": 3,
+     "row": 2,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n7",
+     "col": 2,
+     "row": 5,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n8",
+     "col": 4,
+     "row": 0,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n9",
+     "col": 4,
+     "row": 1,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n10",
+     "col": 4,
+     "row": 2,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n11",
+     "col": 4,
+     "row": 3,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n12",
+     "col": 4,
+     "row": 4,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n13",
+     "col": 4,
+     "row": 5,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n14",
+     "col": 4,
+     "row": 6,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    }
+   ],
+   "edges": [
+    {
+     "from": "n0",
+     "to": "n1",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n0",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n2",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n5",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n4",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n3",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n6",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n11",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n12",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n6",
+     "to": "n10",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n4",
+     "to": "n8",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n5",
+     "to": "n9",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n7",
+     "to": "n13",
+     "seen": false,
+     "onPath": false
+    }
+   ]
+  },
+  "m1_first": {
+   "cols": 5,
+   "rows": 7,
+   "nodes": [
+    {
+     "key": "n0",
+     "col": 0,
+     "row": 3,
+     "ending": false,
+     "label": "사람?!",
+     "onPath": true,
+     "hint": 0
+    },
+    {
+     "key": "n1",
+     "col": 1,
+     "row": 3,
+     "ending": false,
+     "label": "왜지?",
+     "onPath": true,
+     "hint": 0
+    },
+    {
+     "key": "n2",
+     "col": 2,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n3",
+     "col": 3,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n4",
+     "col": 2,
+     "row": 0,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n5",
+     "col": 2,
+     "row": 1,
+     "ending": false,
+     "label": "그럼 증명해라",
+     "onPath": true,
+     "hint": 0
+    },
+    {
+     "key": "n6",
+     "col": 3,
+     "row": 2,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n7",
+     "col": 2,
+     "row": 5,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n8",
+     "col": 4,
+     "row": 0,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n9",
+     "col": 4,
+     "row": 1,
+     "ending": true,
+     "label": "길잡이 계약",
+     "onPath": true,
+     "hint": 0
+    },
+    {
+     "key": "n10",
+     "col": 4,
+     "row": 2,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n11",
+     "col": 4,
+     "row": 3,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n12",
+     "col": 4,
+     "row": 4,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n13",
+     "col": 4,
+     "row": 5,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n14",
+     "col": 4,
+     "row": 6,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    }
+   ],
+   "edges": [
+    {
+     "from": "n0",
+     "to": "n1",
+     "seen": true,
+     "onPath": true
+    },
+    {
+     "from": "n0",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n2",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n5",
+     "seen": true,
+     "onPath": true
+    },
+    {
+     "from": "n1",
+     "to": "n4",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n3",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n6",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n11",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n12",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n6",
+     "to": "n10",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n4",
+     "to": "n8",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n5",
+     "to": "n9",
+     "seen": true,
+     "onPath": true
+    },
+    {
+     "from": "n7",
+     "to": "n13",
+     "seen": false,
+     "onPath": false
+    }
+   ]
+  },
+  "m2_second": {
+   "cols": 5,
+   "rows": 7,
+   "nodes": [
+    {
+     "key": "n0",
+     "col": 0,
+     "row": 3,
+     "ending": false,
+     "label": "사람?!",
+     "onPath": true,
+     "hint": 0
+    },
+    {
+     "key": "n1",
+     "col": 1,
+     "row": 3,
+     "ending": false,
+     "label": "왜지?",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n2",
+     "col": 2,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 2
+    },
+    {
+     "key": "n3",
+     "col": 3,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n4",
+     "col": 2,
+     "row": 0,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n5",
+     "col": 2,
+     "row": 1,
+     "ending": false,
+     "label": "그럼 증명해라",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n6",
+     "col": 3,
+     "row": 2,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n7",
+     "col": 2,
+     "row": 5,
+     "ending": false,
+     "label": "등 뒤의 붉은 눈",
+     "onPath": true,
+     "hint": 0
+    },
+    {
+     "key": "n8",
+     "col": 4,
+     "row": 0,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n9",
+     "col": 4,
+     "row": 1,
+     "ending": true,
+     "label": "길잡이 계약",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n10",
+     "col": 4,
+     "row": 2,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n11",
+     "col": 4,
+     "row": 3,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n12",
+     "col": 4,
+     "row": 4,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n13",
+     "col": 4,
+     "row": 5,
+     "ending": true,
+     "label": "크라차로 가는 길",
+     "onPath": true,
+     "hint": 0
+    },
+    {
+     "key": "n14",
+     "col": 4,
+     "row": 6,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    }
+   ],
+   "edges": [
+    {
+     "from": "n0",
+     "to": "n1",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n0",
+     "to": "n7",
+     "seen": true,
+     "onPath": true
+    },
+    {
+     "from": "n1",
+     "to": "n2",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n7",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n5",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n4",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n3",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n6",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n11",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n12",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n6",
+     "to": "n10",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n4",
+     "to": "n8",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n5",
+     "to": "n9",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n7",
+     "to": "n13",
+     "seen": true,
+     "onPath": true
+    }
+   ]
+  },
+  "m3_all": {
+   "cols": 5,
+   "rows": 7,
+   "nodes": [
+    {
+     "key": "n0",
+     "col": 0,
+     "row": 3,
+     "ending": false,
+     "label": "사람?!",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n1",
+     "col": 1,
+     "row": 3,
+     "ending": false,
+     "label": "왜지?",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n2",
+     "col": 2,
+     "row": 3,
+     "ending": false,
+     "label": "마지막으로 남길 말인가",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n3",
+     "col": 3,
+     "row": 3,
+     "ending": false,
+     "label": "마음이 바뀌었다",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n4",
+     "col": 2,
+     "row": 0,
+     "ending": false,
+     "label": "귀하신 몸",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n5",
+     "col": 2,
+     "row": 1,
+     "ending": false,
+     "label": "그럼 증명해라",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n6",
+     "col": 3,
+     "row": 2,
+     "ending": false,
+     "label": "묶인 손목",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n7",
+     "col": 2,
+     "row": 5,
+     "ending": false,
+     "label": "등 뒤의 붉은 눈",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n8",
+     "col": 4,
+     "row": 0,
+     "ending": true,
+     "label": "값을 매긴 여자",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n9",
+     "col": 4,
+     "row": 1,
+     "ending": true,
+     "label": "길잡이 계약",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n10",
+     "col": 4,
+     "row": 2,
+     "ending": true,
+     "label": "수상한 이방인",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n11",
+     "col": 4,
+     "row": 3,
+     "ending": true,
+     "label": "흥미로운 여자",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n12",
+     "col": 4,
+     "row": 4,
+     "ending": true,
+     "label": "살아남은 자",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n13",
+     "col": 4,
+     "row": 5,
+     "ending": true,
+     "label": "크라차로 가는 길",
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n14",
+     "col": 4,
+     "row": 6,
+     "ending": true,
+     "label": "여기까지",
+     "onPath": true,
+     "hint": 0
+    }
+   ],
+   "edges": [
+    {
+     "from": "n0",
+     "to": "n1",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n0",
+     "to": "n7",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n2",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n7",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n5",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n4",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n7",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n3",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n6",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n11",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n12",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n6",
+     "to": "n10",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n4",
+     "to": "n8",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n5",
+     "to": "n9",
+     "seen": true,
+     "onPath": false
+    },
+    {
+     "from": "n7",
+     "to": "n13",
+     "seen": true,
+     "onPath": false
+    }
+   ]
+  },
+  "m4_cleared": {
+   "cols": 5,
+   "rows": 7,
+   "nodes": [
+    {
+     "key": "n0",
+     "col": 0,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n1",
+     "col": 1,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n2",
+     "col": 2,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n3",
+     "col": 3,
+     "row": 3,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n4",
+     "col": 2,
+     "row": 0,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n5",
+     "col": 2,
+     "row": 1,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n6",
+     "col": 3,
+     "row": 2,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n7",
+     "col": 2,
+     "row": 5,
+     "ending": false,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n8",
+     "col": 4,
+     "row": 0,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n9",
+     "col": 4,
+     "row": 1,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n10",
+     "col": 4,
+     "row": 2,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n11",
+     "col": 4,
+     "row": 3,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n12",
+     "col": 4,
+     "row": 4,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n13",
+     "col": 4,
+     "row": 5,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    },
+    {
+     "key": "n14",
+     "col": 4,
+     "row": 6,
+     "ending": true,
+     "label": null,
+     "onPath": false,
+     "hint": 0
+    }
+   ],
+   "edges": [
+    {
+     "from": "n0",
+     "to": "n1",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n0",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n2",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n5",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n1",
+     "to": "n4",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n7",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n2",
+     "to": "n3",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n6",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n11",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n3",
+     "to": "n12",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n6",
+     "to": "n10",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n4",
+     "to": "n8",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n5",
+     "to": "n9",
+     "seen": false,
+     "onPath": false
+    },
+    {
+     "from": "n7",
+     "to": "n13",
+     "seen": false,
+     "onPath": false
+    }
+   ]
+  }
+ },
+ "hintText": [
+  "칼 앞에서 잘 넘기면 그다음이 있어.",
+  "억울하다고 버텨 보는 건 어때?"
+ ],
+ "reloadKept": 15
+}

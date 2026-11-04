@@ -1,0 +1,205 @@
+{
+  "route": "5",
+  "title": "자칭 공녀",
+  "seed": "1",
+  "model": null,
+  "bootMs": 103,
+  "wallMs": 5735,
+  "result": {
+    "scenarioTitle": "죽음의 사막 지르다",
+    "episode": "1화 · 사막 조우",
+    "ending": {
+      "id": "value",
+      "title": "값을 매긴 여자",
+      "summary": "아시나는 자기 입으로 귀한 신분을 내세웠다. 손님 대접을 받는 인질이 되어 끌려간다.",
+      "nextHook": "다음 장면에서는 대접은 좋아도 눈이 많다. 스스로 내세운 신분이 진짜인지 시험받는다."
+    },
+    "playMs": 3759,
+    "startedAt": 1793683370456,
+    "decisions": [
+      {
+        "beatTitle": "길 잃은 지 일주일",
+        "kind": "input",
+        "text": "귀찌가 제대로 붙어 있는지 확인한다",
+        "detail": "자유 입력 → 귀찌를 확인한다",
+        "playMs": 873
+      },
+      {
+        "beatTitle": "사람?!",
+        "kind": "input",
+        "text": "달려가서 길을 묻는다",
+        "detail": "자유 입력 → 달려가서 길을 묻는다",
+        "playMs": 2052
+      },
+      {
+        "beatTitle": "왜지?",
+        "kind": "input",
+        "text": "저는 크롬웰 제국의 귀족 가문 사람이에요",
+        "detail": "자유 입력 → 신분과 교양을 내세운다",
+        "playMs": 3447
+      },
+      {
+        "beatTitle": "귀하신 몸",
+        "kind": "input",
+        "text": "허리를 펴고 궁정식으로 인사한다",
+        "detail": "자유 입력 → 몸에 밴 예법을 보인다",
+        "playMs": 3759
+      }
+    ],
+    "checks": [
+      {
+        "label": "귀찌를 확인한다",
+        "stat": "손재주",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          2,
+          4
+        ],
+        "total": 7,
+        "tier": "mixed",
+        "beatTitle": "길 잃은 지 일주일",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 873
+      },
+      {
+        "label": "달려가서 길을 묻는다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          6,
+          6
+        ],
+        "total": 12,
+        "tier": "hit",
+        "beatTitle": "사람?!",
+        "tierLabel": "성공",
+        "playMs": 2052
+      },
+      {
+        "label": "신분과 교양을 내세운다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          4,
+          3
+        ],
+        "total": 8,
+        "tier": "mixed",
+        "beatTitle": "왜지?",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 3447
+      },
+      {
+        "label": "몸에 밴 예법을 보인다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          1,
+          5
+        ],
+        "total": 7,
+        "tier": "mixed",
+        "beatTitle": "귀하신 몸",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 3759
+      }
+    ],
+    "tracks": [
+      {
+        "key": "의심",
+        "label": "의심",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+        "value": 6
+      },
+      {
+        "key": "집착",
+        "label": "집착",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+        "value": 0
+      },
+      {
+        "key": "호감",
+        "label": "호감",
+        "max": 10,
+        "unit": "",
+        "desc": "그 남자가 아시나에게 품은 호감",
+        "value": 0
+      },
+      {
+        "key": "귀찌",
+        "label": "귀찌 수명",
+        "max": 10,
+        "unit": "",
+        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
+        "value": 6
+      },
+      {
+        "key": "탈주",
+        "label": "탈주 준비도",
+        "max": 10,
+        "unit": "",
+        "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+        "value": 0
+      }
+    ],
+    "items": [
+      {
+        "id": "magic_bag",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+      },
+      {
+        "id": "earring",
+        "name": "마법 귀찌",
+        "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+      },
+      {
+        "id": "map",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+      },
+      {
+        "id": "pin",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀."
+      }
+    ],
+    "gm": {
+      "calls": 8,
+      "retries": 0,
+      "blocked": 8,
+      "fallbacks": 8,
+      "llmMs": 0
+    }
+  },
+  "gmLines": 0,
+  "savedAndLoaded": false,
+  "net": {
+    "pids": [
+      27860
+    ],
+    "samples": 12,
+    "endpoints": [
+      "TCP 127.0.0.1:18381 (LISTEN)",
+      "TCP 127.0.0.1:18381->127.0.0.1:56198 (ESTABLISHED)",
+      "TCP 127.0.0.1:18381->127.0.0.1:56208 (ESTABLISHED)",
+      "TCP 127.0.0.1:18381->127.0.0.1:56209 (ESTABLISHED)",
+      "TCP 127.0.0.1:18381->127.0.0.1:56210 (ESTABLISHED)",
+      "TCP 127.0.0.1:18381->127.0.0.1:56211 (ESTABLISHED)",
+      "TCP 127.0.0.1:18381->127.0.0.1:56212 (ESTABLISHED)",
+      "TCP 127.0.0.1:18381->127.0.0.1:56213 (ESTABLISHED)"
+    ],
+    "external": [],
+    "publicListeners": []
+  },
+  "sandboxProbeExit": 6,
+  "failures": []
+}

@@ -1,0 +1,708 @@
+SOURCE: https://thealexandrian.net/wordpress/4147/roleplaying-games/dont-prep-plots
+FETCHED: 2026-11-04T06:07:03.442Z
+
+The Alexandrian &raquo; Don't Prep Plots 
+ Don't Prep Plots 
+ March 23rd, 2009 
+ If you're GMing a roleplaying game, you should never prep a plot.
+ Everyone's tastes are different. These matters are subjective. What works for one person won't necessarily work for another. Yada, yada, yada.
+ But, seriously, don't prep plots.
+ First, a definition of terms: A plot is the sequence of events in a story.
+ And the problem with trying to prep a plot for an RPG is that you're attempting to pre-determine events that have not yet happened. Your gaming session is not a story &#8212; it is a happening. It is something about which stories can be told, but in the genesis of the moment it is not a tale being told. It is a fact that is transpiring.
+ PREPPING WITHOUT PLOTS 
+ Don't prep plots, prep situations. 
+ What's the difference?
+ A plot is a sequence of events: A happens, then B happens, then C happens. (In more complicated forms, the sequence of events might fork like a Choose Your Own Adventure book, but the principle remains the same.)
+ A situation, on the other hand, is merely a set of circumstances. The events that happen as a result of that situation will depend on the actions the PCs take.
+ For example, a plot might look like this: "Pursuing the villains who escaped during last week's session, the PCs will get on a ship bound for the port city of Tharsis. On their voyage they will spot a derelict. They will board the derelict and discover that one of the villains has transformed into a monster and killed the entire crew&#8230; except for one lone survivor. They will fight the monster and rescue the survivor. While they're fighting the monster, the derelict will have floated into the territorial waters of Tharsis. They will be intercepted by a fleet of Tharsian ships. Once their tale is told, they will be greeted in Tharsis as heroes for their daring rescue of the derelict. Following a clue given by the survivor of the derelict, they will climb Mt. Tharsis and reach the Temple of Olympus. They can then wander around the temple asking questions. This will accomplish nothing, but when they reach the central sanctuary of the temple the villains will attempt to assassinate them. The assassination attempt goes awry, and the magical idol at the center of the temple is destroyed. Unfortunately, this idol is the only thing holding the temple to the side of the mountain &#8212; without it the entire temple begins sliding down the mountain as the battle continues to rage between the PCs and villains!"
+ (This is derived from an actual, published adventure. Names and milieu have been changed to protect the innocent. Bonus points to anyone who can correctly identify the original source.)
+ A situation, on the other hand, looks like this: "The villains have escaped on two ships heading towards Tarsis. One of the villains transforms during the voyage into a terrible monster and kills the crew, leaving the ship floating as a derelict outside the coastal waters of Tharsis. At such-and-such a time, the ship will be spotted by the Tharsis navy. The other villains have reached the Temple of Olympus atop Mt. Tharsis and assumed cover identities."
+ THE DIRTY SECRET 
+ Many people are intimidated by the idea of prepping without a plot. It seems like a lot of work. If the players can do anything, how are you supposed to cope with that?
+ The dirty secret, though, is that it's actually a lot more difficult to prep plots than situations.
+ To understand why, let's take a closer look at our example of a plotted adventure. It's a tightly-knit sequence of events that, when broken down, looks like this:
+ (1) The PCs pursue the villains. (What if they don't?)
+ (2) The PCs have to choose to follow them by ship. (What if they decide to ride down the coast? Or teleport?)
+ (3) The PCs have to spot the derelict. (What if they roll poorly on their Perception check?)
+ (4) The PCs have to board the derelict. (What if they just sail past it?)
+ (5) The PCs have to rescue the survivor. (What if they fail? Or choose to flee before realizing the survivor is there?)
+ (6) The PCs have to question the survivor. (What if they decide not to pressure an injured man?)
+ (7) The PCs have to go to the central sanctuary of the temple.
+ (8) The assassination attempt on the PCs has to play out in a very specific way.
+ What you're looking at is a chain of potential points of failure. Each of these points is heavily designed with a specific and expected outcome&#8230; and if that outcome doesn't happen the GM is left to railroad the players back onto the tracks he's laid out.
+ By contrast, let's look at what we need to design this same adventure as a situation:
+ (1) The PCs have to pursue the villains. (This is the hook into the entire scenario. It's a potential failure point shared by all scenarios. If the PCs aren't interested in going to the red dragon's lair, it doesn't matter how you prep the lair.)
+ (2) You need to design the city of Tharsis. (Where is it? What's it like? What can the PCs do there? Et cetera.)
+ (3) You need to design the derelict ship.
+ (4) You need to design the Temple of Olympus.
+ (5) You need to stat up the Tharsis navy, the villains, and (possibly) the survivor.
+ (6) There needs to be a way for the PCs to know the villains are hiding out in the Temple of Olympus. (In the plot-based design, this is one of the failure points: They either question the survivor or they have no way of knowing where to go next. In situation-based design, you would use the Three Clue Rule and figure out two additional methods by which the PCs could reach this conclusion. This can be as simple as making a Gather Information check in Tharsis and/or questioning the captain/crew of the ship the villains took.)
+ Here's the dirty secret: Take a closer look at that list. With the exception of #6, those are all things that you also needed to prep for your plot-based design. (And even #6 is one-third complete.)
+ Here's an analogy: Situation-based design is like handing the players a map and then saying "figure out where you're going". Plot-based design, on the other hand, is like handing the players a map on which a specific route has been marked with invisible ink&#8230; and then requiring them to follow that invisible path.
+ ROBUST DESIGN 
+ The advantage of situation-based prep is that it's robust. Surprisingly, however, that robustness doesn't require a lot of extra work. In fact, as we've shown, it usually requires a lot less work. Here are a few things to consider while doing situation-based prep.
+ THREE CLUE RULE : I've already devoted a lengthy essay to the Three Clue Rule. Basically, the Three Clue Rule states:  For any conclusion you want the PCs to make, include at least three clues. 
+ The theory is that, even if the players miss two of the clues, you've got pretty great odds that they'll find the third and figure things out.
+ The Three Clue Rule can also be applied to adventure design in general: For any given problem in an adventure, you should always prep at least one solution and remain open to any potential solutions your players may devise. But for any  chokepoint problem (by which I mean "a problem which must be overcome in order for the adventure to continue"), try to include three possible routes to success.
+ That may sound like a lot of work, but these distinct paths don't need to be particularly convuluted. (In fact, they shouldn't be.) For example, a problem might be "Mickey Dee has a piece of information the PCs need". The solutions can be as simple as (1) knock him out and take it; (2) negotiate with him for it; or (3) sneak into his office and steal it. The actual prep that you do for any one of these solutions takes care of 99% of the prep for the other two.
+ It should be noted that, just because any given solution is "simple", it doesn't mean that the scenario will be (or should be) simple. The convulution of the scenario arises from the way in which a series of problems are overcome. And the nice thing about situation-based prep is that you don't have to figure out exactly how these problems will be strung together &#8212; that arises naturally out of the actions taken by the PCs.
+ GOAL-ORIENTED OPPONENTS : Instead of trying to second-guess what your PCs will do and then trying to plan out specific reactions to each possibility, simply ask yourself, "What is the bad guy trying to do?"
+ The most effective way of prepping this material will depend on the particulars of the scenario you're designing. It might be nothing more than a sequential list of objectives. Or it might be a detailed timeline.
+ Note that some scenarios won't be based around the bad guys trying to carry out some specific scheme. They might just be going about business as usual when the PCs decide to show up and make a mess of things. In other words, the "goal" might be nothing more than "maintain the standard guard rotation".
+ If you're interested in seeing this type of prep work in action, I've put together a lengthy example of using detailed timelines from my own campaign. (My players should not click that link.)
+ DON'T PLAN SPECIFIC CONTINGENCIES : Whatever approach you take, the key aspect is that you'll usually be laying out what would happen if the PCs don't get involved. If you get some ideas about contingency plans, go ahead and jot them down, but don't waste too much time on them.
+ I say "waste your time" because that's exactly what most contingency planning is. The basic structure of contingency planning is: If the PCs interfere at point X, then the bad guys do X2. If the PCs interfere at point Y, then the bad guys do Y2. If the PCs interfere at point Z, then the bad guys do Z2.
+ Of course, if the PCs don't interfere at point X, then all the time you spent prepping contingency X2 is completely wasted. Even more importantly, if the PCs do interfere at point X then point Y and point Z will generally be fundamentally altered or even cease to exist &#8212; so all the prep work that went into Y2 and Z2 is also wasted.
+ This is where situation-based prep usually gets maligned for requiring more work: People think they need to try to prepare themselves for every conceivable action the PCs might take. But, in point of fact, that's not situation-based prep. That's plot-based prep juiced up on Choose Your Own Adventure steroids. It's the type of prep you would need to do if you were programming a computer game.
+ But you're not programming a computer game. You're prepping a scenario for a roleplaying game. When the PCs choose to do X or Y or Z (or A or B or C), you don't need a pre-programmed reaction. You're sitting right there at the table with them. You can just react.
+ KNOW YOUR TOOLKIT : In order to react, you need to know your toolkit. If the PCs start investigating Lord Bane, what resources does he have to thwart them? If they lay siege to the slavers' compound, what are the defenses?
+ Typical "tools" include personnel, equipment, physical locations, and information.
+ For example, if the PCs are investigating a local Mafia leader then you might know that:
+ (1) He has a couple of goon squads, a trained assassin on staff, and two bodyguards. You might also know that he has an estranged wife and two sons. (These are all types of personnel.)
+ (2) He lives in a mansion on the east side of town, typically frequents his high-end illegal casino in the secret basement of a downtown skyscraper, and also has a bolt-hole set up in a seedy tavern. (These are all physical locations.)
+ (3) He has blackmail material on one of the PCs. (This is information.)
+ (4) He has bribed a local cop. (This is a different type of personnel.)
+ And just like a real toolbox, you should have some idea what the tools are useful for. You know that a hammer is for nails and a screwdriver is for screws. Similarly, you know that the goon squad can be used to beat-up the PCs as a warning or to guard the bolt-hole. You know that the estranged wife can be used as a source of information on the mansion's security system. And so forth.
+ You can think of this as non-specific contingency planning. You aren't giving yourself a hammer and then planning out exactly which nails you're going to hit and how hard to hit them: You're giving yourself a hammer and saying, "Well, if the players give me anything that looks even remotely like a nail, I know what I can hit it with."
+ (For example, you know that the estranged wife is familiar with the details of her husband's operations and the security of the mansion. That's the hammer. What you don't have to figure out is how the PCs get that information from her: Maybe they just ask her nicely. Or bribe her. Or offer to protect her. Or they plant a surveillance bug on her. Or tap her phones. Or kidnap her sons and threaten to kill them unless she plants a bomb in her husband's mansion. These are all nails. The players will provide them.)
+ The other trick to designing your toolkit is organizing the pertinent resources into usable chunks. Take the goon squads for example: You could try to track the actions of every individual goon while running the adventure, but that quickly becomes incredibly complicated. By organizing them into squads you give yourself a manageable unit that you can keep track of.
+ On the other hand, don't let this organization shackle you. If you need an individual goon, just peel 'em off one of the squads and use them. You're drawing a forest because that's easier to map &#8212; but if the PCs need to chop down some firewood, don't miss the trees for the forest.
+ CONCLUDING THOUGHTS 
+ Despite my tongue-in-cheek opening to this essay, there's nothing inherently wrong with plot-based design. Plenty of great games have been run with tightly or loosely plotted scenarios. And the argument can certainly be made that, "The players don't care if they're on a railroad, if the train's heading to Awesome Town."
+ But I'll admit that, in my experience, Awesome Town is usually a lot more awesome when I let the PCs chart their own course.
+ Is that because I'm such an amazingly awesome GM that I can always roll with the punches and come up with some awesome improvisation? Maybe. But I think it has more to do with the fact that the players are actually pretty good judges of what they want. And if they come up with a detailed plan for infiltrating the mob boss' downtown casino as card dealers and gamblers, then they'll probably have a lot more fun seeing that plan come to fruition than if I artificially quash it so that they can go back to my "awesome" idea of kidnapping the sons of the mob boss and using them to blackmail his wife.
+ (Which isn't to say that the PCs should always succeed. Overcoming adversity is awesome as well. But there's a difference between a plan that doesn't work because it didn't work and a plan that doesn't work because I, as a GM, want them to be doing something else.)
+ And with that so-called advantage of plot-based design laid to one side, I'm not sure what it's really supposed to be offering. On the other hand, the advantages of scenario-based design are huge:
+ (1) It requires significantly less work to prep.
+ (2) It empowers the players and makes their choices meaningful.
+ The latter really cannot be emphasized enough. For me, the entire reason to play a roleplaying game is to see what happens when the players make meaningful choices. In my experience, the result is almost always different than anything I could have anticipated or planned for.
+ If I wanted to tell my players a story (which is what plot-based design really boils down to), then it's far more efficient and effective to simply write a story. In my opinion, if you're playing a roleplaying game then you should play to the strengths of the medium: The magical creativity which only happens when people get together.
+ For examples of what I'm talking about, you can also read about the Unexpected Successes from my own table. The Twin Deaths of Thuren Issek are particularly awesome.
+ On the other hand, if you have a group that's used to being shown the Correct Path and then following it, suddenly throwing them into the deep-end of an open-ended scenario may have disastrous results , just like any other sudden shift in the style of play. Others, of course, will immediately take to it like a fish takes to water. But if you're running into problems, just sit down and talk things over with your players. Explain where the disconnect is happening. Maybe give them a copy of this essay so that they can have a better understanding of what's going on (and what's not going on) behind the screen.
+ I suspect that once they know the shackles have been taken off, they'll revel in their newfound freedom.
+ FURTHER READING 
+ Three Clue Rule 
+ Don't Prep Plots: Scenario Timelines 
+ Don't Prep Plots: The Principles of RPG Villainy 
+ Don't Prep Plots: Tools, Not Contingencies 
+ Empower Your Prep: The Rachov Principle 
+ Is Node-Based Design Prepping a Plot? 
+ Gamemastery 101 
+ Filed under: Roleplaying Games Comments (65) 
+ Article tags: don't prep plots , scenario design 
+ 65 Responses to "Don't Prep Plots"
+ Justin Alexander says: 
+ ARCHIVED HALOSCAN COMMENTS
+ Guuthulhu 
+I always leak reading things by other GMs, particularly regarding GMing. I particularly liked your Plot essays. I will not tell a lie, when I moved away from AD&#038;D modules and onto other systems without the "easy-way-out" adventures, I tended to develop my plots too deeply, to the point where a few sessions into the game, all that work was wasted. As time went by and I learned from my mistakes and learned to feel the party and cater to their tastes, I slipped into a method that worked. That was just having an idea of what the major crisis in the world was, a few key people involved, and just let the players go weaving the story around them as they went. Most things were on the fly with a few notes and I never looked too far beyond the next session. Dealing with the situation at hand proved to be require much less work and kept the flow of the game natural. I don't spends hours of my free time mapping out a dungeon the party might not want to enter. I can do that on the fly, if necessary. Key locations the party can't avoid if they wish to finish the adventure, I'll map out when the time comes. Things can change, especially when you tend to leave the game open. They might become more interested in other things, in which case I keep track of the villains doings after the group abandons their quest. In a long running campaign, they might run into the issue and that always makes for some memorable gaming. 
+Saturday, July 17, 2010, 4:39:31 PM
+ The Illiterate 
+[@The Illiterate: But what would you do if your players suddenly decided they didn't want to follow the breadcrumb trail?] 
+ I would be thrilled. 
+ This article rocked, by the way. Gave me a lot to think about. 
+Friday, March 27, 2009, 4:11:00 PM
+ Justin Alexander 
+@GE Leto: I think what you mean by "plot flexibly" and what I mean by "don't prep plots" are probably pretty similar (if not identical). 
+ Part of my agenda with this essay is to suggest that &#8212; no matter what modifiers we lay on it &#8212; the term "plot" comes with a lot of baggage. Its use seems to cause a lot of misconceptions. 
+ In using the term "plot", we're using a term specifically designed for static mediums. What I'm suggesting is that we instead embrace a term ("scenario") that inherently suggests the non-static nature of an RPG. 
+ @The Illiterate: But what would you do if your players suddenly decided they didn't want to follow the breadcrumb trail? 
+ I agree that knowing what your players want is an important part of prep. Your ability to anticipate their likeliest courses of action allow you to focus your own attention. 
+ I highly recommend that every GM end every session by asking, "So what are you guys planning to do next?" 
+Friday, March 27, 2009, 3:32:17 PM
+ The Illiterate 
+My current party seems happiest if I give them a nice trail of breadcrumbs with something big and interesting to kill at the end of it. 
+ I am not completely blameless here, I've been having trouble finding the time to do prep and design work for this campaign. The world is not as rich as I would like it to be. 
+Friday, March 27, 2009, 9:08:12 AM
+ GE Leto 
+I've discovered that if a GM plots things out, but does so flexibly, that things work out well. Part of this involves knowing your players well enough to know their metagame goals, as well as knowing how they think and play. In other words, considering your horrific Freeport experience with that one group, these weren't the sort of people who can handle the kind of game you laid out for them. That being said, if you are confident in how your players will react, then plan specific plots, but make those events flexible. If you need the PCs to meet a specific NPC, but they don't do what you had expected in order to meet him, then bring him to them, wherever they are. This sort of thing has happened to me a few times. 
+ As I said, knowing your players (and their characters) is key. If your adventure requires them to chase after the McGuffin, but not a one is interested in it at all, but would rather go off and "kill the blacksmith," railroading them into chasing it will only generate stress. Knowing what sort of experience they want and being able to deliver it are your job to them. On the other hand, if you are upfront with what sort of campaign you intend to run, and none of your players are interested in that, then they have no reason to complain when things don't seem interesting to them, either. Plot isn't just about a sequece of events and how the GM and players handle them, but also HOW the players get involved (cf. your earlier discussions on how to present the plot), and WHAT SORT OF PLOT THEY WANT. For example, I wanted to run an extremely specific Eberron game set in Xen'drik that was drawn from a lot of pulp sources from the 1920s and 30s. However, every player was more interested in a high fantasy game, and didn't want to play big game hunters, archeologists, witch doctors or the expedition to find Dr. Livingston. If I was to run that game anyway, both players and GM would have been disappointed. Instead, I ran something entirely different (and somewhat more pedestrian), which is exactly what they wanted. 
+Tuesday, March 24, 2009, 1:33:21 AM
+ March 15th, 2011 - 2:28 pm 
+ Don't prep plots! says: 
+ [&#8230;] Don't Prep Plots [&#8230;]
+ July 22nd, 2013 - 2:38 pm 
+ Old school vs. new school part 1 says: 
+ [&#8230;] As was said at the Alexandrian website, the answer is to not Prep plots: [&#8230;]
+ October 21st, 2013 - 1:05 pm 
+ On Useful Dungeon Key Entries | ars phantasia says: 
+ [&#8230;] look at this particular topic see Justin Alexander's fantastic piece over at the Alexandrian Don't Prep Plots and Courtney Campbell's many posts on the topic of agency over at Hack & Slash).  My [&#8230;]
+ December 4th, 2013 - 9:54 pm 
+ Review: Eureka (from Engine Publishing) | Keith Davies &#8212; In My Campaign - Keith&#039;s thoughts on RPG design and play. says: 
+ [&#8230;] try to design around situations, not plots (as described by Justin Alexander in Don't Prep Plots). The book presents plots, so there's an immediate conflict of application. For me to make [&#8230;]
+ February 7th, 2014 - 2:49 pm 
+ Role Play Craft | Adventure: Wine for Idleberry, Part II says: 
+ [&#8230;] that can be approached from different angles and different ways. Essentially, as The Alexandrian (thanks to Tad Davis for pointing me this way) advises, rather than making a plot, I'll make [&#8230;]
+ February 19th, 2014 - 1:36 pm 
+ My personal rules for GMing (that I still keep forgetting all the time) | Spriggan&#039;s Den says: 
+ [&#8230;] Don't Prep Plots: This is actually something big and complex enough to write entire articles about, but I hope to get the central point across in a single paragraph. What you want to avoid is telling your players what their characters are thinking about certain things and what descisions they are making. To some extend, it can never be entirely avoided. If you prepare an adventure about a dragon hunt, then the PCs have to agree to go looking for the dragon. If the adventure is about a princess being kidnapped, the PCs have to agree to go searching for her. Otherwise, there will be no story at all. But what happens then should always be left uncertain. The players may decite to negotiate with the dragon and help him ambush the other dragon hunters that will be coming and share the loot. Or they might find the kidnappers of the princess, but decite to collect the ransom themselves, release the princess, and a few days later present the corpses of the kidnappers and part of the ransom money to the king, and recieve a reward for catching the criminals. Totally not the story you had planned for, but still great stories. Never, ever tell the players they can't do something because that's now how it's in your script. If the players want to take the story into a direction that is very different from what you have prepared and you don't think you can't improvise on the sopt, then tell the players that this will be it for this day and you'll get back to them in a week or two once you prepared the locations, NPCs, and creatures they will encounter down that path they've chosen. Don't take it too far, though. If the campaign is about a war between to kingdoms, they shouldn't steal a ship and start a life as pirates on another continent. If they don't want to play the war campaign, they should have said so before. [&#8230;]
+ April 23rd, 2014 - 3:23 am 
+ My favorite articles on Gamemastering | Spriggan&#039;s Den says: 
+ [&#8230;] Don't Prep Plots by The Alexandrian [&#8230;]
+ April 23rd, 2014 - 2:28 pm 
+ &#8212; #ВсякаяВсячина — Структура игры, ч.12: Практическое использование игровых структур (перевод) says: 
+ [&#8230;] В любом случае, мне бы пришлось сильно напрячься, сражаясь с предоставляемой «линейным сюжетом» структурой подготовки к игре, что как правило, означает куда большие объём этой самой подготовки. [&#8230;]
+ October 24th, 2014 - 5:15 am 
+ Alex says: 
+ Tried to find a starting point but here we go. 
+You've said before don't prep plots prep situations, even if that situation is maintain the standard guard rotation. I want to clarify that for myself because I'm confused on how to make it designing my own adventures. 
+How could you make a static one faction dungeon &#8211; say a uniformly allied huge group of undead guarding a Lichs treasure &#8211; into a situation instead of a plot I suppose. Is it a plot if you have layers of nodes awaiting players to go through them and reach the treasure?
+ Also, this question combines this and the node based articles. If you have the nodes &#8211; say three nodes before the bad guy at the end, or 9 with a layer cake &#8211; and your players do decide to do something different. What do you do? Is your toolkit your nodes? 
+I tried to follow your idea of using the here or nine encounters in my head and responding with them, but despite what was in the node based article it still seemed like railroading to me. I like to split it up into three different things the players might do (I'm sure there's more) to help me to generalize the idea.
+ If the players decided to try to portal to the Lich at the end &#8211; do the adventure a different way basically &#8211; what would you do? Give them the same undead encounters? 
+If the players decided to ignore the entire thing, turn in the opposite direction and run as fast as they can away from the adventure, would you try to give them the same undead encounters as planned, but on the run? 
+If the players decided to sit in a tavern instead, would you try to give them the same undead encounters as planned, but in the tavern?
+ Honestly, strictly because it's the same encounters it does seem like railroading to me, even if they decided to sit, run, or treasure hunt. I'd like to hear your thoughts on it. If it isn't, why isn't it? 
+Now I read a dungeon world blog that said the GMs role is to fill the players game with adventures. I've thought about what I would do if they decided to do something different, and came to an answer even if it's wrong. I decided if they decided to turn away from an adventure, and make a new goal &#8211; be it sitting or running away from an adventure &#8211; simply conclude the other adventure if needed and improvise a new adventure around their goal &#8211; because your role is to fill the story with adventure. 
+First of all, would you advise Gms to do that? 
+Adventure about escaping the Lich or adventure about sitting in the tavern, etc.
+ I would design this new adventure as best I can in a node based method, but I didn't like the idea of using the original toolkit or the same monsters. For example, what if I gave them a map or key that basically said "These monsters are here" and they try to avoid them but with those being the toolkit they actually can only get them. 
+So I decided on "preparing to improv" and merely have a bunch of ready made encounters for when they do improv. I wouldn't know which one would be picked, but it seemed to fit the node based design method. Would you agree or disagree and why?
+ So all in all with the node based design, don't prep plots, and the toolkit, how could I design a simple undead guarding licks treasure dungeon, in which the players could decided to dismiss it entirely? 
+How could dungeons be a situation? 
+How isn't it railroading with a toolkit of only three or nine groups that they must face? 
+How would you respond in terms of node based design and its toolkit to the players decision to do something different?
+ February 4th, 2015 - 12:36 pm 
+ Justin Alexander says: 
+ Re: Dungeons. Ditch the idea of nodes for these. Check out Xandering the Dungeon . Populate the dungeon in a way that makes logical sense. (What's the day-to-day activities of this location? Where are the guards located? How do the guard patrols communicate with each other?)
+ When the PCs hit the dungeon, have the dungeon respond logically. Using a Monster Roster will help to make this a manageable task, particularly for large complexes.
+ Looking at your hypotheticals&#8230;
+ Re: Teleporting to the bad guy. Basically, let them. Now: What does the bad guy do? Maybe he fights them. Maybe he runs away while sending waves of defenders back to confront the PCs. Maybe he teleports away. There's no single "right" answer here. You're playing him &#8212; and the dungeon-at-large &#8212; the same way that the players are playing their characters.
+ (In the future, I might ask myself why the bad guys aren't defending against the scry-and-teleport combination.)
+ Re: Ignoring the whole thing. Basically, let them. What happens next largely depends on the agenda of the bad guy. In this scenario, it sounds like the lich king has been lurking in his underground lair and minding his business for a very long time. Unless the situation changes, he'll probably keep doing that.
+ (Of course, you generally want to avoid throwing away prep time like that. Don't be afraid of explicitly asking your players, "What are you planning to do next session?" And then prepping specifically to that answer. I recently had to throw away 80+ pages of material because the players decided to go in a completely different direction than they had told me at the end of the previous session. It sucks, but it does happen.)
+ Re: Using the same encounters. Yes, if the PCs have the same encounters no matter where they go, that's railroading. (It's called illusionism.) Don't do that.
+ Illusionism, however, should not be confused with active NPCs. If the PCs piss off the lich king and then run away, it's not railroading to have the lich king send a squad of undead to hunt them down.
+ (It's also OK if you later reuse those undead stat blocks for some other encounter with the undead. There's a difference between efficiently recycling prep and forcing a predetermined sequence of encounters on your players.)
+ Any given scenario starts with the premise that the PCs are going to engage with that scenario: They are going to go to the dungeon. They are going to try to rescue their neighbor's kid from the mafia. They're going to try to solve the murder.
+ If they say "fuck the dungeon" or "fuck the murder", then the scenario &#8212; and its associated "toolkit" &#8212; becomes irrelevant. Move on to whatever scenario they are interested in pursuing.
+ February 4th, 2015 - 4:44 pm 
+ Alex says: 
+ Another question that is actually related to the above question. The question arose after listening to a podcast. Then I remembered in this gen con dnd adventure builder workshop I've watched online, in that they (WotC staff) advise having proactive and reactive villains so that the players can feel the hand of the villain against them.
+ I like starting with examples so let's take the Lich King and undead above. You replied with teleporting having the Lich bring his army back and use them, and you also replied if the players piss of the Lich sending the squad of undead isn't railroading.
+ I thought a bit about this and I read the following principle of rpg villainy, and if asked the question I'm asking you I won't have an answer. I wouldn't know how to do it. Instead of thinking about it for weeks, I thought I'd just ask you as a start. 
+ In the principles article, you talked about communiques and henchman and existential costs to having the villain die before them, but besides "having a fishing rod" I don't think I know "how to fish" right now.
+ So with all that, the basic question is how do you reconcile having a reactive/proactive villain and not railroading with the villains armies? 
+What's the difference having an active NPC like the Lich King pissed off and sending an undead squad, or when they teleport responding with his troops, and railroading? 
+In other words I guess, how could a villain be proactive and react to the players without putting them through the same encounters with the same monsters?
+ March 2nd, 2015 - 11:42 am 
+ Justin Alexander says: 
+ Railroading happens when the GM negates a player's choice in order to enforce a preconceived outcome.
+ If a PC chooses to punch a mafioso in the face and then, later, that mafioso tracks them down with some thugs and wants to beat them up, that's not railroading. It's actually the opposite of railroading: The PC made a choice. Instead of negating that choice, you're following up on the consequences of that choice.
+ Does that make sense?
+ Similarly, let's say that the PCs choose to disable a trap. When they fail their Disable Traps check and trigger the trap, that's still not railroading. Just because the PCs choose to do something, it doesn't mean they're guaranteed success. It only becomes railroading if the GM artificially forces failure on the Disable Traps check because he has the preconceived notion that it would be more fun if the trap went off.
+ Failure is not railroading.
+ Okay, let's consider the lich king example again.
+ In the first scenario, the GM has a preconceived notion that the PCs need to fight through Encounters A, B, and C before confronting the Lich King. The PCs decide to teleport directly to the Lich King, but the GM negates that choice because they're supposed to have Encounter A first. That's railroading.
+ In the second scenario, the Lich King is similarly surrounded by a bunch of undead in his dungeon. The PCs decide to teleport directly to the Lich King and the GM allows that to happen. The Lich King responds by calling for help from his Royal Guard (which was originally Encounter C out in the chamber of Many-Coloured Pillars). That's not railroading.
+ Then the Lich King escapes. That's still not railroading: The PCs may have made the choice to ambush the Lich King, but that doesn't mean that ambush is guaranteed to be a success.
+ Then the Lich King rallies his forces and sends a death squad to attack the PCs. Maybe the death squad was originally Encounter A. Maybe it's a combination of Encounter A and B. Doesn't really matter. It's still not railroading: It's a consequence of the choices made by the PCs.
+ March 2nd, 2015 - 5:08 pm 
+ Alex says: 
+ Okay so&#8230;I understand what railroading is better now, but I'm still unsure how to make an adventure and react such that it isn't railroading with the villians personnel.
+ Let's say I make villains with armies in a dungeon, and they can also have other things at their disposal as well. I want to give the players a map and say figure out what to do. The players decide to do something, and I react. 
+When I react, I have this stubborn idea that my villian will most likely go to a henchman and say attack with the armies&#8230;whatever the players do. 
+Only reason I can think of not having that happen is having some existential reason why the villain won't want to, or perhaps having something better at my disposal to deal with problems, which seems like the same thing &#8211; just always respond with the better resource. 
+Say politics don't allow an open attack or the players get the goons wife hostage.
+ I feel like there are many situations where villains would simply respond with their henchman and armies &#8211; or themselves and armies &#8211; attacking, maybe using the better thing. 
+I also feel like always responding with encounter b instead of encounter a isn't what your suggesting &#8211; meaning oh it's not encounter a so its not railroading.
+ This is my worry, railroading with my villains armies. 
+I don't want to railroad with my villains armies or better tool, by reacting with my villains armies/ better tool whatever the players do. But responding with armies seems logical at times to me. 
+Does someone have to make it so that your reaction isn't railroading, either by adventure design or play design? 
+Is it really as simple as only responding with encounter b or c rather than with encounter a? 
+Do you have to make it so your "reactions" are different for each villain even though they might all have armies? 
+Do the players always have to go through the armies somehow?
+ March 10th, 2015 - 2:14 pm 
+ Leland J. Tankersley says: 
+ &gt; Do the players always have to go through the armies somehow?
+ Not if they can figure a way around it. 
+ A railroad tends to happen when you, in your mind while you're designing an adventure, start thinking about what the players will do when they see X. And then you plan for that one eventuality, and decide the villain (or the environment, or whatever) would respond with Y. And then you think, the party will probably do Z&#8230;
+ That way lies madness. Remember, players are fickle and unpredictable. You will almost certainly be wrong in your predictions, and in that case most of your prep work will be wasted (or alternatively, you will put on your conductor's hat and FORCE the players back onto the tracks you previously built).
+ What Justin's advocating is not to prep specific events/reactions, but rather to prep resources &#8212; kind of a "bag of tricks" that is available to the opposition that you can reach into when faced with the latest PC activity. Think of your role as GM as being the impartial judge of what would happen in any given set of circumstances. If the PCs do X, and the villains have resources A, B, and C, and objectives 1 and 2, what would the villain do in that situation? To be able to do that, you're better off statting up some henchmen, being sure you know what the villain is trying to achieve and how far he's willing to go to get there, and rolling with the punches.
+ So if the players come up with some so-crazy-it-just-might-work scheme to bypass all of the bad guys (maybe they scry or Gather Information to learn that the villain prays in solitude for an hour at dusk in the Chapel of Evil, and somehow figure a way to teleport into that Chapel at the right time), then sure, they can take a shortcut to the villain. Maybe they even beat him. But don't neglect the villain's agency in this &#8212; at that point, you're the Big Bad, the good guys have bushwacked you before you're ready, so it's up to you to figure out what the villain would do. Probably hightail it out of there, yelling for the guards. And presto, maybe now the party DOES have to fight at least one of those bands of defenders. And even if the party does kill the villain, that prep work doesn't have to be wasted. The party still has to get out alive. And maybe the bad guy's lieutenant decides he can pull off the Evil Ritual of Evilness himself. And now he knows the PCs are out there, and maybe he'll send a strike team of his second-meanest guys (the meanest are kept close as bodyguards, natch) to ruffle their feathers a little&#8230;
+ The idea is, if you're less specific about what happens when, and treat prep more as resources to be used when the appropriate situation arises, you can be more flexible and creative in the moment, at the table.
+ March 11th, 2015 - 8:38 am 
+ Leland J. Tankersley says: 
+ &gt; I feel like there are many situations where villains would simply respond with their henchman and armies
+ "When your only tool is a hammer, every problem looks like a nail."
+ For some villains, that's perfectly fine. [Aside: I am having tons of trouble spelling "villain" today. Weird.] If ALL of your bad guys [ha! problem solved] are like that, it seems like it could be a little stale.
+ Fundamentally, just be honest to the situation.
+ March 11th, 2015 - 8:42 am 
+ Alex says: 
+ I get it now. Thank you for the help.
+ March 11th, 2015 - 10:18 am 
+ Ролевое КБ имeни Карандаша и Бумаги | #Теория — Не продумывайте сценарий! (перевод) says: 
+ [&#8230;] The Alexandrian 23.03.2009 [&#8230;]
+ April 29th, 2015 - 9:01 am 
+ Ролевое КБ имeни Карандаша и Бумаги | #Теория — Узелки сюжета ч.2: Метод «многовариантного приключения» (перевод) says: 
+ [&#8230;] же, легко сказать &#8212; «создавайте ситуации». Но ведь важным преимуществом линейного подхода [&#8230;]
+ May 1st, 2015 - 8:32 am 
+ Plots and Player Agency | In My Campaign - Thoughts on RPG design and play says: 
+ [&#8230;] have long agreed with the premise of Justin Alexander&#8216;s article, Don't Prep Plots. The gist of it is that if you prepare an adventure or scenario with a plot, it is easy to become [&#8230;]
+ August 14th, 2015 - 2:51 pm 
+ GM Tricks: Prerolled Numbers | 2d6 Falling Damage says: 
+ [&#8230;] a heavy focus on dice-based randomness when it comes to encounters and plot development (although I don't prep plots, I prep situations), and I wanted to make sure my players knew I was still going to follow the dice, no matter the [&#8230;]
+ December 19th, 2015 - 8:53 pm 
+ MartinRalya.com | Alchemy, agency, and surprises says: 
+ [&#8230;] The Alexandrian's series on Railroading and post about not prepping plots [&#8230;]
+ February 4th, 2016 - 8:37 pm 
+ The Plot Engine Manifesto &#8211; UnGameMaster says: 
+ [&#8230;] is never enough to praise the goods and approach of the Justin Alexander [link] ( http://thealexandrian.net/wordpress/4147/roleplaying-games/dont-prep-plots "Don't Prep Plots") It is never enough to praise the goods and approach of the [&#8230;]
+ September 26th, 2016 - 7:50 am 
+ Quick update: Reworking Isladja Story Structure - Varza Games says: 
+ [&#8230;] from the plot)? Or, should it be designed for more seasoned GMs, as Justin Alexander advocated in Don't Prep Plots. This second approach would include characters, locations, and situations&#8230; but it would not [&#8230;]
+ December 9th, 2016 - 1:09 am 
+ Blackout: or How I Stopped Worrying and Love Powered by the Apocalypse | Wiz-visible Ink says: 
+ [&#8230;] biggest deviation from the PbtA mission statement are the pre-established flags of the [&#8230;]
+ February 11th, 2017 - 12:43 am 
+ RPGs and investigation | Unrealised Gains says: 
+ [&#8230;] I try to give the players 3 clues in each situation to lead them to the correct conclusion. Essentially, the first clue should be automatic, and the subsequent clues should be interpreted to find suggest the next possible locations. This lets the players make their own choices and takes much of the pressure off the GM. Edge of Darkness hits several of the points made in this essay: http://thealexandrian.net/wordpress/4147/roleplaying-games/dont-prep-plots [&#8230;]
+ March 20th, 2017 - 5:36 pm 
+ Jamie Le Rossignol says: 
+ I agree with everything you say here except the idea of not preparing plots. I agree they as the GM you can not plot out all the eventualities of a character's story, in fact, that's the Player's responsibility. I see the plot (or plot hook) as the reason or why the charactes are there, the core of the story. Dave Morris expressed it well with the post, Save the world, I want to get off ( http://fabledlands.blogspot.com.au/2013/06/save-world-i-want-to-get-off.html ), in that as GMs we need to make it personal to the characters. 
+Reading the Agnarr & Tee's backstorys from the Ptolus Campaign, you've woven them into the world and I suspect (as I have not read all of the Campaign Jounral) that you keep reinforcing this idea of hooking the characters in the world with the NPCs, events, and other occurances. 
+So what techniques do you use to keep the players hooked and engaged with the story? 
+Do you provide characters with oppotunities to develop their character, like completing a personal goal or quest? And if the chacracter has finished something off, then how would you introduce a new plot hook? 
+Have you used NPCs in a scenario to complicate the lives of the characters and if so how?
+ May 10th, 2017 - 7:50 pm 
+ Richard says: 
+ I've been reading some of your articles as I'm preparing to debut as GM in Vampire The Masquerade, and, as a game design and writing enthusiast, I gotta say I love all your articles. 
+They've helped me wrap my head around how to proceed with planning out everything. 
+I keep taking notes 😛 Thanks for writing all of this!
+ September 1st, 2017 - 12:48 pm 
+ Halil Torkut says: 
+ Would you mind giving a tip about which published module you were talking about in the beginning of the article? Perhaps at least the gaming system?
+ December 24th, 2017 - 2:02 pm 
+ More Variety In Adventure Structure &ndash; Follow Me And Die! says: 
+ [&#8230;] Alexandrian has an article, Don't Prep Plots. He argues to prep situations instead of plots, since plots are the sequence of events that drive a [&#8230;]
+ May 25th, 2019 - 9:07 pm 
+ The Village and the Witch | A Review &#8211; Chaos Magick-User says: 
+ [&#8230;] basic principle of good game design it exactly that, you don't write stories, you write situations for the player characters to interact with as they see fit, or not at all. Situations than will [&#8230;]
+ September 28th, 2019 - 12:41 am 
+ Andrew says: 
+ This article has helped me so much; before I was becoming overwhelmed trying to predict the actions the players would take and preparing contingencies for all of the feasible possibilities. Thank you for relieving me of that.
+ One thing that I'd like some advice on is preparing situations that by their nature already involve the PCs while still assuming their absence. For instance, the PCs are a certain patron's choice solution to a problem with another NPC. Do I write my situations assuming they are involved (especially if they're more likely to become involved than not) but doing the bare minimum, or do I plot out events assuming their complete and utter absence, with replacement NPCs filling in for the patron's assets?
+ December 3rd, 2019 - 10:26 pm 
+ Justin Alexander says: 
+ @Andrew: Check Status Quo Design , and the whole Smart Prep series in general.
+ Timelines can be a useful tool, but IME they're not as useful as you might think. There's a lot of times when "would-be patron has problem with NPC" that wouldn't benefit from a timeline. Often this is true even if it's an active conflict.
+ For example, let's say these two characters are involved in a gang war; they're fighting over territory for selling drugs in the Meadowlands. Does that need a specific timeline? Probably not. There's a lot of stuff happening, but there's probably not a lot of value to mapping out every single thing both sides are doing.
+ (You might summarize big, notable events as part of your city's headlines .)
+ The exception would be if the timeline is significant to how the PCs interact with the scenario. For example, if there's a string of bank robberies and each robbery offers opportunities to find clues, knowing when the bank robberies are going to happen is useful. Or if the NPC patron is hiring them to specifically protect the Crescent Moon chinese restaurant (where he launders money), the illegal basement casino he operates out of a warehouse on Baker Street, and his drug lab on Calhoun Avenue, then you'll want to know when the bad guy is planning to hit each of those locations.
+ So you're prepping a timeline that will be useful IF the PCs involve themselves, while bearing in mind that once they DO engage it's likely that the remaining timeline will quickly change to the point where it becomes useful (so don't over-prep a timeline that goes out weeks in advance if they're likely to change everything in the next three days).
+ What if the PCs don't get involved but then a patron hires a replacement group of faux-PCs to do the same thing he wanted them to do?
+ Probably not worth prepping that, IMO. It's not impossible that the PCs will choose to get involved in the situation despite turning down the explicit scenario hook, but it's not a great bet.
+ Insofar as how those events play out having a wider impact that the PCs should be or could be aware of, you're probably better off just figuring that out at a very high level after you already know that the PCs aren't going to get involved.
+ December 4th, 2019 - 12:38 pm 
+ Gamemastering with Airtable - Unpossible Journeys says: 
+ [&#8230;] select field” and a filter. This idea was based on another part of Justin Alexander’s articles: Don’t Prep Plots: Prepping Scenario Timelines. I don’t personally know how I would do this on Airtable, but I’m sure there’s a way to come [&#8230;]
+ March 23rd, 2020 - 8:46 pm 
+ Kristjan says: 
+ Quality stuff, thank you! How are the goal-oriented opponents different from the concept of grim portents? If they are. See https://a-dungeon-world.fandom.com/wiki/Fronts#Add_grim_portents_.281-3_for_an_adventure_front.2C_3-5_for_the_campaign_front.29 
+ October 19th, 2020 - 2:17 pm 
+ pixledriven says: 
+ Goal-Oriented Opponents are DANGERS (THREATS in Apocalypse World jargon)
+ Grim Portents are meant codify concrete steps that the Danger or Front are going to take/accomplish IF THE PLAYERS DO NOT INTERVENE. It's like pre-scripting background action. 
+ These serve two obvious useful functions &#8211; it allows you as GM to track what's going on in the "greater world/area" in an abstract-yet-complete-enough manner, and gives you details you can use to telegraph future drama. Think about the GM moves "Show signs of an approaching threat" and "Offer an opportunity, with or without cost".
+ October 21st, 2020 - 1:20 pm 
+ Jin Cardassian says: 
+ @Justin
+ I just listened for your Twitch steam. It was great to hear these points again.
+ One question: When you're prepping PC adversaries (or even allies) for use as tools, and responding to player by playing them flexibly without regard to the outcomes, it seems really easy for a GM to overpower in an unfair way.
+ Players show up with tools (their character sheet), but they don't generally know everything about the NPC composition, their position, resources, or schemes. The GM, meanwhile, knows everything about the PCs and is present whenever they discuss their plans.
+ Playing NPCs like the players do their characters was emphasized during the stream. But if a GM did that, it would be remarkably easy to default on the best and most player-frustrating tactics, based on wider GM knowledge.
+ Are their any techniques you use to mitigate that? How do you play adversaries to fullest, without pulling punches, and still keep that knowledge from biasing their choices?
+ November 12th, 2020 - 6:33 am 
+ Newbie GM Advice &#8211; Biggus Geekus Podcast says: 
+ [&#8230;] Link discussed:Don’t Prep Plots…prep situations: https://thealexandrian.net/wordpress/4147/roleplaying-games/dont-prep-plots [&#8230;]
+ November 20th, 2020 - 1:05 am 
+ Intro to Israeli Theory &#8211; Your Game Doesn’t Have a Story | Gnome Stew says: 
+ [&#8230;] Alexander suggests we “prep situations, not plots”. In a nutshell, it means we’re not planning a sequence of events, but rather a rich and [&#8230;]
+ December 11th, 2020 - 4:00 am 
+ Lost Mine of Phandelver Remix: A Brief Interlude about Node-Based Scenarios | The Cool Mama says: 
+ [&#8230;] each node using Alexander's "Don't Prep Plots, Prep Situations" [&#8230;]
+ May 29th, 2021 - 11:08 am 
+ Steal This: How to GM, GM Agenda, GM Principles and GM Moves | The Cool Mama says: 
+ [&#8230;] what happens? By prepping only what you need and no more. You also do it by prepping situations, not plots. Think of preparation as filling your story toolbox: the people, places, and things that the PCs [&#8230;]
+ July 28th, 2021 - 3:11 am 
+ Justinius Volta says: 
+ Excellent writing and advice. My personal GM style is kind of mix between the two opposite ends which you describe. Few thoughts below:
+ So, I have learned that sometimes GM needs to prep a plot. This is especially important at start of the campaign. PCs usually need a nudge to some direction. Of course, that also depends much of the preferences of the group. Some groups need more structured play, some more open ended games. Prepping for plot is an art though, and GM needs much flexibility to pull it of. If PC go tangentially or miss a step, then improvisation is needed.
+ I think that there is a golden midway. Instead of giving your players a map with the route marked with invisible ink (which will cause frustration), or map without destination (which will cause them go sideways), you give them map with few clearly marked points of interest, and a final goal. Then you allow them to find their own route.
+ World needs more prepping for situations, but it's not a magic bullet. "If your only tool is hammer, every problem starts to look like nail."
+ But, most important is that players reach Awesome Town. Rest is just tools to reach it.
+ Thank you.
+ January 11th, 2022 - 9:14 am 
+ Constructing custom encounters &#8211; A treatise on interesting encounter creation &#8211; Lanessar&#039;s Dungeon23 says: 
+ [&#8230;] If you need examples of how scenarios work, I recommend reading The Alexandrian's article "Don't Prep Plots". [&#8230;]
+ December 29th, 2022 - 10:11 am 
+ Yo maen says: 
+ There should be very few temples of evil In role-playing games and roll games.
+ April 20th, 2023 - 11:12 pm 
+ Gatan says: 
+ @Justinius Volta Read some on node-based design on how to avoid prepping a plot using this same principle, but for the overall campaign.
+ &#8212;
+ I've discovered this blog some months ago and found myself always first thinking of scenarios as a plot, only then to think "nope that's too linear" when I sit to prep them and needing somewhat more time to unravel the concept into a truly non-plotted scenario. I'd say that, while starting to do things in the "prepping tools" way and having picked bad habits from premade campaigns, it's actually a bit more work to reenginer the scenario as not to be linear anymore. However, I do think it'll get rid of the attrict of needing to "fool" my players a certain way and being just able to&#8230; Enjoy myself. Which is priceless.
+ May 16th, 2023 - 12:29 pm 
+ Max says: 
+ This rocks, man! Exactly what I've been looking for. Consciously. This is the exact answer that I was trying to come up with myself, but just didn't hold enough knowledge to make this theory. Thank you, really saved me a lot of effort and frustration.
+ June 3rd, 2023 - 3:35 am 
+ Brad says: 
+ I have read through quite a few of your posts and have yet to respond (mostly because they are too old). But this one hits close to home, and has had recent feedback. 
+ First thing I would like to say is most of this hinges on the player GM interaction and communication. I have been with the same group of players for more than 20 years, we have all taken turns at being GM, so know the complexities of the position. With that knowledge it helps to make things fun. I have been the most active GM and am very comfortable doing things on the fly, even though most of what we do is based on published material, going off track has never been a problem. So I feel we run in a situation based setting (sitting?).
+ Second, we do get either lazy or complacent sometimes and fall back on the plot based style of play. We work towards keeping it fun, and if that means just sitting back and enjoying the railroad ride, we do not object. I feel that if you are using published material, where they are "trying" to tell a story, that we will "play as intended" just to see the story play out.
+ There are my two sides of the story. So I just suggest having fun, talk as a group to decide what works best for your group. I recommend taking turns as GM, I thought I saw something on this site about designing a campaign setting where each person at the table takes a turn progressing the story. It can be single sessions, or multiple. This allows everyone to learn about both sides of the GM screen. That will lend itself to better communication and better experience overall. But overall this was a very good article, and appreciated.
+ June 8th, 2023 - 6:59 am 
+ Kenway says: 
+ Could someone please identify the actual, published adventure described? That final setpiece sounds hilarious.
+ July 12th, 2023 - 9:26 am 
+ Someone says: 
+ Sure thing, Kenway. Search for ISBN 0786907185 (I'm using a non-memorable number so as not to spoil the scavenger hunt).
+ I would like to redeem my "bonus points" at the local Clout City, but I'm afraid they altered the deal.
+ July 29th, 2023 - 4:12 am 
+ Justin Alexander says: 
+ That's not it.
+ July 29th, 2023 - 6:08 am 
+ Don Quixote says: 
+ Ah, I was hoping to get that actual published adventure, I needed something greek inspired!
+ January 11th, 2024 - 4:58 am 
+ Highbrowbarian says: 
+ Well, with the milieu changed, it's safe to guess that the original adventure wasn't Greek themed, anyway.
+ (I have a secret theory that the reference here is to an adventure you can find Justin's old review of on this very blog, but I don't want to descend into that right now.)
+ January 22nd, 2024 - 6:40 pm 
+ Fucious says: 
+ Many are misinterpreting and referencing this article in order to not create any narrative whatsoever in their campaigns. They say "Justin Alexander says don't make plots", interpreting it as "Don't have any narrative at all".
+ This article is not saying don't have a narrative. It's saying don't script narrative outcomes; don't railroad. The word "plot" is being interpreted not as "a scripted, unchanging series of events" but as "a story".
+ The content here makes great sense, the article title however is being misinterpreted and spread around that this suggests having no story whatsoever.
+ May 22nd, 2024 - 4:16 pm 
+ The Heretic says: 
+ Oh. Is that Darkness Revealed 1:Descent into Darkness?
+ November 22nd, 2024 - 1:35 pm 
+ G says: 
+ Doesn't go far enough. The players should be free to choose to do something other than pursue the villains. The players decide what their goals are. Not the GM.
+ September 5th, 2025 - 4:54 pm 
+ Justin Alexander says: 
+ @G: There's a numbered list and "the players choose to do this" is literally #1 on the list.
+ September 5th, 2025 - 8:53 pm 
+ Linearity and freedom in adventures &#8211; Ill Met by Morrslieb says: 
+ [&#8230;] Don't Prep Plots, by Justin Alexander &#8211; an article that has done a lot to help me think through this issue. The author is a lot more definite than I would be, but this is well worth a read. (Check out the links at the bottom of that post for some other great articles too.) [&#8230;]
+ September 17th, 2025 - 8:56 am 
+ How To Run Thrilling Bounty Hunter Missions In Sci-Fi RPGs says: 
+ [&#8230;] A bounty hunt lives or dies on the target. If they’re bland, the mission feels like a throwaway fight. If they’re distinctive (with quirks, habits, or a nasty surprise) they become a story your players will remember. You don’t need a stat block the size of a rulebook. Just sketch out a quick profile you can improvise from during play. [&#8230;]
+ October 13th, 2025 - 5:37 am 
+ Das Plot-Spektrum &#8211; Kritischer Fehlschlag says: 
+ [&#8230;] einer Diskussion auf dem Discord fiel mir mal wieder auf, dass &#8222;Plot", dieser umstrittene Begriff, auf einem Spektrum existiert. Das heißt, es gibt nicht nur &#8222;Plot" oder &#8222;kein [&#8230;]
+ May 23rd, 2026 - 7:15 am 
+ Build the Situation, Not the Story: The Essential Work of Game Mastering | Advice says: 
+ [&#8230;] approach is closely related to Justin Alexander’s classic essay Don’t Prep Plots, which argues for preparing situations rather than predetermined sequences of events. Where I want [&#8230;]
+ September 12th, 2026 - 6:31 am 
+ Preparare una sessione senza scrivere un romanzo | CTRL+POP says: 
+ [&#8230;] Justin Alexander, “Don't Prep Plots”, The Alexandrian, 2009: https://thealexandrian.net/wordpress/4147/roleplaying-games/dont-prep-plots [&#8230;]
+ September 13th, 2026 - 1:44 am 
+ Why We Must Stop Explaining in Sessions &#8211; How should we TRPG? says: 
+ [&#8230;] One of those principles is "Ask provocative questions and build on the answers." The Alexandrian argues that a session is something happening in the moment, not a story being told, so GMs should [&#8230;]
+ September 29th, 2026 - 4:47 am 
+ Your Players Need Something to Act On &#8211; The Eldritch Library says: 
+ [&#8230;] preparing situations rather than predetermined sequences of player actions in his article, “Don’t Prep Plots”. I'm reducing it horribly, but the key nugget of info I take away is that of Plots vs Prep. [&#8230;]
+ October 1st, 2026 - 11:39 am 
+ 7 Ways to Keep Your TRPG Session Moving When Players Go Off-Script &#8211; How should we TRPG? says: 
+ [&#8230;] assumes your players will walk through scenes in order. They won't. The Alexandrian's "Don't Prep Plots" makes this argument better than I can, but my version is simple: write down what is happening, not [&#8230;]
+ October 3rd, 2026 - 3:56 am 
+ Winning Without Killing says: 
+ [&#8230;] approach also reduces the temptation to overprepare. Justin Alexander's influential article Don't Prep Plots argues for preparing situations rather than predetermined storylines, and Mike Shea offers related [&#8230;]
+ October 20th, 2026 - 8:03 pm 
+ Leave a Reply
+ Name (required) 
+ Mail (will not be published) (required) 
+ Website 
+ XHTML: You can use these tags: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; 
+-->
+ you MUST enable javascript to be able to comment 
+ &#916; 
+ JUSTIN ALEXANDER
+ About - Bibliography Acting Resume 
+ROLEPLAYING GAMES
+ Gamemastery 101 
+ RPG Scenarios 
+ RPG Cheat Sheets 
+ RPG Miscellaneous 
+ Dungeons & Dragons 
+ Ptolus: Shadow of the Spire 
+ Alexandrian Auxiliary 
+ Check These Out 
+ Essays 
+ Other Games 
+ Reviews 
+ Shakespeare Sunday 
+ Thoughts of the Day 
+ Videos 
+ Patrons 
+ Open Game License 
+ Bluesky • Mastodon • Twitter 
+ Archives
+ Archives 
+ Select Month 
+ October 2026 (12) 
+ September 2026 (9) 
+ August 2026 (13) 
+ July 2026 (13) 
+ June 2026 (10) 
+ May 2026 (10) 
+ April 2026 (13) 
+ March 2026 (8) 
+ February 2026 (10) 
+ January 2026 (9) 
+ December 2025 (16) 
+ November 2025 (12) 
+ October 2025 (16) 
+ September 2025 (14) 
+ August 2025 (11) 
+ July 2025 (17) 
+ June 2025 (16) 
+ May 2025 (11) 
+ April 2025 (14) 
+ March 2025 (14) 
+ February 2025 (16) 
+ January 2025 (16) 
+ December 2024 (13) 
+ November 2024 (11) 
+ October 2024 (13) 
+ September 2024 (14) 
+ August 2024 (16) 
+ July 2024 (16) 
+ June 2024 (14) 
+ May 2024 (16) 
+ April 2024 (17) 
+ March 2024 (17) 
+ February 2024 (16) 
+ January 2024 (18) 
+ December 2023 (15) 
+ November 2023 (16) 
+ October 2023 (14) 
+ September 2023 (16) 
+ August 2023 (12) 
+ July 2023 (12) 
+ June 2023 (13) 
+ May 2023 (19) 
+ April 2023 (15) 
+ March 2023 (15) 
+ February 2023 (13) 
+ January 2023 (16) 
+ December 2022 (14) 
+ November 2022 (15) 
+ October 2022 (13) 
+ September 2022 (15) 
+ August 2022 (15) 
+ July 2022 (16) 
+ June 2022 (17) 
+ May 2022 (19) 
+ April 2022 (19) 
+ March 2022 (12) 
+ February 2022 (9) 
+ January 2022 (14) 
+ December 2021 (10) 
+ November 2021 (13) 
+ October 2021 (11) 
+ September 2021 (13) 
+ August 2021 (13) 
+ July 2021 (11) 
+ June 2021 (14) 
+ May 2021 (12) 
+ April 2021 (12) 
+ March 2021 (14) 
+ February 2021 (14) 
+ January 2021 (18) 
+ December 2020 (16) 
+ November 2020 (13) 
+ October 2020 (16) 
+ September 2020 (13) 
+ August 2020 (11) 
+ July 2020 (12) 
+ June 2020 (12) 
+ May 2020 (15) 
+ April 2020 (13) 
+ March 2020 (13) 
+ February 2020 (12) 
+ January 2020 (13) 
+ December 2019 (7) 
+ November 2019 (6) 
+ October 2019 (8) 
+ September 2019 (15) 
+ August 2019 (9) 
+ July 2019 (8) 
+ June 2019 (9) 
+ May 2019 (15) 
+ April 2019 (20) 
+ March 2019 (11) 
+ February 2019 (13) 
+ January 2019 (12) 
+ December 2018 (5) 
+ November 2018 (19) 
+ October 2018 (20) 
+ September 2018 (16) 
+ August 2018 (18) 
+ July 2018 (20) 
+ June 2018 (17) 
+ May 2018 (18) 
+ April 2018 (7) 
+ March 2018 (14) 
+ February 2018 (16) 
+ January 2018 (19) 
+ December 2017 (1) 
+ October 2017 (1) 
+ September 2017 (2) 
+ August 2017 (4) 
+ July 2017 (4) 
+ June 2017 (2) 
+ April 2017 (7) 
+ February 2017 (1) 
+ December 2016 (1) 
+ November 2016 (5) 
+ October 2016 (12) 
+ September 2016 (7) 
+ August 2016 (8) 
+ June 2016 (1) 
+ May 2016 (8) 
+ April 2016 (5) 
+ March 2016 (5) 
+ February 2016 (15) 
+ January 2016 (3) 
+ December 2015 (2) 
+ November 2015 (12) 
+ October 2015 (12) 
+ September 2015 (6) 
+ August 2015 (14) 
+ July 2015 (13) 
+ June 2015 (14) 
+ May 2015 (19) 
+ April 2015 (18) 
+ March 2015 (25) 
+ February 2015 (28) 
+ January 2015 (29) 
+ December 2014 (20) 
+ November 2014 (13) 
+ October 2014 (10) 
+ September 2014 (11) 
+ August 2014 (8) 
+ July 2014 (7) 
+ June 2014 (3) 
+ May 2014 (6) 
+ April 2014 (3) 
+ February 2014 (4) 
+ January 2014 (1) 
+ December 2013 (3) 
+ November 2013 (1) 
+ October 2013 (7) 
+ September 2013 (11) 
+ August 2013 (20) 
+ July 2013 (27) 
+ June 2013 (2) 
+ April 2013 (4) 
+ March 2013 (6) 
+ February 2013 (11) 
+ January 2013 (5) 
+ December 2012 (7) 
+ November 2012 (14) 
+ October 2012 (12) 
+ September 2012 (3) 
+ August 2012 (6) 
+ July 2012 (2) 
+ June 2012 (14) 
+ May 2012 (21) 
+ April 2012 (22) 
+ March 2012 (4) 
+ February 2012 (17) 
+ January 2012 (31) 
+ December 2011 (18) 
+ November 2011 (25) 
+ October 2011 (28) 
+ September 2011 (27) 
+ August 2011 (27) 
+ July 2011 (8) 
+ June 2011 (16) 
+ May 2011 (22) 
+ April 2011 (28) 
+ March 2011 (38) 
+ February 2011 (29) 
+ January 2011 (14) 
+ November 2010 (6) 
+ September 2010 (4) 
+ August 2010 (7) 
+ July 2010 (20) 
+ June 2010 (22) 
+ May 2010 (17) 
+ April 2010 (1) 
+ January 2010 (11) 
+ December 2009 (3) 
+ November 2009 (2) 
+ September 2009 (1) 
+ August 2009 (2) 
+ July 2009 (3) 
+ June 2009 (3) 
+ May 2009 (2) 
+ April 2009 (8) 
+ March 2009 (30) 
+ February 2009 (29) 
+ January 2009 (11) 
+ December 2008 (1) 
+ November 2008 (4) 
+ October 2008 (22) 
+ September 2008 (23) 
+ August 2008 (9) 
+ July 2008 (23) 
+ June 2008 (23) 
+ May 2008 (31) 
+ April 2008 (1) 
+ March 2008 (7) 
+ February 2008 (2) 
+ January 2008 (2) 
+ December 2007 (1) 
+ November 2007 (4) 
+ October 2007 (7) 
+ September 2007 (7) 
+ August 2007 (10) 
+ July 2007 (13) 
+ June 2007 (7) 
+ May 2007 (11) 
+ April 2007 (6) 
+ March 2007 (5) 
+ February 2007 (4) 
+ January 2007 (2) 
+ December 2006 (5) 
+ November 2006 (6) 
+ June 2006 (9) 
+ May 2006 (5) 
+ April 2006 (9) 
+ March 2006 (25) 
+ November 2005 (6) 
+ October 2005 (3) 
+ August 2005 (17) 
+ July 2005 (25) 
+ Recent Posts
+ Pyramid Review &#8211; Demon City Shinjuku 
+ Pyramid Review &#8211; Diomin 
+ Chaos Lorebook &#8211; Book of the Elder Brood: Tilaxic 
+ Pyramid Review &#8211; Lost Cities 
+ Mothership &#8211; System Cheat Sheet (Gamma) 
+ Recent Comments
+ stargazer on The Vladaam Affair &#8211; Part 14C: Crypts of the Brotherhood 
+ BP on Pyramid Review &#8211; Demon City Shinjuku 
+ Patrick Walsh on Pyramid Review &#8211; Lost Cities 
+ Wanderer on Pyramid Review &#8211; Demon City Shinjuku 
+ Justin Alexander on Pyramid Review &#8211; Diomin 
+ Grundsätzliches (3.1): Spiel-Kultur-Typ-Stil-Art-Analyse &#8211; RPGnosis on Thought of the Day &#8211; What is a Trad RPG? 
+ ThothofMythos on Pyramid Review &#8211; Diomin 
+ Lanessar on Mothership: Thinking About Combat 
+ Tobias on Pyramid Review &#8211; Lost Cities 
+ James on Ask the Alexandrian #26: (Not So) Lost in the Wilderness 
+ Author Read Now! - Audio Book 
+ Author 
+ PDF Edition 
+ City Supplement 1: Dweredell 
+ City Supplement 2: Aerie 
+ City Supplement 3: Anyoc 
+ Rule Supplement 1: Mounted Combat 
+ Adventure: Complex of Zombies 
+ Adventure: The Black Mist 
+ Spells of Light and Darkness 
+ Mythos Audio Library: Call of Cthulhu 
+ Copyright &copy; The Alexandrian . All rights reserved.
