@@ -150,6 +150,13 @@ function jongOf(ch: string | undefined): number {
   return code >= 0 && code < 11172 ? code % 28 : 0;
 }
 
+/** 완성된 한글 한 글자의 홀소리 번호(ㅏ=0, ㅐ=1, ㅓ=4, ㅕ=6, ㅘ=9, ㅙ=10, ㅝ=14, ㅞ=15). 한글이 아니면 -1. */
+function jungOf(ch: string | undefined): number {
+  if (!ch) return -1;
+  const code = ch.charCodeAt(0) - HANGUL_BASE;
+  return code >= 0 && code < 11172 ? Math.floor((code % 588) / 28) : -1;
+}
+
 /** 어절 앞뒤의 문장부호·자모·기호를 떼어 낸다. */
 const bare = (w: string): string => w.replace(/^[^\p{Script=Hangul}\p{L}\p{N}]+|[^가-힣\p{L}\p{N}]+$/gu, '').replace(/[ㄱ-ㅎㅏ-ㅣ]+$/u, '');
 
@@ -175,7 +182,7 @@ function sentencesOf(text: string): Sentence[] {
 
 const WH = /^(누구|누가|누군|뭐|뭘|뭔|무엇|무슨|어디|언제|왜|어떻게|어떤|어때|얼마|몇)/u;
 /** 2인칭 대명사. "너무"처럼 "너"로 시작하는 다른 낱말은 넣지 않는다. "그쪽으로/그쪽에"는 방향이다. */
-const SECOND_PERSON = /^(너|넌|널|너희.*|너[는를도랑만가의]|너한테|너에게|너보고|네가|니가|네게|당신.*|그쪽(?!으로|에|로|을|를).*|자네.*|댁[은이도]?)$/u;
+const SECOND_PERSON = /^(너|넌|널|너희.*|너[는를도랑만가의]|너한테|너에게|너보고|네가|니가|네게|당신.*|그쪽(?!으로|에|로|을|를).*|자네.*|그대|그대[는가를의도여]|그대에게|귀하.*|댁[은이도]?)$/u;
 /** 1인칭(해체·해라체). */
 const FIRST_PLAIN = /^(나|난|날|내|내가|나를|나는|나도|나한테|나보고)$/u;
 /** 자기를 낮추는 1인칭. 해요체·합쇼체와 함께 쓰일 때만 본다(지시어 "저"와 꼴이 같다). */
@@ -190,7 +197,7 @@ const CALL_WORD = /^(어이|이봐|이봐요|저기요|여보세요|여보|헤�
 /** 부르는 말이 될 수 있는 장소 지시어. 쉼표나 느낌표로 홀로 끊길 때만 부름으로 본다("거기, 잠깐!"). */
 const CALL_PLACE = /^(거기|저기|여기)$/u;
 /** 높임 호칭 꼴("아저씨", "선생님", "세 분"). */
-const TITLE = /^([가-힣]+님|[가-힣]{2,}씨|분|분들)$/u;
+const TITLE = /^((?!하느님|하나님)[가-힣]+님|[가-힣]{2,}씨|분|분들)$/u;
 /** 신이나 없는 이를 부르는 말("신이시여"). 앞사람에게 건넨 말이 아니다. */
 const INVOCATION = /[가-힣](이시여|시여|이여)$/u;
 
@@ -215,15 +222,19 @@ function formOf(last: string, prev: string | undefined): PredicateForm {
   if ((last === '게' || last === '래') && jongOf([...(prev ?? '')].at(-1)) === JONG_RIEUL) return 'volitional';
   if (/볼까$/u.test(last)) return 'volitional';
   // 청유 "-자"("도망가자"). "웬 상자", "이 남자"처럼 꾸밈말 뒤의 명사는 넣지 않는다.
-  if (end === '자' && chars.length >= 2 && !/^(웬|저|이|그|그런|이런|저런|무슨|어떤)$/u.test(prev ?? '')) return 'volitional';
+  // 앞 낱말이 매김꼴(받침 ㄴ·ㄹ: "칼 든 남자", "수상한 남자")이거나 낱말 하나뿐이면("남자") 명사로 본다.
+  const prevEnd = [...(prev ?? '')].at(-1);
+  if (end === '자' && chars.length >= 2 && prev !== undefined && !/^(웬|저|이|그|그런|이런|저런|무슨|어떤)$/u.test(prev) && ![JONG_NIEUN, JONG_RIEUL].includes(jongOf(prevEnd))) return 'volitional';
+  if (end === '자' && chars.length >= 3 && prev === undefined) return 'volitional';
   if (end === '다') return 'declarative';
   // 해라체 시킴 "-아라/-어라"("비켜라", "가라"). "-라고"는 마지막 글자가 다르다.
-  if (end === '라' && chars.length >= 2 && jongOf(before) === 0 && /[아어여해와워켜혀려쳐져봐가서]$/u.test(before ?? '')) return 'imperative';
+  if (end === '라' && chars.length >= 2 && jongOf(before) === 0 && [0, 4, 6, 1, 9, 14, 10, 15].includes(jungOf(before))) return 'imperative';
   if (end === '냐' || (end === '니' && chars.length >= 2)) return 'asking';
   if (end === '데') return 'background';
   if (last === '중' && prev !== undefined && jongOf([...prev].at(-1)) === JONG_NIEUN) return 'nominal';
   // 채팅체 명사 끝 "-함/-임/-됨", "있음/없음/했음"(받침 ㅄ·ㅆ 뒤의 "음"만 본다. "얼음", "웃음"은 명사다).
   if (/^[가-힣]+(함|임|됨)$/u.test(last) || (end === '음' && [18, 20].includes(jongOf(before)))) return 'nominal';
+  if (/^(함|됨)$/u.test(last) && /^(안|못)$/u.test(prev ?? '')) return 'nominal';
   if (end === '지' || end === '나' || end === '걸' || /더라$/u.test(last) || (end === '까' && jongOf(before) === JONG_RIEUL)) return 'musing';
   if (end === '까' && chars.length === 1 && prev && jongOf([...prev].at(-1)) === JONG_RIEUL) return 'musing';
   return 'other';
@@ -257,7 +268,7 @@ function demonstrative(words: readonly string[], w: string): boolean {
   if (w !== '저') return false;
   const next = words[words.indexOf(w) + 1] ?? '';
   // 뒤 낱말이 서술어("저 아세요?")가 아니면 지시어로 본다. 낮춤 "저"는 존댓말 물음을 앞사람에게 한 말로 가르는 데만 쓰인다.
-  return next !== '' && formOf(next, undefined) === 'other';
+  return next !== '' && formOf(next, '저') === 'other';
 }
 
 /** 문장에서 듣는 이를 가리키는 표지를 찾는다. */
@@ -267,17 +278,19 @@ function addresseeCues(sentences: readonly Sentence[], formal: boolean, opts: Re
   for (const s of sentences) {
     for (const w of s.words) {
       if (SECOND_PERSON.test(w)) cues.push(`2인칭:${w}`);
+      // 매김말 "네/니"("네 이름이 뭐야?"). 대답 "네"와 갈라 뒤에 낱말이 있을 때만 본다.
+      else if (/^(네|니)$/u.test(w) && s.words.indexOf(w) < s.words.length - 1 && s.words.length >= 3) cues.push(`2인칭:${w}`);
       if (formal && FIRST_HUMBLE.test(w) && !demonstrative(s.words, w)) cues.push(`낮춤:${w}`);
       if (formal && HUMBLE_VERB.test(w)) cues.push(`낮춤말:${w}`);
       if (formal && HEARER_HONORIFIC.test(w) && !INVOCATION.test(w)) cues.push(`높임:${w}`);
-      else if (formal && /.실$/u.test(w) && s.words[s.words.indexOf(w) + 1] === '수') cues.push(`높임:${w} 수`);
+      else if (formal && ((/.실$/u.test(w) && s.words[s.words.indexOf(w) + 1] === '수') || /.실수$/u.test(w))) cues.push(`높임:${w} 수`);
       if (names.some((n) => w.startsWith(n))) cues.push(`이름:${w}`);
     }
     s.chunks.forEach((chunk, i) => {
       const first = chunk[0] ?? '';
       const lastWord = chunk.at(-1) ?? '';
       // 쉼표로 앞뒤가 끊긴 조각(앞에 오든 "괜찮아, 아저씨"처럼 뒤에 오든)이거나 느낌표로 끝난 문장 하나가 통째로 부르는 말인가.
-      const alone = s.chunks.length > 1 || /[!！]/u.test(s.end);
+      const alone = s.chunks.length > 1 || s.words.length === 1 || /[!！~?？…]/u.test(s.end);
       if (CALL_WORD.test(first)) cues.push(`부름:${first}`);
       else if (i === 0 && TITLE.test(first) && !/^분/u.test(first) && chunk.length > 1) cues.push(`호칭:${first}`);
       else if (alone && chunk.length <= 3 && (TITLE.test(lastWord) || (chunk.length === 1 && CALL_PLACE.test(first)))) cues.push(`호칭:${chunk.join(' ')}`);
@@ -291,6 +304,8 @@ function sentenceForm(words: readonly string[]): { form: PredicateForm; last: st
   const last = words.at(-1) ?? '';
   const form = formOf(last, words.at(-2));
   const prev = words.at(-2);
+  // "-ㄹ 거야/거다/겁니다"는 앞으로 할 일을 밝히는 다짐이다("말 안 할 거야").
+  if (/^(거야|거다|거예요|겁니다)$/u.test(last) && prev !== undefined && jongOf([...prev].at(-1)) === JONG_RIEUL) return { form: 'volitional', last };
   if (form === 'other' && prev !== undefined) {
     const before = formOf(prev, words.at(-3));
     if (before === 'polite' || before === 'formal') return { form: before, last: prev, trailing: last };
@@ -317,12 +332,25 @@ function chanted(words: readonly string[], skip: readonly string[]): boolean {
 
 /** 입력 하나를 문장 꼴로 읽어 종류를 정한다. 엔진 상태를 보지 않는 순수 함수다. */
 export function readInput(text: string, opts: ReadInputOptions = {}): InputReading {
-  const t = text.trim();
+  // 괄호 속 덧붙임("(진지)")은 글의 꼴을 정하지 않는다.
+  const t = text.replace(/[(（][^()（）]*[)）]/gu, ' ').trim() || text.trim();
   if (isNoise(t) && !/[A-Za-z]/u.test(t)) return { kind: 'noise', form: 'other', asking: false, cues: ['글자없음'] };
   const all = sentencesOf(t);
   // 물음 뒤에 붙인 한 낱말 꼬리("~되는 거야? 규칙상")는 앞 문장이 정한다.
   const tail = all.at(-1);
-  const tagged = all.length >= 2 && tail !== undefined && tail.words.length === 1 && formOf(tail.words[0] ?? '', undefined) === 'other' && /[?？]/u.test(all.at(-2)?.end ?? '');
+  // 서술어 꼴이 분명한 문장 뒤의 한 낱말 꼬리("칼을 뽑는다. 천천히.")도 같다. 대답 낱말과 호칭은 꼬리가 아니다.
+  const prior = all.at(-2);
+  const tailWord = tail?.words[0] ?? '';
+  const tagged =
+    prior !== undefined &&
+    tail !== undefined &&
+    tail.words.length === 1 &&
+    !/[!！]/u.test(tail.end) &&
+    formOf(tailWord, undefined) === 'other' &&
+    !/^(네|예|응|아니|아뇨|그래)$/u.test(tailWord) &&
+    !TITLE.test(tailWord) &&
+    !CALL_WORD.test(tailWord) &&
+    (/[?？]/u.test(prior.end) || ['narrative', 'volitional', 'polite', 'formal'].includes(sentenceForm(prior.words).form));
   const sentences = tagged ? all.slice(0, -1) : all;
   const lastSentence = sentences.at(-1);
   if (!lastSentence) return { kind: 'noise', form: 'other', asking: false, cues: ['글자없음'] };
@@ -343,7 +371,7 @@ export function readInput(text: string, opts: ReadInputOptions = {}): InputReadi
     qMark ||
     (form === 'asking' && (wh || /[!！]/u.test(endMark))) ||
     (form === 'formal' && /니까$/u.test(last)) ||
-    (form === 'polite' && (/나요$/u.test(last) || (/가요$/u.test(last) && jongOf(chars.at(-3)) === JONG_NIEUN) || (/까요$/u.test(last) && jongOf(chars.at(-3)) === JONG_RIEUL) || wh)) ||
+    (form === 'polite' && ((/나요$/u.test(last) && jongOf(chars.at(-3)) !== 0) || (/가요$/u.test(last) && jongOf(chars.at(-3)) === JONG_NIEUN) || (/까요$/u.test(last) && jongOf(chars.at(-3)) === JONG_RIEUL) || wh)) ||
     (form === 'nominal' && wh) ||
     (form === 'other' && /야$/u.test(last) && words.some((w) => /^(몇|어디|언제|누구)/u.test(w)));
   const allWords = sentences.flatMap((s) => s.words);
@@ -366,19 +394,33 @@ export function readInput(text: string, opts: ReadInputOptions = {}): InputReadi
   const politeWill = form === 'polite' && /(게|래)요$/u.test(last) && jongOf(chars.at(-3)) === JONG_RIEUL && !qMark;
   const formalDeed = form === 'formal' && /니다$/u.test(last) && words.slice(0, -1).some((w) => /[가-힣](을|를|으로|로|에|에서|에게|한테)$/u.test(w));
   // "-ㄹ래?/-ㄹ게?"는 듣는 이의 뜻을 묻는 말이다. "던져 볼까?"는 제 행동을 저울질하는 글이다.
-  const offer = form === 'volitional' && qMark && /(래|게)$/u.test(last);
+  const offer = form === 'volitional' && qMark && /(래|게|거야|거예요|겁니다)$/u.test(last);
   // "-어 보인다"는 모습을 그리는 말이고, "안 된다"는 판단이다. 행동 글이 아니다.
   const judged = /^(안|못)$/u.test(words.at(-2) ?? '') && /^(되|된|될|돼|됐)/u.test(last);
+  // 과거로 적은 서술("칼을 뽑았다")은 격조사를 거느리고 1인칭 주어가 없으면 아시나가 한 일이다. "배고팠다"처럼 받는 말이 없으면 느낌이다.
+  const caseArg = words.slice(0, -1).some((w) => /[가-힣](을|를|으로|로|에게|한테)$/u.test(w));
+  const past = (form === 'declarative' || form === 'other') && /[았었였했켰혔쳤졌웠왔]/u.test(chars.at(-2) ?? '') && /[다어]$/u.test(last);
+  const pastDeed = past && caseArg && !allWords.some((w) => FIRST_PLAIN.test(w)) && !qMark;
+  // 채팅체로 적은 행동("칼을 뽑음", "남자에게 다가감")도 격조사를 거느리면 행동이다.
+  const nominalDeed = caseArg && !qMark && /[가-힣]$/u.test(last) && jongOf(chars.at(-1)) === 16 && form !== 'polite' && !wh;
   const isAct =
     (form === 'narrative' && !/^보인다$/u.test(last) && !judged) ||
+    pastDeed ||
+    (nominalDeed && (form === 'nominal' || form === 'other')) ||
     (form === 'volitional' && !honored && !offer) ||
     ((politeWill || formalDeed) && !hearerMarked && sentences.length === 1);
   if (offer) return done('speech', ['뜻을물음', ...addressed]);
+  // 마지막 문장이 통째로 따옴표에 싸인 말: 큰따옴표는 소리 내어 한 말, 작은따옴표는 속생각이다.
+  const lastRaw = text.trim().split(/(?<=[.!?？…~])\s+/u).at(-1) ?? '';
+  if (/^["“].*["”]$/u.test(lastRaw)) return done('speech', ['따옴표말']);
+  if (/^['‘].*['’]$/u.test(lastRaw)) return done('self', ['속생각']);
   // 같은 다짐을 되풀이하는 말("침착하자 침착하자")은 저를 다잡는 혼잣말이다.
   if (form === 'volitional' && !callsSomeone && chanted(allWords, selfNames)) return done('self', ['되풀이']);
 
   if (isAct) {
-    if (negatedPredicate(words) || abandoned(words)) return done('refrain', ['부정']);
+    // "-ㄹ 거야"는 그 앞 서술어의 부정을 본다("말 안 할 거야").
+    const pred = /^(거야|거다|거예요|겁니다)$/u.test(last) ? words.slice(0, -1) : words;
+    if (negatedPredicate(pred) || abandoned(words)) return done('refrain', ['부정']);
     // 부정 극어("아무것도", "아무 말도")가 부정과 함께 있고 마지막이 그대로 있는 일이면 하지 않는 것이다.
     const npi = allWords.some((w) => /^아무(것|말|짓|일)?(도)$/u.test(w));
     const stays = /^있/u.test(last);
@@ -414,7 +456,8 @@ export function readInput(text: string, opts: ReadInputOptions = {}): InputReadi
     if (form === 'asking') personal.push('해라체물음');
     if (isHao(last)) personal.push('하오체');
     // 앞사람이 한 말을 되묻는 "-라고?/-다고?".
-    if (qMark && /(라고|다고|자고|냐고)$/u.test(last)) personal.push('되물음');
+    if (qMark && /(라고|다고|자고|냐고)(요)?$/u.test(last)) personal.push('되물음');
+    if (wh && /는데$/u.test(last) && !honored) personal.push('따지는말');
     if (/데(요)?$/u.test(last) && allWords.some((w) => FIRST_PLAIN.test(w) || SECOND_PERSON.test(w))) personal.push('따지는물음');
     // 주어 없이 앞으로의 뜻을 묻는 "-ㄹ 거야?"("진짜로 쓸 거야?")는 듣는 이의 뜻을 묻는 말이다.
     const prevWord = words.at(-2) ?? '';
@@ -422,6 +465,9 @@ export function readInput(text: string, opts: ReadInputOptions = {}): InputReadi
     if (honored && !wh && allWords.some((w) => w === '안' || w === '못')) personal.push('부정물음');
     // 제 이름을 3인칭으로 쓴 물음("아시나는 원래 어떤 사람이었어요?")은 진행자에게 묻는 말이다.
     if (named || allWords.some((w) => selfNames.some((n) => w.startsWith(n) && w !== n))) return done('question', ['제이름3인칭']);
+    // 낮춤 1인칭만 있고 사실을 묻는 "-나요/-ㄴ가요"로 끝난 물음("제가 다쳤나요?")은 제 일을 진행자에게 묻는 말이다.
+    // "제가 … 보여요?"처럼 해요체 그대로 묻는 말은 앞사람에게 한 말로 둔다.
+    if (personal.length > 0 && personal.every((c) => c.startsWith('낮춤:')) && /(나요|가요)$/u.test(last)) return done('question', ['제일을물음']);
     if (personal.length > 0) return done('speech', personal);
     return done('question', ['듣는이없음']);
   }
@@ -429,7 +475,9 @@ export function readInput(text: string, opts: ReadInputOptions = {}): InputReadi
   // 진행자에게 물은 뒤 덧붙인 부탁("몇 명 보여? 묘사 좀 더 해줘")은 진행자에게 한 말이다.
   const request = /(줘|주세요|줄래)$/u.test(last);
   if (request && sentences.length > 1 && sentences.slice(0, -1).some((s) => /[?？]/u.test(s.end))) {
-    const earlier = readInput(sentences.slice(0, -1).map((s) => s.words.join(' ') + s.end).join(' '), opts);
+    const lastAsked = sentences.findLastIndex((s, k) => k < sentences.length - 1 && /[?？]/u.test(s.end));
+    const asked = sentences[lastAsked];
+    const earlier = asked ? readInput(asked.words.join(' ') + asked.end, opts) : { kind: 'noise' as InputKind };
     if (earlier.kind === 'question') return done('question', ['물은뒤부탁']);
   }
   // 앞사람을 "이/저 ~"로 가리키며 무엇인지 알려 달라는 부탁("이 남자 정체가 뭔지 알려줘")은 진행자에게 한 말이다.
@@ -450,6 +498,8 @@ export function readInput(text: string, opts: ReadInputOptions = {}): InputReadi
     if (w.length >= 2 && /^(그거|그걸|그건)$/u.test(w[0] ?? '') && formOf(lw, w.at(-2)) === 'other') return done('speech', ['듣는이쪽:그거']);
   }
 
+  // 행동을 적은 문장 뒤의 해체·해라체 한마디("칼을 뽑는다. 꺼져!")는 그 자리에서 소리 내어 한 말이다. 서술자는 해체로 쓰지 않는다.
+  if (sentences.length > 1 && forms.slice(0, -1).includes('narrative') && form === 'other' && /[!！]/u.test(endMark)) return done('speech', ['행동뒤한마디']);
   if (outsideHit || latin) return done('outside', [outsideHit ? `세계밖:${outsideHit}` : '로마자'], 'thing');
   if (/[ㅋㅎㅠㅜ]{2,}/u.test(t)) return done('outside', ['자모웃음'], 'talk');
   if (form === 'nominal') return done('outside', ['채팅체'], 'talk');

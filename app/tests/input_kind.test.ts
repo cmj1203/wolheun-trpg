@@ -123,6 +123,23 @@ describe('말 높이가 달라도 행동은 행동이다', () => {
   });
 });
 
+describe('두 번째 검토에서 고친 꼴', () => {
+  each('action', ['칼을 뽑는다. 천천히.', '칼을 뽑는다 (진지)', '칼을 뽑았다', '칼을 뽑음', '남자에게 다가감']);
+  each('speech', ['칼을 뽑는다. 꺼져!', '남자에게 말을 건다. "괜찮아요?"', '멈춰라!', '놔라', '네 이름이 뭐야?', '그대는 누구인가?', '왜 그러는데?', '뭐라고요?', '아저씨~', '그 칼 진짜로 쓸 거야?']);
+  each('self', ["'뭐지?'", '배고팠다', '칼 든 남자', '하느님 맙소사']);
+  each('question', ['저 남자 누구예요?', '저 여자 누구예요?', '제가 다쳤나요?']);
+  each('refrain', ['말 안 할 거야', '싸우지 않을 거야', '안 함']);
+  test('"-나요"는 받침 없는 줄기("물러나요")에서 물음이 아니다', () => {
+    expect(readInput('천천히 뒤로 물러나요').asking).toBe(false);
+    expect(readInput('여기 물 있나요').asking).toBe(true);
+  });
+  test('물은 뒤 부탁을 되풀이한 긴 입력도 곧 끝난다', () => {
+    const started = performance.now();
+    expect(kindOf(`뭐? ${'해줘. '.repeat(10000)}`)).toBe('question');
+    expect(performance.now() - started).toBeLessThan(2000);
+  });
+});
+
 describe('글자 없음', () => {
   each('noise', ['?', 'ㅋㅋㅋ', '...', '']);
 });
@@ -138,5 +155,41 @@ describe('읽은 꼴', () => {
   test('곁에 있는 인물의 이름을 부르면 건넨 말이다', () => {
     expect(kindOf('크롬웰, 칼 치워', { names: ['크롬웰'] })).toBe('speech');
     expect(kindOf('칼 치워')).toBe('self');
+  });
+});
+
+describe('측정 뒤 고친 버그', () => {
+  test('"그대로"는 2인칭 "그대"가 아니다', () => {
+    expect(kindOf('그대로 뒤로 털썩 주저앉는다')).toBe('action');
+    expect(kindOf('그대는 누구인가?')).toBe('speech');
+  });
+  test('붙여 쓴 "주실수"도 듣는 이 높임이다', () => {
+    expect(kindOf('물 좀 주실수 있나요ㅠ')).toBe('speech');
+  });
+});
+
+describe('docs/research/input_corpus.jsonl 회귀 문턱', () => {
+  // 학습용 154·확인용 68 로 나눠 잰 값(PR 본문)보다 조금 낮게 둔 회귀 문턱이다. 세계밖은 낱말 뜻에 기대는 입력이 많아 따로 센다.
+  const KIND: Record<string, InputKind> = { 행동: 'action', 건넨말: 'speech', 혼잣말: 'self', 게임질문: 'question', 세계밖: 'outside' };
+  test('세계밖을 뺀 종류는 85% 넘게, 전체는 80% 넘게 맞힌다', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const { join } = await import('node:path');
+    const { loadWolheunLore } = await import('./helpers.ts');
+    const lore = await loadWolheunLore();
+    const text = await readFile(join(import.meta.dir, '../../docs/research/input_corpus.jsonl'), 'utf8');
+    const rows = text.split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l) as { text: string; kind: string });
+    let all = 0;
+    let inner = 0;
+    let innerN = 0;
+    for (const r of rows) {
+      const ok = readInput(r.text, { selfNames: ['아시나'], outsideWords: lore.forbidden.modern }).kind === KIND[r.kind];
+      all += ok ? 1 : 0;
+      if (r.kind !== '세계밖') {
+        innerN += 1;
+        inner += ok ? 1 : 0;
+      }
+    }
+    expect(inner / innerN).toBeGreaterThan(0.85);
+    expect(all / rows.length).toBeGreaterThan(0.8);
   });
 });
