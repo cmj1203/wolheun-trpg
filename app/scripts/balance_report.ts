@@ -207,6 +207,7 @@ if (want('choice')) {
   log(`## 6. 장면별 선택 실험 (무작위 전략에 한 장면만 고정, 접근마다 ${EXP}판, 그 장면에 닿은 판만 집계)`);
   log();
   staticTable(scenario);
+  const locked: Record<string, number> = {};
   const choice: Record<string, Record<string, { reached: number; endings: Record<string, number>; bad: number }>> = {};
   const show = ['e_road', 'e_deal', 'e_value', 'e_spy', 'e_curious', 'e_survivor', 'x_unmasked', 'x_spy_cut'];
   log(endingHead('장면/고정 접근', show, ['닿은 판']));
@@ -215,13 +216,19 @@ if (want('choice')) {
     choice[bid] = {};
     for (const a of b.free.approaches) {
       const recs = await simulate(STRATEGIES.random!, EXP, { scenario, lore, force: { beat: bid, approach: a.id } });
-      const reached = recs.filter((g) => g.beats.includes(bid) && g.rolls.some((r) => r.beat === bid));
+      // 그 장면에서 고정한 접근으로 실제로 굴린 판만(소지품을 잃어 잠긴 판은 빼고 따로 센다).
+      const reachedAny = recs.filter((g) => g.rolls.some((r) => r.beat === bid));
+      const reached = reachedAny.filter((g) => g.rolls.some((r) => r.beat === bid && r.approach === a.id));
+      locked[`${bid}/${a.id}`] = reachedAny.length - reached.length;
       const s = summarize(scenario, reached);
       choice[bid][a.id] = { reached: reached.length, endings: s.endings, bad: s.bad };
       log(`| ${bid}/${a.id} | ${show.map((e) => pct((s.endings[e] ?? 0) / Math.max(1, s.games))).join(' | ')} | ${pct(s.bad / Math.max(1, s.games))} | ${reached.length} |`);
     }
   }
   out.choice = choice;
+  log();
+  const lockedRows = Object.entries(locked).filter(([, n]) => n > 0);
+  if (lockedRows.length) log(`고정 접근이 잠겨(소지품 잃음) 다른 접근으로 굴려 뺀 판: ${lockedRows.map(([k, n]) => `${k} ${n}`).join(', ')}`);
   log();
 }
 

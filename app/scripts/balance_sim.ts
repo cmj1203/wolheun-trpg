@@ -4,7 +4,7 @@
 //
 //   bun scripts/balance_sim.ts                          # 전략 4개 × 10000판, 마크다운 요약을 표준 출력에
 //   bun scripts/balance_sim.ts --games 20000 --json out.json
-//   bun scripts/balance_sim.ts --suite all              # 본 측정 + 장면별 선택 실험 + 행운 실험 + 조정안 전후
+//   (본 측정 + 장면별 선택 실험 + 행운 실험 + 조정안 전후 표는 scripts/balance_report.ts)
 //   bun scripts/balance_sim.ts --proposal P1            # 조정안 하나를 덧씌워 같은 측정
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -131,11 +131,11 @@ export const STRATEGIES: Record<string, Strategy> = {
   chat: {
     id: 'chat',
     label: '말 섞기(보조)',
-    rule: '장면마다 참을성보다 하나 적게 말(talk)을 넣은 뒤 열린 접근 버튼 하나를 고르게 뽑는다. 행운은 반반으로 쓴다.',
+    rule: '장면마다 참을성만큼 말(talk)을 넣어 세계가 한 번 움직이게(징조·재촉) 한 뒤 열린 접근 버튼 하나를 고르게 뽑는다. 행운은 반반으로 쓴다.',
     luck: 'random',
     act: (d) => {
       const patience = d.scenario.beats[d.state.beat]?.free?.patience ?? 1;
-      if (d.turn < patience - 1) return { type: 'free', text: TALK_LINES[d.turn % TALK_LINES.length]! };
+      if (d.turn < patience) return { type: 'free', text: TALK_LINES[d.turn % TALK_LINES.length]! };
       const open = unlocked(d);
       return { type: 'approach', id: open[Math.floor(d.rand() * open.length)]! };
     },
@@ -308,7 +308,8 @@ export async function playOne(engine: Engine, strategy: Strategy, seed: number, 
       if (check.kind !== 'check') continue;
       approachOfCheck[i] = checkApproach(scenario, action, newLog, check.beat);
       // 실패인데 행운 창이 뜨지 않았으면 행운이 모자란 것이다(행운을 묻는 엔진).
-      if (check.roll.tier === 'miss' && res.step.prompt.type !== 'luck') shortMisses.add(i);
+      // 선택지 판정(choose)은 행운을 묻지 않으므로 자유 입력 장면의 판정만 센다.
+      if (check.roll.tier === 'miss' && res.step.prompt.type !== 'luck' && scenario.beats[check.beat]?.free) shortMisses.add(i);
     }
     state = res.state;
     step = res.step;
