@@ -59,7 +59,8 @@ export function buildAtlas(scenario: Scenario, record: AtlasRecord) {
 /** 안 가 본 칸의 다음 힌트. 이미 가 본 칸이거나 없는 칸이면 null. */
 export function nextHint(scenario: Scenario, record: AtlasRecord, key: string): { record: AtlasRecord; level: number; text: string } | null {
   const nodes = scenario.atlas?.nodes ?? [];
-  const node = nodes[Number(key.slice(1))];
+  // buildAtlas 가 준 칸 이름(n0, n1 …)만 받는다. Number('') 가 0 이라 빈 값·다른 글자가 첫 칸으로 읽히던 것을 막는다.
+  const node = /^n(0|[1-9]\d*)$/.test(key) ? nodes[Number(key.slice(1))] : undefined;
   if (!node?.hints?.length || node.beats.some((b) => record.beats.includes(b))) return null;
   const level = Math.min((record.hints?.[node.id] ?? 0) + 1, node.hints.length);
   return { record: { ...record, hints: { ...record.hints, [node.id]: level } }, level, text: node.hints[level - 1] ?? '' };

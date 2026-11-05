@@ -351,11 +351,17 @@ export async function startServer(opts: ServerOptions) {
           const view = body.view;
           if (view !== undefined && (typeof view !== 'object' || view === null || JSON.stringify(view).length > MAX_VIEW_CHARS))
             throw new BadRequest('저장할 화면 상태가 올바르지 않습니다');
-          const next = engine.noteSlot(s.state, 'save', slot);
-          const meta = await writeSave(opts.savesDir, slot, scenario, next, Date.now(), view);
-          s.state = next;
-          await persist(s);
-          return json({ meta });
+          // 파일을 쓰는 동안 들어온 행동이 끝난 뒤 저장 전 상태로 덮이지 않게, 저장도 행동처럼 세션을 잡는다.
+          s.busy = true;
+          try {
+            const next = engine.noteSlot(s.state, 'save', slot);
+            const meta = await writeSave(opts.savesDir, slot, scenario, next, Date.now(), view);
+            s.state = next;
+            await persist(s);
+            return json({ meta });
+          } finally {
+            s.busy = false;
+          }
         }),
       },
       '/api/saves': { GET: handle(async () => json({ saves: (await listSaves(opts.savesDir)).filter((m) => m.slot !== AUTO_FORK) })) },
