@@ -223,6 +223,20 @@ export const PLAYS: Record<string, Play> = {
       r2_bind: a('silent'),
     },
   },
+  '20_reckless_second': {
+    title: '칼 앞에서 (두 번째 맨손 공격은 징조 없이) ※ LLM 해석 대역',
+    ending: 'reckless',
+    seed: 6,
+    note: '교차 검증에서 찾은 줄. 12 처럼 두 입력만 LLM 이 attack 으로 읽었다고 대신 적었다. 첫 공격은 징조 뒤 행운으로 넘기고, 두 번째 공격은 징조 없이 실패해 끝난다.',
+    attackOn: ['남자를 걷어찬다', '남자를 밀친다'],
+    fallback: '남자를 밀친다',
+    moves: {
+      b02_people: a('run'),
+      b05_why: f('남자를 걷어찬다'),
+      '@luck': [{ luck: true }, { luck: false }],
+      b06_swing: f('남자를 밀친다'),
+    },
+  },
   '15_buttons_first': {
     title: '단추 첫 칸만 누르기',
     ending: 'curious',
