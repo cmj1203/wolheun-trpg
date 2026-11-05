@@ -82,6 +82,7 @@ describe('서버: 정적 파일과 응답 머리글', () => {
     expect(res.headers.get('content-security-policy')).toBe(CSP);
     expect(res.headers.get('x-content-type-options')).toBe('nosniff');
     expect(res.headers.get('referrer-policy')).toBe('no-referrer');
+    expect(res.headers.get('cross-origin-resource-policy')).toBe('same-origin');
     expect(res.headers.get('cache-control')).toBe('no-cache');
   });
 
@@ -188,6 +189,16 @@ describe('서버: 요청 검사', () => {
     expect(one.seed).toBe(seedFrom(7));
     expect(two.seed).toBe(one.seed);
     expect(one.session).not.toBe(two.session);
+    // 돌려준 seed 숫자만이 아니라 판 자체(첫 화면과 같은 행동의 결과)가 같아야 한다.
+    // 서버 시계로 재는 playMs 만 빼고 비교한다.
+    const timeless = (v: unknown) => JSON.parse(JSON.stringify(v, (k, x) => (k === 'playMs' ? 0 : x))) as unknown;
+    expect(timeless(two.step)).toEqual(timeless(one.step));
+    const a1 = await b.act(one.session, { type: 'free', text: '주위를 둘러본다' });
+    const a2 = await b.act(two.session, { type: 'free', text: '주위를 둘러본다' });
+    expect(a1.lines.length).toBeGreaterThan(0);
+    expect(timeless(a2.lines)).toEqual(timeless(a1.lines));
+    expect(b.sessions.get(two.session)?.state.rng).toBe(b.sessions.get(one.session)?.state.rng);
+    expect(b.sessions.get(two.session)?.state.tracks).toEqual(b.sessions.get(one.session)?.state.tracks);
     expect((await b.newGame('abc')).seed).toBe(seedFrom('abc'));
   });
 });

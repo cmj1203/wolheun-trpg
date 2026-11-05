@@ -155,9 +155,11 @@ describe('LLM 클라이언트 오류의 재시도 여부', () => {
 
   test('스트림이 시간 상한에 끊기면 다시 하지 않고, 조각을 못 읽으면 다시 한다', async () => {
     const mock = mockLlama([{ hang: 'stream' }, { raw: 'data: {깨진 조각\n\n' }]);
-    const client = new LlmClient({ baseUrl: mock.url, timeoutMs: 150 });
-    expect((await llmErrorOf(client.chatJson(REQ))).retryable).toBe(false);
-    expect((await llmErrorOf(client.chatJson(REQ))).retryable).toBe(true);
+    const hasty = new LlmClient({ baseUrl: mock.url, timeoutMs: 150 });
+    expect((await llmErrorOf(hasty.chatJson(REQ))).retryable).toBe(false);
+    // 깨진 조각은 시간 상한과 상관없이 다시 할 오류다. 느린 기계에서 머리가 늦게 와도 시간 초과로 바뀌지 않게 상한을 넉넉히 둔다.
+    const patient = new LlmClient({ baseUrl: mock.url, timeoutMs: 1500 });
+    expect((await llmErrorOf(patient.chatJson(REQ))).retryable).toBe(true);
   }, 2000);
 
   test('응답 머리가 오지 않으면 시간 상한에서 연결 실패로 끝낸다', async () => {
@@ -308,7 +310,11 @@ describe('숨긴 설정과 입력 가리기', () => {
     const mock = mockLlama([lines(['GM', '그건 아시나도 몰라.'])]);
     await gmAt(mock.url).explain({ ...contexts('저 남자 정체가 뭐야?', 'b05_why', { flags: { 남자_정체_앎: true } }).ctx, about: 'man_true' });
     expect(mock.requests).toHaveLength(1);
-    expect(JSON.stringify(mock.requests[0]?.messages)).not.toContain(hidden?.text ?? '?');
+    const sent = JSON.stringify(mock.requests[0]?.messages);
+    expect(sent).not.toContain(hidden?.text ?? '?');
+    // 문장 일부만 새도 잡는다. 항목 이름(name)은 '숨길 것' 목록에 일부러 실리고, 키 낱말도 금지어로 실릴 수 있어 보지 않는다.
+    expect(sent).not.toContain('이름은 베히다트');
+    expect(sent).not.toContain('페시안의 왕이다');
   });
 
   test('해석 스키마의 about 목록에 숨긴 항목 id 는 없다', () => {
@@ -393,13 +399,17 @@ describe('LLM 해석 결과 다듬기', () => {
     expect(read).not.toHaveProperty('risk');
   });
 
-  test('해석 시드는 입력마다 다르다', async () => {
+  test('해석 시드는 입력에서 나온다: 다른 입력은 다르고 같은 입력은 같다', async () => {
     const mock = mockLlama([reading({}), reading({})]);
     const gm = gmAt(mock.url);
     await gm.interpret(contexts('그게 그러니까').ctx);
     await gm.interpret(contexts('저게 저러니까').ctx);
-    expect(mock.requests).toHaveLength(2);
+    await gm.interpret(contexts('그게 그러니까').ctx);
+    expect(mock.requests).toHaveLength(3);
+    expect(mock.requests[0]?.seed).toBeNumber();
     expect(mock.requests[0]?.seed).not.toBe(mock.requests[1]?.seed);
+    // 같은 입력이면 같은 시드다(무작위 시드가 아니다).
+    expect(mock.requests[2]?.seed).toBe(mock.requests[0]?.seed);
   });
 });
 
@@ -425,22 +435,18 @@ describe('미리 데우기', () => {
     const onUnhandled = (reason: unknown) => unhandled.push(reason);
     process.on('unhandledRejection', onUnhandled);
     try {
-      let caught = false;
+      // 진짜로 거부되는 Promise 를 돌려준다. 삼키지 않으면 bun 이 처리되지 않은 거부로 이 시험을 실패시킨다.
+      let calls = 0;
       const fake = {
         warm: () => {
-          const p = Promise.reject(new Error('데우기 실패'));
-          const original = p.catch.bind(p);
-          p.catch = ((fn: (e: unknown) => unknown) => {
-            caught = true;
-            return original(fn);
-          }) as typeof p.catch;
-          return p;
+          calls++;
+          return Promise.reject(new Error('데우기 실패'));
         },
       } as unknown as LlmClient;
       const { ctx } = contexts('');
       expect(() => new LocalGm(fake, lore).prepare({ scenario: ctx.scenario, beat: ctx.beat, free: ctx.free, state: ctx.state })).not.toThrow();
-      await new Promise((r) => setImmediate(r));
-      expect(caught).toBe(true);
+      for (let i = 0; i < 3; i++) await new Promise((r) => setImmediate(r));
+      expect(calls).toBe(1);
       expect(unhandled).toEqual([]);
     } finally {
       process.off('unhandledRejection', onUnhandled);

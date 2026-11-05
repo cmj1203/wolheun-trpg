@@ -147,10 +147,11 @@ function failure(src: string): Error {
 
 type Row = [name: string, edit: (s: string) => string, keyword: RegExp];
 
-// 이 행들은 지금 ScenarioError 가 아니라 맨 Error 를 던진다(scenario.ts:386, 500). 클래스는 Error 까지만 본다.
+// 이 행들은 지금 ScenarioError 가 아니라 맨 Error 를 던진다(scenario.ts 의 사건 줄·긴장도 검사). 클래스는 Error 까지만 본다.
 const PLAIN: Row[] = [
   ['장면 검사 사건 줄이 비면 막는다', (s) => swap(s, 'lines: [ { 나레이션: 종이 울린다. } ]', 'lines: []'), /interrupt\[0\]\.lines: 사건 줄이 비어/],
   ['긴장도가 하한보다 작으면 막는다', (s) => swap(s, '  tension: 3\n', '  tension: 0\n'), /sheet\.tension/],
+  ['긴장도가 상한보다 크면 막는다', (s) => swap(s, '  tension: 3\n', '  tension: 7\n'), /sheet\.tension/],
 ];
 
 const ROWS: Row[] = [
@@ -165,6 +166,8 @@ const ROWS: Row[] = [
   ['결과 등급이 하나라도 빠지면 막는다', (s) => swap(s, '        miss: { gist: 안 먹힌다, lines: [ { 나레이션: 안 먹혔다. } ] }\n', ''), /improv: miss 결과가 없습니다/],
   ['crop 수가 넷보다 많으면 막는다', (s) => swap(s, 'crop: [0, 0, 10, 10]', 'crop: [0, 0, 10, 10, 5]'), /cgs\.flash\.crop/],
   ['crop 너비가 0 이면 막는다', (s) => swap(s, 'crop: [0, 0, 10, 10]', 'crop: [0, 0, 0, 10]'), /cgs\.flash\.crop/],
+  ['crop 높이가 0 이면 막는다', (s) => swap(s, 'crop: [0, 0, 10, 10]', 'crop: [0, 0, 10, 0]'), /cgs\.flash\.crop/],
+  ['crop 시작점이 음수면 막는다', (s) => swap(s, 'crop: [0, 0, 10, 10]', 'crop: [-1, 0, 10, 10]'), /cgs\.flash\.crop/],
   ['큰 행동에 효과가 없으면 막는다', (s) => swap(s, '  effects: { 집착: 1 }\n', ''), /identity\.effects/],
   // 대가 표
   ['대가의 once 가 참/거짓이 아니면 막는다', (s) => swap(s, 'text: 시간이 흐른다 }', 'text: 시간이 흐른다, once: "네" }'), /prices\[0\]\.once: 참\/거짓/],
@@ -208,7 +211,7 @@ const ROWS: Row[] = [
   ['addressed 가 없는 접근이면 막는다', (s) => swap(s, '      turns: 5\n', '      turns: 5\n      addressed: nope\n'), /addressed: 없는 접근 "nope"/],
   ['기본 접근에 소지품 조건을 두지 않는다', (s) => swap(s, 'default_approach: watch', 'default_approach: pick'), /기본 접근에는 소지품/],
   ['자유 비트 화자가 cast 에 없으면 막는다', (s) => swap(s, 'speakers: [나레이션, 간수]', 'speakers: [나레이션, 유령]'), /free\.speakers: cast 에 없는 화자 "유령"/],
-  ['대체 대사가 비면 막는다', (s) => swap(s, 'talk_fallback: [ { 간수: 조용히 해라. } ]', 'talk_fallback: []'), /free\.talk_fallback:/],
+  ['대체 대사가 비면 막는다', (s) => swap(s, 'talk_fallback: [ { 간수: 조용히 해라. } ]', 'talk_fallback: []'), /free\.talk_fallback: GM 이 실패할 때/],
   ['patience 가 1 보다 작으면 막는다', (s) => swap(s, '      turns: 5\n', '      turns: 5\n      patience: 0\n'), /free\.patience: 1 이상/],
   ['turns 가 1 보다 작으면 막는다', (s) => swap(s, '      turns: 5\n', '      turns: 0\n'), /free\.turns: 1 이상/],
   ['접근의 소지품이 없는 소지품이면 막는다', (s) => swap(s, '          item: pin\n', '          item: nope\n'), /free\.pick\.item: 없는 소지품 "nope"/],

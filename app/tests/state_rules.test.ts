@@ -59,10 +59,11 @@ describe('조건식', () => {
     expect(cases.map(([src, over]) => evalCond(src, ctx(over)))).toEqual(cases.map(([, , want]) => want));
   });
 
-  test('holdBefore 는 < 와 > 에서 문턱 값을 그대로, <= 에서 하나 위, 플래그 표시를 지킨다', () => {
+  test('holdBefore 는 < 와 > 에서 문턱 값을 그대로, <= 에서 하나 위, >= 에서 하나 아래, 플래그 표시를 지킨다', () => {
     expect(holdBefore('귀찌 < 2')).toEqual({ name: '귀찌', flag: false, value: 2 });
     expect(holdBefore('의심 > 5')).toEqual({ name: '의심', flag: false, value: 5 });
     expect(holdBefore('flag:머뭇 <= 2')).toEqual({ name: '머뭇', flag: true, value: 3 });
+    expect(holdBefore('의심 >= 10')).toEqual({ name: '의심', flag: false, value: 9 });
     expect(holdBefore('의심 == 5')).toBeNull();
   });
 });
@@ -84,28 +85,35 @@ describe('저장 상태 검사', () => {
   });
 
   test('필드가 잘못된 상태는 SaveError 로 거른다', () => {
-    const broken: ((s: Record<string, unknown>) => void)[] = [
-      (s) => (s.v = 2),
-      (s) => (s.beat = '없는_비트'),
-      (s) => (s.seed = 'x'),
-      (s) => delete (s.tracks as Record<string, number>).의심,
-      (s) => delete (s.abilities as Record<string, number>).재치,
-      (s) => (s.flags = []),
-      (s) => (s.items = [1]),
-      (s) => (s.log = {}),
-      (s) => (s.startedAt = 'x'),
-      (s) => (s.free = null),
-      (s) => (s.free = { ...(s.free as object), beat: 'b01_sand' }),
+    // 각 줄은 검사 하나만 깨고, 그 검사의 이유가 메시지에 나와야 한다(다른 검사가 대신 막아도 통과하지 않게).
+    const broken: [(s: Record<string, unknown>) => void, string][] = [
+      [(s) => (s.v = 2), '버전 2'],
+      [(s) => (s.scenario = 'other'), '다른 시나리오'],
+      [(s) => (s.beat = '없는_비트'), '없는 비트'],
+      [(s) => (s.seed = 'x'), '난수 상태'],
+      [(s) => (s.rng = 'x'), '난수 상태'],
+      [(s) => delete (s.tracks as Record<string, number>).의심, '수치 의심'],
+      [(s) => delete (s.abilities as Record<string, number>).재치, '능력치 재치'],
+      [(s) => (s.flags = []), '플래그'],
+      [(s) => (s.items = [1]), '소지품'],
+      [(s) => (s.log = {}), '플레이 기록'],
+      [(s) => (s.startedAt = 'x'), '플레이 시간'],
+      [(s) => (s.free = null), '자유 입력 진행'],
+      [(s) => (s.free = { ...(s.free as object), beat: 'b01_sand' }), '자유 입력 진행'],
     ];
-    expect(broken).toHaveLength(11);
-    expect(broken.map((m) => {
+    expect(broken).toHaveLength(13);
+    // 마지막 두 줄은 새 판이 자유 입력 비트에서 시작해야 뜻이 있다.
+    expect(scenario.beats[fresh().beat]?.free).toBeDefined();
+    expect(fresh().beat).not.toBe('b01_sand');
+    const outcome = broken.map(([m]) => {
       try {
         bad(m)();
         return 'ok';
       } catch (e) {
-        return e instanceof SaveError ? 'SaveError' : 'other';
+        return e instanceof SaveError ? e.message : `other: ${String(e)}`;
       }
-    })).toEqual(broken.map(() => 'SaveError'));
+    });
+    expect(outcome.map((msg, k) => msg.startsWith('저장 파일이 올바르지 않습니다') && msg.includes(broken[k]![1]))).toEqual(broken.map(() => true));
   });
 
   test('행운이 없는 옛 저장은 0 으로 채우고, recent 가 없으면 빈 목록이다', () => {
@@ -195,21 +203,24 @@ describe('결과 요약', () => {
   const withLog = (entries: LogEntry[]): GameState => ({ ...fresh(), log: entries });
   const base = { at: 0, playMs: 0, beat: 'b02_people' };
 
-  test('행동 버튼 선택, 여우 놀이 입력, 행동 해석 입력을 구분한다', () => {
+  test('행동 버튼 선택과 행동 해석 입력은 결정으로 세고, 여우 놀이·질문 입력은 빼놓는다', () => {
     const sum = summarize(scenario, withLog([
       { ...base, kind: 'choice', choice: 'approach:run', text: '달린다' },
       { ...base, kind: 'input', text: '게임', result: 'game', approach: null, item: null, source: 'rule' },
+      { ...base, kind: 'input', text: '크롬웰이 뭐야?', result: 'ask', approach: null, item: null, source: 'rule' },
       { ...base, kind: 'input', text: '달려간다', result: 'approach', approach: 'run', item: null, source: 'llm' },
     ]));
     expect(sum.decisions).toHaveLength(2);
     expect(sum.decisions[0]?.detail).toBe('행동 버튼');
-    expect(sum.decisions[1]?.detail).toContain('달려가서 길을 묻는다');
+    const runLabel = scenario.beats.b02_people?.free?.approaches.find((a) => a.id === 'run')?.label;
+    expect(runLabel).toBeString();
+    expect(sum.decisions[1]?.detail).toContain(runLabel ?? '');
   });
 
   test('GM 통계는 재시도·막힌 줄·대체·시간을 더한다', () => {
     const gm = (attempts: number, violations: string[], fallback: boolean, ms: number): LogEntry => ({ ...base, kind: 'gm', task: 'talk', attempts, violations, fallback, ms, model: null });
-    const sum = summarize(scenario, withLog([gm(3, ['a', 'b'], true, 100), gm(1, [], false, 50)]));
-    expect(sum.gm).toEqual({ calls: 2, retries: 2, blocked: 2, fallbacks: 1, llmMs: 150 });
+    const sum = summarize(scenario, withLog([gm(3, ['a', 'b'], true, 100), gm(1, [], false, 50), gm(0, [], false, 5)]));
+    expect(sum.gm).toEqual({ calls: 3, retries: 2, blocked: 2, fallbacks: 1, llmMs: 155 });
   });
 });
 
