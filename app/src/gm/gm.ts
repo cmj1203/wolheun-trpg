@@ -4,10 +4,10 @@ import { edgesOf, linesOfBeat, typedFallbackLines } from '../engine/scenario.ts'
 import { isAboutSelf, isActionText, isAsking, isNoise, isPlainQuestion, isPolite, isSpokenText } from '../engine/text.ts';
 import { ABILITIES, type Ability, type GmTask, type Line, type NoteEntry, type Scenario, type Tier } from '../engine/types.ts';
 import { LlmError, type LlmClient, type LlmResult } from './llm.ts';
-import { loreFor, spoilersFor, type Lore } from './lore.ts';
+import { FORBIDDEN_GROUPS, loreFor, spoilersFor, type Lore } from './lore.ts';
 import { buildQuipUser, buildExplainUser, buildInterpretUser, buildNarrateUser, buildSystem, buildTalkUser, INPUT_KINDS, interpretSchema, linesSchema, type InputKind } from './prompt.ts';
 import { ITEM_RULE_MIN_SCORE, ruleInterpret } from './rules.ts';
-import { facedSpeakers, feedbackFor, mentions, normalizeKo, validateOutput, type CheckOptions, type ReservedLine, type Violation } from './validate.ts';
+import { facedSpeakers, feedbackFor, forbiddenIn, forbiddenTermIn, mentions, normalizeKo, validateOutput, type CheckOptions, type ReservedLine, type Violation } from './validate.ts';
 
 export interface GmTrace {
   task: GmTask;
@@ -59,6 +59,17 @@ export const DEFAULT_GM_OPTIONS: GmOptions = {
   maxChars: 100,
   budgetMs: 15_000,
 };
+
+/**
+ * 대체 줄 하나를 고른다. 화자가 이번 판에 아직 하지 않은 줄 가운데서 turn 으로 돌리고,
+ * 다 했으면 가장 오래전에 한 줄을 고른다(같은 입력을 되풀이해 turn 이 2씩 뛰어도 한 줄에 갇히지 않게).
+ */
+function pickFallback<T extends Line>(pool: readonly T[], spoken: Readonly<Record<string, readonly string[]>> | undefined, turn: number): T | undefined {
+  const lastSaid = (l: T) => (spoken?.[l.speaker] ?? []).findLastIndex((t) => normalizeKo(t) === normalizeKo(l.text));
+  const fresh = pool.filter((l) => lastSaid(l) < 0);
+  if (fresh.length) return fresh[turn % fresh.length];
+  return [...pool].sort((a, b) => lastSaid(a) - lastSaid(b))[0];
+}
 
 /** 질문에 나온 낱말로 아시나가 아는 항목을 찾는다. */
 function noteMentioned(text: string, lore: Lore): NoteEntry | undefined {
@@ -238,7 +249,7 @@ export class LocalGm implements GmPort {
    */
   screen(ctx: GmContext): InputScreen | null {
     const { cast, sheet } = ctx.scenario;
-    const spoiler = spoilersFor(this.lore, ctx.state).find((t) => mentions(ctx.text, t));
+    const spoiler = spoilersFor(this.lore, ctx.state).find((t) => forbiddenIn(ctx.text, t));
     if (spoiler) {
       const hiddenPerson = this.lore.knowledge.some((n) => n.kind === '사람' && !noteOpen(n, ctx.state) && (n.text.includes(spoiler) || n.name.includes(spoiler)));
       const facing = ctx.free.speakers.map((s) => cast[s]).find((c) => c?.style === 'speech' && c.lore !== sheet.name);
@@ -254,7 +265,8 @@ export class LocalGm implements GmPort {
     // 지금 장면에 없는 인물의 대체 줄은 쓰지 않는다.
     const said = this.withoutPlayerVoice(ctx, ctx.self === true);
     const pool = (said.tone === 'deflect' ? said.free.deflect : said.free.talk_fallback).filter((l) => said.free.speakers.includes(l.speaker));
-    const picked = pool[((said.state.free?.talks ?? 0) + (said.state.said?.length ?? 0)) % Math.max(pool.length, 1)];
+    // 전에는 talks + said.length 로 돌렸는데, 둘이 한 턴에 같이 하나씩 늘어 두 줄짜리 묶음에서 늘 같은 줄만 나왔다.
+    const picked = pickFallback(pool, said.state.spoken, said.state.free?.talks ?? 0);
     const narrator = said.free.speakers.find((s) => said.scenario.cast[s]?.style === 'narration');
     const quiet: Line[] = narrator ? [{ speaker: narrator, text: ctx.self ? '말은 사막 바람에 흩어졌다.' : '대답은 돌아오지 않았다.' }] : [];
     // 뜻을 읽을 수 없는 입력은 모델에 넘기면 없는 말을 지어낸다.
@@ -305,10 +317,18 @@ export class LocalGm implements GmPort {
     const guard = activeFacts(ctx.scenario, ctx.state).flatMap((f) => f.state_guard);
     const fits = (lines: readonly Line[]) => lines.filter((l) => !guard.some((w) => mentions(l.text, w)));
     // 즉흥 행동은 결과 줄이 행동과 무관한 범용 줄이다. 해석이 요약한 행동 + 상대 인물의 등급별 반응 줄로 조립한다.
-    const improvised = ctx.improv?.deed ? this.improvFallback(ctx, ctx.improv.deed) : [];
+    // 요약(deed)은 해석 모델이 입력 낱말로 쓴 글이라 세계 밖 물건·스포일러·변장 노출이 들 수 있다. 그런 요약은 화면에 내지 않는다.
+    const deed = ctx.improv?.deed && !this.unsafeDeed(ctx, ctx.improv.deed) ? ctx.improv.deed : undefined;
+    const improvised = deed ? this.improvFallback(ctx, deed) : [];
     if (improvised.length) return fits(improvised);
     const kept = fits(typedFallbackLines(ctx.scenario, ctx.outcome.lines));
     return kept.length ? kept : fits(ctx.free.neutral?.[ctx.roll.tier] ?? []);
+  }
+
+  /** 검사 없이 화면에 낼 요약에 금지어(바깥 이야기·현대 물건·현실 지명·스포일러·등급)나 변장 노출 말이 들었는가. */
+  private unsafeDeed(ctx: GmContext, deed: string): boolean {
+    const lore = loreFor(this.lore, ctx.state);
+    return FORBIDDEN_GROUPS.some((g) => lore.forbidden[g].some((t) => forbiddenTermIn(g, deed, t))) || lore.exposure.some((t) => forbiddenIn(deed, t));
   }
 
   /** (행동 요약 내레이션) + (상대 인물의 성격에 맞는 등급별 반응 한 줄). 상대가 없으면 중립 줄을 잇는다. */
@@ -338,8 +358,7 @@ export class LocalGm implements GmPort {
     if (!gm) return Promise.resolve({ lines: [], meta: { attempts: 0, violations: [], fallback: true, ms: 0, model: this.model } });
     const unsaid = QUIP_UNSAID.filter((w) => !mentions(ctx.text, w));
     // 생성이 실패해도 뜰금없는 행동에 여우 한 줄은 나온다. 설정 사전의 짧은 감탄 가운데 시드로 고른다.
-    const pool = this.lore.gmQuips;
-    const pick = pool[seedFrom(`${ctx.state.seed}|${ctx.beat.id}|${ctx.text}`) % Math.max(pool.length, 1)];
+    const pick = pickFallback(this.lore.gmQuips.map((text) => ({ speaker: gm, text })), ctx.state.spoken, seedFrom(`${ctx.state.seed}|${ctx.beat.id}|${ctx.text}`))?.text;
     return this.write('talk', ctx, pick ? [{ speaker: gm, text: pick }] : [], 1, unsaid, (feedback) => buildQuipUser(ctx, feedback), undefined, [gm]);
   }
 

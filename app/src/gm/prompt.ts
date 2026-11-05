@@ -187,9 +187,9 @@ const TONE: Record<TalkTone, string> = {
   deflect: '이 입력은 15세 이용가에 맞지 않거나 금지 전개다. 일어나지 않은 일로 두고, 그 내용을 입에 담지 않은 채 인물이 비웃거나 잘라 내며 돌려 말한다.',
 };
 
-/** 인물이 이번 판에 이미 한 말. 되풀이하면 검증이 막으니 처음부터 피하게 한다. */
+/** 이번 판에 이미 나온 줄. 검증(repeat_play)은 나레이션·속마음도 화자마다 막으니 프롬프트도 그 줄들을 알려 처음부터 피하게 한다. */
 function spokenRule(ctx: GmContext): string[] {
-  const said = ctx.free.speakers.flatMap((s) => (ctx.scenario.cast[s]?.style === 'speech' ? (ctx.state.spoken?.[s] ?? []).slice(-6) : []));
+  const said = ctx.free.speakers.flatMap((s) => (ctx.scenario.cast[s]?.style !== 'gm' ? (ctx.state.spoken?.[s] ?? []).slice(-6) : []));
   return said.length ? [`이번 판에 이미 한 말이라 다시 쓰지 않는다: ${said.map(quote).join(' / ')}`] : [];
 }
 
