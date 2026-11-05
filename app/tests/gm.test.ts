@@ -404,7 +404,7 @@ describe('규칙 해석과 주소 제한', () => {
     if (!free) throw new Error('b05_why 에 free 가 없습니다');
     const items = scenario.sheet.items.map((i) => i.id);
     for (const q of ['크롬웰이 뭐야?', '저 남자 누구야?', '여기가 어디야', '귀찌가 뭐지?', '페시안은 어떤 나라야?']) expect(ruleInterpret(free, q, items, lore)).toEqual({ kind: 'ask', why: false });
-    for (const q of ['너 누구야?', '당신 누구예요?', '왜냐하면 저는 미소녀니까요?', '너 몇 살이야']) expect(ruleInterpret(free, q, items, lore)).not.toEqual({ kind: 'ask' });
+    for (const q of ['너 누구야?', '당신 누구예요?', '왜냐하면 저는 미소녀니까요?', '너 몇 살이야']) expect(ruleInterpret(free, q, items, lore).kind).not.toBe('ask');
   });
 
   test('GM 설명은 스포일러를 막고 다시 쓰며, "게임 마스터"와 공녀라는 말은 GM 줄에서 막지 않는다', async () => {
@@ -439,7 +439,7 @@ describe('규칙 해석과 주소 제한', () => {
     if (!free) throw new Error('b05_why 에 free 가 없습니다');
     const items = scenario.sheet.items.map((i) => i.id);
     expect(ruleInterpret(free, '근데 왜 변장했어?', items, lore)).toEqual({ kind: 'ask', why: true });
-    for (const q of ['왜 죽여요?', '왜 여기 있어?', '왜 변장했냐고 묻는 거예요?']) expect(ruleInterpret(free, q, items, lore)).not.toEqual({ kind: 'ask' });
+    for (const q of ['왜 죽여요?', '왜 여기 있어?', '왜 변장했냐고 묻는 거예요?']) expect(ruleInterpret(free, q, items, lore).kind).not.toBe('ask');
   });
 
   test('여우 줄이 "다"로 끝나면 막고, 변장이 풀린 줄과 없는 인물은 대사와 내레이션에서만 막는다', () => {
