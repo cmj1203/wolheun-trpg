@@ -1,0 +1,222 @@
+{"id":"act-a01","text":"바위 그늘로 살금살금 몸을 옮긴다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a02","text":"모래 언덕을 기어 올라가 저쪽을 내려다본다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a03","text":"후드를 깊이 눌러쓰고 천천히 걸어간다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a04","text":"손차양을 하고 세 사람 쪽을 가늘게 본다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a05","text":"가방에서 물병을 꺼내 한 모금 마신다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a06","text":"발자국을 지우면서 뒷걸음질 친다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a07","text":"납작 엎드려서 숨을 죽인다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a08","text":"그 사람들 반대편으로 냅다 뛴다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a09","text":"팔을 크게 흔들며 그쪽으로 걸어간다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a10","text":"돌멩이를 하나 주워 손에 쥔다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a11","text":"지도를 펴서 지금 어디쯤인지 맞춰 본다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a12","text":"신발을 벗어 모래를 털어 낸다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a13","text":"모래 위에 화살표를 그려 둔다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a14","text":"그늘에 쪼그려 앉아 저들이 지나가길 기다린다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a15","text":"바람 부는 쪽을 등지고 슬금슬금 옆으로 빠진다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a16","text":"귀를 기울여 저 사람들 말소리를 엿듣는다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a17","text":"망토 자락으로 얼굴 아래쪽을 가린다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a18","text":"언덕 그림자를 따라 한 발씩 다가간다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a19","text":"제자리에서 빙글빙글 돈다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a20","text":"모래를 한 움큼 쥐어 하늘로 뿌린다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a21","text":"숨을 고르고 저쪽을 향해 걸음을 뗀다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a22","text":"무릎을 꿇고 모래에 귀를 대 본다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a23","text":"저 사람들 뒤를 멀찍이 밟아 간다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a24","text":"바위 틈새에 몸을 구겨 넣는다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-a25","text":"손가락을 침에 적셔 바람 방향을 잰다","kind":"행동","scene":"alone","expect":["판정"],"note":"혼자 있는 사막에서 몸으로 하는 일"}
+{"id":"act-f01","text":"고개를 천천히 뒤로 젖혀 칼끝에서 목을 뗀다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f02","text":"두 손을 펴서 어깨 높이로 든다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f03","text":"한쪽 무릎을 모래에 대고 몸을 웅크린다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f04","text":"칼등을 손가락으로 살짝 밀어낸다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f05","text":"남자의 눈을 피하지 않고 빤히 쳐다본다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f06","text":"발밑 모래를 남자 얼굴로 걷어찬다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f07","text":"옆으로 굴러서 칼끝을 벗어난다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f08","text":"가방을 열어 안에 든 걸 하나씩 보여 준다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f09","text":"지도를 꺼내 남자 앞에 펼쳐 놓는다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f10","text":"호위 쪽으로 슬쩍 눈길을 돌려 빈틈을 찾는다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f11","text":"숨을 길게 내쉬고 떨리는 손을 꽉 쥔다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f12","text":"그대로 뒤로 털썩 주저앉는다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f13","text":"눈물을 뚝뚝 흘린다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f14","text":"남자의 칼 쥔 손목을 덥석 잡는다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f15","text":"몸을 낮춰 호위 사이로 빠져나가려 한다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f16","text":"후드 끈을 꽉 조여 얼굴을 더 가린다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f17","text":"터번 쓴 남자 발치에 침을 뱉는다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f18","text":"비틀거리는 척하며 한 걸음 물러선다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f19","text":"머리를 숙여 공손하게 절을 한다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f20","text":"손바닥으로 칼날을 밀치고 달아난다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f21","text":"가방끈을 풀어 남자 발 앞에 던진다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f22","text":"입술을 깨물고 남자를 노려본다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f23","text":"쓰러지는 척 눈을 감고 늘어진다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f24","text":"모래바닥에 손가락으로 글자를 쓴다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"act-f25","text":"갑자기 남자를 와락 끌어안는다","kind":"행동","scene":"facing","expect":["판정"],"note":"칼 든 남자 앞에서 몸으로 하는 일"}
+{"id":"per-a01","text":"거기 세 분! 잠깐만 서 보세요!","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a02","text":"어이, 이쪽 좀 봐 줘요!","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a03","text":"실례합니다, 길 좀 여쭤도 될까요?","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a04","text":"사람 살려요, 여기 사람 있어요!","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a05","text":"물 좀 나눠 주실 수 있나요?","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a06","text":"저, 혹시 크라차 가는 길 아세요?","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a07","text":"거기 멈춰! 누구냐!","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a08","text":"안녕하세요! 해치려는 거 아니에요!","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a09","text":"헤이! 여기요 여기!","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-a10","text":"기다려 주세요, 같이 가요!","kind":"건넨말","scene":"alone","expect":["판정"],"note":"멀리 보이는 세 사람에게 소리쳐 건넨 말(이 장면은 건넨 말을 다가가 말 거는 판정으로 받는다)"}
+{"id":"per-f01","text":"칼부터 좀 내려 주시면 안 될까요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f02","text":"저 진짜 아무것도 몰라요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f03","text":"당신 눈 색깔 특이하네요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f04","text":"나 죽이면 후회할 거야","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f05","text":"숨 좀 쉬게 해 줘요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f06","text":"이봐요, 사람을 이렇게 대하는 법이 어디 있어요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f07","text":"그쪽은 이름이 뭐예요?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f08","text":"저 혼자 왔어요, 일행 없어요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f09","text":"날도 더운데 칼 들고 있으면 팔 안 아파요?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f10","text":"원하는 게 뭔지 말씀만 하세요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f11","text":"하, 겁주려는 거면 실패야","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f12","text":"목에 피 나잖아요, 조심 좀 해요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f13","text":"뒤에 계신 분들은 말을 못 하세요?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f14","text":"제발 한 번만 봐 주세요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f15","text":"그 칼 엄청 비싸 보이네요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f16","text":"그쪽이 이 사막 주인이라도 돼요?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f17","text":"대답할 테니까 질문을 다시 해 주세요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f18","text":"저는 길 잃은 나그네일 뿐이에요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f19","text":"미안해요, 놀라게 할 생각은 없었어요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f20","text":"당신 얼굴 무섭게 생겼다","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f21","text":"됐고, 물이나 좀 줘","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f22","text":"무슨 오해가 있는 것 같은데요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f23","text":"말로 하자, 말로","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f24","text":"나를 왜 죽이려는 건데요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f25","text":"저 아세요? 처음 보는 사이잖아요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f26","text":"살살 좀 해 주세요, 아파요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f27","text":"협상하죠. 뭘 드리면 돼요?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f28","text":"당신 같은 사람 처음 봐","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f29","text":"제가 무기라도 든 것처럼 보여요?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f30","text":"잠깐, 잠깐만요. 숨 좀 돌리고요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f31","text":"그쪽 부하들 표정 너무 굳었어요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f32","text":"웃기지 마","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f33","text":"저 배고파서 쓰러질 것 같아요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f34","text":"아저씨, 진정하세요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"per-f35","text":"저를 놔주면 다시는 안 나타날게요","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 건넨 말"}
+{"id":"self-a01","text":"아 목말라 죽겠네","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a02","text":"다리 아파…","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a03","text":"진짜 되는 일이 하나도 없어","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a04","text":"이놈의 햇볕 정말 지긋지긋해","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a05","text":"어쩌다 내가 이 꼴이 됐지","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a06","text":"무서워… 무서워","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a07","text":"집에 가고 싶어…","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a08","text":"괜찮아, 할 수 있어","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a09","text":"침착하자 침착해","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a10","text":"발바닥 다 익겠다","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a11","text":"모래가 신발 속까지 들어왔어","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a12","text":"으, 땀 범벅이야","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a13","text":"저 사람들 설마 도적은 아니겠지","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a14","text":"하여간 재수도 없지","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a15","text":"하늘이 왜 이렇게 파래","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a16","text":"졸려 죽겠다","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a17","text":"배에서 꼬르륵 소리 나","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a18","text":"이게 꿈이었으면 좋겠다","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a19","text":"후, 정신 차려 아시나","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-a20","text":"에휴 내 팔자야","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"혼자 있는 사막에서 아무에게도 건네지 않은 말"}
+{"id":"self-f01","text":"망했다 망했어","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f02","text":"진짜 죽는 거 아냐 이거","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f03","text":"심장 터질 것 같아","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f04","text":"손이 왜 이렇게 떨리지","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f05","text":"아 이럴 줄 알았으면 집에 있을걸","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f06","text":"침착해, 침착해야 해","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f07","text":"숨 막혀 죽겠네","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f08","text":"끝났다 이제","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f09","text":"하필 이런 데서 걸리냐","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f10","text":"다리에 힘이 하나도 없어","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f11","text":"신이시여, 한 번만 살려 주세요","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f12","text":"무슨 저런 눈빛이 다 있어","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f13","text":"아까 그냥 숨어 있을걸 그랬나","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f14","text":"정신 똑바로 차리자","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f15","text":"하… 진짜 최악이다","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f16","text":"왜 꼭 나한테만 이런 일이","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f17","text":"머리가 하얘졌어","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f18","text":"목이 따끔거려","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f19","text":"울면 안 돼, 울면 안 돼","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"self-f20","text":"이게 무슨 날벼락이야","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞이지만 남자에게 건네지 않은 중얼거림"}
+{"id":"game-a01","text":"행운 점수는 어디에 쓰는 거야?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a02","text":"귀찌 숫자가 0 되면 어떻게 돼?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a03","text":"지금 몇 번이나 더 입력할 수 있어?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a04","text":"저장 단추는 어디 붙어 있어?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a05","text":"이거 엔딩 몇 개야?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a06","text":"주사위는 누가 굴리는 거야?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a07","text":"능력치는 어디서 확인해?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a08","text":"탈주 준비도가 높으면 뭐가 좋아?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a09","text":"아까 장면으로 되돌릴 수 있어?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a10","text":"화면 위에 수첩은 뭐 하는 거야?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a11","text":"여기서 뭘 쳐야 되는지 모르겠어","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a12","text":"매력 점수 올리는 방법 있어?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a13","text":"실패하면 바로 게임 오버야?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a14","text":"플레이 시간 보통 얼마나 걸려?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a15","text":"선택지 없이 그냥 써도 돼?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a16","text":"판정 목표 숫자가 몇이었지?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a17","text":"의심 수치는 어떻게 올라가?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a18","text":"대사 넘기는 건 클릭이야?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a19","text":"기록 버튼 누르면 뭐가 나와?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-a20","text":"불러오기 하면 지금까지 한 거 사라져?","kind":"게임질문","scene":"alone","expect":["질문안내"],"note":"규칙·화면·진행을 묻는 말(이야기 입력칸은 질문 모드로 안내한다)"}
+{"id":"game-f01","text":"지금 여기서 주사위 굴리는 거야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f02","text":"대가 있는 성공이 무슨 뜻이야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f03","text":"이 장면에서 죽을 수도 있어?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f04","text":"호감은 왜 0이야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f05","text":"지금 저장해 둘 수 있어?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f06","text":"여기서 실패하면 처음부터 다시야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f07","text":"재치랑 매력 중에 뭐가 높아?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f08","text":"이 남자랑 싸우면 이길 확률 있어?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f09","text":"입력 몇 글자까지 돼?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f10","text":"집착 수치가 뭐야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f11","text":"힌트 좀 줄 수 있어?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f12","text":"GM, 지금 뭐 하면 돼?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f13","text":"방금 굴린 거 몇 나왔어?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f14","text":"이거 선택에 따라 결말 달라져?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f15","text":"귀찌 수명 줄면 판정에 불리해져?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f16","text":"행운을 지금 써도 돼?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f17","text":"화면 아래 단추들은 뭐야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f18","text":"진행자는 누구야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f19","text":"이 게임 AI가 쓰는 거야?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"game-f20","text":"다시 하기 버튼 어디 있어?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 규칙·화면·진행을 묻는 말"}
+{"id":"per-fq01","text":"너 여기서 뭐 하는 놈이야?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 반말로 던진 물음(물음 꼴이 게임 질문과 같다)"}
+{"id":"per-fq02","text":"그 칼 진짜로 쓸 거야?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 반말로 던진 물음(물음 꼴이 게임 질문과 같다)"}
+{"id":"per-fq03","text":"날 어디로 끌고 갈 건데?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 반말로 던진 물음(물음 꼴이 게임 질문과 같다)"}
+{"id":"per-fq04","text":"내가 뭘 잘못했는데?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 반말로 던진 물음(물음 꼴이 게임 질문과 같다)"}
+{"id":"per-fq05","text":"넌 사람 죽이는 게 쉬워?","kind":"건넨말","scene":"facing","expect":["대꾸","판정"],"note":"칼 든 남자에게 반말로 던진 물음(물음 꼴이 게임 질문과 같다)"}
+{"id":"game-q01","text":"저장은 어디서 하나요?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"존댓말로 쓴 게임 질문(존댓말 꼴이 건넨 말과 같다)"}
+{"id":"game-q02","text":"행운은 언제 쓰는 건가요?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"존댓말로 쓴 게임 질문(존댓말 꼴이 건넨 말과 같다)"}
+{"id":"game-q03","text":"이 게임 엔딩 몇 개예요?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"존댓말로 쓴 게임 질문(존댓말 꼴이 건넨 말과 같다)"}
+{"id":"game-q04","text":"판정은 어떻게 정해지나요?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"존댓말로 쓴 게임 질문(존댓말 꼴이 건넨 말과 같다)"}
+{"id":"game-q05","text":"지금 뭘 입력하면 되나요?","kind":"게임질문","scene":"facing","expect":["질문안내"],"note":"존댓말로 쓴 게임 질문(존댓말 꼴이 건넨 말과 같다)"}
+{"id":"self-q01","text":"나 오늘 운세 최악이었나?","kind":"혼잣말","scene":"alone","expect":["혼잣말"],"note":"물음 꼴이지만 답을 바라지 않는 혼잣말"}
+{"id":"self-fq01","text":"이러다 진짜 죽는 거 아니야?","kind":"혼잣말","scene":"facing","expect":["혼잣말"],"note":"남자 앞에서 물음 꼴로 중얼거린 말"}
+{"id":"out-a01","text":"잠깐만 화장실 좀 다녀올게","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a02","text":"아 내일 출근하기 싫다","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a03","text":"이 그림 누가 그렸지 진짜 잘 그렸네","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a04","text":"ㅋㅋ 개웃기네 이거","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a05","text":"오늘 저녁 뭐 먹지","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a06","text":"이 웹툰 다음 화 언제 나와","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a07","text":"배터리 10퍼 남았네","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a08","text":"친구가 이거 해 보라고 해서 왔어","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a09","text":"브금 좋다","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-a10","text":"ㅎㅎ 재밌네 이 게임","kind":"세계밖","scene":"alone","expect":["질문안내"],"note":"플레이어의 현실·게임 바깥 잡담(이야기에 넣지 않는다)"}
+{"id":"out-f01","text":"와 이 남자 작화 미쳤다","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f02","text":"잠깐 전화 왔어","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f03","text":"나 지금 수업 시간에 몰래 하는 중","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f04","text":"이 남자 최애 될 듯","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f05","text":"엄마가 밥 먹으래 잠깐만","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f06","text":"지금 새벽 세 시인데 잠이 안 와","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f07","text":"이거 스트리밍 중인데 시청자들이 인사하래","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f08","text":"키보드 자판이 끈적거려","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f09","text":"원작이랑 너무 똑같은데?","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"out-f10","text":"아 이거 유튜브에서 본 거다","kind":"세계밖","scene":"facing","expect":["질문안내"],"note":"남자 앞에서 한 플레이어의 현실·게임 바깥 잡담"}
+{"id":"mod-a01","text":"휴대폰 꺼내서 지도 앱을 켠다","kind":"세계밖","scene":"alone","expect":["세계밖"],"note":"이 세계에 없는 물건·힘을 쓰려는 입력(일어나지 않은 일로 그린다)"}
+{"id":"mod-a02","text":"택시를 잡으려고 손을 든다","kind":"세계밖","scene":"alone","expect":["세계밖"],"note":"이 세계에 없는 물건·힘을 쓰려는 입력(일어나지 않은 일로 그린다)"}
+{"id":"mod-a03","text":"드론을 날려서 저 사람들을 찍는다","kind":"세계밖","scene":"alone","expect":["세계밖"],"note":"이 세계에 없는 물건·힘을 쓰려는 입력(일어나지 않은 일로 그린다)"}
+{"id":"mod-a04","text":"선글라스를 낀다","kind":"세계밖","scene":"alone","expect":["세계밖"],"note":"이 세계에 없는 물건·힘을 쓰려는 입력(일어나지 않은 일로 그린다)"}
+{"id":"mod-a05","text":"GPS로 내 위치를 확인한다","kind":"세계밖","scene":"alone","expect":["세계밖"],"note":"이 세계에 없는 물건·힘을 쓰려는 입력(일어나지 않은 일로 그린다)"}
+{"id":"mod-a06","text":"편의점에서 생수를 사 온다","kind":"세계밖","scene":"alone","expect":["세계밖"],"note":"이 세계에 없는 물건·힘을 쓰려는 입력(일어나지 않은 일로 그린다)"}
+{"id":"mod-a07","text":"오토바이를 타고 저쪽으로 달린다","kind":"세계밖","scene":"alone","expect":["세계밖"],"note":"이 세계에 없는 물건·힘을 쓰려는 입력(일어나지 않은 일로 그린다)"}
+{"id":"mod-f01","text":"노트북을 열어서 남자한테 보여 준다","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
+{"id":"mod-f02","text":"112에 신고할게요","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
+{"id":"mod-f03","text":"총을 꺼내 남자를 겨눈다","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
+{"id":"mod-f04","text":"카메라로 남자 얼굴을 찰칵 찍는다","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
+{"id":"mod-f05","text":"와이파이 잡히는 데 없어요?","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
+{"id":"mod-f06","text":"이거 비트코인으로 드릴게요","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
+{"id":"mod-f07","text":"라이터를 켜서 칼날에 갖다 댄다","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
+{"id":"mod-f08","text":"블루투스 이어폰을 귀에 꽂는다","kind":"세계밖","scene":"facing","expect":["세계밖"],"note":"남자 앞에서 이 세계에 없는 물건·힘을 쓰려는 입력"}
