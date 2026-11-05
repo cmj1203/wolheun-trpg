@@ -273,6 +273,8 @@ export class Engine {
       delete state.pendingIntent;
       this.unsay(state);
     }
+    // 그만두기 확인도 같다. 답하지 않고 다른 행동으로 넘어갔으면, 뒤의 "응"이 옛 확인의 답이 되어 판을 끝내면 안 된다.
+    if (state.pendingRisk && (action.type === 'choose' || action.type === 'approach' || action.type === 'luck')) delete state.pendingRisk;
     switch (action.type) {
       case 'choose':
         this.choose(state, beat, action.id, events);
@@ -527,6 +529,7 @@ export class Engine {
     if (beat.ending) {
       // 행운을 묻던 중 그만두기로 끝나면 묻던 창은 버린다. 남아 있으면 끝난 판에 행운 창이 뜬다.
       delete state.pendingLuck;
+      delete state.pendingRisk;
       state.ending = beat.ending.id;
       this.record(state, { kind: 'end', ending: beat.ending.id, title: beat.ending.title });
       events.push(this.endingEvent(beat));
@@ -1078,6 +1081,8 @@ export class Engine {
    * 창이 떠 있는 동안 글로 답해도 받는다(자동 플레이). 'asked' 는 창을 띄웠거나 닫은 것, 'quit' 은 끝낸 것, null 은 보통 입력이다.
    */
   private confirmQuit(state: GameState, text: string, events: GameEvent[]): 'asked' | 'quit' | null {
+    // 이미 끝난 판(결말 줄이 흐르는 중 끼어든 말)은 그만둘 것이 없다. 묻지도, 결말을 바꾸지도 않는다.
+    if (state.ending) return null;
     const pending = state.pendingRisk;
     delete state.pendingRisk;
     if (pending && (YES.test(text) || QUIT_YES.test(text))) {
@@ -1093,6 +1098,11 @@ export class Engine {
   }
 
   private askQuit(state: GameState, text: string, warn: string, events: GameEvent[]): void {
+    // 확인 창은 하나다. 떠 있던 의도 카드는 그만두기 확인이 대신하고, 창의 답은 그만두기에 간다.
+    if (state.pendingIntent) {
+      delete state.pendingIntent;
+      this.unsay(state);
+    }
     state.pendingRisk = { text, quit: true };
     events.push({ type: 'confirm', kind: 'quit', text: warn });
   }
