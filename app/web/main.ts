@@ -446,6 +446,15 @@ window.addEventListener('resize', () => {
   }
 });
 
+// 폰 세로 배치(style.css)에서는 메뉴 줄·진행 수치 높이에 따라 창 크기 그대로 그림 칸이 줄거나 는다. 그때도 배경·CG를 다시 맞춘다.
+new ResizeObserver(() => {
+  if (game.bgRef) void paint(ui.bg, game.bgRef, 'cover');
+  if (game.cgRef) {
+    void paint(ui.cgBlur, game.cgRef, 'cover');
+    void paint(ui.cgArt, game.cgRef, game.cgRef.fit ?? 'contain');
+  }
+}).observe(ui.bg);
+
 function setScene(ev: SceneEvent): void {
   ui.beatTitle.textContent = ev.title;
   ui.priceLine.hidden = true;

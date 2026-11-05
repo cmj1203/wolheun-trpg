@@ -2066,14 +2066,19 @@ button.primary {
  */
 @media (orientation: portrait) and (max-width: 900px) {
   .stage {
-    /* 메뉴·진행 수치·대사창·입력줄에 약 470px 를 남기고 나머지를 그림에 준다(150px ~ 화면 높이 44%). */
-    --art-h: clamp(150px, calc(100vh - 470px), 44vh);
-    --art-h: clamp(150px, calc(100dvh - 470px), 44dvh);
+    /*
+     * 그림 칸은 화면 높이의 40% 까지, 대사창은 160px 이상을 먼저 지킨다. 메뉴 줄이 접히거나 진행 수치가 늘어 자리가
+     * 모자라면 그림 칸이 120px 까지 줄어든다(배경은 main.ts 가 그림 칸 크기가 바뀔 때 다시 맞춘다).
+     */
+    --art-max: 40vh;
+    --art-max: 40dvh;
+    --art-min: 120px;
+    --dialog-min: 160px;
     --gap: 8px;
     --tap: 44px;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto var(--art-h) auto minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(var(--art-min), var(--art-max)) auto minmax(var(--dialog-min), 1fr) auto;
     grid-template-areas: 'top' 'art' 'hud' 'panel' 'say';
     width: 100vw;
     height: 100vh;
@@ -2326,46 +2331,10 @@ button.primary {
     overscroll-behavior: contain;
   }
 
-  /*
-   * 자유 입력 차례에는 접근법 단추가 창 아래에 있다. 창을 아래에서부터 쌓아(column-reverse) 처음부터 아래 끝이 보이게 하고,
-   * order 로 보이는 순서는 위→아래 그대로 둔다. 위의 대사는 창을 올려서 본다.
-   */
-  .stage[data-phase='free'] .dialog,
-  .stage[data-phase='thinking'] .dialog {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .stage[data-phase='free'] .dialog > *,
-  .stage[data-phase='thinking'] .dialog > * {
-    flex: none;
-  }
-
-  .dialog > .nameplate {
-    order: 6;
-    align-self: flex-start;
-  }
-
-  .dialog > .echo {
-    order: 5;
-  }
-
-  .dialog > .text {
-    order: 4;
-  }
-
-  .dialog > .price-line {
-    order: 2;
-  }
-
-  .dialog > .twist-line {
-    order: 1;
-  }
-
-  /* 글이 짧아 남는 자리는 맨 아래 칸 밑으로 보내 위에서부터 읽히게 한다. 넘칠 때는 0 이 되어 아래 끝부터 보인다. */
-  .dialog > .free {
-    order: 0;
-    margin-bottom: auto;
+  /* 자유 입력 차례에는 진행 수치 띠를 접어 그 자리를 대사창(질문·접근법 단추)에 준다. 접근법 단추에 능력치가 함께 적혀 있다. */
+  .stage[data-phase='free'] .hud,
+  .stage[data-phase='thinking'] .hud {
+    display: none;
   }
 
   /* 창 안에서 글이 내려가므로 이름표는 창 위로 튀어나오지 않고 첫 줄에 붙는다. */
@@ -2489,19 +2458,19 @@ button.primary {
     width: auto;
     max-height: calc(100% - 2 * var(--gap));
     transform: none;
-    gap: 8px;
+    gap: 6px;
     overflow-y: auto;
     overscroll-behavior: contain;
   }
 
   .choice {
     flex: none;
-    min-height: 48px;
+    min-height: var(--tap);
     gap: 10px;
-    padding: 10px 14px;
+    padding: 7px 12px;
     border-radius: 10px;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   .choice:hover,
@@ -2616,7 +2585,9 @@ button.primary {
   .toast,
   .gm-box:not([hidden]) ~ .toast {
     grid-area: art;
-    z-index: 4;
+    /* 선택지 아래에 깔리고 누르기를 막지 않는다. 같은 글은 읽기 칸(#sr-note)으로도 알린다. */
+    z-index: 2;
+    pointer-events: none;
     top: 10px;
     max-width: calc(100% - 32px);
     padding: 8px 16px;
@@ -3020,5 +2991,17 @@ button.primary {
 
   .atlas-actions button {
     min-height: var(--tap);
+  }
+}
+
+/* 세로이면서 키가 낮은 화면(키보드가 화면을 줄이는 브라우저 등): 진행 수치를 접고 그림 칸을 더 줄여 대사와 입력줄을 지킨다. */
+@media (orientation: portrait) and (max-width: 900px) and (max-height: 560px) {
+  .stage {
+    --art-min: 72px;
+    --dialog-min: 96px;
+  }
+
+  .stage .hud {
+    display: none;
   }
 }
