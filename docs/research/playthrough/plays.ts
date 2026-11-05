@@ -176,6 +176,17 @@ export const PLAYS: Record<string, Play> = {
       b02_people: f('춤을 춘다'),
     },
   },
+  '16_unmasked_road': {
+    title: '은발 (도주 갈래, 징조 없이 실패 한 번에 작은 끝)',
+    ending: 'unmasked',
+    seed: 30,
+    note: '교차 검증에서 찾은 줄. 칼끝에서 몸을 빼 달아난 뒤 해 질 녘에 바람 피할 곳을 찾다 실패한다.',
+    moves: {
+      b02_people: f('달려가서 길을 묻는다'),
+      b05_why: f('칼날을 밀어내고 모래를 차서 도망친다'),
+      r3_dusk: a('shelter'),
+    },
+  },
   '15_buttons_first': {
     title: '단추 첫 칸만 누르기',
     ending: 'curious',
