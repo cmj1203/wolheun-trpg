@@ -23,9 +23,11 @@ function renderEvent(ev: GameEvent, out: string[]): void {
     case 'line': {
       const text = shownText(ev.style, ev.text);
       const by = ev.by === 'gm' ? ' ‹GM›' : '';
-      if (ev.style === 'gm') out.push(`- 🦊 **${ev.display}**: ${text}${by}`);
-      else if (ev.style === 'narration') out.push(`- ${text}${by}`);
-      else out.push(`- **${ev.display}**: ${text}${by}${ev.sfx ? ` 〔효과음 ${ev.sfx}〕` : ''}`);
+      // 효과음·그림(CG)·화면 효과는 같은 줄 끝에 붙인다(줄 번호가 바뀌지 않게).
+      const deco = `${ev.sfx ? ` 〔효과음 ${ev.sfx}〕` : ''}${ev.cg ? ` 〔그림 ${ev.cg}〕` : ''}${ev.fx ? ` 〔화면 ${ev.fx}〕` : ''}`;
+      if (ev.style === 'gm') out.push(`- 🦊 **${ev.display}**: ${text}${by}${deco}`);
+      else if (ev.style === 'narration') out.push(`- ${text}${by}${deco}`);
+      else out.push(`- **${ev.display}**: ${text}${by}${deco}`);
       break;
     }
     case 'echo':

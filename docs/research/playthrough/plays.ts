@@ -187,6 +187,16 @@ export const PLAYS: Record<string, Play> = {
       r3_dusk: a('shelter'),
     },
   },
+  '17_collapse_carry': {
+    title: '모래 위에서 (앞 장면의 머뭇이 이어져 새 경고 없이 쓰러짐)',
+    ending: 'collapse',
+    seed: 1,
+    note: '교차 검증에서 찾은 줄. b02 에서 망설이다 경고를 받고 단추로 빠져나왔지만, b05 에서 다시 망설이자 새 경고 없이 쓰러진다.',
+    fallback: '음…',
+    moves: {
+      b02_people: [...f('음…', '음…', '음…'), { approach: 'run' }],
+    },
+  },
   '15_buttons_first': {
     title: '단추 첫 칸만 누르기',
     ending: 'curious',
