@@ -1,5 +1,5 @@
 import { buildAtlas, emptyAtlas, forkBeats, nextHint, recordAtlas, type AtlasRecord } from '../engine/atlas.ts';
-import { appendFile, mkdir } from 'node:fs/promises';
+import { appendFile, mkdir, rename } from 'node:fs/promises';
 import { join, relative, resolve, sep } from 'node:path';
 import { seedFrom } from '../engine/dice.ts';
 import { Engine } from '../engine/engine.ts';
@@ -205,7 +205,20 @@ export async function startServer(opts: ServerOptions) {
     : null;
   const readAtlas = async (): Promise<AtlasRecord> => {
     const file = Bun.file(opts.atlasFile);
-    return (await file.exists()) ? ((await file.json()) as AtlasRecord) : emptyAtlas();
+    if (!(await file.exists())) return emptyAtlas();
+    try {
+      return (await file.json()) as AtlasRecord;
+    } catch {
+      // 깨진 기록(쓰다 만 파일 따위)은 빈 지도로 본다. 지도 때문에 판이 막히면 안 된다.
+      return emptyAtlas();
+    }
+  };
+  // 다른 요청이 쓰다 만 파일을 읽지 않게, 임시 파일에 다 쓴 뒤 이름을 바꾼다.
+  let atlasSeq = 0;
+  const writeAtlas = async (record: AtlasRecord): Promise<void> => {
+    const tmp = `${opts.atlasFile}.${process.pid}.${++atlasSeq}.tmp`;
+    await Bun.write(tmp, JSON.stringify(record));
+    await rename(tmp, opts.atlasFile);
   };
   const engine = new Engine(scenario, new LocalGm(llm, lore, DEFAULT_GM_OPTIONS), Date.now, true);
   const forks = forkBeats(scenario);
@@ -319,12 +332,17 @@ export async function startServer(opts: ServerOptions) {
                 const logged = s.state.log.length;
                 const { state, step } = await engine.act(s.state, action, (event) => send({ event }));
                 s.state = state;
-                await persist(s);
-                // 갈림길 비트에 이번 행동으로 들어섰으번 그 자리를 자동 저장한다(화면 상태 없음 → 불러오면 비트 처음부터).
-                if (!state.ending && forks.has(state.beat) && state.log.slice(logged).some((e) => e.kind === 'beat' && e.beat === state.beat)) {
-                  await writeSave(opts.savesDir, AUTO_FORK, scenario, state);
+                // 세션은 이미 나아갔다. 기록·자동 저장·지도가 실패해도 화면에는 결과를 보내 둘이 어긋나지 않게 한다.
+                try {
+                  await persist(s);
+                  // 갈림길 비트에 이번 행동으로 들어섰으번 그 자리를 자동 저장한다(화면 상태 없음 → 불러오면 비트 처음부터).
+                  if (!state.ending && forks.has(state.beat) && state.log.slice(logged).some((e) => e.kind === 'beat' && e.beat === state.beat)) {
+                    await writeSave(opts.savesDir, AUTO_FORK, scenario, state);
+                  }
+                  await writeAtlas(recordAtlas(await readAtlas(), state));
+                } catch (err) {
+                  console.error(err);
                 }
-                await Bun.write(opts.atlasFile, JSON.stringify(recordAtlas(await readAtlas(), state)));
                 send({ done: { prompt: step.prompt, hud: step.hud } });
               } catch (err) {
                 if (!(err instanceof GameError)) console.error(err);
@@ -384,22 +402,22 @@ export async function startServer(opts: ServerOptions) {
           const body = await readBody(req);
           const hint = nextHint(scenario, await readAtlas(), typeof body.key === 'string' ? body.key : '');
           if (!hint) return json({ error: '없는 칸입니다' }, 400);
-          await Bun.write(opts.atlasFile, JSON.stringify(hint.record));
+          await writeAtlas(hint.record);
           return json({ level: hint.level, text: hint.text });
         }),
       },
       '/api/atlas/reset': {
         POST: post(async () => {
-          await Bun.write(opts.atlasFile, JSON.stringify(emptyAtlas()));
+          await writeAtlas(emptyAtlas());
           return json({ ok: true });
         }),
       },
       '/api/result': {
         GET: handle(async (req) => {
           const s = sessionOf(new URL(req.url).searchParams.get('session'));
-          // 같은 판(같은 seed)의 갈림길 자동 저장이 있을 때만 '마지막 갈림길에서 다시'가 연다.
+          // 같은 판의 갈림길 자동 저장이 있을 때만 '마지막 갈림길에서 다시'가 연다. 같은 시드로 새로 시작한 다른 판은 시작 시각이 다르다.
           const fork = await readSave(opts.savesDir, AUTO_FORK, scenario).catch(() => null);
-          return json({ ...summarize(scenario, s.state), fork: fork !== null && fork.seed === s.state.seed });
+          return json({ ...summarize(scenario, s.state), fork: fork !== null && fork.seed === s.state.seed && fork.startedAt === s.state.startedAt });
         }),
       },
     },

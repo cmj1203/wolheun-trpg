@@ -210,6 +210,9 @@ function subjectParticle(word: string): string {
 }
 
 export class Engine {
+  /** 이번 턴이 시작될 때 이미 징조가 나간 작은 끝(act 가 복제한 상태마다). 엔진 하나를 여러 세션이 함께 쓰니 상태에 묶는다. */
+  private readonly warnedAtTurn = new WeakMap<GameState, ReadonlySet<string>>();
+
   constructor(
     readonly scenario: Scenario,
     private readonly gm: GmPort,
@@ -250,6 +253,12 @@ export class Engine {
     const beat = this.beatOf(state);
     const events: GameEvent[] = [this.sceneEvent(state, beat), ...beat.lines.map((l) => this.lineEvent(l, 'script'))];
     if (state.ending && beat.ending) events.push(this.endingEvent(beat));
+    // 답을 기다리던 확인 창은 다시 띄운다. 안 띄우면 보이지 않는 창에 뒤의 "응"이 답이 된다.
+    if (!state.ending && state.pendingIntent) events.push(this.intentEvent(state.pendingIntent));
+    else if (!state.ending && state.pendingRisk) {
+      const warn = (this.scenario.risky ?? []).find((r) => r.quit)?.warn;
+      if (warn) events.push({ type: 'confirm', kind: 'quit', text: warn });
+    }
     if (beat.free && state.free) this.gm.prepare?.({ scenario: this.scenario, beat, free: beat.free, state });
     return this.step(state, events);
   }
@@ -261,6 +270,7 @@ export class Engine {
     const beat = this.beatOf(state);
     // 이 턴이 시작될 때 이미 경고가 나간 작은 끝. 경고가 이번 턴에 처음 나온 작은 끝은 이번 턴에 끝내지 않는다.
     const warnedBefore = new Set((this.scenario.fates ?? []).filter((f) => state.flags[`경고_${f.id}`] === true).map((f) => f.id));
+    this.warnedAtTurn.set(state, warnedBefore);
     const events: GameEvent[] = [];
     if (onEvent) {
       events.push = (...items) => {
@@ -269,10 +279,7 @@ export class Engine {
       };
     }
     // 의도 카드에 답하지 않고 다른 행동으로 넘어가면 그 카드는 끝난다. 뒤의 "응" 같은 입력이 옛 카드의 답이 되면 안 된다.
-    if (state.pendingIntent && (action.type === 'choose' || action.type === 'approach' || action.type === 'interject')) {
-      delete state.pendingIntent;
-      this.unsay(state);
-    }
+    if (state.pendingIntent && (action.type === 'choose' || action.type === 'approach' || action.type === 'interject')) this.dropIntent(state);
     // 그만두기 확인도 같다. 답하지 않고 다른 행동으로 넘어갔으면, 뒤의 "응"이 옛 확인의 답이 되어 판을 끝내면 안 된다.
     if (state.pendingRisk && (action.type === 'choose' || action.type === 'approach' || action.type === 'luck')) delete state.pendingRisk;
     switch (action.type) {
@@ -302,7 +309,7 @@ export class Engine {
         await this.answerConfirm(state, beat, action.ok, events);
         break;
       case 'ask':
-        await this.askGm(state, beat, action.text, events, action.scene ? this.scenario.beats[action.scene] : undefined);
+        await this.askGm(state, beat, action.text, events, this.sceneOf(action.scene));
         break;
     }
     this.settleFate(state, events, warnedBefore);
@@ -445,6 +452,19 @@ export class Engine {
     }
   }
 
+  /**
+   * 장면에 들어가며 갈 작은 끝. settleFate 와 같은 불변식(한 번의 실패로는 끝나지 않는다)을 지킨다:
+   * 판정 실패가 다음 장면으로 넘어가는 길이어도, 징조가 이번 턴에 처음 나온 작은 끝은 수치를 문턱 바로 위에 멈추고 장면으로 간다.
+   */
+  private fateOnEnter(state: GameState): FateSpec | undefined {
+    const warnedBefore = this.warnedAtTurn.get(state);
+    for (let fate = this.dueFate(state); fate; fate = this.dueFate(state)) {
+      if (warnedBefore && fate.warn && !warnedBefore.has(fate.id) && this.holdAboveThreshold(state, fate)) continue;
+      return fate;
+    }
+    return undefined;
+  }
+
   /** 작은 끝 조건의 수치를 문턱 바로 위에 멈춘다. 비교식이 아니면 멈출 값이 없어 false. */
   private holdAboveThreshold(state: GameState, fate: FateSpec): boolean {
     const hold = holdBefore(fate.when);
@@ -503,7 +523,7 @@ export class Engine {
     let beat = this.scenario.beats[beatId];
     if (!beat) throw new Error(`없는 비트: ${beatId}`);
     // 상태가 한계에 닿았으면 다음 장면 대신 작은 끝으로 간다. 그만두기 같은 결말은 그대로 둔다.
-    const fate = beat.ending ? undefined : this.dueFate(state);
+    const fate = beat.ending ? undefined : this.fateOnEnter(state);
     const fated = fate ? this.scenario.beats[fate.to] : undefined;
     if (fated) beat = fated;
     state.beat = beat.id;
@@ -530,6 +550,7 @@ export class Engine {
       // 행운을 묻던 중 그만두기로 끝나면 묻던 창은 버린다. 남아 있으면 끝난 판에 행운 창이 뜬다.
       delete state.pendingLuck;
       delete state.pendingRisk;
+      delete state.pendingIntent;
       state.ending = beat.ending.id;
       this.record(state, { kind: 'end', ending: beat.ending.id, title: beat.ending.title });
       events.push(this.endingEvent(beat));
@@ -647,8 +668,7 @@ export class Engine {
       // 의도 카드가 떠 있는 동안 글로 답해도 받는다(자동 플레이). 다른 말을 적으면 다른 뜻으로 보고 새 입력으로 받는다.
       if (YES.test(text)) return this.answerIntent(state, beat, true, events);
       if (NO.test(text)) return this.answerIntent(state, beat, false, events);
-      delete state.pendingIntent;
-      this.unsay(state);
+      this.dropIntent(state);
     }
     if (this.confirmQuit(state, text, events) !== null) return;
     await this.freeInputText(state, beat, free, text, events);
@@ -660,7 +680,7 @@ export class Engine {
     const mixed = splitMixed(whole);
     const text = mixed?.act ?? whole;
     if (mixed) this.answerAside(state, beat, mixed.ask, events);
-    this.noteSaid(state, text);
+    const newly = this.noteSaid(state, text);
     const ctx: GmContext = { scenario: this.scenario, beat, free, state, text };
     const reading = await this.gm.interpret(ctx);
     this.recordGm(state, beat, 'interpret', reading.meta);
@@ -669,17 +689,17 @@ export class Engine {
     if (read.kind === 'ask') {
       // 이야기 입력칸에 적은 질문은 여우가 받지 않는다. 화면이 질문 모드(GM 단추)로 안내한다.
       this.record(state, { kind: 'input', beat: beat.id, text, result: 'ask', approach: null, item: null, source: read.source });
-      this.unsay(state);
+      this.unsay(state, newly);
       events.push({ type: 'notice', kind: 'ask' });
       return;
     }
     if (this.bounce(state, beat, ctx, read.source, events)) {
-      this.unsay(state);
+      this.unsay(state, newly);
       return;
     }
     const guard = this.guardRisk(state, beat, read, text, true, events);
     if (guard === 'refused') {
-      this.unsay(state);
+      this.unsay(state, newly);
       await this.worldMove(state, beat, free, events, false);
       return;
     }
@@ -705,7 +725,7 @@ export class Engine {
       await this.worldMove(state, beat, free, events);
       return;
     }
-    await this.applyReading(state, beat, free, read, text, events, warned);
+    await this.applyReading(state, beat, free, read, text, events, warned, { identity: guard === 'identity', flags: newly });
   }
 
   /** 사람이 멀리 있는 장면에서 그 사람에게 건넨 말은 다가가 말을 거는 판정이다. */
@@ -789,7 +809,7 @@ export class Engine {
    * 해석이 위험하다고 본 입력을 거른다. 칼 앞에서 몸으로 덤비는 입력은 입력마다 한 번 묻고,
    * 정체를 드러내는 입력은 일어나지 않는 일이니 주사위 없이 고정 줄로 받는다.
    */
-  private guardRisk(state: GameState, beat: BeatSpec, read: Interpretation, text: string, canRoll: boolean, events: GameEvent[]): 'refused' | 'warned' | 'self' | 'go' {
+  private guardRisk(state: GameState, beat: BeatSpec, read: Interpretation, text: string, canRoll: boolean, events: GameEvent[]): 'refused' | 'warned' | 'self' | 'identity' | 'go' {
     if (read.kind === 'ask' || !read.risk) return 'go';
     // 이 세계에 없는 물건·힘은 일어나지 않으니 위험도 없다(총을 쏘는 시늘에 맨손 징조를 내지 않는다).
     if (read.kind === 'improv' && read.absurd) return 'go';
@@ -802,6 +822,8 @@ export class Engine {
       }
       // 들을 사람이 없으면 혼잇말로 흐른다. 있으면 큰 행동: 수치와 플래그를 바꾸고 인물이 성격대로 받는다(facts 신분_노출).
       if (!Object.values(beat.cast ?? {}).includes(identity.with)) return 'self';
+      // 굴리기 전에 의도 카드로 묻는 큰 행동이면 대가는 "그래"라고 답한 뒤에 붙인다("다른 뜻"이면 아무 대가 없이 다시 적는다).
+      if (canRoll && read.kind === 'improv' && read.bold && read.deed) return 'identity';
       this.applyEffects(state, identity.effects, events);
       return 'go';
     }
@@ -843,8 +865,27 @@ export class Engine {
   }
 
   /** 여우에게 물은 말은 이야기 속 말이 아니다. 방금 쌓은 입력을 도로 뺀다. */
-  private unsay(state: GameState): void {
+  private unsay(state: GameState, flags: readonly string[] = []): void {
     state.said = state.said?.slice(0, -1);
+    // 그 말로 이번에 처음 세운 갈래 플래그(길을 물었다 등)도 거둔다. 이야기에 들어가지 않은 말이다.
+    for (const flag of flags) delete state.flags[flag];
+  }
+
+  /** 답하지 않은 의도 카드를 버린다. 카드에 걸린 입력도 이야기에 들어가지 않았다. */
+  private dropIntent(state: GameState): void {
+    const pending = state.pendingIntent;
+    if (!pending) return;
+    delete state.pendingIntent;
+    this.unsay(state, pending.flags);
+  }
+
+  private intentEvent(pending: NonNullable<GameState['pendingIntent']>): GameEvent {
+    return { type: 'confirm', kind: 'intent', text: `${pending.deed} — 이렇게 하는 거야?`, yes: '그래', no: '다른 뜻' };
+  }
+
+  /** 화면이 보낸 장면 이름. 시나리오에 없는 이름(__proto__ 같은 것 포함)이면 없다. */
+  private sceneOf(id: string | null | undefined): BeatSpec | undefined {
+    return id && Object.hasOwn(this.scenario.beats, id) ? this.scenario.beats[id] : undefined;
   }
 
   /**
@@ -921,7 +962,7 @@ export class Engine {
   private async interject(state: GameState, stateBeat: BeatSpec, action: Extract<Action, { type: 'interject' }>, events: GameEvent[]): Promise<void> {
     const raw = action.text.replace(/\s+/g, ' ').trim().slice(0, MAX_INPUT_CHARS);
     if (!raw) throw new GameError('행동이나 대사를 입력해 주세요.');
-    const scene = (action.scene && this.scenario.beats[action.scene]) || stateBeat;
+    const scene = this.sceneOf(action.scene) ?? stateBeat;
     // 화면이 서버보다 뒤에 있을 수 있다. 보이는 장면의 설정을 먼저 쓴다.
     const free = scene.free ?? stateBeat.free ?? this.lastFree(state);
     if (!free) throw new GameError('지금은 말할 수 없습니다.');
@@ -929,6 +970,14 @@ export class Engine {
     const quit = this.confirmQuit(state, raw, events);
     if (quit !== null) {
       if (quit === 'quit') events.push({ type: 'revise', drop: action.pending.map((p) => p.i), jump: true });
+      return;
+    }
+    if (state.ending) {
+      // 결말 줄이 흐르는 중에 끼어든 말. 인물이 말로 받기만 하고 판(수치·플래그·선택 기록)은 그대로 둔다.
+      const ctx: GmContext = { scenario: this.scenario, beat: scene, free, state, text: raw, interject: { upcoming: action.pending.map((p) => p.text), action: false } };
+      const reply = await this.gm.talk({ ...ctx, tone: 'plain' });
+      this.recordGm(state, scene, 'talk', reply.meta, reply.lines);
+      for (const line of reply.lines) this.say(state, line, reply.meta.fallback ? 'script' : 'gm', events);
       return;
     }
     const whole = raw;
@@ -956,23 +1005,21 @@ export class Engine {
     if (read.kind === 'ask') {
       // 이야기 입력칸에 적은 질문은 여우가 받지 않는다. 화면이 질문 모드(GM 단추)로 안내하고 남은 줄은 그대로 이어진다.
       this.record(state, { kind: 'input', beat: scene.id, text, result: 'ask', approach: null, item: null, source: read.source });
-      this.unsay(state);
-      this.revisePending(state, action.pending, newly, events);
+      this.unsay(state, newly.splice(0));
       events.push({ type: 'notice', kind: 'ask' });
       return;
     }
     const big = read.kind === 'approach' || read.kind === 'improv';
     const guard = this.guardRisk(state, scene, read, text, Boolean(canRoll), events);
     if (guard === 'refused') {
-      this.unsay(state);
-      this.revisePending(state, action.pending, newly, events);
+      this.unsay(state, newly.splice(0));
       return;
     }
     const warned = guard === 'warned';
     if (guard === 'self') read = { kind: 'talk', to: 'self', source: read.source, meta: read.meta };
     if (big && canRoll && stateBeat.free) {
       events.push({ type: 'revise', drop: action.pending.map((p) => p.i), jump: true });
-      await this.applyReading(state, stateBeat, stateBeat.free, read, text, events, warned);
+      await this.applyReading(state, stateBeat, stateBeat.free, read, text, events, warned, { identity: guard === 'identity', flags: newly });
       return;
     }
 
@@ -983,9 +1030,10 @@ export class Engine {
       state.flags['말함'] = true;
       newly.push('말함');
     }
+    // 여우에게 한 말은 이야기 속 말이 아니다. 세운 플래그를 먼저 거두어 뒤의 고정 줄도 빼지 않는다.
+    if (toFox && !big) this.unsay(state, newly.splice(0));
     this.revisePending(state, action.pending, newly, events);
-    if (toFox && !big) this.unsay(state);
-    else if (!toFox && !self && !noise) this.noteHeard(state, scene, text, this.acted(read, text));
+    if (!toFox && !self && !noise) this.noteHeard(state, scene, text, this.acted(read, text));
     const said = state.said ?? [];
     const repeated = said.length >= 2 && said.at(-2)?.replace(/[\s.,!?…~]/g, '') === text.replace(/[\s.,!?…~]/g, '');
     const reply = await this.gm.talk({ ...ctx, tone: repeated ? 'repeat' : 'plain', interject: { upcoming: ctx.interject?.upcoming ?? [], action: big }, ...(self ? { self } : {}) });
@@ -1099,10 +1147,7 @@ export class Engine {
 
   private askQuit(state: GameState, text: string, warn: string, events: GameEvent[]): void {
     // 확인 창은 하나다. 떠 있던 의도 카드는 그만두기 확인이 대신하고, 창의 답은 그만두기에 간다.
-    if (state.pendingIntent) {
-      delete state.pendingIntent;
-      this.unsay(state);
-    }
+    this.dropIntent(state);
     state.pendingRisk = { text, quit: true };
     events.push({ type: 'confirm', kind: 'quit', text: warn });
   }
@@ -1208,7 +1253,15 @@ export class Engine {
     const flags = { ...state.flags };
     for (const flag of newly) delete flags[flag];
     const before = { ...now, flags };
-    const drop = pending.filter((p) => p.if !== undefined && !evalCond(p.if, now) && evalCond(p.if, before)).map((p) => p.i);
+    // 화면이 보낸 조건식이다. 읽을 수 없는 식이면 그 줄은 건드리지 않는다.
+    const holds = (cond: string, ctx: CondContext): boolean | null => {
+      try {
+        return evalCond(cond, ctx);
+      } catch {
+        return null;
+      }
+    };
+    const drop = pending.filter((p) => p.if !== undefined && holds(p.if, now) === false && holds(p.if, before) === true).map((p) => p.i);
     if (drop.length) events.push({ type: 'revise', drop, jump: false });
   }
 
@@ -1217,7 +1270,8 @@ export class Engine {
     return read.kind === 'improv' || isActionText(text) || (read.kind === 'approach' && read.spoken === false);
   }
 
-  private async applyReading(state: GameState, beat: BeatSpec, free: FreeSpec, read: Interpretation, text: string, events: GameEvent[], warned = false): Promise<void> {
+  /** intent: 의도 카드로 물을 때 카드에 함께 걸어 둘 것(미룬 정체 대가, 이 입력이 세운 플래그). */
+  private async applyReading(state: GameState, beat: BeatSpec, free: FreeSpec, read: Interpretation, text: string, events: GameEvent[], warned = false, intent: { identity?: boolean; flags?: string[] } = {}): Promise<void> {
     if (read.kind === 'ask' || read.kind === 'talk') return;
     if (read.kind === 'improv' && read.absurd) {
       await this.absurdAct(state, beat, free, read, text, events);
@@ -1226,8 +1280,8 @@ export class Engine {
     if (read.kind === 'improv') {
       // 큰 행동은 굴리기 전에 해석이 맞는지 화면 카드로 묻는다(여우가 아니라 규칙 목소리). 이미 경고를 받고 밀고 나간 입력은 다시 묻지 않는다.
       if (read.bold && read.deed && !warned) {
-        state.pendingIntent = { text, deed: read.deed, stat: read.stat, difficulty: read.difficulty, source: read.source };
-        events.push({ type: 'confirm', kind: 'intent', text: `${read.deed} — 이렇게 하는 거야?`, yes: '그래', no: '다른 뜻' });
+        state.pendingIntent = { text, deed: read.deed, stat: read.stat, difficulty: read.difficulty, source: read.source, ...(intent.identity ? { identity: true } : {}), ...(intent.flags?.length ? { flags: [...intent.flags] } : {}) };
+        events.push(this.intentEvent(state.pendingIntent));
         return;
       }
       await this.improvRoll(state, beat, free, { stat: read.stat, difficulty: read.difficulty, bold: read.bold, source: read.source, ...(read.deed ? { deed: read.deed } : {}) }, text, events, warned);
@@ -1291,6 +1345,8 @@ export class Engine {
     const pending = state.pendingLuck;
     if (!pending) throw new GameError('지금은 행운을 쓸 수 없습니다.');
     delete state.pendingLuck;
+    // 행운 창에 답했으면(단추든 글이든) 그 전에 띄운 그만두기 확인은 끝난다.
+    delete state.pendingRisk;
     const beat = this.scenario.beats[pending.beat];
     const free = beat?.free;
     if (!beat || !free) throw new Error(`없는 비트: ${pending.beat}`);
@@ -1321,12 +1377,13 @@ export class Engine {
   private async answerIntent(state: GameState, beat: BeatSpec, ok: boolean, events: GameEvent[]): Promise<void> {
     const pending = state.pendingIntent;
     if (!pending) throw new GameError('지금은 확인할 것이 없습니다.');
-    delete state.pendingIntent;
     if (!ok) {
-      this.unsay(state);
+      this.dropIntent(state);
       return;
     }
+    delete state.pendingIntent;
     if (!beat.free || !state.free || state.free.beat !== beat.id) throw new GameError('지금은 자유 입력을 받을 수 없습니다.');
+    if (pending.identity && this.scenario.identity) this.applyEffects(state, this.scenario.identity.effects, events);
     await this.improvRoll(state, beat, beat.free, { stat: pending.stat, difficulty: pending.difficulty, bold: true, deed: pending.deed, source: pending.source }, pending.text, events, false);
   }
 

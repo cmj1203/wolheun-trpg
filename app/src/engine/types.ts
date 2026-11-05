@@ -492,7 +492,17 @@ export interface GameState {
   /** 여우가 결과를 알리고 답을 기다리는 입력. */
   pendingRisk?: { text: string; quit: boolean };
   /** 큰 즉흥 행동의 해석이 맞는지 카드로 묻고 답을 기다리는 입력. 그래면 이 해석대로 굴리고, 다른 뜻이면 지우고 다시 적게 한다. */
-  pendingIntent?: { text: string; deed: string; stat: Ability; difficulty: number; source: 'llm' | 'rule' };
+  pendingIntent?: {
+    text: string;
+    deed: string;
+    stat: Ability;
+    difficulty: number;
+    source: 'llm' | 'rule';
+    /** 정체를 밝히는 말이 섞인 행동이다. 정체 대가는 "그래"라고 답할 때 붙인다. */
+    identity?: boolean;
+    /** 이 입력이 처음 세운 갈래 플래그. "다른 뜻"이면 거둔다. */
+    flags?: string[];
+  };
   /** 연속 실패에 안심 줄을 이미 준 판정 수. */
   /** 인물이 나중에 되받을 플레이어의 말(판정 없는 대화). */
   talked?: string;

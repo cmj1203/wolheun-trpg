@@ -12,11 +12,12 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { Engine } from '../src/engine/engine.ts';
+import { Engine, type GmContext, type GmLines, type GmPort, type InputScreen, type Interpretation, type NarrateContext } from '../src/engine/engine.ts';
 import { nextU32 } from '../src/engine/dice.ts';
 import { loadScenario } from '../src/engine/scenario.ts';
 import { SaveError, assertState, readSave, writeSave } from '../src/engine/save.ts';
 import { summarize } from '../src/engine/summary.ts';
+import { holdBefore } from '../src/engine/conditions.ts';
 import { ABILITIES, GameError, TENSION_MAX, TENSION_MIN, TRACKS, TRACK_INFO, type Action, type GameState, type Scenario, type Step } from '../src/engine/types.ts';
 import { LocalGm } from '../src/gm/gm.ts';
 import { loadLore, withNotes, type Lore } from '../src/gm/lore.ts';
@@ -60,6 +61,24 @@ const SHORT = [
 ];
 const JUNK = ['', ' ', '\n\t ', 'a'.repeat(500), '가'.repeat(250), '😀🌙', '<script>alert(1)</script>', '\u0000​', '{"type":"luck"}', 'null'];
 
+/** 시나리오와 설정 사전이 실제로 쓰는 낱말(정체·거절·그만두기·되받기·접근법 예시, 원작 독자만 아는 이름). 규칙 경로의 여러 갈래에 닿게 한다. */
+export function scenarioWords(scenario: Scenario, lore: Lore): string[] {
+  const out = new Set<string>();
+  for (const w of scenario.identity?.words ?? []) out.add(`나는 ${w}다`), out.add(`${w} 얘기를 꺼낸다`);
+  for (const r of scenario.refuse ?? []) for (const w of r.words.slice(0, 6)) out.add(`${w}고 길을 물어본다`);
+  for (const r of scenario.risky ?? []) for (const w of r.words) out.add(w);
+  for (const c of scenario.callbacks ?? []) for (const w of c.words ?? []) out.add(`저는 ${w}이에요`);
+  for (const beat of Object.values(scenario.beats)) {
+    for (const a of beat.free?.approaches ?? []) {
+      for (const e of a.examples) out.add(e);
+      for (const w of a.said?.words ?? []) out.add(`${w}?`), out.add(`${w} 물어본다`);
+    }
+  }
+  for (const name of lore.forbidden.spoilers.slice(0, 12)) out.add(`${name}한테 길을 물어본다`), out.add(`${name}가 어디야?`);
+  for (const h of scenario.gameHelp ?? []) out.add(`${h.name}이 뭐야?`);
+  return [...out];
+}
+
 export async function loadCorpus(): Promise<string[]> {
   try {
     const raw = await readFile(join(ROOT, 'docs', 'research', 'input_corpus.jsonl'), 'utf8');
@@ -92,6 +111,9 @@ function text(rng: Rng, corpus: readonly string[]): string {
   return `${rng.pick(SHORT)} ${corpus.length ? rng.pick(corpus) : rng.pick(SHORT)}`;
 }
 
+/** 평범한 객체에서 물려받는 이름. 시나리오 표를 이 이름으로 찾으면 비트가 아닌 것이 나온다. */
+const PROTO = ['__proto__', 'constructor', 'toString', 'hasOwnProperty'];
+
 function anyBeat(rng: Rng, scenario: Scenario): string {
   return rng.pick(Object.keys(scenario.beats));
 }
@@ -121,9 +143,11 @@ export function randomAction(rng: Rng, scenario: Scenario, state: GameState, ste
     });
     const pending = Array.from({ length: rng.int(4) }, (_, i) => {
       const l = lines.length ? rng.pick(lines) : { text: '...' };
-      return { i, text: l.text, ...('if' in l && typeof l.if === 'string' ? { if: l.if } : {}) };
+      // 화면이 보내는 조건식. 가끔 읽을 수 없는 식·조작된 식을 섞는다.
+      const cond = rng.chance(0.1) ? rng.pick(['flag:말함 &&', '(((', '!', '의심 >=', '말함', 'flag:말함 || ', '']) : 'if' in l && typeof l.if === 'string' ? l.if : rng.chance(0.3) ? rng.pick(['!flag:말함', 'flag:말함', '!flag:길_물음', 'flag:길_물음', '!flag:이미_길_물음']) : undefined;
+      return { i, text: l.text, ...(cond !== undefined ? { if: cond } : {}) };
     });
-    const scene = rng.int(10) < 7 ? state.beat : rng.chance(0.5) ? anyBeat(rng, scenario) : rng.pick([null, 'no_such_beat']);
+    const scene = rng.int(10) < 7 ? state.beat : rng.chance(0.5) ? anyBeat(rng, scenario) : rng.pick([null, 'no_such_beat', ...PROTO]);
     return { type: 'interject', text: text(rng, corpus), scene, shown, pending };
   }
   // 틀린 행동: 없는 id, 다른 비트의 id, 지금 고를 수 없는 것
@@ -133,7 +157,7 @@ export function randomAction(rng: Rng, scenario: Scenario, state: GameState, ste
   if (r === 1) return { type: 'approach', id: rng.pick([...(other?.free?.approaches.map((a) => a.id) ?? []), 'nope', '']) };
   if (r === 2) return { type: 'luck', use: rng.chance(0.5) };
   if (r === 3) return { type: 'free', text: rng.pick(JUNK) };
-  if (r === 4) return { type: 'ask', text: text(rng, corpus), scene: rng.pick([anyBeat(rng, scenario), 'no_such_beat', null]) };
+  if (r === 4) return { type: 'ask', text: text(rng, corpus), scene: rng.pick([anyBeat(rng, scenario), 'no_such_beat', null, ...PROTO]) };
   return { type: 'free', text: text(rng, corpus) };
 }
 
@@ -145,6 +169,52 @@ export function forwardAction(rng: Rng, step: Step): Action | null {
   if (p.type === 'choices') return p.options.length ? { type: 'choose', id: rng.pick(p.options).id } : null;
   const open = p.approaches.filter((a) => !a.locked);
   return open.length ? { type: 'approach', id: rng.pick(open).id } : null;
+}
+
+// ───────────── GM ─────────────
+
+/**
+ * 규칙 GM(LocalGm(null))을 감싸 해석을 가끔 LLM 이 낼 만한 것으로 바꾼다(큰 행동, 칼 앞 맨손, 정체 노출, 세계 밖 물건).
+ * 규칙 경로만으로는 의도 카드·위험 경고·정체 대가 갈래에 닿지 않는다. 판 시드로 정해지니 재현된다.
+ */
+export class ChaosGm implements GmPort {
+  private readonly rng: Rng;
+  constructor(
+    private readonly inner: LocalGm,
+    seed: number,
+    private readonly rate: number,
+  ) {
+    this.rng = new Rng(seed ^ 0x7f4a7c15);
+  }
+  prepare(ctx: Omit<GmContext, 'text'>): void {
+    this.inner.prepare(ctx);
+  }
+  screen(ctx: GmContext): InputScreen | null {
+    return this.inner.screen(ctx);
+  }
+  async interpret(ctx: GmContext): Promise<Interpretation> {
+    const read = await this.inner.interpret(ctx);
+    if (!this.rng.chance(this.rate)) return read;
+    const meta = read.meta;
+    const r = this.rng.int(6);
+    const deed = this.rng.pick(['남자의 팔을 붙잡았다', '칼을 쳐냈다', '모래를 뿌렸다', '정체를 밝혔다']);
+    if (r === 0) return { kind: 'improv', stat: '체력', difficulty: 0, label: '즉흥 행동', absurd: false, bold: true, deed, source: 'llm', meta };
+    if (r === 1) return { kind: 'improv', stat: '체력', difficulty: -1, label: '즉흥 행동', absurd: false, bold: this.rng.chance(0.5), deed, risk: 'attack', source: 'llm', meta };
+    if (r === 2) return { kind: 'improv', stat: '매력', difficulty: 0, label: '즉흥 행동', absurd: false, bold: true, deed, risk: 'identity', source: 'llm', meta };
+    if (r === 3) return { kind: 'talk', to: this.rng.chance(0.5) ? 'person' : 'self', risk: 'identity', source: 'llm', meta };
+    if (r === 4) return { kind: 'improv', stat: '재치', difficulty: -1, label: '즉흥 행동', absurd: true, bold: false, deed: '품을 더듬었다', source: 'llm', meta };
+    const free = ctx.free.approaches;
+    return { kind: 'approach', approach: this.rng.pick(free).id, item: null, spoken: this.rng.chance(0.5), ...(this.rng.chance(0.3) ? { risk: 'attack' as const } : {}), source: 'llm', meta };
+  }
+  talk(ctx: GmContext): Promise<GmLines> {
+    return this.inner.talk(ctx);
+  }
+  narrate(ctx: NarrateContext): Promise<GmLines> {
+    return this.inner.narrate(ctx);
+  }
+  explain(ctx: GmContext): Promise<GmLines> {
+    return this.inner.explain(ctx);
+  }
 }
 
 // ───────────── 불변식 ─────────────
@@ -205,6 +275,7 @@ export function checkState(engine: Engine, state: GameState, step?: Step): void 
     const b = state.log[i];
     if (a && b && b.playMs < a.playMs) fail(`기록의 플레이 시간이 거꾸로 간다(${i})`);
   }
+  for (const e of state.log) if ('beat' in e && !Object.hasOwn(scenario.beats, e.beat)) fail(`기록에 없는 비트가 남았다: ${String(e.beat)} (${e.kind})`);
   const ends = state.log.filter((e) => e.kind === 'end');
   if (state.ending === null ? ends.length !== 0 : ends.length !== 1) fail(`끝 기록이 ${ends.length}개다(끝: ${state.ending})`);
   if (step) {
@@ -230,16 +301,43 @@ export function checkState(engine: Engine, state: GameState, step?: Step): void 
 }
 
 /** 행동 하나 전후를 비교하는 불변식. */
-function checkTransition(prev: GameState, prevSnap: string, next: GameState, action: Action): void {
+function checkTransition(prev: GameState, prevSnap: string, next: GameState, action: Action, step?: Step, scenario?: Scenario): void {
   if (JSON.stringify(prev) !== prevSnap) fail('act 가 받은 상태를 바꿨다');
+  if (step) {
+    // 새로 뜬 확인 창은 이번 단계에 보여야 하고, 보인 창은 답을 기다려야 한다(보이지 않는 창에 뒤의 "응"이 답이 되지 않게).
+    const confirms = step.events.filter((e) => e.type === 'confirm');
+    const fresh = (a: unknown, b: unknown) => b !== undefined && JSON.stringify(a) !== JSON.stringify(b);
+    if (fresh(prev.pendingIntent, next.pendingIntent) && !confirms.some((e) => e.kind === 'intent')) fail('의도 카드가 떴는데 화면에 보내지 않았다');
+    if (fresh(prev.pendingRisk, next.pendingRisk) && !confirms.some((e) => e.kind === 'quit')) fail('그만두기 확인이 떴는데 화면에 보내지 않았다');
+    if (confirms.some((e) => e.kind === 'intent') && !next.pendingIntent) fail('의도 카드를 보냈는데 답을 기다리지 않는다');
+    if (confirms.some((e) => e.kind === 'quit') && !next.pendingRisk) fail('그만두기 확인을 보냈는데 답을 기다리지 않는다');
+  }
+  if (scenario) {
+    // 이야기에 들어가지 않은 입력(질문 모드로 안내·여우가 되돌림)만 있었던 턴은 말로 갈리는 갈래 플래그를 세우지 않는다.
+    const inputs = next.log.slice(prev.log.length).filter((e) => e.kind === 'input');
+    const story = next.log.slice(prev.log.length).some((e) => e.kind === 'check' || e.kind === 'choice' || (e.kind === 'input' && e.result !== 'ask' && e.result !== 'bounced' && e.result !== 'game'));
+    if (inputs.length && !story) {
+      const said = Object.values(scenario.beats).flatMap((b) => (b.free?.approaches ?? []).flatMap((a) => (a.said ? [a.said.flag, `이미_${a.said.flag}`] : [])));
+      for (const f of said) if (next.flags[f] === true && prev.flags[f] !== true) fail(`이야기에 들어가지 않은 입력이 갈래 플래그 ${f} 를 세웠다`);
+    }
+  }
+  if (scenario && next.ending !== null && prev.ending === null) {
+    // 한 번의 실패로는 끝나지 않는다: 징조가 있는 작은 끝은 이번 턴 전에 징조가 나갔어야 한다(비교식이 아니라 멈출 수 없는 것만 예외).
+    const fate = scenario.fates?.find((f) => f.to === next.beat || scenario.beats[f.to]?.ending?.id === next.ending);
+    if (fate?.warn && prev.flags[`경고_${fate.id}`] !== true && holdBefore(fate.when)) fail(`징조가 처음 나온 턴에 작은 끝(${fate.id})으로 갔다`);
+  }
   if (next.playMs < prev.playMs) fail('플레이 시간이 줄었다');
   if (next.log.length < prev.log.length) fail('기록이 줄었다');
   for (let i = 0; i < prev.log.length; i++) {
     const a = prev.log[i];
     const b = next.log[i];
-    // 행운을 쓰면 마지막 판정 기록을 고친다(엔진 설계). 그 밖의 기록은 덧붙이기만 한다.
-    if (a?.kind === 'check' && b?.kind === 'check' && action.type === 'luck') continue;
-    if (a?.kind === 'check' && b?.kind === 'check' && action.type === 'free') continue;
+    // 행운을 쓰면 묻던 판정(마지막 판정 기록)만 7, 대가 있는 성공으로 고친다(엔진 설계). 그 밖의 기록은 덧붙이기만 한다.
+    const lastCheck = prev.log.findLastIndex((e) => e.kind === 'check');
+    if (i === lastCheck && prev.pendingLuck && a?.kind === 'check' && b?.kind === 'check' && (action.type === 'luck' || action.type === 'free') && JSON.stringify(a) !== JSON.stringify(b)) {
+      const same = JSON.stringify({ ...b.roll, total: a.roll.total, tier: a.roll.tier, luck: a.roll.luck }) === JSON.stringify(a.roll);
+      if (!same || b.roll.total !== 7 || b.roll.tier !== 'mixed' || b.roll.luck !== prev.pendingLuck.need) fail('행운이 판정 기록을 잘못 고쳤다');
+      continue;
+    }
     if (JSON.stringify(a) !== JSON.stringify(b)) fail(`이전 기록 ${i} 가 바뀌었다(${a?.kind})`);
   }
   if (prev.ending !== null) {
@@ -250,6 +348,12 @@ function checkTransition(prev: GameState, prevSnap: string, next: GameState, act
     if (JSON.stringify(next.tracks) !== JSON.stringify(prev.tracks)) fail('끝난 판의 수치가 바뀌었다');
     if (next.rng !== prev.rng) fail('끝난 판에서 주사위를 굴렸다');
     if (JSON.stringify(next.items) !== JSON.stringify(prev.items)) fail('끝난 판의 소지품이 바뀌었다');
+    if (JSON.stringify(next.flags) !== JSON.stringify(prev.flags)) fail('끝난 판의 플래그가 바뀌었다');
+    if (scenario) {
+      const a = summarize(scenario, prev);
+      const b = summarize(scenario, next);
+      if (JSON.stringify([a.decisions, a.checks, a.ending]) !== JSON.stringify([b.decisions, b.checks, b.ending])) fail('끝난 판의 결과 화면(결정·판정·결말)이 바뀌었다');
+    }
   }
   if (next.seed !== prev.seed || next.session !== prev.session || next.startedAt !== prev.startedAt) fail('판의 정체(seed·session·startedAt)가 바뀌었다');
 }
@@ -264,6 +368,8 @@ export interface GameReport {
   ending: string | null;
   /** 실패 직후 행운을 묻는 엔진이었나(서버와 같은 설정이 기본, 일부 판은 끈다). */
   luck: boolean;
+  /** 해석을 LLM 같은 것으로 바꾸는 비율(0 이면 규칙 GM 그대로). */
+  chaos: number;
   violation?: { at: number; op: FuzzOp; why: string };
 }
 
@@ -277,19 +383,22 @@ export interface FuzzEnv {
 const MAX_OPS = 160;
 const DRIVE_LIMIT = 400;
 
-function makeEngine(env: FuzzEnv, clock: () => number, luck: boolean): Engine {
-  return new Engine(env.scenario, new LocalGm(null, env.lore), clock, luck);
+function makeEngine(env: FuzzEnv, clock: () => number, luck: boolean, chaos?: { seed: number; rate: number }): Engine {
+  const gm = new LocalGm(null, env.lore);
+  return new Engine(env.scenario, chaos && chaos.rate > 0 ? new ChaosGm(gm, chaos.seed, chaos.rate) : gm, clock, luck);
 }
 
 /** 판 하나를 시드로 만들어 돌린다. ops 를 주면 그대로 다시 돌린다(재현). */
-export async function playGame(env: FuzzEnv, seed: number, replay?: { ops: FuzzOp[]; luck: boolean }): Promise<GameReport> {
+export async function playGame(env: FuzzEnv, seed: number, replay?: { ops: FuzzOp[]; luck: boolean; chaos: number }): Promise<GameReport> {
   const rng = new Rng(seed ^ 0x9e3779b9);
   let now = 1_000_000;
   const clock = () => now;
   const luck = replay ? replay.luck : rng.chance(0.85);
-  const engine = makeEngine(env, clock, luck);
+  // 판의 절반은 규칙 GM 그대로, 나머지는 해석을 가끔 LLM 같은 것으로 바꾼다.
+  const chaos = replay ? replay.chaos : rng.chance(0.5) ? 0 : rng.pick([0.15, 0.4]);
+  const engine = makeEngine(env, clock, luck, { seed, rate: chaos });
   const ops: FuzzOp[] = [];
-  const report: GameReport = { seed, ops, acts: 0, errors: 0, ending: null, luck };
+  const report: GameReport = { seed, ops, acts: 0, errors: 0, ending: null, luck, chaos };
   let { state, step } = engine.newGame(seed, `f${seed}`);
   let index = -1;
   const guard = (op: FuzzOp, why: string) => {
@@ -312,7 +421,7 @@ export async function playGame(env: FuzzEnv, seed: number, replay?: { ops: FuzzO
       if (r < 6) op = { op: 'reload' };
       else if (r < 8 && env.savesDir) op = { op: 'disk', slot: rng.pick(['a', 'b', 'slot_1', 'auto-x']) };
       else if (r < 10) op = { op: 'drive' };
-      else op = { op: 'act', action: randomAction(rng, env.scenario, state, step, env.corpus), advance: rng.pick([0, 1, 500, 5_000, 60_000, 10 * 60_000]) };
+      else op = { op: 'act', action: randomAction(rng, env.scenario, state, step, env.corpus), advance: rng.pick([0, 1, 500, 5_000, 60_000, 10 * 60_000, -30_000]) };
     }
     ops.push(op);
     try {
@@ -323,6 +432,9 @@ export async function playGame(env: FuzzEnv, seed: number, replay?: { ops: FuzzO
         state = engine.noteSlot(loaded, 'load', 'fuzz');
         step = engine.resume(state);
         checkState(engine, state, step);
+        const shown = step.events.filter((e) => e.type === 'confirm');
+        if (!state.ending && state.pendingIntent && !shown.some((e) => e.kind === 'intent')) fail('불러온 판에 의도 카드가 남았는데 다시 띄우지 않았다');
+        if (!state.ending && state.pendingRisk && !shown.some((e) => e.kind === 'quit')) fail('불러온 판에 그만두기 확인이 남았는데 다시 띄우지 않았다');
       } else if (op.op === 'disk') {
         const dir = env.savesDir as string;
         await writeSave(dir, op.slot, env.scenario, state, now);
@@ -349,7 +461,7 @@ export async function playGame(env: FuzzEnv, seed: number, replay?: { ops: FuzzO
           report.errors++;
         }
         if (result) {
-          checkTransition(prev, snap, result.state, op.action);
+          checkTransition(prev, snap, result.state, op.action, result.step, env.scenario);
           state = result.state;
           step = result.step;
           checkState(engine, state, step);
@@ -367,7 +479,7 @@ export async function playGame(env: FuzzEnv, seed: number, replay?: { ops: FuzzO
   report.ending = state.ending;
   // 같은 시드·같은 행동은 같은 판을 낸다.
   if (!replay && !report.violation) {
-    const again = await playGame(env, seed, { ops: [...ops], luck });
+    const again = await playGame(env, seed, { ops: [...ops], luck, chaos });
     if (again.violation) report.violation = { at: again.violation.at, op: again.violation.op, why: `재현 중: ${again.violation.why}` };
     else if (again.ending !== report.ending || again.acts !== report.acts) report.violation = { at: -1, op: { op: 'reload' }, why: '같은 시드·행동을 다시 돌렸는데 결과가 다르다' };
   }
@@ -405,7 +517,7 @@ async function drive(env: FuzzEnv, from: GameState, seed: number): Promise<void>
       if (err instanceof GameError) fail(`앞으로 가는 행동이 거절됐다(${prev.beat}, ${JSON.stringify(action)}): ${err.message}`);
       throw new Violation(`GameError 가 아닌 오류(밀기): ${(err as Error).message}`);
     }
-    checkTransition(prev, snap, state, action);
+    checkTransition(prev, snap, state, action, step, env.scenario);
     checkState(engine, state, step);
   }
   fail(`앞으로만 ${DRIVE_LIMIT}번 갔는데 끝나지 않았다(${state.beat}) — 멈춤`);
@@ -437,7 +549,7 @@ export async function fuzzServer(env: FuzzEnv, games: number, firstSeed: number)
     for (let g = 0; g < games; g++) {
       const seed = firstSeed + g;
       const rng = new Rng(seed ^ 0x2545f491);
-      const note = (why: string) => problems.push(`서버 판 ${seed}: ${why}`);
+      const note = (why: string, detail = '') => problems.push(`서버 판 ${seed}: ${why}${detail ? ` ⟨${detail}⟩` : ''}`);
       const created = await post('/api/new', { seed });
       if (created.status !== 200) {
         note(`/api/new ${created.status}`);
@@ -453,15 +565,19 @@ export async function fuzzServer(env: FuzzEnv, games: number, firstSeed: number)
         const r = rng.int(100);
         let res: Response;
         if (r < 70) {
+          // 가끔 지도 기록을 쓰다 만 파일로 바꿔 둔다. 행동 결과는 그래도 화면에 가야 한다.
+          if (rng.chance(0.05)) await Bun.write(join(dir, 'atlas.json'), '{"visited": ["b0');
           const action = randomAction(rng, env.scenario, s.state, step, env.corpus);
+          const logBefore = s.state.log.length;
           res = await post('/api/act', { session, action });
           if (res.status === 200) {
             const lines = (await res.text()).trim().split('\n').filter(Boolean).map((l) => JSON.parse(l) as { done?: { prompt: Step['prompt']; hud: Step['hud'] }; error?: string });
             const last = lines.at(-1);
             if (!last || (!last.done && !last.error)) note(`/api/act 응답이 done/error 로 끝나지 않았다`);
-            if (last?.error?.startsWith('서버 오류')) note(`/api/act 서버 오류: ${JSON.stringify(action).slice(0, 200)}`);
+            if (last?.error?.startsWith('서버 오류')) note('/api/act 서버 오류', JSON.stringify(action).slice(0, 200));
             if (last?.done) step = { events: [], prompt: last.done.prompt, hud: last.done.hud };
             const after = sessions.get(session);
+            if (last?.error && after && after.state.log.length !== logBefore) note(`화면은 오류를 받았는데 세션은 나아갔다: ${last.error}`);
             if (after?.busy) note('행동이 끝났는데 세션이 바쁨으로 남았다');
             if (after && last?.done && JSON.stringify(engine.prompt(after.state)) !== JSON.stringify(last.done.prompt)) note('응답 prompt 와 세션 상태가 어긋난다');
             if (after) {
@@ -488,7 +604,16 @@ export async function fuzzServer(env: FuzzEnv, games: number, firstSeed: number)
         } else if (r < 90) {
           res = await fetch(`${base}/api/result?session=${encodeURIComponent(rng.chance(0.8) ? session : 'nope')}`);
           if (res.status >= 500) note(`/api/result ${res.status}`);
-          await res.text();
+          const body = (await res.text()).trim();
+          if (res.status === 200) {
+            // '마지막 갈림길에서 다시'는 이 판(시드·시작 시각이 같은 판)의 갈림길 저장일 때만 열린다.
+            const fork = (JSON.parse(body) as { fork: boolean }).fork;
+            const file = Bun.file(join(dir, 'saves', 'auto_fork.json'));
+            const saved = (await file.exists()) ? ((await file.json()) as { state: GameState }).state : null;
+            const cur = sessions.get(session)?.state;
+            const mine = saved !== null && cur !== undefined && saved.seed === cur.seed && saved.startedAt === cur.startedAt;
+            if (fork !== mine) note(`갈림길 다시 하기 표시(${fork})가 저장의 판과 어긋난다`);
+          }
         } else {
           // 잘못된 요청 묶음
           const bad = rng.pick<[string, string | undefined, unknown]>([
@@ -510,18 +635,18 @@ export async function fuzzServer(env: FuzzEnv, games: number, firstSeed: number)
             ['/api/atlas/hint', undefined, { key: rng.pick(['n0', 'x', 5]) }],
           ]);
           res = await post(bad[0], bad[2], bad[1]);
-          if (res.status >= 500) note(`${bad[0]} 잘못된 요청에 ${res.status}: ${bad[1] ?? JSON.stringify(bad[2]).slice(0, 120)}`);
+          if (res.status >= 500) note(`${bad[0]} 잘못된 요청에 ${res.status}`, bad[1] ?? JSON.stringify(bad[2]).slice(0, 120));
           if (bad[0] === '/api/new' && res.status === 200) {
             const body = (await res.json()) as { session: string; step: Step };
             session = body.session;
             step = body.step;
           } else if (res.status === 200 && bad[0] === '/api/act') {
             const t = await res.text();
-            if (t.includes('서버 오류')) note(`잘못된 행동에 서버 오류: ${JSON.stringify(bad[2]).slice(0, 160)}`);
+            if (t.includes('서버 오류')) note('잘못된 행동에 서버 오류', JSON.stringify(bad[2]).slice(0, 160));
           } else await res.text();
         }
       }
-      if (problems.length > 20) break;
+      if (problems.length > 500) break;
     }
   } finally {
     server.stop(true);
@@ -535,7 +660,7 @@ export async function fuzzServer(env: FuzzEnv, games: number, firstSeed: number)
 export async function loadEnv(): Promise<FuzzEnv> {
   const lore = await loadLore(join(APP, 'content', 'lore_wolheun.yaml'));
   const scenario = withNotes(await loadScenario(join(APP, 'content', 'ep01_desert.yaml')), lore);
-  return { scenario, lore, corpus: await loadCorpus() };
+  return { scenario, lore, corpus: [...(await loadCorpus()), ...scenarioWords(scenario, lore)] };
 }
 
 /** 여러 판을 돌려 깨진 판들을 돌려준다. */
@@ -595,7 +720,12 @@ if (import.meta.main) {
     if (Number(values.server) > 0) {
       serverProblems = await fuzzServer(env, Number(values.server), first);
       console.log(`서버 퍼즈 ${values.server}판: 문제 ${serverProblems.length}`);
-      for (const p of serverProblems.slice(0, 30)) console.log(`- ${p}`);
+      const kinds = new Map<string, string[]>();
+      for (const p of serverProblems) {
+        const key = bucket(p.replace(/^서버 판 \d+: /, '').replace(/ ⟨[\s\S]*⟩$/, ''));
+        kinds.set(key, [...(kinds.get(key) ?? []), p]);
+      }
+      for (const [key, ps] of kinds) console.log(`- [${ps.length}건] ${key}\n    예: ${ps[0]?.slice(0, 300)}`);
     }
     process.exit(reports.length || serverProblems.length ? 1 : 0);
   } finally {
