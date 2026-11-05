@@ -172,6 +172,9 @@ const ui = {
   freeAimText: byId('free-aim-text'),
   notesDialog: byId<HTMLDialogElement>('notes'),
   notesList: byId('notes-list'),
+  topbar: byId('topbar'),
+  srLine: byId('sr-line'),
+  srNote: byId('sr-note'),
 };
 
 const game = {
@@ -290,12 +293,20 @@ function setPhase(phase: Phase): void {
   game.phase = phase;
   ui.stage.dataset.phase = phase;
   ui.say.hidden = phase === 'title' || phase === 'ending' || phase === 'result';
+  // 타이틀·결과 화면이 위쪽 메뉴를 덮는 동안에는 보이지 않는 단추에 Tab 이 멈추지 않게 한다.
+  ui.topbar.inert = phase === 'title' || phase === 'result';
   if (phase !== 'free') setStoryPlaceholder('말하거나 행동하기');
 }
 
 let toastTimer = 0;
+/** 스크린리더 전용 알림 칸에 글을 넣는다. 화면에는 보이지 않는다. */
+function announce(el: HTMLElement, text: string): void {
+  el.textContent = text;
+}
+
 function toast(message: string): void {
   ui.toast.textContent = message;
+  announce(ui.srNote, message);
   ui.toast.hidden = false;
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => {
@@ -563,6 +574,8 @@ async function showLine(ev: LineEvent, restore: 'no' | 'wait' | 'still' = 'no'):
     ui.gmBadge.hidden = ev.by !== 'gm';
   }
   ui.stage.dataset.gm = gm ? '1' : '0';
+  // 대사창은 글자를 한 자씩 찍으므로 읽기 칸에는 줄 전체를 한 번에 넣는다.
+  announce(ui.srLine, who ? `${who}: ${text}` : text);
   highlight(ev.speaker);
   if (ev.face && !gm) setFace(ev.speaker, ev.face);
   showCg(ev.cg);
@@ -693,6 +706,7 @@ function showTwist(ev: TwistEvent): void {
   ui.twistText.textContent = text;
   ui.twistLine.dataset.result = ev.result;
   ui.twistLine.hidden = false;
+  announce(ui.srNote, `장면 검사 ${text}`);
   game.backlog.push({ who: '장면 검사', text, by: 'script' });
 }
 
@@ -700,6 +714,7 @@ function showPrice(ev: PriceEvent): void {
   ui.priceTag.textContent = ev.tag;
   ui.priceText.textContent = ev.text;
   ui.priceLine.hidden = false;
+  announce(ui.srNote, `대가 ${ev.tag} — ${ev.text}`);
   game.backlog.push({ who: '대가', text: `${ev.tag} — ${ev.text}`, by: 'script' });
 }
 
@@ -754,6 +769,7 @@ async function showRoll(ev: RollEvent): Promise<void> {
   ui.diceNote.textContent =
     ev.tier === 'hit' ? '10 이상 · 원하는 대로 된다' : ev.tier === 'mixed' ? '7~9 · 해내지만 대가가 따른다' : '6 이하 · 실패';
   game.backlog.push({ who: '판정', text: `${ev.label}: ${ui.diceFormula.textContent} → ${ev.tierLabel}`, by: 'script' });
+  announce(ui.srNote, `${ev.label}: ${ui.diceFormula.textContent} → ${ev.tierLabel}. ${ui.diceNote.textContent}`);
   await waitAdvance();
   ui.dice.hidden = true;
   setPhase('story');
@@ -785,6 +801,7 @@ function clockFace(t: TrackView): SVGSVGElement {
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('viewBox', '0 0 32 32');
   svg.classList.add('clock-face');
+  svg.setAttribute('aria-hidden', 'true');
   svg.dataset.kind = t.clock?.kind ?? '';
   const warnAt = t.clock?.warnAt;
   if (warnAt !== undefined) svg.dataset.warnAt = String(warnAt);
@@ -810,6 +827,7 @@ function trackRow(t: TrackView): HTMLLIElement {
   li.dataset.unit = t.unit;
   li.title = t.desc;
   li.innerHTML = TRACK_ICON[t.key] ?? '';
+  li.querySelector('svg')?.setAttribute('aria-hidden', 'true');
   if (t.clock) {
     li.classList.add('is-clock', t.clock.kind);
     li.append(span('label', t.label), span('value', trackText(t)), clockFace(t));
@@ -911,6 +929,7 @@ async function showEnding(ev: EndingEvent): Promise<void> {
   ui.endingTitle.textContent = ev.title;
   ui.endingSummary.textContent = ev.summary;
   ui.ending.hidden = false;
+  announce(ui.srLine, `${ui.endingKicker.textContent} · ${ev.title}. ${ev.summary}`);
   await waitAdvance();
   ui.ending.hidden = true;
   setPhase('story');
@@ -1050,6 +1069,8 @@ function renderChoices(options: ChoiceView[]): void {
       button.dataset.id = o.id;
       button.append(span('num', String(i + 1)), span('text', o.text));
       if (o.check) button.append(span('tag', `${o.check.stat} ${signed(o.check.statValue)} · 판정`));
+      // 칸 글이 붙어 읽히지 않게 스크린리더 이름은 쉼표로 나눈다(보이는 글은 같다).
+      button.setAttribute('aria-label', [`${i + 1}. ${o.text}`, ...(o.check ? [`${o.check.stat} ${signed(o.check.statValue)} · 판정`] : [])].join(', '));
       button.addEventListener('click', () => void act({ type: 'choose', id: o.id }));
       return button;
     }),
@@ -1064,6 +1085,7 @@ function renderFree(p: FreePrompt): void {
   ui.free.classList.remove('busy');
   ui.thinking.hidden = true;
   ui.freePrompt.textContent = p.placeholder;
+  announce(ui.srNote, p.placeholder);
   ui.freeAim.hidden = true;
   ui.stage.dataset.gm = '0';
   // 장면 목표(aim)는 화면에 띄우지 않는다. 안내는 입력칸 위 prompt 한 줄과 접근법 단추가 전부다(18차).
@@ -1078,6 +1100,7 @@ function renderFree(p: FreePrompt): void {
       button.dataset.id = a.id;
       button.disabled = a.locked;
       button.append(a.label, small(`${a.stat} ${signed(a.statValue)}`));
+      button.setAttribute('aria-label', `${a.label}, ${a.stat} ${signed(a.statValue)}`);
       button.addEventListener('click', () => void act({ type: 'approach', id: a.id }));
       return button;
     }),
@@ -1201,6 +1224,7 @@ function gmThinking(): void {
   mascot('thinking');
   ui.gmMore.hidden = true;
   ui.gmText.replaceChildren(span('waiting', 'GM이 장면을 쓰는 중'), span('dots', ''));
+  announce(ui.srLine, 'GM이 장면을 쓰는 중');
 }
 
 function showWaiting(): void {
@@ -1533,6 +1557,7 @@ async function openAtlas(): Promise<void> {
   const at = (col: number, row: number) => ({ x: ((col + 0.5) / view.cols) * 100, y: ((row + 0.5) / view.rows) * 100 });
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('class', 'atlas-lines');
+  svg.setAttribute('aria-hidden', 'true');
   svg.setAttribute('viewBox', '0 0 100 100');
   svg.setAttribute('preserveAspectRatio', 'none');
   const place = new Map(view.nodes.map((n) => [n.key, n]));
@@ -1558,6 +1583,14 @@ async function openAtlas(): Promise<void> {
     if (n.label === null) {
       cell.dataset.key = n.key;
       cell.addEventListener('click', () => void showHint(cell, n.key));
+      // 마우스로만 열리던 힌트를 키보드로도 연다(Tab 으로 칸에 가서 Enter·Space).
+      cell.tabIndex = 0;
+      cell.setAttribute('role', 'button');
+      cell.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        void showHint(cell, n.key);
+      });
     }
     return cell;
   });
@@ -1587,6 +1620,7 @@ async function showHint(cell: HTMLElement, key: string): Promise<void> {
   const fox = asset('sprites', 'gm_smile');
   if (fox?.url) byId<HTMLImageElement>('atlas-hint-img').src = fox.url;
   byId('atlas-hint').hidden = false;
+  announce(ui.srNote, hint.text);
 }
 
 function goTitle(): void {
@@ -1613,6 +1647,7 @@ async function boot(): Promise<void> {
     byId('title-text').hidden = true;
   }
   ui.episode.textContent = manifest.episode;
+  if (manifest.rating) byId('rating').setAttribute('aria-label', manifest.rating);
   const ok = health?.llm.ok === true;
   const label = health?.model?.label ?? health?.llm.model ?? '로컬 모델';
   ui.gmStatus.dataset.ok = ok ? '1' : '0';
