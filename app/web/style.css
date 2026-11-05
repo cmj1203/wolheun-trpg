@@ -82,12 +82,14 @@ button {
 
 .sprites .slot {
   position: absolute;
-  bottom: -3%;
+  /* 전신 입식(발 y=1519/1536)이 대사창 위에 서고, 가장 큰 베히다트의 터번(y=85)도 안 잘리는 높이다. */
+  bottom: 28.5%;
   margin: 0;
-  height: 86%;
+  height: 73%;
   width: 34%;
   /* 표정 교체 때 예전 그림과 새 그림이 같은 칸에 갹쳐 투명도로 갈아킼다(main.ts morphSprite). */
   display: grid;
+  grid-template-rows: 100%;
   align-items: end;
   justify-items: center;
   transition: filter 0.35s ease, transform 0.35s ease, opacity 0.45s ease;
@@ -100,12 +102,7 @@ button {
 
 .slot img {
   grid-area: 1 / 1;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  /* 입식 그림은 무릎께에서 잘려 있고, 아시나의 옷은 그림 높이 91% 아래에서 양쪽 가장자리에 닿는다. 잘린 끝이 네모로 비치지 않게 그 위에서 다 흐린다. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 91%);
-  mask-image: linear-gradient(to bottom, #000 78%, transparent 91%);
+  height: 100%;
   filter: drop-shadow(0 0 1.2cqw rgba(0, 0, 0, 0.45));
 }
 
@@ -122,7 +119,7 @@ button {
 }
 
 .slot.dim {
-  filter: brightness(0.5) saturate(0.6);
+  filter: brightness(0.72) saturate(0.6);
 }
 
 .slot.speaking {
@@ -409,8 +406,50 @@ button {
   transition: width 0.6s ease;
 }
 
+/* 조각 시계 수치(의심·귀찌): 막대 대신 오른쪽에 시계 한 개. */
+.track.is-clock {
+  grid-template-columns: 1.3cqw 1fr auto 2.3cqw;
+  grid-template-rows: auto;
+  row-gap: 0;
+}
+
+.track.is-clock > svg:first-child {
+  grid-row: 1;
+}
+
+.track svg.clock-face {
+  grid-area: 1 / 4;
+  width: 2.3cqw;
+  height: 2.3cqw;
+  stroke: none;
+  fill: none;
+}
+
+.track .clock-face .seg {
+  fill: rgba(255, 255, 255, 0.1);
+  stroke: var(--night);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  transition: fill 0.45s ease;
+}
+
+.track .clock-face .seg.on {
+  fill: var(--track-color, var(--gold));
+}
+
+/* 징조 문턱 안쪽 칸은 테두리로만 표시하고, 값이 그 안에 들어오면 켜진 칸이 위험 색으로 바뀝다. */
+.track .clock-face .seg.warn {
+  stroke: var(--track-warn, #e0566b);
+  stroke-width: 0.9;
+}
+
+.track .clock-face.danger .seg.on {
+  fill: var(--track-warn, #e0566b);
+}
+
 .track[data-track='의심'] {
   --track-color: #e0566b;
+  --track-warn: #ff3b5c;
 }
 
 .track[data-track='집착'] {
@@ -423,6 +462,7 @@ button {
 
 .track[data-track='귀찌'] {
   --track-color: #e9c46a;
+  --track-warn: #e0566b;
 }
 
 .track[data-track='탈주'] {
@@ -519,6 +559,9 @@ button {
 }
 
 .items li {
+  display: flex;
+  align-items: center;
+  gap: 0.25cqw;
   padding: 0.2cqw 0.55cqw;
   border-radius: 99cqw;
   border: 1px solid rgba(247, 240, 228, 0.2);
@@ -526,10 +569,16 @@ button {
   color: var(--ink-dim);
 }
 
+.items li img {
+  width: 2.2cqw;
+  height: 2.2cqw;
+  object-fit: contain;
+}
+
 .dialog {
   position: absolute;
   left: 5%;
-  right: 22%;
+  right: 1.4cqw;
   bottom: calc(1.2% + 3.8cqw);
   min-height: 21%;
   padding: 2cqw 2.4cqw 1.6cqw;
@@ -681,7 +730,7 @@ button {
   position: absolute;
   z-index: 6;
   left: 5%;
-  right: 22%;
+  right: 1.4cqw;
   bottom: 1.2%;
   display: flex;
   gap: 0.6cqw;
@@ -695,9 +744,18 @@ button {
   white-space: nowrap;
 }
 
+.say-field {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
 .say input {
   flex: 1;
-  padding: 0.75cqw 1cqw;
+  min-width: 0;
+  /* 오른쪽 여백은 여우 얼굴 버튼 자리다. 긴 글이 버튼 밑으로 들어가지 않는다. */
+  padding: 0.75cqw 3.4cqw 0.75cqw 1cqw;
   border-radius: 0.5cqw;
   border: 1px solid rgba(247, 240, 228, 0.3);
   background: var(--panel);
@@ -722,9 +780,28 @@ button {
 
 /* 질문 모드: 여우에게 묻는 입력. 이야기 입력과 다른 테두리 색으로 구별한다. */
 .say .ask-gm {
-  background: var(--panel);
-  border: 1px solid var(--gold-soft);
-  color: var(--ink);
+  position: absolute;
+  top: 50%;
+  right: 0.4cqw;
+  translate: 0 -50%;
+  width: 2.4cqw;
+  height: 2.4cqw;
+  padding: 0.15cqw;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.say .ask-gm img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.say .ask-gm:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
 }
 
 .say .ask-gm[aria-pressed='true'],
@@ -773,6 +850,40 @@ button {
   line-height: 1.6;
 }
 
+.say .feedback-open {
+  background: var(--panel);
+  border: 1px solid var(--gold-soft);
+  color: var(--ink);
+}
+
+.feedback-title {
+  margin: 0 0 1cqw;
+  font-size: 1.4cqw;
+  color: var(--gold);
+}
+
+.feedback-text {
+  display: block;
+  width: 100%;
+  min-height: 9cqw;
+  margin: 0 0 1.2cqw;
+  padding: 0.8cqw 1cqw;
+  border: 1px solid var(--gold-soft);
+  border-radius: 0.5cqw;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.1cqw;
+  line-height: 1.5;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.feedback-text:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
 .confirm-actions {
   display: flex;
   justify-content: flex-end;
@@ -815,6 +926,10 @@ button {
 .price-label {
   color: #e0a458;
   font-weight: 700;
+}
+
+.twist-line[data-result='interrupt'] .price-label {
+  color: #e0566b;
 }
 
 .price-tag::before {
@@ -895,6 +1010,15 @@ button {
 .free.busy .approach-wrap,
 .free.busy .free-meta {
   opacity: 0.35;
+  pointer-events: none;
+}
+
+.cutin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   pointer-events: none;
 }
 
@@ -1319,55 +1443,69 @@ button.primary {
   color: var(--gold);
 }
 
-.checks {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2cqw;
+/* 돌아보기: 선택 → 주사위 → 대가를 일어난 순서대로. 장면마다 이름 한 줄. */
+.replay {
+  list-style: none;
+  margin: 0 0 2cqw;
+  padding: 0;
   font-size: 1cqw;
-}
-
-.checks th,
-.checks td {
-  padding: 0.5cqw 0.6cqw;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: left;
-}
-
-.checks td {
+  line-height: 1.6;
   word-break: keep-all;
 }
 
-/* 계산과 결과는 한 줄로 둔다. 좀으면 장면과 판정 이름이 띄어쓰기에서 줄을 바꾼다. */
-.checks td:nth-child(n + 3) {
-  white-space: nowrap;
+.replay li {
+  padding: 0.2cqw 0 0.2cqw 0.9cqw;
 }
 
-.checks th {
+.replay .replay-scene {
+  margin-top: 0.9cqw;
+  padding: 0 0 0.25cqw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-weight: 600;
   color: var(--ink-dim);
 }
 
-.checks .tier-hit {
+.replay .replay-scene:first-child {
+  margin-top: 0;
+}
+
+.replay small {
+  color: var(--ink-dim);
+}
+
+.replay-check {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2cqw 0.8cqw;
+}
+
+.replay-dice {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.replay-tier {
+  white-space: nowrap;
+}
+
+.replay-price {
+  display: flex;
+  gap: 0.5cqw;
+  align-items: baseline;
+  color: var(--ink-dim);
+}
+
+.replay .tier-hit {
   color: var(--hit);
 }
 
-.checks .tier-mixed {
+.replay .tier-mixed {
   color: var(--mixed);
 }
 
-.checks .tier-miss {
+.replay .tier-miss {
   color: var(--miss);
-}
-
-.decisions {
-  margin: 0;
-  padding-left: 1.4cqw;
-  font-size: 1cqw;
-  line-height: 1.7;
-}
-
-.decisions small {
-  color: var(--ink-dim);
 }
 
 .result-tracks {
@@ -1389,7 +1527,12 @@ button.primary {
 
 .result-buttons {
   display: flex;
-  gap: 1cqw;
+  gap: 0.6cqw;
+}
+
+.result-buttons button {
+  padding-inline: 1cqw;
+  white-space: nowrap;
 }
 
 .sheet {
@@ -1523,7 +1666,9 @@ button.primary {
   right: 26%;
   z-index: 3;
   display: flex;
-  align-items: flex-start;
+  /* 높이를 여우 칸으로 고정해 글이 늘어도 여우는 움직이지 않고 말풍선만 위아래로 고르게 늘어난다. */
+  height: 9.5cqw;
+  align-items: center;
   gap: 0.8cqw;
   cursor: pointer;
   animation: mascot-in 0.25s ease-out;
@@ -1538,10 +1683,22 @@ button.primary {
   filter: drop-shadow(0 0.4cqw 0.8cqw rgba(0, 0, 0, 0.5));
 }
 
+/* 표정 PNG 마다 투명 여백이 다르다. 불투명 영역의 세로 가운데를 칸 가운데에, 오른쪽 끝을 칸 오른쪽에 맞춘다. */
 .gm-mascot img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  translate: 7.42% 0.15%;
+}
+
+/* 세로 4.39% 는 여백 5.71% 에서 bob 폭의 절반을 뺴서 흔들림의 가운데를 칸 가운데에 둔 값이다. */
+.gm-mascot[data-face='thinking'] img {
+  translate: 2.93% 4.39%;
+}
+
+.gm-mascot[data-face='surprised'] img {
+  translate: 5.86% 1.66%;
 }
 
 .gm-mascot[data-face='thinking'] img {
@@ -1673,13 +1830,20 @@ button.primary {
     bottom: 0;
     z-index: 40;
     gap: 8px;
-    padding: 8px;
+    padding: 8px 1.4cqw 8px 8px;
     background: rgba(10, 8, 6, 0.92);
   }
 
   .say input {
     font-size: 16px;
-    padding: 8px 10px;
+    padding: 8px 44px 8px 10px;
+  }
+
+  .say .ask-gm {
+    right: 3px;
+    width: 36px;
+    height: 36px;
+    padding: 3px;
   }
 
   .say button {
@@ -1690,6 +1854,12 @@ button.primary {
 
 .clock {
   margin-left: 0.8cqw;
+  font-size: 1cqw;
+  white-space: nowrap;
+}
+
+.tension {
+  margin-left: 0.4cqw;
   font-size: 1cqw;
   white-space: nowrap;
 }

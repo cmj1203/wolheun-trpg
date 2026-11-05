@@ -108,6 +108,22 @@ describe('로컬 GM 생성과 재생성', () => {
     expect(traces[0]?.llm?.completionTokens).toBe(8);
   });
 
+  test('세계 밖 행동이 끝까지 위반하면 대체 줄도 나레이션 동작 한 줄 뒤에 반응 줄이 온다(택시 재발 방지)', async () => {
+    const bad = lines(['나레이션', '택시를 불렀다.'], ['남자', '택시라니.']);
+    const mock = mockLlama([bad, bad, bad]);
+    stop = () => mock.server.stop(true);
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
+    const { ctx } = contexts('택시를 부른다');
+    const reply = await gm.talk({ ...ctx, absurd: true, deed: '허공에 손을 흔들었다' });
+    expect(reply.meta.fallback).toBe(true);
+    expect(reply.lines[0]?.speaker).toBe('나레이션');
+    expect(reply.lines[0]?.text).not.toContain('택시');
+    expect(reply.lines.length).toBeGreaterThanOrEqual(2);
+    expect(reply.lines.slice(1).every((l) => l.speaker !== '나레이션' && !l.text.includes('택시'))).toBe(true);
+    const sent = mock.requests[0] as { response_format?: { json_schema?: { schema?: { properties?: { lines?: { prefixItems?: { properties?: { speaker?: { enum?: string[] } } }[] } } } } } } | undefined;
+    expect(sent?.response_format?.json_schema?.schema?.properties?.lines?.prefixItems?.[0]?.properties?.speaker?.enum).toEqual(['나레이션']);
+  });
+
   test('끝까지 위반하면 작가가 쓴 대사로 대체한다', async () => {
     const bad = lines(['남자', '내 하렘에 온 걸 환영한다.']);
     const mock = mockLlama([bad, bad, bad]);
@@ -232,6 +248,15 @@ describe('로컬 GM 생성과 재생성', () => {
     expect(await gm.interpret(contexts('좀 떨어져요').ctx)).toMatchObject({ kind: 'talk', to: 'person' });
     expect(await gm.interpret(contexts('아 죽겠네').ctx)).toMatchObject({ kind: 'talk', to: 'self' });
     expect(mock.requests.filter((r) => r.stream)).toHaveLength(7);
+  });
+
+  test('물음 꼴이어도 다시 가려 혼잣말이면 혼잣말로 받고, 물음이면 물음으로 받는다', async () => {
+    const reply = (kind: string) => JSON.stringify({ reason: '근거', kind, about: 'none', approach: 'none', item: '', odd: false, absurd: false, stat: '재치', difficulty: '보통' });
+    const mock = mockLlama([reply('self'), reply('self'), reply('self'), reply('how')]);
+    stop = () => mock.server.stop(true);
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
+    expect(await gm.interpret(contexts('내가 여기서 뭘 하는 거지').ctx)).toMatchObject({ kind: 'talk', to: 'self' });
+    expect(await gm.interpret(contexts('지금 뭘 해야 돼?').ctx)).toMatchObject({ kind: 'ask' });
   });
 
   test('혼잣말로 읽은 입력은 게임에 건넨 말인지 한 번 더 가린다', async () => {
@@ -463,6 +488,18 @@ describe('규칙 해석과 주소 제한', () => {
 
 
 describe('아시나 속마음과 여우 한 줄', () => {
+  test('앞에 사람이 있어도 혼잣말이면 상대의 줄을 요구해 다시 쓰지 않는다', async () => {
+    const mock = mockLlama([lines(['속마음', '입이 바짝 마른다. 조금만 더 가자.'])]);
+    stop = () => mock.server.stop(true);
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore, { ...DEFAULT_GM_OPTIONS, budgetMs: 60_000 });
+    const beat = scenario.beats.b06_swing;
+    if (!beat?.free) throw new Error('b06_swing 에 free 가 없습니다');
+    const { state } = new Engine(scenario, new FakeGm()).newGame(1, 'self');
+    const self = await gm.talk({ scenario, beat, free: beat.free, state, text: '망했다 정말', self: true });
+    expect(self.meta.attempts).toBe(1);
+    expect(self.lines.map((l) => l.speaker)).toEqual(['속마음']);
+  });
+
   test('혼자인 장면의 혼잣말이면 속마음 줄이 통과하고, 그렇지 않으면 다시 쓴다', async () => {
     const mock = mockLlama([
       lines(['속마음', '입이 바짝 마른다. 조금만 더 가자.']),
@@ -494,5 +531,125 @@ describe('아시나 속마음과 여우 한 줄', () => {
     expect(quip.meta.fallback).toBe(true);
     expect(quip.lines).toHaveLength(1);
     expect(lore.gmQuips).toContain(quip.lines[0]?.text ?? '');
+  });
+});
+
+describe('이번 판 되풀이와 엔진 상태', () => {
+  const REPLY = lines(['나레이션', '칼끝이 손가락 한 마디만큼 물러났다.'], ['남자', '거짓은 아닌 모양이군.']);
+  const HOOD_OFF = lines(['나레이션', '후드가 어깨 너머로 젖혀졌다.'], ['남자', '거짓은 아닌 모양이군.']);
+  const YES = JSON.stringify({ answer: true });
+  const NO = JSON.stringify({ answer: false });
+  const gmOn = (url: string) => new LocalGm(new LlmClient({ baseUrl: url, timeoutMs: 5000 }), lore, { ...DEFAULT_GM_OPTIONS, retries: 2, softRetries: 1 });
+  const withSpoken = (ctx: NarrateContext, spoken: Record<string, string[]>): NarrateContext => ({ ...ctx, state: { ...ctx.state, spoken } });
+  const neutral = (ctx: NarrateContext, gist = '칼끝이 조금 물러난다.'): NarrateContext => ({ ...ctx, outcome: { ...ctx.outcome, gist } });
+
+  test('입력 해석과 줄 쓰기의 시스템 프롬프트가 같아 LLM 캐시를 이어 쓴다', async () => {
+    const mock = mockLlama([JSON.stringify({ kind: 'person', about: 'none', risk: 'none', approach: 'none', item: '' }), REPLY]);
+    stop = () => mock.server.stop(true);
+    const gm = gmOn(mock.url);
+    const { ctx, narrate } = contexts('억울해요!');
+    await gm.interpret(ctx);
+    await gm.narrate(neutral(narrate));
+    expect(mock.requests[1]?.messages[0]?.content).toBe(mock.requests[0]?.messages[0]?.content as string);
+  });
+
+  test('이번 판에 이미 한 말을 처음 프롬프트부터 알린다', async () => {
+    const mock = mockLlama([REPLY]);
+    stop = () => mock.server.stop(true);
+    await gmOn(mock.url).narrate(withSpoken(neutral(contexts('억울해요!').narrate), { 남자: ['…뭐?'] }));
+    expect(mock.requests[0]?.messages[1]?.content).toContain('…뭐?');
+  });
+
+  test('같은 인물이 이번 판에 이미 한 말은 짧아도 다시 쓰게 한다', async () => {
+    const mock = mockLlama([lines(['남자', '…뭐?']), REPLY]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(withSpoken(neutral(contexts('억울해요!').narrate), { 남자: ['…뭐?'] }));
+    expect(reply.meta.attempts).toBe(2);
+    expect(reply.meta.violations.some((v) => v.startsWith('beat/repeat_play'))).toBe(true);
+    expect(mock.requests[1]?.messages[1]?.content).toContain('…뭐?');
+    expect(reply.lines.map((l) => l.text)).not.toContain('…뭐?');
+  });
+
+  test('다른 인물이 한 말은 되풀이가 아니다', async () => {
+    const mock = mockLlama([lines(['나레이션', '칼끝이 손가락 한 마디만큼 물러났다.'], ['남자', '…뭐?'])]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(withSpoken(neutral(contexts('억울해요!').narrate), { 아시나: ['…뭐?'] }));
+    expect(reply.meta.attempts).toBe(1);
+    expect(reply.meta.violations).toEqual([]);
+  });
+
+  test('끝내 되풀이하면 대체 문구도 이번 판에 안 쓴 말에서 고른다', async () => {
+    const pool = lore.characters['베히다트']?.reactions?.hit ?? [];
+    expect(pool.length).toBeGreaterThan(1);
+    const unused = pool.at(-1)?.text;
+    const mock = mockLlama([lines(['남자', '…뭐?']), lines(['남자', '…뭐?']), lines(['남자', '…뭐?'])]);
+    stop = () => mock.server.stop(true);
+    const spoken = { 남자: ['…뭐?', ...pool.slice(0, -1).map((p) => p.text)] };
+    const improvised: NarrateContext = { ...withSpoken(neutral(contexts('모래를 뿌린다').narrate), spoken), improv: { deed: '모래를 뿌렸다', bold: true, absurd: false } };
+    const reply = await gmOn(mock.url).narrate(improvised);
+    expect(reply.meta.fallback).toBe(true);
+    expect(reply.lines.find((l) => l.speaker === '남자')?.text).toBe(unused as string);
+  });
+
+  test('서술이 후드를 벗기면 낱말 목록에 없어도 뜻으로 막고 다시 쓰게 한다', async () => {
+    const mock = mockLlama([HOOD_OFF, YES, REPLY]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(neutral(contexts('억울해요!').narrate));
+    expect(reply.meta.attempts).toBe(2);
+    expect(reply.meta.violations.some((v) => v.startsWith('beat/state_check'))).toBe(true);
+    expect(reply.meta.setFlags ?? []).toEqual([]);
+    expect(reply.lines[0]?.text).toBe('칼끝이 손가락 한 마디만큼 물러났다.');
+  });
+
+  test('후드를 쓴 채 잡는 서술은 재확인을 거쳐 그대로 나간다', async () => {
+    const mock = mockLlama([lines(['나레이션', '후드를 움켜쥐고 물러났다.'], ['남자', '거짓은 아닌 모양이군.']), NO]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(neutral(contexts('억울해요!').narrate));
+    expect(reply.meta.attempts).toBe(1);
+    expect(reply.lines[0]?.text).toBe('후드를 움켜쥐고 물러났다.');
+    expect(mock.requests).toHaveLength(2);
+  });
+
+  test('플레이어가 직접 벗었으면 서술을 살리고 상태 플래그를 돌려준다', async () => {
+    const mock = mockLlama([HOOD_OFF, YES, YES]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(neutral(contexts('후드를 뒤로 넘긴다').narrate));
+    expect(reply.meta.attempts).toBe(1);
+    expect(reply.meta.setFlags).toEqual(['후드_벗음']);
+  });
+
+  test('플레이어 입력이 후드를 언급만 하면 벗긴 서술을 막는다', async () => {
+    const mock = mockLlama([HOOD_OFF, YES, NO, REPLY]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(neutral(contexts('후드 잡고 버틴다').narrate));
+    expect(reply.meta.setFlags ?? []).toEqual([]);
+    expect(reply.lines[0]?.text).toBe('칼끝이 손가락 한 마디만큼 물러났다.');
+  });
+
+  test('결과에 적힌 변화면 서술을 다시 묻지 않고 통과한다', async () => {
+    const mock = mockLlama([HOOD_OFF, YES]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(neutral(contexts('억울해요!').narrate, '나동그라져 후드가 벗겨진다.'));
+    expect(reply.meta.attempts).toBe(1);
+    expect(mock.requests).toHaveLength(2);
+  });
+
+  test('결과에 같은 낱말이 있어도 그 변화를 정하지 않았으면 서술을 막는다', async () => {
+    const mock = mockLlama([HOOD_OFF, NO, YES, REPLY]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(neutral(contexts('억울해요!').narrate, '칼날이 머리카락 끝을 스치고 지나간다.'));
+    expect(reply.meta.attempts).toBe(2);
+    expect(reply.meta.violations.some((v) => v.startsWith('beat/state_check'))).toBe(true);
+    expect(reply.meta.setFlags ?? []).toEqual([]);
+  });
+
+  test('재확인 답을 못 읽으면 기록을 남기고 확인되지 않은 서술을 다시 쓰게 한다', async () => {
+    const mock = mockLlama([HOOD_OFF, '답 아님', REPLY]);
+    stop = () => mock.server.stop(true);
+    const reply = await gmOn(mock.url).narrate(neutral(contexts('억울해요!').narrate));
+    expect(reply.meta.fallback).toBe(false);
+    expect(reply.meta.attempts).toBe(2);
+    expect(reply.meta.violations.some((v) => v.startsWith('state_check_error'))).toBe(true);
+    expect(reply.lines[0]?.text).toBe('칼끝이 손가락 한 마디만큼 물러났다.');
   });
 });

@@ -3,8 +3,8 @@
   "title": "혼자 걷는 사막",
   "seed": "1",
   "model": null,
-  "bootMs": 102,
-  "wallMs": 5312,
+  "bootMs": 103,
+  "wallMs": 4477,
   "result": {
     "scenarioTitle": "죽음의 사막 지르다",
     "episode": "1화 · 사막 조우",
@@ -15,29 +15,29 @@
       "nextHook": "다음 장면은 크라차 쪽 마을이다. 붙잡히지 않은 대신, 그 남자가 언제 다시 나타날지 모른다.",
       "bad": false
     },
-    "playMs": 2988,
-    "startedAt": 1793773581641,
+    "playMs": 2453,
+    "startedAt": 1793822373749,
     "decisions": [
       {
         "beatTitle": "사람?!",
         "kind": "input",
         "text": "달려가서 길을 묻는다",
         "detail": "자유 입력 → 달려가서 길을 묻는다",
-        "playMs": 889
+        "playMs": 621
       },
       {
         "beatTitle": "왜지?",
         "kind": "input",
         "text": "칼날을 밀어내고 모래를 차서 도망친다",
         "detail": "자유 입력 → 칼을 밀어내고 몸을 뺀다",
-        "playMs": 2624
+        "playMs": 2089
       },
       {
         "beatTitle": "해가 지는 모래",
         "kind": "input",
         "text": "별을 보고 남쪽을 찾는다",
         "detail": "자유 입력 → 별을 보고 방향을 잡는다",
-        "playMs": 2988
+        "playMs": 2453
       }
     ],
     "checks": [
@@ -54,7 +54,7 @@
         "tier": "miss",
         "beatTitle": "사람?!",
         "tierLabel": "실패",
-        "playMs": 889
+        "playMs": 621
       },
       {
         "label": "칼을 밀어내고 몸을 뺀다",
@@ -69,7 +69,7 @@
         "tier": "hit",
         "beatTitle": "왜지?",
         "tierLabel": "성공",
-        "playMs": 2624
+        "playMs": 2089
       },
       {
         "label": "별을 보고 방향을 잡는다",
@@ -89,7 +89,97 @@
         "tier": "mixed",
         "beatTitle": "해가 지는 모래",
         "tierLabel": "대가 있는 성공",
-        "playMs": 2988
+        "playMs": 2453
+      }
+    ],
+    "replay": [
+      {
+        "kind": "decision",
+        "beatTitle": "사람?!",
+        "text": "달려가서 길을 묻는다",
+        "detail": "자유 입력 → 달려가서 길을 묻는다",
+        "playMs": 621
+      },
+      {
+        "kind": "check",
+        "label": "달려가서 길을 묻는다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          2,
+          4
+        ],
+        "total": 6,
+        "tier": "miss",
+        "beatTitle": "사람?!",
+        "tierLabel": "실패",
+        "playMs": 621
+      },
+      {
+        "kind": "price",
+        "beatTitle": "사람?!",
+        "tag": "수치",
+        "text": "모래에 무릎까지 빠져 기운이 빠졌다.",
+        "playMs": 852
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "왜지?",
+        "text": "칼날을 밀어내고 모래를 차서 도망친다",
+        "detail": "자유 입력 → 칼을 밀어내고 몸을 뺀다",
+        "playMs": 2089
+      },
+      {
+        "kind": "check",
+        "label": "칼을 밀어내고 몸을 뺀다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          6,
+          6
+        ],
+        "total": 12,
+        "tier": "hit",
+        "beatTitle": "왜지?",
+        "tierLabel": "성공",
+        "playMs": 2089
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "해가 지는 모래",
+        "text": "별을 보고 남쪽을 찾는다",
+        "detail": "자유 입력 → 별을 보고 방향을 잡는다",
+        "playMs": 2453
+      },
+      {
+        "kind": "check",
+        "label": "별을 보고 방향을 잡는다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [
+          {
+            "label": "기억해 둔 것",
+            "value": 1
+          }
+        ],
+        "dice": [
+          4,
+          3
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "beatTitle": "해가 지는 모래",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 2453
+      },
+      {
+        "kind": "price",
+        "beatTitle": "해가 지는 모래",
+        "tag": "시간",
+        "text": "바람이 차가워졌다. 밤이 가깝다.",
+        "playMs": 2453
       }
     ],
     "tracks": [
@@ -99,7 +189,11 @@
         "max": 10,
         "unit": "",
         "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
-        "value": 4
+        "value": 4,
+        "clock": {
+          "kind": "progress",
+          "warnAt": 7
+        }
       },
       {
         "key": "집착",
@@ -120,10 +214,14 @@
       {
         "key": "귀찌",
         "label": "귀찌 수명",
-        "max": 10,
+        "max": 8,
         "unit": "",
-        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
-        "value": 5
+        "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+        "value": 2,
+        "clock": {
+          "kind": "countdown",
+          "warnAt": 2
+        }
       },
       {
         "key": "탈주",
@@ -179,18 +277,18 @@
   "cpuBeforeLoad": "",
   "net": {
     "pids": [
-      21568
+      34708
     ],
-    "samples": 11,
+    "samples": 9,
     "endpoints": [
-      "TCP 127.0.0.1:18183 (LISTEN)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56153 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56156 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56165 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56166 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56167 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56168 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56169 (ESTABLISHED)"
+      "TCP 127.0.0.1:18191 (LISTEN)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51304 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51318 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51319 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51320 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51321 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51322 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51323 (ESTABLISHED)"
     ],
     "external": [],
     "publicListeners": []

@@ -3,8 +3,8 @@
   "title": "자칭 공녀",
   "seed": "1",
   "model": null,
-  "bootMs": 102,
-  "wallMs": 4854,
+  "bootMs": 103,
+  "wallMs": 4058,
   "result": {
     "scenarioTitle": "죽음의 사막 지르다",
     "episode": "1화 · 사막 조우",
@@ -15,29 +15,29 @@
       "nextHook": "다음 장면에서는 대접은 좋아도 눈이 많다. 스스로 내세운 신분이 진짜인지 시험받는다.",
       "bad": false
     },
-    "playMs": 2946,
-    "startedAt": 1793773591858,
+    "playMs": 2332,
+    "startedAt": 1793822382354,
     "decisions": [
       {
         "beatTitle": "사람?!",
         "kind": "input",
         "text": "달려가서 길을 묻는다",
         "detail": "자유 입력 → 달려가서 길을 묻는다",
-        "playMs": 901
+        "playMs": 615
       },
       {
         "beatTitle": "왜지?",
         "kind": "input",
         "text": "저는 크롬웰 제국의 귀족 가문 사람이에요",
         "detail": "자유 입력 → 신분과 교양을 내세운다",
-        "playMs": 2634
+        "playMs": 2051
       },
       {
         "beatTitle": "귀하신 몸",
         "kind": "input",
         "text": "허리를 펴고 궁정식으로 인사한다",
         "detail": "자유 입력 → 몸에 밴 예법을 보인다",
-        "playMs": 2946
+        "playMs": 2332
       }
     ],
     "checks": [
@@ -54,7 +54,7 @@
         "tier": "miss",
         "beatTitle": "사람?!",
         "tierLabel": "실패",
-        "playMs": 901
+        "playMs": 615
       },
       {
         "label": "신분과 교양을 내세운다",
@@ -69,7 +69,7 @@
         "tier": "hit",
         "beatTitle": "왜지?",
         "tierLabel": "성공",
-        "playMs": 2634
+        "playMs": 2051
       },
       {
         "label": "몸에 밴 예법을 보인다",
@@ -84,7 +84,92 @@
         "tier": "mixed",
         "beatTitle": "귀하신 몸",
         "tierLabel": "대가 있는 성공",
-        "playMs": 2946
+        "playMs": 2332
+      }
+    ],
+    "replay": [
+      {
+        "kind": "decision",
+        "beatTitle": "사람?!",
+        "text": "달려가서 길을 묻는다",
+        "detail": "자유 입력 → 달려가서 길을 묻는다",
+        "playMs": 615
+      },
+      {
+        "kind": "check",
+        "label": "달려가서 길을 묻는다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          2,
+          4
+        ],
+        "total": 6,
+        "tier": "miss",
+        "beatTitle": "사람?!",
+        "tierLabel": "실패",
+        "playMs": 615
+      },
+      {
+        "kind": "price",
+        "beatTitle": "사람?!",
+        "tag": "수치",
+        "text": "모래에 무릎까지 빠져 기운이 빠졌다.",
+        "playMs": 830
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "왜지?",
+        "text": "저는 크롬웰 제국의 귀족 가문 사람이에요",
+        "detail": "자유 입력 → 신분과 교양을 내세운다",
+        "playMs": 2051
+      },
+      {
+        "kind": "check",
+        "label": "신분과 교양을 내세운다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          6,
+          6
+        ],
+        "total": 13,
+        "tier": "hit",
+        "beatTitle": "왜지?",
+        "tierLabel": "성공",
+        "playMs": 2051
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "귀하신 몸",
+        "text": "허리를 펴고 궁정식으로 인사한다",
+        "detail": "자유 입력 → 몸에 밴 예법을 보인다",
+        "playMs": 2332
+      },
+      {
+        "kind": "check",
+        "label": "몸에 밴 예법을 보인다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          4,
+          3
+        ],
+        "total": 8,
+        "tier": "mixed",
+        "beatTitle": "귀하신 몸",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 2332
+      },
+      {
+        "kind": "price",
+        "beatTitle": "귀하신 몸",
+        "tag": "자리",
+        "text": "칼끝이 턱 밑을 눌렀다.",
+        "playMs": 2332
       }
     ],
     "tracks": [
@@ -94,7 +179,11 @@
         "max": 10,
         "unit": "",
         "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
-        "value": 6
+        "value": 6,
+        "clock": {
+          "kind": "progress",
+          "warnAt": 7
+        }
       },
       {
         "key": "집착",
@@ -115,10 +204,14 @@
       {
         "key": "귀찌",
         "label": "귀찌 수명",
-        "max": 10,
+        "max": 8,
         "unit": "",
-        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
-        "value": 7
+        "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+        "value": 5,
+        "clock": {
+          "kind": "countdown",
+          "warnAt": 2
+        }
       },
       {
         "key": "탈주",
@@ -174,18 +267,18 @@
   "cpuBeforeLoad": "",
   "net": {
     "pids": [
-      21886
+      34942
     ],
-    "samples": 10,
+    "samples": 8,
     "endpoints": [
-      "TCP 127.0.0.1:18183 (LISTEN)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56268 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56278 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56279 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56280 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56281 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56282 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56283 (ESTABLISHED)"
+      "TCP 127.0.0.1:18191 (LISTEN)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51462 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51464 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51466 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51467 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51468 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51469 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51470 (ESTABLISHED)"
     ],
     "external": [],
     "publicListeners": []

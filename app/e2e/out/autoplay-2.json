@@ -3,8 +3,8 @@
   "title": "수상한 이방인",
   "seed": "4",
   "model": null,
-  "bootMs": 102,
-  "wallMs": 6652,
+  "bootMs": 104,
+  "wallMs": 5875,
   "result": {
     "scenarioTitle": "죽음의 사막 지르다",
     "episode": "1화 · 사막 조우",
@@ -15,43 +15,43 @@
       "nextHook": "다음 장면에서는 감시가 삼엄해진다. 가방 없이, 몸에 지닌 것만으로 빠져나갈 길을 찾아야 한다.",
       "bad": false
     },
-    "playMs": 4869,
-    "startedAt": 1793773574986,
+    "playMs": 4017,
+    "startedAt": 1793822367839,
     "decisions": [
       {
         "beatTitle": "사람?!",
         "kind": "input",
         "text": "모래 언덕 뒤에 숨어서 지켜본다",
         "detail": "자유 입력 → 모래 언덕 뒤에서 먼저 살핀다",
-        "playMs": 905
+        "playMs": 630
       },
       {
         "beatTitle": "왜지?",
         "kind": "input",
         "text": "저는 귀한 집안 사람이에요. 함부로 대하면 후회하실 거예요",
         "detail": "자유 입력 → 신분과 교양을 내세운다",
-        "playMs": 2288
+        "playMs": 2016
       },
       {
         "beatTitle": "마지막으로 남길 말인가",
         "kind": "input",
         "text": "가방을 방패 삼아 막는다",
         "detail": "자유 입력 → 가방을 방패 삼아 막는다",
-        "playMs": 3040
+        "playMs": 2536
       },
       {
         "beatTitle": "한여름의 태양",
         "kind": "input",
         "text": "머리카락으로 귀찌를 가린다",
         "detail": "자유 입력 → 귀찌를 머리카락으로 가린다",
-        "playMs": 4117
+        "playMs": 3597
       },
       {
         "beatTitle": "묶인 손목",
         "kind": "input",
         "text": "아무도 안 보냈어요. 전 그냥 여행자예요",
         "detail": "자유 입력 → 끝까지 결백을 주장한다",
-        "playMs": 4869
+        "playMs": 4017
       }
     ],
     "checks": [
@@ -59,16 +59,21 @@
         "label": "모래 언덕 뒤에서 먼저 살핀다",
         "stat": "재치",
         "statValue": 1,
-        "mods": [],
+        "mods": [
+          {
+            "label": "바람에 흐린 시야",
+            "value": -1
+          }
+        ],
         "dice": [
           3,
           5
         ],
-        "total": 9,
+        "total": 8,
         "tier": "mixed",
         "beatTitle": "사람?!",
         "tierLabel": "대가 있는 성공",
-        "playMs": 905
+        "playMs": 630
       },
       {
         "label": "신분과 교양을 내세운다",
@@ -83,7 +88,7 @@
         "tier": "miss",
         "beatTitle": "왜지?",
         "tierLabel": "실패",
-        "playMs": 2288
+        "playMs": 2016
       },
       {
         "label": "가방을 방패 삼아 막는다",
@@ -98,7 +103,7 @@
         "tier": "hit",
         "beatTitle": "마지막으로 남길 말인가",
         "tierLabel": "성공",
-        "playMs": 3040
+        "playMs": 2536
       },
       {
         "label": "귀찌를 머리카락으로 가린다",
@@ -118,7 +123,7 @@
         "tier": "hit",
         "beatTitle": "한여름의 태양",
         "tierLabel": "성공",
-        "playMs": 4117
+        "playMs": 3597
       },
       {
         "label": "끝까지 결백을 주장한다",
@@ -138,7 +143,153 @@
         "tier": "hit",
         "beatTitle": "묶인 손목",
         "tierLabel": "성공",
-        "playMs": 4869
+        "playMs": 4017
+      }
+    ],
+    "replay": [
+      {
+        "kind": "decision",
+        "beatTitle": "사람?!",
+        "text": "모래 언덕 뒤에 숨어서 지켜본다",
+        "detail": "자유 입력 → 모래 언덕 뒤에서 먼저 살핀다",
+        "playMs": 630
+      },
+      {
+        "kind": "check",
+        "label": "모래 언덕 뒤에서 먼저 살핀다",
+        "stat": "재치",
+        "statValue": 1,
+        "mods": [
+          {
+            "label": "바람에 흐린 시야",
+            "value": -1
+          }
+        ],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 8,
+        "tier": "mixed",
+        "beatTitle": "사람?!",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 630
+      },
+      {
+        "kind": "price",
+        "beatTitle": "사람?!",
+        "tag": "소지품",
+        "text": "바람에 지도 한 귀퉁이가 찢겨 날아갔다.",
+        "playMs": 630
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "왜지?",
+        "text": "저는 귀한 집안 사람이에요. 함부로 대하면 후회하실 거예요",
+        "detail": "자유 입력 → 신분과 교양을 내세운다",
+        "playMs": 2016
+      },
+      {
+        "kind": "check",
+        "label": "신분과 교양을 내세운다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          2,
+          1
+        ],
+        "total": 4,
+        "tier": "miss",
+        "beatTitle": "왜지?",
+        "tierLabel": "실패",
+        "playMs": 2016
+      },
+      {
+        "kind": "price",
+        "beatTitle": "왜지?",
+        "tag": "상대행동",
+        "text": "호위가 아시나의 팔을 붙들었다. 손목이 저릿하다.",
+        "playMs": 2246
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "마지막으로 남길 말인가",
+        "text": "가방을 방패 삼아 막는다",
+        "detail": "자유 입력 → 가방을 방패 삼아 막는다",
+        "playMs": 2536
+      },
+      {
+        "kind": "check",
+        "label": "가방을 방패 삼아 막는다",
+        "stat": "손재주",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          6,
+          4
+        ],
+        "total": 11,
+        "tier": "hit",
+        "beatTitle": "마지막으로 남길 말인가",
+        "tierLabel": "성공",
+        "playMs": 2536
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "한여름의 태양",
+        "text": "머리카락으로 귀찌를 가린다",
+        "detail": "자유 입력 → 귀찌를 머리카락으로 가린다",
+        "playMs": 3597
+      },
+      {
+        "kind": "check",
+        "label": "귀찌를 머리카락으로 가린다",
+        "stat": "손재주",
+        "statValue": 1,
+        "mods": [
+          {
+            "label": "계획",
+            "value": 1
+          }
+        ],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 10,
+        "tier": "hit",
+        "beatTitle": "한여름의 태양",
+        "tierLabel": "성공",
+        "playMs": 3597
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "묶인 손목",
+        "text": "아무도 안 보냈어요. 전 그냥 여행자예요",
+        "detail": "자유 입력 → 끝까지 결백을 주장한다",
+        "playMs": 4017
+      },
+      {
+        "kind": "check",
+        "label": "끝까지 결백을 주장한다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [
+          {
+            "label": "입력한 말",
+            "value": 1
+          }
+        ],
+        "dice": [
+          2,
+          6
+        ],
+        "total": 11,
+        "tier": "hit",
+        "beatTitle": "묶인 손목",
+        "tierLabel": "성공",
+        "playMs": 4017
       }
     ],
     "tracks": [
@@ -148,7 +299,11 @@
         "max": 10,
         "unit": "",
         "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
-        "value": 7
+        "value": 8,
+        "clock": {
+          "kind": "progress",
+          "warnAt": 7
+        }
       },
       {
         "key": "집착",
@@ -169,10 +324,14 @@
       {
         "key": "귀찌",
         "label": "귀찌 수명",
-        "max": 10,
+        "max": 8,
         "unit": "",
-        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
-        "value": 6
+        "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+        "value": 5,
+        "clock": {
+          "kind": "countdown",
+          "warnAt": 2
+        }
       },
       {
         "key": "탈주",
@@ -223,18 +382,18 @@
   "cpuBeforeLoad": "",
   "net": {
     "pids": [
-      21430
+      34594
     ],
-    "samples": 14,
+    "samples": 12,
     "endpoints": [
-      "TCP 127.0.0.1:18183 (LISTEN)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56055 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56058 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56067 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56068 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56069 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56070 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56071 (ESTABLISHED)"
+      "TCP 127.0.0.1:18191 (LISTEN)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51180 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51194 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51196 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51197 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51198 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51199 (ESTABLISHED)",
+      "TCP 127.0.0.1:18191->127.0.0.1:51200 (ESTABLISHED)"
     ],
     "external": [],
     "publicListeners": []

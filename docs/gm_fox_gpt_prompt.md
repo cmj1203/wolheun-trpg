@@ -21,3 +21,5 @@
 
 ## 넣는 곳
 assets/ep01/gen/gm/ 의 gm_*.png 이름(기존 판은 gm/old/ 로). 화면 위쪽 GM 말상자 왼쪽에 120~150px로 들어간다(데모 레인 몫).
+
+사용자 선택(11-05): 기본 얼굴은 후보 1번(`work/art/gpt/gm/gm_neutral_cand1.png`). 표정 3장은 이 그림을 기준으로 그린다.

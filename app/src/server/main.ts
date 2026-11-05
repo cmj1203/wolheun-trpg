@@ -10,6 +10,8 @@ import { GameError, type Action, type AssetSpec, type GameState, type Scenario }
 import { DEFAULT_GM_OPTIONS, LocalGm } from '../gm/gm.ts';
 import { LlmClient } from '../gm/llm.ts';
 import { loadLore, withNotes } from '../gm/lore.ts';
+import { gitShortHash, handleFeedback } from './feedback.ts';
+import { rejectForeignPost } from './same_origin.ts';
 
 const APP = resolve(import.meta.dir, '..', '..');
 const ROOT = resolve(APP, '..');
@@ -35,6 +37,8 @@ export interface ServerOptions {
   atlasFile: string;
   logsDir: string;
   llmTimeoutMs: number;
+  /** 게임 속 피드백을 덧붙이는 jsonl. 없으면 app/feedback/feedback.jsonl. */
+  feedbackFile?: string;
 }
 
 export function optionsFromEnv(env: Record<string, string | undefined> = process.env): ServerOptions {
@@ -48,6 +52,7 @@ export function optionsFromEnv(env: Record<string, string | undefined> = process
     atlasFile: env.WOLHEUN_ATLAS ?? join(APP, 'logs', 'atlas.json'),
     logsDir: env.WOLHEUN_LOGS ?? join(APP, 'logs'),
     llmTimeoutMs: Number(env.WOLHEUN_LLM_TIMEOUT_MS ?? 90_000),
+    feedbackFile: env.WOLHEUN_FEEDBACK ?? join(APP, 'feedback', 'feedback.jsonl'),
   };
 }
 
@@ -130,7 +135,10 @@ function parseAction(v: unknown): Action {
   if (a?.type === 'free' && typeof a.text === 'string') return { type: 'free', text: a.text };
   if (a?.type === 'luck') return { type: 'luck', use: (v as { use?: unknown }).use === true };
   if (a?.type === 'confirm') return { type: 'confirm', ok: (v as { ok?: unknown }).ok === true };
-  if (a?.type === 'ask' && typeof a.text === 'string') return { type: 'ask', text: a.text };
+  if (a?.type === 'ask' && typeof a.text === 'string') {
+    const scene = (v as { scene?: unknown }).scene;
+    return { type: 'ask', text: a.text, scene: typeof scene === 'string' ? scene : null };
+  }
   if (a?.type === 'interject' && typeof a.text === 'string') {
     const raw = v as { scene?: unknown; shown?: unknown; pending?: unknown };
     const shown = Array.isArray(raw.shown) ? raw.shown.slice(-12) : [];
@@ -175,6 +183,8 @@ async function buildManifest(scenario: Scenario) {
     backgrounds: await refs(scenario.backgrounds),
     sprites: await refs(scenario.sprites),
     cgs: await refs(scenario.cgs),
+    items: Object.fromEntries((await Promise.all(scenario.sheet.items.map(async (i) => [i.id, await mediaUrl(i.file)] as const))).filter((p): p is readonly [string, string] => p[1] !== null)),
+    cutins: { crit: await mediaUrl('assets/ep01/gen/fx/cutin_crit.png'), miss: await mediaUrl('assets/ep01/gen/fx/cutin_miss.png') },
     cast: Object.fromEntries(
       Object.entries(scenario.cast).map(([key, c]) => [key, { display: c.display, style: c.style, sprite: c.sprite ?? null, lore: c.lore ?? null }]),
     ),
@@ -207,6 +217,8 @@ export async function startServer(opts: ServerOptions) {
   const manifest = await buildManifest(scenario);
   const sessions = new Map<string, Session>();
   await mkdir(opts.logsDir, { recursive: true });
+  const feedbackFile = opts.feedbackFile ?? join(APP, 'feedback', 'feedback.jsonl');
+  const version = await gitShortHash(APP);
 
   const persist = async (s: Session) => {
     const fresh = s.state.log.slice(s.logged);
@@ -234,6 +246,12 @@ export async function startServer(opts: ServerOptions) {
       }
     };
 
+  const post = (fn: (req: Request) => Promise<Response>) =>
+    handle(async (req) => {
+      const foreign = rejectForeignPost(req);
+      return foreign ? json({ error: foreign.error }, foreign.status) : fn(req);
+    });
+
   const server = Bun.serve({
     hostname: '127.0.0.1',
     port: opts.port,
@@ -254,8 +272,22 @@ export async function startServer(opts: ServerOptions) {
         }),
       },
       '/api/manifest': { GET: () => json(manifest) },
+      '/feedback': {
+        POST: (req, srv): Promise<Response> =>
+          handleFeedback(req, {
+            file: feedbackFile,
+            version,
+            ip: srv.requestIP(req)?.address ?? null,
+            enrich: (id) => {
+              const s = typeof id === 'string' ? sessions.get(id) : undefined;
+              if (!s) return null;
+              const { state } = s;
+              return { seed: state.seed, beat: state.beat, beatTitle: scenario.beats[state.beat]?.title ?? null, lastInput: state.said?.at(-1) ?? null, tracks: state.tracks, flags: state.flags, ending: state.ending };
+            },
+          }),
+      },
       '/api/new': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const seed = typeof body.seed === 'number' || typeof body.seed === 'string' ? seedFrom(body.seed) : seedFrom(crypto.randomUUID());
           const id = crypto.randomUUID();
@@ -267,7 +299,7 @@ export async function startServer(opts: ServerOptions) {
         }),
       },
       '/api/act': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const s = sessionOf(body.session);
           const action = parseAction(body.action);
@@ -311,7 +343,7 @@ export async function startServer(opts: ServerOptions) {
         }),
       },
       '/api/save': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const s = sessionOf(body.session);
           const slot = typeof body.slot === 'string' ? body.slot : '';
@@ -328,7 +360,7 @@ export async function startServer(opts: ServerOptions) {
       },
       '/api/saves': { GET: handle(async () => json({ saves: (await listSaves(opts.savesDir)).filter((m) => m.slot !== AUTO_FORK) })) },
       '/api/load': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const slot = typeof body.slot === 'string' ? body.slot : '';
           const loaded = await readSave(opts.savesDir, slot, scenario);
@@ -342,7 +374,7 @@ export async function startServer(opts: ServerOptions) {
       },
       '/api/atlas': { GET: handle(async () => json(buildAtlas(scenario, await readAtlas()))) },
       '/api/atlas/hint': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const hint = nextHint(scenario, await readAtlas(), typeof body.key === 'string' ? body.key : '');
           if (!hint) return json({ error: '없는 칸입니다' }, 400);
@@ -351,7 +383,7 @@ export async function startServer(opts: ServerOptions) {
         }),
       },
       '/api/atlas/reset': {
-        POST: handle(async () => {
+        POST: post(async () => {
           await Bun.write(opts.atlasFile, JSON.stringify(emptyAtlas()));
           return json({ ok: true });
         }),

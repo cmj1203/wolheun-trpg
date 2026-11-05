@@ -1,0 +1,492 @@
+{
+ "where": "alone",
+ "input": "총을 쏜다",
+ "seed": 6,
+ "session": "ec690061-db08-4758-a39c-4751eb23ceee",
+ "start": {
+  "events": [
+   {
+    "type": "scene",
+    "beat": "b00_open",
+    "title": "여는 글",
+    "bg": "desert_wide",
+    "cast": {
+     "left": null,
+     "center": null,
+     "right": null
+    },
+    "sprites": {}
+   },
+   {
+    "type": "line",
+    "speaker": "GM",
+    "display": "GM",
+    "style": "gm",
+    "text": "북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "GM",
+    "display": "GM",
+    "style": "gm",
+    "text": "두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "GM",
+    "display": "GM",
+    "style": "gm",
+    "text": "아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "GM",
+    "display": "GM",
+    "style": "gm",
+    "text": "본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "GM",
+    "display": "GM",
+    "style": "gm",
+    "text": "남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "GM",
+    "display": "GM",
+    "style": "gm",
+    "text": "귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "GM",
+    "display": "GM",
+    "style": "gm",
+    "text": "살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.",
+    "by": "script"
+   },
+   {
+    "type": "scene",
+    "beat": "b01_sand",
+    "title": "길 잃은 지 일주일",
+    "bg": "desert_wide",
+    "cast": {
+     "left": null,
+     "center": "아시나",
+     "right": null
+    },
+    "sprites": {}
+   },
+   {
+    "type": "line",
+    "speaker": "나레이션",
+    "display": "",
+    "style": "narration",
+    "text": "뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "나레이션",
+    "display": "",
+    "style": "narration",
+    "text": "꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "나레이션",
+    "display": "",
+    "style": "narration",
+    "text": "북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "속마음",
+    "display": "아시나",
+    "style": "thought",
+    "text": "하아… 하아…",
+    "by": "script",
+    "sfx": "휘이이잉"
+   },
+   {
+    "type": "line",
+    "speaker": "속마음",
+    "display": "아시나",
+    "style": "thought",
+    "text": "길을 헤맨 지 벌써 일주일째야…",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "속마음",
+    "display": "아시나",
+    "style": "thought",
+    "text": "사방이 온통 모래뿐이라 길을 알 수가 없어…",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "속마음",
+    "display": "아시나",
+    "style": "thought",
+    "text": "심지어 물도 다 떨어져 가고…",
+    "by": "script",
+    "sfx": "꿀꺽",
+    "face": "wary",
+    "cg": "cg_drink"
+   },
+   {
+    "type": "note",
+    "id": "stars",
+    "name": "별과 길"
+   },
+   {
+    "type": "scene",
+    "beat": "b02_people",
+    "title": "사람?!",
+    "bg": "desert_meet",
+    "cast": {
+     "left": null,
+     "center": "아시나",
+     "right": null
+    },
+    "sprites": {}
+   },
+   {
+    "type": "line",
+    "speaker": "나레이션",
+    "display": "",
+    "style": "narration",
+    "text": "귀찌가 뜨겁게 달아올랐다. 변장이 버틸 시간이 줄고 있다.",
+    "by": "script"
+   },
+   {
+    "type": "tracks",
+    "changes": [
+     {
+      "key": "귀찌",
+      "from": 8,
+      "to": 7
+     }
+    ]
+   },
+   {
+    "type": "line",
+    "speaker": "나레이션",
+    "display": "",
+    "style": "narration",
+    "text": "바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "아시나",
+    "display": "아시나",
+    "style": "speech",
+    "text": "응?",
+    "by": "script",
+    "sfx": "흠칫",
+    "face": "surprised"
+   },
+   {
+    "type": "line",
+    "speaker": "속마음",
+    "display": "아시나",
+    "style": "thought",
+    "text": "저건…",
+    "by": "script"
+   },
+   {
+    "type": "line",
+    "speaker": "아시나",
+    "display": "아시나",
+    "style": "speech",
+    "text": "사람?!",
+    "by": "script",
+    "face": "surprised"
+   },
+   {
+    "type": "note",
+    "id": "strangers",
+    "name": "사막의 세 사람"
+   }
+  ],
+  "prompt": {
+   "type": "free",
+   "beat": "b02_people",
+   "placeholder": "저들이 모래언덕 너머로 사라지기 전에 정해야 한다.",
+   "aim": "저 사람들에게 다가갈지, 먼저 살필지, 피해 갈지 정한다.",
+   "example": "달려가서 길을 묻는다",
+   "approaches": [
+    {
+     "id": "run",
+     "label": "달려가서 길을 묻는다",
+     "stat": "체력",
+     "statValue": 0,
+     "locked": false
+    },
+    {
+     "id": "watch",
+     "label": "모래 언덕 뒤에서 먼저 살핀다",
+     "stat": "재치",
+     "statValue": 1,
+     "locked": false
+    },
+    {
+     "id": "avoid",
+     "label": "몰래 돌아서 피해 간다",
+     "stat": "재치",
+     "statValue": 1,
+     "locked": false
+    }
+   ],
+   "rollsLeft": 1
+  },
+  "hud": {
+   "scenarioTitle": "죽음의 사막 지르다",
+   "episode": "1화 · 사막 조우",
+   "beatTitle": "사람?!",
+   "tracks": [
+    {
+     "key": "의심",
+     "label": "의심",
+     "max": 10,
+     "unit": "",
+     "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+     "value": 0
+    },
+    {
+     "key": "집착",
+     "label": "집착",
+     "max": 10,
+     "unit": "",
+     "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+     "value": 0
+    },
+    {
+     "key": "호감",
+     "label": "호감",
+     "max": 10,
+     "unit": "",
+     "desc": "그 남자가 아시나에게 품은 호감",
+     "value": 0
+    },
+    {
+     "key": "귀찌",
+     "label": "귀찌 수명",
+     "max": 10,
+     "unit": "",
+     "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
+     "value": 7
+    },
+    {
+     "key": "탈주",
+     "label": "탈주 준비도",
+     "max": 10,
+     "unit": "",
+     "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+     "value": 0
+    },
+    {
+     "key": "행운",
+     "label": "행운",
+     "max": 10,
+     "unit": "",
+     "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+     "value": 6
+    }
+   ],
+   "abilities": [
+    {
+     "key": "재치",
+     "value": 1
+    },
+    {
+     "key": "손재주",
+     "value": 1
+    },
+    {
+     "key": "매력",
+     "value": 2
+    },
+    {
+     "key": "체력",
+     "value": 0
+    },
+    {
+     "key": "교양",
+     "value": 1
+    }
+   ],
+   "items": [
+    {
+     "id": "magic_bag",
+     "name": "마법 가방",
+     "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+    },
+    {
+     "id": "earring",
+     "name": "마법 귀찌",
+     "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+    },
+    {
+     "id": "map",
+     "name": "낡은 지도",
+     "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+    }
+   ],
+   "notes": [
+    {
+     "id": "nations",
+     "kind": "세계",
+     "name": "크롬웰과 페시안",
+     "text": "크롬웰 제국은 아시나의 나라로 북대륙에 있다. 남대륙 대부분을 차지한 사막 대국 페시안과는 오랜 적이다."
+    },
+    {
+     "id": "zirda",
+     "kind": "장소",
+     "name": "지르다",
+     "text": "두 대륙 사이의 죽음의 사막. 생명이 살지 않는 모래사막이고, 낮에는 태양이 살을 태울 듯 뜨겁다."
+    },
+    {
+     "id": "kracha",
+     "kind": "장소",
+     "name": "크라차",
+     "text": "사막 건너 남대륙의 도시. 아시나가 가려던 곳이다."
+    },
+    {
+     "id": "magic",
+     "kind": "세계",
+     "name": "마법",
+     "text": "마법은 드물고 귀하다. 마법이 깃든 물건은 그것만으로 눈길을 끈다."
+    },
+    {
+     "id": "stars",
+     "kind": "세계",
+     "name": "별과 길",
+     "text": "지도는 낡았지만 별은 그대로다. 밤하늘의 별과 지도를 맞추면 방향을 잡을 수 있다."
+    },
+    {
+     "id": "asina",
+     "kind": "사람",
+     "name": "아시나",
+     "text": "이름은 아시나. 크롬웰 제국 웰든 대공가의 공녀. 여행이 좋아 신분을 숨기고 대륙을 떠돈다. 스스로를 대륙에서 하나뿐인 미소녀라 부른다."
+    },
+    {
+     "id": "disguise",
+     "kind": "세계",
+     "name": "변장",
+     "text": "본모습은 은발에 붉은 눈. 마법 귀찌로 갈색 머리, 갈색 눈으로 바꿨다. 적국 땅에서 크롬웰의 공녀라는 게 들키면 무사하지 못하다."
+    },
+    {
+     "id": "earring_power",
+     "kind": "세계",
+     "name": "귀찌의 힘",
+     "text": "귀찌의 힘에는 끝이 있고, 힘이 닳을수록 귀찌가 뜨겁게 달아오른다. 힘이 바닥나면(0) 변장이 풀려 은발이 드러난다. 3 이하로 떨어지면 마음이 급해져 하는 일마다 손이 떨린다."
+    },
+    {
+     "id": "strangers",
+     "kind": "사람",
+     "name": "사막의 세 사람",
+     "text": "일주일 만에 본 사람들. 남대륙 사막 한복판이니 페시안 사람일 가능성이 크다. 반가운 만큼 조심해야 한다."
+    },
+    {
+     "id": "item:magic_bag",
+     "kind": "소지품",
+     "name": "마법 가방",
+     "text": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+    },
+    {
+     "id": "item:earring",
+     "kind": "소지품",
+     "name": "마법 귀찌",
+     "text": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+    },
+    {
+     "id": "item:map",
+     "kind": "소지품",
+     "name": "낡은 지도",
+     "text": "사막 한가운데서는 별 도움이 되지 않는 지도."
+    }
+   ],
+   "trackGate": [
+    {
+     "note": "man",
+     "tracks": [
+      "의심",
+      "집착",
+      "호감"
+     ]
+    },
+    {
+     "note": "captive",
+     "tracks": [
+      "탈주"
+     ]
+    }
+   ],
+   "playMs": 0
+  }
+ },
+ "preBeat": "b02_people",
+ "turns": [
+  {
+   "n": 1,
+   "beat": "b02_people",
+   "action": {
+    "type": "free",
+    "text": "총을 쏜다"
+   },
+   "events": [
+    {
+     "type": "echo",
+     "text": "총을 쏜다"
+    },
+    {
+     "type": "line",
+     "speaker": "나레이션",
+     "display": "",
+     "style": "narration",
+     "text": "품 안을 거칠게 뒤졌으나 손끝에 걸리는 것은 딱딱한 금속의 감촉뿐이었다. 이 사막에 어울리지 않는 낯선 물건을 찾으려 애써보았지만, 아무런 반응도 없었다.",
+     "by": "gm"
+    },
+    {
+     "type": "line",
+     "speaker": "속마음",
+     "display": "아시나",
+     "style": "thought",
+     "text": "아, 맞다. 그런 건 가져온 적도 없었지!",
+     "by": "gm",
+     "face": "surprised"
+    }
+   ],
+   "before": {
+    "의심": 0,
+    "집착": 0,
+    "호감": 0,
+    "귀찌": 7,
+    "탈주": 0,
+    "행운": 6
+   },
+   "after": {
+    "의심": 0,
+    "집착": 0,
+    "호감": 0,
+    "귀찌": 7,
+    "탈주": 0,
+    "행운": 6
+   },
+   "error": null
+  }
+ ]
+}

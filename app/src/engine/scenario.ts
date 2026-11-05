@@ -1,5 +1,5 @@
 import { condNames, parseCond } from './conditions.ts';
-import { type CallbackSpec,
+import { type CallbackSpec, type FactSpec,
   ABILITIES,
   TIERS,
   TRACKS,
@@ -30,8 +30,11 @@ import { type CallbackSpec,
   type PriceTag,
   type PriceWeight,
   type Scenario,
+  TENSION_MAX,
+  TENSION_MIN,
   type Tier,
   type Track,
+  type TwistSpec,
 } from './types.ts';
 
 export class ScenarioError extends Error {
@@ -368,6 +371,28 @@ function parseCastSlots(v: unknown, where: string): CastSlots | undefined {
   return slots;
 }
 
+/** 장면 검사 표: altered · interrupt 두 목록 모두 하나 이상, id 는 표 안에서 고유. */
+function parseTwist(v: unknown, cast: Record<string, CastSpec>, where: string): NonNullable<BeatSpec['twist']> {
+  const r = rec(v, where);
+  const seen = new Set<string>();
+  const one = (key: 'altered' | 'interrupt'): TwistSpec[] =>
+    list(r[key], `${where}.${key}`).map((raw, i) => {
+      const at = `${where}.${key}[${i}]`;
+      const t = rec(raw, at);
+      const id = str(t.id, `${at}.id`);
+      if (seen.has(id)) throw new Error(`${at}.id: 같은 id 가 두 번 나옵니다 (${id})`);
+      seen.add(id);
+      const spec: TwistSpec = { id, lines: parseLines(t.lines, cast, `${at}.lines`) };
+      if (spec.lines.length === 0) throw new Error(`${at}.lines: 사건 줄이 비어 있습니다`);
+      const effects = parseEffects(t.effects, `${at}.effects`);
+      if (effects) spec.effects = effects;
+      return spec;
+    });
+  const twist = { altered: one('altered'), interrupt: one('interrupt') };
+  if (twist.altered.length === 0 || twist.interrupt.length === 0) throw new Error(`${where}: altered 와 interrupt 는 각각 하나 이상이어야 합니다`);
+  return twist;
+}
+
 function parseBeat(id: string, v: unknown, cast: Record<string, CastSpec>, freeDefaults: Raw): BeatSpec {
   const where = `beats.${id}`;
   const r = rec(v, where);
@@ -383,6 +408,7 @@ function parseBeat(id: string, v: unknown, cast: Record<string, CastSpec>, freeD
   if (r.time !== undefined) beat.time = num(r.time, `${where}.time`);
   const effects = parseEffects(r.effects, `${where}.effects`);
   if (effects) beat.effects = effects;
+  if (r.twist !== undefined) beat.twist = parseTwist(r.twist, cast, `${where}.twist`);
   if (r.choices !== undefined) beat.choices = list(r.choices, `${where}.choices`).map((c, i) => parseChoice(c, cast, `${where}.choices[${i}]`));
   if (r.free !== undefined) beat.free = parseFree(r.free, cast, `${where}.free`, freeDefaults);
   const next = parseNext(r.next, `${where}.next`);
@@ -465,9 +491,13 @@ export function parseScenario(text: string): Scenario {
   const items: ItemSpec[] = list(sheet.items, 'sheet.items').map((x, i) => {
     const r = rec(x, `sheet.items[${i}]`);
     const item: ItemSpec = { id: str(r.id, `sheet.items[${i}].id`), name: str(r.name, `sheet.items[${i}].name`), desc: str(r.desc, `sheet.items[${i}].desc`) };
+    const file = optStr(r.file, `sheet.items[${i}].file`);
+    if (file) item.file = file;
     if (r.hidden === true) item.hidden = true;
     return item;
   });
+  const tension = sheet.tension === undefined ? undefined : num(sheet.tension, 'sheet.tension');
+  if (tension !== undefined && (tension < TENSION_MIN || tension > TENSION_MAX)) throw new Error(`sheet.tension: ${TENSION_MIN}~${TENSION_MAX} 사이여야 합니다 (${tension})`);
   const beats: Record<string, BeatSpec> = {};
   for (const [id, raw] of Object.entries(rec(root.beats, 'beats'))) beats[id] = parseBeat(id, raw, cast, root.free_defaults === undefined ? {} : rec(root.free_defaults, 'free_defaults'));
   const scenario: Scenario = {
@@ -482,6 +512,7 @@ export function parseScenario(text: string): Scenario {
       abilities,
       tracks,
       items,
+      ...(tension === undefined ? {} : { tension }),
       ...(sheet.reveal === undefined
         ? {}
         : (() => {
@@ -598,7 +629,13 @@ export function parseScenario(text: string): Scenario {
     facts: list(root.facts ?? [], 'facts').map((x, i) => {
       const r = rec(x, `facts[${i}]`);
       rejectForbid(r, `facts[${i}]`);
-      return { if: str(r.if, `facts[${i}].if`), text: str(r.text, `facts[${i}].text`), state_guard: list(r.state_guard ?? [], `facts[${i}].state_guard`).map((t, j) => str(t, `facts[${i}].state_guard[${j}]`)) };
+      const fact: FactSpec = { if: str(r.if, `facts[${i}].if`), text: str(r.text, `facts[${i}].text`), state_guard: list(r.state_guard ?? [], `facts[${i}].state_guard`).map((t, j) => str(t, `facts[${i}].state_guard[${j}]`)) };
+      if (r.state_check !== undefined) {
+        const c = rec(r.state_check, `facts[${i}].state_check`);
+        const sets = optStr(c.sets, `facts[${i}].state_check.sets`);
+        fact.state_check = { about: list(c.about, `facts[${i}].state_check.about`).map((t, j) => str(t, `facts[${i}].state_check.about[${j}]`)), ask: str(c.ask, `facts[${i}].state_check.ask`), ...(sets ? { sets } : {}) };
+      }
+      return fact;
     }),
   };
   const problems = checkScenario(scenario);
@@ -720,7 +757,8 @@ export function checkScenario(s: Scenario): string[] {
   for (const beat of Object.values(s.beats)) {
     const where = `beats.${beat.id}`;
     if (beat.bg && !s.backgrounds[beat.bg]) problems.push(`${where}.bg: 없는 배경 "${beat.bg}"`);
-    for (const line of linesOfBeat(beat)) {
+    const twists = [...(beat.twist?.altered ?? []), ...(beat.twist?.interrupt ?? [])];
+    for (const line of [...linesOfBeat(beat), ...twists.flatMap((t) => t.lines)]) {
       if (line.cg && !s.cgs[line.cg]) problems.push(`${where}: 없는 이벤트 CG "${line.cg}"`);
       if (line.face) {
         const bad = faceProblem(s, line.speaker, line.face);
@@ -731,6 +769,7 @@ export function checkScenario(s: Scenario): string[] {
     for (const [id, cg] of Object.entries(s.cgs)) if (!cg.file) problems.push(`cgs.${id}.file: 이벤트 CG 에는 파일이 필요합니다`);
     for (const slot of Object.values(beat.cast ?? {})) if (slot && !s.cast[slot]) problems.push(`${where}.cast: cast 에 없는 인물 "${slot}"`);
     checkEffects(beat.effects, `${where}.effects`);
+    for (const t of twists) checkEffects(t.effects, `${where}.twist.${t.id}.effects`);
     checkNext(beat.next, `${where}.next`);
     const waits = beat.choices !== undefined || beat.free !== undefined;
     if (beat.ending) {

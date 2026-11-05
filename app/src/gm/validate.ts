@@ -20,6 +20,8 @@ export interface CheckOptions {
   lore: Lore;
   /** 엔진이 정한 상태와 어긋나는 표현(장면 state_guard + 참인 사실의 state_guard). */
   stateGuard: readonly string[];
+  /** 이번 판에 화면에 나온 줄(화자별). 같은 화자의 같은 말은 길이와 상관없이 막는다. */
+  spoken?: Readonly<Record<string, readonly string[]>>;
   echoOnly: readonly string[];
   /** 이 행동을 전제하는 낱말 묶음. 입력에 하나도 없는데 출력에 있으면 막는다. */
   presume?: readonly string[];
@@ -34,6 +36,8 @@ export interface CheckOptions {
   gist: string;
   playerLore: string;
   reactor?: string;
+  /** 첫 줄을 말해야 하는 화자(세계 밖 행동은 나레이션이 먼저 동작을 그린다). */
+  first?: string;
   /** 지금 장면에 없는 인물을 가리키는 말. 인물 대사와 내레이션에서 막는다. */
   absent?: readonly string[];
   /** 이번 입력. 속마음이 이 문구를 되풀이하면 막는다. */
@@ -84,6 +88,8 @@ const ECHO_MAX = 6;
 
 /** 속마음이 플레이어 입력을 남이 한 말처럼 받는 말. */
 const HEARD_AS_OTHER = /무슨 소리|뭔 소리|헛소리/u;
+/** "나 지금 무슨 소리를 하는 거야"는 자기 말을 돌아보는 것이지 남의 말처럼 듣는 것이 아니다. */
+const SELF_SUBJECT = /(^|[\s,.!?…])(나|내가|난|내)\s/u;
 
 /** 속마음이 입력 문구를 그대로 안고 있는가. 짧은 입력은 거의 전부, 긴 입력은 여섯 글자 이어지면 되풀이로 본다. */
 export function echoesInput(line: string, input: string): boolean {
@@ -91,6 +97,14 @@ export function echoesInput(line: string, input: string): boolean {
   const size = [...norm].length;
   if (size < ECHO_MIN) return false;
   return longestCommon(normalizeKo(line), norm) >= Math.max(ECHO_MIN, Math.min(ECHO_MAX, Math.ceil(size * 0.6)));
+}
+
+const NOT_DONE = /^[가-힣]*?(지\s*(못|않)(?![가-힣]*으면)|\s*(틈|새|겨를|수|곳|데|길|여유|시간)[도은는이가조차]*\s*없)/u;
+
+/** 행동으로 쓴 낱말인가. 다른 낱말의 일부('정막을')와 하지 못했다는 서술('막을 틈도 없이')은 전제가 아니다. */
+function presumes(text: string, term: string): boolean {
+  const pattern = new RegExp(`(?<![가-힣])${term.trim().split(/\s+/).join('\\s*')}`, 'gu');
+  return [...text.matchAll(pattern)].some((m) => !NOT_DONE.test(text.slice(m.index + m[0].length, m.index + m[0].length + 16)));
 }
 
 /** 등급과 반대되는 서술. 정해진 결과 요지에 같은 말이 있으면 막지 않는다. */
@@ -166,6 +180,7 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
 
   if (lines.length === 0) add('format', 'empty', '대사가 한 줄도 없습니다');
   if (opt.reactor && lines.length > 0 && !lines.some((l) => l.speaker === opt.reactor)) add('format', 'no_reaction', `${opt.reactor}의 대사나 생각이 한 줄은 있어야 합니다`);
+  if (opt.first && lines.length > 0 && lines[0]?.speaker !== opt.first) add('format', 'first_speaker', `첫 줄은 ${opt.first}이 ${opt.playerLore}가 실제로 한 동작을 그려야 합니다`);
   if (lines.length > opt.maxLines) add('format', 'too_many', `${lines.length}줄입니다(최대 ${opt.maxLines}줄)`);
   if (opt.minLines !== undefined && lines.length > 0 && lines.length < opt.minLines) add('format', 'too_few', `${lines.length}줄입니다. 큰 행동에는 행동이 어떻게 됐는지와 상대의 대사·몸짓 반응을 합쳌 ${opt.minLines}줄 이상 쓰세요`);
   // 플레이어가 먼저 한 말·행동에 든 말은 GM 이 지어낸 것이 아니다. 스포일러와 등급을 뻐고 장면 검사에서 뻐 준다.
@@ -183,11 +198,13 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
     // 길이는 가벼운 위반이다. 넘으면 다시 쓰게 하되, 끝내 넘어도 작가 대사로 바꾸지 않는다.
     if (length > opt.maxChars) add('format', 'too_long', `한 줄이 ${length}자입니다(최대 ${opt.maxChars}자)`, 'soft');
     if (seen.has(line.text)) add('format', 'repeat', `같은 대사를 되풀이했습니다: "${line.text}"`, 'soft');
+    const spokenNorm = normalizeKo(line.text);
+    if (spokenNorm && opt.spoken?.[line.speaker]?.some((t) => normalizeKo(t) === spokenNorm)) add('beat', 'repeat_play', `이번 판에 ${line.speaker}이(가) 이미 한 말("${line.text}")입니다. 이번 입력에 맞는 다른 말로 쓰세요`);
     seen.add(line.text);
     const prefix = speakerPrefix(line, opt);
     if (prefix) add('format', 'speaker_prefix', `대사 안에 화자 이름("${prefix}:")을 넣었습니다. 화자는 speaker 칸에만 쓰세요`);
     const cast = opt.cast[line.speaker];
-    if (cast?.style === 'thought' && HEARD_AS_OTHER.test(line.text)) {
+    if (cast?.style === 'thought' && HEARD_AS_OTHER.test(line.text) && !SELF_SUBJECT.test(line.text)) {
       add('beat', 'echo_input', `속마음이 입력을 남의 말처럼 받았습니다("${line.text}"). 입력은 아시나 자신의 말이나 행동입니다. 몸 상태와 주변 상황으로 이으세요`);
     }
     if (cast?.style === 'thought' && opt.input && echoesInput(line.text, opt.input)) {
@@ -258,7 +275,7 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
   for (const term of opt.lore.exposure) if (mentions(voiced, term) && !playerDid(term)) add('beat', 'exposed', `변장이 풀렸다고 읽히는 말("${term}")을 썼습니다. 변장은 풀리지 않고 아무도 본모습을 보지 못합니다`);
   for (const term of opt.absent ?? []) if (mentions(voiced, term) && !playerDid(term)) add('beat', 'absent', `지금 장면에 없는 인물("${term}")을 썼습니다. 아시나 혼자 겪는 일로 쓰세요`);
   if (opt.presume?.length && !opt.presume.some(playerDid)) {
-    const used = opt.presume.find((w) => mentions(voiced, w));
+    const used = opt.presume.find((w) => presumes(voiced, w));
     if (used) add('beat', 'presume', `플레이어가 하지 않은 행동("${used}")을 전제했습니다. 플레이어가 실제로 한 행동으로 쓰세요`);
   }
   for (const term of opt.echoOnly) {
@@ -276,10 +293,47 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
   return found;
 }
 
+/** 글 앞에 쓴 화자 이름("속마음: …")은 뜻이 분명하니 다시 쓰게 하지 않고 그 화자의 줄로 옮긴다. */
+function moveSpeakerPrefix(line: Line, opt: CheckOptions): Line {
+  const head = speakerPrefix(line, opt);
+  const key = head ? opt.speakers.find((s) => s === head || opt.cast[s]?.display === head) : undefined;
+  if (!key) return line;
+  const text = line.text.replace(/^[^:：]*[:：]\s*/u, '');
+  if (!text) return line;
+  const { face, ...rest } = line;
+  return { ...rest, speaker: key, text, ...(opt.faced?.includes(key) ? { face: face ?? 'neutral' } : {}) };
+}
+
+/** 길이 상한을 넘은 줄을 문장 경계에서 나눈다. 줄 수 상한을 넘게 되면 그대로 둔다(그때는 다시 쓰게 한다). */
+function splitLongLines(lines: Line[], opt: CheckOptions): Line[] {
+  const out = lines.flatMap((line) => {
+    if ([...line.text].length <= opt.maxChars) return [line];
+    const chunks: string[] = [];
+    for (const sentence of line.text.split(/(?<=[.!?…])\s+/u)) {
+      const last = chunks.at(-1);
+      if (last !== undefined && [...`${last} ${sentence}`].length <= opt.maxChars) chunks[chunks.length - 1] = `${last} ${sentence}`;
+      else chunks.push(sentence);
+    }
+    return chunks.map((text) => ({ ...line, text }));
+  });
+  return out.length <= opt.maxLines ? out : lines;
+}
+
+/** 입력은 화면에 이미 나왔다. 그걸 되받는 속마음 줄은 다른 줄이 남으면 다시 쓰게 하지 않고 뺀다. */
+function dropEchoThoughts(lines: Line[], opt: CheckOptions): Line[] {
+  const kept = lines.filter((line) => {
+    if (opt.cast[line.speaker]?.style !== 'thought') return true;
+    const heard = HEARD_AS_OTHER.test(line.text) && !SELF_SUBJECT.test(line.text);
+    return !heard && !(opt.input && echoesInput(line.text, opt.input));
+  });
+  return kept.length ? kept : lines;
+}
+
 export function validateOutput(raw: string, opt: CheckOptions): { lines: Line[]; violations: Violation[] } {
   const parsed = parseGmJson(raw);
   if (typeof parsed === 'string') return { lines: [], violations: [{ kind: 'format', rule: 'json', detail: parsed, severity: 'hard' }] };
-  return { lines: parsed, violations: checkLines(parsed, opt) };
+  const lines = dropEchoThoughts(splitLongLines(parsed.map((l) => moveSpeakerPrefix(l, opt)), opt), opt);
+  return { lines, violations: checkLines(lines, opt) };
 }
 
 const KIND_LABEL: Record<ViolationKind, string> = { format: '형식', lore: '설정', rating: '등급', beat: '장면' };

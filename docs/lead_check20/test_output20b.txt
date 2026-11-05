@@ -1,0 +1,9 @@
+$ bunx tsc --noEmit
+exit 0
+
+$ bun test
+exit 0
+ 251 pass
+ 0 fail
+ 1749 expect() calls
+Ran 251 tests across 8 files. [186.00ms]

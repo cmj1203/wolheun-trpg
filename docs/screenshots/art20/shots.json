@@ -1,0 +1,154 @@
+{
+ "first_scene_350ms": {
+  "title": "길 잃은 지 일주일",
+  "text": "뜨",
+  "stage": [
+   1440,
+   810
+  ],
+  "dialogTop": 575,
+  "figs": [
+   {
+    "f": "asina_hood_neutral.png",
+    "op": "1",
+    "loaded": true,
+    "h": 591,
+    "head": 74,
+    "foot": 573,
+    "eye": 143
+   }
+  ]
+ },
+ "first_scene": {
+  "title": "길 잃은 지 일주일",
+  "text": "뜨",
+  "stage": [
+   1440,
+   810
+  ],
+  "dialogTop": 575,
+  "figs": [
+   {
+    "f": "asina_hood_neutral.png",
+    "op": "1",
+    "loaded": true,
+    "h": 591,
+    "head": 74,
+    "foot": 573,
+    "eye": 143
+   }
+  ]
+ },
+ "first": true,
+ "cutin_miss": {
+  "title": "사람?!",
+  "text": "사람?!",
+  "stage": [
+   1440,
+   810
+  ],
+  "dialogTop": 575,
+  "figs": [
+   {
+    "f": "asina_hood_surprised.png",
+    "op": "1",
+    "loaded": true,
+    "h": 591,
+    "head": 67,
+    "foot": 566,
+    "eye": 136
+   }
+  ]
+ },
+ "two_people": {
+  "title": "길을 물어봤을 뿐인데",
+  "text": "…",
+  "stage": [
+   1440,
+   810
+  ],
+  "dialogTop": 575,
+  "figs": [
+   {
+    "f": "asina_hood_neutral.png",
+    "op": "1",
+    "loaded": true,
+    "h": 591,
+    "head": 74,
+    "foot": 573,
+    "eye": 143
+   },
+   {
+    "f": "behidat_wary.png",
+    "op": "1",
+    "loaded": true,
+    "h": 591,
+    "head": 13,
+    "foot": 566,
+    "eye": 102
+   }
+  ]
+ },
+ "two": true,
+ "cutin_crit": {
+  "title": "왜지?",
+  "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+  "stage": [
+   1440,
+   810
+  ],
+  "dialogTop": 575,
+  "figs": [
+   {
+    "f": "asina_hood_neutral.png",
+    "op": "1",
+    "loaded": true,
+    "h": 591,
+    "head": 74,
+    "foot": 573,
+    "eye": 143
+   },
+   {
+    "f": "behidat_neutral.png",
+    "op": "1",
+    "loaded": true,
+    "h": 591,
+    "head": 21,
+    "foot": 573,
+    "eye": 110
+   }
+  ]
+ },
+ "hood_after": true,
+ "cg_swing": {
+  "title": "마지막으로 남길 말인가",
+  "text": "(",
+  "stage": [
+   1440,
+   810
+  ],
+  "dialogTop": 575,
+  "figs": [
+   {
+    "f": "asina_surprised.png",
+    "op": "0",
+    "loaded": true,
+    "h": 591,
+    "head": 81,
+    "foot": 566,
+    "eye": 136
+   },
+   {
+    "f": "behidat_smile.png",
+    "op": "0",
+    "loaded": true,
+    "h": 591,
+    "head": 21,
+    "foot": 573,
+    "eye": 110
+   }
+  ]
+ },
+ "dusk": true,
+ "night": true
+}

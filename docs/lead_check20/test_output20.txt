@@ -1,0 +1,14 @@
+$ bunx tsc --noEmit
+exit 0 (0.8s)
+
+
+$ bun test
+exit 0 (0.2s)
+이언트 패키지를 쓰지 않는다 [1.00ms]
+(pass) 게임 실행 코드에 외부 네트워크 호출이 없다 > 앱 서버는 127.0.0.1 에만 열리고, 화면은 같은 출처만 허용하는 CSP 를 받는다 [15.85ms]
+
+ 251 pass
+ 0 fail
+ 1749 expect() calls
+Ran 251 tests across 8 files. [176.00ms]
+

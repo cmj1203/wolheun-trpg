@@ -1,0 +1,54 @@
+{
+ "seed1": {
+  "rows": 15,
+  "scenes": 4,
+  "kinds": {
+   "replay-scene": 4,
+   "replay-decision": 4,
+   "replay-check": 4,
+   "replay-price": 3
+  },
+  "overflowX": 0,
+  "more": true,
+  "scroller": "result",
+  "scrollH": 897,
+  "clientH": 810,
+  "sample": [
+   "사람?!",
+   "달려가서 길을 묻는다 행동 버튼",
+   "달려가서 길을 묻는다 (체력 +0)주사위 2·4 + 수치 0 = 6 / 목표 10실패",
+   "대가수치 — 모래에 무릎까지 빠져 기운이 빠졌다.",
+   "왜지?",
+   "미인계를 쓴다 행동 버튼",
+   "미인계를 쓴다 (매력 +2)주사위 6·6 + 수치 2 = 14 / 목표 10성공",
+   "마지막으로 남길 말인가"
+  ],
+  "moreAfterScroll": false
+ },
+ "seed8": {
+  "rows": 19,
+  "scenes": 5,
+  "kinds": {
+   "replay-scene": 5,
+   "replay-decision": 5,
+   "replay-check": 5,
+   "replay-price": 4
+  },
+  "overflowX": 0,
+  "more": true,
+  "scroller": "result",
+  "scrollH": 1024,
+  "clientH": 810,
+  "sample": [
+   "사람?!",
+   "달려가서 길을 묻는다 행동 버튼",
+   "달려가서 길을 묻는다 (체력 +0)주사위 4·4 + 수치 0 = 8 / 목표 10대가 있는 성공",
+   "대가자리 — 바위 그늘을 벗어나 트인 모래 위에 서 버렸다. 숨을 데가 없다.",
+   "왜지?",
+   "미인계를 쓴다 행동 버튼",
+   "미인계를 쓴다 (매력 +2)주사위 2·6 + 수치 2 = 10 / 목표 10성공",
+   "마지막으로 남길 말인가"
+  ],
+  "moreAfterScroll": false
+ }
+}

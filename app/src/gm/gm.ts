@@ -161,10 +161,10 @@ export class LocalGm implements GmPort {
         return JSON.parse(out.text) as { kind?: unknown; about?: unknown; risk?: unknown; approach?: unknown; item?: unknown; reason?: unknown; stat?: unknown; difficulty?: unknown; odd?: unknown; absurd?: unknown; bold?: unknown; deed?: unknown };
       };
       let parsed = await read();
-      // 답을 구하는 꼴의 문장은 혼잣말이나 행동일 수 없으니 물음의 종류 중에서 다시 고르게 한다.
+      // 물음 꼴이어도 답을 바라지 않는 탄식이나 자문이면 혼잣말이다. 답을 구하는 물음인지 다시 가린다.
       // 존댓말 물음은 앞사람에게 건넨 말이다. 자기 자신을 묻는 말은 앞에 사람이 있어도 진행자에게 묻는 말이다.
       const spokenOrActed = parsed.kind === 'action' || parsed.kind === 'person';
-      if (parsed.kind === 'self' && isAsking(ctx.text)) parsed = await read(QUESTION_KINDS);
+      if (parsed.kind === 'self' && isAsking(ctx.text)) parsed = await read([...QUESTION_KINDS, 'self']);
       // 그만하고 싶다는 말은 아시나의 푸념과 꼴이 같다. 혼잣말로 읽었으면 게임에 건넨 말인지 한 번 더 가린다.
       else if (parsed.kind === 'self') parsed = await read(SELF_OR_GAME);
       else if (spokenOrActed && isPlainQuestion(ctx.text) && !isPolite(ctx.text)) {
@@ -261,8 +261,16 @@ export class LocalGm implements GmPort {
     if (isNoise(ctx.text)) return Promise.resolve({ lines: picked ? [picked] : quiet, meta: { attempts: 0, violations: [], fallback: true, ms: 0, model: this.model } });
     // 세계 밖 물건을 꺼낸 행동은 "이상한 몸짓" 같은 얼버무리 말을 막고, 상대가 있으면 그 인물의 반응 줄이 있어야 한다.
     const guards = said.absurd ? ['이상한 몸짓'] : [];
-    const reactor = said.interject?.action ? undefined : said.absurd && said.self ? undefined : this.reactorOf(said);
-    return this.write('talk', said, picked ? [picked] : quiet, this.opts.talkLines, guards, (feedback) => buildTalkUser(said, feedback, this.opts.talkLines, this.opts.maxChars), reactor);
+    // 혼자 한 세계 밖 행동은 속마음이 받는다. 상대가 있으면 그 인물이 받는다(첫 줄은 write 가 나레이션으로 고정).
+    // 혼잣말은 앞사람이 듣고 대꾸하지 않는다고 프롬프트에 시키므로 상대의 줄을 요구하지 않는다.
+    const thought = said.free.speakers.find((s) => said.scenario.cast[s]?.style === 'thought');
+    const reactor = said.interject?.action ? undefined : said.self ? (said.absurd ? thought : undefined) : this.reactorOf(said);
+    // 끝까지 위반하면(입력 낱말을 그대로 쓰는 등) 대체 줄도 세계 밖 행동의 틀(나레이션 동작 한 줄 → 반응 한 줄)을 지킨다.
+    const absurdFloor: Line[] = said.absurd && narrator ? [{ speaker: narrator, text: '허공에 손을 내밀었지만 잡히는 것은 없었다.' }] : [];
+    // 혼잣말에 대본의 대체 줄을 내면 입력을 무시하고 대본을 이어 가는 것처럼 보인다. 말이 흩어지는 한 줄로 받는다.
+    const unanswered = ctx.self && quiet.length ? quiet : picked ? [picked] : quiet;
+    const fallback = absurdFloor.length ? [...absurdFloor, ...(picked ? [picked] : [])] : unanswered;
+    return this.write('talk', said, fallback, this.opts.talkLines, guards, (feedback) => buildTalkUser(said, feedback, this.opts.talkLines, this.opts.maxChars), reactor);
   }
 
   /** 대화에서 입력에 반응해야 하는 인물. 상대 인물이 있으면 그 인물, 혼자면 속마음이다. */
@@ -313,7 +321,11 @@ export class LocalGm implements GmPort {
     const who = reactor ? cast[reactor] : undefined;
     const pool = who?.style === 'speech' && who.lore ? this.lore.characters[who.lore]?.reactions?.[ctx.roll.tier] : undefined;
     if (reactor && pool?.length) {
-      const pick = pool[seedFrom(`${ctx.state.seed}|${ctx.beat.id}|${ctx.text}`) % pool.length];
+      // 이번 판에 이미 한 말은 남은 게 있는 동안 고르지 않는다.
+      const said = new Set((ctx.state.spoken?.[reactor] ?? []).map(normalizeKo));
+      const fresh = pool.filter((p) => !said.has(normalizeKo(p.text)));
+      const from = fresh.length ? fresh : pool;
+      const pick = from[seedFrom(`${ctx.state.seed}|${ctx.beat.id}|${ctx.text}`) % from.length];
       if (pick) lines.push({ speaker: reactor, text: pick.text, face: pick.face });
     } else {
       lines.push(...(ctx.free.neutral?.[ctx.roll.tier] ?? []));
@@ -356,9 +368,9 @@ export class LocalGm implements GmPort {
   ): Promise<GmLines> {
     const started = performance.now();
     const violations: string[] = [];
-    const finish = (lines: Line[], attempts: number, usedFallback: boolean): GmLines => ({
+    const finish = (lines: Line[], attempts: number, usedFallback: boolean, setFlags: string[] = []): GmLines => ({
       lines,
-      meta: { attempts, violations, fallback: usedFallback, ms: Math.round(performance.now() - started), model: this.model },
+      meta: { attempts, violations, fallback: usedFallback, ms: Math.round(performance.now() - started), model: this.model, ...(setFlags.length ? { setFlags } : {}) },
     });
     if (!this.llm) {
       violations.push('error:LLM 미연결');
@@ -371,7 +383,10 @@ export class LocalGm implements GmPort {
     // 대화에서는 반응하는 인물이 첫 줄을 말한다. 연출에서는 행동을 먼저 보여 주고 반응은 검사로만 요구한다.
     // 입식이 있는 인물의 대사·속마음 줄은 줄마다 face 를 가지고 온다. 화면이 그 값으로 표정을 바꾼다.
     const faced = facedSpeakers(cast, speakers);
-    const schema = linesSchema(speakers, maxLines, this.opts.maxChars, reactor && task === 'talk' ? { first: reactor, rest: rest.length ? rest : ctx.free.speakers } : undefined, faced);
+    // 세계 밖 행동은 나레이션이 먼저 실제 동작을 그리고, 반응 인물의 줄은 검사(reactor)로 요구한다.
+    const narrator = ctx.absurd && task === 'talk' ? speakers.find((s) => cast[s]?.style === 'narration') : undefined;
+    const first = narrator ?? (reactor && task === 'talk' ? reactor : undefined);
+    const schema = linesSchema(speakers, maxLines, this.opts.maxChars, first ? { first, ...(reactor && reactor !== first ? { second: reactor } : {}), rest: rest.length ? rest : ctx.free.speakers } : undefined, faced);
     const asked = task === 'explain' ? this.lore.knowledge.find((n) => n.id === ctx.about && n.kind === '사람') : undefined;
     const mustMention = asked ? [asked.name, ...asked.keys] : [];
     const moved = MOVE_WORD.test(ctx.text) || (task === 'narrate' && MOVE_WORD.test((ctx as NarrateContext).outcome.gist ?? ''));
@@ -382,6 +397,7 @@ export class LocalGm implements GmPort {
       cast: ctx.scenario.cast,
       lore: loreFor(this.lore, ctx.state),
       stateGuard: [...ctx.free.state_guard, ...activeFacts(ctx.scenario, ctx.state).flatMap((f) => f.state_guard)],
+      ...(task === 'explain' ? {} : { spoken: ctx.state.spoken ?? {} }),
       // 장면이 '그렇게 말했는지'로 갈래를 나누는 낱말(길을 묻는 말 등)은 플레이어가 먼저 쓴 때만 인물이 말할 수 있다.
       echoOnly: [...ctx.free.echo_only, ...ctx.free.approaches.flatMap((a) => a.said?.words ?? [])],
       ...(task === 'narrate' && (ctx as NarrateContext).approach.presume ? { presume: (ctx as NarrateContext).approach.presume } : {}),
@@ -396,6 +412,7 @@ export class LocalGm implements GmPort {
       ...(task === 'narrate' ? { tier: (ctx as NarrateContext).roll.tier } : {}),
       playerLore: ctx.scenario.sheet.name,
       ...(reactor ? { reactor } : {}),
+      ...(narrator ? { first: narrator } : {}),
       faced,
       input: ctx.text,
       keepItems: keptItems(ctx, task),
@@ -403,7 +420,7 @@ export class LocalGm implements GmPort {
     };
     let feedback = '';
     let attempt = 0;
-    let best: { lines: Line[]; soft: number } | null = null;
+    let best: { lines: Line[]; soft: number; sets: string[] } | null = null;
     let softTries = 0;
     let lastAttemptMs = 0;
     while (attempt <= this.opts.retries) {
@@ -427,19 +444,69 @@ export class LocalGm implements GmPort {
       lastAttemptMs = performance.now() - attemptStarted;
       this.model = res.model ?? this.model;
       const out = validateOutput(res.text, check);
+      const state = out.violations.some((v) => v.severity === 'hard') ? { broken: [], sets: [] } : await this.checkState(task, ctx, out.lines, violations);
+      out.violations.push(...state.broken.map((fact): Violation => ({ kind: 'beat', rule: 'state_check', detail: `상태를 서술로 바꾸지 마세요. 지금 사실: ${fact}`, severity: 'hard' })));
       this.emit({ task, beat: ctx.beat.id, attempt, input: ctx.text, raw: res.text, violations: out.violations, llm: res, error: null });
-      if (out.violations.length === 0) return finish(this.polish(out.lines, ctx, reactor), attempt, false);
+      if (out.violations.length === 0) return finish(this.polish(out.lines, ctx, reactor), attempt, false, state.sets);
       violations.push(...out.violations.map((v) => `${v.kind}/${v.rule}: ${v.detail}`));
       feedback = feedbackFor(out.violations);
       const hard = out.violations.filter((v) => v.severity === 'hard').length;
       if (hard === 0) {
         const soft = out.violations.length;
-        if (!best || soft < best.soft) best = { lines: out.lines, soft };
+        if (!best || soft < best.soft) best = { lines: out.lines, soft, sets: state.sets };
         if (softTries >= this.opts.softRetries) break;
         softTries += 1;
       }
     }
-    return best ? finish(this.polish(best.lines, ctx, reactor), attempt, false) : finish(fallback, attempt, true);
+    return best ? finish(this.polish(best.lines, ctx, reactor), attempt, false, best.sets) : finish(fallback, attempt, true);
+  }
+
+  /**
+   * 후드 같은 상태는 엔진이 정한다. 서술이 상태를 바꿨는지 낱말 대신 뜻으로 다시 묻는다.
+   * 결과나 대가에 적힌 변화와 플레이어가 직접 한 행동은 어긋남이 아니다. 플레이어가 한 행동이면 상태가 따라간다.
+   */
+  private async checkState(task: GmTask, ctx: GmContext, lines: readonly Line[], violations: string[]): Promise<{ broken: string[]; sets: string[] }> {
+    const result = { broken: [] as string[], sets: [] as string[] };
+    if (task === 'explain') return result;
+    const gm = gmSpeakerOf(ctx.scenario);
+    const written = lines.filter((l) => l.speaker !== gm).map((l) => l.text).join('\n');
+    const narrate = task === 'narrate' ? (ctx as NarrateContext) : undefined;
+    const authored = `${narrate?.outcome.gist ?? ''} ${narrate?.price?.text ?? ''}`;
+    const input = ctx.deed ? `${ctx.text} ${ctx.deed}` : ctx.text;
+    for (const fact of activeFacts(ctx.scenario, ctx.state)) {
+      const check = fact.state_check;
+      if (!check) continue;
+      const about = (text: string) => check.about.some((word) => mentions(text, word));
+      if (!about(written)) continue;
+      // 대본의 결과·대가가 같은 변화를 정했으면 통과한다. 같은 낱말이 나온 것만으로는 허락이 아니다.
+      if (about(authored) && (await this.answersYes(task, ctx, authored, check.ask, violations))) continue;
+      // 판정을 받지 못한 서술은 확인되지 않은 것이니 상태를 바꿨다고 본다.
+      const changed = await this.answersYes(task, ctx, written, check.ask, violations, true);
+      if (!changed) continue;
+      if (!about(input) || !(await this.answersYes(task, ctx, input, check.ask, violations))) result.broken.push(fact.text);
+      else if (check.sets) result.sets.push(check.sets);
+    }
+    return result;
+  }
+
+  private async answersYes(task: GmTask, ctx: GmContext, text: string, ask: string, violations: string[], unavailable = false): Promise<boolean> {
+    if (!this.llm) return unavailable;
+    try {
+      const res = await this.llm.chatJson({
+        system: '글을 읽고 질문에 예/아니오로만 판정한다. JSON으로만 답한다.',
+        user: `글:\n"""\n${text}\n"""\n질문: ${ask}`,
+        schema: { type: 'object', properties: { answer: { type: 'boolean' } }, required: ['answer'] },
+        temperature: 0,
+        seed: this.seed(ctx, task, 97),
+        maxTokens: 24,
+      });
+      return (JSON.parse(res.text) as { answer?: unknown }).answer === true;
+    } catch (err) {
+      const message = (err as Error).message;
+      violations.push(`state_check_error:${message}`);
+      this.emit({ task, beat: ctx.beat.id, attempt: 0, input: text, raw: '', violations: [], llm: null, error: message });
+      return unavailable;
+    }
   }
 
   /** 다시 쓰게 할 만큼은 아닌 것을 고친다: 상대 인물의 "하." 시작, 물병이라는 낱말. */

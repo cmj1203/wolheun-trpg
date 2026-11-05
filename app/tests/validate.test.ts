@@ -71,6 +71,16 @@ describe('리드 QA 때 나온 GM 실수', () => {
 });
 
 describe('GM 출력 검증', () => {
+  test('세계 밖 행동은 첫 줄이 나레이션이어야 하고, 상대 인물 줄도 한 줄 있어야 한다(택시 FAIL 재발 방지)', () => {
+    const opt = options({ first: '나레이션', reactor: '남자', outcomeForbid: [] });
+    const manFirst = validateOutput(out(['남자', '허공에 손을 휘저으며 입술을 달싹였다.'], ['남자', '정말이지, 말도 안 되는 소리를 내뱉고 말았다.']), opt);
+    expect(manFirst.violations.map((v) => v.rule)).toContain('first_speaker');
+    const noMan = validateOutput(out(['나레이션', '허공에 손을 흔들었다. 아무것도 오지 않았다.'], ['속마음', '뭘 한 거지, 나.']), opt);
+    expect(noMan.violations.map((v) => v.rule)).toContain('no_reaction');
+    const good = validateOutput(out(['나레이션', '허공에 손을 흔들었다. 아무것도 오지 않았다.'], ['남자', '…뭐 하는 짓이지.']), opt);
+    expect(good.violations.filter((v) => v.rule === 'first_speaker' || v.rule === 'no_reaction')).toEqual([]);
+  });
+
   test('원작 말투를 지킨 출력은 통과한다', () => {
     const raw = out(['아시나', '정말이에요! 전 길만 물었다고요!'], ['나레이션', '칼끝이 내 목에서 손가락 한 마디만큼 물러났다.'], ['남자', '거짓말은 아닌 모양이군.']);
     expect(validateOutput(raw, options())).toEqual({
@@ -114,7 +124,7 @@ describe('GM 출력 검증', () => {
     ['다른 장면 대사를 앞당김', out(['남자', '하. 웃기는 여자군.']), 'beat/reserved_line'],
     ['요지 문장을 그대로 옮김', out(['나레이션', '거짓은 아닌 듯하다고 여겨 칼끝을 살짝 물린다.']), 'beat/gist_copy'],
     ['이미 나온 대사 반복', out(['아시나', '그것 좀 치워봐요! 난 죽이면 안 돼요.']), 'beat/repeat_earlier'],
-    ['대사 안에 화자 이름', out(['아시나', '속마음: 미인계다!']), 'format/speaker_prefix'],
+    ['대사 안에 이 장면에 없는 화자 이름', out(['아시나', 'GM: 미인계다!']), 'format/speaker_prefix'],
   ])('%s → 막는다', (_name, raw, rule) => {
     expect(rules(raw)).toContain(rule);
   });
@@ -153,6 +163,16 @@ describe('GM 출력 검증', () => {
     expect(rules(thought, options({ playerText: '남자를 향해 달려든다', presume }))).toContain('beat/presume');
     expect(rules(thought, options({ playerText: '몸을 숙여 피한다', presume }))).not.toContain('beat/presume');
   });
+  test.each([
+    ['다른 낱말의 일부', ['막을'], '모래 소리가 정막을 깼다.', false],
+    ['하지 못한 일', ['막을'], '막을 틈도 없이 칼날이 지나갔다.', false],
+    ['하지 못한 일', ['피하'], '피하지 못하고 그대로 굳었다.', false],
+    ['붙여 쓴 묶음', ['몸을 던'], '모래 위로 몸을  던졌다.', true],
+    ['한 일로 쓴 낱말', ['피할'], '칼날을 피할 시간을 벌었다.', true],
+  ] as const)('전제 판정: %s', (_name, presume, text, hit) => {
+    const got = rules(out(['나레이션', text]), options({ playerText: '귀찌를 만진다', presume: [...presume] }));
+    expect(got.includes('beat/presume')).toBe(hit);
+  });
 });
 
 describe('입력 되풀이와 소지품', () => {
@@ -160,6 +180,52 @@ describe('입력 되풀이와 소지품', () => {
     expect(echoesInput('배고파라고 하면 뭐라도 툭 튀어나오나?', '배고파')).toBe(true);
     expect(echoesInput('그냥 누워서 자면 뭐라도 나오나?', '그냥 누워서 잔다')).toBe(true);
     expect(echoesInput('속이 쓰렸다. 물부터 찾아야 해.', '배고파')).toBe(false);
+  });
+
+  test('자기 말을 돌아보는 속마음은 남의 말처럼 받은 것이 아니다', () => {
+    const out = validateOutput(JSON.stringify({ lines: [{ speaker: '속마음', text: '아, 미쳤나 봐! 나 지금 무슨 소리를 하는 거야?!', face: 'wary' }] }), options({ speakers: ['속마음'], input: '경찰 부를 거예요' }));
+    expect(out.violations.map((v) => v.rule)).not.toContain('echo_input');
+  });
+
+  test('글 앞에 쓴 화자 이름은 다시 쓰게 하지 않고 그 화자의 줄로 옮긴다', () => {
+    const faced = ['속마음'];
+    const { lines, violations } = validateOutput(out(['나레이션', '속마음: 내가 지금 뭘 하는 거야…']), options({ speakers: ['나레이션', '속마음'], faced }));
+    expect(lines).toEqual([{ speaker: '속마음', text: '내가 지금 뭘 하는 거야…', face: 'neutral' }]);
+    expect(violations.map((v) => v.rule)).not.toContain('speaker_prefix');
+  });
+
+  test('길이를 넘은 줄은 문장 경계에서 나누고, 줄 수 상한을 넘게 되면 그대로 둬서 다시 쓰게 한다', () => {
+    const first = `${'모래'.repeat(30)}가 흩어졌다.`;
+    const second = `${'칼끝'.repeat(30)}이 멈췄다.`;
+    const split = validateOutput(out(['나레이션', `${first} ${second}`]), options({ speakers: ['나레이션'], maxChars: 80, maxLines: 2 }));
+    expect(split.lines.map((l) => l.text)).toEqual([first, second]);
+    expect(split.violations.map((v) => v.rule)).not.toContain('too_long');
+    const kept = validateOutput(out(['나레이션', `${first} ${second}`]), options({ speakers: ['나레이션'], maxChars: 80, maxLines: 1 }));
+    expect(kept.lines).toHaveLength(1);
+    expect(kept.violations.map((v) => v.rule)).toContain('too_long');
+  });
+
+  test('한 문장으로 길이를 넘으면 나눌 수 없어 다시 쓰게 한다', () => {
+    const { violations } = validateOutput(out(['나레이션', `${'모래'.repeat(60)}가 흩어졌다.`]), options({ speakers: ['나레이션'], maxChars: 80 }));
+    expect(violations.map((v) => v.rule)).toContain('too_long');
+  });
+
+  test('스키마는 글 안의 따옴표·역슬래시·줄바꿈을 막고, 반응 인물을 둘째 줄로 고정할 수 있다', () => {
+    const schema = linesSchema(['나레이션', '남자'], 2, 80, { first: '나레이션', second: '남자', rest: ['나레이션'] }) as {
+      properties: { lines: { prefixItems: { properties: { speaker: { enum: string[] }; text: { pattern: string } } }[] } };
+    };
+    const items = schema.properties.lines.prefixItems;
+    expect(items.map((i) => i.properties.speaker.enum)).toEqual([['나레이션'], ['남자']]);
+    const pattern = new RegExp(items[0]?.properties.text.pattern ?? '');
+    expect(pattern.test('칼끝이 흔들렸다.')).toBe(true);
+    for (const bad of ['말"했다', '말\\했다', '줄\n바꿈', '']) expect(pattern.test(bad)).toBe(false);
+  });
+
+  test('입력을 되받는 속마음은 다른 줄이 있으면 뺀다', () => {
+    const raw = JSON.stringify({ lines: [{ speaker: '속마음', text: '이 상황에서 이게 무슨 소리야!' }, { speaker: '나레이션', text: '모래가 발을 붙잡았다.' }] });
+    const got = validateOutput(raw, options({ speakers: ['속마음', '나레이션'] }));
+    expect(got.lines.map((l) => l.speaker)).toEqual(['나레이션']);
+    expect(got.violations.map((v) => v.rule)).not.toContain('echo_input');
   });
 
   test('속마음이 입력을 남의 말처럼 받으면 막는다', () => {

@@ -64,7 +64,20 @@ describe('엔진 진행', () => {
     expect(state.beat).toBe('b02_people');
     expect(step.prompt.type).toBe('free');
     expect(step.hud.tracks.find((t) => t.key === '귀찌')?.label).toBe('귀찌 수명');
-    expect(state.log.flatMap((e) => (e.kind === 'beat' ? [e.beat] : [e.kind]))).toEqual(['start', 'b00_open', 'b01_sand', 'b02_people', 'tracks']);
+    // b02_people 는 time 으로 tracks 가 한 번, 장면 검사(twist) 한 번. 시드 1 은 끼어드는 일(모래바람)이라 tracks 가 한 번 더 남는다.
+    expect(state.log.flatMap((e) => (e.kind === 'beat' ? [e.beat] : [e.kind]))).toEqual(['start', 'b00_open', 'b01_sand', 'b02_people', 'tracks', 'twist', 'tracks']);
+  });
+
+  test('의심·귀찌만 조각 시계이고 위험 칸 경계는 fates 의 징조 문턱에서 온다', () => {
+    const engine = new Engine(scenario, new FakeGm());
+    const { step } = engine.newGame(2, 's'); // 시드 2 는 장면 검사가 '그대로'라 귀찌가 time 만큼만 줄어 있다.
+    const by = Object.fromEntries(step.hud.tracks.map((t) => [t.key, t]));
+    expect(by['의심']?.clock).toEqual({ kind: 'progress', warnAt: 7 });
+    expect(by['귀찌']?.clock).toEqual({ kind: 'countdown', warnAt: 2 });
+    // 줄어드는 시계는 시작할 때 꽉 차 있다(b02_people 의 time 으로 첫 자유 입력 자리에서는 한 칸 비어 있다).
+    expect(by['귀찌']?.max).toBe(scenario.sheet.tracks.귀찌);
+    expect(by['귀찌']?.value).toBe(scenario.sheet.tracks.귀찌 - 1);
+    for (const key of ['집착', '호감', '탈주', '행운'] as const) expect(by[key]?.clock).toBeUndefined();
   });
 
   test('b01_sand 는 입력 없이 흐르고 첫 자유 입력은 b02_people 다', () => {
@@ -75,15 +88,12 @@ describe('엔진 진행', () => {
     expect(step.prompt.type === 'free' && step.prompt.beat).toBe('b02_people');
   });
 
-  test('여는 글은 GM 이 읽고, 배경과 아시나의 정체, 목표를 6~8줄로 말한 뒤 첫 장면으로 간다', () => {
+  test('여는 글에는 GM 줄이 없고, 이벤트 CG 다섯 장을 차례로 쓴 뒤 첫 장면으로 간다', () => {
     const { step } = new Engine(scenario, new FakeGm()).newGame(1, 's');
     const firstScene = step.events.findIndex((e) => e.type === 'scene' && e.beat === 'b01_sand');
     const opening = step.events.slice(0, firstScene).flatMap((e) => (e.type === 'line' ? [e] : []));
-    expect(opening.length).toBeGreaterThanOrEqual(6);
-    expect(opening.length).toBeLessThanOrEqual(8);
-    expect(opening.every((l) => l.style === 'gm' && l.display === 'GM')).toBe(true);
-    const text = opening.map((l) => l.text).join(' ');
-    for (const word of ['크롬웰', '페시안', '지르다', '공녀', '귀찌', '크라차']) expect(text).toContain(word);
+    expect(opening.some((l) => l.style === 'gm')).toBe(false);
+    expect([...new Set(opening.flatMap((l) => (l.cg ? [l.cg] : [])))]).toEqual(['cg_cromwell', 'cg_manor', 'cg_hill', 'cg_travel', 'cg_earring']);
     if (step.prompt.type !== 'free') throw new Error('자유 입력이 아닙니다');
     expect(step.prompt.aim).toBe('저 사람들에게 다가갈지, 먼저 살필지, 피해 갈지 정한다.');
   });
@@ -223,6 +233,21 @@ describe('엔진 진행', () => {
     return { engine, state, step };
   }
 
+  test('GM 이 돌려준 플래그는 켜고, 화면에 나온 줄은 화자별로 이번 판 장부에 남는다', async () => {
+    class HoodGm extends FakeGm {
+      override async talk(): Promise<GmLines> {
+        return { lines: [{ speaker: '남자', text: '…뭐?' }], meta: { ...META, setFlags: ['후드_벗음'] } };
+      }
+    }
+    const { engine, state: at } = await atWhy(new HoodGm());
+    const { state, step } = await engine.act(at, { type: 'free', text: '안녕' });
+    expect(state.flags['후드_벗음']).toBe(true);
+    const types = step.events.map((ev) => ev.type);
+    expect(types.indexOf('sprite')).toBeGreaterThanOrEqual(0);
+    expect(types.indexOf('sprite')).toBeLessThan(types.indexOf('line'));
+    expect(state.spoken?.['남자']).toContain('…뭐?');
+  });
+
   test('엉뚱한 말은 판정 없이 받고, 인내가 차면 세계가 한 턴에 한 수씩 움직이고(징조→압박→시간), 그래도 말만 하면 쓰러지는 작은 끝으로 간다', async () => {
     let { engine, state } = await atWhy(talkGm());
     let step: Step;
@@ -245,7 +270,13 @@ describe('엔진 진행', () => {
     expect(state.free?.moves).toEqual(['threat', 'press']);
     expect(step.events.some((e) => e.type === 'roll')).toBe(false);
     expect(state.flags['머뭇']).toBe(2);
-    // ③ 기회는 이 장면에 없어 건너뛰고 ④ 시간이 감: b05 에는 시간 대가가 없어 공통 줄 + 귀찌 -1, 머뭇 3 → 쓰러지는 작은 끝
+    // ③ 대가 붙은 기회: b05 의 offer 줄(칼끝을 내림)이 나레이션으로 나오고 머뭇은 그대로 2
+    ({ state, step } = await engine.act(state, { type: 'free', text: '음' }));
+    expect(state.beat).toBe('b05_why');
+    expect(state.free?.moves).toEqual(['threat', 'press', 'offer']);
+    expect(scriptLines(step).some((t) => t.startsWith('남자가 칼끝을 살짝 내렸다'))).toBe(true);
+    expect(state.flags['머뭇']).toBe(2);
+    // ④ 시간이 감: b05 에는 시간 대가가 없어 공통 줄 + 귀찌 -1, 머뭇 3 → 쓰러지는 작은 끝
     const before = state.tracks.귀찌;
     ({ state, step } = await engine.act(state, { type: 'free', text: '하늘이 파랗다' }));
     expect(state.free?.moves ?? state.log.filter((e) => e.kind === 'beat').at(-1)?.beat).toBeTruthy();
@@ -302,10 +333,36 @@ describe('엔진 진행', () => {
     expect(step.events.some((e) => e.type === 'line' && e.style === 'gm')).toBe(false);
   });
 
+  test('실제 yaml 의 offer 3줄(b02·b05·b08)은 머뭇 다섯 번째에 나레이션으로 나오고, b02 만 기회_물 깃발을 켠다', async () => {
+    const expected: Record<string, { head: string; flag: boolean }> = {
+      b02_people: { head: '셋 중 하나가 물주머니를', flag: true },
+      b05_why: { head: '남자가 칼끝을 살짝 내렸다', flag: false },
+      b08_gaze: { head: '남자의 눈길이 잠깐', flag: false },
+    };
+    for (const [beat, want] of Object.entries(expected)) {
+      const offer = scenario.beats[beat]?.free?.offer;
+      if (!offer) throw new Error(`${beat} 에 offer 가 없습니다`);
+      expect(offer.lines[0]!.speaker).toBe('나레이션');
+      expect(offer.lines[0]!.text.startsWith(want.head)).toBe(true);
+      const engine = new Engine(scenario, talkGm(), fakeClock().now);
+      let { state } = engine.newGame(1, 'oy');
+      state = { ...state, beat, free: { beat, talks: 0, rolls: 0 } };
+      for (const text of ['음', '글쎄', '잠깐', '으음']) ({ state } = await engine.act(state, { type: 'free', text }));
+      expect(state.free?.moves).toEqual(['threat', 'press']);
+      let step: Step;
+      ({ state, step } = await engine.act(state, { type: 'free', text: '저기' }));
+      expect(state.free?.moves).toEqual(['threat', 'press', 'offer']);
+      expect(step.events.some((e) => e.type === 'line' && e.text === offer.lines[0]!.text && e.style !== 'gm')).toBe(true);
+      expect(state.flags['기회_물'] === true).toBe(want.flag);
+      expect(state.ending).toBeNull();
+    }
+  });
+
   test('로더는 offer 의 빈 줄과 여우 화자를 거부한다', async () => {
     const source = await Bun.file(SCENARIO_PATH).text();
-    const inject = (offer: string) => source.replace('    free:\n      nudge:\n        - 나레이션: 멀리 세 사람의 그림자가 움직이기 시작했다.', `    free:\n      offer:\n${offer}\n      nudge:\n        - 나레이션: 멀리 세 사람의 그림자가 움직이기 시작했다.`);
-    expect(source).toContain('    free:\n      nudge:\n        - 나레이션: 멀리 세 사람의 그림자가 움직이기 시작했다.');
+    const real = '      offer:\n        lines:\n          - 나레이션: 셋 중 하나가 물주머니를 허리에서 풀어 흔들어 보였다. 다가가면 받을 수 있을 것 같았다. 그만큼 가까이 가야 했다.\n        effects: { flags: { 기회_물: true } }\n';
+    const inject = (offer: string) => source.replace(real, `      offer:\n${offer}\n`);
+    expect(source).toContain(real);
     expect(() => parseScenario(inject('        lines: []'))).toThrow(/offer\.lines/);
     expect(() => parseScenario(inject('        lines:\n          - GM: 기회야.'))).toThrow(/여우가 말하지 않습니다/);
   });
@@ -394,6 +451,37 @@ describe('엔진 진행', () => {
     const sum = summarize(scenario, state);
     expect(sum.checks.length).toBe(3);
     expect(sum.decisions.map((d) => d.text)).toContain('결백을 호소한다');
+  });
+
+  test('돌아보기는 선택 → 판정 → 대가를 일어난 순서대로 놓고, 선택·판정 수는 따로 모은 목록과 같다', async () => {
+    let priced: ReturnType<typeof summarize> | null = null;
+    for (let seed = 1; seed <= 60 && !priced; seed++) {
+      const sum = summarize(scenario, (await toGaze(seed)).state);
+      expect(sum.replay.filter((r) => r.kind === 'decision').length).toBe(sum.decisions.length);
+      expect(sum.replay.filter((r) => r.kind === 'check').length).toBe(sum.checks.length);
+      const times = sum.replay.map((r) => r.playMs);
+      expect(times).toEqual([...times].sort((a, b) => a - b));
+      if (sum.replay.some((r) => r.kind === 'price')) priced = sum;
+    }
+    if (!priced) throw new Error('60개 시드 안에서 대가가 나온 판이 없습니다');
+    const kinds = priced.replay.map((r) => r.kind);
+    const at = kinds.indexOf('price');
+    // 판정 대가는 그 판정 바로 뒤에, 판정은 그 판정을 부른 선택 뒤에 온다.
+    expect(kinds[at - 1]).toBe('check');
+    expect(kinds.slice(0, at - 1)).toContain('decision');
+  });
+
+  test('돌아보기에 세계 무브(압박·시간)로 나온 대가도 남는다', async () => {
+    const prove = scenario.beats['r4_prove'];
+    if (!prove?.free) throw new Error('r4_prove 가 없습니다');
+    const noPress = { ...scenario, beats: { ...scenario.beats, r4_prove: { ...prove, free: { ...prove.free, press: [] } } } };
+    const engine = new Engine(noPress, talkGm(), fakeClock().now);
+    let { state } = engine.newGame(1, 'rp');
+    state = { ...state, beat: 'r4_prove', free: { beat: 'r4_prove', talks: 0, rolls: 0 } };
+    for (const text of ['음', '글쎄', '잠깐', '으음', '저기']) ({ state } = await engine.act(state, { type: 'free', text }));
+    const prices = summarize(noPress, state).replay.filter((r) => r.kind === 'price');
+    expect(prices.map((p) => p.tag)).toEqual(['상대행동', '시간']);
+    expect(prices.every((p) => p.beatTitle === prove.title && p.text.length > 0)).toBe(true);
   });
 
   test('오래 손을 놓은 시간은 3분까지만 플레이 시간에 더한다', async () => {
@@ -879,10 +967,11 @@ describe('이야기 지도', () => {
 });
 
 describe('행운', () => {
-  const toMiss = async () => {
+  const toMiss = async (tension?: number) => {
     const engine = new Engine(scenario, new FakeGm(), fakeClock().now, true);
     for (let seed = 1; seed < 400; seed++) {
       const { state } = engine.newGame(seed, 'l');
+      if (tension !== undefined) state.flags['긴장'] = tension;
       const r = await engine.act(state, { type: 'approach', id: 'run' });
       if (r.step.prompt.type === 'luck') return { engine, ...r };
     }
@@ -898,6 +987,22 @@ describe('행운', () => {
     expect(used.step.events.some((e) => e.type === 'line' && e.style === 'gm')).toBe(false);
     expect(used.state.log.filter((e) => e.kind === 'check').at(-1)).toMatchObject({ roll: { tier: 'mixed' } });
     expect(used.state.pendingLuck).toBeUndefined();
+  });
+
+  test('쓰면 실패로 오른 긴장이 판정 전 값으로 돌아가고 안 쓰면 남는다', async () => {
+    const { engine, state } = await toMiss(3);
+    expect(state.flags['긴장']).toBe(4);
+    const used = await engine.act(state, { type: 'luck', use: true });
+    expect(used.state.flags['긴장']).toBe(3);
+    const skip = await engine.act(state, { type: 'luck', use: false });
+    expect(skip.state.flags['긴장']).toBe(4);
+  });
+
+  test('긴장이 상한이라 실패로 오르지 않았으면 행운을 써도 내려가지 않는다', async () => {
+    const { engine, state } = await toMiss(6);
+    expect(state.flags['긴장']).toBe(6);
+    const used = await engine.act(state, { type: 'luck', use: true });
+    expect(used.state.flags['긴장']).toBe(6);
   });
 
   test('안 쓰면 실패로 잇고 행운은 그대로다', async () => {
@@ -1348,7 +1453,9 @@ describe('큰 즉흥 행동(bold)과 먼저 일어난 원작 줄', () => {
     const { engine, state } = await toGaze(3, boldKiss('남자의 입에 입을 맞췄다'));
     expect(state.beat).toBe('b08_gaze');
     const before = { ...state.tracks };
-    const { state: after, step } = await engine.act(state, { type: 'free', text: '뽀뽀' });
+    const asked = await engine.act(state, { type: 'free', text: '뽀뽀' });
+    expect(asked.step.events.some((e) => e.type === 'confirm' && e.kind === 'intent')).toBe(true);
+    const { state: after, step } = await engine.act(asked.state, { type: 'confirm', ok: true });
     const moved = Math.max(after.tracks.집착 - before.집착, after.tracks.의심 - before.의심);
     expect(moved).toBeGreaterThanOrEqual(2);
     expect(after.flags.큰_행동).toBe(true);
@@ -1360,11 +1467,46 @@ describe('큰 즉흥 행동(bold)과 먼저 일어난 원작 줄', () => {
 
   test('플레이어가 먼저 해 버린 일과 같은 다음 장면의 원작 줄은 그 줄만 건너뛴다', async () => {
     const { engine, state } = await toGaze(3, boldKiss('남자에게 마음이 바뀌었다고 말했다'));
-    const { state: after, step } = await engine.act(state, { type: 'free', text: '마음이 바뀌었다고 말한다' });
+    const asked = await engine.act(state, { type: 'free', text: '마음이 바뀌었다고 말한다' });
+    const { state: after, step } = await engine.act(asked.state, { type: 'free', text: '그래' });
     expect(after.preempted).toContain('마음이바뀌었다');
     const shown = texts(step);
     expect(shown).not.toContain('마음이 바뀌었다.');
     expect(shown).toContain('…바로 죽일까 했는데,');
+  });
+
+  test('의도 카드에 답하지 않고 다른 행동으로 넘어가면 카드가 끝나, 뒤의 입력이 그 답이 되지 않는다', async () => {
+    const { engine, state } = await toGaze(3, boldKiss('남자의 입에 입을 맞췄다'));
+    const asked = await engine.act(state, { type: 'free', text: '뽀뽀' });
+    expect(asked.state.pendingIntent?.text).toBe('뽀뽀');
+    const approachId = asked.step.prompt.type === 'free' ? asked.step.prompt.approaches[0]?.id : undefined;
+    if (!approachId) throw new Error('b08_gaze 에 접근 단추가 없습니다');
+    const moved = await engine.act(asked.state, { type: 'approach', id: approachId });
+    expect(moved.state.pendingIntent).toBeUndefined();
+    expect(moved.state.said ?? []).not.toContain('뽀뽀');
+  });
+
+  test('의도 확인 카드: 큰 행동은 굴리기 전에 해석(deed)을 카드로 묻고, 다른 뜻이면 대가 없이 지우며, 다른 말을 적으면 새 입력으로 받는다', async () => {
+    const { engine, state } = await toGaze(3, boldKiss('남자의 입에 입을 맞췄다'));
+    const tracks = { ...state.tracks };
+    const asked = await engine.act(state, { type: 'free', text: '뽀뽀' });
+    const card = asked.step.events.find((e) => e.type === 'confirm');
+    expect(card).toEqual({ type: 'confirm', kind: 'intent', text: '남자의 입에 입을 맞췄다 — 이렇게 하는 거야?', yes: '그래', no: '다른 뜻' });
+    expect(asked.step.events.some((e) => e.type === 'roll' || e.type === 'line')).toBe(false);
+    expect(asked.state.pendingIntent?.text).toBe('뽀뽀');
+    expect(asked.state.tracks).toEqual(tracks);
+    // 다른 뜻: 입력이 지워지고 판정·수치·말 없이 같은 자리
+    const no = await engine.act(asked.state, { type: 'confirm', ok: false });
+    expect(no.state.pendingIntent).toBeUndefined();
+    expect(no.state.said ?? []).not.toContain('뽀뽀');
+    expect(no.state.beat).toBe('b08_gaze');
+    expect(no.step.events.some((e) => e.type === 'roll' || e.type === 'line')).toBe(false);
+    expect(no.state.tracks).toEqual(tracks);
+    // 카드가 떠 있는 동안 다른 말을 적으면 새 입력으로 받아 다시 카드가 뜨고, 기다리는 확인이 없을 때 confirm 은 오류다
+    const again = await engine.act(asked.state, { type: 'free', text: '손을 잡는다' });
+    expect(again.state.pendingIntent?.text).toBe('손을 잡는다');
+    expect(again.state.said?.filter((s) => s === '뽀뽀')).toEqual([]);
+    await expect(engine.act(no.state, { type: 'confirm', ok: true })).rejects.toBeInstanceOf(GameError);
   });
 });
 
@@ -1764,5 +1906,112 @@ describe('19-C 이야기 화면에는 여우 줄이 없다', () => {
     expect(() => parseScenario(swap('맨손이다. 저 칼은 진짜다.', '맨손이다. 판정이 어렵다.'))).toThrow(/danger\.omen.*"판정"/);
     expect(() => parseScenario(swap('  omen:\n    - 속마음: 맨손이다. 저 칼은 진짜다.', '  omen: []'))).toThrow(/danger\.omen: 징조 줄이 한 줄 이상 필요합니다/);
     expect(() => parseScenario(swap('refuse:\n  - id: unmask\n', 'refuse:\n  - id: identity\n'))).toThrow(/refuse\[0\]\.id/);
+  });
+});
+
+describe('장면 검사와 긴장값(19-F)', () => {
+  const texts = (step: Step) => step.events.flatMap((e) => (e.type === 'line' ? [e.text] : []));
+  const twistOf = (step: Step) => step.events.find((e) => e.type === 'twist');
+
+  test('장면 검사 표는 남자를 만나기 전 사막 장면 2곳에만 있다', () => {
+    expect(Object.values(scenario.beats).filter((b) => b.twist).map((b) => b.id)).toEqual(['b02_people', 'r3_dusk']);
+    for (const b of Object.values(scenario.beats)) if (b.twist) expect(Object.values(b.cast ?? {})).toEqual(['아시나']);
+    expect(scenario.sheet.tension).toBe(3);
+  });
+
+  test('d6 이 긴장 이하면 홀수는 달라진 결(장면 줄 뒤), 짝수는 끼어드는 일(장면 줄 앞)', () => {
+    const none = new Engine(scenario, new FakeGm()).newGame(2, 's');
+    expect(twistOf(none.step)).toMatchObject({ type: 'twist', beat: 'b02_people', tension: 3, roll: 6, result: 'none', id: null });
+    expect(texts(none.step).some((t) => t.includes('모래바람') || t.includes('가까웠다'))).toBe(false);
+
+    const altered = new Engine(scenario, new FakeGm()).newGame(3, 's');
+    expect(twistOf(altered.step)).toMatchObject({ roll: 3, result: 'altered', id: 'closer' });
+    const at = texts(altered.step);
+    expect(at.indexOf('사람?!')).toBeLessThan(at.findIndex((t) => t.startsWith('바람이 방향을 바꿨다')));
+    expect(altered.state.flags['거리_가까움']).toBe(true);
+
+    const interrupt = new Engine(scenario, new FakeGm()).newGame(1, 's');
+    expect(twistOf(interrupt.step)).toMatchObject({ roll: 2, result: 'interrupt', id: 'sandstorm' });
+    const it = texts(interrupt.step);
+    expect(it.findIndex((t) => t.startsWith('모래바람이 덮쳤다'))).toBeLessThan(it.findIndex((t) => t.startsWith('바람에 낯선 냄새')));
+    expect(interrupt.state.tracks['귀찌']).toBe(scenario.sheet.tracks.귀찌 - 2);
+    expect(interrupt.state.flags['모래바람']).toBe(true);
+    expect(interrupt.state.log.find((e) => e.kind === 'twist')).toMatchObject({ kind: 'twist', beat: 'b02_people', roll: 2, result: 'interrupt', id: 'sandstorm' });
+  });
+
+  test('사건이 세운 플래그는 그 장면 접근법의 보정으로 읽힌다', async () => {
+    const engine = new Engine(scenario, new FakeGm());
+    const { state } = engine.newGame(1, 's'); // 모래바람
+    const { step } = await engine.act(state, { type: 'approach', id: 'watch' });
+    const roll = step.events.find((e) => e.type === 'roll');
+    expect(roll && roll.type === 'roll' ? roll.mods : []).toContainEqual({ label: '바람에 흐린 시야', value: -1 });
+  });
+
+  test('장면 검사는 주사위 흐름을 쓰지 않아 표가 없어도 같은 시드는 같은 눈이 나온다', async () => {
+    const bare = structuredClone(scenario);
+    delete bare.beats.b02_people!.twist;
+    for (const seed of [2, 6, 7]) {
+      // 장면 검사가 '그대로'인 시드: 표를 빼도 첩 판정의 눈이 같다.
+      const a = new Engine(scenario, new FakeGm()).newGame(seed, 's');
+      const b = new Engine(bare, new FakeGm()).newGame(seed, 's');
+      expect(a.state.rng).toBe(b.state.rng);
+      const ra = (await new Engine(scenario, new FakeGm()).act(a.state, { type: 'approach', id: 'run' })).step.events.find((e) => e.type === 'roll');
+      const rb = (await new Engine(bare, new FakeGm()).act(b.state, { type: 'approach', id: 'run' })).step.events.find((e) => e.type === 'roll');
+      expect(ra && ra.type === 'roll' ? ra.dice : null).toEqual(rb && rb.type === 'roll' ? rb.dice : null);
+    }
+  });
+
+  test('긴장값은 판정 성공 -1, 실패 +1 이고 1~6 안에 머물러 화면(hud)에 나간다', async () => {
+    const found: Record<string, number> = {};
+    for (let seed = 1; seed <= 200 && Object.keys(found).length < 3; seed++) {
+      const engine = new Engine(scenario, new FakeGm());
+      const { state, step } = engine.newGame(seed, 's');
+      expect(step.hud.tension).toBe(3);
+      const next = await engine.act(state, { type: 'approach', id: 'run' });
+      const roll = next.step.events.find((e) => e.type === 'roll');
+      const tier = roll && roll.type === 'roll' ? roll.tier : 'none';
+      if (found[tier] !== undefined) continue;
+      found[tier] = next.step.hud.tension;
+    }
+    expect(found).toEqual({ hit: 2, mixed: 3, miss: 4 });
+
+    const engine = new Engine(scenario, new FakeGm());
+    for (const [start, want] of [[1, [1, 1, 2]], [6, [5, 6, 6]]] as const) {
+      for (let seed = 1; seed <= 200; seed++) {
+        const { state } = engine.newGame(seed, 's');
+        state.flags['긴장'] = start;
+        const next = await engine.act(state, { type: 'approach', id: 'run' });
+        const roll = next.step.events.find((e) => e.type === 'roll');
+        const tier = roll && roll.type === 'roll' ? roll.tier : 'mixed';
+        expect(next.step.hud.tension).toBe(want[tier === 'hit' ? 0 : tier === 'mixed' ? 1 : 2]);
+        if (seed >= 30) break;
+      }
+    }
+  });
+
+  test('가방 끈 사실은 가방이 있을 때만 GM 에게 간다', async () => {
+    const scenario = await loadDesert();
+    const engine = new Engine(scenario, new FakeGm());
+    const { state } = engine.newGame(5, 's');
+    const facts = (items: string[]) => activeFacts(scenario, { ...state, items, flags: { ...state.flags, 가방_끈: true } }).map((f) => f.text).join(' ');
+    expect(facts(['magic_bag'])).toContain('가방을 손으로 쥐고');
+    expect(facts([])).not.toContain('가방을 손으로 쥐고');
+  });
+
+  test('표 검사: 사건 줄의 CG 와 사건 효과도 대본 검사에 걸린다', async () => {
+    const scenario = parseScenario(await Bun.file(SCENARIO_PATH).text());
+    const strap = scenario.beats.b02_people!.twist!.interrupt.find((t) => t.id === 'strap')!;
+    strap.lines[0]!.cg = '없는_그림';
+    strap.effects = { gain: ['없는_물건'] };
+    const problems = checkScenario(scenario).join('\n');
+    expect(problems).toContain('없는 이벤트 CG "없는_그림"');
+    expect(problems).toContain('twist.strap.effects');
+  });
+
+  test('표 검사: id 중복·빈 목록·범위 밖 긴장값은 읽지 않는다', async () => {
+    const source = await Bun.file(SCENARIO_PATH).text();
+    expect(() => parseScenario(source.replace('        - id: glare\n', '        - id: closer\n'))).toThrow(/twist\.altered\[1\]\.id: 같은 id/);
+    expect(() => parseScenario(source.replace('  tension: 3\n', '  tension: 7\n'))).toThrow(/sheet\.tension: 1~6/);
+    expect(() => parseScenario(source.replace(/      interrupt:\n        - id: sandstorm\n[\s\S]*?        - id: strap\n[\s\S]*?effects: \{ flags: \{ 가방_끈: true \} \}\n/, '      interrupt: []\n'))).toThrow(/twist: altered 와 interrupt/);
   });
 });

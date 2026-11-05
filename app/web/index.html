@@ -29,6 +29,7 @@
         <span id="episode" class="chip episode"></span>
         <span id="beat-title" class="beat-title"></span>
         <span id="clock" class="chip clock" hidden></span>
+        <span id="tension" class="chip tension" hidden></span>
         <span class="spacer"></span>
         <span id="gm-status" class="gm-status" title="로컬 GM 상태"></span>
         <nav class="menu">
@@ -66,6 +67,7 @@
         <p id="text" class="text"></p>
         <span id="more" class="more" hidden>▼</span>
         <p id="price-line" class="price-line" hidden><span class="price-label">대가</span><span id="price-tag" class="price-tag"></span><span id="price-text"></span></p>
+        <p id="twist-line" class="price-line twist-line" hidden><span class="price-label">장면 검사</span><span id="twist-text"></span></p>
         <div id="free" class="free" hidden>
           <p id="free-aim" class="free-aim" hidden><span class="free-aim-label">아시나가 바라는 것</span><span id="free-aim-text"></span></p>
           <p id="free-prompt" class="free-prompt"></p>
@@ -79,9 +81,12 @@
       </section>
 
       <form id="say" class="say" hidden autocomplete="off">
-        <input id="free-input" name="free" maxlength="200" aria-label="말하거나 행동하기" placeholder="말하거나 행동하기" />
+        <span class="say-field">
+          <input id="free-input" name="free" maxlength="200" aria-label="말하거나 행동하기" placeholder="말하거나 행동하기" />
+          <button id="ask-gm" type="button" class="ask-gm" aria-pressed="false" aria-label="GM에게 묻기" title="GM에게 묻기"><img id="ask-gm-face" alt="" /></button>
+        </span>
         <button id="free-send" type="submit">말하기</button>
-        <button id="ask-gm" type="button" class="ask-gm" aria-pressed="false" aria-label="GM에게 묻기" title="GM에게 묻기">🦊 GM</button>
+        <button id="feedback-open" type="button" class="feedback-open" aria-label="피드백" title="피드백">피드백</button>
       </form>
 
       <dialog id="confirm" class="confirm">
@@ -90,6 +95,17 @@
           <button id="confirm-no" type="button">계속한다</button>
           <button id="confirm-ok" type="button" class="confirm-ok">끝낸다</button>
         </div>
+      </dialog>
+
+      <dialog id="feedback" class="confirm feedback" aria-labelledby="feedback-title">
+        <form id="feedback-form" method="dialog">
+          <h2 id="feedback-title" class="feedback-title">피드백</h2>
+          <textarea id="feedback-text" class="feedback-text" rows="5" maxlength="2000" aria-label="피드백"></textarea>
+          <div class="confirm-actions">
+            <button id="feedback-close" type="button">닫기</button>
+            <button id="feedback-send" type="submit" class="confirm-ok">보내기</button>
+          </div>
+        </form>
       </dialog>
 
       <div id="dice" class="dice" hidden>
@@ -105,6 +121,8 @@
           <p class="dice-hint">눌러서 계속</p>
         </div>
       </div>
+
+      <img id="cutin" class="cutin" alt="" hidden />
 
       <div id="ending" class="ending" hidden>
         <p id="ending-kicker" class="ending-kicker">결말</p>
@@ -158,13 +176,8 @@
           </header>
           <div class="result-grid">
             <section>
-              <h2>판정 기록</h2>
-              <table class="checks">
-                <thead><tr><th>장면</th><th>판정</th><th>계산</th><th>결과</th></tr></thead>
-                <tbody id="result-checks"></tbody>
-              </table>
-              <h2>선택과 입력</h2>
-              <ol id="result-decisions" class="decisions"></ol>
+              <h2>돌아보기</h2>
+              <ol id="result-replay" class="replay"></ol>
             </section>
             <section>
               <h2>최종 진행 수치</h2>
@@ -175,6 +188,7 @@
                 <button id="btn-fork" type="button" class="primary" hidden>마지막 갈림길에서 다시</button>
                 <button id="btn-again" type="button" class="primary">다시 하기</button>
                 <button id="btn-map-result" type="button">이야기 지도</button>
+                <button id="btn-feedback-result" type="button">피드백</button>
                 <button id="btn-home" type="button">타이틀로</button>
               </div>
             </section>

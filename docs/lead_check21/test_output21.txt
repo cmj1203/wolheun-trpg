@@ -1,0 +1,19 @@
+시작 2026-11-05 01:49:24
+slot1 전 2026-11-05 01:17:38 15354 9220b8abae6a
+tsc: exit 0 1s | 
+bun test: exit 0 0s | Ran 264 tests across 8 files. [200.00ms]
+ 264 pass
+ 0 fail
+ 1796 expect() calls
+Ran 264 tests across 8 files. [200.00ms]
+
+e2e route 1 (--no-llm): exit 0 6s | [e2e 1] 통과
+e2e route 2 (--no-llm): exit 0 5s | [e2e 2] 통과
+e2e route 3 (--no-llm): exit 0 5s | [e2e 3] 통과
+e2e route 4 (--no-llm): exit 0 4s | [e2e 4] 통과
+e2e route 5 (--no-llm): exit 0 4s | [e2e 5] 통과
+e2e 피드백: exit 0 3s | [e2e 피드백] 통과
+slot1 후 2026-11-05 01:17:38 15354 9220b8abae6a
+slot1 불변 True
+e2e route 1 (실제 LLM, heavy): exit 0 약 66s | [e2e 1] 통과
+slot1 LLM 뒤 2026-11-05 01:17:38 15354 9220b8abae6a

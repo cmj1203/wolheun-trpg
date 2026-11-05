@@ -1,0 +1,158 @@
+[
+ {
+  "name": "closer",
+  "seed": 3,
+  "input": "귀를 기울여 저 사람들이 뭐라고 하는지 들어 본다",
+  "then": "watch",
+  "twist": {
+   "type": "twist",
+   "beat": "b02_people",
+   "tension": 3,
+   "roll": 3,
+   "result": "altered",
+   "id": "closer"
+  },
+  "beat": "b02_people",
+  "reply": [
+   "나레이션: 숨을 죽인 채 바람이 실어 오는 소리에 온 신경을 집중했다. 모래를 스치는 발소리와 낮게 깔리는 대화 내용이 귓가를 스쳤다.",
+   "나레이션: 무엇을 말하는지 정확히 알 수는 없었지만, 적어도 그들이 이 근처를 지나고 있다는 사실만은 분명했다.",
+   "나레이션: 갈증과 피로로 흐릿했던 정신이 묘하게 맑아졌다. 아직은 움직일 수 있을 것 같았다."
+  ],
+  "kinds": [
+   "echo",
+   "roll",
+   "line",
+   "tracks",
+   "scene",
+   "note"
+  ],
+  "ms": 11336
+ },
+ {
+  "name": "sandstorm",
+  "seed": 1,
+  "input": "발자국이 다 지워졌네. 왔던 길도 모르겠어.",
+  "then": "watch",
+  "twist": {
+   "type": "twist",
+   "beat": "b02_people",
+   "tension": 3,
+   "roll": 2,
+   "result": "interrupt",
+   "id": "sandstorm"
+  },
+  "beat": "b02_people",
+  "reply": [
+   "속마음: 진짜 미치겠네. 길도 잃어버렸는데 하필 이 타이밍에 사람이라니!",
+   "나레이션: 모래 언덕 너머로 보이는 세 개의 그림자가 천천히 움직였다. 일주일 만에 마주한 생명체였다."
+  ],
+  "kinds": [
+   "echo",
+   "line"
+  ],
+  "narrate": [],
+  "roll": {
+   "tier": "miss",
+   "mods": [
+    {
+     "label": "바람에 흐린 시야",
+     "value": -1
+    }
+   ]
+  },
+  "ms": 17462
+ },
+ {
+  "name": "strap",
+  "seed": 5,
+  "input": "끊어진 가방 끈을 손으로 묶어 본다",
+  "then": "run",
+  "twist": {
+   "type": "twist",
+   "beat": "b02_people",
+   "tension": 3,
+   "roll": 2,
+   "result": "interrupt",
+   "id": "strap"
+  },
+  "beat": "b02_people",
+  "reply": [
+   "나레이션: 끊어진 끈을 어떻게든 묶어보려 했지만, 거친 모래알이 손가락 사이로 자꾸만 빠져나갔다. 결국 아무것도 못한 채 뜨거운 모래 위에 그대로 주저앉았다.",
+   "나레이션: 그때, 저 멀리 있던 세 사람이 약속이라도 한 듯 일제히 이쪽으로 방향을 틀었다."
+  ],
+  "kinds": [
+   "echo",
+   "roll",
+   "line",
+   "price",
+   "tracks",
+   "scene",
+   "note"
+  ],
+  "ms": 11887
+ },
+ {
+  "name": "howl",
+  "seed": 13,
+  "input": "저 소리, 점점 가까워지는 것 같아.",
+  "then": "shelter",
+  "twist": {
+   "type": "twist",
+   "beat": "r3_dusk",
+   "tension": 4,
+   "roll": 4,
+   "result": "interrupt",
+   "id": "howl"
+  },
+  "beat": "r3_dusk",
+  "reply": [
+   "속마음: 진짜로 오는 거 아냐? 설마 아까 그 소리가?",
+   "나레이션: 두 번째 울음소리는 아까보다 훨씬 선명하게 고막을 울렸다. 모래 언덕 너머 어딘가에서 짐승이 발을 내딛는 듯한 기분 나쁜 진동이 느껴졌다."
+  ],
+  "kinds": [
+   "echo",
+   "line"
+  ],
+  "narrate": [],
+  "roll": {
+   "tier": "hit",
+   "mods": [
+    {
+     "label": "가까워지는 짐승 소리",
+     "value": -1
+    }
+   ]
+  },
+  "ms": 16371
+ },
+ {
+  "name": "footprints",
+  "seed": 16,
+  "input": "이 발자국을 따라 조금 걸어 본다",
+  "then": "read",
+  "twist": {
+   "type": "twist",
+   "beat": "r3_dusk",
+   "tension": 4,
+   "roll": 2,
+   "result": "interrupt",
+   "id": "footprints"
+  },
+  "beat": "r3_dusk",
+  "reply": [
+   "나레이션: 발자국을 쫓아 몇 걸음 내디뎌 보았지만, 모래 언덕 너머로 보이는 것은 끝없는 지평선뿐이었다. 텅 빈 모래 위로 메마른 숨소리만 흩어졌다.",
+   "나레이션: 기운이 툭 끊겼다. 무거운 몸이 뜨거운 모래 위로 힘없이 주저앉았다.",
+   "나레이션: 몰려오는 추위에 손끝이 딱딱하게 굳어 한참을 몸을 웅크리고 있어야 했다."
+  ],
+  "kinds": [
+   "echo",
+   "roll",
+   "line",
+   "price",
+   "tracks",
+   "scene",
+   "ending"
+  ],
+  "ms": 14188
+ }
+]

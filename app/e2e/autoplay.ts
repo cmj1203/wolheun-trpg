@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import type { ResultSummary } from '../src/engine/summary.ts';
 import { watchNetwork } from './netwatch.ts';
+import { e2eState } from './state.ts';
 import { FALLBACK_INPUT, ROUTES } from './routes.ts';
 
 const APP = join(import.meta.dir, '..');
@@ -61,7 +62,8 @@ const runLog = join(values.out, `run-${values.route}.log`);
 const runArgs = ['./run.sh', '--no-open', '--port', values.port, '--llm-port', values['llm-port'], ...(values.model ? ['--model', values.model] : []), ...(noLlm ? ['--no-llm'] : [])];
 console.log(`[e2e ${values.route}] ${route.title} · 시드 ${seed} · ${runArgs.join(' ')}`);
 const started = Date.now();
-const runner = Bun.spawn(runArgs, { cwd: APP, stdout: Bun.file(runLog), stderr: Bun.file(runLog) });
+const state = e2eState();
+const runner = Bun.spawn(runArgs, { cwd: APP, stdout: Bun.file(runLog), stderr: Bun.file(runLog), env: { ...process.env, ...state.env } });
 
 let view: Bun.WebView | null = null;
 try {
@@ -179,7 +181,7 @@ try {
 
   const session = JSON.parse(await w.evaluate('JSON.stringify(window.__wolheun.session)')) as string;
   const result = (await (await fetch(`${base}/api/result?session=${session}`)).json()) as ResultSummary;
-  const logEntries = (await Bun.file(join(APP, 'logs', `${session}.jsonl`)).text())
+  const logEntries = (await Bun.file(join(state.logsDir, `${session}.jsonl`)).text())
     .trim()
     .split('\n')
     .map((l) => JSON.parse(l) as { kind: string; ending?: string });
@@ -212,6 +214,7 @@ try {
   view?.close?.();
   runner.kill('SIGINT');
   await runner.exited;
+  state.remove();
 }
 
 console.log(failures.length === 0 ? `[e2e ${values.route}] 통과` : `[e2e ${values.route}] 실패 ${failures.length}건`);

@@ -1,0 +1,254 @@
+[
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "왜 이렇게 재수가 없을까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "나는 왜 여기까지 왔을까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "이게 다 무슨 꼴이람",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "어쩌다 이 지경이 됐지",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "내가 미쳤지 왜 그랬을까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "언제까지 걸어야 하는 걸까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "이게 꿈이면 좋을 텐데 왜 안 깨지",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "self",
+  "text": "아 왜 하필 나야",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "지금 뭘 해야 해",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "여기서 뭘 할 수 있어?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "저 남자는 누구야",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "남은 시간이 얼마나 돼?",
+  "got": "talk:person",
+  "ok": false
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "귀찌는 어떻게 쓰는 거야",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "크라차는 어디 있어",
+  "got": "talk:person",
+  "ok": false
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "이 세계 사람들은 뭘 먹어?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "저장은 어떻게 하지",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "선택지는 어디 있어?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b05_why",
+  "want": "ask",
+  "text": "아시나는 왜 변장했어?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "왜 이렇게 재수가 없을까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "나는 왜 여기까지 왔을까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "이게 다 무슨 꼴이람",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "어쩌다 이 지경이 됐지",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "내가 미쳤지 왜 그랬을까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "언제까지 걸어야 하는 걸까",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "이게 꿈이면 좋을 텐데 왜 안 깨지",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "self",
+  "text": "아 왜 하필 나야",
+  "got": "talk:self",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "지금 뭘 해야 해",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "여기서 뭘 할 수 있어?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "저 남자는 누구야",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "남은 시간이 얼마나 돼?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "귀찌는 어떻게 쓰는 거야",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "크라차는 어디 있어",
+  "got": "talk:person",
+  "ok": false
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "이 세계 사람들은 뭘 먹어?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "저장은 어떻게 하지",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "선택지는 어디 있어?",
+  "got": "ask",
+  "ok": true
+ },
+ {
+  "beat": "b06_swing",
+  "want": "ask",
+  "text": "아시나는 왜 변장했어?",
+  "got": "ask",
+  "ok": true
+ }
+]

@@ -21,8 +21,9 @@ function itemNames(scenario: Scenario, ids: readonly string[]): string[] {
 }
 
 function castSection(ctx: GmContext, lore: Lore): string {
-  const { scenario, free } = ctx;
-  return free.speakers
+  const { scenario, beat, free } = ctx;
+  // 줄을 쓸 때만 빠지는 화자가 있어도 인물 절은 장면마다 같게 둔다. 프롬프트 앞부분이 달라지면 LLM 캐시가 깨져 호출마다 2초씩 더 든다.
+  return (beat.free?.speakers ?? free.speakers)
     .map((key) => {
       const cast = scenario.cast[key];
       if (!cast) return '';
@@ -95,7 +96,7 @@ export function buildSystem(ctx: GmContext, lore: Lore): string {
     '## 인물과 말투',
     castSection(ctx, lore),
     `## 이번 장면: ${beat.title}`,
-    bullets([`상황: ${free.situation}`, `장면 목표: ${free.goal}`, `쓸 수 있는 화자: ${free.speakers.join(', ')}`, ...(facing ? [] : ['아시나 곁에 아무도 없다. 다른 인물을 등장시키거나 그 반응을 쓰지 않는다.'])]),
+    bullets([`상황: ${free.situation}`, `장면 목표: ${free.goal}`, ...(facing ? [] : ['아시나 곁에 아무도 없다. 다른 인물을 등장시키거나 그 반응을 쓰지 않는다.'])]),
     '### 금지 전개',
     bullets(free.must_not),
     '## 지금 상태',
@@ -129,7 +130,7 @@ export function buildInterpretUser(ctx: GmContext, lore: Lore, only?: readonly I
     '먼저 kind 로 입력의 종류를 하나 고른다. 낱말이 아니라 누구에게 무엇을 하려는 입력인지로 고른다. 말과 행동의 경계: 상대에게 건넨 말, 인용, 말하는 행위는 person 이고, 아시나가 몸으로 하는 일을 서술한 문장은 내용이 엉뚱해도 action 이다. 상대를 평하거나 욕하거나 놀리는 문장은 그대로 입에 올리는 말이니 "~한다"로 끝나지 않아도 person 이다. action 은 아시나 자신의 몸 동작을 적은 문장이다.',
     free.speakers.some((k) => scenario.cast[k]?.style === 'speech' && scenario.cast[k]?.lore !== scenario.sheet.name) ? '지금 아시나 앞에 사람이 있다. "너", "넌"이라고 부르는 말은 그 사람에게 건넨 말이다.' : '지금 아시나 곁에 아무도 없다.',
     only?.includes('self')
-      ? `이 입력이 아시나가 이야기 속에서 하는 혼잣말인지, 플레이어가 게임에 건넨 말인지 다시 가린다. kind 는 ${only.join(', ')} 중에서 고른다.`
+      ? `이 입력이 아시나가 이야기 속에서 하는 혼잣말인지, 플레이어가 게임에 건넨 말인지 다시 가린다. 답이 사실로 정해져 있는 물음(누구인지, 이름, 출신, 어디인지, 그게 맞는지 확인하는 말)은 자기 자신에 대한 말이어도 알려고 묻는 말이니 self 가 아니다. 정보나 할 일을 알려고 묻는 말도 self 가 아니다. 물음 꼴이어도 답을 바라지 않는 탄식, 자책, 신세 한탄(왜 이러고 있는지, 어쩌다 이렇게 됐는지 되뇌는 말)만 self 다. kind 는 ${only.join(', ')} 중에서 고른다.`
       : only?.length === 2 && only.includes('lore') && only.includes('game')
       ? `이 물음이 이야기 속 세계를 묻는지, 이 게임 자체를 묻는지 다시 가린다. "성공하면", "실패하면" 꼴로 판정 결과가 가져오는 일(무엇을 얻는지, 죽는지, 끝나는지)을 묻는 말은 이야기의 앞일이 아니라 규칙을 묻는 것이니 game 이다. 화면의 단추나 창(수첩, 기록, 저장)을 어디서 보거나 누르는지 묻는 말도 세계가 아니라 화면을 묻는 것이니 game 이다. 이야기 속 세계의 것도 아닌 말(현실의 일, 게임 바깥 잡담)도 game 으로 둔다. kind 는 ${only.join(', ')} 중에서 고른다.`
       : only?.length === 1 && only[0] === 'game'
@@ -140,7 +141,7 @@ export function buildInterpretUser(ctx: GmContext, lore: Lore, only?: readonly I
       'game: 게임 자체에 대한 말. 화면에 보이는 규칙 용어의 뜻, 그 규칙이 어떻게 돌아가는지, 수치가 줄거나 늘면 어떻게 되는지, 판정 결과가 무엇을 바꾸는지(행운, 귀찌 수명, 판정과 주사위, 대가, 판정의 목표 숫자 10, 성공·대가·실패의 결과, 의심, 집착, 호감, 탈주 준비도), 화면의 단추와 조작 위치, 저장과 불러오기, 게임을 끝내겠다는 말, 진행자가 누구인지, 게임을 누가 만들었는지 묻는 말이 여기에 든다. 곁에 아무도 없는데 "너", "넌"이라고 부르는 말은 진행자에게 건넨 말이다(예: "대가가 뭔데?", "불러오기는 어디 있어?", "이쯤에서 접을까 봐", "너 진짜 여우야?").',
       'lore: 세계, 장소, 인물, 물건, 아시나의 처지를 진행자에게 묻는 말. 답을 구하는 물음이면 곁에 아무도 없어도 lore 다. 플레이어가 "나", "내"라고 하면 아시나를 묻는 것이다. 아시나가 이루려는 일을 묻는 말도 lore 다. 자기 자신이나 세계를 묻는 물음은 앞에 사람이 있어도 lore 다. 어디 있는지 묻는 말도 물음이지 행동이 아니다(예: "내 이름이 뭐였지?", "페시안이 어떤 나라야?", "저 호위들 왜 저래?"). "성공하면", "실패하면" 꼴로 판정 결과가 가져오는 일(무엇을 얻는지, 죽는지, 끝나는지)을 묻는 말은 세계가 아니라 규칙을 묻는 것이니 lore 가 아니라 game 이다. 화면의 단추나 창(수첩, 기록, 저장)을 어디서 보거나 누르는지 묻는 말도 lore 가 아니라 game 이다.',
       'person: 등장인물에게 소리 내어 건넨 말. 그대로 입에 올릴 수 있는 문장(호칭, 인사, 부탁, 따짐, 설득, 놀림, 거친 말), 따옴표로 인용한 말, "~라고 말한다", "소리를 지른다"처럼 말하는 행위를 적은 글이 여기에 든다. 앞에 있는 사람이든 멀리 보이는 사람이든 같다. "저 사람", "저 남자"처럼 3인칭으로 가리키며 묻는 말은 건넨 말이 아니라 lore 다. "성공하면", "실패하면" 꼴로 판정 결과를 조건으로 묻는 말은 이야기 속 인물이 알 수 없는 것이니 앞에 사람이 있어도 person 이 아니라 game 이다(예: "이봐요, 거기 잠깐만요!", "칼 좀 치워 주실래요").',
-      'self: 아무에게도 건네지 않고 답도 바라지 않는 혼잣말, 불평, 감탄, 몸 상태(예: "덥다 더워", "아 진짜 짜증 나", "졸려"). 답을 구하는 물음은 self 가 아니다. 이야기 속 일을 콕 집어 말하지 않고 그만하고 싶다, 더 하기 싫다고만 하는 말은 아시나의 푸념처럼 들려도 플레이를 그만두려는 말이니 self 가 아니라 game 이다. 그만 걷고 싶다처럼 이야기 속 일을 집어 말하면 self 다. 끝내지 않겠다는 말도 self 다.',
+      'self: 아무에게도 건네지 않고 답도 바라지 않는 혼잣말, 불평, 감탄, 몸 상태(예: "덥다 더워", "아 진짜 짜증 나", "졸려"). 답을 구하는 물음은 self 가 아니다. 자기 이름이나 정체처럼 사실로 답이 정해진 것을 확인하는 물음도 답을 구하는 물음이다. 이야기 속 일을 콕 집어 말하지 않고 그만하고 싶다, 더 하기 싫다고만 하는 말은 아시나의 푸념처럼 들려도 플레이를 그만두려는 말이니 self 가 아니라 game 이다. 그만 걷고 싶다처럼 이야기 속 일을 집어 말하면 self 다. 끝내지 않겠다는 말도 self 다.',
       'action: 아시나가 몸으로 하는 일을 서술한 문장("~한다", "~먹는다", "~던진다", "~해 본다", "~할게"). 상대에게 건넨 말이 아니고 몸이 하는 일을 적었으면 엉뚱하거나 뜬금없어도 action 이다(딴짓은 odd 로 따로 표시한다). "화를 낸다"처럼 태도만 적고 말 내용이 없는 글도 action 이다. 상대에게 직접 말하는 투(~요, ~세요, ~줘)로 쓴 글과 물음은 action 이 아니다.',
       'bad: 15세 이용가에 맞지 않는 행동이나 심한 욕, 금지 전개를 곧장 일으키려는 입력.',
     ]),
@@ -186,6 +187,12 @@ const TONE: Record<TalkTone, string> = {
   deflect: '이 입력은 15세 이용가에 맞지 않거나 금지 전개다. 일어나지 않은 일로 두고, 그 내용을 입에 담지 않은 채 인물이 비웃거나 잘라 내며 돌려 말한다.',
 };
 
+/** 인물이 이번 판에 이미 한 말. 되풀이하면 검증이 막으니 처음부터 피하게 한다. */
+function spokenRule(ctx: GmContext): string[] {
+  const said = ctx.free.speakers.flatMap((s) => (ctx.scenario.cast[s]?.style === 'speech' ? (ctx.state.spoken?.[s] ?? []).slice(-6) : []));
+  return said.length ? [`이번 판에 이미 한 말이라 다시 쓰지 않는다: ${said.map(quote).join(' / ')}`] : [];
+}
+
 export function buildTalkUser(ctx: GmContext, feedback: string, maxLines: number, maxChars: number): string {
   return [
     '## 할 일: 판정 없는 대화',
@@ -221,6 +228,7 @@ export function buildTalkUser(ctx: GmContext, feedback: string, maxLines: number
       '대사 줄에는 그 인물이 소리 내어 하는 말만 쓴다. 행동과 표정은 나레이션 줄로 쓴다.',
       '지금의 긴장(칼끝, 시선)은 그대로 둔다. 다음 사건으로 넘어가지 않는다.',
       `화자는 ${ctx.free.speakers.join(', ')} 중에서만 고른다. 대사 한 줄은 ${maxChars}자 이내.`,
+      ...spokenRule(ctx),
       FACE_RULE,
     ]),
     feedback ? `## 직전 답의 문제(반드시 고칠 것)\n${feedback}` : '',
@@ -244,7 +252,7 @@ export function buildNarrateUser(ctx: NarrateContext, feedback: string, maxLines
       : '',
     ctx.improv?.absurd ? '이 세계에 없는 물건이나 힘을 쓰려 했다. 그런 것은 일어나지 않는다. 그 낱말을 쓰지 말고, 아시나가 실제로 한 동작을 이 세계의 말로 구체적으로 그린다(예: 허공에 손바닥을 내밀었다, 빈 손을 귀에 대었다). "이상한 몸짓"이라는 말은 쓰지 않는다. 상대 인물이 있으면 그 인물이 어이없어하며 한마디 한다.' : '',
     `결과: ${TIER_LABEL[roll.tier]} (반드시 이 결과대로). ${TIER_MEANING[roll.tier]}`,
-    facing ? '앞 인물을 쓰러뜨리거나 칼을 빼앗아 장면을 끝내지 않는다. 몸으로 덤벼 성공했으면 상대가 허를 찔려 움찔하거나 아시나가 칼날을 피하는 모습으로 쓴다.' : '',
+    facing ? '앞 인물을 쓰러뜨리거나 칼을 빼앗아 장면을 끝내지 않는다. 몸으로 덤벼 성공했으면 상대가 허를 찔려 움찔하거나 칼날이 아슬아슬하게 비껴가는 모습으로 쓴다.' : '',
     `반드시 일어날 일: ${outcome.gist ?? ''}`,
     ctx.price ? `대가(반드시 장면에 보인다. 성공한 행동 자체를 없던 일로 만들지 않는다): ${ctx.price.text}` : '',
     '막아야 할 일은 "안 된다"고 쓰지 않고 이야기 속 이유로 보여 준다.',
@@ -254,7 +262,7 @@ export function buildNarrateUser(ctx: NarrateContext, feedback: string, maxLines
     '플레이어가 입력한 행동만 보여 준다. 입력에 없는 이동(달려가기, 오래 걷기, 거리 벌리기), 입력에 없는 말(길 묻기, 인사), 플레이어 대신 내리는 결정, 지금 상태에 없는 일(붙잡혀 있음, 칼이 목에 있음)은 쓰지 않는다. 대가는 입력한 행동이 그 자리에서 어긋나는 모습으로 보여 준다.',
     outcome.state_guard?.length ? `이 결과에서 쓰면 안 되는 표현: ${outcome.state_guard.join(', ')}` : '',
     approach.presume?.length && !approach.presume.some((w) => text.replace(/\s+/g, '').includes(w.replace(/\s+/g, '')))
-      ? `플레이어는 "${approach.label}"과 같은 행동을 하지 않았다. 원작 대사에 나오는 그 행동(${approach.presume.slice(0, 3).join(', ')} 등)을 쓰지 말고, 플레이어가 실제로 한 행동을 그대로 보여 준다.`
+      ? `플레이어는 "${approach.label}"과 같은 행동을 하지 않았다. 원작 대사에 나오는 그 행동(${approach.presume.join(', ')})을 아시나가 했다고 쓰지 말고, 플레이어가 실제로 한 행동을 그대로 보여 준다. '반드시 일어날 일'에 그 행동이 적혀 있어도 결과만 따르고, 그 뒤에 일어나는 일은 상대나 사물을 주어로 쓴다.`
       : '',
     outcome.lines.length
       ? `원작 대사(뜻과 말투의 기준일 뿐이다. 아시나의 줄은 참고만 하고 쓰지 않으며, 상대의 줄은 플레이어가 실제로 한 말·행동에 맞게 다시 쓴다): ${outcome.lines.map((l) => `${l.speaker}: ${l.text}`).join(' / ')}`
@@ -268,8 +276,9 @@ export function buildNarrateUser(ctx: NarrateContext, feedback: string, maxLines
       '아시나 쪽은 내레이션(입력에 있는 말·동작과 그 결과)과 속마음으로만 쓴다. 입력에 없는 새 주장, 자기 자랑, 인사, 질문을 아시나가 했다고 쓰지 않는다.',
       '나레이션에서 아시나의 몸짓은 입력에 있는 동작과 그 결과(넘어짐, 들킴, 다침)만 쓴다. 입력에 없는 손짓이나 다음 행동(걸어 나가기 등)을 지어내지 않는다.',
       '대사 줄에는 그 인물이 소리 내어 하는 말만 쓴다. 행동, 표정, 칼의 움직임은 나레이션 줄로 쓴다. "~며 말했다" 같은 지문을 대사 줄에 넣지 않는다.',
-      '"이미 일어난 일"과 어긋나는 장면(이미 벗은 후드를 또 벗기, 없는 소지품 꺼내기)을 쓰지 않는다.',
+      '"이미 일어난 일"과 어긋나는 장면(이미 벗은 후드를 또 벗기, 없는 소지품 꺼내기)을 쓰지 않는다. 후드를 쓰고 있으면 결과나 대가에 적혀 있지 않은 한 서술로 벗기지 않는다.',
       `화자는 ${free.speakers.join(', ')} 중에서만 고른다. 대사 한 줄은 ${maxChars}자 이내.`,
+      ...spokenRule(ctx),
       '인물마다 정해진 말투를 지킨다.',
       THOUGHT_RULE,
       FACE_RULE,
@@ -333,7 +342,7 @@ export function buildExplainUser(ctx: GmContext, unseen: readonly string[], feed
 export const FACE_RULE = `인물의 대사·속마음 줄에는 그 줄을 말하는 순간의 표정을 face 에 적는다(${FACES.join(', ')} 중 하나). 줄마다 그 줄의 감정에 맞게 고르고, 인물보로 적힌 표정 규칙을 따른다. 나레이션과 GM 줄에는 face 를 쓰지 않는다.`;
 export const LINES_FORMAT = '형식: {"lines":[{"speaker":"나레이션","text":"서술"},{"speaker":"인물","text":"대사","face":"neutral"}]}';
 
-export function linesSchema(speakers: readonly string[], maxLines: number, maxChars: number, lead?: { first: string; rest: readonly string[] }, faced: readonly string[] = []): object {
+export function linesSchema(speakers: readonly string[], maxLines: number, maxChars: number, lead?: { first: string; second?: string; rest: readonly string[] }, faced: readonly string[] = []): object {
   // 입식이 있는 화자의 줄은 face 가 필수, 나레이션·GM 줄에는 face 칸이 없다. 둘이 섞이면 anyOf 로 갈림다.
   const shape = (who: readonly string[], withFace: boolean) => ({
     type: 'object',
@@ -341,7 +350,8 @@ export function linesSchema(speakers: readonly string[], maxLines: number, maxCh
     required: withFace ? ['speaker', 'text', 'face'] : ['speaker', 'text'],
     properties: {
       speaker: { type: 'string', enum: [...who] },
-      text: { type: 'string', minLength: 1, maxLength: maxChars * 2 },
+      // 큰따옴표·역슬래시·줄바꿈을 못 쓰게 해 글 안에 JSON 조각이나 끝없는 줄바꿈을 쓰며 토큰 상한까지 가는 일을 막는다.
+      text: { type: 'string', pattern: `^[^"\\\\\\n\\r]{1,${maxChars * 2}}$` },
       ...(withFace ? { face: { type: 'string', enum: [...FACES] } } : {}),
     },
   });
@@ -353,7 +363,7 @@ export function linesSchema(speakers: readonly string[], maxLines: number, maxCh
     return { anyOf: [shape(withFace, true), shape(plain, false)] };
   };
   const lines = lead
-    ? { type: 'array', prefixItems: [line([lead.first]), ...Array.from({ length: Math.max(0, maxLines - 1) }, () => line(lead.rest))] }
+    ? { type: 'array', prefixItems: [line([lead.first]), ...(lead.second && maxLines >= 2 ? [line([lead.second])] : []), ...Array.from({ length: Math.max(0, maxLines - (lead.second ? 2 : 1)) }, () => line(lead.rest))] }
     : { type: 'array', minItems: 1, maxItems: maxLines, items: line(speakers) };
   return { type: 'object', additionalProperties: false, required: ['lines'], properties: { lines } };
 }
