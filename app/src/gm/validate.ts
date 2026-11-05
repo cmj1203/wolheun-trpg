@@ -399,7 +399,7 @@ export function validateOutput(raw: string, opt: CheckOptions): { lines: Line[];
   const lines = dropRepeats(cleaned);
   const violations = checkLines(lines, opt);
   // 뺀 줄도 다시 쓰게 할 거리는 된다(가벼운 위반). 끝내 고치지 못하면 뺀 채로 화면에 낸다.
-  const dropped = cleaned.find((l, i) => !lines.includes(l) && i > 0);
+  const dropped = cleaned.find((l) => !lines.includes(l));
   if (dropped) violations.push({ kind: 'format', rule: 'repeat', detail: `같은 대사를 되풀이했습니다: "${dropped.text}"`, severity: 'soft' });
   return { lines, violations };
 }
