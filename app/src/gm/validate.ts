@@ -1,6 +1,6 @@
 import { FACES, isFace, type CastSpec, type Line, type Tier } from '../engine/types.ts';
 import { isPresentTense, longestCommon, normalizeKo, preemptedBy } from '../engine/text.ts';
-import { FORBIDDEN_GROUPS, RATING_GROUPS, type Lore, type Register } from './lore.ts';
+import { FORBIDDEN_GROUPS, RATING_GROUPS, type ForbiddenGroup, type Lore, type Register } from './lore.ts';
 
 export type ViolationKind = 'format' | 'lore' | 'rating' | 'beat';
 export type Severity = 'hard' | 'soft';
@@ -86,8 +86,8 @@ export function mentions(text: string, term: string): boolean {
 const LOOSE_MIN = 3;
 
 /**
- * 금지어 사전(금지 묶음·변장 노출) 낱말이 글에 들었는가. 띄어 쓴 낱말과 세 글자 이상인 낱말만 띄어쓰기를 무시하고 맞춘다.
- * 욕(profanity)은 일부러 띄어 써 피하는 일("시 발")이 흔해 이 함수를 쓰지 않고 mentions 로 띄어쓰기를 무시한다.
+ * 금지어 사전(바깥 이야기·현대 물건·현실 지명·스포일러·변장 노출) 낱말이 글에 들었는가.
+ * 띄어 쓴 낱말과 세 글자 이상인 낱말만 띄어쓰기를 무시하고 맞춘다. 등급 낱말은 ratingIn 으로 본다.
  */
 export function forbiddenIn(text: string, term: string): boolean {
   const t = term.trim();
@@ -96,9 +96,22 @@ export function forbiddenIn(text: string, term: string): boolean {
   return (/\s/u.test(t) || [...t].length >= LOOSE_MIN) && compact(text).includes(compact(t));
 }
 
-/** 상대 인물 줄 앞의 "하."는 polish 가 지운다. 같은 말인지 맞출 때도 떼고 본다. */
+/** 등급 낱말과 겹치지만 해롭지 않은 말. 띄어쓰기를 무시하고 맞추기 전에 지운다("자, 해 보자" → 자해 아님). */
+const RATING_INNOCENT: readonly RegExp[] = [/(^|[\s,.!?…~])자[\s,.!…~]+해(?=\s*[보볼봐봅줘야라요])/gu];
+
+/** 등급(욕·선정·잔혹·자해) 낱말이 글에 들었는가. 일부러 띄어 써 피하는 일("시 발", "섹 스")이 흔해 띄어쓰기를 무시하고 맞춘다. */
+export function ratingIn(text: string, term: string): boolean {
+  return mentions(RATING_INNOCENT.reduce((t, re) => t.replace(re, '$1'), text), term);
+}
+
+/** 금지 묶음 이름에 맞는 비교로 낱말이 글에 들었는지 본다. */
+export function forbiddenTermIn(group: ForbiddenGroup, text: string, term: string): boolean {
+  return RATING_GROUPS.includes(group) ? ratingIn(text, term) : forbiddenIn(text, term);
+}
+
+/** 상대 인물 줄 앞의 "하."는 polish 가 지운다. 같은 말인지 맞출 때도 떼고 보되("하,"도 같은 말로 본다), "하."뿐인 줄은 그대로 본다. */
 const LEADING_HA = /^하[.…!,]+\s*/u;
-const bareNorm = (s: string) => normalizeKo(s.replace(LEADING_HA, ''));
+const bareNorm = (s: string) => normalizeKo(s.replace(LEADING_HA, '')) || normalizeKo(s);
 
 /** 이보다 짧은 원작 줄은 글 안에 들었는지가 아니라 줄 전체가 같은지로 본다("여자."가 "입을 닫아라, 여자."를 막지 않게). */
 const RESERVED_SUBSTRING_MIN = 5;
@@ -169,8 +182,9 @@ function isFormalOrPastDa(sentence: string): boolean {
   if (prev === undefined || prev < 0xac00 || prev > 0xd7a3) return false;
   return (prev - 0xac00) % 28 === 20; // 받침 ㅆ
 }
-/** 여우 줄의 존댓말 끝(~요, ~죠, ~십시오). 합쇼체 '~니다'는 '다' 끝 검사가 hard 로 잡는다. "땅이니까."는 반말이라 넣지 않고, 필요·중요는 낱말이라 뺀다. */
-const GM_POLITE = /((?<![필중])요|죠|십시오)$/u;
+/** 여우 줄의 존댓말 끝(~요, ~죠, ~십시오). 합쇼체 '~니다'는 '다' 끝 검사가 hard 로 잡는다. "땅이니까."는 반말이라 넣지 않고, 필요·중요·강요 같은 낱말은 뺀다. */
+const GM_POLITE = /((?<![필중강수주소요])요|죠|십시오)$/u;
+const QUOTED = /"[^"]*"|“[^”]*”|‘[^’]*’|「[^」]*」|『[^』]*』/gu;
 const TRAILING = /["'“”‘’()[\]「」『』\-―—\s]+$/u;
 
 function sentenceEnds(text: string): string[] {
@@ -222,7 +236,7 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
     const length = [...line.text].length;
     // 길이는 가벼운 위반이다. 넘으면 다시 쓰게 하되, 끝내 넘어도 작가 대사로 바꾸지 않는다.
     if (length > opt.maxChars) add('format', 'too_long', `한 줄이 ${length}자입니다(최대 ${opt.maxChars}자)`, 'soft');
-    const repeatKey = normalizeKo(line.text) || line.text;
+    const repeatKey = bareNorm(line.text) || line.text;
     if (seen.has(repeatKey)) add('format', 'repeat', `같은 대사를 되풀이했습니다: "${line.text}"`, 'soft');
     const spokenNorm = bareNorm(line.text);
     if (spokenNorm && opt.spoken?.[line.speaker]?.some((t) => bareNorm(t) === spokenNorm)) add('beat', 'repeat_play', `이번 판에 ${line.speaker}이(가) 이미 한 말("${line.text}")입니다. 이번 입력에 맞는 다른 말로 쓰세요`);
@@ -249,9 +263,12 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
     }
     if (cast?.style === 'gm') {
       // 합쇼체(~습니다)와 과거 서술(~었다/았다/였다)은 여우 말투가 아니라 막는다. "대담하다"처럼 '다'로 끝나는 반말 감탄은 자연스러워 soft 로만 적는다.
-      const polite = sentenceEnds(line.text).find((s) => GM_POLITE.test(s));
+      // 여우가 인용한 남의 말("살려 주세요")은 여우 말투가 아니다. 따옴표 안을 빼고 끝을 본다.
+      const unquoted = line.text.replace(QUOTED, ' ');
+      const own = /[가-힣]/u.test(unquoted) ? unquoted : line.text;
+      const polite = sentenceEnds(own).find((s) => GM_POLITE.test(s));
       if (polite) add('lore', 'gm_voice', `여우는 플레이어에게 반말로 말합니다("${polite}"가 존댓말로 끝남). "~야", "~해", "~어"로 쓰세요`);
-      const flat = sentenceEnds(line.text).find((s) => s.endsWith('다'));
+      const flat = sentenceEnds(own).find((s) => s.endsWith('다'));
       if (flat) add('lore', 'gm_voice', `여우는 플레이어에게 반말로 말합니다("${flat}"가 "다"로 끝남). "~야", "~해", "~어"로 쓰세요`, isFormalOrPastDa(flat) ? 'hard' : 'soft');
     }
     if (cast?.style === 'narration') {
@@ -298,7 +315,7 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
       // 플레이어가 먼저 꺼낸 이름·사실은 인물이 되받아 말해도 새로 꺼낸 것이 아니다. 등급(욕·선정·잔혹·자해)은 GM 줄에 그대로 건다.
       if (group === 'spoilers' && inputDid(term)) continue;
       const scope = GM_SELF_TERMS.includes(term) ? voiced : all;
-      if (group === 'profanity' ? mentions(scope, term) : forbiddenIn(scope, term)) add(kind, group, term);
+      if (forbiddenTermIn(group, scope, term)) add(kind, group, term);
     }
   }
   for (const [right, wrongs] of Object.entries(opt.lore.misspellings)) {
@@ -367,7 +384,7 @@ function dropEchoThoughts(lines: Line[], opt: CheckOptions): Line[] {
 function dropRepeats(lines: Line[]): Line[] {
   const seen = new Set<string>();
   const kept = lines.filter((line) => {
-    const key = `${line.speaker}|${normalizeKo(line.text) || line.text}`;
+    const key = `${line.speaker}|${bareNorm(line.text) || line.text}`;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;

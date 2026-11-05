@@ -1,7 +1,7 @@
 import type { FreeSpec } from '../engine/types.ts';
 import type { Lore } from './lore.ts';
 import { isNoise } from '../engine/text.ts';
-import { forbiddenIn, mentions } from './validate.ts';
+import { forbiddenIn, mentions, ratingIn } from './validate.ts';
 
 export type RuleReading =
   | { kind: 'approach'; approach: string; item: string | null; score: number }
@@ -36,8 +36,8 @@ export function isLoreQuestion(text: string, lore: Lore): boolean {
 
 export function ruleInterpret(free: FreeSpec, text: string, items: readonly string[], lore: Lore): RuleReading {
   for (const group of RATING_GROUPS) {
-    // 욕은 띄어 써 피하는 일이 흔해 띄어쓰기를 무시한다. 나머지는 두 낱말에 걸친 우연("자 해볼까" → 자해)을 막는다.
-    const hit = lore.forbidden[group].find((term) => (group === 'profanity' ? mentions(text, term) : forbiddenIn(text, term)));
+    // 등급 낱말은 띄어 써 피하는 일이 흔해 띄어쓰기를 무시하되, "자, 해 볼까" 같은 우연은 빼고 본다.
+    const hit = lore.forbidden[group].find((term) => ratingIn(text, term));
     if (hit) return { kind: 'deflect', reason: `${group}: ${hit}` };
   }
   if (lore.forbidden.modern.some((term) => forbiddenIn(text, term))) return { kind: 'improv', absurd: true };

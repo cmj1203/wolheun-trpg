@@ -79,6 +79,11 @@ describe('고친 검사 버그', () => {
     expect(hard(out(['GM', '적국 땅이라 그렇죠.']))).toContain('lore/gm_voice');
     expect(rules(out(['GM', '적국 땅이니까. 들키면 무사하지 못해.']))).not.toContain('lore/gm_voice');
     expect(rules(out(['GM', '지금은 물이 제일 필요.']))).not.toContain('lore/gm_voice');
+    expect(rules(out(['GM', '그건 강요.']))).not.toContain('lore/gm_voice');
+    // 여우가 따옴표로 인용한 남의 말은 여우 말투가 아니다. 줄 전체가 따옴표면 그 안을 본다.
+    expect(rules(out(['GM', '이렇게 말해 봐. "살려 주세요."']))).not.toContain('lore/gm_voice');
+    expect(rules(out(['GM', '그 남자가 "왜요?"래.']))).not.toContain('lore/gm_voice');
+    expect(hard(out(['GM', '"여긴 사막입니다."']))).toContain('lore/gm_voice');
   });
 
   test('두 낱말에 걸친 우연을 금지어로 보지 않는다(자 해 → 자해, 일 본 → 일본, 작은 발 → 은발)', () => {
@@ -90,15 +95,23 @@ describe('고친 검사 버그', () => {
     expect(hard(out(['나레이션', '자해라도 할 기세였다.']))).toContain('rating/harm');
     expect(hard(out(['속마음', '일본에 가고 싶다.']))).toContain('lore/realworld');
     expect(hard(out(['남자', '베 히 다 트.']))).toContain('lore/spoilers');
+    expect(forbiddenIn('국 왕창', '국왕')).toBe(false);
     expect(forbiddenIn('스마트 폰', '스마트폰')).toBe(true);
+  });
+
+  test('등급 낱말(욕·선정·잔혹·자해)은 띄어 써도 막는다. 입력도 같다', () => {
+    for (const text of ['섹 스 하자', '자 살 할래', '강 간', '알 몸이 된다', '참 수 한다', '마 약을 먹는다', '고 문 한다', '시 발 꺼져']) {
+      expect(ruleInterpret(free, text, [], lore)).toMatchObject({ kind: 'deflect' });
+    }
+    expect(hard(out(['나레이션', '알 몸이 드러났다.']))).toContain('rating/sexual');
+    expect(hard(out(['속마음', '차라리 자 살이라도…']))).toContain('rating/harm');
+    expect(hard(out(['남자', '병 신 같은 소리.']))).toContain('rating/profanity');
   });
 
   test('입력 해석도 "자 해볼까"를 등급 밖으로 돌리지 않는다', () => {
     expect(ruleInterpret(free, '자 해볼까', [], lore).kind).not.toBe('deflect');
     expect(ruleInterpret(free, '자해할 거야', [], lore)).toMatchObject({ kind: 'deflect' });
-    // 욕은 일부러 띄어 써 피하는 일이 흔해 전처럼 띄어쓰기를 무시한다.
-    expect(ruleInterpret(free, '시 발 꺼져', [], lore)).toMatchObject({ kind: 'deflect' });
-    expect(hard(out(['남자', '병 신 같은 소리.']))).toContain('rating/profanity');
+    expect(ruleInterpret(free, '자, 해 봐요', [], lore).kind).not.toBe('deflect');
   });
 
   test('스포일러는 이번 입력에 든 말만 면제한다. 지난 입력(said)과 해석 요약(deed)으로 풀리지 않는다', () => {
@@ -120,6 +133,9 @@ describe('고친 검사 버그', () => {
     const res = validateOutput(out(['남자', '하. 웃기는 여자군.'], ['남자', '하, 웃기는 여자군!']), options());
     expect(res.violations.map((v) => v.rule)).toContain('repeat');
     expect(res.lines.map((l) => l.text)).toEqual(['하. 웃기는 여자군.']);
+    // polish 가 앞의 "하."를 지우면 같은 줄이 되므로 이것도 같은 말이다.
+    const ha = validateOutput(out(['남자', '하. 웃기는 여자군.'], ['남자', '웃기는 여자군.']), options());
+    expect(ha.lines.map((l) => l.text)).toEqual(['하. 웃기는 여자군.']);
   });
 
   test('"하."를 떼고 다시 쓴 지난 말과 원작 줄도 같은 말로 본다(polish 가 "하."를 지우므로)', () => {
@@ -127,6 +143,8 @@ describe('고친 검사 버그', () => {
     expect(hard(out(['남자', '그 입은 쉬지를 않는군.']), options({ spoken: { 남자: ['하. 그 입은 쉬지를 않는군.'] } }))).toContain('beat/repeat_play');
     const reserved = [{ text: '하. 웃기는 여자군.', future: true }].map((r) => ({ ...r, norm: normalizeKo(r.text) }));
     expect(hard(out(['남자', '웃기는 여자군.']), options({ reserved }))).toContain('beat/reserved_line');
+    // "하."뿐인 짧은 반응도 되풀이는 막는다.
+    expect(hard(out(['남자', '하.']), options({ spoken: { 남자: ['하…'] } }))).toContain('beat/repeat_play');
     // "하늘" 같은 낱말 앞머리는 떼지 않는다.
     expect(hard(out(['나레이션', '하늘이 붉었다.']), options({ spoken: { 나레이션: ['늘이 붉었다.'] } }))).not.toContain('beat/repeat_play');
   });
@@ -155,7 +173,7 @@ describe('고친 대체 문구(모델 없음·끝내 실패)', () => {
   const ctxWith = (state: Partial<GameState>, extra: Partial<GmContext> = {}): GmContext => ({ scenario, beat, free, state: { ...fresh, ...state }, text: '닥쳐 씨발', ...extra });
   const texts = (ls: readonly Line[]) => ls.map((l) => l.text);
 
-  test('두 줄짜리 돌려 막기 묶음이 턴마다 번갈아 나온다(전에는 늘 첫 줄)', async () => {
+  test('두 줄짜리 돌려 막기 묶음이 턴마다 번갈아 나온다(전에는 늘 같은 줄)', async () => {
     const first = await gm.talk(ctxWith({ free: { beat: beat.id, talks: 0, rolls: 0 }, said: ['a'] }, { tone: 'deflect' }));
     const second = await gm.talk(ctxWith({ free: { beat: beat.id, talks: 1, rolls: 0 }, said: ['a', 'b'] }, { tone: 'deflect' }));
     expect(texts(first.lines)).not.toEqual(texts(second.lines));
@@ -166,6 +184,17 @@ describe('고친 대체 문구(모델 없음·끝내 실패)', () => {
     for (const talks of [0, 1, 2, 3]) {
       const reply = await gm.talk(ctxWith({ free: { beat: beat.id, talks, rolls: 0 }, spoken: { 남자: [pool[0] ?? ''] } }, { tone: 'deflect' }));
       expect(texts(reply.lines)).toEqual([pool[1] ?? '']);
+    }
+  });
+
+  test('묶음을 다 쓴 뒤에는 가장 오래전에 한 줄을 고른다(같은 입력 되풀이로 talks 가 2씩 뛰거나 그대로여도 한 줄에 갇히지 않는다)', async () => {
+    const [a, b] = free.deflect.map((l) => l.text);
+    if (!a || !b) throw new Error('b05_why 돌려 막기 줄이 둘이 아닙니다');
+    for (const talks of [2, 4, 6]) {
+      const afterB = await gm.talk(ctxWith({ free: { beat: beat.id, talks, rolls: 0 }, spoken: { 남자: [a, b] } }, { tone: 'deflect' }));
+      expect(texts(afterB.lines)).toEqual([a]);
+      const afterA = await gm.talk(ctxWith({ free: { beat: beat.id, talks, rolls: 0 }, spoken: { 남자: [b, a] } }, { tone: 'deflect' }));
+      expect(texts(afterA.lines)).toEqual([b]);
     }
   });
 
@@ -197,6 +226,7 @@ describe('고친 대체 문구(모델 없음·끝내 실패)', () => {
 
   test('입력 가림(screen)도 두 낱말에 걸친 우연으로 스포일러를 잡지 않는다', () => {
     const at = (text: string) => ({ scenario, beat, free, state: fresh, text });
+    expect(gm.screen(at('국 왕창 먹고 싶어요'))).toBeNull();
     expect(gm.screen(at('왕 이야기 좀 해 줘요'))).not.toBeNull(); // '왕이야'는 세 글자라 띄어 써도 걸린다(알려진 오탐).
     expect(gm.screen(at('베히다트 맞죠?'))).toMatchObject({ reason: 'unknown', term: '베히다트' });
   });
