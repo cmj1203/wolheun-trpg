@@ -490,7 +490,8 @@ export interface GameState {
   /** 플레이어가 먼저 해 버린 뒤 장면의 원작 줄(정규화한 글). 그 장면에 가면 이 줄만 건너뛴다. */
   preempted?: string[];
   /** 여우가 결과를 알리고 답을 기다리는 입력. */
-  pendingRisk?: { text: string; quit: boolean };
+  /** warn: 확인 창에 띄운 글이 그만두기 말의 기본 경고와 다를 때 그 글. 불러온 뒤 같은 창을 다시 띄울 때 쓴다. */
+  pendingRisk?: { text: string; quit: boolean; warn?: string };
   /** 큰 즉흥 행동의 해석이 맞는지 카드로 묻고 답을 기다리는 입력. 그래면 이 해석대로 굴리고, 다른 뜻이면 지우고 다시 적게 한다. */
   pendingIntent?: {
     text: string;

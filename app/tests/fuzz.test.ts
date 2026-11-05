@@ -153,6 +153,19 @@ describe('퍼저·감사가 찾은 버그: 불러온 판의 확인 창', () => {
     expect(step.events.some((e) => e.type === 'confirm' && e.kind === 'quit')).toBe(true);
   });
 
+  test('불러온 판에 다시 띄우는 그만두기 확인은 처음 띄운 창과 같은 글이다(질문 모드로 물었을 때도)', async () => {
+    // 질문 모드에서 '게임을 끝내는 말'로 읽히면 여우 답(game_help)의 글로 창을 띄운다.
+    const engine = new Engine(scenario, new FakeGm((): Interpretation => ({ kind: 'ask', game: 'quit', source: 'llm', meta: META })), fakeClock().now, true);
+    const first = engine.newGame(1, 'r');
+    for (const action of [{ type: 'free', text: '그만할래' }, { type: 'ask', text: '이제 그만하고 싶은데', scene: first.state.beat }] as Action[]) {
+      const asked = await engine.act(first.state, action);
+      const shown = asked.step.events.find((e) => e.type === 'confirm');
+      expect(shown).toBeDefined();
+      const step = engine.resume(engine.noteSlot(asked.state, 'load', 'x'));
+      expect(step.events.find((e) => e.type === 'confirm')).toEqual(shown!);
+    }
+  });
+
   test('의도 카드가 떠 있던 저장을 불러와도 카드를 다시 띄운다', async () => {
     const engine = new Engine(scenario, boldGm('그의 칼을 붙잡았다'), fakeClock().now, false);
     const first = engine.newGame(2, 'i');

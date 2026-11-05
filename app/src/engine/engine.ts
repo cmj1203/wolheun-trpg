@@ -256,7 +256,8 @@ export class Engine {
     // 답을 기다리던 확인 창은 다시 띄운다. 안 띄우면 보이지 않는 창에 뒤의 "응"이 답이 된다.
     if (!state.ending && state.pendingIntent) events.push(this.intentEvent(state.pendingIntent));
     else if (!state.ending && state.pendingRisk) {
-      const warn = (this.scenario.risky ?? []).find((r) => r.quit)?.warn;
+      // 처음 띄운 창의 글. 그 글을 적어 두기 전의 저장이면 그만두기 말의 경고 글을 쓴다.
+      const warn = state.pendingRisk.warn ?? (this.scenario.risky ?? []).find((r) => r.quit)?.warn;
       if (warn) events.push({ type: 'confirm', kind: 'quit', text: warn });
     }
     if (beat.free && state.free) this.gm.prepare?.({ scenario: this.scenario, beat, free: beat.free, state });
@@ -1148,7 +1149,9 @@ export class Engine {
   private askQuit(state: GameState, text: string, warn: string, events: GameEvent[]): void {
     // 확인 창은 하나다. 떠 있던 의도 카드는 그만두기 확인이 대신하고, 창의 답은 그만두기에 간다.
     this.dropIntent(state);
-    state.pendingRisk = { text, quit: true };
+    // 그만두기 말의 기본 경고와 다른 글(질문 모드의 답)일 때만 적어 둔다. 불러온 뒤 같은 창을 다시 띄우는 데 쓴다.
+    const plain = (this.scenario.risky ?? []).find((r) => r.quit)?.warn;
+    state.pendingRisk = { text, quit: true, ...(warn !== plain ? { warn } : {}) };
     events.push({ type: 'confirm', kind: 'quit', text: warn });
   }
 
