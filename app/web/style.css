@@ -2057,3 +2057,968 @@ button.primary {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
+
+/*
+ * 폰 세로 화면(web_audit K-3·H-1·H-2). 16:9 무대는 폭 390px 에서 높이 219px 이 되고 cqw 글자가 3~6px 로 준다.
+ * 세로이고 폭이 900px 이하일 때만 무대를 화면 전체로 펴서 위에서부터 메뉴 / 그림 칸 / 진행 수치 / 대사 / 입력 순으로 쌓고,
+ * 글자와 단추는 cqw 대신 px 로 둔다(브라우저 확대에도 커진다). 가로 화면은 이 블록에 걸리지 않아 그대로다.
+ * 그림 칸 높이는 대사 길이와 상관없이 고정한다. 배경 크기는 main.ts paint() 가 창 크기가 바뀔 때만 다시 재기 때문이다.
+ */
+@media (orientation: portrait) and (max-width: 900px) {
+  .stage {
+    /* 메뉴·진행 수치·대사창·입력줄에 약 470px 를 남기고 나머지를 그림에 준다(150px ~ 화면 높이 44%). */
+    --art-h: clamp(150px, calc(100vh - 470px), 44vh);
+    --art-h: clamp(150px, calc(100dvh - 470px), 44dvh);
+    --gap: 8px;
+    --tap: 44px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto var(--art-h) auto minmax(0, 1fr) auto;
+    grid-template-areas: 'top' 'art' 'hud' 'panel' 'say';
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    aspect-ratio: auto;
+    font-size: 16px;
+  }
+
+  /* 그림 칸: 배경·입식·CG·컷인·효과 글자는 모두 위에서 둘째 줄 안에만 그린다. */
+  .bg,
+  .vignette,
+  .sprites,
+  .cg,
+  .cutin,
+  .sfx,
+  .temp-badge {
+    grid-area: art;
+  }
+
+  .sprites {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .sprites .slot {
+    bottom: 0;
+    height: 96%;
+    width: 46%;
+  }
+
+  .slot.left {
+    left: -4%;
+  }
+
+  .slot.center {
+    left: 27%;
+  }
+
+  .slot.right {
+    left: auto;
+    right: -4%;
+  }
+
+  .slot img {
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.45));
+  }
+
+  .cg-art {
+    inset: 3%;
+  }
+
+  .sfx {
+    top: 22%;
+    font-size: 34px;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .temp-badge {
+    left: 8px;
+    bottom: 6px;
+    top: auto;
+    font-size: 12px;
+  }
+
+  /* 메뉴: 첫 줄에 화수·장면 이름·시각·긴장, 둘째 줄에 GM 상태와 단추 넷. */
+  .topbar {
+    grid-area: top;
+    position: relative;
+    flex-wrap: wrap;
+    row-gap: 6px;
+    column-gap: 8px;
+    padding: 8px 8px 6px;
+    font-size: 13px;
+    background: #0a0709;
+    border-bottom: 1px solid rgba(217, 171, 79, 0.25);
+  }
+
+  .chip {
+    padding: 3px 9px;
+    white-space: nowrap;
+  }
+
+  .beat-title {
+    min-width: 0;
+    font-size: 15px;
+    text-shadow: none;
+  }
+
+  .clock,
+  .tension {
+    margin-left: 0;
+    font-size: 13px;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .gm-status {
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .gm-status::before {
+    width: 8px;
+    height: 8px;
+  }
+
+  .menu {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+
+  .menu button {
+    min-width: var(--tap);
+    min-height: var(--tap);
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  /* 진행 수치: 그림 아래 띠. 수치는 두 칸씩 한 줄로, 아래에 아시나의 능력치와 소지품. */
+  .hud {
+    grid-area: hud;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    margin: var(--gap) var(--gap) 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 6px;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .hud h2 {
+    margin: 0;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .hud > #tracks-head,
+  .hud > #tracks,
+  .hud > #items {
+    grid-column: 1 / -1;
+  }
+
+  .tracks {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    column-gap: 14px;
+    row-gap: 4px;
+    margin: 0;
+  }
+
+  /* 수치 한 줄: 아이콘 · 이름 · 값 · 막대(또는 조각 시계). */
+  .track {
+    grid-template-columns: 16px auto auto minmax(16px, 1fr);
+    grid-template-rows: auto;
+    column-gap: 6px;
+    row-gap: 0;
+  }
+
+  .track svg {
+    grid-row: 1;
+    width: 15px;
+    height: 15px;
+  }
+
+  .track .value {
+    white-space: nowrap;
+  }
+
+  .track .bar {
+    grid-area: 1 / 4;
+    height: 4px;
+  }
+
+  .track.is-clock {
+    grid-template-columns: 16px auto auto minmax(20px, 1fr);
+  }
+
+  .track svg.clock-face {
+    justify-self: end;
+    width: 20px;
+    height: 20px;
+  }
+
+  .delta {
+    font-size: 14px;
+  }
+
+  /* 능력치: 값과 이름을 한 줄에. */
+  .abilities {
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between;
+    gap: 3px;
+    margin: 0;
+  }
+
+  .abilities li {
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .abilities b {
+    display: inline;
+    margin-right: 3px;
+    font-size: 13px;
+  }
+
+  .items {
+    gap: 4px;
+  }
+
+  .items:empty {
+    display: none;
+  }
+
+  .items li {
+    gap: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+  }
+
+  .items li img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* 대사창: 그림 아래 남은 자리를 다 쓰고, 글이 넘치면 창 안에서 내려 읽는다. */
+  .dialog {
+    grid-area: panel;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    min-height: 0;
+    margin: var(--gap);
+    padding: 14px 16px 22px;
+    border-radius: 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /*
+   * 자유 입력 차례에는 접근법 단추가 창 아래에 있다. 창을 아래에서부터 쌓아(column-reverse) 처음부터 아래 끝이 보이게 하고,
+   * order 로 보이는 순서는 위→아래 그대로 둔다. 위의 대사는 창을 올려서 본다.
+   */
+  .stage[data-phase='free'] .dialog,
+  .stage[data-phase='thinking'] .dialog {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .stage[data-phase='free'] .dialog > *,
+  .stage[data-phase='thinking'] .dialog > * {
+    flex: none;
+  }
+
+  .dialog > .nameplate {
+    order: 6;
+    align-self: flex-start;
+  }
+
+  .dialog > .echo {
+    order: 5;
+  }
+
+  .dialog > .text {
+    order: 4;
+  }
+
+  .dialog > .price-line {
+    order: 2;
+  }
+
+  .dialog > .twist-line {
+    order: 1;
+  }
+
+  /* 글이 짧아 남는 자리는 맨 아래 칸 밑으로 보내 위에서부터 읽히게 한다. 넘칠 때는 0 이 되어 아래 끝부터 보인다. */
+  .dialog > .free {
+    order: 0;
+    margin-bottom: auto;
+  }
+
+  /* 창 안에서 글이 내려가므로 이름표는 창 위로 튀어나오지 않고 첫 줄에 붙는다. */
+  .nameplate {
+    position: static;
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 3px 12px;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  .gm-badge {
+    top: 10px;
+    right: 12px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .echo {
+    margin: 0 0 6px;
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .more {
+    right: 12px;
+    bottom: 6px;
+    font-size: 14px;
+  }
+
+  @keyframes bob {
+    50% {
+      transform: translateY(3px);
+    }
+  }
+
+  .price-line {
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 8px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+
+  .free {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .free-aim {
+    margin: 0 0 6px;
+    font-size: 15px;
+  }
+
+  .free-aim-label,
+  .gm-aim-label {
+    margin-right: 6px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  .free-prompt {
+    margin: 0 0 6px;
+    font-size: 16px;
+  }
+
+  .free-meta {
+    margin: 4px 0 6px;
+    font-size: 13px;
+  }
+
+  .free-meta:empty {
+    display: none;
+  }
+
+  .approach-wrap {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .approach-label {
+    padding-top: 0;
+    font-size: 13px;
+  }
+
+  .approaches {
+    gap: 6px;
+  }
+
+  .approaches button {
+    min-height: var(--tap);
+    padding: 6px 14px;
+    font-size: 15px;
+  }
+
+  .approaches small {
+    margin-left: 6px;
+    font-size: 13px;
+  }
+
+  .thinking {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  /* 선택지: 가로 화면처럼 그림 위에 띄우되 그림 칸 아래쪽에 붙인다. 대사창의 질문은 그대로 보인다. */
+  .choices {
+    grid-area: art;
+    z-index: 3;
+    left: var(--gap);
+    right: var(--gap);
+    top: auto;
+    bottom: var(--gap);
+    width: auto;
+    max-height: calc(100% - 2 * var(--gap));
+    transform: none;
+    gap: 8px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .choice {
+    flex: none;
+    min-height: 48px;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .choice:hover,
+  .choice:focus-visible {
+    transform: translateX(3px);
+  }
+
+  .choice .tag {
+    flex: none;
+    padding: 2px 8px;
+    font-size: 13px;
+  }
+
+  /* GM 말상자: 대사창이 숨는 동안 대사창 자리를 그대로 쓴다. */
+  .gm-box {
+    grid-area: panel;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    height: auto;
+    min-height: 0;
+    max-height: 100%;
+    margin: var(--gap);
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .gm-mascot {
+    width: 64px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+  }
+
+  .gm-bubble {
+    min-width: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px 16px 22px 14px;
+    border-radius: 12px;
+  }
+
+  .gm-name {
+    margin: 0 0 4px;
+    font-size: 13px;
+  }
+
+  .gm-hint {
+    top: 12px;
+    right: 14px;
+    font-size: 12px;
+  }
+
+  .gm-text {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .gm-bubble .more {
+    right: 12px;
+    bottom: 6px;
+  }
+
+  @keyframes mascot-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+
+  /* 입력줄: 가로 700px 이하 규칙의 화면 아래 고정 대신 맨 아래 줄에 놓는다. 대사창을 가리지 않는다. */
+  .say {
+    grid-area: say;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: 6;
+    gap: 6px;
+    padding: 8px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    background: rgba(10, 8, 6, 0.92);
+    border-top: 1px solid rgba(217, 171, 79, 0.25);
+  }
+
+  .say input {
+    min-height: var(--tap);
+    padding: 8px 50px 8px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .say .ask-gm {
+    right: 4px;
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+  }
+
+  .say button {
+    min-height: var(--tap);
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  .say .ask-gm {
+    min-height: 0;
+    padding: 3px;
+  }
+
+  .toast,
+  .gm-box:not([hidden]) ~ .toast {
+    grid-area: art;
+    z-index: 4;
+    top: 10px;
+    max-width: calc(100% - 32px);
+    padding: 8px 16px;
+    font-size: 14px;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  /* 주사위·결말: 화면 전체를 덮는다. */
+  .dice {
+    z-index: 10;
+  }
+
+  .dice-card {
+    min-width: min(300px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+    padding: 22px 22px 16px;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  }
+
+  .dice-label {
+    margin: 0 0 14px;
+    font-size: 17px;
+  }
+
+  .dice-row {
+    gap: 20px;
+  }
+
+  .die {
+    width: 72px;
+    height: 72px;
+    padding: 9px;
+    border-radius: 13px;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.12), 0 6px 14px rgba(0, 0, 0, 0.45);
+  }
+
+  .die i {
+    width: 13px;
+    height: 13px;
+  }
+
+  .die[data-face='1'] i:nth-child(5) {
+    width: 17px;
+    height: 17px;
+  }
+
+  @keyframes tumble {
+    0% {
+      transform: rotate(0deg) translateY(0);
+    }
+    50% {
+      transform: rotate(180deg) translateY(-8px);
+    }
+    100% {
+      transform: rotate(360deg) translateY(0);
+    }
+  }
+
+  .dice-formula {
+    margin: 14px 0 4px;
+    min-height: 22px;
+    font-size: 15px;
+  }
+
+  .dice-tier {
+    min-height: 40px;
+    font-size: 30px;
+  }
+
+  .dice-note {
+    margin-top: 4px;
+    min-height: 20px;
+    font-size: 14px;
+  }
+
+  .dice-hint {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+
+  .ending {
+    z-index: 10;
+    padding: 0 24px;
+  }
+
+  .ending-kicker {
+    font-size: 14px;
+  }
+
+  .ending h2 {
+    margin: 10px 0 14px;
+    font-size: 30px;
+  }
+
+  .ending p {
+    font-size: 16px;
+  }
+
+  .ending .dice-hint {
+    font-size: 13px;
+  }
+
+  /* 타이틀 */
+  .title-screen {
+    padding: 24px 16px;
+  }
+
+  .title-kicker {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+  }
+
+  .logo {
+    margin: 8px 0 6px;
+    font-size: 72px;
+    text-shadow: 0 4px 18px rgba(80, 10, 20, 0.6);
+  }
+
+  .title-logo {
+    max-width: min(80vw, 360px);
+    max-height: 30vh;
+    margin: 8px auto 10px;
+  }
+
+  .title-sub {
+    font-size: 19px;
+  }
+
+  .credit {
+    margin: 10px 0 24px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .title-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: min(100%, 360px);
+    margin: 0 auto;
+  }
+
+  .title-buttons button,
+  .result-buttons button,
+  .sheet button {
+    min-height: var(--tap);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .title-status {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  /* 좁은 폭에서 낱말 가운데가 끊겨 한 글자만 다음 줄로 넘어가지 않게 한다. */
+  .title-sub,
+  .title-status,
+  .free-prompt,
+  .choice,
+  .gm-text,
+  .dice-label,
+  .dice-note,
+  .ending p,
+  .confirm-text,
+  .result-summary,
+  .locked p {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .rating {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  /* 결과: 한 줄로 내려 읽는다. */
+  .result-screen {
+    z-index: 5;
+  }
+
+  .result-inner {
+    padding: 24px 16px 32px;
+  }
+
+  .result-kicker {
+    font-size: 13px;
+  }
+
+  .result-head h1 {
+    margin: 6px 0 8px;
+    font-size: 30px;
+  }
+
+  .result-summary {
+    max-width: none;
+    margin: 0 0 14px;
+    font-size: 16px;
+  }
+
+  .locked {
+    max-width: none;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .lock-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .locked p {
+    font-size: 14px;
+  }
+
+  .locked .locked-title {
+    margin-bottom: 2px;
+    font-size: 15px;
+  }
+
+  .result-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 22px;
+  }
+
+  .result-grid h2 {
+    margin: 0 0 8px;
+    font-size: 15px;
+  }
+
+  .replay {
+    margin: 0 0 8px;
+    font-size: 15px;
+  }
+
+  .replay li {
+    padding: 3px 0 3px 10px;
+  }
+
+  .replay .replay-scene {
+    margin-top: 12px;
+    padding-bottom: 3px;
+  }
+
+  .replay-check {
+    gap: 2px 10px;
+  }
+
+  .replay-price {
+    gap: 6px;
+  }
+
+  .result-tracks {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .result-stats {
+    margin: 0 0 20px;
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  .result-buttons {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .result-buttons button {
+    flex: 1 1 calc(50% - 4px);
+    padding-inline: 12px;
+  }
+
+  .result-credit {
+    margin-top: 24px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .result-more {
+    height: 52px;
+    margin-top: -52px;
+  }
+
+  .result-more button {
+    min-width: var(--tap);
+    min-height: var(--tap);
+    padding: 0 24px;
+    font-size: 16px;
+  }
+
+  .result-screen::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* 창(저장 칸·수첩·기록·확인·피드백·이야기 지도) */
+  .sheet {
+    width: min(calc(100vw - 24px), 480px);
+    max-width: none;
+    max-height: 85vh;
+    max-height: 85dvh;
+    padding: 18px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .sheet h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+
+  .slot-list {
+    margin: 0 0 14px;
+    gap: 8px;
+  }
+
+  .slot-list button {
+    font-size: 15px;
+  }
+
+  .slot-list button small {
+    font-size: 13px;
+  }
+
+  .log-list,
+  .notes-list {
+    max-height: 60vh;
+    max-height: 60dvh;
+    margin: 0 0 14px;
+  }
+
+  .log-list {
+    padding-left: 26px;
+  }
+
+  .log-list .who {
+    margin-right: 6px;
+  }
+
+  .notes-list h3 {
+    margin: 10px 0 4px;
+    font-size: 14px;
+  }
+
+  .notes-list ul {
+    gap: 6px;
+  }
+
+  .confirm {
+    width: min(calc(100vw - 24px), 420px);
+    min-width: 0;
+    max-width: none;
+    padding: 20px 18px;
+    border-radius: 12px;
+  }
+
+  .confirm-text {
+    margin: 0 0 18px;
+    font-size: 16px;
+  }
+
+  .feedback-title {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+
+  .feedback-text {
+    min-height: 120px;
+    margin: 0 0 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .confirm-actions {
+    gap: 8px;
+  }
+
+  .confirm-actions button {
+    min-height: var(--tap);
+    padding: 0 18px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .atlas-dialog {
+    max-width: none;
+    padding: 16px 14px;
+    font-size: 15px;
+  }
+
+  .atlas-actions button {
+    min-height: var(--tap);
+  }
+}
