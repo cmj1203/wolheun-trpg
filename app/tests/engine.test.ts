@@ -279,7 +279,7 @@ describe('엔진 진행', () => {
     // ④ 시간이 감: b05 에는 시간 대가가 없어 공통 줄 + 귀찌 -1, 머뭇 3 → 쓰러지는 작은 끝
     const before = state.tracks.귀찌;
     ({ state, step } = await engine.act(state, { type: 'free', text: '하늘이 파랗다' }));
-    expect(state.free?.moves ?? state.log.filter((e) => e.kind === 'beat').at(-1)?.beat).toBeTruthy();
+    expect(state.free).toBeNull();
     expect(scriptLines(step)).toContain('해가 한 뼘 더 기울었다. 귀찌가 미지근해진다.');
     expect(state.ending).toBe('collapse');
     expect(state.tracks.귀찌).toBeLessThanOrEqual(before - 1);
@@ -307,9 +307,13 @@ describe('엔진 진행', () => {
     ({ state, step } = await engine.act(state, { type: 'free', text: '저기' }));
     const clocks = (r4.prices ?? []).filter((p) => p.tag === '시간' && p.weight === 'soft').map((p) => p.text);
     expect(texts(step).some((t) => clocks.includes(t))).toBe(true);
-    expect(state.free?.prices ?? state.log.filter((e) => e.kind === 'input').length).toBeTruthy();
-    // 무브로 쓴 대가는 그 장면의 뽑힌 대가 목록에 들어가 판정 대가로 거듭 나오지 않는다.
-    if (state.free) expect(state.free.prices).toContain(usedPress);
+    // 시간 무브로 머뭇이 차 쓰러지는 작은 끝으로 간다. 이 장면에서 나간 대가(압박·시간)는 서로 겹치지 않는다.
+    // (무브로 쓴 대가가 판정 대가로 거듭 나오지 않는 것은 engine_rules.test.ts 의 once·시간 무브 시험이 본다.)
+    expect(state.ending).toBe('collapse');
+    const priceIds = state.log.flatMap((e) => (e.kind === 'price' && e.beat === 'r4_prove' ? [e.id] : []));
+    expect(priceIds.length).toBe(2);
+    expect(priceIds[0]).toBe(usedPress);
+    expect(new Set(priceIds).size).toBe(priceIds.length);
   });
 
   test('GM 무브 표: offer 가 있는 장면은 압박 뒤에 기회를 한 번 내고 머뭇을 쌓지 않으며, 효과는 적용된다', async () => {
