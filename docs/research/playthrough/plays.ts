@@ -197,6 +197,32 @@ export const PLAYS: Record<string, Play> = {
       b02_people: [...f('음…', '음…', '음…'), { approach: 'run' }],
     },
   },
+  '18_spy_cut_sameturn': {
+    title: '첩자 (첫 경고와 같은 턴에 베임)',
+    ending: 'spy_cut',
+    seed: 104,
+    note: '교차 검증에서 찾은 줄(무작위 단추 탐색 seed 104). 판정으로 장면이 넘어가면서 의심이 10을 넘으면, 문턱 앞에서 멈추는 보호를 거치지 않고 다음 장면 대신 작은 끝으로 간다.',
+    moves: {
+      b02_people: a('run'),
+      '@luck': [{ luck: true }, { luck: false }],
+      b05_why: a('plead'),
+      b06_swing: a('flee'),
+      b08_gaze: [{ free: '음…' }, { approach: 'hide_earring' }],
+    },
+  },
+  '19_spy_sus10': {
+    title: '수상한 이방인 (의심 10인데 작은 끝이 아닌 결말)',
+    ending: 'spy',
+    seed: 108,
+    note: '교차 검증에서 찾은 줄(무작위 단추 탐색 seed 108). 결말 장면으로 들어갈 때는 작은 끝 검사를 하지 않아, 의심이 10이 되어도 보통 결말이 된다.',
+    moves: {
+      b02_people: a('avoid'),
+      b05_why: a('beauty'),
+      b06_swing: a('dodge'),
+      b08_gaze: a('hide_earring'),
+      r2_bind: a('silent'),
+    },
+  },
   '15_buttons_first': {
     title: '단추 첫 칸만 누르기',
     ending: 'curious',
