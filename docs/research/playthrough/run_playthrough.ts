@@ -104,7 +104,11 @@ function renderResult(engine: Engine, state: GameState, out: string[]): void {
   for (const e of r.replay) {
     if (e.beatTitle !== scene) out.push(`  - 〈${(scene = e.beatTitle)}〉`);
     if (e.kind === 'decision') out.push(`    - ${e.text} (${e.detail})`);
-    else if (e.kind === 'check') out.push(`    - 🎲 ${e.label} ${e.total} → ${e.tierLabel}`);
+    else if (e.kind === 'check') {
+      // web/main.ts replayRow 와 같은 모양.
+      const mods = e.mods.reduce((sum, m) => sum + m.value, 0);
+      out.push(`    - 🎲 ${e.label} (${e.stat} ${signed(e.statValue)}${mods ? `, 보정 ${signed(mods)}` : ''}) 주사위 ${e.dice[0]}·${e.dice[1]} + 수치 ${e.statValue + mods}${e.luck ? ` + 행운 ${e.luck}` : ''} = ${e.total} / 목표 10 ${e.tierLabel}`);
+    }
     else out.push(`    - 대가 ${e.tag} — ${e.text}`);
   }
 }
