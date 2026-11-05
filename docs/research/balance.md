@@ -16,14 +16,14 @@
 ## 무엇을 어떻게 쟀나
 
 - **엔진**: 서버가 `--no-llm` 일 때와 같은 `new Engine(scenario, new LocalGm(null, lore, DEFAULT_GM_OPTIONS), clock, true)` (실패 직후 행운을 묻는다). 시나리오는 `content/ep01_desert.yaml` + `lore_wolheun.yaml`. 화면 대신 `engine.act()` 를 직접 부른다.
-- **스크립트**: `app/scripts/balance_sim.ts`(한 판·전략·집계·조정안), `app/scripts/balance_report.ts`(이 문서의 표). 원자료는 [balance_data.json](balance_data.json), 생성된 표 전체는 [balance_tables.md](balance_tables.md).
+- **스크립트**: `app/scripts/balance_sim.ts`(한 판·전략·집계·조정안), `app/scripts/balance_report.ts`(이 문서의 표). 생성된 표 전체(1~7절, 8절은 실행을 멈춰 없음)는 [balance_tables.md](balance_tables.md). 원자료 JSON 은 실행을 멈춰 만들지 못했다.
   ```sh
   cd app
   bun scripts/balance_sim.ts --games 10000                    # 전략 4개 결말 요약
   bun scripts/balance_sim.ts --games 10000 --proposal P1      # 조정안을 덧씌워서
   bun scripts/balance_report.ts --games 20000 --exp 5000 --json ../docs/research/balance_data.json > ../docs/research/balance_tables.md
   ```
-- **판 수**: 본 측정은 전략마다 **20,000판**(시드 `balance:0`~`balance:19999`, 전략끼리 같은 시드). 장면별 선택 실험은 접근마다 5,000판, 행운 실험은 5,000판, 조정안은 묶음·전략마다 20,000판. 다 돌리는 데 약 30분.
+- **판 수**: 본 측정은 전략마다 **20,000판**(시드 `balance:0`~`balance:19999`, 전략끼리 같은 시드). 장면별 선택 실험은 접근마다 5,000판, 행운 실험은 5,000판, 조정안은 묶음·전략마다 20,000판. 1~7절까지 약 15분 걸렸다.
 - **재구성 검사**: 한 판이 끝나면 로그로 긴장과 행운을 다시 셈해 엔진 값과 다르면 멈춘다(전 판 통과). 수치가 로그 없이 문턱 위에 멈추는 경우(`holdAboveThreshold`)도 센다(무작위 0회, 말 섞기 87회/20,000판).
 - **교차 검증**: 다른 에이전트가 이 시뮬레이터를 읽지 않고 규칙을 따로 구현해 주사위 경우를 **모두 펼쳐 정확한 확률**을 셈했다(아래 표). 또 다른 에이전트가 시뮬레이터 코드를 엔진과 맞대 검토했다(지적 4건 반영, [검토](#검토-기록)).
 
@@ -248,7 +248,18 @@ k 번째 판정 직전 긴장 / 귀찌 (괄호는 k 번째 판정까지 간 판)
 
 ## 8. 조정안 전후
 
-SECTION8
+**전후 시뮬레이션 본 측정(묶음·전략마다 20,000판)은 크레딧이 바닥나 중간에 멈췄다. 아래 조정안은 정의만 있고, 이 문서에 실을 확정 수치는 없다.** 다시 돌리려면 `cd app && bun scripts/balance_report.ts --only proposals --games 20000`. 정의는 `app/scripts/balance_sim.ts` `PROPOSALS` 에 있다.
+
+| 조정안 | 어디 · 전 → 후 | 노리는 것 |
+|---|---|---|
+| P1 | `b09_verdict.next` 첫 갈래 · `의심 >= 6` → `의심 >= 7` | 항상 안전이 `수상한 이방인`으로 몰리는 것을 푼다 |
+| P2 | `b09_verdict.next` 둘째 갈래 · `집착 >= 4` → `집착 >= 3` | 원작 결말 `흥미로운 여자`를 닿을 만하게 |
+| P3 | `b02_people.watch.mixed` · `의심: 1` → 뺌, `b08_gaze.hide_earring.mixed` · `의심: 1` → 뺌 | "안전한" 접근을 실제로 안전하게 |
+| P4 | `fates.collapse` · `머뭇 >= 3`(징조 `>= 2`) → `머뭇 >= 4`(징조 `>= 3`) | 말만 해도 남자를 만나는 장면까지 |
+| P5 | `b08_gaze` · `time` 없음 → `time: 1` | 귀찌 시계에 힘을 |
+| P6 | `sheet.tracks` · `행운: 6` → `행운: 4` | 행운을 빠듯하게 |
+
+참고(확정 아님): 시뮬레이터 검토 반영 **전** 코드로 묶음·전략마다 3,000판을 돌린 예비 측정에서는 P1 이 항상 안전의 `수상한 이방인`을 크게 줄였고, P2 는 항상 공격의 `흥미로운 여자`를 10.3% → 36.9% 로 올렸다(P1+P2 를 함께 쓰면 63.8% 로 너무 많다). P4 는 말만 전략이 쓰러지기 전에 판정 1번·비트 7개까지 가게 했지만 쓰러지는 비율은 그대로 100% 였다. P5 는 무작위 전략의 `은발`을 0.5% → 1.1% 로만 올렸다. P6 은 예비 측정에도 들어 있지 않다.
 
 ## 확인하지 못한 것
 
