@@ -45,6 +45,7 @@ export function assertState(scenario: Scenario, value: unknown): GameState {
   if (s.tracks && s.tracks.행운 === undefined) s.tracks.행운 = 0;
   for (const t of TRACKS) if (typeof s.tracks?.[t] !== 'number') return fail(`수치 ${t} 없음`);
   for (const a of ABILITIES) if (typeof s.abilities?.[a] !== 'number') return fail(`능력치 ${a} 없음`);
+  if (!s.flags || typeof s.flags !== 'object' || Array.isArray(s.flags)) return fail('플래그');
   if (!Array.isArray(s.items) || !s.items.every((i) => typeof i === 'string')) return fail('소지품 목록');
   if (!Array.isArray(s.log)) return fail('플레이 기록');
   if (typeof s.playMs !== 'number' || typeof s.startedAt !== 'number') return fail('플레이 시간');

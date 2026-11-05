@@ -525,6 +525,8 @@ export class Engine {
     this.sayCallback(state, beat, events);
     this.sayGuide(state, beat, events);
     if (beat.ending) {
+      // 행운을 묻던 중 그만두기로 끝나면 묻던 창은 버린다. 남아 있으면 끝난 판에 행운 창이 뜬다.
+      delete state.pendingLuck;
       state.ending = beat.ending.id;
       this.record(state, { kind: 'end', ending: beat.ending.id, title: beat.ending.title });
       events.push(this.endingEvent(beat));
@@ -1247,7 +1249,8 @@ export class Engine {
 
   private async approachButton(state: GameState, beat: BeatSpec, id: string, events: GameEvent[]): Promise<void> {
     const free = beat.free;
-    if (!free || !state.free) throw new GameError('지금은 행동을 고를 수 없습니다.');
+    // 행운을 묻는 동안 새로 굴리면 행운이 그 판정이 아닌 새 판정을 고친다.
+    if (!free || !state.free || state.pendingLuck) throw new GameError('지금은 행동을 고를 수 없습니다.');
     const approach = free.approaches.find((a) => a.id === id);
     if (!approach) throw new GameError(`없는 행동입니다: ${id}`);
     if (approach.item !== undefined && !state.items.includes(approach.item)) throw new GameError('그 행동에 필요한 소지품이 없습니다.');
