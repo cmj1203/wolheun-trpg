@@ -31,7 +31,7 @@ export const LORE_PATH = join(APP, 'content', 'lore_wolheun.yaml');
 export const REPORT_PATH = join(ROOT, 'docs', 'research', 'script_audit.md');
 
 /** 조건식은 한 번만 해석해 둔다. 값 매기기는 conditions.ts 의 test 와 같은 뜻이다(tests/script_audit.test.ts 가 맞춰 본다). */
-type Atom = { kind: 'flag' | 'item'; name: string; negate: boolean } | { kind: 'cmp'; name: string; op: string; value: number; flag: boolean };
+type Atom = { kind: 'flag'; name: string; negate: boolean } | { kind: 'item'; name: string; negate: boolean } | { kind: 'cmp'; name: string; op: string; value: number; flag: boolean };
 const parsed = new Map<string, Atom[][]>();
 const flagNum = (v: FlagValue | undefined) => (typeof v === 'number' ? v : typeof v === 'boolean' ? (v ? 1 : 0) : 0);
 export function evalCond(src: string, ctx: CondContext): boolean {
