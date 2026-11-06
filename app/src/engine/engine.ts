@@ -215,6 +215,8 @@ const TALK_QUOTABLE = /^[가-힣 ,.!?…~]{4,16}$/u;
 /** "여기 물 있어?", "지도를 볼 수 있어?" 처럼 있는지, 해도 되는지 묻는 입력. */
 export const isPermission = (text: string): boolean => /(있어|있나|있나요|있을까|있을까요|있니|있습니까|있어요|돼|되나|되나요|될까|될까요|되니|괜찮아|괜찮을까|괜찮을까요)\s*[?？]+\s*$/u.test(text);
 const RECENT_LINES = 8;
+/** 상대가 앞에 있을 때 이 긴장값 이상이면 판정 없는 턴의 주인공 기본 표정을 경계(wary)로 둔다. */
+const WARY_TENSION = 2;
 export const MAX_INPUT_CHARS = 200;
 /** 원작 이름·사실을 꺼낸 플레이어에게 "웹툰 봤구나"를 이미 한 번 말했다. */
 const READER_FLAG = '여우_웹툰_봤냐';
@@ -688,10 +690,26 @@ export class Engine {
    * 실패는 상대가 있으면 겁(scared), 혼자면 당황(flustered). 뒤에 오는 주인공 줄의 face 가 있으면 그것이 덮는다.
    */
   private heroFace(beat: BeatSpec, tier: RollResult['tier']): { speaker: string; face: string } | undefined {
+    return this.hero(tier === 'hit' || tier === 'crit' ? 'smug' : tier === 'mixed' ? 'wary' : facesPerson(this.scenario, beat) ? 'scared' : 'flustered');
+  }
+
+  private hero(face: string): { speaker: string; face: string } | undefined {
     const entry = Object.entries(this.scenario.cast).find(([, c]) => c.style === 'speech' && c.lore === this.scenario.sheet.name);
     if (!entry) return undefined;
-    const face = tier === 'hit' || tier === 'crit' ? 'smug' : tier === 'mixed' ? 'wary' : facesPerson(this.scenario, beat) ? 'scared' : 'flustered';
-    return entry[1].faces?.includes(face) ? { speaker: entry[0], face } : undefined;
+    return face === 'neutral' || entry[1].faces?.includes(face) ? { speaker: entry[0], face } : undefined;
+  }
+
+  /**
+   * 해석이 끝난 입력을 화면에 알린다. as: 되짚기 줄이 말인지 행동인지(acted 와 같은 분류, 가만히 있기는 행동).
+   * hero: 판정이 없는 턴의 주인공 기본 표정. 이 비트의 직전 판정이 실패·대가면 그 표정(scared/flustered/wary)을 잇고,
+   * 아니면 상대가 앞에 있고 긴장이 2 이상인 위협 장면은 경계(wary, 원작 1화 칼 장면 — docs/lead_check59/faces_survey.md), 그 밖은 neutral.
+   */
+  private heard(state: GameState, beat: BeatSpec, read: Interpretation, text: string, events: GameEvent[]): void {
+    const as = read.kind === 'idle' || this.acted(read, text) ? 'action' : 'speech';
+    const last = state.log.findLast((e): e is Extract<LogEntry, { kind: 'check' }> => e.kind === 'check' && e.beat === beat.id)?.roll.tier;
+    const hero = last === 'miss' || last === 'mixed' ? this.heroFace(beat, last)
+      : this.hero(facesPerson(this.scenario, beat) && this.tensionOf(state) >= WARY_TENSION ? 'wary' : 'neutral');
+    events.push({ type: 'heard', as, ...(hero ? { hero } : {}) });
   }
 
   /** 규칙은 먼저 설명하지 않는다. 등급이 처음 나온 직후에 그 숫자로 한 줄만 말한다. */
@@ -739,6 +757,7 @@ export class Engine {
     const reading = await this.gm.interpret(ctx);
     this.recordGm(state, beat, 'interpret', reading.meta);
     let read: Interpretation = this.addressed(reading.kind === 'ask' && !gmSpeakerOf(this.scenario) ? { kind: 'talk', source: reading.source, meta: reading.meta } : reading, free);
+    this.heard(state, beat, read, text, events);
 
     if (this.bounce(state, beat, ctx, read.source, events)) {
       return;
@@ -808,6 +827,7 @@ export class Engine {
     // 대사가 흐르는 중에 물으면 서버는 이미 앞 자리에 가 있다. 화면에 보이는 장면을 기준으로 답한다.
     const beat = scene ?? stateBeat;
     events.push({ type: 'echo', text });
+    events.push({ type: 'heard', as: 'speech' });
     if (this.confirmQuit(state, text, events) !== null) return;
     if (this.reassure(state, beat, free, text, events)) return;
     const ctx: GmContext = { scenario: this.scenario, beat, free, state, text };
@@ -1067,6 +1087,7 @@ export class Engine {
       : reading,
       free,
     );
+    this.heard(state, scene, read, text, events);
     if (read.kind === 'ask') {
       // 이야기 입력칸에 적은 질문은 여우가 받지 않는다. 화면이 질문 모드(GM 단추)로 안내하고 남은 줄은 그대로 이어진다.
       this.record(state, { kind: 'input', beat: scene.id, text, result: 'ask', approach: null, item: null, source: read.source });

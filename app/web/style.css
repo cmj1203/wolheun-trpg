@@ -741,8 +741,16 @@ button {
 }
 
 .echo::before {
-  content: '▶ 아시나의 행동  ';
+  content: '▶ 아시나  ';
   color: var(--ink-dim);
+}
+
+.echo[data-as='action']::before {
+  content: '▶ 아시나의 행동  ';
+}
+
+.echo[data-as='speech']::before {
+  content: '▶ 아시나의 말  ';
 }
 
 .text {

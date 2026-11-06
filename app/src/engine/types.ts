@@ -573,6 +573,8 @@ export type GameEvent =
   | { type: 'sprite'; cast: string; sprite: string }
   | { type: 'line'; speaker: string; display: string; style: LineStyle; text: string; fx?: string; sfx?: string; face?: string; cg?: string; cg_from?: string; by: 'script' | 'gm'; if?: string }
   | { type: 'echo'; text: string }
+  /** 입력 해석이 끝난 뒤: 되짚기 줄 머리(말/행동)와 판정이 없을 때의 주인공 기본 표정. 판정의 hero 가 뒤에서 덮는다. */
+  | { type: 'heard'; as: 'speech' | 'action'; hero?: { speaker: string; face: string } }
   | { type: 'revise'; drop: number[]; jump: boolean }
   | ({ type: 'roll'; tierLabel: string; /** 판정 결과에 맞춘 주인공 입식 표정. */ hero?: { speaker: string; face: string } } & RollResult)
   | { type: 'tracks'; changes: TrackChange[] }

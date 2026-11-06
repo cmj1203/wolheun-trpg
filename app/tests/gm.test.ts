@@ -1047,3 +1047,22 @@ describe('isNoAttempt', () => {
     expect(isNoAttempt(text)).toBe(false);
   });
 });
+
+test('정체가 드러나기 전 칼 장면 요청문에는 숨긴 나라 이름이 없다(59e)', async () => {
+  const mock = mockLlama([]);
+  stop = () => mock.server.stop(true);
+  const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
+  for (const id of ['b05_why', 'b06_swing'] as const) {
+    const { ctx, narrate } = contexts('칼 좀 내려 주실래요? 목이 따끔해서요.');
+    const beat = scenario.beats[id];
+    if (!beat?.free) throw new Error(`${id} 구성이 바뀌었습니다`);
+    expect(ctx.state.flags['페시안_앎']).toBeUndefined();
+    const here = { ...ctx, beat, free: beat.free };
+    await gm.interpret(here);
+    await gm.talk({ ...here, tone: 'plain' });
+    await gm.narrate({ ...narrate, beat, free: beat.free });
+  }
+  const sent = mock.requests.filter((r) => r.stream).flatMap((r) => r.messages.map((m) => m.content)).join('\n');
+  expect(sent).toContain('왕이라는 신분');
+  expect(sent).not.toMatch(/페샨|페시안/);
+});

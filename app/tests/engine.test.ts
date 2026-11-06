@@ -750,7 +750,7 @@ describe('사건 스트리밍', () => {
       if (ev.type === 'roll') rolled();
     });
     await rollSeen;
-    expect(seen).toEqual(['echo', 'roll']);
+    expect(seen).toEqual(['echo', 'heard', 'roll']);
     release();
     const { step } = await acting;
     expect(seen).toEqual(step.events.map((ev) => ev.type));
@@ -2180,5 +2180,54 @@ describe('장면 검사와 긴장값(19-F)', () => {
     expect(() => parseScenario(source.replace('        - id: glare\n', '        - id: closer\n'))).toThrow(/twist\.altered\[1\]\.id: 같은 id/);
     expect(() => parseScenario(source.replace('  tension: 3\n', '  tension: 7\n'))).toThrow(/sheet\.tension: 1~6/);
     expect(() => parseScenario(source.replace(/      interrupt:\n        - id: sandstorm\n[\s\S]*?        - id: strap\n[\s\S]*?effects: \{ flags: \{ 가방_끈: true \} \}\n/, '      interrupt: []\n'))).toThrow(/twist: altered 와 interrupt/);
+  });
+});
+
+describe('되짚기 줄 머리와 판정 없는 턴의 주인공 표정(59e)', () => {
+  const talkTo = (to: 'person' | 'self'): Interpretation => ({ kind: 'talk', to, source: 'llm', meta: META });
+  const heardOf = (step: Step) => step.events.find((e) => e.type === 'heard');
+
+  test('사람에게 건넨 말은 말, 행동을 적은 문장은 행동으로 되짚는다', async () => {
+    const spoken = await toGaze(8, new FakeGm(() => talkTo('person')));
+    expect(spoken.state.beat).toBe('b08_gaze');
+    const said = await spoken.engine.act(spoken.state, { type: 'free', text: '목이 따끔해서요' });
+    expect(heardOf(said.step)).toMatchObject({ type: 'heard', as: 'speech' });
+
+    const acted = await toGaze(8, new FakeGm(() => approachOf('stare_back')));
+    const did = await acted.engine.act(acted.state, { type: 'free', text: '똑바로 마주 본다' });
+    expect(heardOf(did.step)).toMatchObject({ type: 'heard', as: 'action' });
+    // 판정이 있으면 판정 표정이 해석 뒤 기본 표정을 덮는다.
+    const types = did.step.events.map((e) => e.type);
+    expect(types.indexOf('heard')).toBeLessThan(types.indexOf('roll'));
+  });
+
+  test('칼 앞(상대가 있고 긴장 2 이상)에서 판정 없는 턴의 기본 표정은 경계, 긴장이 낮으면 그대로다', async () => {
+    const tense = await toGaze(8, new FakeGm(() => talkTo('person')));
+    tense.state.flags['긴장'] = 2;
+    const wary = await tense.engine.act(tense.state, { type: 'free', text: '목이 따끔해서요' });
+    expect(heardOf(wary.step)).toEqual({ type: 'heard', as: 'speech', hero: { speaker: '아시나', face: 'wary' } });
+    expect(wary.step.events.some((e) => e.type === 'roll')).toBe(false);
+
+    const calm = await toGaze(8, new FakeGm(() => talkTo('person')));
+    calm.state.flags['긴장'] = 1;
+    const neutral = await calm.engine.act(calm.state, { type: 'free', text: '목이 따끔해서요' });
+    expect(heardOf(neutral.step)).toMatchObject({ hero: { speaker: '아시나', face: 'neutral' } });
+  });
+
+  test('이 비트의 직전 판정이 실패면 겁먹은 얼굴을 잇는다', async () => {
+    const { engine, state } = await toGaze(8, new FakeGm(() => talkTo('person')));
+    const miss = { dice: [1, 2], stat: '기지', statValue: 0, mods: [], total: 3, tier: 'miss' } as unknown as Extract<GameState['log'][number], { kind: 'check' }>['roll'];
+    state.log.push({ kind: 'check', beat: state.beat, roll: miss, at: '', playMs: 0 } as unknown as GameState['log'][number]);
+    const after = await engine.act(state, { type: 'free', text: '목이 따끔해서요' });
+    expect(heardOf(after.step)).toMatchObject({ hero: { speaker: '아시나', face: 'scared' } });
+  });
+
+  test('혼자인 사막 장면(사람?!)은 긴장값과 상관없이 neutral', async () => {
+    const engine = new Engine(scenario, new FakeGm(() => talkTo('self')));
+    const { state } = engine.newGame(2, 's');
+    expect(state.beat).toBe('b02_people');
+    expect(state.flags['긴장'] ?? scenario.sheet.tension).toBeGreaterThanOrEqual(2);
+    const { step } = await engine.act(state, { type: 'free', text: '저기 사람이 있어' });
+    expect(heardOf(step)).toEqual({ type: 'heard', as: 'speech', hero: { speaker: '아시나', face: 'neutral' } });
   });
 });

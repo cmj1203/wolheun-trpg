@@ -220,6 +220,8 @@ const game = {
   view: { scene: null as SceneEvent | null, line: null as LineEvent | null, dialog: null as LineEvent | null },
   spriteOf: {} as Record<string, string>,
   faces: {} as Record<string, string>,
+  /** 엔진이 표정을 정해 주는 주인공(lore). 자유 입력 턴 시작의 표정 초기화에서 빠진다. */
+  heroLore: null as string | null,
   remaining: [] as GameEvent[],
   hud: null as Hud | null,
   /** 아래 대사창에 남아 있는 줄의 화자. 입력 자리에서 입식 밝기를 이름표와 맞춘다. */
@@ -608,6 +610,12 @@ function highlight(speaker: string): void {
   }
 }
 
+/** 엔진이 정한 주인공 표정(판정·해석 뒤). 주인공이 누구인지는 이 사건으로 알게 된다. */
+function setHeroFace(hero: { speaker: string; face: string }): void {
+  game.heroLore = game.manifest?.cast[hero.speaker]?.lore ?? hero.speaker;
+  setFace(hero.speaker, hero.face);
+}
+
 function setFace(speaker: string, face: string): void {
   const cast = game.manifest?.cast;
   if (!cast) return;
@@ -623,12 +631,17 @@ function setFace(speaker: string, face: string): void {
   game.faces[lore] = face;
 }
 
-/** 자유 입력 턴 시작: 등장 인물 표정을 neutral 로 되돌린다. 직전 대본 표정이 GM 줄에 남지 않고, 이번 GM 줄이 적은 face 만 적용된다. 대본 블록 안에서는 표정이 다음 지정까지 이어진다. */
+/**
+ * 자유 입력 턴 시작: 등장 인물 표정을 neutral 로 되돌린다. 직전 대본 표정이 GM 줄에 남지 않고, 이번 GM 줄이 적은 face 만 적용된다. 대본 블록 안에서는 표정이 다음 지정까지 이어진다.
+ * 주인공은 엔진이 해석 뒤(heard) 기본 표정을 보내므로 그때까지 지금 얼굴을 둔다(칼 앞에서 입력할 때 잌깐 웃는 얼굴로 돌아가지 않게).
+ */
 function resetFaces(): void {
-  game.faces = {};
+  const cast = game.manifest?.cast;
+  const hero = game.heroLore === null ? undefined : game.faces[game.heroLore];
+  game.faces = hero === undefined || game.heroLore === null ? {} : { [game.heroLore]: hero };
   for (const slot of SLOT_NAMES) {
     const key = game.cast[slot];
-    if (key) setFace(key, 'neutral');
+    if (key && (cast?.[key]?.lore ?? key) !== game.heroLore) setFace(key, 'neutral');
   }
 }
 
@@ -716,6 +729,7 @@ async function showLine(ev: LineEvent, restore: 'no' | 'wait' | 'still' = 'no'):
 
 function showEcho(text: string): void {
   ui.echo.textContent = text;
+  delete ui.echo.dataset.as;
   ui.echo.hidden = false;
   game.backlog.push({ who: '아시나(입력)', text, by: 'script' });
 }
@@ -1177,7 +1191,11 @@ async function play(events: GameEvent[], gen: number): Promise<boolean> {
         break;
       case 'roll':
         await showRoll(ev);
-        if (ev.hero) setFace(ev.hero.speaker, ev.hero.face);
+        if (ev.hero) setHeroFace(ev.hero);
+        break;
+      case 'heard':
+        ui.echo.dataset.as = ev.as;
+        if (ev.hero) setHeroFace(ev.hero);
         break;
       case 'sprite':
         swapSprite(ev.cast, ev.sprite);
