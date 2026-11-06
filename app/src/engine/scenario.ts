@@ -1,5 +1,5 @@
 import { condNames, parseCond } from './conditions.ts';
-import { type CallbackSpec,
+import { type CallbackSpec, type FactSpec,
   ABILITIES,
   TIERS,
   TRACKS,
@@ -30,8 +30,12 @@ import { type CallbackSpec,
   type PriceTag,
   type PriceWeight,
   type Scenario,
+  TENSION_MAX,
+  TENSION_MIN,
   type Tier,
+  type Tiered,
   type Track,
+  type TwistSpec,
 } from './types.ts';
 
 export class ScenarioError extends Error {
@@ -68,7 +72,7 @@ function oneOf<T extends string>(v: unknown, options: readonly T[], where: strin
   return v as T;
 }
 
-const LINE_EXTRAS = ['fx', 'sfx', 'face', 'cg', 'if'] as const;
+const LINE_EXTRAS = ['fx', 'sfx', 'face', 'cg', 'cg_from', 'if', 'sets'] as const;
 
 /**
  * 대사 줄의 face 가 가리키는 입식이 있는지 본다. 화자(또는 같은 인물의 다른 화자, 예: 속마음→아시나)의 입식 이름 뒤에
@@ -78,6 +82,9 @@ export function faceProblem(s: Pick<Scenario, 'cast' | 'sprites'>, speaker: stri
   const c = s.cast[speaker];
   if (!c) return null;
   if (c.style === 'narration') return '나레이션 줄에는 face 를 둘 수 없습니다';
+  if ((c.style === 'speech' || c.style === 'thought') && !c.faces?.includes(face)) {
+    return `"${speaker}"의 표정은 ${(c.faces ?? []).join('·')} 중에서 골라야 합니다 (받은 값: ${face})`;
+  }
   const lore = c.lore ?? speaker;
   const bases = Object.entries(s.cast)
     .filter(([key, x]) => (x.lore ?? key) === lore)
@@ -91,16 +98,20 @@ export function faceProblem(s: Pick<Scenario, 'cast' | 'sprites'>, speaker: stri
 
 function parseLine(v: unknown, cast: Record<string, CastSpec>, where: string): Line {
   const r = rec(v, where);
-  const speakers = Object.keys(r).filter((k) => k !== 'tie' && !(LINE_EXTRAS as readonly string[]).includes(k));
+  const speakers = Object.keys(r).filter((k) => k !== 'tie' && k !== 'effects' && !(LINE_EXTRAS as readonly string[]).includes(k));
   const speaker = speakers[0];
   if (speakers.length !== 1 || speaker === undefined) throw new ScenarioError(`${where}: "화자: 대사" 한 쌍이 필요합니다`);
   if (!cast[speaker]) throw new ScenarioError(`${where}: cast 에 없는 화자 "${speaker}"`);
-  const line: Line = { speaker, text: str(r[speaker], where) };
+  // 나레이션 줄의 빈 글("")은 cg 가 있을 때만 받는다. 원작의 대사 없는 컷을 그림만 보여 주는 한 박자다.
+  const silent = r[speaker] === '' && cast[speaker].style === 'narration' && typeof r.cg === 'string';
+  const line: Line = { speaker, text: silent ? '' : str(r[speaker], where) };
   for (const key of LINE_EXTRAS) {
     const extra = optStr(r[key], `${where}.${key}`);
     if (extra) line[key] = extra;
   }
   if (r.tie === true) line.tie = true;
+  const effects = parseEffects(r.effects, `${where}.effects`);
+  if (effects) line.effects = effects;
   return line;
 }
 
@@ -129,6 +140,12 @@ function parseOffer(v: unknown, cast: Record<string, CastSpec>, where: string): 
   return effects ? { lines, effects } : { lines };
 }
 
+function parseIdle(v: unknown, cast: Parameters<typeof parseLines>[1], where: string): NonNullable<FreeSpec['idle']> {
+  const r = rec(v, where);
+  const effects = parseEffects(r.effects, `${where}.effects`);
+  return { threat: r.threat === true, lines: parseLines(r.lines, cast, `${where}.lines`), ...(effects ? { effects } : {}) };
+}
+
 function parseEffects(v: unknown, where: string): Effects | undefined {
   if (v === undefined || v === null) return undefined;
   const r = rec(v, where);
@@ -136,6 +153,8 @@ function parseEffects(v: unknown, where: string): Effects | undefined {
   for (const [key, value] of Object.entries(r)) {
     if ((TRACKS as readonly string[]).includes(key)) {
       effects.tracks = { ...effects.tracks, [key as Track]: num(value, `${where}.${key}`) };
+    } else if (key === 'reason') {
+      effects.reason = str(value, `${where}.reason`);
     } else if (key === 'flags') {
       const flags: Record<string, FlagValue> = {};
       for (const [name, fv] of Object.entries(rec(value, `${where}.flags`))) {
@@ -189,13 +208,18 @@ function parsePrice(v: unknown, where: string): PriceSpec {
   };
   const effects = parseEffects(r.effects, `${where}.effects`);
   if (effects) price.effects = effects;
+  if (r.harm !== undefined) price.harm = oneOf(r.harm, ['몸', '마음'] as const, `${where}.harm`);
   const cond = optStr(r.if, `${where}.if`);
   if (cond) price.if = cond;
   if (r.once !== undefined) {
     if (typeof r.once !== 'boolean') throw new ScenarioError(`${where}.once: 참/거짓이 필요합니다`);
     price.once = r.once;
   }
-  for (const key of Object.keys(r)) if (!['id', 'tag', 'weight', 'text', 'effects', 'if', 'once'].includes(key)) throw new ScenarioError(`${where}: 알 수 없는 항목 "${key}"`);
+  if (r.spoken !== undefined) {
+    if (typeof r.spoken !== 'boolean') throw new ScenarioError(`${where}.spoken: 참/거짓이 필요합니다`);
+    price.spoken = r.spoken;
+  }
+  for (const key of Object.keys(r)) if (!['id', 'tag', 'weight', 'harm', 'text', 'effects', 'if', 'once', 'spoken'].includes(key)) throw new ScenarioError(`${where}: 알 수 없는 항목 "${key}"`);
   return price;
 }
 
@@ -221,11 +245,12 @@ export function checkPrices(free: FreeSpec, where: string): string[] {
     if (soft) problems.push(`${at}: ${soft}`);
   }
   const softIds = prices.filter((p) => p.weight === 'soft').map((p) => p.id);
-  const sets: [string, Record<Tier, Outcome>][] = [...free.approaches.map((a) => [a.id, a.outcomes] as [string, Record<Tier, Outcome>]), ['improv', free.improv]];
+  const sets: [string, Tiered<Outcome>][] = [...free.approaches.map((a) => [a.id, a.outcomes] as [string, Tiered<Outcome>]), ['improv', free.improv]];
   if (free.improv_bold) sets.push(['improv_bold', free.improv_bold]);
   for (const [id, outcomes] of sets) {
     const at = `${where}.${id}`;
     if (outcomes.hit.price) problems.push(`${at}.hit.price: hit 에는 대가를 두지 않습니다`);
+    if (outcomes.crit?.price) problems.push(`${at}.crit.price: 대성공에는 대가를 두지 않습니다`);
     for (const tier of ['mixed', 'miss'] as const) {
       const listed = outcomes[tier].price;
       if (!listed) continue;
@@ -256,13 +281,14 @@ function rejectForbid(r: Raw, where: string): void {
   if (r.forbid !== undefined) throw new ScenarioError(`${where}.forbid: forbid 는 없어졌습니다. 엔진 상태와 어긋나는 표현은 state_guard 에, 아직 모르는 이름·사실은 설정 사전 knowledge.hidden[].keys 에 적으세요`);
 }
 
-function parseOutcomes(v: unknown, cast: Record<string, CastSpec>, where: string): Record<Tier, Outcome> {
+function parseOutcomes(v: unknown, cast: Record<string, CastSpec>, where: string): Tiered<Outcome> {
   const r = rec(v, where);
-  const out = {} as Record<Tier, Outcome>;
+  const out = {} as Tiered<Outcome>;
   for (const tier of TIERS) {
     if (r[tier] === undefined) throw new ScenarioError(`${where}: ${tier} 결과가 없습니다 (hit, mixed, miss 모두 필요)`);
     out[tier] = parseOutcome(r[tier], cast, `${where}.${tier}`);
   }
+  if (r.crit !== undefined) out.crit = parseOutcome(r.crit, cast, `${where}.crit`);
   return out;
 }
 
@@ -308,6 +334,10 @@ function parseApproach(v: unknown, cast: Record<string, CastSpec>, where: string
   };
   const item = optStr(r.item, `${where}.item`);
   if (item) approach.item = item;
+  if (r.risky !== undefined) {
+    if (typeof r.risky !== 'boolean') throw new ScenarioError(`${where}.risky: 참/거짓이 필요합니다`);
+    approach.risky = r.risky;
+  }
   const mods = parseMods(r.mods, `${where}.mods`);
   if (mods) approach.mods = mods;
   const before = parseEffects(r.before, `${where}.before`);
@@ -342,7 +372,8 @@ function parseFree(v: unknown, cast: Record<string, CastSpec>, where: string, de
     ...(r.improv_bold === undefined ? {} : { improv_bold: parseOutcomes(r.improv_bold, cast, `${where}.improv_bold`) }),
     ...(r.neutral === undefined
       ? {}
-      : { neutral: Object.fromEntries(TIERS.map((t) => [t, parseLines(rec(r.neutral, `${where}.neutral`)[t], cast, `${where}.neutral.${t}`)])) as Record<Tier, Line[]> }),
+      : { neutral: Object.fromEntries(TIERS.map((t) => [t, parseLines(rec(r.neutral, `${where}.neutral`)[t], cast, `${where}.neutral.${t}`)])) as Tiered<Line[]> }),
+    ...(r.idle === undefined ? {} : { idle: parseIdle(r.idle, cast, `${where}.idle`) }),
     ...(r.prices === undefined ? {} : { prices: list(r.prices, `${where}.prices`).map((p, i) => parsePrice(p, `${where}.prices[${i}]`)) }),
     turns: r.turns === undefined ? 1 : num(r.turns, `${where}.turns`),
     default_approach: str(r.default_approach, `${where}.default_approach`),
@@ -368,11 +399,34 @@ function parseCastSlots(v: unknown, where: string): CastSlots | undefined {
   return slots;
 }
 
+/** 장면 검사 표: altered · interrupt 두 목록 모두 하나 이상, id 는 표 안에서 고유. */
+function parseTwist(v: unknown, cast: Record<string, CastSpec>, where: string): NonNullable<BeatSpec['twist']> {
+  const r = rec(v, where);
+  const seen = new Set<string>();
+  const one = (key: 'altered' | 'interrupt'): TwistSpec[] =>
+    list(r[key], `${where}.${key}`).map((raw, i) => {
+      const at = `${where}.${key}[${i}]`;
+      const t = rec(raw, at);
+      const id = str(t.id, `${at}.id`);
+      if (seen.has(id)) throw new Error(`${at}.id: 같은 id 가 두 번 나옵니다 (${id})`);
+      seen.add(id);
+      const spec: TwistSpec = { id, lines: parseLines(t.lines, cast, `${at}.lines`) };
+      if (spec.lines.length === 0) throw new Error(`${at}.lines: 사건 줄이 비어 있습니다`);
+      const effects = parseEffects(t.effects, `${at}.effects`);
+      if (effects) spec.effects = effects;
+      return spec;
+    });
+  const twist = { altered: one('altered'), interrupt: one('interrupt') };
+  if (twist.altered.length === 0 || twist.interrupt.length === 0) throw new Error(`${where}: altered 와 interrupt 는 각각 하나 이상이어야 합니다`);
+  return twist;
+}
+
 function parseBeat(id: string, v: unknown, cast: Record<string, CastSpec>, freeDefaults: Raw): BeatSpec {
   const where = `beats.${id}`;
   const r = rec(v, where);
-  const beat: BeatSpec = { id, title: str(r.title, `${where}.title`), lines: parseLines(r.lines, cast, `${where}.lines`) };
+  const beat: BeatSpec = { id, title: str(r.title, `${where}.title`), lines: parseLines(r.lines, cast, `${where}.lines`), ...(r.lead === undefined ? {} : { lead: parseLines(r.lead, cast, `${where}.lead`) }) };
   if (r.situation !== undefined) beat.situation = str(r.situation, `${where}.situation`);
+  if (r.threat !== undefined) beat.threat = str(r.threat, `${where}.threat`);
   rejectForbid(r, where);
   const cut = optStr(r.cut, `${where}.cut`);
   if (cut) beat.cut = cut;
@@ -383,6 +437,7 @@ function parseBeat(id: string, v: unknown, cast: Record<string, CastSpec>, freeD
   if (r.time !== undefined) beat.time = num(r.time, `${where}.time`);
   const effects = parseEffects(r.effects, `${where}.effects`);
   if (effects) beat.effects = effects;
+  if (r.twist !== undefined) beat.twist = parseTwist(r.twist, cast, `${where}.twist`);
   if (r.choices !== undefined) beat.choices = list(r.choices, `${where}.choices`).map((c, i) => parseChoice(c, cast, `${where}.choices[${i}]`));
   if (r.free !== undefined) beat.free = parseFree(r.free, cast, `${where}.free`, freeDefaults);
   const next = parseNext(r.next, `${where}.next`);
@@ -429,15 +484,11 @@ function parseAssets(v: unknown, where: string, needsPlaceholder: boolean): Reco
 
 export function linesOfBeat(beat: BeatSpec): Line[] {
   const out = [...beat.lines];
-  for (const c of beat.choices ?? []) {
-    out.push(...(c.lines ?? []));
-    for (const tier of TIERS) out.push(...(c.outcomes?.[tier].lines ?? []));
-  }
+  for (const c of beat.choices ?? []) out.push(...(c.lines ?? []));
   if (beat.free) {
     out.push(...beat.free.press, ...beat.free.deflect, ...beat.free.talk_fallback);
-    for (const tier of TIERS) out.push(...beat.free.improv[tier].lines, ...(beat.free.improv_bold?.[tier].lines ?? []));
-    for (const a of beat.free.approaches) for (const tier of TIERS) out.push(...a.outcomes[tier].lines);
   }
+  for (const [, outcome] of outcomesOf(beat)) out.push(...outcome.lines);
   return out;
 }
 
@@ -447,6 +498,7 @@ export function parseScenario(text: string): Scenario {
   for (const [key, raw] of Object.entries(rec(root.cast, 'cast'))) {
     const r = rec(raw, `cast.${key}`);
     const spec: CastSpec = { display: typeof r.display === 'string' ? r.display : '', style: oneOf<LineStyle>(r.style, ['speech', 'thought', 'narration', 'gm'], `cast.${key}.style`) };
+     if (r.faces !== undefined) spec.faces = list(r.faces, `cast.${key}.faces`).map((f, i) => str(f, `cast.${key}.faces[${i}]`));
     const sprite = optStr(r.sprite, `cast.${key}.sprite`);
     if (sprite) spec.sprite = sprite;
     if (r.sprite_alt !== undefined) {
@@ -465,9 +517,21 @@ export function parseScenario(text: string): Scenario {
   const items: ItemSpec[] = list(sheet.items, 'sheet.items').map((x, i) => {
     const r = rec(x, `sheet.items[${i}]`);
     const item: ItemSpec = { id: str(r.id, `sheet.items[${i}].id`), name: str(r.name, `sheet.items[${i}].name`), desc: str(r.desc, `sheet.items[${i}].desc`) };
+    const file = optStr(r.file, `sheet.items[${i}].file`);
+    if (file) item.file = file;
     if (r.hidden === true) item.hidden = true;
+    if (r.container !== undefined) {
+      const c = rec(r.container, `sheet.items[${i}].container`);
+      item.container = { item: str(c.item, 'container.item'), unless: str(c.unless, 'container.unless') };
+    }
+    if (r.states !== undefined) item.states = list(r.states, `sheet.items[${i}].states`).map((x, j) => {
+      const s = rec(x, `sheet.items[${i}].states[${j}]`);
+      return { flag: str(s.flag, '소지품 상태.flag'), label: str(s.label, '소지품 상태.label'), desc: str(s.desc, '소지품 상태.desc') };
+    });
     return item;
   });
+  const tension = sheet.tension === undefined ? undefined : num(sheet.tension, 'sheet.tension');
+  if (tension !== undefined && (tension < TENSION_MIN || tension > TENSION_MAX)) throw new Error(`sheet.tension: ${TENSION_MIN}~${TENSION_MAX} 사이여야 합니다 (${tension})`);
   const beats: Record<string, BeatSpec> = {};
   for (const [id, raw] of Object.entries(rec(root.beats, 'beats'))) beats[id] = parseBeat(id, raw, cast, root.free_defaults === undefined ? {} : rec(root.free_defaults, 'free_defaults'));
   const scenario: Scenario = {
@@ -481,13 +545,16 @@ export function parseScenario(text: string): Scenario {
       name: str(sheet.name, 'sheet.name'),
       abilities,
       tracks,
+      ...(sheet.collapse_to === undefined ? {} : { collapseTo: str(sheet.collapse_to, 'sheet.collapse_to') }),
       items,
+      ...(tension === undefined ? {} : { tension }),
       ...(sheet.reveal === undefined
         ? {}
         : (() => {
             const one = (v: unknown, at: string) => {
               const r = rec(v, at);
-              return { note: str(r.note, `${at}.note`), tracks: list(r.tracks, `${at}.tracks`).map((t, i) => oneOf<Track>(t, TRACKS, `${at}.tracks[${i}]`)) };
+              if (r.note === undefined && r.flag === undefined) throw new ScenarioError(`${at}: note 또는 flag가 필요합니다`);
+              return { ...(r.note === undefined ? {} : { note: str(r.note, `${at}.note`) }), ...(r.flag === undefined ? {} : { flag: str(r.flag, `${at}.flag`) }), tracks: list(r.tracks, `${at}.tracks`).map((t, i) => oneOf<Track>(t, TRACKS, `${at}.tracks[${i}]`)) };
             };
             return { reveal: Array.isArray(sheet.reveal) ? sheet.reveal.map((v, i) => one(v, `sheet.reveal[${i}]`)) : [one(sheet.reveal, 'sheet.reveal')] };
           })()),
@@ -598,7 +665,13 @@ export function parseScenario(text: string): Scenario {
     facts: list(root.facts ?? [], 'facts').map((x, i) => {
       const r = rec(x, `facts[${i}]`);
       rejectForbid(r, `facts[${i}]`);
-      return { if: str(r.if, `facts[${i}].if`), text: str(r.text, `facts[${i}].text`), state_guard: list(r.state_guard ?? [], `facts[${i}].state_guard`).map((t, j) => str(t, `facts[${i}].state_guard[${j}]`)) };
+      const fact: FactSpec = { if: str(r.if, `facts[${i}].if`), text: str(r.text, `facts[${i}].text`), state_guard: list(r.state_guard ?? [], `facts[${i}].state_guard`).map((t, j) => str(t, `facts[${i}].state_guard[${j}]`)) };
+      if (r.state_check !== undefined) {
+        const c = rec(r.state_check, `facts[${i}].state_check`);
+        const sets = optStr(c.sets, `facts[${i}].state_check.sets`);
+        fact.state_check = { about: list(c.about, `facts[${i}].state_check.about`).map((t, j) => str(t, `facts[${i}].state_check.about[${j}]`)), ask: str(c.ask, `facts[${i}].state_check.ask`), ...(sets ? { sets } : {}) };
+      }
+      return fact;
     }),
   };
   const problems = checkScenario(scenario);
@@ -621,10 +694,17 @@ function nextTargets(next: Next | undefined): string[] {
 }
 
 function* outcomesOf(beat: BeatSpec): Generator<[string, Outcome]> {
-  for (const c of beat.choices ?? []) for (const tier of TIERS) if (c.outcomes) yield [`choices.${c.id}.${tier}`, c.outcomes[tier]];
-  for (const a of beat.free?.approaches ?? []) for (const tier of TIERS) yield [`free.${a.id}.${tier}`, a.outcomes[tier]];
-  for (const tier of TIERS) if (beat.free) yield [`free.improv.${tier}`, beat.free.improv[tier]];
-  for (const tier of TIERS) if (beat.free?.improv_bold) yield [`free.improv_bold.${tier}`, beat.free.improv_bold[tier]];
+  const sets: [string, Tiered<Outcome>][] = [];
+  for (const c of beat.choices ?? []) if (c.outcomes) sets.push([`choices.${c.id}`, c.outcomes]);
+  for (const a of beat.free?.approaches ?? []) sets.push([`free.${a.id}`, a.outcomes]);
+  if (beat.free) sets.push(['free.improv', beat.free.improv]);
+  if (beat.free?.improv_bold) sets.push(['free.improv_bold', beat.free.improv_bold]);
+  for (const [path, outcomes] of sets) {
+    for (const tier of [...TIERS, 'crit'] as const) {
+      const outcome = outcomes[tier];
+      if (outcome) yield [`${path}.${tier}`, outcome];
+    }
+  }
 }
 
 export function edgesOf(beat: BeatSpec): string[] {
@@ -692,6 +772,10 @@ export function checkScenario(s: Scenario): string[] {
   };
 
   if (!s.beats[s.start]) problems.push(`start: 없는 비트 "${s.start}"`);
+  for (const item of s.sheet.items) if (item.container) {
+    if (!itemIds.has(item.container.item) || item.container.item === item.id) problems.push(`sheet.items.${item.id}.container: 다른 소지품이 필요합니다`);
+    checkCond(item.container.unless, `sheet.items.${item.id}.container.unless`);
+  }
   s.facts.forEach((f, i) => checkCond(f.if, `facts[${i}].if`));
   const fateIds = new Set<string>();
   for (const f of s.fates ?? []) {
@@ -704,12 +788,17 @@ export function checkScenario(s: Scenario): string[] {
     if (!to) problems.push(`${where}.to: 없는 비트 "${f.to}"`);
     else if (!to.ending?.bad) problems.push(`${where}.to: 작은 끝은 ending.bad 가 참인 결말 비트여야 합니다 ("${f.to}")`);
   }
+  if (s.sheet.collapseTo && !s.beats[s.sheet.collapseTo]?.ending) problems.push(`sheet.collapse_to: 기존 결말 비트여야 합니다 ("${s.sheet.collapseTo}")`);
   for (const [id, cg] of Object.entries(s.cgs)) {
     if (!cg.alt) continue;
     checkCond(cg.alt.if, `cgs.${id}.alt.if`);
     if (!s.cgs[cg.alt.id]) problems.push(`cgs.${id}.alt.id: 없는 이벤트 CG "${cg.alt.id}"`);
   }
   for (const [key, c] of Object.entries(s.cast)) {
+    for (const face of c.faces ?? []) {
+      const problem = faceProblem(s, key, face);
+      if (problem) problems.push(`cast.${key}.faces: ${problem}`);
+    }
     if (c.sprite && !s.sprites[c.sprite]) problems.push(`cast.${key}.sprite: 없는 입식 "${c.sprite}"`);
     if (c.sprite_alt) {
       if (!s.sprites[c.sprite_alt.sprite]) problems.push(`cast.${key}.sprite_alt.sprite: 없는 입식 "${c.sprite_alt.sprite}"`);
@@ -720,8 +809,11 @@ export function checkScenario(s: Scenario): string[] {
   for (const beat of Object.values(s.beats)) {
     const where = `beats.${beat.id}`;
     if (beat.bg && !s.backgrounds[beat.bg]) problems.push(`${where}.bg: 없는 배경 "${beat.bg}"`);
-    for (const line of linesOfBeat(beat)) {
+    const twists = [...(beat.twist?.altered ?? []), ...(beat.twist?.interrupt ?? [])];
+    for (const line of [...linesOfBeat(beat), ...twists.flatMap((t) => t.lines)]) {
       if (line.cg && !s.cgs[line.cg]) problems.push(`${where}: 없는 이벤트 CG "${line.cg}"`);
+      if (line.cg_from && !s.cgs[line.cg_from]) problems.push(`${where}: 없는 이벤트 CG "${line.cg_from}"(cg_from)`);
+      if (line.cg_from && !line.cg) problems.push(`${where}: 대사 "${line.text}" 에 cg 없이 cg_from 만 있습니다`);
       if (line.face) {
         const bad = faceProblem(s, line.speaker, line.face);
         if (bad) problems.push(`${where}: 대사 "${line.text}" 의 face "${line.face}": ${bad}`);
@@ -731,6 +823,7 @@ export function checkScenario(s: Scenario): string[] {
     for (const [id, cg] of Object.entries(s.cgs)) if (!cg.file) problems.push(`cgs.${id}.file: 이벤트 CG 에는 파일이 필요합니다`);
     for (const slot of Object.values(beat.cast ?? {})) if (slot && !s.cast[slot]) problems.push(`${where}.cast: cast 에 없는 인물 "${slot}"`);
     checkEffects(beat.effects, `${where}.effects`);
+    for (const t of twists) checkEffects(t.effects, `${where}.twist.${t.id}.effects`);
     checkNext(beat.next, `${where}.next`);
     const waits = beat.choices !== undefined || beat.free !== undefined;
     if (beat.ending) {
@@ -805,4 +898,12 @@ export function checkScenario(s: Scenario): string[] {
   for (const id of Object.keys(s.beats)) if (!seen.has(id)) problems.push(`beats.${id}: 시작에서 닿을 수 없는 비트입니다`);
   if (!Object.values(s.beats).some((b) => b.ending && seen.has(b.id))) problems.push('닿을 수 있는 결말 비트가 없습니다');
   return problems;
+}
+
+/** 이 비트에 플레이어 앞에서 말을 받을 다른 인물이 나와 있는가. */
+export function facesPerson(scenario: Scenario, beat: BeatSpec): boolean {
+  return Object.values(beat.cast ?? {}).some((key) => {
+    const cast = key ? scenario.cast[key] : undefined;
+    return cast?.style === 'speech' && cast.lore !== scenario.sheet.name;
+  });
 }

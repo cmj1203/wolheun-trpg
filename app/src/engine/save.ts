@@ -43,10 +43,23 @@ export function assertState(scenario: Scenario, value: unknown): GameState {
   if (typeof s.rng !== 'number' || typeof s.seed !== 'number') return fail('난수 상태 없음');
   // 행운이 생기기 전의 저장도 불러올 수 있게 한다.
   if (s.tracks && s.tracks.행운 === undefined) s.tracks.행운 = 0;
+  // 45차 전 저장의 능력치 체력은 근력이다. 새 상태는 당시 기록에 없으므로 시작값으로 받는다.
+  const legacyAbilities: Record<string, number> | undefined = s.abilities;
+  if (legacyAbilities && legacyAbilities.근력 === undefined && typeof legacyAbilities.체력 === 'number') {
+    legacyAbilities.근력 = legacyAbilities.체력;
+    delete legacyAbilities.체력;
+  }
+  for (const key of ['체력', '정신력'] as const) {
+    if (s.tracks && s.tracks[key] === undefined) s.tracks[key] = scenario.sheet.tracks[key];
+  }
   for (const t of TRACKS) if (typeof s.tracks?.[t] !== 'number') return fail(`수치 ${t} 없음`);
   for (const a of ABILITIES) if (typeof s.abilities?.[a] !== 'number') return fail(`능력치 ${a} 없음`);
+  if (!s.flags || typeof s.flags !== 'object' || Array.isArray(s.flags)) return fail('플래그');
   if (!Array.isArray(s.items) || !s.items.every((i) => typeof i === 'string')) return fail('소지품 목록');
   if (!Array.isArray(s.log)) return fail('플레이 기록');
+  for (const entry of s.log) {
+    if (entry.kind === 'check' && String(entry.roll.stat) === '체력') entry.roll.stat = '근력';
+  }
   if (typeof s.playMs !== 'number' || typeof s.startedAt !== 'number') return fail('플레이 시간');
   const beat = scenario.beats[s.beat];
   if (beat?.free && (!s.free || s.free.beat !== s.beat)) return fail('자유 입력 진행 상태');

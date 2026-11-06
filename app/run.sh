@@ -5,6 +5,7 @@ APP_DIR="${0:A:h}"
 ROOT_DIR="${APP_DIR:h}"
 MODELS_DIR="${WOLHEUN_MODELS_DIR:-$ROOT_DIR/models}"
 SANDBOX_PROFILE="$APP_DIR/config/offline.sb"
+RUN_LOGS="${WOLHEUN_LOGS:-$APP_DIR/logs}"
 APP_PORT="${WOLHEUN_PORT:-18081}"
 LLM_PORT="${WOLHEUN_LLM_PORT:-18080}"
 MODEL_KEY="${WOLHEUN_MODEL:-}"
@@ -57,15 +58,15 @@ wait_http() {
   until curl -fsS -o /dev/null --max-time 1 "$url" 2>/dev/null; do
     tries=$(( tries + 1 ))
     if (( tries > limit * 4 )); then
-      print -u2 "$label 이(가) ${limit}초 안에 준비되지 않았습니다. 로그: $APP_DIR/logs"
+      print -u2 "$label 이(가) ${limit}초 안에 준비되지 않았습니다. 로그: $RUN_LOGS"
       exit 1
     fi
     sleep 0.25
   done
 }
 
-mkdir -p "$APP_DIR/logs"
-PIDS_FILE="$APP_DIR/logs/run-$APP_PORT.pids"
+mkdir -p "$RUN_LOGS"
+PIDS_FILE="$RUN_LOGS/run-$APP_PORT.pids"
 typeset -a PIDS
 cleanup() {
   for pid in $PIDS; do kill "$pid" 2>/dev/null || true; done
@@ -91,7 +92,7 @@ if (( USE_LLM == 1 )); then
   print "로컬 GM 모델을 불러오는 중: $MODEL_LABEL"
   sandbox-exec -f "$SANDBOX_PROFILE" llama-server -m "$MODEL_PATH" --host 127.0.0.1 --port "$LLM_PORT" \
     -c 8192 -np 1 -ngl 99 --alias "$MODEL_KEY" --no-webui --offline --reasoning off \
-    --log-file "$APP_DIR/logs/llama-server-$LLM_PORT.log" >/dev/null 2>&1 &
+    --log-file "$RUN_LOGS/llama-server-$LLM_PORT.log" >/dev/null 2>&1 &
   PIDS+=($!)
   wait_http "http://127.0.0.1:$LLM_PORT/health" 300 "LLM 서버"
   LLM_URL="http://127.0.0.1:$LLM_PORT"
@@ -99,7 +100,7 @@ fi
 
 sandbox-exec -f "$SANDBOX_PROFILE" env \
   WOLHEUN_PORT="$APP_PORT" WOLHEUN_LLM_URL="$LLM_URL" WOLHEUN_MODEL="$MODEL_KEY" WOLHEUN_NO_LLM=$(( 1 - USE_LLM )) \
-  bun "$APP_DIR/src/server/main.ts" >"$APP_DIR/logs/app-server-$APP_PORT.log" 2>&1 &
+  bun "$APP_DIR/src/server/main.ts" >"$RUN_LOGS/app-server-$APP_PORT.log" 2>&1 &
 APP_PID=$!
 PIDS+=($APP_PID)
 wait_http "http://127.0.0.1:$APP_PORT/api/health" 60 "앱 서버"

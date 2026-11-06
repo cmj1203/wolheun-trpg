@@ -75,9 +75,9 @@ describe('2d6 + 능력치 판정 등급', () => {
     expect(a).toEqual(b);
   });
 
-  test('시드 1~300 에서 세 등급이 모두 나온다', () => {
+  test('시드 1~300 에서 대성공을 포함한 네 등급이 모두 나온다', () => {
     const seen = new Set<string>();
-    for (let seed = 1; seed <= 300; seed++) seen.add(roll2d6(seed, '판정', '체력', 0, []).roll.tier);
-    expect([...seen].sort()).toEqual(['hit', 'miss', 'mixed']);
+    for (let seed = 1; seed <= 300; seed++) seen.add(roll2d6(seed, '판정', '근력', 0, []).roll.tier);
+    expect([...seen].sort()).toEqual(['crit', 'hit', 'miss', 'mixed']);
   });
 });

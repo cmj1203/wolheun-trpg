@@ -25,7 +25,7 @@ export class FakeGm implements GmPort {
 
   async talk(ctx: GmContext): Promise<GmLines> {
     this.calls.push(`talk:${ctx.text}`);
-    return { lines: [{ speaker: '남자', text: '묻는 말에나 답해라.' }], meta: META };
+    return { lines: [{ speaker: '남자', text: ctx.reaction ? '없다면, 잘 가라.' : '묻는 말에나 답해라.' }], meta: META };
   }
 
   async explain(ctx: GmContext): Promise<GmLines> {

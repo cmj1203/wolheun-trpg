@@ -1,21 +1,26 @@
 import { evalCond, holdBefore, type CondContext } from './conditions.ts';
-import { roll2d6 } from './dice.ts';
-import { edgesOf } from './scenario.ts';
+import { nextU32, roll2d6, seedFrom } from './dice.ts';
+import { edgesOf, facesPerson } from './scenario.ts';
 import { drawPrice, onceFlag, priceCandidates } from './prices.ts';
-import { isActionText, isNoise, isQuestionText, normalizeKo, preemptedBy, splitMixed } from './text.ts';
+import { assertedSpeech, discloses, isActionText, isNoise, isQuestionText, normalizeKo, preemptedBy, splitMixed } from './text.ts';
 import {
   ABILITIES,
   GameError,
   TIERS,
   TIER_LABEL,
   TRACKS,
+  TENSION_MAX,
+  TENSION_MIN,
+  TENSION_START,
   TRACK_INFO,
+  trackTone,
   WORLD_MOVES,
   type Ability,
   type Action,
   type ApproachSpec,
   type BeatSpec,
   type ChoiceSpec,
+  type ChangePart,
   type Effects,
   type FactSpec,
   type FateSpec,
@@ -43,8 +48,12 @@ import {
   type Scenario,
   type Step,
   type Tier,
+  type Tiered,
   type Track,
   type TrackChange,
+  trackView,
+  type TwistResult,
+  type TwistSpec,
 } from './types.ts';
 
 export interface GmMeta {
@@ -53,6 +62,8 @@ export interface GmMeta {
   fallback: boolean;
   ms: number;
   model: string | null;
+  /** 플레이어가 직접 한 행동이라 상태가 따라가야 하는 플래그. 줄을 보여 주기 전에 켠다. */
+  setFlags?: string[];
 }
 
 export type TalkTone = 'plain' | 'repeat' | 'deflect';
@@ -64,11 +75,14 @@ export type Interpretation =
   /** spoken: 사람에게 건넨 말이면 true, 행동을 적은 문장이면 false. 규칙 해석은 모른다. */
   | { kind: 'approach'; approach: string; item: string | null; spoken?: boolean; risk?: InputRisk; source: 'llm' | 'rule'; meta: GmMeta }
   /** to: 사람에게 건넨 말인지 아무에게도 안 한 혼잣말인지. 규칙 해석은 모른다. */
-  | { kind: 'talk'; tone?: TalkTone; to?: 'person' | 'self'; risk?: InputRisk; source: 'llm' | 'rule'; meta: GmMeta }
+  /** shown: 말이 아니라 몸이 먼저 드러난 입력(눈물, 주저앉음). 판정 없이 곁의 사람이 그 모습을 보고 반응한다. */
+  | { kind: 'talk'; tone?: TalkTone; to?: 'person' | 'self'; shown?: boolean; risk?: InputRisk; source: 'llm' | 'rule'; meta: GmMeta }
   /** play: 플레이 방법을 묻는 말. game: 게임 자체에 대한 말의 항목 id. about: 묻는 대상의 수첩 항목 id, 답이 없는 질문이면 ABOUT_UNKNOWN. */
   | { kind: 'ask'; play?: boolean; game?: string; about?: string; source: 'llm' | 'rule'; meta: GmMeta }
   /** odd: 상황에 뜬금없는 행동. 여우가 이때만 태클한다. */
   /** bold: 상대가 지나칠 수 없는 큰 행동(몸에 닿기, 겨누기). deed: 해석이 요약한 행동 한 문장(과거형). */
+  /** 아무것도 시도하지 않는 입력. 판정 없이 장면이 흘러간다. */
+  | { kind: 'idle'; source: 'rule' | 'llm'; meta: GmMeta }
   | { kind: 'improv'; stat: Ability; difficulty: number; label: string; absurd: boolean; bold: boolean; deed?: string; odd?: boolean; risk?: InputRisk; source: 'llm' | 'rule'; meta: GmMeta };
 
 /** 아는 것 안에 답이 없는 질문(속마음, 이유, 앞일). */
@@ -85,7 +99,11 @@ export interface GmContext {
   free: FreeSpec;
   state: Readonly<GameState>;
   text: string;
+  /** 말 없는 반응 뒤 장면을 진행한다. 상대의 짧은 한 줄만 받는다. */
+  reaction?: boolean;
   tone?: TalkTone;
+  /** 입력이 말이 아니라 몸이 먼저 드러난 모습이다. */
+  shown?: boolean;
   /** 대사 도중 끼어든 입력. upcoming 은 곧 나올 고정 줄이고, action 은 판정 없이 시도만 묘사할 행동이다. */
   interject?: { upcoming: string[]; action: boolean };
   /** "~있어?", "~할 수 있어?" 처럼 허락을 묻는 입력이다. */
@@ -128,6 +146,11 @@ export interface GmPort {
 /** 수첩 항목이 적혔는지 기록하는 flag 이름 */
 export const noteFlag = (id: string) => `수첩:${id}`;
 
+/** 수첩 또는 원작 설명 장면에서 여는 수치. flag 공개 전에는 해당 수치의 시간·대가도 멈춘다. */
+export function closedTrackGates(scenario: Scenario, state: Pick<GameState, 'flags'>) {
+  return (scenario.sheet.reveal ?? []).filter((g) => state.flags[g.flag ?? noteFlag(g.note ?? '')] !== true);
+}
+
 /** 수첩에 적힌 항목인가. 숨길 것은 if 가 참일 때만, 나머지는 after 가 없거나 그 비트에 들어간 뒤다. */
 export function noteOpen(note: NoteEntry, state: Pick<GameState, 'tracks' | 'abilities' | 'flags' | 'items'>): boolean {
   const ctx: CondContext = { tracks: state.tracks, abilities: state.abilities, flags: state.flags, items: state.items };
@@ -167,7 +190,7 @@ const IDLE_CAP_MS = 3 * 60 * 1000;
 const MAX_HOPS = 64;
 const SAID_KEEP = 12;
 /** GM 무브 ④ 시간이 감: 장면에 시간 대가가 없을 때 쓰는 줄(b02 대가 글과 같다). */
-const CLOCK_FALLBACK = '해가 한 뼘 더 기울었다. 귀찌가 미지근해진다.';
+const CLOCK_FALLBACK = '해가 한 뼘 더 기울었다.';
 const QUIT_BEAT = 'e_quit';
 /** 칼 든 상대에게 맨손으로 덤빈 징조가 한 판에 한 번 나갔다. */
 const DANGER_OMEN_FLAG = '징조_맨손';
@@ -202,6 +225,9 @@ function subjectParticle(word: string): string {
 }
 
 export class Engine {
+  /** 이번 턴이 시작될 때 이미 징조가 나간 작은 끝(act 가 복제한 상태마다). 엔진 하나를 여러 세션이 함께 쓰니 상태에 묶는다. */
+  private readonly warnedAtTurn = new WeakMap<GameState, ReadonlySet<string>>();
+
   constructor(
     readonly scenario: Scenario,
     private readonly gm: GmPort,
@@ -224,6 +250,7 @@ export class Engine {
       abilities: { ...sheet.abilities },
       items: sheet.items.map((i) => i.id),
       flags: {},
+      said: [],
       free: null,
       recent: [],
       ending: null,
@@ -240,8 +267,15 @@ export class Engine {
 
   resume(state: GameState): Step {
     const beat = this.beatOf(state);
-    const events: GameEvent[] = [this.sceneEvent(state, beat), ...beat.lines.map((l) => this.lineEvent(l, 'script'))];
+    const events: GameEvent[] = [this.sceneEvent(state, beat), ...beat.lines.filter((l) => !l.if || evalCond(l.if, this.ctx(state))).map((l) => this.lineEvent(l, 'script'))];
     if (state.ending && beat.ending) events.push(this.endingEvent(beat));
+    // 답을 기다리던 확인 창은 다시 띄운다. 안 띄우면 보이지 않는 창에 뒤의 "응"이 답이 된다.
+    if (!state.ending && state.pendingIntent) events.push(this.intentEvent(state.pendingIntent));
+    else if (!state.ending && state.pendingRisk) {
+      // 처음 띄운 창의 글. 그 글을 적어 두기 전의 저장이면 그만두기 말의 경고 글을 쓴다.
+      const warn = state.pendingRisk.warn ?? (this.scenario.risky ?? []).find((r) => r.quit)?.warn;
+      if (warn) events.push({ type: 'confirm', kind: 'quit', text: warn });
+    }
     if (beat.free && state.free) this.gm.prepare?.({ scenario: this.scenario, beat, free: beat.free, state });
     return this.step(state, events);
   }
@@ -253,6 +287,7 @@ export class Engine {
     const beat = this.beatOf(state);
     // 이 턴이 시작될 때 이미 경고가 나간 작은 끝. 경고가 이번 턴에 처음 나온 작은 끝은 이번 턴에 끝내지 않는다.
     const warnedBefore = new Set((this.scenario.fates ?? []).filter((f) => state.flags[`경고_${f.id}`] === true).map((f) => f.id));
+    this.warnedAtTurn.set(state, warnedBefore);
     const events: GameEvent[] = [];
     if (onEvent) {
       events.push = (...items) => {
@@ -260,6 +295,10 @@ export class Engine {
         return Array.prototype.push.apply(events, items);
       };
     }
+    // 의도 카드에 답하지 않고 다른 행동으로 넘어가면 그 카드는 끝난다. 뒤의 "응" 같은 입력이 옛 카드의 답이 되면 안 된다.
+    if (state.pendingIntent && (action.type === 'choose' || action.type === 'approach' || action.type === 'interject')) this.dropIntent(state);
+    // 그만두기 확인도 같다. 답하지 않고 다른 행동으로 넘어갔으면, 뒤의 "응"이 옛 확인의 답이 되어 판을 끝내면 안 된다.
+    if (state.pendingRisk && (action.type === 'choose' || action.type === 'approach' || action.type === 'luck')) delete state.pendingRisk;
     switch (action.type) {
       case 'choose':
         this.choose(state, beat, action.id, events);
@@ -284,10 +323,10 @@ export class Engine {
         await this.interject(state, beat, action, events);
         break;
       case 'confirm':
-        this.answerConfirm(state, action.ok, events);
+        await this.answerConfirm(state, beat, action.ok, events);
         break;
       case 'ask':
-        await this.askGm(state, beat, action.text, events);
+        await this.askGm(state, beat, action.text, events, this.sceneOf(action.scene));
         break;
     }
     this.settleFate(state, events, warnedBefore);
@@ -343,11 +382,12 @@ export class Engine {
       scenarioTitle: this.scenario.title,
       episode: this.scenario.episode,
       beatTitle: beat.title,
-      tracks: TRACKS.map((key) => ({ key, ...TRACK_INFO[key], value: state.tracks[key] })),
+      tracks: TRACKS.map((key) => trackView(this.scenario.fates, key, state.tracks[key])),
       abilities: ABILITIES.map((key) => ({ key, value: state.abilities[key] })),
-      items: state.items.map((id) => this.itemView(id)).filter((i) => !this.scenario.sheet.items.find((s) => s.id === i.id)?.hidden),
+      items: state.items.map((id) => this.itemView(id, state)).filter((i) => !this.scenario.sheet.items.find((s) => s.id === i.id)?.hidden),
       notes: this.notesOf(state),
-      trackGate: (this.scenario.sheet.reveal ?? []).filter((g) => state.flags[noteFlag(g.note)] !== true),
+      trackGate: closedTrackGates(this.scenario, state),
+      tension: this.tensionOf(state),
       playMs: state.playMs,
     };
   }
@@ -356,7 +396,7 @@ export class Engine {
     const notes: NoteView[] = (this.scenario.notes ?? []).filter((n) => noteOpen(n, state)).map((n) => ({ id: n.id, kind: n.kind, name: n.name, text: n.text }));
     for (const id of state.items) {
       const item = this.scenario.sheet.items.find((i) => i.id === id);
-      if (item && !item.hidden) notes.push({ id: `item:${id}`, kind: '소지품', name: item.name, text: item.desc });
+      if (item && !item.hidden) notes.push({ id: `item:${id}`, kind: '소지품', name: item.name, text: this.itemView(id, state).desc });
     }
     return notes;
   }
@@ -409,6 +449,9 @@ export class Engine {
   /** 지금 조건이 참인 작은 끝. 이미 끝났으면 없다. */
   private dueFate(state: GameState): FateSpec | undefined {
     if (state.ending) return undefined;
+    if (state.flags['체력_쓰러짐'] === true && this.scenario.sheet.collapseTo) {
+      return { id: 'body_captured', when: 'flag:체력_쓰러짐', to: this.scenario.sheet.collapseTo };
+    }
     const ctx = this.ctx(state);
     return (this.scenario.fates ?? []).find((f) => evalCond(f.when, ctx));
   }
@@ -427,6 +470,19 @@ export class Engine {
       this.enter(state, fate.to, events, 0);
       return;
     }
+  }
+
+  /**
+   * 장면에 들어가며 갈 작은 끝. settleFate 와 같은 불변식(한 번의 실패로는 끝나지 않는다)을 지킨다:
+   * 판정 실패가 다음 장면으로 넘어가는 길이어도, 징조가 이번 턴에 처음 나온 작은 끝은 수치를 문턱 바로 위에 멈추고 장면으로 간다.
+   */
+  private fateOnEnter(state: GameState): FateSpec | undefined {
+    const warnedBefore = this.warnedAtTurn.get(state);
+    for (let fate = this.dueFate(state); fate; fate = this.dueFate(state)) {
+      if (warnedBefore && fate.warn && !warnedBefore.has(fate.id) && this.holdAboveThreshold(state, fate)) continue;
+      return fate;
+    }
+    return undefined;
   }
 
   /** 작은 끝 조건의 수치를 문턱 바로 위에 멈춘다. 비교식이 아니면 멈출 값이 없어 false. */
@@ -487,7 +543,13 @@ export class Engine {
     let beat = this.scenario.beats[beatId];
     if (!beat) throw new Error(`없는 비트: ${beatId}`);
     // 상태가 한계에 닿았으면 다음 장면 대신 작은 끝으로 간다. 그만두기 같은 결말은 그대로 둔다.
-    const fate = beat.ending ? undefined : this.dueFate(state);
+    // 귀찌 결말 정책은 보류. 정식 결말 직전의 체력 포획·첩자 문턱만 먼저 정산한다.
+    const terminalFate = beat.ending && !beat.ending.bad && beat.ending.id !== 'quit'
+      ? state.flags['체력_쓰러짐'] === true && this.scenario.sheet.collapseTo
+        ? { to: this.scenario.sheet.collapseTo }
+        : this.scenario.fates?.find((f) => f.id === 'spy_cut' && evalCond(f.when, this.ctx(state)))
+      : undefined;
+    const fate = beat.ending ? terminalFate : this.fateOnEnter(state);
     const fated = fate ? this.scenario.beats[fate.to] : undefined;
     if (fated) beat = fated;
     state.beat = beat.id;
@@ -497,16 +559,30 @@ export class Engine {
     this.record(state, { kind: 'beat', beat: beat.id, title: beat.title });
     events.push(this.sceneEvent(state, beat));
     const onEnter: Effects = { ...beat.effects, tracks: { ...beat.effects?.tracks } };
+    if (beat.threat && state.flags[`위협_${beat.threat}`] !== true) {
+      onEnter.tracks = { ...onEnter.tracks, 정신력: (onEnter.tracks?.정신력 ?? 0) - 1 };
+      onEnter.flags = { ...onEnter.flags, [`위협_${beat.threat}`]: true };
+    }
     if (beat.time && onEnter.tracks) onEnter.tracks.귀찌 = (onEnter.tracks.귀찌 ?? 0) - beat.time;
+    // 들어서며 일어나는 변화를 먼저 그린다. 앞 장면에서 나온 줄은 되풀이하지 않는다.
+    for (const line of beat.lead ?? []) if (!state.spoken?.[line.speaker]?.includes(line.text)) this.say(state, line, 'script', events);
     this.applyEffects(state, onEnter, events);
+    // 장면 검사: 끼어드는 일은 장면 줄 앞에, 달라진 결은 장면 줄 뒤에 붙는다.
+    const twist = beat.ending ? null : this.sceneCheck(state, beat, events);
+    if (twist?.result === 'interrupt' && twist.spec) this.playTwist(state, twist.spec, events);
     // 플레이어가 앞 장면에서 먼저 해 버린 일을 그린 원작 줄은 되풀이하지 않는다.
     const preempted = new Set(state.preempted ?? []);
     for (const line of beat.lines) if (!preempted.has(normalizeKo(line.text))) this.say(state, line, 'script', events);
+    if (twist?.result === 'altered' && twist.spec) this.playTwist(state, twist.spec, events);
     // 처음 보는 사람·장소의 한 줄은 그 장면에서 처음 보이는 순간(장면 대사) 뒤에 붙인다.
     this.openNotes(state, beat, events);
     this.sayCallback(state, beat, events);
     this.sayGuide(state, beat, events);
     if (beat.ending) {
+      // 행운을 묻던 중 그만두기로 끝나면 묻던 창은 버린다. 남아 있으면 끝난 판에 행운 창이 뜬다.
+      delete state.pendingLuck;
+      delete state.pendingRisk;
+      delete state.pendingIntent;
       state.ending = beat.ending.id;
       this.record(state, { kind: 'end', ending: beat.ending.id, title: beat.ending.title });
       events.push(this.endingEvent(beat));
@@ -515,6 +591,41 @@ export class Engine {
     if (beat.free) this.gm.prepare?.({ scenario: this.scenario, beat, free: beat.free, state });
     if (beat.choices || beat.free) return;
     this.enter(state, this.route(state, beat.next, beat.id), events, hops + 1);
+  }
+
+  /** 긴장값(1~6). Mythic 카오스 팩터를 d6 에 맞춘 것. 판정 성공 -1, 실패 +1. */
+  private tensionOf(state: GameState): number {
+    const v = state.flags['긴장'];
+    return typeof v === 'number' ? v : (this.scenario.sheet.tension ?? TENSION_START);
+  }
+
+  private bumpTension(state: GameState, tier: Tier): void {
+    const delta = tier === 'hit' || tier === 'crit' ? -1 : tier === 'miss' ? 1 : 0;
+    if (delta === 0) return;
+    state.flags['긴장'] = Math.max(TENSION_MIN, Math.min(TENSION_MAX, this.tensionOf(state) + delta));
+  }
+
+  /**
+   * 장면 검사(Mythic 장면 검사를 d6 으로): 눈이 긴장값 이하면 홀수는 달라진 결(altered), 짝수는 끼어드는 일(interrupt).
+   * 주사위 흐름(state.rng)은 그대로 두고 지금 값과 비트 id 로 눈을 뽑아, 시드 고정 경로가 표 유무에 흔들리지 않는다.
+   * 표가 없는 장면은 검사하지 않는다(원작 대면 장면은 그대로).
+   */
+  private sceneCheck(state: GameState, beat: BeatSpec, events: GameEvent[]): { result: TwistResult; spec: TwistSpec | null } | null {
+    if (!beat.twist) return null;
+    const tension = this.tensionOf(state);
+    const first = nextU32(state.rng ^ seedFrom(beat.id));
+    const roll = (first.value % 6) + 1;
+    const result: TwistResult = roll > tension ? 'none' : roll % 2 === 1 ? 'altered' : 'interrupt';
+    const pool = result === 'altered' ? beat.twist.altered : result === 'interrupt' ? beat.twist.interrupt : [];
+    const spec = pool.length ? (pool[nextU32(first.state).value % pool.length] ?? null) : null;
+    this.record(state, { kind: 'twist', beat: beat.id, tension, roll, result, id: spec?.id ?? null });
+    events.push({ type: 'twist', beat: beat.id, tension, roll, result, id: spec?.id ?? null });
+    return { result, spec };
+  }
+
+  private playTwist(state: GameState, spec: TwistSpec, events: GameEvent[]): void {
+    for (const line of spec.lines) this.say(state, line, 'script', events);
+    this.applyEffects(state, spec.effects, events);
   }
 
   private route(state: GameState, next: Next | undefined, from: string): string {
@@ -539,7 +650,7 @@ export class Engine {
     let next = choice.next ?? beat.next;
     if (choice.check && choice.outcomes) {
       const roll = this.roll(state, beat, choice.check.stat, choice.check.label, choice.check.mods, events);
-      const outcome = choice.outcomes[roll.tier];
+      const outcome = this.outcomeOf(choice.outcomes, roll.tier);
       for (const line of outcome.lines) this.say(state, line, 'script', events);
       this.applyEffects(state, outcome.effects, events);
       next = outcome.next ?? next;
@@ -553,8 +664,16 @@ export class Engine {
   private roll(state: GameState, beat: BeatSpec, stat: Ability, label: string, mods: Mod[] | undefined, events: GameEvent[], extra: ModApplied[] = []): RollResult {
     const ctx = this.ctx(state);
     const applied = [...(mods ?? []).filter((m) => evalCond(m.if, ctx)).map((m) => ({ label: m.label, value: m.value })), ...extra];
+    if (state.tracks.체력 <= 1 && stat === '근력') applied.push({ label: '지친 몸', value: -1 });
+    if (state.flags['정신력_충격'] === true) {
+      applied.push({ label: '겁에 질림', value: -2 });
+      delete state.flags['정신력_충격'];
+    } else if (state.tracks.정신력 <= 1 && (stat === '매력' || stat === '재치')) {
+      applied.push({ label: '흔들리는 마음', value: -1 });
+    }
     const { roll, rng } = roll2d6(state.rng, label, stat, state.abilities[stat], applied);
     state.rng = rng;
+    this.bumpTension(state, roll.tier);
     this.record(state, { kind: 'check', beat: beat.id, roll });
     events.push({ type: 'roll', ...roll, tierLabel: TIER_LABEL[roll.tier] });
     return roll;
@@ -566,7 +685,7 @@ export class Engine {
     const flag = `설명_${roll.tier}`;
     if (!gm || state.flags[flag] === true) return;
     const sum = `${roll.dice[0]}+${roll.dice[1]}에 ${roll.stat} ${roll.statValue >= 0 ? '+' : ''}${roll.statValue}${roll.mods.length ? ', 보정까지' : ''}, 합 ${roll.total}.`;
-    const meaning = roll.tier === 'hit' ? '10 이상이면 원하는 대로 돼.' : roll.tier === 'mixed' ? '7~9는 해내지만 대가가 붙어.' : '6 이하는 실패야.';
+    const meaning = roll.tier === 'crit' ? '6이 둘이면 대성공, 좋은 수치 변화가 한 칸 더 커져.' : roll.tier === 'hit' ? '10 이상이면 원하는 대로 돼.' : roll.tier === 'mixed' ? '7~9는 해내지만 대가가 붙어.' : '6 이하는 실패야.';
     state.flags[flag] = true;
     this.say(state, { speaker: gm, text: `${sum} ${meaning}` }, 'script', events);
   }
@@ -584,6 +703,12 @@ export class Engine {
     const text = raw.replace(/\s+/g, ' ').trim().slice(0, MAX_INPUT_CHARS);
     if (!text) throw new GameError('행동이나 대사를 입력해 주세요.');
     events.push({ type: 'echo', text });
+    if (state.pendingIntent) {
+      // 의도 카드가 떠 있는 동안 글로 답해도 받는다(자동 플레이). 다른 말을 적으면 다른 뜻으로 보고 새 입력으로 받는다.
+      if (YES.test(text)) return this.answerIntent(state, beat, true, events);
+      if (NO.test(text)) return this.answerIntent(state, beat, false, events);
+      this.dropIntent(state);
+    }
     if (this.confirmQuit(state, text, events) !== null) return;
     await this.freeInputText(state, beat, free, text, events);
   }
@@ -594,57 +719,64 @@ export class Engine {
     const mixed = splitMixed(whole);
     const text = mixed?.act ?? whole;
     if (mixed) this.answerAside(state, beat, mixed.ask, events);
-    this.noteSaid(state, text);
+    const newly: string[] = [];
     const ctx: GmContext = { scenario: this.scenario, beat, free, state, text };
     const reading = await this.gm.interpret(ctx);
     this.recordGm(state, beat, 'interpret', reading.meta);
     let read: Interpretation = this.addressed(reading.kind === 'ask' && !gmSpeakerOf(this.scenario) ? { kind: 'talk', source: reading.source, meta: reading.meta } : reading, free);
 
+    if (this.bounce(state, beat, ctx, read.source, events)) {
+      return;
+    }
     if (read.kind === 'ask') {
       // 이야기 입력칸에 적은 질문은 여우가 받지 않는다. 화면이 질문 모드(GM 단추)로 안내한다.
       this.record(state, { kind: 'input', beat: beat.id, text, result: 'ask', approach: null, item: null, source: read.source });
-      this.unsay(state);
       events.push({ type: 'notice', kind: 'ask' });
-      return;
-    }
-    if (this.bounce(state, beat, ctx, read.source, events)) {
-      this.unsay(state);
       return;
     }
     const guard = this.guardRisk(state, beat, read, text, true, events);
     if (guard === 'refused') {
-      this.unsay(state);
       await this.worldMove(state, beat, free, events, false);
       return;
     }
     const warned = guard === 'warned';
     if (guard === 'self') read = { kind: 'talk', to: 'self', source: read.source, meta: read.meta };
 
+    if (read.kind === 'idle') {
+      await this.letSceneFlow(state, beat, free, text, read.source, events);
+      return;
+    }
+    if (!(read.kind === 'talk' && (read.to === 'self' || read.shown))) newly.push(...this.noteSaid(state, assertedSpeech(text, read.kind === 'approach' && read.spoken === true)));
     if (read.kind === 'talk') {
-      this.record(state, { kind: 'input', beat: beat.id, text, result: 'talk', approach: null, item: null, source: read.source });
       const self = read.to === 'self';
-      if (!self && !isNoise(text)) {
+      if (!self && !read.shown && !isNoise(text)) {
         state.flags['말함'] = true;
-        this.noteHeard(state, beat, text, isActionText(text));
+        this.noteHeard(state, beat, text, false);
       }
+      if (free.idle?.threat && progress.talks >= 1) {
+        await this.letSceneFlow(state, beat, free, text, read.source, events);
+        return;
+      }
+      this.record(state, { kind: 'input', beat: beat.id, text, result: 'talk', approach: null, item: null, source: read.source });
       const key = text.replace(/[\s.,!?…~]/g, '');
       const repeated = key === progress.lastInput;
       progress.lastInput = key;
       progress.talks += repeated ? 2 : 1;
       const tone: TalkTone = read.tone === 'deflect' ? 'deflect' : repeated ? 'repeat' : 'plain';
-      const reply = await this.gm.talk({ ...ctx, tone, ...(self ? { self } : {}) });
+      const reply = await this.gm.talk({ ...ctx, tone, ...(self ? { self } : {}), ...(read.shown ? { shown: true } : {}) });
       this.recordGm(state, beat, 'talk', reply.meta, reply.lines);
+      this.followGm(state, reply.meta, events);
       for (const line of reply.lines) this.say(state, line, reply.meta.fallback ? 'script' : 'gm', events);
       await this.worldMove(state, beat, free, events);
       return;
     }
-    await this.applyReading(state, beat, free, read, text, events, warned);
+    await this.applyReading(state, beat, free, read, text, events, warned, { identity: guard === 'identity', flags: newly });
   }
 
   /** 사람이 멀리 있는 장면에서 그 사람에게 건넨 말은 다가가 말을 거는 판정이다. */
   private addressed(read: Interpretation, free: FreeSpec): Interpretation {
     // 위험한 말(신분 노출 등)은 접근법으로 바꾸지 않고 risk 관문이 먼저 받는다(b02 addressed: run 이 identity 를 삼키던 것).
-    if (read.kind !== 'talk' || read.to !== 'person' || read.tone === 'deflect' || read.risk !== undefined || !free.addressed) return read;
+    if (read.kind !== 'talk' || read.to !== 'person' || read.shown || read.tone === 'deflect' || read.risk !== undefined || !free.addressed) return read;
     return { kind: 'approach', approach: free.addressed, item: null, spoken: true, source: read.source, meta: read.meta };
   }
 
@@ -652,16 +784,19 @@ export class Engine {
    * 질문 모드(GM 단추). 여우가 말하는 유일한 자리다: 플레이 방법, 규칙, 수첫 안의 배경, "이거 맞아?", 허락.
    * 이야기 밖 말이라 입력 기록(said)·판정·참을성을 쓰지 않는다. "그만할래" 는 확인 창으로 간다.
    */
-  private async askGm(state: GameState, beat: BeatSpec, raw: string, events: GameEvent[]): Promise<void> {
+  private async askGm(state: GameState, stateBeat: BeatSpec, raw: string, events: GameEvent[], scene?: BeatSpec): Promise<void> {
     const text = raw.replace(/\s+/g, ' ').trim().slice(0, MAX_INPUT_CHARS);
     if (!text) throw new GameError('여우에게 물을 말을 입력해 주세요.');
     if (!gmSpeakerOf(this.scenario)) throw new GameError('이 시나리오에는 진행자가 없습니다.');
-    const free = beat.free ?? this.lastFree(state);
+    const free = stateBeat.free ?? this.lastFree(state);
     if (!free) throw new GameError('지금은 물을 수 없습니다.');
+    // 대사가 흐르는 중에 물으면 서버는 이미 앞 자리에 가 있다. 화면에 보이는 장면을 기준으로 답한다.
+    const beat = scene ?? stateBeat;
     events.push({ type: 'echo', text });
     if (this.confirmQuit(state, text, events) !== null) return;
     if (this.reassure(state, beat, free, text, events)) return;
     const ctx: GmContext = { scenario: this.scenario, beat, free, state, text };
+    if (this.bounce(state, beat, ctx, 'rule', events)) return;
     const reading = await this.gm.interpret(ctx);
     this.recordGm(state, beat, 'interpret', reading.meta);
     if (reading.kind === 'ask' && reading.game !== undefined) {
@@ -706,6 +841,11 @@ export class Engine {
     const gm = gmSpeakerOf(this.scenario);
     const help = this.scenario.gameHelp?.find((h) => h.id === id);
     if (!gm || !help) throw new Error(`없는 게임 항목: ${id}`);
+    const helpTrack = help.track;
+    if (helpTrack && closedTrackGates(this.scenario, state).some((g) => g.tracks.includes(helpTrack))) {
+      this.say(state, { speaker: gm, text: '그건 아직 몰라.' }, 'script', events);
+      return;
+    }
     this.record(state, { kind: 'input', beat: beat.id, text, result: 'game', approach: null, item: null, source });
     if (id === 'quit') {
       this.askQuit(state, text, help.say, events);
@@ -720,24 +860,28 @@ export class Engine {
    * 해석이 위험하다고 본 입력을 거른다. 칼 앞에서 몸으로 덤비는 입력은 입력마다 한 번 묻고,
    * 정체를 드러내는 입력은 일어나지 않는 일이니 주사위 없이 고정 줄로 받는다.
    */
-  private guardRisk(state: GameState, beat: BeatSpec, read: Interpretation, text: string, canRoll: boolean, events: GameEvent[]): 'refused' | 'warned' | 'self' | 'go' {
-    if (read.kind === 'ask' || !read.risk) return 'go';
+  private guardRisk(state: GameState, beat: BeatSpec, read: Interpretation, text: string, canRoll: boolean, events: GameEvent[]): 'refused' | 'warned' | 'self' | 'identity' | 'go' {
+    if (read.kind === 'ask' || read.kind === 'idle' || (read.kind === 'talk' && read.to === 'self')) return 'go';
+    const risk = read.risk ?? (this.scenario.identity && discloses(text, this.scenario.identity.words) ? 'identity' : undefined);
+    if (!risk) return 'go';
     // 이 세계에 없는 물건·힘은 일어나지 않으니 위험도 없다(총을 쏘는 시늘에 맨손 징조를 내지 않는다).
     if (read.kind === 'improv' && read.absurd) return 'go';
-    if (read.risk === 'identity') {
+    if (risk === 'identity') {
       const identity = this.scenario.identity;
-      if (!identity || isQuestionText(text)) return 'go';
+      if (!identity || !discloses(text, identity.words)) return 'go';
       if (state.flags[IDENTITY_OMEN_FLAG] !== true) {
         state.flags[IDENTITY_OMEN_FLAG] = true;
         for (const line of identity.omen) this.say(state, line, 'script', events);
       }
       // 들을 사람이 없으면 혼잇말로 흐른다. 있으면 큰 행동: 수치와 플래그를 바꾸고 인물이 성격대로 받는다(facts 신분_노출).
       if (!Object.values(beat.cast ?? {}).includes(identity.with)) return 'self';
+      // 굴리기 전에 의도 카드로 묻는 큰 행동이면 대가는 "그래"라고 답한 뒤에 붙인다("다른 뜻"이면 아무 대가 없이 다시 적는다).
+      if (canRoll && read.kind === 'improv' && read.bold && read.deed) return 'identity';
       this.applyEffects(state, identity.effects, events);
       return 'go';
     }
-    if (read.risk !== 'attack') {
-      const refuse = this.scenario.refuse?.find((r) => r.id === read.risk && !r.unless.includes(beat.id));
+    if (risk !== 'attack') {
+      const refuse = this.scenario.refuse?.find((r) => r.id === risk && !r.unless.includes(beat.id));
       if (!refuse || isQuestionText(text)) return 'go';
       this.record(state, { kind: 'input', beat: beat.id, text, result: 'talk', approach: null, item: null, source: read.source });
       for (const line of refuse.lines) this.say(state, line, 'script', events);
@@ -757,6 +901,7 @@ export class Engine {
 
   /** 입력을 쌓아 두고, 그 말로 갈래가 나뉘는 플래그(길을 물었다, 미소녀라고 했다)를 세운다. 새로 세운 플래그를 돌려준다. */
   private noteSaid(state: GameState, text: string): string[] {
+    if (!text) return [];
     state.said = [...(state.said ?? []), text].slice(-SAID_KEEP);
     const plain = text.replace(/\s+/g, '');
     const newly: string[] = [];
@@ -773,9 +918,23 @@ export class Engine {
     return newly;
   }
 
-  /** 여우에게 물은 말은 이야기 속 말이 아니다. 방금 쌓은 입력을 도로 뺀다. */
-  private unsay(state: GameState): void {
-    state.said = state.said?.slice(0, -1);
+  /** 답하지 않은 의도 카드를 버린다. 카드에 걸린 입력도 이야기에 들어가지 않았다. */
+  private dropIntent(state: GameState): void {
+    const pending = state.pendingIntent;
+    if (!pending) return;
+    delete state.pendingIntent;
+    const said = assertedSpeech(pending.text);
+    if (said && state.said?.at(-1) === said) state.said = state.said.slice(0, -1);
+    for (const flag of pending.flags ?? []) delete state.flags[flag];
+  }
+
+  private intentEvent(pending: NonNullable<GameState['pendingIntent']>): GameEvent {
+    return { type: 'confirm', kind: 'intent', text: `${pending.deed} — 이렇게 하는 거야?`, yes: '그래', no: '다른 뜻' };
+  }
+
+  /** 화면이 보낸 장면 이름. 시나리오에 없는 이름(__proto__ 같은 것 포함)이면 없다. */
+  private sceneOf(id: string | null | undefined): BeatSpec | undefined {
+    return id && Object.hasOwn(this.scenario.beats, id) ? this.scenario.beats[id] : undefined;
   }
 
   /**
@@ -811,10 +970,7 @@ export class Engine {
   /** 상대 인물이 있는 장면에서 한 말과 행동만 인물이 안다. 되받기, 작전 회의, 인물 프롬프트가 이 기록을 쓴다. */
   /** 이 장면에 아시나 말고 말하는 인물이 있는가. */
   private facing(beat: BeatSpec): boolean {
-    return Object.values(beat.cast ?? {}).some((key) => {
-      const cast = key ? this.scenario.cast[key] : undefined;
-      return cast?.style === 'speech' && cast.lore !== this.scenario.sheet.name;
-    });
+    return facesPerson(this.scenario, beat);
   }
 
   /**
@@ -833,6 +989,7 @@ export class Engine {
     const ctx: GmContext = { scenario: this.scenario, beat, free, state, text, absurd: true, ...(self ? { self } : {}), ...(read.deed ? { deed: read.deed } : {}) };
     const reply = await this.gm.talk(ctx);
     this.recordGm(state, beat, 'talk', reply.meta, reply.lines);
+    this.followGm(state, reply.meta, events);
     for (const line of reply.lines) this.say(state, line, reply.meta.fallback ? 'script' : 'gm', events);
     await this.worldMove(state, beat, free, events);
   }
@@ -840,18 +997,22 @@ export class Engine {
   private noteHeard(state: GameState, beat: BeatSpec, text: string, action: boolean): void {
     if (!this.facing(beat)) return;
     state.heard = [...(state.heard ?? []), { text, action }].slice(-SAID_KEEP);
-    const plain = text.replace(/\s+/g, '');
+    const spoken = assertedSpeech(text, !action);
+    const plain = spoken.replace(/\s+/g, '');
     for (const spec of this.scenario.callbacks ?? []) {
       if (spec.words?.some((w) => plain.includes(w.replace(/\s+/g, '')))) state.flags[spec.flag] = true;
     }
-    if (!action) this.noteTalked(state, text);
+    if (!action && spoken) {
+      state.flags[`말함_${beat.id}`] = true;
+      this.noteTalked(state, text);
+    }
   }
 
   /** 대사 도중 끼어든 입력. 이야기 자리는 그대로 두고 답한 뒤, 뒤의 고정 줄 가운데 이 입력으로 어긋나게 된 줄을 뺀다. */
   private async interject(state: GameState, stateBeat: BeatSpec, action: Extract<Action, { type: 'interject' }>, events: GameEvent[]): Promise<void> {
     const raw = action.text.replace(/\s+/g, ' ').trim().slice(0, MAX_INPUT_CHARS);
     if (!raw) throw new GameError('행동이나 대사를 입력해 주세요.');
-    const scene = (action.scene && this.scenario.beats[action.scene]) || stateBeat;
+    const scene = this.sceneOf(action.scene) ?? stateBeat;
     // 화면이 서버보다 뒤에 있을 수 있다. 보이는 장면의 설정을 먼저 쓴다.
     const free = scene.free ?? stateBeat.free ?? this.lastFree(state);
     if (!free) throw new GameError('지금은 말할 수 없습니다.');
@@ -859,6 +1020,14 @@ export class Engine {
     const quit = this.confirmQuit(state, raw, events);
     if (quit !== null) {
       if (quit === 'quit') events.push({ type: 'revise', drop: action.pending.map((p) => p.i), jump: true });
+      return;
+    }
+    if (state.ending) {
+      // 결말 줄이 흐르는 중에 끼어든 말. 인물이 말로 받기만 하고 판(수치·플래그·선택 기록)은 그대로 둔다.
+      const ctx: GmContext = { scenario: this.scenario, beat: scene, free, state, text: raw, interject: { upcoming: action.pending.map((p) => p.text), action: false } };
+      const reply = await this.gm.talk({ ...ctx, tone: 'plain' });
+      this.recordGm(state, scene, 'talk', reply.meta, reply.lines);
+      for (const line of reply.lines) this.say(state, line, reply.meta.fallback ? 'script' : 'gm', events);
       return;
     }
     const whole = raw;
@@ -870,7 +1039,7 @@ export class Engine {
     const toFox = lastShown !== undefined && this.scenario.cast[lastShown]?.style === 'gm';
     if (mixed) this.answerAside(state, scene, mixed.ask, events);
     const canRoll = !state.pendingLuck && !state.ending && stateBeat.free && state.free && scene.id === stateBeat.id;
-    const newly = this.noteSaid(state, text);
+    const newly: string[] = [];
     const onStage = new Set<string>(Object.values(scene.cast ?? {}).filter((c): c is string => typeof c === 'string'));
     const speakers = free.speakers.filter((s) => this.scenario.cast[s]?.style !== 'speech' || onStage.has(s));
     const shownState: GameState = { ...state, recent: action.shown.slice(-RECENT_LINES) };
@@ -886,40 +1055,44 @@ export class Engine {
     if (read.kind === 'ask') {
       // 이야기 입력칸에 적은 질문은 여우가 받지 않는다. 화면이 질문 모드(GM 단추)로 안내하고 남은 줄은 그대로 이어진다.
       this.record(state, { kind: 'input', beat: scene.id, text, result: 'ask', approach: null, item: null, source: read.source });
-      this.unsay(state);
-      this.revisePending(state, action.pending, newly, events);
       events.push({ type: 'notice', kind: 'ask' });
       return;
     }
     const big = read.kind === 'approach' || read.kind === 'improv';
     const guard = this.guardRisk(state, scene, read, text, Boolean(canRoll), events);
     if (guard === 'refused') {
-      this.unsay(state);
-      this.revisePending(state, action.pending, newly, events);
       return;
     }
     const warned = guard === 'warned';
     if (guard === 'self') read = { kind: 'talk', to: 'self', source: read.source, meta: read.meta };
+    if (read.kind === 'idle') {
+      // 대사가 흐르는 중이면 아무 일 없이 그 대사가 이어진다.
+      this.record(state, { kind: 'input', beat: scene.id, text, result: 'idle', approach: null, item: null, source: read.source });
+      this.revisePending(state, action.pending, newly, events);
+      return;
+    }
+    if (!toFox && !(read.kind === 'talk' && (read.to === 'self' || read.shown))) newly.push(...this.noteSaid(state, assertedSpeech(text, read.kind === 'approach' && read.spoken === true)));
     if (big && canRoll && stateBeat.free) {
       events.push({ type: 'revise', drop: action.pending.map((p) => p.i), jump: true });
-      await this.applyReading(state, stateBeat, stateBeat.free, read, text, events, warned);
+      await this.applyReading(state, stateBeat, stateBeat.free, read, text, events, warned, { identity: guard === 'identity', flags: newly });
       return;
     }
 
     this.record(state, { kind: 'input', beat: scene.id, text, result: 'talk', approach: null, item: null, source: read.source });
     const self = read.kind === 'talk' && read.to === 'self';
+    const shown = read.kind === 'talk' && read.shown === true;
     const noise = isNoise(text);
-    if (!big && !toFox && !self && !noise && state.flags['말함'] !== true) {
+    if (!big && !toFox && !self && !shown && !noise && state.flags['말함'] !== true) {
       state.flags['말함'] = true;
       newly.push('말함');
     }
     this.revisePending(state, action.pending, newly, events);
-    if (toFox && !big) this.unsay(state);
-    else if (!toFox && !self && !noise) this.noteHeard(state, scene, text, this.acted(read, text));
+    if (!toFox && !self && !shown && !noise) this.noteHeard(state, scene, text, this.acted(read, text));
     const said = state.said ?? [];
     const repeated = said.length >= 2 && said.at(-2)?.replace(/[\s.,!?…~]/g, '') === text.replace(/[\s.,!?…~]/g, '');
-    const reply = await this.gm.talk({ ...ctx, tone: repeated ? 'repeat' : 'plain', interject: { upcoming: ctx.interject?.upcoming ?? [], action: big }, ...(self ? { self } : {}) });
+    const reply = await this.gm.talk({ ...ctx, ...(shown ? { shown } : {}), tone: repeated ? 'repeat' : 'plain', interject: { upcoming: ctx.interject?.upcoming ?? [], action: big }, ...(self ? { self } : {}) });
     this.recordGm(state, scene, 'talk', reply.meta, reply.lines);
+    this.followGm(state, reply.meta, events);
     for (const line of reply.lines) this.say(state, line, reply.meta.fallback ? 'script' : 'gm', events);
     const tries = state.log.filter((e) => e.kind === 'input' && e.beat === scene.id && e.result === 'talk').length;
     const press = free.press[tries % free.press.length];
@@ -967,6 +1140,7 @@ export class Engine {
     const progress = state.free;
     if (progress) progress.prices = [...(progress.prices ?? []), price.id];
     if (price.once) state.flags[onceFlag(price.id)] = true;
+    this.record(state, { kind: 'price', beat: state.beat, id: price.id, tag: price.tag, text: price.text });
     this.say(state, { speaker: '나레이션', text: price.text }, 'script', events);
     this.applyEffects(state, price.effects, events);
   }
@@ -1009,6 +1183,8 @@ export class Engine {
    * 창이 떠 있는 동안 글로 답해도 받는다(자동 플레이). 'asked' 는 창을 띄웠거나 닫은 것, 'quit' 은 끝낸 것, null 은 보통 입력이다.
    */
   private confirmQuit(state: GameState, text: string, events: GameEvent[]): 'asked' | 'quit' | null {
+    // 이미 끝난 판(결말 줄이 흐르는 중 끼어든 말)은 그만둘 것이 없다. 묻지도, 결말을 바꾸지도 않는다.
+    if (state.ending) return null;
     const pending = state.pendingRisk;
     delete state.pendingRisk;
     if (pending && (YES.test(text) || QUIT_YES.test(text))) {
@@ -1024,12 +1200,17 @@ export class Engine {
   }
 
   private askQuit(state: GameState, text: string, warn: string, events: GameEvent[]): void {
-    state.pendingRisk = { text, quit: true };
+    // 확인 창은 하나다. 떠 있던 의도 카드는 그만두기 확인이 대신하고, 창의 답은 그만두기에 간다.
+    this.dropIntent(state);
+    // 그만두기 말의 기본 경고와 다른 글(질문 모드의 답)일 때만 적어 둔다. 불러온 뒤 같은 창을 다시 띄우는 데 쓴다.
+    const plain = (this.scenario.risky ?? []).find((r) => r.quit)?.warn;
+    state.pendingRisk = { text, quit: true, ...(warn !== plain ? { warn } : {}) };
     events.push({ type: 'confirm', kind: 'quit', text: warn });
   }
 
-  /** 확인 창의 답. 끝낸다면 그만두는 끝으로 간다. 아니면 아무 말 없이 이야기로 돌아간다. */
-  private answerConfirm(state: GameState, ok: boolean, events: GameEvent[]): void {
+  /** 확인 창의 답. 의도 카드면 그 답으로, 그만두기면 끝낼 때 그만두는 끝으로 간다. 아니면 아무 말 없이 이야기로 돌아간다. */
+  private async answerConfirm(state: GameState, beat: BeatSpec, ok: boolean, events: GameEvent[]): Promise<void> {
+    if (state.pendingIntent) return this.answerIntent(state, beat, ok, events);
     const pending = state.pendingRisk;
     if (!pending) throw new GameError('지금은 확인할 것이 없습니다.');
     delete state.pendingRisk;
@@ -1128,33 +1309,48 @@ export class Engine {
     const flags = { ...state.flags };
     for (const flag of newly) delete flags[flag];
     const before = { ...now, flags };
-    const drop = pending.filter((p) => p.if !== undefined && !evalCond(p.if, now) && evalCond(p.if, before)).map((p) => p.i);
+    // 화면이 보낸 조건식이다. 읽을 수 없는 식이면 그 줄은 건드리지 않는다.
+    const holds = (cond: string, ctx: CondContext): boolean | null => {
+      try {
+        return evalCond(cond, ctx);
+      } catch {
+        return null;
+      }
+    };
+    const drop = pending.filter((p) => p.if !== undefined && holds(p.if, now) === false && holds(p.if, before) === true).map((p) => p.i);
     if (drop.length) events.push({ type: 'revise', drop, jump: false });
   }
 
   /** 입력이 대사가 아니라 행동을 적은 문장인가. 행동은 인물이 인용하지 않는다. */
   private acted(read: Interpretation, text: string): boolean {
+    if (read.kind === 'talk') return read.shown === true;
+    if (read.kind === 'approach' && read.spoken !== undefined) return !read.spoken;
     return read.kind === 'improv' || isActionText(text) || (read.kind === 'approach' && read.spoken === false);
   }
 
-  private async applyReading(state: GameState, beat: BeatSpec, free: FreeSpec, read: Interpretation, text: string, events: GameEvent[], warned = false): Promise<void> {
-    if (read.kind === 'ask' || read.kind === 'talk') return;
+  /** intent: 의도 카드로 물을 때 카드에 함께 걸어 둘 것(미룬 정체 대가, 이 입력이 세운 플래그). */
+  private async applyReading(state: GameState, beat: BeatSpec, free: FreeSpec, read: Interpretation, text: string, events: GameEvent[], warned = false, intent: { identity?: boolean; flags?: string[] } = {}): Promise<void> {
+    if (read.kind === 'ask' || read.kind === 'talk' || read.kind === 'idle') return;
+    if (state.free) state.free.spoken = (read.kind === 'approach' && read.spoken === true) || assertedSpeech(text).length > 0;
+    const named = this.mentionedItem(text);
+    if (named && !state.items.includes(named.id)) throw new GameError(`${named.name} 없음`);
     if (read.kind === 'improv' && read.absurd) {
       await this.absurdAct(state, beat, free, read, text, events);
       return;
     }
     if (read.kind === 'improv') {
-      this.record(state, { kind: 'input', beat: beat.id, text, result: 'improv', approach: null, item: null, source: read.source });
-      this.noteHeard(state, beat, text, true);
-      const spec = this.improvSpec(free, improvLabel(text), read.stat, read.bold);
-      const extra = [...(read.difficulty === 0 ? [] : [{ label: read.difficulty > 0 ? '쉬운 행동' : '어려운 행동', value: read.difficulty }]), ...(warned ? [] : this.remembered(state, beat, text))];
-      this.markPressingOn(state, text, warned);
-      await this.resolve(state, beat, free, spec, text, events, extra, { absurd: read.absurd, bold: read.bold, ...(read.deed ? { deed: read.deed } : {}) });
+      // 큰 행동은 굴리기 전에 해석이 맞는지 화면 카드로 묻는다(여우가 아니라 규칙 목소리). 이미 경고를 받고 밀고 나간 입력은 다시 묻지 않는다.
+      if (read.bold && read.deed && !warned) {
+        state.pendingIntent = { text, deed: read.deed, stat: read.stat, difficulty: read.difficulty, source: read.source, ...(intent.identity ? { identity: true } : {}), ...(intent.flags?.length ? { flags: [...intent.flags] } : {}) };
+        events.push(this.intentEvent(state.pendingIntent));
+        return;
+      }
+      await this.improvRoll(state, beat, free, { stat: read.stat, difficulty: read.difficulty, bold: read.bold, source: read.source, ...(read.deed ? { deed: read.deed } : {}) }, text, events, warned);
       return;
     }
 
     let approach = this.approachOf(free, read.approach);
-    if (approach.item !== undefined && !state.items.includes(approach.item)) approach = this.approachOf(free, free.default_approach);
+    if (approach.item !== undefined && !state.items.includes(approach.item)) throw new GameError('그 행동에 필요한 소지품이 없습니다.');
     const item = read.item !== null && state.items.includes(read.item) ? read.item : null;
     // 뜻이 약한 설득도 되묻지 않고 그대로 굴린다. 구체적인 말이면 '입력한 말' 보정만 붙는다.
     const persuade = approach.stat === '매력' || PERSUADE.test(`${approach.label} ${approach.hint}`);
@@ -1178,28 +1374,31 @@ export class Engine {
 
   private async approachButton(state: GameState, beat: BeatSpec, id: string, events: GameEvent[]): Promise<void> {
     const free = beat.free;
-    if (!free || !state.free) throw new GameError('지금은 행동을 고를 수 없습니다.');
+    // 행운을 묻는 동안 새로 굴리면 행운이 그 판정이 아닌 새 판정을 고친다.
+    if (!free || !state.free || state.pendingLuck) throw new GameError('지금은 행동을 고를 수 없습니다.');
     const approach = free.approaches.find((a) => a.id === id);
     if (!approach) throw new GameError(`없는 행동입니다: ${id}`);
     if (approach.item !== undefined && !state.items.includes(approach.item)) throw new GameError('그 행동에 필요한 소지품이 없습니다.');
     this.record(state, { kind: 'choice', beat: beat.id, choice: `approach:${approach.id}`, text: approach.label });
+    if (state.free) state.free.spoken = approach.examples.some((s) => assertedSpeech(s).length > 0);
     await this.resolve(state, beat, free, approach, null, events);
   }
 
   private async resolve(state: GameState, beat: BeatSpec, free: FreeSpec, approach: ApproachSpec, text: string | null, events: GameEvent[], extra: ModApplied[] = [], improv?: ImprovMark): Promise<void> {
+    const tension = this.tensionOf(state);
     const roll = this.roll(state, beat, approach.stat, approach.label, approach.mods, events, extra);
     this.applyEffects(state, approach.before, events);
-    if (roll.tier === 'miss' && this.askLuck(state, beat, approach, text, roll, events, improv)) return;
+    if (roll.tier === 'miss' && this.askLuck(state, beat, approach, text, roll, tension, events, improv)) return;
     await this.finishResolve(state, beat, free, approach, text, roll, events, improv);
   }
 
   /** 실패 직후 행운을 쓸지 묻는다. 모자라면 그렇다고만 말하고 넘어간다. */
-  private askLuck(state: GameState, beat: BeatSpec, approach: ApproachSpec, text: string | null, roll: RollResult, events: GameEvent[], improv?: ImprovMark): boolean {
+  private askLuck(state: GameState, beat: BeatSpec, approach: ApproachSpec, text: string | null, roll: RollResult, tension: number, events: GameEvent[], improv?: ImprovMark): boolean {
     const have = state.tracks.행운;
-    if (!this.luckPrompt || have <= 0) return false;
+    if (!this.luckPrompt || have <= 0 || state.tracks.정신력 === 0) return false;
     const need = LUCK_TARGET - roll.total;
     if (need > have) return false;
-    state.pendingLuck = { beat: beat.id, approach: approach.id, label: approach.label, stat: approach.stat, text, need, ...(improv ? { improv } : {}) };
+    state.pendingLuck = { beat: beat.id, approach: approach.id, label: approach.label, stat: approach.stat, text, need, tension, ...(improv ? { improv } : {}) };
     // 규칙 목소리는 화면이 낸다: 행운 창(prompt luck)이 필요한 점수와 남은 점수를 보인다.
     return true;
   }
@@ -1208,6 +1407,8 @@ export class Engine {
     const pending = state.pendingLuck;
     if (!pending) throw new GameError('지금은 행운을 쓸 수 없습니다.');
     delete state.pendingLuck;
+    // 행운 창에 답했으면(단추든 글이든) 그 전에 띄운 그만두기 확인은 끝난다.
+    delete state.pendingRisk;
     const beat = this.scenario.beats[pending.beat];
     const free = beat?.free;
     if (!beat || !free) throw new Error(`없는 비트: ${pending.beat}`);
@@ -1217,9 +1418,35 @@ export class Engine {
     if (check?.kind !== 'check') throw new Error('판정 기록이 없습니다');
     if (use) {
       check.roll = { ...check.roll, total: LUCK_TARGET, tier: 'mixed', luck: pending.need };
+      // 실패로 올린 긴장을 판정 전 값으로 되돌린다. 7~9 는 긴장을 바꾸지 않는다.
+      if (pending.tension !== undefined) state.flags['긴장'] = pending.tension;
       this.applyEffects(state, { tracks: { 행운: -pending.need } }, events);
     }
     await this.finishResolve(state, beat, free, approach, pending.text, check.roll, events, pending.improv);
+  }
+
+  /** 즉흥 행동 판정. 의도 카드를 거친 뒤에도 같은 길로 굴린다. */
+  private async improvRoll(state: GameState, beat: BeatSpec, free: FreeSpec, read: { stat: Ability; difficulty: number; bold: boolean; deed?: string; source: 'llm' | 'rule' }, text: string, events: GameEvent[], warned: boolean): Promise<void> {
+    this.record(state, { kind: 'input', beat: beat.id, text, result: 'improv', approach: null, item: this.mentionedItem(text)?.id ?? null, source: read.source });
+    this.noteHeard(state, beat, text, true);
+    const spec = this.improvSpec(free, improvLabel(text), read.stat, read.bold);
+    const extra = [...(read.difficulty === 0 ? [] : [{ label: read.difficulty > 0 ? '쉬운 행동' : '어려운 행동', value: read.difficulty }]), ...(warned ? [] : this.remembered(state, beat, text))];
+    this.markPressingOn(state, text, warned);
+    await this.resolve(state, beat, free, spec, text, events, extra, { absurd: false, bold: read.bold, ...(read.deed ? { deed: read.deed } : {}) });
+  }
+
+  /** 의도 카드의 답. 그래면 묻기 전 해석대로 굴리고, 다른 뜻이면 그 입력을 지우고 아무 대가 없이 다시 적게 한다. */
+  private async answerIntent(state: GameState, beat: BeatSpec, ok: boolean, events: GameEvent[]): Promise<void> {
+    const pending = state.pendingIntent;
+    if (!pending) throw new GameError('지금은 확인할 것이 없습니다.');
+    if (!ok) {
+      this.dropIntent(state);
+      return;
+    }
+    delete state.pendingIntent;
+    if (!beat.free || !state.free || state.free.beat !== beat.id) throw new GameError('지금은 자유 입력을 받을 수 없습니다.');
+    if (pending.identity && this.scenario.identity) this.applyEffects(state, this.scenario.identity.effects, events);
+    await this.improvRoll(state, beat, beat.free, { stat: pending.stat, difficulty: pending.difficulty, bold: true, deed: pending.deed, source: pending.source }, pending.text, events, false);
   }
 
   private improvSpec(free: FreeSpec, label: string, stat: Ability, bold = false): ApproachSpec {
@@ -1250,12 +1477,38 @@ export class Engine {
     if (found.size) state.preempted = [...found];
   }
 
+  /** 별도 대성공 결과가 없으면 성공의 좋은 변화만 키우고, 좋은 변화가 없으면 정신력을 회복한다. */
+  private outcomeOf(outcomes: Tiered<Outcome>, tier: Tier, recoverSpirit = false): Outcome {
+    if (tier !== 'crit') return outcomes[tier];
+    if (outcomes.crit) return outcomes.crit;
+    const hit = outcomes.hit;
+    const tracks = { ...hit.effects?.tracks };
+    let improved = false;
+    for (const key of TRACKS) {
+      const delta = tracks[key] ?? 0;
+      const good = key === '의심' || key === '집착' ? delta < 0 : delta > 0;
+      if (good) {
+        tracks[key] = delta + Math.sign(delta);
+        improved = true;
+      }
+    }
+    // 45차 성공 회복은 유지하되, 좋은 효과가 없을 때의 +1과 중복하지 않는다.
+    if (!improved || recoverSpirit) tracks.정신력 = (tracks.정신력 ?? 0) + 1;
+    return { ...hit, effects: { ...hit.effects, tracks } };
+  }
+
   private async finishResolve(state: GameState, beat: BeatSpec, free: FreeSpec, approach: ApproachSpec, text: string | null, roll: RollResult, events: GameEvent[], improv?: ImprovMark): Promise<void> {
-    const outcome = approach.outcomes[roll.tier];
-    if (approach.said && (text === null || approach.said.words.some((w) => text.replace(/\s+/g, '').includes(w.replace(/\s+/g, ''))))) state.flags[approach.said.flag] = true;
+    const outcome = this.outcomeOf(approach.outcomes, roll.tier, true);
+    if (roll.tier === 'crit') {
+      const parts: ChangePart[] = [{ text: TIER_LABEL.crit, tone: 'good' }];
+      events.push({ type: 'change', parts });
+      this.record(state, { kind: 'change', parts });
+    }
+    if (approach.said && (text === null || approach.said.words.some((w) => assertedSpeech(text).replace(/\s+/g, '').includes(w.replace(/\s+/g, ''))))) state.flags[approach.said.flag] = true;
     const progress = state.free;
     if (!progress) throw new Error(`${beat.id}: 자유 입력 진행 상태가 없습니다`);
-    const price = this.pickPrice(state, free, outcome, roll.tier, progress.prices ?? []);
+    const item = approach.item ? this.scenario.sheet.items.find((i) => i.id === approach.item) : text ? this.mentionedItem(text) : undefined;
+    const price = this.pickPrice(state, free, outcome, roll.tier, progress.prices ?? [], item);
     if (price) progress.prices = [...(progress.prices ?? []), price.id];
     if (text === null) {
       for (const line of outcome.lines) this.say(state, line, 'script', events);
@@ -1264,27 +1517,98 @@ export class Engine {
       const reply = await this.gm.narrate({ scenario: this.scenario, beat, free, state, text, approach, roll, outcome, ...(price ? { price } : {}), ...(improv ? { improv } : {}), ...(improv?.deed ? { deed: improv.deed } : {}) });
       if (improv?.deed) this.preempt(state, beat, improv.deed);
       this.recordGm(state, beat, 'narrate', reply.meta, reply.lines);
-      const cg = reply.meta.fallback ? undefined : outcome.lines.find((l) => l.cg)?.cg;
-      for (const line of reply.lines) this.say(state, cg ? { ...line, cg } : line, reply.meta.fallback ? 'script' : 'gm', events);
+      this.followGm(state, reply.meta, events);
+      // 사건 CG는 서술과 그 그림의 인물에게만 이어진다. 다른 인물의 표정 반응을 덮지 않는다.
+      const visual = outcome.lines.find(l => l.cg);
+      const owner = visual ? (this.scenario.cast[visual.speaker]?.lore ?? visual.speaker) : undefined;
+      for (const line of reply.lines) {
+        const samePerson = (this.scenario.cast[line.speaker]?.lore ?? line.speaker) === owner;
+        this.say(state, visual?.cg && (!line.face || samePerson) ? { ...line, cg: visual.cg } : line, reply.meta.fallback ? 'script' : 'gm', events);
+      }
       if (price && reply.meta.fallback) this.say(state, { speaker: '나레이션', text: price.text }, 'script', events);
     }
-    if (price) events.push({ type: 'price', id: price.id, tag: price.tag, text: price.text });
-    this.applyEffects(state, outcome.effects, events, true);
-    if (price) this.applyEffects(state, price.effects, events, true);
+    if (price) {
+      this.record(state, { kind: 'price', beat: beat.id, id: price.id, tag: price.tag, text: price.text });
+      events.push({ type: 'price', id: price.id, tag: price.tag, text: price.text });
+    }
+    // 같은 판정의 부상·공포를 결과와 대가에서 두 번 깎지 않는다.
+    const effects = { ...outcome.effects, tracks: { ...outcome.effects?.tracks } };
+    const priceEffects = { ...price?.effects, tracks: { ...price?.effects?.tracks } };
+    if (roll.tier === 'miss' && approach.risky) {
+      for (const harm of price?.weight === 'hard' ? [effects, priceEffects] : [effects]) {
+        for (const key of ['체력', '정신력'] as const) {
+          if ((harm.tracks[key] ?? 0) < 0) harm.tracks[key] = -2;
+        }
+      }
+    }
+    for (const key of ['체력', '정신력'] as const) {
+      const cost = priceEffects.tracks[key] ?? 0;
+      const harm = effects.tracks[key] ?? 0;
+      if (cost < 0 && harm < 0) effects.tracks[key] = Math.min(cost, harm) - cost;
+    }
+    this.applyEffects(state, effects, events, true);
+    if (price) this.applyEffects(state, priceEffects, events, true);
+    if (roll.tier === 'hit') this.applyEffects(state, { tracks: { 정신력: 1 } }, events, true);
     if (state.flags['위험_강행'] === true) {
       delete state.flags['위험_강행'];
       if (roll.tier === 'miss') state.flags['위험_실패'] = true;
     }
-    progress.rolls += 1;
-    const finished = outcome.next === undefined && (progress.rolls >= free.turns || (free.until !== undefined && evalCond(free.until, this.ctx(state))));
-    // 징조는 효과가 다 반영된 뒤, 실제로 갈 비트를 알고 한 번만 낸다.
-    const heading = outcome.next !== undefined ? this.route(state, outcome.next, beat.id) : finished ? this.route(state, free.next ?? beat.next, beat.id) : beat.id;
-    this.warnFates(state, events, heading);
-    if (heading !== beat.id) this.enter(state, heading, events, 0);
+    await this.leaveOutcome(state, beat, free, outcome.next, events);
   }
 
-  private pickPrice(state: GameState, free: FreeSpec, outcome: Outcome, tier: Tier, used: readonly string[]): PriceSpec | null {
-    const candidates = priceCandidates(free, outcome, tier, this.ctx(state), state.flags, used);
+  /** 결과가 나온 뒤 이 장면에 남을지 다음 비트로 갈지 정한다. */
+  private async leaveOutcome(state: GameState, beat: BeatSpec, free: FreeSpec, next: Outcome['next'], events: GameEvent[], reacted = false): Promise<void> {
+    const progress = state.free;
+    if (!progress) throw new Error(`${beat.id}: 자유 입력 진행 상태가 없습니다`);
+    progress.rolls += 1;
+    const finished = next === undefined && (progress.rolls >= free.turns || (free.until !== undefined && evalCond(free.until, this.ctx(state))));
+    // 징조는 효과가 다 반영된 뒤, 실제로 갈 비트를 알고 한 번만 낸다.
+    const heading = next !== undefined ? this.route(state, next, beat.id) : finished ? this.route(state, free.next ?? beat.next, beat.id) : beat.id;
+    this.warnFates(state, events, heading);
+    if (heading !== beat.id) {
+      if (heading === 'b06_swing' && state.flags['말함_b05_why'] !== true && !reacted) {
+        const input = state.log.findLast((entry) => entry.kind === 'input' || entry.kind === 'choice');
+        await this.silentReaction(state, beat, free, input && 'text' in input ? input.text : '', events);
+      }
+      this.enter(state, heading, events, 0);
+    }
+  }
+
+  private async silentReaction(state: GameState, beat: BeatSpec, free: FreeSpec, text: string, events: GameEvent[]): Promise<void> {
+    const speaker = free.speakers.find((s) => this.scenario.cast[s]?.style === 'speech' && this.scenario.cast[s]?.lore !== this.scenario.sheet.name);
+    if (!speaker) return;
+    const reply = await this.gm.talk({ scenario: this.scenario, beat, free: { ...free, speakers: [speaker] }, state, text, reaction: true });
+    this.recordGm(state, beat, 'talk', reply.meta, reply.lines);
+    for (const line of reply.lines) this.say(state, line, reply.meta.fallback ? 'script' : 'gm', events);
+  }
+
+  /** 아무것도 시도하지 않은 입력. 주사위를 굴리지 않고 장면이 흘러간다. */
+  private async letSceneFlow(state: GameState, beat: BeatSpec, free: FreeSpec, text: string, source: Interpretation['source'], events: GameEvent[]): Promise<void> {
+    this.record(state, { kind: 'input', beat: beat.id, text, result: 'idle', approach: null, item: null, source });
+    const progress = state.free;
+    if (!progress) throw new Error(`${beat.id}: 자유 입력 진행 상태가 없습니다`);
+    if (!free.idle?.threat && free.nudge?.length && !progress.nudged) {
+      progress.moves = [...(progress.moves ?? []), 'threat'];
+      this.makeMove(state, free, 'threat', events);
+      return;
+    }
+    if (free.idle?.threat) await this.silentReaction(state, beat, free, text, events);
+    for (const line of free.idle?.lines ?? free.neutral?.miss ?? []) {
+      if (!state.spoken?.[line.speaker]?.includes(line.text)) this.say(state, line, 'script', events);
+    }
+    this.applyEffects(state, free.idle?.effects, events, true);
+    await this.leaveOutcome(state, beat, free, undefined, events, free.idle?.threat === true);
+  }
+
+  private mentionedItem(text: string): Scenario['sheet']['items'][number] | undefined {
+    return this.scenario.sheet.items.find((item) => {
+      const noun = item.name.split(' ').at(-1) ?? item.name;
+      return new RegExp(`(?:^|\\s)${noun}(?=을|를|으로|로|에|의|이|가|은|는|도|만|처럼|\\s|$)`).test(text);
+    });
+  }
+
+  private pickPrice(state: GameState, free: FreeSpec, outcome: Outcome, tier: Tier, used: readonly string[], item?: Scenario['sheet']['items'][number]): PriceSpec | null {
+    const candidates = priceCandidates(free, outcome, tier, this.ctx(state), state.flags, used, item, state.free?.spoken === true);
     // 주사위 흐름(state.rng)은 그대로 두고 지금 값만 씨앗으로 쓴다. 시드 고정 경로 테스트가 대가 표 유무에 흔들리지 않는다.
     const drawn = drawPrice(candidates, state.rng);
     if (drawn.price?.once) state.flags[onceFlag(drawn.price.id)] = true;
@@ -1292,52 +1616,91 @@ export class Engine {
   }
 
   /** quiet: 징조(warnFates)는 부른 쪽이 갈 비트를 알고 따로 낸다. */
+  /** 플레이어가 직접 한 행동이라 상태가 따라가는 경우다. 줄을 보여 주기 전에 켜서 입식도 함께 바뀐다. */
+  private followGm(state: GameState, meta: GmMeta, events: GameEvent[]): void {
+    if (meta.setFlags?.length) this.applyEffects(state, { flags: Object.fromEntries(meta.setFlags.map((flag) => [flag, true])) }, events, true);
+  }
+
   private applyEffects(state: GameState, effects: Effects | undefined, events: GameEvent[], quiet = false): void {
     if (!effects) return;
     const spritesBefore = this.spritesOf(state);
+    const gates = closedTrackGates(this.scenario, state);
+    const hidden = new Set(gates.flatMap((g) => g.tracks));
+    const locked = new Set(gates.filter((g) => g.flag !== undefined).flatMap((g) => g.tracks));
+    const itemChanges: ChangePart[] = this.scenario.sheet.items.filter((item) => state.items.includes(item.id)).flatMap((item) =>
+      (item.states ?? []).filter((s) => state.flags[s.flag] !== true && effects.flags?.[s.flag] === true).map((s) => ({ text: `${item.name} ${s.label}`, tone: 'bad' as const })));
     const changes: TrackChange[] = [];
     for (const key of TRACKS) {
       const delta = effects.tracks?.[key];
-      if (!delta) continue;
+      if (!delta || locked.has(key)) continue;
       const from = state.tracks[key];
       const to = Math.max(0, Math.min(TRACK_INFO[key].max, from + delta));
+      // 한 판정의 결과와 대가는 한 번의 타격이다. 이 턴에 처음 0이 된 뒤에는 다음 타격까지 버틴다.
+      if (key === '체력' && from === 0 && delta < 0 && !events.some((e) => e.type === 'tracks' && e.changes.some((c) => c.key === '체력' && c.from > 0))) {
+        state.flags['체력_쓰러짐'] = true;
+      }
+      if (key === '정신력' && from > 0 && to === 0) state.flags['정신력_충격'] = true;
       if (to !== from) {
         state.tracks[key] = to;
         changes.push({ key, from, to });
       }
     }
     Object.assign(state.flags, effects.flags ?? {});
-    const earring = changes.find((c) => c.key === '귀찌');
-    if (earring && state.flags['설명_귀찌'] !== true) {
-      state.flags['설명_귀찌'] = true;
-      const narrator = Object.entries(this.scenario.cast).find(([, c]) => c.style === 'narration')?.[0];
-      if (narrator) this.say(state, { speaker: narrator, text: '귀찌가 뜨겁게 달아올랐다. 변장이 버틸 시간이 줄고 있다.' }, 'script', events);
+    for (const gate of gates) {
+      if (gate.flag && state.flags[gate.flag] === true) {
+        events.push({ type: 'change', parts: gate.tracks.map((key) => ({ text: `새 수치: ${TRACK_INFO[key].label}`, tone: 'warm' })) });
+      }
     }
     for (const [cast, sprite] of Object.entries(this.spritesOf(state))) {
       if (spritesBefore[cast] !== sprite) events.push({ type: 'sprite', cast, sprite });
     }
     const gained = (effects.gain ?? []).filter((id) => !state.items.includes(id));
-    const lost = (effects.lose ?? []).filter((id) => state.items.includes(id));
+    const removed = new Set(effects.lose ?? []);
+    for (const item of this.scenario.sheet.items) {
+      if (item.container && removed.has(item.container.item) && !evalCond(item.container.unless, this.ctx(state))) removed.add(item.id);
+    }
+    const lost = [...removed].filter((id) => state.items.includes(id));
     state.items = state.items.filter((id) => !lost.includes(id)).concat(gained);
     if (changes.length) {
       events.push({ type: 'tracks', changes });
       this.record(state, { kind: 'tracks', changes });
     }
     if (gained.length || lost.length) events.push({ type: 'items', gained: gained.map((id) => this.itemView(id)), lost: lost.map((id) => this.itemView(id)) });
+    const parts: ChangePart[] = [
+      ...changes.filter((c) => !hidden.has(c.key)).map((c) => {
+        const diff = c.to - c.from;
+        return { text: `${TRACK_INFO[c.key].label} ${diff > 0 ? '+' : ''}${diff}`, tone: trackTone(c.key, diff) };
+      }),
+      ...itemChanges,
+      ...gained.map((id) => ({ text: `${this.itemView(id).name} 얻음`, tone: 'good' as const })),
+      ...lost.map((id) => ({ text: `${this.itemView(id).name} 잃음`, tone: 'bad' as const })),
+    ];
+    if (parts.length) {
+      if (effects.reason) parts.push({ text: effects.reason, tone: 'warm' });
+      events.push({ type: 'change', parts });
+      this.record(state, { kind: 'change', parts });
+    }
     if (!quiet) this.warnFates(state, events);
   }
 
   private say(state: GameState, raw: Line, by: 'script' | 'gm', events: GameEvent[]): void {
     if (raw.if !== undefined && !evalCond(raw.if, this.ctx(state))) return;
+    const cast = this.scenario.cast[raw.speaker];
+    if (by === 'gm' && cast?.style === 'speech' && cast.lore !== this.scenario.sheet.name && (state.spoken?.[raw.speaker] ?? []).some((text) => normalizeKo(text) === normalizeKo(raw.text))) return;
     const alt = raw.cg ? this.scenario.cgs[raw.cg]?.alt : undefined;
     const line = alt && evalCond(alt.if, this.ctx(state)) ? { ...raw, cg: alt.id } : raw;
     events.push(this.lineEvent(line, by));
     state.recent = [...state.recent, { speaker: line.speaker, text: line.text }].slice(-RECENT_LINES);
+    state.spoken = { ...state.spoken, [line.speaker]: [...(state.spoken?.[line.speaker] ?? []), line.text] };
+    if (by === 'script' && this.scenario.cast[line.speaker]?.style === 'speech' && this.scenario.cast[line.speaker]?.lore === this.scenario.sheet.name) state.flags[`말함_${state.beat}`] = true;
+    if (raw.sets) this.applyEffects(state, { flags: { [raw.sets]: true } }, events, true);
+    if (raw.effects) this.applyEffects(state, raw.effects, events, true);
   }
 
-  private itemView(id: string): ItemView {
+  private itemView(id: string, state?: GameState): ItemView {
     const item = this.scenario.sheet.items.find((i) => i.id === id);
-    return { id, name: item?.name ?? id, desc: item?.desc ?? '' };
+    const desc = [item?.desc ?? '', ...(item?.states ?? []).filter((s) => state?.flags[s.flag] === true).map((s) => s.desc)].join(' ');
+    return { id, name: item?.name ?? id, desc };
   }
 
   private spritesOf(state: GameState): Record<string, string> {
@@ -1367,13 +1730,14 @@ export class Engine {
       speaker: line.speaker,
       display: cast?.display ?? line.speaker,
       style: cast?.style ?? 'speech',
-      text: line.text,
+      text: line.text.replace(/(?<![0-9_./\\])\.{3,}(?![A-Za-z0-9_./\\])/g, '…'),
       by,
       ...(line.if !== undefined ? { if: line.if } : {}),
       ...(line.fx ? { fx: line.fx } : {}),
       ...(line.sfx ? { sfx: line.sfx } : {}),
       ...(line.face ? { face: line.face } : {}),
       ...(line.cg ? { cg: line.cg } : {}),
+      ...(line.cg_from ? { cg_from: line.cg_from } : {}),
     };
   }
 

@@ -1,6 +1,6 @@
 import { noteOpen } from '../engine/engine.ts';
-import { checkNotes } from '../engine/scenario.ts';
-import { FACES, isFace, NOTE_KINDS, type Face, type GameState, type NoteEntry, type NoteKind, type NoteTier, type Scenario, type Tier } from '../engine/types.ts';
+import { checkNotes, faceProblem } from '../engine/scenario.ts';
+import { NOTE_KINDS, type Face, type GameState, type NoteEntry, type NoteKind, type NoteTier, type Scenario, type Tiered } from '../engine/types.ts';
 
 export const FORBIDDEN_GROUPS = ['meta', 'modern', 'realworld', 'spoilers', 'profanity', 'sexual', 'gore', 'harm'] as const;
 export type ForbiddenGroup = (typeof FORBIDDEN_GROUPS)[number];
@@ -22,7 +22,8 @@ export interface LoreCharacter {
   samples: { speech: string[]; thought: string[] };
   register: Register;
   /** GM 이 끝내 못 썼을 때 쓰는 이 인물의 반응 줄. 등급별로 성격·말투 안에서 쓴 짧은 대사다. */
-  reactions?: Record<Tier, ReactionLine[]>;
+  reactions?: Tiered<ReactionLine[]>;
+  reactionCheck?: string;
   /** 이 인물의 표정 규칙. GM 이 대사 줄마다 face 를 고를 때 따른다. */
   faces: string[];
 }
@@ -33,21 +34,20 @@ export interface ReactionLine {
   face: Face;
 }
 
-const OUTCOME_TIERS: readonly Tier[] = ['hit', 'mixed', 'miss'];
+const OUTCOME_TIERS = ['hit', 'mixed', 'miss'] as const;
 
 function reactionLines(v: unknown, where: string): ReactionLine[] {
   if (v === undefined || v === null) return [];
   if (!Array.isArray(v)) throw new LoreError(`${where}: 목록이 필요합니다`);
   return v.map((x, i) => {
     const r = rec(x, `${where}[${i}]`);
-    if (!isFace(r.face)) throw new LoreError(`${where}[${i}].face: 표정은 ${FACES.join('·')} 중 하나여야 합니다`);
-    return { text: text(r.text, `${where}[${i}].text`), face: r.face };
+    return { text: text(r.text, `${where}[${i}].text`), face: text(r.face, `${where}[${i}].face`) };
   });
 }
 
-function reactions(v: unknown, where: string): Record<Tier, ReactionLine[]> {
+function reactions(v: unknown, where: string): Tiered<ReactionLine[]> {
   const r = rec(v, where);
-  const out = Object.fromEntries(OUTCOME_TIERS.map((t) => [t, reactionLines(r[t], `${where}.${t}`)])) as Record<Tier, ReactionLine[]>;
+  const out = Object.fromEntries(OUTCOME_TIERS.map((t) => [t, reactionLines(r[t], `${where}.${t}`)])) as Tiered<ReactionLine[]>;
   for (const t of OUTCOME_TIERS) if (out[t].length === 0) throw new LoreError(`${where}.${t}: 반응 줄이 한 줄은 필요합니다`);
   return out;
 }
@@ -78,7 +78,7 @@ export function spoilersFor(lore: Lore, state: Pick<GameState, 'tracks' | 'abili
 
 /** 지금 상태에 맞춘 설정 사전. 스포일러만 바뀐다. */
 export function loreFor(lore: Lore, state: Pick<GameState, 'tracks' | 'abilities' | 'flags' | 'items'>): Lore {
-  return { ...lore, forbidden: { ...lore.forbidden, spoilers: spoilersFor(lore, state) } };
+  return { ...lore, knowledge: lore.knowledge.filter((n) => n.if === undefined || noteOpen(n, state)), forbidden: { ...lore.forbidden, spoilers: spoilersFor(lore, state) } };
 }
 
 export class LoreError extends Error {
@@ -150,6 +150,7 @@ export function parseLore(source: string): Lore {
       register: register(r.register, `characters.${key}.register`),
       faces: texts(r.faces, `characters.${key}.faces`),
       ...(r.reactions === undefined ? {} : { reactions: reactions(r.reactions, `characters.${key}.reactions`) }),
+      ...(r.reaction_check === undefined ? {} : { reactionCheck: text(r.reaction_check, `characters.${key}.reaction_check`) }),
     };
   }
   const narration = rec(root.narration, 'narration');
@@ -178,6 +179,15 @@ export function parseLore(source: string): Lore {
 /** lore 의 지식 세 칸을 시나리오의 수첩 항목으로 붙인다. after 가 없는 비트를 가리키거나 숨길 것에 조건이 없으면 멈춘다. */
 export function withNotes(scenario: Scenario, lore: Lore): Scenario {
   const problems = checkNotes(scenario, lore.knowledge);
+  for (const [name, character] of Object.entries(lore.characters)) {
+    const speakers = Object.entries(scenario.cast).filter(([, cast]) => cast.lore === name);
+    for (const line of Object.values(character.reactions ?? {}).flat()) {
+      for (const [speaker] of speakers) {
+        const problem = faceProblem(scenario, speaker, line.face);
+        if (problem) problems.push(`characters.${name}.reactions: ${problem}`);
+      }
+    }
+  }
   if (problems.length) throw new LoreError(`수첩 검증 실패:\n- ${problems.join('\n- ')}`);
   return { ...scenario, notes: lore.knowledge };
 }

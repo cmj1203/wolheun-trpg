@@ -82,14 +82,20 @@ button {
 
 .sprites .slot {
   position: absolute;
-  bottom: -3%;
+  /* 비주얼 노벨식으로 키워 얼굴·상반신을 보여 주고 다리는 대사창 뒤·화면 밖으로 자른다.
+     입식은 모두 1024×1536 캔버스라 같은 높이면 같은 배율이고, 가장 큰 베히다트의 깃털 끝(y=85)이
+     무대 높이 13.5%(상단 표시줄의 어두운 띠 바로 아래)에 오는 위치다. */
+  bottom: -36.3%;
   margin: 0;
-  height: 86%;
+  height: 130%;
   width: 34%;
   /* 표정 교체 때 예전 그림과 새 그림이 같은 칸에 갹쳐 투명도로 갈아킼다(main.ts morphSprite). */
   display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 100%;
   align-items: end;
-  justify-items: center;
+  /* 커진 그림이 칸보다 넓어도 칸 가운데에 서게 한다(기본값은 넘치면 왼쪽 끝에 붙는다). */
+  justify-items: unsafe center;
   transition: filter 0.35s ease, transform 0.35s ease, opacity 0.45s ease;
   opacity: 0;
 }
@@ -100,12 +106,7 @@ button {
 
 .slot img {
   grid-area: 1 / 1;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  /* 입식 그림은 무릎께에서 잘려 있고, 아시나의 옷은 그림 높이 91% 아래에서 양쪽 가장자리에 닿는다. 잘린 끝이 네모로 비치지 않게 그 위에서 다 흐린다. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 91%);
-  mask-image: linear-gradient(to bottom, #000 78%, transparent 91%);
+  height: 100%;
   filter: drop-shadow(0 0 1.2cqw rgba(0, 0, 0, 0.45));
 }
 
@@ -122,7 +123,7 @@ button {
 }
 
 .slot.dim {
-  filter: brightness(0.5) saturate(0.6);
+  filter: brightness(0.72) saturate(0.6);
 }
 
 .slot.speaking {
@@ -161,6 +162,16 @@ button {
 .cg.full .cg-art {
   inset: 0;
   filter: none;
+}
+
+/* 줄의 cg_from 전환: 앞 그림 위에 새 그림을 겹쳐 천천히 올린다(main.ts showCg). */
+.cg-art.next {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.cg-art.next.go {
+  opacity: 1;
 }
 
 .stage.cg-on .sprites .slot {
@@ -268,7 +279,17 @@ button {
   gap: 1cqw;
   padding: 1cqw 1.4cqw;
   font-size: 1cqw;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+  isolation: isolate;
+}
+
+/* 메뉴 줄 높이 안에서만 어둡게 해 그 아래 CG 색을 바꾸지 않는다. 글은 알약 배경으로 읽힌다. */
+.topbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.32) 60%, transparent);
 }
 
 .chip {
@@ -343,6 +364,52 @@ button {
   border-radius: 0.8cqw;
   backdrop-filter: blur(6px);
   font-size: 0.92cqw;
+  display: flex;
+  flex-direction: column;
+  max-height: 35cqw;
+}
+
+.memo {
+  flex: 1 1 6cqw;
+  min-height: 3cqw;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  padding: 0.4cqw 0.5cqw;
+  font: inherit;
+  line-height: 1.4;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--gold-soft);
+  border-radius: 0.4cqw;
+}
+
+/* CG 위에서는 수치만 오른쪽 끝에 좁게 남겨 인물을 가리지 않는다. 마우스나 키보드로 고르면 다시 펼친다. */
+.stage.cg-on .hud:not(:hover, :focus-within) {
+  width: auto;
+  padding: 0.5cqw 0.7cqw;
+}
+
+.stage.cg-on .hud:not(:hover, :focus-within) :is(h2, .abilities, .items, .memo, .track .label, .track .bar, .track .clock-face) {
+  display: none;
+}
+
+.stage.cg-on .hud:not(:hover, :focus-within) .tracks {
+  margin: 0;
+  gap: 0.4cqw;
+}
+
+.stage.cg-on .hud:not(:hover, :focus-within) .track {
+  grid-template-columns: 1.3cqw auto;
+  grid-template-rows: auto;
+}
+
+.stage.cg-on .hud:not(:hover, :focus-within) .track .value {
+  grid-area: 1 / 2;
+}
+
+.stage.cg-on .hud:not(:hover, :focus-within) .delta {
+  text-shadow: 0 0 0.3cqw #000, 0 0 0.3cqw #000;
 }
 
 .hud h2 {
@@ -362,6 +429,7 @@ button {
 }
 
 .track {
+  position: relative;
   display: grid;
   grid-template-columns: 1.3cqw 1fr auto;
   grid-template-rows: auto auto;
@@ -391,6 +459,9 @@ button {
   grid-area: 1 / 3;
   font-variant-numeric: tabular-nums;
   color: var(--ink-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35cqw;
 }
 
 .track .bar {
@@ -409,8 +480,85 @@ button {
   transition: width 0.6s ease;
 }
 
+.track.vital,
+.stage.cg-on .hud:not(:hover, :focus-within) .track.vital {
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0.25cqw 0.5cqw;
+}
+
+.track.vital .label,
+.stage.cg-on .hud:not(:hover, :focus-within) .track.vital .label {
+  display: block;
+  grid-area: 1 / 1;
+}
+
+.track.vital .value,
+.stage.cg-on .hud:not(:hover, :focus-within) .track.vital .value {
+  grid-area: 1 / 2;
+}
+
+.pips {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.25cqw;
+  min-width: 6cqw;
+}
+
+.pip {
+  flex: 1;
+  height: 0.4cqw;
+  border: 1px solid var(--gold-soft);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.pip.on { background: var(--gold); }
+.vital.danger .pip.on { background: var(--bad, #ed9788); }
+
+/* 조각 시계 수치(의심·귀찌): 막대 대신 오른쪽에 시계 한 개. */
+.track.is-clock {
+  grid-template-columns: 1.3cqw 1fr auto 2.3cqw;
+  grid-template-rows: auto;
+  row-gap: 0;
+}
+
+.track.is-clock > svg:first-child {
+  grid-row: 1;
+}
+
+.track svg.clock-face {
+  grid-area: 1 / 4;
+  width: 2.3cqw;
+  height: 2.3cqw;
+  stroke: none;
+  fill: none;
+}
+
+.track .clock-face .seg {
+  fill: rgba(255, 255, 255, 0.1);
+  stroke: var(--night);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  transition: fill 0.45s ease;
+}
+
+.track .clock-face .seg.on {
+  fill: var(--track-color, var(--gold));
+}
+
+/* 징조 문턱 안쪽 칸은 테두리로만 표시하고, 값이 그 안에 들어오면 켜진 칸이 위험 색으로 바뀝다. */
+.track .clock-face .seg.warn {
+  stroke: var(--track-warn, #e0566b);
+  stroke-width: 0.9;
+}
+
+.track .clock-face.danger .seg.on {
+  fill: var(--track-warn, #e0566b);
+}
+
 .track[data-track='의심'] {
   --track-color: #e0566b;
+  --track-warn: #ff3b5c;
 }
 
 .track[data-track='집착'] {
@@ -423,6 +571,7 @@ button {
 
 .track[data-track='귀찌'] {
   --track-color: #e9c46a;
+  --track-warn: #e0566b;
 }
 
 .track[data-track='탈주'] {
@@ -448,23 +597,21 @@ button {
 
 /* 바뀐 수치 바로 옆, 그 수치의 줄 안에서만 움직인다. */
 .delta {
-  grid-area: 1 / 2;
-  justify-self: end;
   font-weight: 700;
   font-size: 0.95cqw;
   line-height: 1;
   animation: rise 1.4s ease-out forwards;
 }
 
-.delta.bad {
+.delta.bad, .changes .bad, .log-list .bad {
   color: #ff7d8f;
 }
 
-.delta.good {
+.delta.good, .changes .good, .log-list .good {
   color: #8ee0b6;
 }
 
-.delta.warm {
+.delta.warm, .changes .warm, .log-list .warm {
   color: #f7a8c8;
 }
 
@@ -519,6 +666,9 @@ button {
 }
 
 .items li {
+  display: flex;
+  align-items: center;
+  gap: 0.25cqw;
   padding: 0.2cqw 0.55cqw;
   border-radius: 99cqw;
   border: 1px solid rgba(247, 240, 228, 0.2);
@@ -526,10 +676,16 @@ button {
   color: var(--ink-dim);
 }
 
+.items li img {
+  width: 2.2cqw;
+  height: 2.2cqw;
+  object-fit: contain;
+}
+
 .dialog {
   position: absolute;
   left: 5%;
-  right: 22%;
+  right: 1.4cqw;
   bottom: calc(1.2% + 3.8cqw);
   min-height: 21%;
   padding: 2cqw 2.4cqw 1.6cqw;
@@ -538,6 +694,13 @@ button {
   border-radius: 0.9cqw;
   backdrop-filter: blur(8px);
   cursor: pointer;
+}
+
+/* 글 없는 줄(원작의 대사 없는 컷): 그림만 보이고, 투명한 창을 누르면 넘어간다. */
+.dialog.silent {
+  background: transparent;
+  border-color: transparent;
+  backdrop-filter: none;
 }
 
 .nameplate {
@@ -681,7 +844,7 @@ button {
   position: absolute;
   z-index: 6;
   left: 5%;
-  right: 22%;
+  right: 1.4cqw;
   bottom: 1.2%;
   display: flex;
   gap: 0.6cqw;
@@ -695,16 +858,29 @@ button {
   white-space: nowrap;
 }
 
+.say-field {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
 .say input {
   flex: 1;
-  padding: 0.75cqw 1cqw;
+  min-width: 0;
+  /* 오른쪽 여백은 여우 얼굴 버튼 자리다. 긴 글이 버튼 밑으로 들어가지 않는다. */
+  padding: 0.75cqw 3.4cqw 0.75cqw 1cqw;
   border-radius: 0.5cqw;
   border: 1px solid rgba(247, 240, 228, 0.3);
-  background: var(--panel);
+  background: rgba(16, 10, 16, 0.88);
   color: var(--ink);
   font: inherit;
   font-size: 1.2cqw;
   outline: none;
+}
+
+.say input::placeholder {
+  color: rgba(247, 240, 228, 0.78);
 }
 
 .say input:focus {
@@ -722,9 +898,28 @@ button {
 
 /* 질문 모드: 여우에게 묻는 입력. 이야기 입력과 다른 테두리 색으로 구별한다. */
 .say .ask-gm {
-  background: var(--panel);
-  border: 1px solid var(--gold-soft);
-  color: var(--ink);
+  position: absolute;
+  top: 50%;
+  right: 0.4cqw;
+  translate: 0 -50%;
+  width: 2.4cqw;
+  height: 2.4cqw;
+  padding: 0.15cqw;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.say .ask-gm img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.say .ask-gm:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
 }
 
 .say .ask-gm[aria-pressed='true'],
@@ -737,7 +932,7 @@ button {
   background: var(--gold);
   border-color: var(--gold);
   color: #241a0e;
-  box-shadow: 0 0 0 2px var(--gold-soft), 0 0 14px var(--gold);
+  box-shadow: inset 0 0 0 2px var(--gold-soft), 0 0 8px var(--gold);
 }
 
 .say.ask input {
@@ -773,6 +968,40 @@ button {
   line-height: 1.6;
 }
 
+.say .feedback-open {
+  background: var(--panel);
+  border: 1px solid var(--gold-soft);
+  color: var(--ink);
+}
+
+.feedback-title {
+  margin: 0 0 1cqw;
+  font-size: 1.4cqw;
+  color: var(--gold);
+}
+
+.feedback-text {
+  display: block;
+  width: 100%;
+  min-height: 9cqw;
+  margin: 0 0 1.2cqw;
+  padding: 0.8cqw 1cqw;
+  border: 1px solid var(--gold-soft);
+  border-radius: 0.5cqw;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.1cqw;
+  line-height: 1.5;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.feedback-text:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
 .confirm-actions {
   display: flex;
   justify-content: flex-end;
@@ -801,6 +1030,15 @@ button {
   color: var(--ink-dim);
 }
 
+.changes {
+  margin-top: 0.4cqw;
+  font-size: 1.3cqw; /* .text 1.55cqw 의 약 0.85배 */
+}
+
+.changes p {
+  margin: 0.2em 0;
+}
+
 .price-line {
   display: flex;
   gap: 0.5cqw;
@@ -815,6 +1053,10 @@ button {
 .price-label {
   color: #e0a458;
   font-weight: 700;
+}
+
+.twist-line[data-result='interrupt'] .price-label {
+  color: #e0566b;
 }
 
 .price-tag::before {
@@ -895,6 +1137,15 @@ button {
 .free.busy .approach-wrap,
 .free.busy .free-meta {
   opacity: 0.35;
+  pointer-events: none;
+}
+
+.cutin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   pointer-events: none;
 }
 
@@ -1319,55 +1570,69 @@ button.primary {
   color: var(--gold);
 }
 
-.checks {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2cqw;
+/* 돌아보기: 선택 → 주사위 → 대가를 일어난 순서대로. 장면마다 이름 한 줄. */
+.replay {
+  list-style: none;
+  margin: 0 0 2cqw;
+  padding: 0;
   font-size: 1cqw;
-}
-
-.checks th,
-.checks td {
-  padding: 0.5cqw 0.6cqw;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: left;
-}
-
-.checks td {
+  line-height: 1.6;
   word-break: keep-all;
 }
 
-/* 계산과 결과는 한 줄로 둔다. 좀으면 장면과 판정 이름이 띄어쓰기에서 줄을 바꾼다. */
-.checks td:nth-child(n + 3) {
-  white-space: nowrap;
+.replay li {
+  padding: 0.2cqw 0 0.2cqw 0.9cqw;
 }
 
-.checks th {
+.replay .replay-scene {
+  margin-top: 0.9cqw;
+  padding: 0 0 0.25cqw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-weight: 600;
   color: var(--ink-dim);
 }
 
-.checks .tier-hit {
+.replay .replay-scene:first-child {
+  margin-top: 0;
+}
+
+.replay small {
+  color: var(--ink-dim);
+}
+
+.replay-check {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2cqw 0.8cqw;
+}
+
+.replay-dice {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.replay-tier {
+  white-space: nowrap;
+}
+
+.replay-price {
+  display: flex;
+  gap: 0.5cqw;
+  align-items: baseline;
+  color: var(--ink-dim);
+}
+
+.replay .tier-hit {
   color: var(--hit);
 }
 
-.checks .tier-mixed {
+.replay .tier-mixed {
   color: var(--mixed);
 }
 
-.checks .tier-miss {
+.replay .tier-miss {
   color: var(--miss);
-}
-
-.decisions {
-  margin: 0;
-  padding-left: 1.4cqw;
-  font-size: 1cqw;
-  line-height: 1.7;
-}
-
-.decisions small {
-  color: var(--ink-dim);
 }
 
 .result-tracks {
@@ -1389,7 +1654,12 @@ button.primary {
 
 .result-buttons {
   display: flex;
-  gap: 1cqw;
+  gap: 0.6cqw;
+}
+
+.result-buttons button {
+  padding-inline: 1cqw;
+  white-space: nowrap;
 }
 
 .sheet {
@@ -1516,6 +1786,79 @@ button.primary {
   z-index: 4;
 }
 
+.intro-highlight {
+  outline: 2px solid #f4d578;
+  outline-offset: 4px;
+  box-shadow: 0 0 18px rgba(244, 213, 120, 0.35);
+}
+
+.intro-skip {
+  position: absolute;
+  right: 1.4cqw;
+  bottom: 5.5cqw;
+  z-index: 10;
+  padding: 0.6cqw 1cqw;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  background: var(--panel-strong);
+  font-size: max(13px, 1cqw);
+}
+
+.intro-roll {
+  position: absolute;
+  top: 42%;
+  left: 30%;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--panel-strong);
+  font-size: max(14px, 1.3cqw);
+}
+
+.stage[data-intro] .dialog {
+  pointer-events: auto;
+}
+
+@media (max-width: 700px) {
+  .stage[data-intro] {
+    height: calc(100svh - 64px);
+    aspect-ratio: auto;
+    align-self: start;
+  }
+  .stage[data-intro] .gm-box {
+    top: 64px;
+    left: 12px;
+    right: 12px;
+    height: auto;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .stage[data-intro] .gm-mascot { width: 64px; }
+  .stage[data-intro] .gm-bubble { padding: 28px 12px 20px; border-radius: 10px; }
+  .stage[data-intro] .gm-text { font-size: 16px; line-height: 1.6; }
+  .stage[data-intro] .gm-name { font-size: 12px; }
+  .stage[data-intro] .gm-hint { top: 8px; right: 8px; font-size: 10px; }
+  .stage[data-intro] .hud {
+    top: 360px;
+    right: 12px;
+    width: 196px;
+    max-height: 310px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 12px;
+  }
+  .stage[data-intro] .hud h2 { font-size: 12px; }
+  .stage[data-intro] .tracks { gap: 12px; margin-bottom: 14px; }
+  .stage[data-intro] .intro-highlight { outline-offset: 2px; }
+  .stage[data-intro] .track .label,
+  .stage[data-intro] .track .value { font-size: 11px; }
+  .stage[data-intro] .abilities { gap: 4px; grid-template-columns: repeat(3, 1fr); }
+  .stage[data-intro] .abilities li { padding: 4px; font-size: 11px; }
+  .stage[data-intro] .abilities b { font-size: 12px; }
+  .stage[data-intro] :is(.items, .memo, #memo-head) { display: none; }
+  .stage[data-intro] .intro-roll { top: 310px; left: 16px; }
+  .stage[data-intro] .intro-skip { position: fixed; bottom: 76px; right: 12px; padding: 10px 14px; }
+}
+
 .gm-box {
   position: absolute;
   top: 6.8%;
@@ -1523,7 +1866,9 @@ button.primary {
   right: 26%;
   z-index: 3;
   display: flex;
-  align-items: flex-start;
+  /* 높이를 여우 칸으로 고정해 글이 늘어도 여우는 움직이지 않고 말풍선만 위아래로 고르게 늘어난다. */
+  height: 9.5cqw;
+  align-items: center;
   gap: 0.8cqw;
   cursor: pointer;
   animation: mascot-in 0.25s ease-out;
@@ -1538,10 +1883,22 @@ button.primary {
   filter: drop-shadow(0 0.4cqw 0.8cqw rgba(0, 0, 0, 0.5));
 }
 
+/* 표정 PNG 마다 투명 여백이 다르다. 불투명 영역의 세로 가운데를 칸 가운데에, 오른쪽 끝을 칸 오른쪽에 맞춘다. */
 .gm-mascot img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  translate: 7.42% 0.15%;
+}
+
+/* 세로 4.39% 는 여백 5.71% 에서 bob 폭의 절반을 뺴서 흔들림의 가운데를 칸 가운데에 둔 값이다. */
+.gm-mascot[data-face='thinking'] img {
+  translate: 2.93% 4.39%;
+}
+
+.gm-mascot[data-face='surprised'] img {
+  translate: 5.86% 1.66%;
 }
 
 .gm-mascot[data-face='thinking'] img {
@@ -1666,6 +2023,12 @@ button.primary {
 
 /* 좁은 화면에서는 무대가 작아 입력칸을 무대 밖 화면 맨 아래에 둔다. 대사창을 가리지 않는다. */
 @media (max-width: 700px) {
+  .hud { min-width: 84px; }
+  .track.vital { font-size: 11px; line-height: 1.2; }
+  .track.vital .value { font-size: 10px; }
+  .track.vital .pips { gap: 2px; margin-bottom: 2px; }
+  .track.vital .pip { height: 4px; }
+
   .say {
     position: fixed;
     left: 0;
@@ -1673,13 +2036,20 @@ button.primary {
     bottom: 0;
     z-index: 40;
     gap: 8px;
-    padding: 8px;
+    padding: 8px 1.4cqw 8px 8px;
     background: rgba(10, 8, 6, 0.92);
   }
 
   .say input {
     font-size: 16px;
-    padding: 8px 10px;
+    padding: 8px 44px 8px 10px;
+  }
+
+  .say .ask-gm {
+    right: 3px;
+    width: 36px;
+    height: 36px;
+    padding: 3px;
   }
 
   .say button {
@@ -1690,6 +2060,12 @@ button.primary {
 
 .clock {
   margin-left: 0.8cqw;
+  font-size: 1cqw;
+  white-space: nowrap;
+}
+
+.tension {
+  margin-left: 0.4cqw;
   font-size: 1cqw;
   white-space: nowrap;
 }
@@ -1862,4 +2238,28 @@ button.primary {
 .atlas-actions button.primary {
   background: var(--crimson);
   border-color: rgba(255, 220, 160, 0.4);
+}
+
+/* 접근성: 스크린리더에만 읽히는 알림 칸. 화면에는 자리도 차지하지 않는다. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 접근성: 키보드로 고를 때만 보이는 포커스 테두리. 마우스 hover 모양은 그대로다. */
+.choice:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.atlas-node[role='button']:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }

@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { Engine } from '../src/engine/engine.ts';
 import { drawPrice, priceCandidates } from '../src/engine/prices.ts';
 import { parseScenario } from '../src/engine/scenario.ts';
-import { TRACKS, type Effects, type FreeSpec, type GameEvent, type Outcome, type PriceSpec, type Tier } from '../src/engine/types.ts';
+import { TRACKS, type Effects, type FreeSpec, type GameEvent, type Outcome, type PriceSpec, type Tier, type Tiered } from '../src/engine/types.ts';
 import { FakeGm, SCENARIO_PATH, approachOf, loadDesert } from './helpers.ts';
 
 const scenario = await loadDesert();
@@ -34,8 +34,8 @@ function possiblePrices(free: FreeSpec, outcome: Outcome, tier: Tier): PriceSpec
   return hard.every((p) => p.if !== undefined) ? [...hard, ...listed.filter((p) => p.weight === 'soft')] : hard;
 }
 
-function outcomeSets(free: FreeSpec): [string, Record<Tier, Outcome>][] {
-  const sets: [string, Record<Tier, Outcome>][] = free.approaches.map((a) => [a.id, a.outcomes]);
+function outcomeSets(free: FreeSpec): [string, Tiered<Outcome>][] {
+  const sets: [string, Tiered<Outcome>][] = free.approaches.map((a) => [a.id, a.outcomes]);
   sets.push(['improv', free.improv]);
   if (free.improv_bold) sets.push(['improv_bold', free.improv_bold]);
   return sets;
@@ -54,7 +54,7 @@ function sameMixedMiss(free: FreeSpec): string[] {
 }
 
 const b02 = scenario.beats.b02_people!.free!;
-const ctx = { tracks: { 의심: 0, 집착: 0, 호감: 0, 귀찌: 8, 탈주: 0, 행운: 6 }, abilities: scenario.sheet.abilities, items: scenario.sheet.items.map((i) => i.id), flags: {} };
+const ctx = { tracks: { 체력: 3, 정신력: 4, 의심: 0, 집착: 0, 호감: 0, 귀찌: 8, 탈주: 0, 행운: 6 }, abilities: scenario.sheet.abilities, items: scenario.sheet.items.map((i) => i.id), flags: {} };
 
 describe('대가 표', () => {
   test('자유 입력 비트마다 prices 가 4~6개이고 태그가 세 종류 이상이다', () => {
@@ -81,7 +81,7 @@ describe('대가 표', () => {
   });
 
   test('7~9 대가는 성공을 뒤집지 않는다: soft 대가는 lose·탈주 감소·플래그 끄기가 없고 hit 가 세운 플래그를 건드리지 않는다', () => {
-    const softLose = yamlText.replace('- { id: sun, tag: 시간, weight: soft, text: 해가 한 뼘 더 기울었다. 귀찌가 미지근해진다., effects: { 귀찌: -1 } }', '- { id: sun, tag: 시간, weight: soft, text: 지도를 잃었다., effects: { lose: [map] } }');
+    const softLose = yamlText.replace(/- \{ id: sun,[^\n]+/, '- { id: sun, tag: 시간, weight: soft, text: 지도를 잃었다., effects: { lose: [map] } }');
     expect(softLose).not.toBe(yamlText);
     expect(() => parseScenario(softLose)).toThrow(/prices\.sun: soft 대가는 소지품을 잃게 할 수 없습니다/);
 
@@ -125,6 +125,7 @@ describe('대가 표', () => {
     let found: { events: GameEvent[]; before: number; after: number } | null = null;
     for (let seed = 1; seed < 200 && !found; seed++) {
       const { state } = engine.newGame(seed, `p${seed}`);
+      state.flags['귀찌_설명'] = true;
       const events: GameEvent[] = [];
       const next = await engine.act(state, { type: 'approach', id: 'run' }, (e) => events.push(e));
       const roll = events.find((e) => e.type === 'roll');

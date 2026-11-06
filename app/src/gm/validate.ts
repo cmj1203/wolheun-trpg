@@ -1,6 +1,6 @@
-import { FACES, isFace, type CastSpec, type Line, type Tier } from '../engine/types.ts';
+import type { CastSpec, Line, Tier } from '../engine/types.ts';
 import { isPresentTense, longestCommon, normalizeKo, preemptedBy } from '../engine/text.ts';
-import { FORBIDDEN_GROUPS, RATING_GROUPS, type Lore, type Register } from './lore.ts';
+import { FORBIDDEN_GROUPS, RATING_GROUPS, type ForbiddenGroup, type Lore, type Register } from './lore.ts';
 
 export type ViolationKind = 'format' | 'lore' | 'rating' | 'beat';
 export type Severity = 'hard' | 'soft';
@@ -20,6 +20,8 @@ export interface CheckOptions {
   lore: Lore;
   /** 엔진이 정한 상태와 어긋나는 표현(장면 state_guard + 참인 사실의 state_guard). */
   stateGuard: readonly string[];
+  /** 이번 판에 화면에 나온 줄(화자별). 같은 화자의 같은 말은 길이와 상관없이 막는다. */
+  spoken?: Readonly<Record<string, readonly string[]>>;
   echoOnly: readonly string[];
   /** 이 행동을 전제하는 낱말 묶음. 입력에 하나도 없는데 출력에 있으면 막는다. */
   presume?: readonly string[];
@@ -34,6 +36,8 @@ export interface CheckOptions {
   gist: string;
   playerLore: string;
   reactor?: string;
+  /** 첫 줄을 말해야 하는 화자(세계 밖 행동은 나레이션이 먼저 동작을 그린다). */
+  first?: string;
   /** 지금 장면에 없는 인물을 가리키는 말. 인물 대사와 내레이션에서 막는다. */
   absent?: readonly string[];
   /** 이번 입력. 속마음이 이 문구를 되풀이하면 막는다. */
@@ -78,12 +82,48 @@ export function mentions(text: string, term: string): boolean {
   return text.includes(t) || compact(text).includes(compact(t));
 }
 
+/** 띄어쓰기를 지우고 맞추면 두 낱말에 걸친 우연(자 해 → 자해, 일 본 → 일본, 작은 발 → 은발)이 걸린다. 이만큼 짧은 낱말은 붙여 쓴 그대로만 본다. */
+const LOOSE_MIN = 3;
+
+/**
+ * 금지어 사전(바깥 이야기·현대 물건·현실 지명·스포일러·변장 노출) 낱말이 글에 들었는가.
+ * 띄어 쓴 낱말과 세 글자 이상인 낱말만 띄어쓰기를 무시하고 맞춘다. 등급 낱말은 ratingIn 으로 본다.
+ */
+export function forbiddenIn(text: string, term: string): boolean {
+  const t = term.trim();
+  if (!t) return false;
+  if (text.includes(t)) return true;
+  return (/\s/u.test(t) || [...t].length >= LOOSE_MIN) && compact(text).includes(compact(t));
+}
+
+/** 등급 낱말과 겹치지만 해롭지 않은 말. 띄어쓰기를 무시하고 맞추기 전에 지운다("자, 해 보자" → 자해 아님). */
+const RATING_INNOCENT: readonly RegExp[] = [/(^|[\s,.!?…~])자[\s,.!…~]+해(?=\s*[보볼봐봅줘야라요])/gu];
+
+/** 등급(욕·선정·잔혹·자해) 낱말이 글에 들었는가. 일부러 띄어 써 피하는 일("시 발", "섹 스")이 흔해 띄어쓰기를 무시하고 맞춘다. */
+export function ratingIn(text: string, term: string): boolean {
+  return mentions(RATING_INNOCENT.reduce((t, re) => t.replace(re, '$1'), text), term);
+}
+
+/** 금지 묶음 이름에 맞는 비교로 낱말이 글에 들었는지 본다. */
+export function forbiddenTermIn(group: ForbiddenGroup, text: string, term: string): boolean {
+  return RATING_GROUPS.includes(group) ? ratingIn(text, term) : forbiddenIn(text, term);
+}
+
+/** 상대 인물 줄 앞의 "하."는 polish 가 지운다. 같은 말인지 맞출 때도 떼고 보되("하,"도 같은 말로 본다), "하."뿐인 줄은 그대로 본다. */
+const LEADING_HA = /^하[.…!,]+\s*/u;
+const bareNorm = (s: string) => normalizeKo(s.replace(LEADING_HA, '')) || normalizeKo(s);
+
+/** 이보다 짧은 원작 줄은 글 안에 들었는지가 아니라 줄 전체가 같은지로 본다("여자."가 "입을 닫아라, 여자."를 막지 않게). */
+const RESERVED_SUBSTRING_MIN = 5;
+
 const ECHO_MIN = 3;
 const ECHO_MAX = 6;
 
 
 /** 속마음이 플레이어 입력을 남이 한 말처럼 받는 말. */
 const HEARD_AS_OTHER = /무슨 소리|뭔 소리|헛소리/u;
+/** "나 지금 무슨 소리를 하는 거야"는 자기 말을 돌아보는 것이지 남의 말처럼 듣는 것이 아니다. */
+const SELF_SUBJECT = /(^|[\s,.!?…])(나|내가|난|내)\s/u;
 
 /** 속마음이 입력 문구를 그대로 안고 있는가. 짧은 입력은 거의 전부, 긴 입력은 여섯 글자 이어지면 되풀이로 본다. */
 export function echoesInput(line: string, input: string): boolean {
@@ -93,14 +133,23 @@ export function echoesInput(line: string, input: string): boolean {
   return longestCommon(normalizeKo(line), norm) >= Math.max(ECHO_MIN, Math.min(ECHO_MAX, Math.ceil(size * 0.6)));
 }
 
+const NOT_DONE = /^[가-힣]*?(지\s*(못|않)(?![가-힣]*으면)|\s*(틈|새|겨를|수|곳|데|길|여유|시간)[도은는이가조차]*\s*없)/u;
+
+/** 행동으로 쓴 낱말인가. 다른 낱말의 일부('정막을')와 하지 못했다는 서술('막을 틈도 없이')은 전제가 아니다. */
+function presumes(text: string, term: string): boolean {
+  const pattern = new RegExp(`(?<![가-힣])${term.trim().split(/\s+/).join('\\s*')}`, 'gu');
+  return [...text.matchAll(pattern)].some((m) => !NOT_DONE.test(text.slice(m.index + m[0].length, m.index + m[0].length + 16)));
+}
+
 /** 등급과 반대되는 서술. 정해진 결과 요지에 같은 말이 있으면 막지 않는다. */
 const TIER_OPPOSITE: Record<Tier, readonly string[]> = {
+  crit: ['헛손질', '헛발질', '허공을 갈', '허공을 가르', '허공을 휘', '헛수고', '허탕', '아무 소용', '소용없', '소용이 없', '고꾸라', '엉뚱한 곳'],
   hit: ['헛손질', '헛발질', '허공을 갈', '허공을 가르', '허공을 휘', '헛수고', '허탕', '아무 소용', '소용없', '소용이 없', '고꾸라', '엉뚱한 곳'],
   mixed: ['헛손질', '헛발질', '허공을 갈', '허공을 가르', '허공을 휘', '헛수고', '허탕', '아무 소용', '소용없', '소용이 없'],
   miss: ['성공했', '해냈다', '완벽하게'],
 };
 
-const LOSS_VERB = '던지|던져|던졌|내던|내팽개|버리|버렸|떨어뜨|떨어트|빼앗|뺏|찢|태워|태웠|부러|박살|망가';
+const LOSS_VERB = '던지|던져|던졌|내던|내팽개|버리|버렸|떨어뜨|떨어트|빼앗|뺏|낚아채|낚아챘|앗아|찢|태워|태웠|부러|박살|망가';
 
 /** 소지품이 아시나 손을 떠났다고 읽히는 줄인가. */
 export function losesItem(line: string, name: string): boolean {
@@ -134,6 +183,9 @@ function isFormalOrPastDa(sentence: string): boolean {
   if (prev === undefined || prev < 0xac00 || prev > 0xd7a3) return false;
   return (prev - 0xac00) % 28 === 20; // 받침 ㅆ
 }
+/** 여우 줄의 존댓말 끝(~요, ~죠, ~십시오). 합쇼체 '~니다'는 '다' 끝 검사가 hard 로 잡는다. "땅이니까."는 반말이라 넣지 않고, 필요·중요·강요 같은 낱말은 뺀다. */
+const GM_POLITE = /((?<![필중강수주소요])요|죠|십시오)$/u;
+const QUOTED = /"[^"]*"|“[^”]*”|‘[^’]*’|「[^」]*」|『[^』]*』/gu;
 const TRAILING = /["'“”‘’()[\]「」『』\-―—\s]+$/u;
 
 function sentenceEnds(text: string): string[] {
@@ -160,34 +212,87 @@ function speakerPrefix(line: Line, opt: CheckOptions): string | null {
   return names.includes(head) || head === '나레이션' ? head : null;
 }
 
+/** 마지막 절의 문법적 종결 어미. '~인가/~건가/~한가'는 모두 같은 '-가' 꼴이다. */
+function clauseEnding(clause: string): string | null {
+  const word = clause.trim().split(/\s+/u).at(-1) ?? '';
+  return /(?:구나|구려|느냐|냐|가|나|지|군|라|다|네|오|소|요)$/u.exec(word)?.[0] ?? null;
+}
+
+/** 쉼표로 분리된 독립 명사구·호격 조사에서 호칭을 찾는다. 인물별 호칭 사전은 두지 않는다. */
+function addresses(text: string): string[] {
+  return [...text.matchAll(/(?:^|[,.!?…]\s*)([가-힣]{2,})(?=\s*[,!?]|\s*\.(?:\s|$))/gu)]
+    .filter(m => text[m.index + m[0].length] === ',' || !clauseEnding(m[1] ?? ''))
+    .map(m => m[1] ?? '')
+    .concat([...text.matchAll(/(?:^|\s)([가-힣]{2,}?)(?:아|야|여)(?=[,!?\s]|$)/gu)].map(m => m[1] ?? ''));
+}
+
+function finalEnding(text: string): string | null {
+  const clauses = text.replace(/["'“”‘’]/gu, '').split(/[,.!?…]+/u).map(s => s.trim()).filter(Boolean);
+  // "겁이 난 건가, 이방인?"의 뒤 호칭은 종결절이 아니다.
+  const last = clauses.at(-1);
+  return clauseEnding(last && addresses(text).includes(last) ? clauses.at(-2) ?? '' : last ?? '');
+}
+
+function repeatedReaction(text: string, previous: readonly string[]): string[] {
+  const changes: string[] = [];
+  const ending = finalEnding(text);
+  const sameEnding = ending && previous.length === 2 && previous.every(t => finalEnding(t) === ending);
+  if (sameEnding) changes.push(`끝맺음 "-${ending}"이 직전 대사 두 줄 "${previous.join('" / "')}"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요`);
+  const currentAddresses = addresses(text);
+  for (const old of previous) {
+    // 앞에서 실제 호칭으로 쓰인 명사는 뒤의 조사 활용("이방인의")도 같은 호칭으로 비교한다.
+    const terms = new Set([...currentAddresses, ...addresses(old)]);
+    for (const term of terms) {
+      const used = (s: string) => new RegExp(`(?:^|[\\s,.!?…])${term}(?=$|[\\s,.!?…]|(?:의|은|는|이|가|을|를|에게|아|야|여)(?:$|[\\s,.!?…]))`, 'u').test(s);
+      if (used(text) && used(old)) changes.push(`호칭 "${term}"이 직전 대사 "${old}"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요`);
+    }
+  }
+  return [...new Set(changes)];
+}
+
 export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation[] {
   const found: Violation[] = [];
   const add = (kind: ViolationKind, rule: string, detail: string, severity: Severity = 'hard') => found.push({ kind, rule, detail, severity });
 
   if (lines.length === 0) add('format', 'empty', '대사가 한 줄도 없습니다');
   if (opt.reactor && lines.length > 0 && !lines.some((l) => l.speaker === opt.reactor)) add('format', 'no_reaction', `${opt.reactor}의 대사나 생각이 한 줄은 있어야 합니다`);
+  if (opt.first && lines.length > 0 && lines[0]?.speaker !== opt.first) add('format', 'first_speaker', `첫 줄은 ${opt.first}이 ${opt.playerLore}가 실제로 한 동작을 그려야 합니다`);
   if (lines.length > opt.maxLines) add('format', 'too_many', `${lines.length}줄입니다(최대 ${opt.maxLines}줄)`);
   if (opt.minLines !== undefined && lines.length > 0 && lines.length < opt.minLines) add('format', 'too_few', `${lines.length}줄입니다. 큰 행동에는 행동이 어떻게 됐는지와 상대의 대사·몸짓 반응을 합쳌 ${opt.minLines}줄 이상 쓰세요`);
   // 플레이어가 먼저 한 말·행동에 든 말은 GM 이 지어낸 것이 아니다. 스포일러와 등급을 뻐고 장면 검사에서 뻐 준다.
   const playerDid = (term: string) => mentions(opt.playerText, term);
+  // 스포일러·변장 노출은 이번 입력에 든 말만 면제한다. 지난 입력(said)이나 해석이 지어 쓴 요약(deed)에 든 말로 몇 턴씩 풀리지 않게.
+  const inputDid = (term: string) => mentions(opt.input ?? opt.playerText, term);
   const seen = new Set<string>();
   for (const line of lines) {
     if (!opt.speakers.includes(line.speaker)) add('format', 'speaker', `허용되지 않은 화자 "${line.speaker}"`);
     if (opt.faced?.includes(line.speaker)) {
-      if (line.face === undefined) add('format', 'face_missing', `"${line.speaker}" 줄에 face 가 없습니다. ${FACES.join('·')} 중 하나를 적으세요`);
-      else if (!isFace(line.face)) add('format', 'face', `허용되지 않은 표정 "${line.face}". ${FACES.join('·')} 중 하나만 씁니다`);
+      const allowed = opt.cast[line.speaker]?.faces ?? [];
+      if (line.face === undefined) add('format', 'face_missing', `"${line.speaker}" 줄에 face 가 없습니다. ${allowed.join('·')} 중 하나를 적으세요`);
+      else if (!allowed.includes(line.face)) add('format', 'face', `"${line.speaker}"에게 허용되지 않은 표정 "${line.face}". ${allowed.join('·')} 중에서 다시 고르세요`);
     } else if (opt.faced && line.face !== undefined) add('format', 'face_extra', `"${line.speaker}" 줄에는 face 를 쓰지 않습니다(나레이션·GM 줄은 표정이 없습니다)`);
     if (!line.text) add('format', 'empty_line', '빈 대사가 있습니다');
     if (/[,，、]$/.test(line.text)) add('format', 'unfinished', `문장이 끝나지 않았습니다: "${line.text}"`);
     const length = [...line.text].length;
     // 길이는 가벼운 위반이다. 넘으면 다시 쓰게 하되, 끝내 넘어도 작가 대사로 바꾸지 않는다.
     if (length > opt.maxChars) add('format', 'too_long', `한 줄이 ${length}자입니다(최대 ${opt.maxChars}자)`, 'soft');
-    if (seen.has(line.text)) add('format', 'repeat', `같은 대사를 되풀이했습니다: "${line.text}"`, 'soft');
-    seen.add(line.text);
+    const repeatKey = bareNorm(line.text) || line.text;
+    if (seen.has(repeatKey)) add('format', 'repeat', `같은 대사를 되풀이했습니다: "${line.text}"`, 'soft');
+    const spokenNorm = bareNorm(line.text);
+    if (spokenNorm && opt.spoken?.[line.speaker]?.some((t) => bareNorm(t) === spokenNorm)) add('beat', 'repeat_play', `이번 판에 ${line.speaker}이(가) 이미 한 말("${line.text}")입니다. 이번 입력에 맞는 다른 말로 쓰세요`);
+    seen.add(repeatKey);
     const prefix = speakerPrefix(line, opt);
     if (prefix) add('format', 'speaker_prefix', `대사 안에 화자 이름("${prefix}:")을 넣었습니다. 화자는 speaker 칸에만 쓰세요`);
     const cast = opt.cast[line.speaker];
-    if (cast?.style === 'thought' && HEARD_AS_OTHER.test(line.text)) {
+    if (line.speaker === opt.reactor && cast?.style === 'speech' && !/[\p{L}\p{N}]/u.test(line.text)) {
+      add('beat', 'reaction_response', `${line.speaker}에게 직접 건넨 말이나 행동에 실제 말 내용이 없습니다. 문장부호만 쓰지 말고 그 인물의 성격에 맞는 대사로 반응하세요`);
+    }
+    if (cast?.style === 'speech' && cast.lore !== opt.playerLore) {
+      const previous = (opt.spoken?.[line.speaker] ?? []).slice(-2);
+      const repeats = repeatedReaction(line.text, previous);
+      if (repeats.length) add('beat', 'reaction_repeat', repeats.join(' / '), 'soft');
+    }
+    if (cast?.style === 'thought' && HEARD_AS_OTHER.test(line.text) && !SELF_SUBJECT.test(line.text)) {
       add('beat', 'echo_input', `속마음이 입력을 남의 말처럼 받았습니다("${line.text}"). 입력은 아시나 자신의 말이나 행동입니다. 몸 상태와 주변 상황으로 이으세요`);
     }
     if (cast?.style === 'thought' && opt.input && echoesInput(line.text, opt.input)) {
@@ -206,7 +311,12 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
     }
     if (cast?.style === 'gm') {
       // 합쇼체(~습니다)와 과거 서술(~었다/았다/였다)은 여우 말투가 아니라 막는다. "대담하다"처럼 '다'로 끝나는 반말 감탄은 자연스러워 soft 로만 적는다.
-      const flat = sentenceEnds(line.text).find((s) => s.endsWith('다'));
+      // 여우가 인용한 남의 말("살려 주세요")은 여우 말투가 아니다. 따옴표 안을 빼고 끝을 본다.
+      const unquoted = line.text.replace(QUOTED, ' ');
+      const own = /[가-힣]/u.test(unquoted) ? unquoted : line.text;
+      const polite = sentenceEnds(own).find((s) => GM_POLITE.test(s));
+      if (polite) add('lore', 'gm_voice', `여우는 플레이어에게 반말로 말합니다("${polite}"가 존댓말로 끝남). "~야", "~해", "~어"로 쓰세요`);
+      const flat = sentenceEnds(own).find((s) => s.endsWith('다'));
       if (flat) add('lore', 'gm_voice', `여우는 플레이어에게 반말로 말합니다("${flat}"가 "다"로 끝남). "~야", "~해", "~어"로 쓰세요`, isFormalOrPastDa(flat) ? 'hard' : 'soft');
     }
     if (cast?.style === 'narration') {
@@ -214,7 +324,13 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
       if (present) add('lore', 'tense', `내레이션은 과거형으로 씁니다("${present}")`, 'soft');
     }
     const normalized = normalizeKo(line.text);
-    const reserved = opt.reserved.find((r) => normalized.includes(r.norm));
+    const bare = bareNorm(line.text);
+    // "사람?!" 같은 짧은 줄은 흔한 낱말이라 줄 전체가 같을 때만 베낀 것으로 본다.
+    const reserved = opt.reserved.find((r) => {
+      if (r.norm.length < RESERVED_SUBSTRING_MIN) return normalized === r.norm || bare === r.norm;
+      const rBare = bareNorm(r.text);
+      return normalized.includes(r.norm) || (rBare !== r.norm && rBare.length >= RESERVED_SUBSTRING_MIN && normalized.includes(rBare));
+    });
     // 플레이어가 먼저 해 버린 일과 같은 다음 장면 줄은 '먼저 일어난 것'으로 받아 잇는다. 그 장면에 가면 엔진이 그 줄만 건너뛴다.
     if (reserved?.future && !preemptedBy(reserved.norm, opt.deed)) add('beat', 'reserved_line', `다음 장면의 원작 대사("${reserved.text}")를 앞당겨 썼습니다`);
     else if (reserved) add('beat', 'repeat_earlier', `이미 나온 대사("${reserved.text}")를 되풀이했습니다`, 'soft');
@@ -232,7 +348,7 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
 
   const all = lines.map((l) => l.text).join('\n');
   const opposite = opt.tier ? TIER_OPPOSITE[opt.tier].find((w) => mentions(all, w) && !mentions(opt.gist, w) && !playerDid(w)) : undefined;
-  if (opposite) add('beat', 'tier_mismatch', `판정 결과와 반대되는 서술입니다("${opposite}"). 정해진 결과대로 입력한 행동이 어떻게 됐는지 쓰세요`);
+  if (opposite) add('beat', 'tier_mismatch', `판정 결과와 반대되는 서술입니다("${opposite}"). 엔진이 정한 결과(${opt.tier}): ${opt.gist}. 이번 행동: ${opt.deed ?? opt.playerText}. 이 결과대로 누가 무엇을 했고 어떻게 됐는지 구체적으로 쓰세요`);
   if (opt.mustMention?.length && lines.length > 0 && !mentions(all, '몰라') && !opt.mustMention.some((w) => mentions(all, w))) add('beat', 'off_topic', `묻는 대상과 다른 답입니다. ${opt.mustMention[0]}에 대해 답하세요`);
   // GM 설명 줄은 아시나가 아는 사실(공녀, 웰든)을 말해도 되고 스스로를 GM 이라 부를 수 있다. 인물 대사에만 거는 규칙은 이 글자로 본다.
   const voiced = lines.filter((l) => opt.cast[l.speaker]?.style !== 'gm').map((l) => l.text).join('\n');
@@ -246,8 +362,9 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
     const kind: ViolationKind = RATING_GROUPS.includes(group) ? 'rating' : 'lore';
     for (const term of opt.lore.forbidden[group]) {
       // 플레이어가 먼저 꺼낸 이름·사실은 인물이 되받아 말해도 새로 꺼낸 것이 아니다. 등급(욕·선정·잔혹·자해)은 GM 줄에 그대로 건다.
-      if (group === 'spoilers' && playerDid(term)) continue;
-      if (mentions(GM_SELF_TERMS.includes(term) ? voiced : all, term)) add(kind, group, term);
+      if (group === 'spoilers' && inputDid(term)) continue;
+      const scope = GM_SELF_TERMS.includes(term) ? voiced : all;
+      if (forbiddenTermIn(group, scope, term)) add(kind, group, term);
     }
   }
   for (const [right, wrongs] of Object.entries(opt.lore.misspellings)) {
@@ -255,10 +372,10 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
   }
   // 상태 표현도 플레이어가 먼저 한 일이면 GM 이 되받는 것을 막지 않는다.
   for (const term of opt.stateGuard) if (mentions(all, term) && !playerDid(term)) add('beat', 'state_guard', `지금 상태와 어긋나는 표현 "${term}"`);
-  for (const term of opt.lore.exposure) if (mentions(voiced, term) && !playerDid(term)) add('beat', 'exposed', `변장이 풀렸다고 읽히는 말("${term}")을 썼습니다. 변장은 풀리지 않고 아무도 본모습을 보지 못합니다`);
+  for (const term of opt.lore.exposure) if (forbiddenIn(voiced, term) && !inputDid(term)) add('beat', 'exposed', `변장이 풀렸다고 읽히는 말("${term}")을 썼습니다. 변장은 풀리지 않고 아무도 본모습을 보지 못합니다`);
   for (const term of opt.absent ?? []) if (mentions(voiced, term) && !playerDid(term)) add('beat', 'absent', `지금 장면에 없는 인물("${term}")을 썼습니다. 아시나 혼자 겪는 일로 쓰세요`);
   if (opt.presume?.length && !opt.presume.some(playerDid)) {
-    const used = opt.presume.find((w) => mentions(voiced, w));
+    const used = opt.presume.find((w) => presumes(voiced, w));
     if (used) add('beat', 'presume', `플레이어가 하지 않은 행동("${used}")을 전제했습니다. 플레이어가 실제로 한 행동으로 쓰세요`);
   }
   for (const term of opt.echoOnly) {
@@ -276,10 +393,77 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
   return found;
 }
 
+/** 글 앞에 쓴 화자 이름("속마음: …")은 뜻이 분명하니 다시 쓰게 하지 않고 그 화자의 줄로 옮긴다. */
+function moveSpeakerPrefix(line: Line, opt: CheckOptions): Line {
+  const head = speakerPrefix(line, opt);
+  const key = head ? opt.speakers.find((s) => s === head || opt.cast[s]?.display === head) : undefined;
+  if (!key) return line;
+  const text = line.text.replace(/^[^:：]*[:：]\s*/u, '');
+  if (!text) return line;
+  const { face, ...rest } = line;
+  return { ...rest, speaker: key, text, ...(opt.faced?.includes(key) ? { face: face ?? 'neutral' } : {}) };
+}
+
+/** 이번에 쓸 수 없는 화자의 이름을 글 앞에 쓴 줄(아시나 속마음을 안 쓰는 서술의 "속마음: …")은 옮길 곳이 없다. 다른 줄이 남으면 다시 쓰게 하지 않고 뺀다. */
+function dropUnvoicedPrefix(lines: Line[], opt: CheckOptions): Line[] {
+  const kept = lines.filter((line) => !speakerPrefix(line, opt));
+  return kept.length ? kept : lines;
+}
+
+/** 길이 상한을 넘은 줄을 문장 경계에서 나눈다. 줄 수 상한을 넘게 되면 그대로 둔다(그때는 다시 쓰게 한다). */
+function splitLongLines(lines: Line[], opt: CheckOptions): Line[] {
+  const out = lines.flatMap((line) => {
+    if ([...line.text].length <= opt.maxChars) return [line];
+    const chunks: string[] = [];
+    for (const sentence of line.text.split(/(?<=[.!?…])\s+/u)) {
+      const last = chunks.at(-1);
+      if (last !== undefined && [...`${last} ${sentence}`].length <= opt.maxChars) chunks[chunks.length - 1] = `${last} ${sentence}`;
+      else chunks.push(sentence);
+    }
+    return chunks.map((text) => ({ ...line, text }));
+  });
+  return out.length <= opt.maxLines ? out : lines;
+}
+
+/** 입력은 화면에 이미 나왔다. 그걸 되받는 속마음 줄은 다른 줄이 남으면 다시 쓰게 하지 않고 뺀다. */
+function dropEchoThoughts(lines: Line[], opt: CheckOptions): Line[] {
+  const kept = lines.filter((line) => {
+    if (opt.cast[line.speaker]?.style !== 'thought') return true;
+    const heard = HEARD_AS_OTHER.test(line.text) && !SELF_SUBJECT.test(line.text);
+    return !heard && !(opt.input && echoesInput(line.text, opt.input));
+  });
+  return kept.length ? kept : lines;
+}
+
+/** 곧 나올 대본 줄을 답 뒤에 그대로 붙인 것은 앞당김이 아니라 군더더기다. 다른 줄이 남으면 그 줄만 뺀다. */
+function dropCopiedUpcoming(lines: Line[], opt: CheckOptions): Line[] {
+  // "하. 웃기는 여자군." 처럼 앞에 감탄만 붙인 줄도 같은 줄이다.
+  const kept = lines.filter((l) => !opt.reserved.some((r) => r.future && (normalizeKo(l.text) === r.norm || bareNorm(l.text) === r.norm)));
+  return kept.length ? kept : lines;
+}
+
+/** 한 답 안에서 같은 화자가 같은 말(문장부호·띄어쓰기만 다른 말 포함)을 또 쓴 줄은 뺀다. 가벼운 위반이라 빼지 않으면 끝내 두 줄이 다 화면에 나온다. */
+function dropRepeats(lines: Line[]): Line[] {
+  const seen = new Set<string>();
+  const kept = lines.filter((line) => {
+    const key = `${line.speaker}|${bareNorm(line.text) || line.text}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  return kept.length ? kept : lines;
+}
+
 export function validateOutput(raw: string, opt: CheckOptions): { lines: Line[]; violations: Violation[] } {
   const parsed = parseGmJson(raw);
   if (typeof parsed === 'string') return { lines: [], violations: [{ kind: 'format', rule: 'json', detail: parsed, severity: 'hard' }] };
-  return { lines: parsed, violations: checkLines(parsed, opt) };
+  const cleaned = dropCopiedUpcoming(dropEchoThoughts(splitLongLines(dropUnvoicedPrefix(parsed.map((l) => moveSpeakerPrefix(l, opt)), opt), opt), opt), opt);
+  const lines = dropRepeats(cleaned);
+  const violations = checkLines(lines, opt);
+  // 뺀 줄도 다시 쓰게 할 거리는 된다(가벼운 위반). 끝내 고치지 못하면 뺀 채로 화면에 낸다.
+  const dropped = cleaned.find((l) => !lines.includes(l));
+  if (dropped) violations.push({ kind: 'format', rule: 'repeat', detail: `같은 대사를 되풀이했습니다: "${dropped.text}"`, severity: 'soft' });
+  return { lines, violations };
 }
 
 const KIND_LABEL: Record<ViolationKind, string> = { format: '형식', lore: '설정', rating: '등급', beat: '장면' };

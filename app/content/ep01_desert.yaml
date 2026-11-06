@@ -7,22 +7,36 @@ start: b00_open
 
 sheet:
   name: 아시나
-  abilities: { 재치: 1, 손재주: 1, 매력: 2, 체력: 0, 교양: 1 }
-  tracks: { 의심: 0, 집착: 0, 호감: 0, 귀찌: 8, 탈주: 0, 행운: 6 }
+  abilities: { 재치: 1, 손재주: 1, 매력: 2, 근력: 0, 교양: 1 }
+  tracks: { 체력: 4, 정신력: 4, 의심: 0, 집착: 0, 호감: 0, 귀찌: 7, 탈주: 0, 행운: 6 }
+  collapse_to: e_spy
+  # 긴장값(1~6). 장면 검사(twist 가 있는 비트)에서 d6 이 이 값 이하면 장면이 달라진다. 판정 성공 -1, 실패 +1.
+  tension: 3
   reveal:
     - { note: man, tracks: [의심, 집착, 호감] }
     - { note: captive, tracks: [탈주] }
+    - { flag: 귀찌_설명, tracks: [귀찌] }
   items:
     - id: magic_bag
+      file: assets/ep01/gen/items/item_magic_bag.png
       name: 마법 가방
       desc: 보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.
+      states:
+        - { flag: 가방_끈, label: 끈 끊김, desc: 끈이 끊어져 손으로 쥐고 다닌다. }
+        - { flag: 짐_쏟음, label: 짐 쏟아짐, desc: 호위가 뒤집어 짐이 모래에 쏟아졌다. }
     - id: earring
+      file: assets/ep01/gen/items/item_earring.png
       name: 마법 귀찌
-      desc: 머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다.
+      desc: 귓불에 달린 마법 귀찌.
     - id: map
+      file: assets/ep01/gen/items/item_map.png
       name: 낡은 지도
       desc: 사막 한가운데서는 별 도움이 되지 않는 지도.
+      container: { item: magic_bag, unless: "flag:지도_꺼냄 || flag:짐_쏟음" }
+      states:
+        - { flag: 지도_찢김, label: 찢김, desc: 한 귀퉁이가 찢겨 나갔다. }
     - id: pin
+      file: assets/ep01/gen/items/item_pin.png
       name: 가는 핀
       desc: 옷 안쪽에 숨겨 둔 가늘고 단단한 핀.
       hidden: true
@@ -30,15 +44,14 @@ sheet:
 cast:
   나레이션: { display: "", style: narration }
   GM: { display: GM, style: gm, sprite: gm }
-  아시나: { display: 아시나, style: speech, sprite: asina_hood, sprite_alt: { if: "flag:후드_벗음", sprite: asina }, lore: 아시나 }
-  속마음: { display: 아시나, style: thought, lore: 아시나 }
-  남자: { display: 붉은 눈의 남자, style: speech, sprite: man, lore: 베히다트 }
+  아시나: { display: 아시나, style: speech, sprite: asina_hood, sprite_alt: { if: "flag:후드_벗음", sprite: asina }, lore: 아시나, faces: [neutral, smile, surprised, wary, flustered, scared, indignant, smug, tired] }
+  속마음: { display: 아시나, style: thought, lore: 아시나, faces: [neutral, smile, surprised, wary, flustered, scared, indignant, smug, tired] }
+  남자: { display: 붉은 눈의 남자, style: speech, sprite: man, lore: 베히다트, faces: [neutral, smile, surprised, wary, sneer, dumbfounded, menacing, intrigued] }
 
 backgrounds:
   desert_wide: { label: 끝없는 모래사막, file: assets/ep01/gen/bg/desert_wide.png, placeholder: desert_wide }
   desert_meet: { label: 멀리 보이는 세 남자, file: assets/ep01/gen/bg/desert_meet.png, placeholder: desert_meet }
-  desert_blade: { label: 바위 언덕의 사막, file: assets/ep01/gen/bg/desert_blade.png, placeholder: desert_blade }
-  desert_glare: { label: 바위 언덕의 사막, file: assets/ep01/gen/bg/desert_blade.png, placeholder: desert_glare }
+  desert_near: { label: 모래 언덕 앞, file: assets/ep01/gen/bg/desert_near.png, placeholder: dunes }
   desert_dusk: { label: 해 질 녘의 사막, file: assets/ep01/gen/bg/desert_dusk.png, placeholder: dunes }
   desert_night: { label: 별이 뜬 사막, file: assets/ep01/gen/bg/desert_night.png, placeholder: dunes }
   blackout: { label: 암전, placeholder: blackout }
@@ -48,11 +61,25 @@ sprites:
   asina_hood_smile: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_smile.png, placeholder: asina }
   asina_hood_surprised: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_surprised.png, placeholder: asina }
   asina_hood_wary: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_wary.png, placeholder: asina }
-  asina: { label: 아시나(변장), file: assets/ep01/gen/asina/asina_neutral.png, placeholder: asina }
-  asina_smile: { label: 아시나(변장), file: assets/ep01/gen/asina/asina_smile.png, placeholder: asina }
-  asina_surprised: { label: 아시나(변장), file: assets/ep01/gen/asina/asina_surprised.png, placeholder: asina }
-  asina_wary: { label: 아시나(변장), file: assets/ep01/gen/asina/asina_wary.png, placeholder: asina }
+  asina_hood_flustered: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_flustered.png, placeholder: asina }
+  asina_hood_scared: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_scared.png, placeholder: asina }
+  asina_hood_indignant: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_indignant.png, placeholder: asina }
+  asina_hood_smug: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_smug.png, placeholder: asina }
+  asina_hood_tired: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_tired.png, placeholder: asina }
+  asina: { label: 아시나, file: assets/ep01/gen/asina/asina_neutral.png, placeholder: asina }
+  asina_smile: { label: 아시나, file: assets/ep01/gen/asina/asina_smile.png, placeholder: asina }
+  asina_surprised: { label: 아시나, file: assets/ep01/gen/asina/asina_surprised.png, placeholder: asina }
+  asina_wary: { label: 아시나, file: assets/ep01/gen/asina/asina_wary.png, placeholder: asina }
+  asina_flustered: { label: 아시나, file: assets/ep01/gen/asina/asina_flustered.png, placeholder: asina }
+  asina_scared: { label: 아시나, file: assets/ep01/gen/asina/asina_scared.png, placeholder: asina }
+  asina_indignant: { label: 아시나, file: assets/ep01/gen/asina/asina_indignant.png, placeholder: asina }
+  asina_smug: { label: 아시나, file: assets/ep01/gen/asina/asina_smug.png, placeholder: asina }
+  asina_tired: { label: 아시나, file: assets/ep01/gen/asina/asina_tired.png, placeholder: asina }
   man: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_neutral.png, placeholder: man }
+  man_sneer: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_sneer.png, placeholder: man }
+  man_dumbfounded: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_dumbfounded.png, placeholder: man }
+  man_menacing: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_menacing.png, placeholder: man }
+  man_intrigued: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_intrigued.png, placeholder: man }
   gm: { label: GM 사막여우, file: assets/ep01/gen/gm/gm_neutral.png, placeholder: gm }
   gm_smile: { label: GM 사막여우, file: assets/ep01/gen/gm/gm_smile.png, placeholder: gm }
   gm_thinking: { label: GM 사막여우, file: assets/ep01/gen/gm/gm_thinking.png, placeholder: gm }
@@ -62,12 +89,20 @@ sprites:
   man_wary: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_wary.png, placeholder: man }
 
 cgs:
+  cg_open_sun: { label: 태양, file: assets/ep01/gen/cg/cg_open_c001.png, fit: cover }
+  cg_open_land: { label: 낯선 땅, file: assets/ep01/gen/cg/cg_open_c002.png, fit: cover }
+  cg_open_dark: { label: 죽음의 그림자, file: assets/ep01/gen/cg/cg_open_c003.png, fit: cover }
+  cg_open_blade: { label: 목에 닿은 칼날, file: assets/ep01/gen/cg/cg_open_blade.png, fit: cover }
+  cg_cromwell: { label: 크롬웰 제국, file: assets/ep01/gen/cg/cg_cromwell.png, fit: cover }
+  cg_manor: { label: 저택, file: assets/ep01/gen/cg/cg_manor.png, fit: cover }
+  cg_hill: { label: 언덕, file: assets/ep01/gen/cg/cg_hill.png, fit: cover }
+  cg_travel: { label: 여행, file: assets/ep01/gen/cg/cg_travel.png, fit: cover }
+  cg_travel_3cuts: { label: 여행, file: assets/ep01/gen/cg/cg_travel_3cuts.png, fit: cover }
   cg_drink: { label: 물, file: assets/ep01/gen/cg/cg_drink.png, fit: cover }
-  cg_now: { label: 칼끝, file: assets/ep01/gen/cg/cg_last.png, fit: cover }
+  cg_now: { label: 칼끝, file: assets/ep01/gen/cg/cg_now.png, fit: cover }
   cg_last: { label: 칼끝, file: assets/ep01/gen/cg/cg_last.png, fit: cover }
   cg_beauty: { label: 미소녀, file: assets/ep01/gen/cg/cg_beauty.png, fit: cover }
-  cg_swing: { label: 칼날, file: assets/ep01/gen/cg/cg_swing.png, fit: cover, alt: { if: "!flag:후드_벗음", id: cg_swing_hood } }
-  cg_swing_hood: { label: 칼날(후드), file: assets/ep01/gen/cg/cg_swing_hood.png, fit: cover }
+  cg_swing: { label: 칼날, file: assets/ep01/gen/cg/cg_swing.png, fit: cover }
   cg_lean: { label: 한여름의 태양, file: assets/ep01/gen/cg/cg_lean.png, fit: cover }
 
 facts:
@@ -77,6 +112,10 @@ facts:
   - if: "!flag:후드_벗음"
     text: 아시나는 후드를 깊이 눌러쓰고 있다. 얼굴은 반쯤 가려져 있다.
     state_guard: []
+    state_check:
+      about: [후드, 두건, 쓰개, 머리카락, 머리칼, 은발, 맨얼굴, 얼굴]
+      ask: 이 글에서 아시나의 후드가 벗겨지거나 흘러내리거나 젖혀져서, 가려져 있던 머리나 얼굴이 드러났는가? 후드를 쓴 채 움켜쥐거나 여미거나 그 그늘 아래에서 보는 것, 남자가 후드를 벗기려다 못 벗긴 것은 드러난 것이 아니다.
+      sets: 후드_벗음
   - if: "flag:신분_노출"
     text: 아시나가 자기 입으로 웰든 공녀라고 밝혔다. 남자는 그 말을 들었고, 더는 길 잃은 여행자로 보지 않는다.
     state_guard: []
@@ -89,6 +128,31 @@ facts:
     state_guard: [지도를 펼, 지도를 꺼]
   - if: "flag:미소녀"
     text: 아시나는 이미 자기를 대륙에서 하나뿐인 미소녀라고 내세웠다.
+    state_guard: []
+  # 19-F 장면 검사 사건. GM 이 그 판에 일어난 일을 알고 서술하게 한다(플래그는 판 끝까지 남으니 지난 일로 적는다).
+  - if: "flag:거리_가까움"
+    text: 바람이 바뀌어 세 사람의 말소리가 띄엄띄엄 들렸다. 생각보다 가깝지만 말을 주고받을 거리는 아니었다.
+    state_guard: []
+  - if: "flag:눈부심"
+    text: 한낮의 모래빛에 눈이 부셔 세 사람의 그림자가 흔들려 보였다.
+    state_guard: []
+  - if: "flag:모래바람"
+    text: 모래바람을 맞아 바위 뒤에서 한참 버텼고, 발자국이 지워졌다.
+    state_guard: []
+  - if: "flag:가방_끈 && item:magic_bag"
+    text: 마법 가방의 끈이 끊어져 아시나는 가방을 손으로 쥐고 다닌다.
+    state_guard: []
+  - if: "flag:바위_온기"
+    text: 해 질 녘 찾은 바위 그늘에 낮의 온기가 남아 있었다.
+    state_guard: []
+  - if: "flag:별_가림"
+    text: 해 질 녘 구름이 몰려와 첫 별을 가렸다.
+    state_guard: []
+  - if: "flag:짐승_소리"
+    text: 해 질 녘 멀리서 짐승 울음이 두 번 들렸고, 두 번째가 더 가까웠다.
+    state_guard: []
+  - if: "flag:발자국"
+    text: 해 질 녘 모래 위에서 아직 지워지지 않은 사람 발자국을 봤다. 누구의 것인지는 모른다.
     state_guard: []
 
 free_defaults:
@@ -115,7 +179,7 @@ free_defaults:
       lines:
         - 나레이션: 어이가 없었는지 남자의 눈썹이 아주 조금 올라갔다.
         - 남자: 하. 별짓을 다 하는군.
-          face: smile
+          face: sneer
       effects: { 집착: 1 }
     mixed:
       gist: 입력한 행동은 통하지만 남자는 곧 정신을 차리고 비웃는다. 흥미는 생겼고, 무슨 속셈인지 더 수상하게 여긴다.
@@ -215,10 +279,10 @@ danger:
 # 상태가 한계에 닿으면 들어가는 작은 끝. 먼저 참인 것 하나로 간다. warn 은 한 판에 한 번 캐릭터에게 보이는 징조(나레이션·속마음)다. 여우는 말하지 않는다.
 fates:
   - id: unmasked
-    when: "귀찌 <= 0"
+    when: "flag:귀찌_설명 && 귀찌 <= 0"
     to: x_unmasked
     warn:
-      when: "귀찌 <= 2"
+      when: "flag:귀찌_설명 && 귀찌 <= 2"
       lines:
         - 나레이션: 귀찌가 귓불에서 차갑게 식어 갔다.
         - 속마음: …오래 못 버티겠어.
@@ -243,9 +307,7 @@ fates:
 refuse:
   - id: unmask
     words: [귀찌를 벗, 귀찌를 뺀, 귀찌를 빼, 귀찌를 떼, 귀찌를 뗀, 귀찌를 풀, 귀찌 벗, 귀찌 뺀, 귀찌 빼, 귀찌 떼, 귀찌 뗀, 귀찌 풀, 귀찌를 뜯, 귀찌 뜯, 귀찌를 던, 귀찌를 버, 변장을 풀, 변장을 푼, 변장을 벗, 머리를 보여, 머리카락을 보여, 은발을 보여, 본모습을]
-    lines:
-      - 나레이션: 귀찌를 잡아당겼다. 귓불에 달라붙은 듯 꿈쩍도 하지 않았다.
-      - 속마음: 안 빠지네… 차라리 잘됐어. 은발을 보였으면 끝이었을 거야.
+    lines: []
 
 # 정체를 밝히는 입력은 막지 않는다(play to find out). 말이 나가기 전 속마음 징조 한 줄(한 판 한 번).
 # 남자 앞이면 큰 행동: 의심 +3, 신분_노출(b09 판결이 의심 조건으로 r2_bind 쪽). 남자가 없으면 혼잣말로 흐른다(수치 없음).
@@ -253,24 +315,26 @@ identity:
   with: 남자
   words: [웰든, 공녀, 대공가, 내 정체, 제 정체, 정체를 밝, 신분을 밝]
   omen:
-    - 속마음: 웰든이란 이름이 목까지 올라왔다. 여긴 적국이다.
+    - 속마음: 웰든이란 이름이 목까지 올라왔다.
   effects: { 의심: 3, flags: { 신분_노출: true } }
 
 game_help:
+  - { id: health, name: 체력, track: 체력, say: "체력은 몸 상태야. 1 이하면 근력 -1, 0에서 다시 다치면 쓰러져 붙잡혀. 물과 휴식으로 회복해." }
+  - { id: spirit, name: 정신력, track: 정신력, say: "정신력은 마음 상태야. 1 이하면 매력·재치에 흔들리는 마음 -1, 0이 되면 다음 판정에 겁에 질림 -2이고 회복 전까지 행운을 못 써. 휴식과 큰 성공으로 회복해." }
   - { id: luck, name: 행운, track: 행운, say: "행운은 판정에 실패했을 때 모자란 만큼 메우는 점수야. 쓰면 대가 있는 성공으로 바뀌어." }
-  - { id: earring, name: 귀찌 수명, track: 귀찌, say: "귀찌 수명은 변장 귀찌에 남은 힘이야. 이야기가 흐르거나 대가를 치르면 줄어. 3 이하면 손이 떨려서 판정에 -1이 붙어." }
-  - { id: check, name: 판정, say: "판정은 주사위 두 개에 능력치를 더한 합으로 결과를 정하는 거야. 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야." }
-  - { id: cost, name: 대가, say: "대가는 해내는 대신 치르는 손해야. 귀찌 수명이 줄거나 상대의 의심을 사는 식이야." }
-  - { id: target, name: 목표 10, say: "목표 10은 완전히 성공하는 합이야. 7~9면 대가를 치르고 해내고, 6 이하는 실패야." }
-  - { id: outcome, name: 판정 결과(성공·대가 있는 성공·실패)가 이야기와 수치를 어떻게 바꾸는지와 실패하면 죽거나 끝나는지, say: "성공하면 아시나가 뜻한 대로 되고 상대의 의심도 덜 쌓여. 대가 있는 성공은 해내기는 하는데 귀찌 수명이 줄거나 의심이 붙어. 실패하면 뜻한 게 안 되고 상황이 나빠져. 선택에 따라 이야기가 달라져." }
-  - { id: suspicion, name: 의심, track: 의심, say: "의심은 상대가 아시나를 첩자로 의심하는 정도야." }
+  - { id: earring, name: 귀찌 수명, track: 귀찌, say: "귀찌에 걸린 변색 마법이 버티는 시간은 일주일이야. 일주일은 변색을 풀고 귀찌를 쉬게 해 줘야 해." }
+  - { id: check, name: 판정, say: "판정은 주사위 두 개에 능력치를 더한 합으로 결과를 정하는 거야. 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야. 주사위가 둘 다 6이면 합과 무관하게 대성공이야." }
+  - { id: cost, name: 대가, say: "대가는 해내는 대신 치르는 손해야. 체력이 줄거나 상대의 경계를 사는 식이야." }
+  - { id: target, name: 목표 10, say: "목표 10은 완전히 성공하는 합이야. 7~9면 대가를 치르고 해내고, 6 이하는 실패야. 6·6 대성공은 목표 합과 무관하고 행운으로 메운 판정에는 나오지 않아." }
+  - { id: outcome, name: 판정 결과(성공·대가 있는 성공·실패)가 이야기와 수치를 어떻게 바꾸는지와 실패하면 죽거나 끝나는지, say: "성공하면 아시나가 뜻한 대로 되고 상대의 의심도 덜 쌓여. 대가 있는 성공은 해내기는 하는데 체력이 줄거나 의심이 붙어. 실패하면 뜻한 게 안 되고 상황이 나빠져. 선택에 따라 이야기가 달라져. 대성공은 성공의 좋은 수치 변화를 한 칸 키우고, 좋은 변화가 없으면 정신력을 한 칸 회복해." }
+  - { id: suspicion, name: 의심, track: 의심, say: "의심은 상대가 아시나를 경계하는 정도야." }
   - { id: obsession, name: 집착, track: 집착, say: "집착은 상대가 아시나에게서 눈을 떼지 못하는 정도야." }
   - { id: favor, name: 호감, track: 호감, say: "호감은 상대가 아시나에게 품은 호감이야." }
   - { id: escape, name: 탈주 준비도, track: 탈주, say: "탈주 준비도는 탈주에 쓸 정보, 도구, 기회를 모은 정도야." }
   - { id: save, name: 저장과 불러오기, say: "화면 위 저장 버튼을 누르고 칸을 고르면 돼. 불러오기 버튼으로 그 장면부터 다시 할 수 있어." }
   - { id: screen, name: 화면의 단추·메뉴가 어디 있고 무엇을 하는지, say: "따로 메뉴는 없어. 화면 위에 수첩, 기록, 저장, 불러오기 단추가 있고, 아래 입력창에 아시나의 말이나 행동을 적고 말하기를 누르면 돼." }
   - { id: quit, name: 게임을 끝내겠다는 말, say: "여기서 그만두면 이 데모는 끝나. 정말 끝낼 거야, 아니면 더 해 볼래?" }
-  - { id: play, name: 게임을 어떻게 하는지와 무엇을 입력하는지, say: "아시나가 할 말이나 행동을 그대로 적으면 돼. 잘되고 못되고는 주사위가 정해." }
+  - { id: play, name: 게임을 어떻게 하는지와 무엇을 입력하는지, say: "넌 아시나가 돼. 장면이 오면 아래 입력창에 아시나가 할 말이나 행동을 적어. 뜬 단추를 골라도 돼. 결과가 확실하지 않은 행동이면 주사위 두 개에 능력치를 더해 굴려. 주사위 둘이 다 6이면 대성공, 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야. 결과에 따라 오른쪽 판의 체력·정신력이 오르내리고, 바뀐 건 이야기 창에 적혀. 행운은 실패를 메울 때 써. 막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐." }
   - { id: ai, name: 진행자나 게임의 정체(진행자가 무엇인지와 게임을 누가 만들었는지), say: "난 이 이야기를 같이 따라가는 사막여우야. 인물 대사 일부는 이 컴퓨터 안의 AI가 네 입력을 읽고 써." }
   - { id: other, name: 위 항목 어디에도 맞지 않는 게임 바깥 이야기, say: "그건 내가 답할 게 아니야. 여기선 아시나가 할 말이나 행동을 적으면 돼. 잘되고 못되고는 주사위가 정해." }
 
@@ -284,7 +348,7 @@ stage:
 callbacks:
   - flag: 보석_놓침
     after: [b07_rule, b08_gaze, b09_verdict, r2_bind, r3_night, r4_walk, r5_price]
-    line: { 남자: "터번의 보석과 호위 둘을 보고도 그렇게 굴렀나. 눈이 있으면 좀 써라." }
+    line: { 남자: "하. 웃기는 여자군.", face: sneer }
   - flag: 말_상인
     after: [b07_rule, b08_gaze, b09_verdict, r2_bind, r3_night, r4_walk, r5_price]
     words: [상인, 장사꾼, 장사를, 상단]
@@ -306,13 +370,33 @@ beats:
     title: 여는 글
     bg: desert_wide
     lines:
-      - GM: 북대륙의 크롬웰 제국과 남대륙의 사막 대국 페시안은 오랜 적이다.
-      - GM: 두 대륙 사이에는 생명이 살지 않는 죽음의 사막, 지르다가 펼쳐져 있다.
-      - GM: 아시나는 크롬웰 제국 웰든 대공가의 공녀다. 여행이 좋아 신분을 숨기고 대륙을 떠돌고 있다.
-      - GM: 본모습은 은발에 붉은 눈. 마법 귀찌로 머리와 눈을 갈색으로 바꿨다. 남대륙은 적국 페시안의 땅이라, 크롬웰의 공녀라는 게 들키면 붙잡히거나 목숨을 잃을 수도 있다.
-      - GM: 남대륙의 도시 크라차로 가려고 지르다에 들어선 지 일주일. 길을 잃었고, 물이 떨어져 간다.
-      - GM: 귀찌의 힘에도 끝이 있다. 시간이 흐를수록 마음이 급해진다.
-      - GM: 살아서 사막을 건널 것. 그리고 정체를 들키지 않을 것.
+      # 원작 1화 c001~c004: 글은 원작 자막 경계대로 나눠 컷마다 넣고, c004(목에 닿은 칼날)는 대사 없는 한 박자다.
+      - 나레이션: 꿈에도 몰랐다. 거대한 태양 아래,
+        cg: cg_open_sun
+      - 나레이션: 고국이 아닌 낯선 땅에서
+        cg: cg_open_land
+      - 나레이션: 죽음을 맞이하게 될 줄은―
+        cg: cg_open_dark
+      - 나레이션: ""
+        cg: cg_open_blade
+      - 나레이션: 북대륙의 패자라고 불리는 크롬웰 제국.
+        cg: cg_cromwell
+      - 나레이션: 나는 그곳에서 뭐 하나 부족함 없는 삶을 살았다.
+        cg: cg_cromwell
+      - 나레이션: 거대한 저택, 아름다운 드레스, 화려한 보석…
+        cg: cg_manor
+      - 나레이션: 하지만 나의 가슴을 뛰게 하는 것은 따로 있었다.
+        cg: cg_manor
+      - 아시나: 와아…
+        cg: cg_hill
+      - 나레이션: 내가 태어난 이 세상을 모험하는 것.
+        cg: cg_hill
+      - 나레이션: 선사시대 유적지부터 사이베리아의 펜족에게까지…
+        cg: cg_travel_3cuts
+      - 나레이션: 어느새 난 북대륙의 모든 나라를 둘러보았고, 남대륙으로 향하는 건 당연한 수순이었다.
+        cg: cg_travel_3cuts
+      - 나레이션: 그렇게 남대륙의 크라차로 가기 위해 사막을 횡단하던 중이었다―
+      - 속마음: 살아서 이 사막을 건너야 해. 정체도 들키면 안 되고.
     next: b01_sand
 
   b01_sand:
@@ -322,10 +406,9 @@ beats:
     cast: { center: 아시나 }
     lines:
       - 나레이션: 뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.
-      - 나레이션: 꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―
-      - 나레이션: 북대륙을 한 바퀴 돌고 나니 남대륙이 궁금해졌다. 목적지는 크라차. 사막 하나만 건너면 되는 줄 알았다.
-      - 속마음: 하아… 하아…
+      - 아시나: 하아…
         sfx: 휘이이잉
+      - 아시나: 하아…
       - 속마음: 길을 헤맨 지 벌써 일주일째야…
       - 속마음: 사방이 온통 모래뿐이라 길을 알 수가 없어…
       - 속마음: 심지어 물도 다 떨어져 가고…
@@ -340,12 +423,36 @@ beats:
     bg: desert_meet
     cast: { center: 아시나 }
     time: 1
+    # 19-F 장면 검사(Mythic 장면 검사를 d6 으로): 장면 시작 때 d6 ≤ 긴장이면 홀수 → altered(장면 줄 뒤에 다른 결), 짝수 → interrupt(장면 줄 앞에 끼어드는 일).
+    # 남자를 만나기 전 사막 장면 2곳(b02_people·r3_dusk)에만 둔다(사용자 답 11-04). 사건이 세우는 플래그는 이 장면 접근법의 mods 가 읽는다.
+    twist:
+      altered:
+        - id: closer
+          lines:
+            - 나레이션: 바람이 방향을 바꿨다. 세 사람의 말소리가 끊어질 듯 이어져 들렸다. 생각보다 가까웠다.
+            - 속마음: …이 거리면 숨을 데가 없어.
+          effects: { flags: { 거리_가까움: true } }
+        - id: glare
+          lines:
+            - 나레이션: 해가 정수리 위에 섰다. 모래가 빛을 되쏘아 눈을 뜨기 힘들었다. 세 사람의 그림자가 아지랑이 속에서 흔들렸다.
+          effects: { flags: { 눈부심: true } }
+      interrupt:
+        - id: sandstorm
+          lines:
+            - 나레이션: 모래바람이 덮쳤다. 후드를 움켜쥐고 바위 뒤에 웅크린 채 한참을 버텼다.
+            - 나레이션: 바람이 걷히자 발자국이 모두 지워져 있었다. 해는 그새 한 뼘 기울어 있었다.
+          effects: { 귀찌: -1, flags: { 모래바람: true } }
+        - id: strap
+          lines:
+            - 나레이션: 마법 가방의 끈이 툭 끊어졌다. 쏟아진 짐을 주워 담느라 손이 모래투성이가 됐다.
+            - 속마음: 지도… 지도는 있어. 끈은 손으로 쥐고 가자.
+          effects: { flags: { 가방_끈: true } }
     lines:
       - 나레이션: 바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.
       - 아시나: 응?
         face: surprised
         sfx: 흠칫
-      - 속마음: 저건…
+      - 아시나: 저건…
       - 아시나: 사람?!
         face: surprised
     free:
@@ -353,12 +460,12 @@ beats:
         - 나레이션: 멀리 세 사람의 그림자가 움직이기 시작했다. 곧 시야에서 사라질 것 같았다.
       prompt: 저들이 모래언덕 너머로 사라지기 전에 정해야 한다.
       prices:
-        - { id: sun, tag: 시간, weight: soft, text: 해가 한 뼘 더 기울었다. 귀찌가 미지근해진다., effects: { 귀찌: -1 } }
+        - { id: sun, tag: 시간, harm: 몸, weight: soft, text: 해가 한 뼘 더 기울었다., effects: { 체력: -1, 귀찌: -1 } }
         - { id: map_wind, tag: 소지품, weight: soft, text: 바람에 지도 한 귀퉁이가 찢겨 날아갔다., effects: { flags: { 지도_찢김: true } } }
         - { id: open_sand, tag: 자리, weight: soft, text: 바위 그늘을 벗어나 트인 모래 위에 서 버렸다. 숨을 데가 없다., effects: { flags: { 자리_트임: true } } }
         - { id: foe_look, tag: 상대행동, weight: soft, text: 셋 중 하나가 걸음을 멈추고 이쪽을 똑바로 본다., effects: { 의심: 1 } }
         - { id: foe_approach, tag: 상대행동, weight: hard, text: 세 사람이 먼저 이쪽으로 방향을 틀었다. 거리는 이제 그들이 정한다., effects: { 의심: 2, flags: { 상대_먼저: true } } }
-        - { id: sand_fall, tag: 수치, weight: hard, text: 모래에 무릎까지 빠져 기운이 빠졌다., effects: { 귀찌: -1, 탈주: -1 } }
+        - { id: sand_fall, tag: 수치, harm: 몸, weight: hard, text: 모래에 무릎까지 빠져 기운이 빠졌다., effects: { 체력: -1, 귀찌: -1, 탈주: -1 } }
       aim: 저 사람들에게 다가갈지, 먼저 살필지, 피해 갈지 정한다.
       situation: 사막 저편에 사람 셋이 보인다. 아시나는 일주일 만에 사람을 본다. 아직 그들과 멀리 떨어져 있어 말이 닿지 않는다.
       goal: 아시나가 그 사람들에게 다가갈지, 살필지, 피할지 정한다.
@@ -402,6 +509,11 @@ beats:
             - 나레이션: 아무 소용도 없었다. 나는 뜨거운 모래 위에 그대로 주저앉았다.
             - 속마음: 내가 지금 뭘 하는 거야…
           effects: { 귀찌: -1 }
+      idle:
+        threat: false
+        lines:
+          - 나레이션: 세 사람이 먼저 이쪽으로 방향을 틀었다. 거리는 이제 그들이 정한다.
+        effects: { 의심: 2, flags: { 상대_먼저: true } }
       default_approach: run
       addressed: run
       approaches:
@@ -410,7 +522,10 @@ beats:
           presume: [달려, 뛰어가, 뛰어갔, 내달]
           before: { flags: { 다가감: true } }
           said: { flag: 길_물음, words: [길을, 길 좀, 크라차, 물어, 여쭤, 묻는, 묻고, 아시나요] }
-          stat: 체력
+          stat: 근력
+          mods:
+            - { if: "flag:거리_가까움", value: 1, label: 가까운 거리 }
+            - { if: "flag:가방_끈", value: -1, label: 끈 끊긴 가방 }
           hint: 소리치며 달려가 길을 물으려 한다.
           examples: [달려가서 길을 묻는다, 손을 흔들며 소리친다]
           keywords: [달려, 뛰어가, 소리쳐, 저기요, 물어, 묻는다, 다가, 불러, 말 걸, 말을 걸, 말 건다, 흔든다]
@@ -423,7 +538,8 @@ beats:
                   sfx: 탓
                 - 아시나: 잠시만요!
                   sfx: 타다닷
-                - 속마음: 역시 잘못 본 게 아니었어. 살았다…!!
+                - 아시나: 역시 잘못 본 게 아니었어.
+                - 아시나: 살았다…!!
                   face: smile
             mixed:
               price: [sun, open_sand]
@@ -441,11 +557,15 @@ beats:
                 - 나레이션: 몇 걸음 못 가 모래에 고꾸라졌다. 고개를 드니 세 남자가 나를 내려다보고 있었다.
                   sfx: 콰당
                 - 아시나: 하, 하하… 안녕하세요…
-              effects: { 의심: 1 }
+              effects: { 체력: -1, 의심: 1 }
         - id: watch
+          risky: true
           label: 모래 언덕 뒤에서 먼저 살핀다
           said: { flag: 길_물음, words: [길을, 길 좀, 크라차, 물어, 여쭤, 묻는, 묻고, 아시나요] }
           stat: 재치
+          mods:
+            - { if: "flag:눈부심", value: -1, label: 눈부신 모래 }
+            - { if: "flag:모래바람", value: -1, label: 바람에 흐린 시야 }
           hint: 다가가기 전에 몸을 숨기고 상대를 살핀다.
           examples: [모래 언덕 뒤에서 먼저 살핀다, 숨어서 지켜본다]
           keywords: [살핀, 살펴, 숨어, 숨는, 지켜, 언덕 뒤, 관찰]
@@ -476,11 +596,13 @@ beats:
                   sfx: 와르르
                 - 나레이션: 세 남자의 시선이 한꺼번에 꽂혔다.
                 - 아시나: 하, 하하… 그게, 길을 좀 물어보려고…
-              effects: { 의심: 2, flags: { 보석_놓침: true } }
+              effects: { 체력: -2, 의심: 2, flags: { 보석_놓침: true } }
         - id: avoid
           label: 몰래 돌아서 피해 간다
           said: { flag: 길_물음, words: [길을, 길 좀, 크라차, 물어, 여쭤, 묻는, 묻고, 아시나요] }
           stat: 재치
+          mods:
+            - { if: "flag:거리_가까움", value: -1, label: 가까운 거리 }
           hint: 수상한 사람들을 만나지 않으려고 멀리 돌아간다.
           examples: [저 사람들을 피해서 멀리 돌아간다, 모른 척 다른 길로 간다]
           keywords: [피해, 피한다, 돌아간, 돌아서, 다른 길, 모른 척, 몰래 지나, 도망]
@@ -507,7 +629,7 @@ beats:
                 - 나레이션: 발밑의 모래가 무너졌다. 나는 피하려던 사람들 바로 앞으로 굴러떨어졌다.
                   sfx: 콰당
                 - 아시나: 하, 하하… 그게…
-              effects: { 의심: 2 }
+              effects: { 체력: -1, 의심: 2 }
     next:
       - { if: "flag:도주", to: r3_slip }
       - { to: b03_ask }
@@ -525,54 +647,51 @@ beats:
         face: wary
       - 아시나: 저… 저기…
         face: wary
+      - 나레이션: 정말이지 난
       - 아시나: 혹시 크라차까지 가는 길을 아시나요?
         face: smile
-        if: "flag:길_물음 && !flag:이미_길_물음"
-      - 나레이션: 정말이지 난, 그저 길을 물어봤을 뿐이었다.
-        if: "flag:길_물음"
-      - 나레이션: 무슨 말을 꺼내기도 전이었다.
-        if: "!flag:길_물음 && !flag:말함 && !flag:다가감"
+        if: "!flag:이미_길_물음"
+      - 나레이션: 그저 길을 물어봤을 뿐이었다.
+        effects: { 의심: 1, reason: 크라차까지 가는 길을 물음 }
     next: b04_blade
 
   b04_blade:
+    threat: 칼끝
     title: 그리고 현재
     cut: PSD 006~007
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
-    effects: { 의심: 3, flags: { 칼끝_만남: true } }
+    effects: { 의심: 2, flags: { 칼끝_만남: true } }
     lines:
       - 나레이션: 그리고 현재.
         cg: cg_now
         sfx: 스릉
         fx: flash
+      - 속마음: 크라차에 원수라도 진 건지… 다짜고짜 사람 목에 칼이나 들이대고 말이야!
       - 남자: 마지막으로 할 말은 있나?
         cg: cg_last
-        face: neutral
+        face: menacing
         fx: shake
-      - 속마음: 다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…
-      - 속마음: 억울해…
+      - 아시나: 억울해…
+        face: indignant
       - 남자: 없다면, 잘 가라.
         sfx: 화악
-        face: neutral
+        face: menacing
         fx: shake
       - 아시나: 잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!
-        face: surprised
+        face: scared
         sfx: 다급
-        if: "!flag:말함 && !flag:이미_길_물음 && !flag:다가감"
-      - 아시나: 잠깐만요, 잠깐! 제 말 좀 들어 봐요!
-        face: surprised
-        sfx: 다급
-        if: "flag:말함 || flag:이미_길_물음 || flag:다가감"
       - 아시나: 그것 좀 치워봐요! 난 죽이면 안 돼요.
-        face: wary
+        face: indignant
       - 남자: ……왜지?
         face: wary
     next: b05_why
 
   b05_why:
+    threat: 칼끝
     title: 왜지?
     cut: PSD 007~009
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     lines: []
     lines:
@@ -580,14 +699,17 @@ beats:
     free:
       nudge:
         - 나레이션: 칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.
+      offer:
+        lines:
+          - 나레이션: 남자가 칼끝을 살짝 내렸다. 말할 틈이 생겼다. 그가 다시 들어 올리기 전까지.
       prompt: 왜 죽이면 안 되는지 아시나로서 말하거나 행동해 보세요.
       prices:
-        - { id: blade_closer, tag: 자리, weight: soft, text: 곡도 끝이 살갗을 눌러 피 한 방울이 맺혔다. 고개도 못 돌린다., effects: { flags: { 칼_밀착: true } } }
+        - { id: blade_closer, tag: 자리, harm: 몸, weight: soft, text: 곡도 끝이 살갗을 눌러 피 한 방울이 맺혔다. 고개도 못 돌린다., effects: { 체력: -1, flags: { 칼_밀착: true } } }
         - { id: guard_step, tag: 상대행동, weight: soft, text: 호위 하나가 아시나의 뒤로 돌아가 섰다. 퇴로가 막혔다., effects: { flags: { 퇴로_막힘: true } } }
-        - { id: hood_slip, tag: 소지품, weight: soft, text: 후드가 반쯤 흘러내렸다. 귀찌가 뜨거워진다., effects: { 귀찌: -1 } }
-        - { id: man_doubt, tag: 수치, weight: soft, text: 남자의 눈이 가늘어졌다., effects: { 의심: 1 } }
+        - { id: hood_slip, tag: 소지품, weight: soft, if: "!flag:후드_벗음", text: 후드가 어깨 뒤로 흘러내렸다., effects: { 귀찌: -1, flags: { 후드_벗음: true } } }
+        - { id: man_doubt, tag: 수치, harm: 마음, weight: soft, text: 남자의 눈이 가늘어졌다., effects: { 정신력: -1, 의심: 1 } }
         - { id: bag_taken, tag: 소지품, weight: hard, text: 호위가 마법 가방을 낚아채 갔다., effects: { 의심: 1, lose: [magic_bag] }, if: "item:magic_bag" }
-        - { id: guard_grip, tag: 상대행동, weight: hard, text: 호위가 아시나의 팔을 붙들었다. 손목이 저릿하다., effects: { 의심: 1, flags: { 팔_붙들림: true } } }
+        - { id: guard_grip, tag: 상대행동, harm: 몸, weight: hard, text: 호위가 아시나의 팔을 붙들었다. 손목이 저릿하다., effects: { 체력: -1, 의심: 1, flags: { 팔_붙들림: true } } }
       aim: 목에 닿은 칼끝을 거두게 할 이유를 댄다.
       situation: 사막 한복판. 붉은 눈의 남자가 곡도 끝을 아시나의 목에 겨누고 있다. 난 죽이면 안 된다는 아시나의 말에 남자가 왜냐고 되물었다. 양옆의 호위 둘은 말없이 지켜본다.
       goal: 아시나가 살아야 할 이유를 대거나 시간을 번다. 남자는 쉽게 믿지 않는다.
@@ -605,6 +727,13 @@ beats:
         - 남자: 묻는 말에나 답해라.
       press:
         - 남자: 할 말은 그것뿐인가?
+          if: "flag:말함_b05_why"
+      idle:
+        threat: true
+        lines:
+          - 나레이션: 칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.
+          - 나레이션: 호위 하나가 말없이 칼자루에 손을 얹었다.
+        effects: { 의심: 1 }
       default_approach: plead
       approaches:
         - id: beauty
@@ -619,44 +748,52 @@ beats:
             - 이렇게 예쁜 사람을 죽이면 아깝잖아요
           keywords: [미소녀, 예쁘, 예쁜, 아름다, 미모, 미인, 후드를 벗, 윙크, 생긋]
           mods:
-            - { if: "귀찌 <= 3", value: -1, label: 귀찌가 불안함 }
+            - { if: "flag:귀찌_설명 && 귀찌 <= 3", value: -1, label: 귀찌가 불안함 }
           outcomes:
             hit:
               gist: 남자는 어이가 없다는 듯 짧게 되묻는다. 칼끝이 아주 조금 흔들리고, 사막 위로 서늘한 침묵이 흐른다. 남자는 아시나에게 묘한 흥미를 느낀다.
               lines:
                 - 아시나: 왜냐하면 저는…
-                - 아시나: 대륙에서 하나뿐인, 미소녀니까요.
+                - 아시나: 대륙에서 하나뿐인,
+                - 아시나: 미소녀니까요.
                   cg: cg_beauty
-                  face: smile
+                  face: smug
                   fx: flash
                 - 속마음: 미인계다!
                 - 남자: …뭐?
-                  face: surprised
-                - 아시나: 미소녀는 나라에서 보호해야 할 의무가 있다고 생각해요. 안 그래요?
+                  face: dumbfounded
+                - 아시나: 저는 말이죠.
+                - 아시나: 미소녀는 나라에서 보호해야 할 의무가 있다고 생각해요.
+                - 아시나: 예쁘고 아름다운 걸 지키는 건 당연한 일이니까…
+                - 아시나: 안 그래요?
                 - 나레이션: 싸아… 사막 한가운데에 서늘한 침묵이 내려앉았다.
               effects: { 집착: 1, 호감: 1, flags: { 미인계: true } }
             mixed:
               gist: 남자는 짧게 되묻고 비웃음을 흘린다. 미인계는 반쯤만 먹혔다. 흥미는 생겼지만 의심은 거두지 않는다.
               lines:
-                - 아시나: 왜냐하면 저는… 대륙에서 하나뿐인, 미소녀니까요.
+                - 아시나: 왜냐하면 저는…
+                - 아시나: 대륙에서 하나뿐인,
+                - 아시나: 미소녀니까요.
                   cg: cg_beauty
-                  face: smile
+                  face: smug
                   fx: flash
                 - 남자: …뭐?
-                  face: surprised
+                  face: dumbfounded
                 - 나레이션: 칼끝이 아주 잠깐 흔들렸다. 그러나 남자의 눈빛은 여전히 나를 재고 있었다.
               effects: { 집착: 1, 의심: 1, flags: { 미인계: true } }
             miss:
               gist: 남자의 표정이 싸늘하게 굳는다. 말장난으로 들린 탓에 아시나를 더 수상하게 여긴다.
               state_guard: [칼을 거두]
               lines:
-                - 아시나: 저, 저는… 대륙에서 하나뿐인 미소녀라서요!
+                - 아시나: 왜냐하면 저는…
+                - 아시나: 대륙에서 하나뿐인,
+                - 아시나: 미소녀니까요.
                   cg: cg_beauty
-                  face: surprised
+                  face: smug
                 - 남자: ……
                 - 나레이션: 싸늘한 침묵. 남자의 눈빛이 한층 더 차가워졌다.
                 - 속마음: 망했다.
-              effects: { 의심: 2, flags: { 미인계: true } }
+              effects: { 정신력: -1, 의심: 2, flags: { 미인계: true } }
         - id: plead
           label: 결백을 호소한다
           stat: 매력
@@ -673,10 +810,10 @@ beats:
                 - 나레이션: 남자는 한참 동안 내 눈을 들여다보았다. 목에 닿아 있던 칼끝이 손가락 한 마디만큼 물러났다.
               effects: { 의심: -1, 호감: 1 }
             mixed:
-              gist: 남자는 애원쯤은 첩자도 할 줄 안다며 냉소한다. 의심은 그대로지만 아시나의 말을 끝까지 듣기는 한다.
+              gist: 남자는 애원을 듣고도 냉담하다. 의심은 그대로지만 아시나의 말을 끝까지 듣기는 한다.
               lines:
                 - 아시나: 제발요, 전 그냥 길 잃은 여행자예요!
-                - 남자: 애원은 첩자도 할 줄 알지.
+                - 남자: 왜지?
                 - 속마음: 말이 안 통해…!
               effects: { 의심: 1 }
             miss:
@@ -685,7 +822,7 @@ beats:
               lines:
                 - 아시나: 사, 살려 주세요…
                 - 나레이션: 남자는 지루하다는 듯 칼자루를 고쳐 쥐었다. 목소리가 떨릴수록 그의 눈빛은 차가워졌다.
-              effects: { 의심: 2 }
+              effects: { 정신력: -1, 의심: 2 }
         - id: bluff
           label: 말재주로 둘러댄다
           stat: 재치
@@ -700,7 +837,7 @@ beats:
               lines:
                 - 아시나: 저를 살려 두면 분명 쓸모가 있을 거예요. 장담해요!
                 - 남자: 하. 혀는 잘 돌아가는군.
-                  face: smile
+                  face: sneer
                 - 나레이션: 믿는 눈치는 아니었다. 다만 당장 벨 생각도 사라진 듯했다.
               effects: { 집착: 1, flags: { 거래: true } }
             mixed:
@@ -713,14 +850,14 @@ beats:
                   tie: true
               effects: { 의심: 1, 집착: 1, flags: { 거래: true } }
             miss:
-              gist: 거짓말이 들통난다. 남자는 첩자다운 말이라며 칼끝을 더 바짝 들이댄다. 상처는 내지 않는다.
+              gist: 거짓말이 들통난다. 남자는 칼끝을 더 바짝 들이댄다. 상처는 내지 않는다.
               state_guard: [칼을 거두]
               lines:
                 - 아시나: 저, 저를 해치면 큰일 날 거예요! 제 뒤에는… 아무튼 엄청난 사람들이 있다고요!
-                - 남자: 첩자다운 말이군.
+                - 남자: …뭐?
                   face: wary
                 - 나레이션: 칼끝이 목에 한층 바짝 다가왔다.
-              effects: { 의심: 2 }
+              effects: { 정신력: -1, 의심: 2 }
         - id: noble
           label: 신분과 교양을 내세운다
           stat: 교양
@@ -749,16 +886,17 @@ beats:
                 - 나레이션: 비웃음 섞인 목소리였지만, 그는 내 말투를 곱씹는 듯했다.
               effects: { 의심: 2, flags: { 신분: true } }
             miss:
-              gist: 남자는 북쪽 말씨를 알아듣고 첩자의 변명치고 서툴다고 말한다. 의심이 확신으로 기운다.
+              gist: 남자는 북쪽 말씨를 듣고 냉소한다. 의심이 확신으로 기운다.
               state_guard: [칼을 거두]
               lines:
                 - 아시나: 감히 누구에게 칼을 겨누는 거예요? 저는…
-                - 남자: 북쪽 말씨로군. 첩자의 변명치고는 서툴다.
+                - 남자: 하. 웃기는 여자군.
                 - 속마음: 말하면 안 될 걸 말해 버렸어…!
-              effects: { 의심: 3 }
+              effects: { 정신력: -1, 의심: 3 }
         - id: resist
+          risky: true
           label: 칼을 밀어내고 몸을 뺀다
-          stat: 체력
+          stat: 근력
           hint: 칼날을 밀쳐 내거나 몸을 날려 칼끝에서 벗어나려 한다.
           examples:
             - 칼날을 밀어내고 뒤로 물러선다
@@ -804,7 +942,7 @@ beats:
                   tie: true
                 - 아시나: 보세요, 전 정말 길을 잃었을 뿐이라고요.
                 - 나레이션: 남자의 시선이 지도와 내 얼굴을 오갔다. 경계가 아주 조금 풀렸다.
-              effects: { 의심: -1 }
+              effects: { 의심: -1, flags: { 지도_꺼냄: true } }
             mixed:
               price: [hood_slip, man_doubt]
               gist: 남자는 가방이 보기보다 많이 들어간다는 걸 눈치챈다. 마법 물건을 지닌 떠돌이라는 점이 오히려 수상하다.
@@ -812,7 +950,10 @@ beats:
                 - 나레이션: 가방에서 지도를 꺼내는데, 손이 들어간 깊이가 가방 크기와 맞지 않았다.
                   tie: true
                 - 남자: 마법 가방이라. 떠돌이치고는 귀한 걸 지녔군.
-              effects: { 의심: 1, 집착: 1 }
+                  if: "!flag:신분_노출"
+                - 남자: …뭐?
+                  if: "flag:신분_노출"
+              effects: { 의심: 1, 집착: 1, flags: { 지도_꺼냄: true } }
             miss:
               price: [bag_taken, guard_step]
               gist: 가방에 손을 넣는 순간 호위가 손목을 낚아챈다. 무기를 꺼내려 한 것으로 오해받는다.
@@ -829,24 +970,38 @@ beats:
   b06_swing:
     title: 마지막으로 남길 말인가
     cut: PSD 010
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     lines:
       - 나레이션: 뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.
+        if: "item:magic_bag && !flag:가방_끈"
+      - 나레이션: 뜨거운 모래가 발을 붙잡았다. 등 뒤의 바위, 남자의 오른팔.
+        if: "!item:magic_bag || flag:가방_끈"
       - 남자: 하.
         sfx: 피식
+        if: "flag:말함_b05_why"
       - 남자: 웃기는 여자군.
-        face: smile
-        if: "flag:미소녀"
+        face: sneer
+        if: "flag:말함_b05_why && flag:미소녀"
       - 남자: 그것뿐인가?
         face: wary
-        if: "!flag:미소녀"
-      - 아시나: 그게…
+        if: "flag:말함_b05_why && !flag:미소녀"
+      - 남자: 그게…
+        if: "flag:말함_b05_why && flag:미소녀"
       - 남자: 마지막으로 남길 말인가?
+        if: "flag:말함_b05_why && flag:미소녀"
         sfx: 휘익
         fx: shake
+      - 남자: 그게… 마지막으로 남길 말인가?
+        if: "flag:말함_b05_why && !flag:미소녀"
+        sfx: 휘익
+        fx: shake
+      # 원작 c048 에서 후드를 벗고 c057(cg_swing)부터 후드가 없다. 이 CG 뒤 입식도 후드 없는 쪽으로 맞춘다.
+      - 나레이션: 그 바람에 후드가 벗겨졌다.
+        if: "!flag:후드_벗음"
       - 속마음: 미친―! 피해야 돼!!
         cg: cg_swing
+        sets: 후드_벗음
         face: surprised
         fx: shake
         sfx: 부웅
@@ -856,11 +1011,11 @@ beats:
       prompt: 칼날이 날아온다. 생각할 틈은 한순간뿐이다.
       prices:
         - { id: cloak_cut, tag: 소지품, weight: soft, text: 칼끝이 외투 자락을 베어 갔다., effects: { flags: { 외투_찢김: true } } }
-        - { id: knee_sand, tag: 자리, weight: soft, text: 피하다 무릎이 모래에 박혔다. 일어설 틈이 없다., effects: { flags: { 자리_낮음: true } } }
+        - { id: knee_sand, tag: 자리, harm: 몸, weight: soft, text: 피하다 무릎이 모래에 박혔다. 일어설 틈이 없다., effects: { 체력: -1, flags: { 자리_낮음: true } } }
         - { id: guards_close, tag: 상대행동, weight: soft, text: 호위 둘이 한 발씩 거리를 좁혔다., effects: { 의심: 1 } }
         - { id: man_amused, tag: 수치, weight: soft, text: 남자의 눈에 흥미가 스쳤다., effects: { 집착: 1 } }
-        - { id: blade_graze, tag: 수치, weight: hard, text: 칼날이 팔을 스쳐 피가 비쳤다., effects: { 귀찌: -1, flags: { 상처: true } } }
-        - { id: guard_hold, tag: 상대행동, weight: hard, text: 호위가 뒤에서 팔을 꺾어 잡았다., effects: { 의심: 1, flags: { 팔_붙들림: true } } }
+        - { id: blade_graze, tag: 수치, harm: 몸, weight: hard, text: 칼날이 팔을 스쳐 피가 비쳤다., effects: { 체력: -1, 귀찌: -1, flags: { 상처: true } } }
+        - { id: guard_hold, tag: 상대행동, harm: 몸, weight: hard, text: 호위가 뒤에서 팔을 꺾어 잡았다., effects: { 체력: -1, 의심: 1, flags: { 팔_붙들림: true } } }
       aim: 날아드는 칼날에서 살아남는다.
       situation: 남자가 예고 없이 곡도를 휘둘렀다. 칼날이 아시나에게 날아오는 찰나다.
       goal: 아시나가 칼날에 어떻게 대응하는지 보여 준다. 살아남되 칼의 위협은 그대로다.
@@ -883,12 +1038,17 @@ beats:
         miss:
           - 나레이션: 칼끝이 코앞에서 멈췄다. 숨이 턱 막혔다.
       patience: 2
+      idle:
+        threat: true
+        lines:
+          - 나레이션: 칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.
+        effects: { 의심: 1, 귀찌: -1 }
       default_approach: dodge
       approaches:
         - id: dodge
           presume: [피하, 피한, 피했, 피해, 피할, 비켜, 숙여, 숙인, 숙이, 몸을 던, 거리를 벌, 물러나, 물러섰, 물러났]
           label: 몸을 던져 칼날을 피한다
-          stat: 체력
+          stat: 근력
           mods:
             - { if: "flag:자리_트임", value: -1, label: 트인 자리 }
             - { if: "flag:칼_밀착", value: -1, label: 칼이 닿아 있음 }
@@ -906,9 +1066,9 @@ beats:
                   tie: true
               effects: { 집착: 1 }
             mixed:
-              gist: 간신히 피했지만 모래 위로 나동그라져 후드가 벗겨지고 귀찌가 뜨겁게 달아오른다. 변장은 풀리지 않는다.
+              gist: 간신히 피했지만 모래 위로 나동그라진다.
               lines:
-                - 나레이션: 간신히 피했지만 모래 위로 나동그라졌다. 후드가 벗겨지고, 귀찌가 뜨겁게 달아올랐다.
+                - 나레이션: 간신히 피했지만 모래 위로 나동그라졌다.
                   tie: true
                   sfx: 콰당
                 - 속마음: 피하지 않았으면 베었을 거야…
@@ -921,8 +1081,9 @@ beats:
                   sfx: 콰당
                 - 속마음: 피하지 않았으면… 정말 베였을 거야.
                   tie: true
-              effects: { 의심: 1, 귀찌: -1 }
+              effects: { 정신력: -1, 의심: 1, 귀찌: -1 }
         - id: block
+          risky: true
           presume: [막아, 막았, 막는, 막을, 막으, 가방으로]
           label: 가방을 방패 삼아 막는다
           stat: 손재주
@@ -945,23 +1106,29 @@ beats:
             mixed:
               gist: 막아 내지만 가방끈이 끊어져 나올 리 없는 양의 짐이 쏟아진다.
               lines:
-                - 나레이션: 막아 내긴 했지만 가방끈이 끊어지며 짐이 모래 위로 쏟아졌다. 가방 속에서 나올 리 없는 양의 짐이었다.
+                - 나레이션: 막아 내긴 했지만 가방끈이 끊어지며 짐이 모래 위로 쏟아졌다.
+                  if: "!flag:가방_끈"
                   tie: true
                   sfx: 투둑
+                - 나레이션: 막아 내긴 했지만 짐이 모래 위로 쏟아졌다.
+                  if: "flag:가방_끈"
+                  tie: true
+                - 나레이션: 가방 속에서 나올 리 없는 양의 짐이었다.
+                  tie: true
                 - 속마음: 마법 가방인 거 들켰으려나…
                   tie: true
-              effects: { 의심: 1 }
+              effects: { 의심: 1, flags: { 가방_끈: true, 짐_쏟음: true } }
             miss:
               gist: 가방째 밀려 넘어진다. 칼끝이 코앞에서 멈춘다.
               lines:
                 - 나레이션: 가방째 밀려 모래 위로 넘어졌다. 칼끝이 코앞에서 멈췄다.
                   tie: true
                   sfx: 콰당
-              effects: { 의심: 1, 귀찌: -1 }
+              effects: { 체력: -1, 의심: 1, 귀찌: -1 }
         - id: flee
           presume: [달아나, 달아난, 달아났, 도망, 내달, 뛰어]
           label: 칼날을 피하며 달아난다
-          stat: 체력
+          stat: 근력
           mods:
             - { if: "flag:퇴로_막힘", value: -1, label: 퇴로 막힘 }
           hint: 칼날을 피하는 김에 그대로 달아난다.
@@ -987,7 +1154,7 @@ beats:
                 - 나레이션: 등을 돌리는 순간 호위 하나가 내 팔을 붙들어 모래 위로 넘어뜨렸다.
                   tie: true
                   sfx: 콰당
-              effects: { 의심: 2 }
+              effects: { 체력: -1, 의심: 2 }
     next:
       - { if: "flag:도주", to: r3_flee }
       - { to: b07_rule }
@@ -995,8 +1162,11 @@ beats:
   b07_rule:
     title: 반칙
     cut: PSD 011~012
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
+    lead:
+      - 나레이션: 그 바람에 후드가 벗겨졌다.
+        if: "!flag:후드_벗음"
     effects: { flags: { 후드_벗음: true } }
     lines:
       - 아시나: 가… 갑자기 휘두르는 법이 어디 있어요!!
@@ -1006,7 +1176,7 @@ beats:
         fx: shake
         sfx: 버럭
       - 남자: 반칙?
-        face: smile
+        face: sneer
       - 남자: 인간을 죽이는 데 규칙이고 율법이 필요한가?
       - 남자: 남는 것은 살아남는 자와 죽는 자.
         sfx: 저벅
@@ -1016,16 +1186,22 @@ beats:
         sfx: 오싹
         face: surprised
         fx: flash
-      - 나레이션: 터벅, 터벅. 남자가 천천히 다가오더니 몸을 숙여 내 얼굴을 들여다보았다.
-        cg: cg_lean
+      - 나레이션: 터벅, 터벅.
         sfx: 터벅
-      - 속마음: 뭐, 뭐야. 설마 다시 죽이려는 건 아니겠…
+      - 남자: …
+        sfx: 스윽
+      - 아시나: 뭐, 뭐야
+        face: surprised
+        sfx: 주춤…
+      - 속마음: 설마 다시 죽이려는 건 아니겠…
+      - 속마음: 뭐야… 이 반응은.
+        cg: cg_lean
     next: b08_gaze
 
   b08_gaze:
     title: 한여름의 태양
     cut: PSD 012~013
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     lines: []
     lines:
@@ -1035,14 +1211,13 @@ beats:
         - 나레이션: 남자의 얼굴이 한 뼘 더 가까워졌다.
       prompt: 숨결이 닿을 만큼 가까운 붉은 눈이 답을 기다린다.
       prices:
-        - { id: breath_held, tag: 시간, weight: soft, text: 숨을 참는 사이 해가 더 기울었다., effects: { 귀찌: -1 } }
-        - { id: earring_warm, tag: 소지품, weight: soft, text: 귀찌가 뜨거워져 귓불이 따끔했다., effects: { 귀찌: -1 } }
+        - { id: breath_held, tag: 시간, harm: 마음, weight: soft, text: 숨을 참는 사이 해가 더 기울었다., effects: { 정신력: -1, 귀찌: -1 } }
+        - { id: earring_warm, if: "flag:귀찌_설명", tag: 소지품, weight: soft, text: 귀찌가 뜨거워져 귓불이 따끔했다., effects: { 귀찌: -1 } }
         - { id: step_back, tag: 자리, weight: soft, text: 한 걸음 물러서다 호위의 가슴에 등이 닿았다., effects: { flags: { 퇴로_막힘: true } } }
         - { id: man_closer, tag: 상대행동, weight: soft, text: 남자가 턱을 들어 얼굴을 더 가까이 들여다본다., effects: { 집착: 1 } }
-        - { id: hair_strand, tag: 소지품, weight: hard, text: 후드 틈으로 흘러내린 머리카락 한 올이 햇빛에 은빛으로 번쩍였다., effects: { 귀찌: -2, 의심: 1 } }
         - { id: guard_whisper, tag: 상대행동, weight: hard, text: 호위가 남자에게 몸을 기울여 귓속말을 했다., effects: { 의심: 2 } }
       aim: 붉은 눈을 마주한 채, 죽이기보다 살려 둘 마음이 들게 한다.
-      situation: 칼은 거두었지만 남자가 숨결이 닿을 만큼 가까이에서 아시나의 얼굴을 빤히 들여다보고 있다. 언제 다시 칼을 뽑을지 모른다.
+      situation: 칼은 아직 뽑힌 채다. 남자가 숨결이 닿을 만큼 가까이에서 아시나의 얼굴을 빤히 들여다보고 있다.
       goal: 아시나가 그 시선을 어떻게 받아 내는지 보여 준다. 남자의 마음이 바로 죽이기에서 살려 두기로 기우는 순간이다.
       speakers: [나레이션, 아시나, 속마음, 남자]
       must_not:
@@ -1058,6 +1233,12 @@ beats:
         - 남자: ……
       press:
         - 나레이션: 남자는 대답 대신 얼굴을 더 가까이 들이밀었다.
+      idle:
+        threat: false
+        lines:
+          - 속마음: 왜, 왜 이렇게 가까워! 얼굴이 뜨거워…
+          - 나레이션: 허둥대는 나를 보며 남자가 시시하다는 듯 눈을 가늘게 떴다.
+        effects: { 의심: 1 }
       default_approach: stare_back
       approaches:
         - id: stare_back
@@ -1069,7 +1250,7 @@ beats:
             - 생긋 웃어 보인다
           keywords: [마주, 똑바로, 눈을, 웃, 쳐다, 바라본]
           mods:
-            - { if: "귀찌 <= 3", value: -1, label: 귀찌가 불안함 }
+            - { if: "flag:귀찌_설명 && 귀찌 <= 3", value: -1, label: 귀찌가 불안함 }
           outcomes:
             hit:
               gist: 아시나는 붉은 눈을 정면으로 마주 본다. 남자의 입가에 아주 옅은 흥미가 번지고 시선이 아시나의 눈동자에 오래 머문다.
@@ -1088,7 +1269,7 @@ beats:
               lines:
                 - 속마음: 왜, 왜 이렇게 가까워! 얼굴이 뜨거워…
                 - 나레이션: 허둥대는 나를 보며 남자가 시시하다는 듯 눈을 가늘게 떴다.
-              effects: { 의심: 1 }
+              effects: { 정신력: -1, 의심: 1 }
         - id: retort
           label: 지지 않고 받아친다
           stat: 재치
@@ -1104,7 +1285,6 @@ beats:
                 - 아시나: 사람 얼굴을 그렇게 빤히 보는 건 실례라고요.
                   face: wary
                 - 남자: 하.
-                - 나레이션: 짧은 웃음이었지만, 그건 분명 비웃음과는 달랐다.
               effects: { 집착: 2 }
             mixed:
               gist: 받아치다가 말이 꼬인다. 남자는 그 모습을 흥미롭게 지켜본다.
@@ -1118,23 +1298,24 @@ beats:
                 - 아시나: 뭘 봐요! 구경났어요?
                   face: wary
                 - 나레이션: 호위들이 일제히 칼자루를 쥐었다. 남자가 손을 들어 그들을 멈췄지만, 눈빛은 얼음장 같았다.
-              effects: { 의심: 1 }
+              effects: { 정신력: -1, 의심: 1 }
         - id: hide_earring
+          risky: true
           label: 귀찌를 머리카락으로 가린다
           stat: 손재주
-          hint: 들키지 않게 머리카락을 쓸어 넘기며 변장 귀찌를 감춘다.
+          hint: 머리카락을 쓸어 넘기며 귀찌를 가린다.
           examples:
             - 머리카락으로 귀찌를 가린다
             - 슬쩍 귀를 만지작거린다
           keywords: [귀찌, 귀걸이, 머리카락, 귀를, 가린, 감춘, 만지작]
           mods:
-            - { if: "귀찌 <= 3", value: -1, label: 귀찌가 불안함 }
+            - { if: "flag:귀찌_설명 && 귀찌 <= 3", value: -1, label: 귀찌가 불안함 }
           outcomes:
             hit:
               gist: 아시나는 자연스럽게 머리카락을 쓸어 넘기며 귀찌를 가린다. 남자는 눈치채지 못한다.
               lines:
                 - 나레이션: 만지작. 나는 자연스럽게 머리카락을 쓸어 넘겨 귀찌를 덮었다.
-                - 속마음: 이것만은 들키면 안 돼. 은발이 드러나는 순간 끝이야.
+                - { 속마음: 이것만은 들키면 안 돼. 은발이 드러나는 순간 끝이야., if: "flag:귀찌_변장_설명" }
               effects: { 탈주: 1, flags: { 귀찌_숨김: true } }
             mixed:
               gist: 머리카락을 만지작거리는 손길이 어색하다. 남자의 시선이 잠깐 귀 쪽으로 향했다가 돌아온다.
@@ -1156,14 +1337,16 @@ beats:
   b09_verdict:
     title: 마음이 바뀌었다
     cut: PSD 013~014
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     time: 1
     effects: { 호감: 1 }
     lines:
+      - 속마음: 미인계가 통한 건가…?
+        if: "flag:미소녀"
       - 남자: 하.
         sfx: 빠안
-        face: smile
+        face: sneer
       - 남자: 도대체 어디가 아름답다는 거지?
         if: "flag:미소녀"
       - 아시나: 뭬야?!
@@ -1187,10 +1370,10 @@ beats:
         face: surprised
       - 남자: …바로 죽일까 했는데,
       - 남자: 마음이 바뀌었다.
-        face: smile
+        face: intrigued
       - 남자: 그러니… 이대로 살려주는 것만으로도 감사히 여겨라.
       - 남자: 여자.
-        face: smile
+        face: sneer
     next:
       - { if: "의심 >= 6", to: r2_bind }
       - { if: "집착 >= 4", to: e_curious }
@@ -1198,27 +1381,34 @@ beats:
 
   r2_bind:
     title: 묶인 손목
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     lines:
       - 나레이션: 마른 풀 냄새가 나는 밧줄이 눈에 들어왔다. 호위의 칼, 남자의 등, 어깨의 가방.
+        if: "item:magic_bag && !flag:가방_끈"
+      - 나레이션: 마른 풀 냄새가 나는 밧줄이 눈에 들어왔다. 호위의 칼, 남자의 등.
+        if: "!item:magic_bag || flag:가방_끈"
       - 나레이션: 하지만 살려 두는 이유는 따로 있었다. 거친 손이 내 두 팔을 등 뒤로 꺾었다.
+      - 남자: 묶어라. 수상한 짓을 하면 그 자리에서 베어도 좋다.
+        face: wary
+      - 나레이션: 거친 밧줄이 손목을 파고들었다.
+        sets: 포박
       - 남자: 말씨는 북쪽이다. 혼자 사막을 건너는 여자도 드물지.
         face: wary
       - 남자: 어디서 왔고, 누가 보냈지?
         face: wary
     free:
       nudge:
-        - 나레이션: 호위가 밧줄을 들고 다가왔다.
+        - 나레이션: 호위가 붙든 팔에 힘을 주었다.
       prompt: 손목이 묶였다. 뭐라고 답할까요?
       prices:
-        - { id: rope_tight, tag: 자리, weight: soft, text: 호위가 붙든 팔에 힘을 주었다., effects: { flags: { 팔_붙들림: true } } }
+        - { id: rope_tight, tag: 자리, harm: 몸, weight: soft, text: 호위가 붙든 팔에 힘을 주었다., effects: { 체력: -1, flags: { 팔_붙들림: true } } }
         - { id: man_pace, tag: 상대행동, weight: soft, text: 남자가 답을 기다리며 아시나 주위를 한 바퀴 돌았다., effects: { 의심: 1 } }
         - { id: sun_low, tag: 시간, weight: soft, text: 심문이 길어지는 사이 해가 모래 위로 내려앉았다., effects: { 귀찌: -1 } }
         - { id: bag_search, tag: 소지품, weight: hard, text: 호위가 가방을 뒤집어 짐을 모래에 쏟았다., effects: { 의심: 1, flags: { 짐_쏟음: true } }, if: "item:magic_bag" }
-        - { id: word_slip, tag: 수치, weight: hard, text: 말끝이 떨렸다. 남자의 눈빛이 굳었다., effects: { 의심: 2 } }
-      aim: 묶인 채 심문을 버티고, 첩자가 아니라는 말을 밀고 나간다.
-      situation: 아시나는 호위에게 팔이 붙들린 채 남자의 심문을 받는다. 남자는 아시나를 첩자로 의심한다.
+        - { id: word_slip, tag: 수치, harm: 마음, weight: hard, spoken: true, text: 말끝이 떨렸다. 남자의 눈빛이 굳었다., effects: { 정신력: -1, 의심: 2 } }
+      aim: 묶인 채 심문을 버티고, 길을 잃었다는 말을 밀고 나간다.
+      situation: 아시나는 손목이 묶인 채 남자의 심문을 받는다. 남자는 아시나를 경계한다.
       goal: 아시나가 심문을 어떻게 버티는지 보여 준다. 남자의 의심은 풀리지 않는다.
       speakers: [나레이션, 속마음, 아시나, 남자]
       must_not:
@@ -1231,6 +1421,12 @@ beats:
         - 호위가 아시나를 때리거나 해친다
       state_guard: []
       echo_only: [웰든, 리세아, 친척, 장사, 상단, 미소녀]
+      idle:
+        threat: true
+        lines:
+          - 나레이션: 호위가 밧줄을 들고 다가왔다.
+          - 나레이션: 먼저 풀린 건 다리였다. 남자는 시시하다는 듯 등을 돌렸다.
+        effects: { 의심: 1 }
       default_approach: deny
       approaches:
         - id: deny
@@ -1251,7 +1447,7 @@ beats:
               gist: 남자는 뻔한 대답이라며 비웃는다.
               lines:
                 - 아시나: 전, 전 그냥 여행자예요…
-                - 남자: 첩자도 그렇게 말하지.
+                - 남자: …뭐?
               effects: {}
             miss:
               gist: 목소리가 떨려 말이 꼬이고 남자는 더 확신한다.
@@ -1276,8 +1472,6 @@ beats:
               gist: 그럴듯했지만 남자가 작은 빈틈 하나를 집어낸다.
               lines:
                 - 아시나: 크라차에 친척이 있어요!
-                - 남자: 그 친척의 이름은?
-                  tie: true
                 - 속마음: …아차.
                   tie: true
               effects: {}
@@ -1289,8 +1483,9 @@ beats:
                   tie: true
               effects: { 의심: 1 }
         - id: silent
+          risky: true
           label: 입을 다물고 버틴다
-          stat: 체력
+          stat: 근력
           hint: 아무 말도 하지 않고 남자를 노려본다.
           examples: [입을 꾹 다물고 노려본다]
           keywords: [입을 다물, 침묵, 노려, 말하지 않, 대답하지 않]
@@ -1310,7 +1505,7 @@ beats:
               gist: 버티려다 먼저 다리가 풀린다. 남자는 시시하다는 듯 돌아선다.
               lines:
                 - 나레이션: 먼저 풀린 건 다리였다. 남자는 시시하다는 듯 등을 돌렸다.
-              effects: { 의심: 1 }
+              effects: { 체력: -1, 의심: 1 }
     next: e_spy
 
   r3_flee:
@@ -1341,6 +1536,29 @@ beats:
     bg: desert_dusk
     cast: { center: 아시나 }
     time: 1
+    # 19-F 장면 검사(b02_people 주석 참고). 혼자 밤을 맞는 사막 장면.
+    twist:
+      altered:
+        - id: warm_rock
+          lines:
+            - 나레이션: 바위 그늘이 생각보다 깊었다. 돌에는 낮의 열기가 아직 남아 있었다.
+          effects: { flags: { 바위_온기: true } }
+        - id: clouds
+          lines:
+            - 나레이션: 구름이 몰려와 첫 별을 가렸다. 하늘은 금세 잿빛 한 장이 됐다.
+            - 속마음: 별이 없으면… 방향은 낮에 봐 둔 걸로 잡는 수밖에.
+          effects: { flags: { 별_가림: true } }
+      interrupt:
+        - id: howl
+          lines:
+            - 나레이션: 멀리서 짐승 울음이 길게 이어졌다. 한 번, 그리고 또 한 번. 두 번째가 더 가까웠다.
+            - 속마음: 오늘 밤은 눈을 붙이면 안 돼.
+          effects: { 귀찌: -1, flags: { 짐승_소리: true } }
+        - id: footprints
+          lines:
+            - 나레이션: 모래 위에 발자국이 있었다. 사람의 것이었고, 아직 바람에 지워지지 않았다.
+            - 속마음: 누군가 가까이 있어. 나보다 먼저 이 길을 지나갔어.
+          effects: { flags: { 발자국: true } }
     lines:
       - 나레이션: 식어 가는 모래가 발바닥에 닿았다. 기우는 해, 첫 별, 바위 그늘.
       - 나레이션: 해가 기울자 모래가 빠르게 식기 시작했다. 낮에는 살을 태우던 사막이 이제는 뼈를 시리게 했다.
@@ -1351,12 +1569,12 @@ beats:
         - 나레이션: 해가 지평선에 걸렸다. 모래가 빠르게 식어 갔다.
       prompt: 해가 진다. 오늘 밤을 어떻게 버틸까요?
       prices:
-        - { id: wind_cold, tag: 시간, weight: soft, text: 바람이 차가워졌다. 밤이 가깝다., effects: { 귀찌: -1 } }
+        - { id: wind_cold, tag: 시간, weight: soft, text: 바람이 차가워졌다. 밤이 가깝다., if: "!flag:밤", effects: { 귀찌: -1 } }
         - { id: water_spill, tag: 소지품, weight: soft, text: 물통이 기울어 몇 방울이 모래에 스몄다., effects: { flags: { 물_적음: true } } }
-        - { id: dune_slide, tag: 자리, weight: soft, text: 모래 비탈이 무너져 아래로 미끄러졌다., effects: { flags: { 자리_낮음: true } } }
-        - { id: sand_eyes, tag: 수치, weight: soft, text: 모래바람에 눈이 따가워 걸음이 느려졌다., effects: { flags: { 눈_따가움: true } } }
+        - { id: dune_slide, tag: 자리, harm: 몸, weight: soft, text: 모래 비탈이 무너져 아래로 미끄러졌다., effects: { 체력: -1, flags: { 자리_낮음: true } } }
+        - { id: sand_eyes, tag: 수치, harm: 몸, weight: soft, text: 모래바람에 눈이 따가워 걸음이 느려졌다., effects: { 체력: -1, flags: { 눈_따가움: true } } }
         - { id: map_lost, tag: 소지품, weight: hard, text: 바람이 지도를 낚아채 어둠 속으로 날려 버렸다., effects: { lose: [map] }, if: "item:map" }
-        - { id: cold_night, tag: 수치, weight: hard, text: 추위에 손끝이 굳어 한참을 웅크렸다., effects: { 귀찌: -2, 탈주: -1 } }
+        - { id: cold_night, tag: 수치, harm: 몸, weight: hard, text: 추위에 손끝이 굳어 한참을 웅크렸다., effects: { 체력: -1, 귀찌: -1, 탈주: -1 } }
       aim: 오늘 밤을 버티고 크라차 쪽으로 계속 걷는다.
       situation: 아시나는 홀로 사막을 걷고 있다. 해가 지고 추위와 갈증이 몰려온다. 주위에는 아무도 없다.
       goal: 아시나가 밤을 버틸 방법을 찾고 크라차 쪽으로 계속 걷는다.
@@ -1395,26 +1613,38 @@ beats:
             - 나레이션: 잠깐 기분은 나아졌지만, 그만큼 해가 기울고 목이 말랐다.
           effects: { 귀찌: -1 }
         miss:
-          gist: 입력한 행동은 뜻대로 되지 않고 기운만 빠진다. 뜨거운 모래 위에 그대로 주저앉는다.
+          gist: 입력한 행동은 뜻대로 되지 않고 기운만 빠진다. 모래 위에 그대로 주저앉는다.
           lines:
-            - 나레이션: 아무 소용도 없었다. 나는 뜨거운 모래 위에 그대로 주저앉았다.
+            - 나레이션: 아무 소용도 없었다. 나는 모래 위에 그대로 주저앉았다.
             - 속마음: 내가 지금 뭘 하는 거야…
           effects: { 귀찌: -1 }
+      idle:
+        threat: false
+        lines:
+          - 나레이션: 아무 소용도 없었다. 나는 모래 위에 그대로 주저앉았다.
+          - 속마음: 내가 지금 뭘 하는 거야…
+        effects: { 귀찌: -1 }
       default_approach: read
       approaches:
         - id: read
-          label: 별을 보고 방향을 잡는다
+          risky: true
+          label: 방향을 가늠해 길을 잡는다
           stat: 교양
           mods:
             - { if: "flag:지도_찢김", value: -1, label: 찢긴 지도 }
+            - { if: "flag:별_가림", value: -1, label: 별을 가린 구름 }
+            - { if: "flag:발자국", value: 1, label: 남의 발자국 }
           hint: 별이나 낮에 읽어 둔 방향으로 크라차 쪽을 잡는다.
-          examples: [별을 보고 남쪽을 찾는다, 지도를 펼쳐 본다]
+          examples: [남쪽을 가늠해 본다, 지도를 펼쳐 본다]
           keywords: [별, 방향, 지도, 남쪽]
           outcomes:
             hit:
-              gist: 별을 보고 남쪽을 찾아 망설임 없이 걷는다.
+              gist: 남쪽을 찾아 망설임 없이 걷는다.
               lines:
                 - 속마음: 저 별이 저쪽이니까… 크라차는 이쪽이야.
+                  if: "!flag:별_가림"
+                - 속마음: 낮에 봐 둔 쪽이 저기니까… 크라차는 이쪽이야.
+                  if: "flag:별_가림"
                 - 나레이션: 방향을 알고 걷는 길은 훨씬 덜 막막했다.
               effects: { 탈주: 2 }
             mixed:
@@ -1423,15 +1653,18 @@ beats:
                 - 나레이션: 방향은 대강 맞았다. 다만 한참을 돌아온 뒤에야 알아챘다.
               effects: { 탈주: 1, 귀찌: -1 }
             miss:
-              gist: 별을 올려다봤지만 낯선 하늘이라 남쪽을 잘못 짚는다. 그 방향으로 걸었지만 같은 자리를 빙빙 돈다. 구름은 나오지 않는다.
+              gist: 낯선 사막이라 남쪽을 잘못 짚는다. 그 방향으로 걸었지만 같은 자리를 빙빙 돈다. 날씨를 새로 지어내지 않는다.
               lines:
                 - 나레이션: 별을 올려다봤지만 이 하늘의 별자리는 낯설었다. 남쪽이라 믿은 쪽으로 걸음을 옮겼다.
+                  if: "!flag:별_가림"
+                - 나레이션: 낮에 봐 둔 방향은 어둠 속에서 믿을 게 못 됐다. 남쪽이라 믿은 쪽으로 걸음을 옮겼다.
+                  if: "flag:별_가림"
                 - 나레이션: 모래 언덕을 넘고 또 넘었는데, 낯익은 바위가 다시 나타났다.
                 - 속마음: 아까 그 바위잖아…
-              effects: { 귀찌: -1 }
+              effects: { 체력: -1, 귀찌: -1 }
         - id: drink
           label: 남은 물로 버틴다
-          stat: 체력
+          stat: 근력
           hint: 남은 물을 조금씩 마시며 걷는다.
           examples: [남은 물을 한 모금 마시고 걷는다]
           keywords: [마신, 마셔, 모금, 물을 마, 물통, 걷는다, 걷고]
@@ -1440,13 +1673,13 @@ beats:
               gist: 아껴 둔 물 한 모금으로 다리에 힘이 돌아온다.
               lines:
                 - 나레이션: 미지근한 물 한 모금이 온몸으로 퍼졌다. 다리에 다시 힘이 돌았다.
-              effects: { 탈주: 1 }
+              effects: { 체력: 1, 탈주: 1 }
             mixed:
               gist: 물은 이제 정말 한 모금뿐이다. 그래도 걷는다.
               lines:
                 - 나레이션: 물통을 기울이자 마지막 몇 방울이 혀끝에 닿았다.
                 - 속마음: 이제 진짜 없어…
-              effects: { 귀찌: -1 }
+              effects: { 체력: 1, 귀찌: -1 }
             miss:
               gist: 물통 뚜껑을 놓쳐 남은 물을 흘린다.
               lines:
@@ -1455,6 +1688,9 @@ beats:
         - id: shelter
           label: 바람을 피할 곳을 찾는다
           stat: 재치
+          mods:
+            - { if: "flag:바위_온기", value: 1, label: 온기 남은 바위 }
+            - { if: "flag:짐승_소리", value: -1, label: 가까워지는 짐승 소리 }
           hint: 바위 그늘이나 모래 구덩이로 추위를 피한다.
           examples: [바위 뒤에 몸을 웅크린다, 모래를 파고 들어간다]
           keywords: [바위, 웅크, 구덩이, 파고, 불, 쉰다, 잔다]
@@ -1463,27 +1699,30 @@ beats:
               gist: 바위 틈을 찾아 바람을 피하고 숨을 고른다.
               lines:
                 - 나레이션: 바위 틈으로 기어들자 칼 같던 바람이 뚝 끊겼다.
-              effects: { 탈주: 1 }
+              effects: { 체력: 1, 정신력: 1, 탈주: 1 }
             mixed:
               gist: 바람은 피했지만 눈을 붙이는 사이 시간을 잃는다.
+              price: [water_spill]
               lines:
                 - 나레이션: 잠깐 눈을 감았을 뿐인데, 달이 한참이나 옮겨 가 있었다.
-              effects: { 귀찌: -1 }
+                  sets: 밤
+              effects: { 체력: 1, 정신력: 1, 귀찌: -1 }
             miss:
               gist: 바위 뒤에 숨었지만 바람이 방향을 바꾸어 모래를 뒤집어쓴다.
               lines:
                 - 나레이션: 바람이 방향을 바꾸더니 모래를 한가득 퍼부었다.
-              effects: { 귀찌: -2 }
+              effects: { 체력: -1, 귀찌: -2 }
     next: r3_night
 
   r3_night:
-    title: 쥐치고는
+    title: 웃기는 여자
     bg: desert_night
     cast: { left: 아시나, right: 남자 }
+    effects: { flags: { 밤: true } }
     lines:
-      - 나레이션: 별이 가득 뜰 무렵, 모래 언덕 위에 그림자 하나가 서 있었다.
-      - 남자: 쥐치고는 멀리 왔군.
-        face: smile
+      - 나레이션: 모래 언덕 위에 그림자 하나가 서 있었다.
+      - 남자: 하. 웃기는 여자군.
+        face: sneer
       - 아시나: 다, 당신 누구예요?! 여긴 어떻게…!
         face: surprised
         if: "!flag:칼끝_만남"
@@ -1491,7 +1730,7 @@ beats:
         face: surprised
         if: "flag:칼끝_만남"
         fx: shake
-      - 남자: 이 사막에서 내가 찾지 못할 것은 없다.
+      - 남자: ……
       - 나레이션: 남자는 품에서 물주머니를 꺼내 내 발치에 던졌다.
         sfx: 툭
       - 남자: 죽는 것도, 살아남는 것도 네 몫이다. 여자.
@@ -1500,7 +1739,7 @@ beats:
 
   r4_prove:
     title: 그럼 증명해라
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     lines:
       - 나레이션: 낙타 가죽 냄새가 훅 끼쳤다. 남자의 곡도, 호위의 눈길, 가방 속 지도.
@@ -1514,12 +1753,12 @@ beats:
         - 나레이션: 호위 하나가 칼자루를 고쳐 쥐었다.
       prompt: 쓸모를 증명해야 한다. 무엇을 보여 줄까요?
       prices:
-        - { id: guard_scoff, tag: 상대행동, weight: soft, text: 호위 하나가 코웃음을 쳤다., effects: { 의심: 1 } }
+        - { id: guard_scoff, tag: 상대행동, harm: 마음, weight: soft, text: 호위 하나가 코웃음을 쳤다., effects: { 정신력: -1, 의심: 1 } }
         - { id: man_wait, tag: 시간, weight: soft, text: 남자가 손가락으로 칼자루를 두드리며 기다렸다. 해가 기운다., effects: { 귀찌: -1 } }
-        - { id: sand_edge, tag: 자리, weight: soft, text: 설명하다 뒷걸음질쳐 모래 비탈 가장자리에 섰다., effects: { flags: { 자리_트임: true } } }
-        - { id: half_heard, tag: 수치, weight: soft, text: 말이 꼬여 절반만 전해졌다., effects: { 의심: 1 } }
+        - { id: sand_edge, tag: 자리, weight: soft, spoken: true, text: 설명하다 뒷걸음질쳐 모래 비탈 가장자리에 섰다., effects: { flags: { 자리_트임: true } } }
+        - { id: half_heard, tag: 수치, weight: soft, spoken: true, text: 말이 꼬여 절반만 전해졌다., effects: { 의심: 1 } }
         - { id: map_shown, tag: 소지품, weight: hard, text: 증거로 꺼낸 지도를 남자가 가져가 버렸다., effects: { lose: [map] }, if: "item:map" }
-        - { id: guard_grab, tag: 상대행동, weight: hard, text: 호위가 아시나의 팔을 붙들어 앞으로 끌어냈다., effects: { 의심: 1, flags: { 팔_붙들림: true } } }
+        - { id: guard_grab, tag: 상대행동, harm: 몸, weight: hard, text: 호위가 아시나의 팔을 붙들어 앞으로 끌어냈다., effects: { 체력: -1, 의심: 1, flags: { 팔_붙들림: true } } }
       aim: 데려갈 값이 있는 사람이라는 걸 보여 준다.
       situation: 남자가 칼끝을 내리고 아시나에게 쓸모를 증명해 보라고 한다. 호위 둘이 지켜본다. 일행은 사막을 건너는 중이다.
       goal: 아시나가 자기 쓸모를 보여 주고 남자가 데려갈 값이 있는지 잰다.
@@ -1534,6 +1773,11 @@ beats:
         - 일행의 목적지나 정체가 밝혀진다
       state_guard: [모래바닥에 묶]
       echo_only: [웰든, 리세아, 훤하, 미소녀, 시세, 뭐든]
+      idle:
+        threat: false
+        lines:
+          - 나레이션: 붉은 눈이 한층 더 차갑게 가라앉았다.
+        effects: { 의심: 1 }
       default_approach: guide
       approaches:
         - id: guide
@@ -1609,17 +1853,17 @@ beats:
                 - 남자: 하. 입이 값을 하는군.
               effects: { 집착: 1, 호감: 1 }
             mixed:
-              gist: 남자는 웃지 않지만 칼을 뽑지도 않는다.
+              gist: 남자는 웃지 않는다.
               lines:
                 - 아시나: 재미있는 길동무, 어때요?
-                - 나레이션: 남자는 웃지 않았다. 칼을 뽑지도 않았다.
+                - 나레이션: 남자는 웃지 않았다.
               effects: { 집착: 1 }
             miss:
               gist: 남자가 차갑게 내려다본다. 말이 허공에 뜬다.
               lines:
                 - 아시나: 저, 저 재미있는 사람이에요…
                 - 나레이션: 내 말은 사막 바람에 그대로 흩어졌다.
-              effects: { 의심: 1 }
+              effects: { 정신력: -1, 의심: 1 }
     next: r4_walk
 
   r4_walk:
@@ -1627,6 +1871,7 @@ beats:
     bg: desert_wide
     cast: { left: 아시나, right: 남자 }
     lines:
+      - 남자: 값은 크라차에서 매기지.
       - 남자: 크라차까지다. 쓸모가 없어지면 그때 벤다.
       - 아시나: 네, 네! 걱정 마요. 제가 얼마나 쓸모 있는 사람인데요!
         face: smile
@@ -1641,12 +1886,12 @@ beats:
 
   r5_claim:
     title: 귀하신 몸
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     lines:
       - 나레이션: 사막에 어울리지 않는 향 냄새가 났다. 남자의 반지, 호위의 자세, 모래 위의 그림자.
       - 남자: 귀한 몸이 호위도 없이 사막을 헤맸다?
-        face: smile
+        face: sneer
       - 나레이션: 칼끝은 한 치도 물러나지 않았다.
       - 남자: 말씨는 북쪽이군. 증명해 봐라, 여자.
         face: wary
@@ -1655,14 +1900,14 @@ beats:
         - 나레이션: 남자가 지루하다는 듯 고개를 기울였다.
       prompt: 귀한 신분이라는 말을 지금 증명해야 한다.
       prices:
-        - { id: blade_press, tag: 자리, weight: soft, text: 칼끝이 턱 밑을 눌렀다., effects: { flags: { 칼_밀착: true } } }
-        - { id: guard_laugh, tag: 상대행동, weight: soft, text: 호위 둘이 눈을 마주치며 웃음을 참았다., effects: { 의심: 1 } }
-        - { id: sun_set, tag: 시간, weight: soft, text: 해가 지평선에 걸렸다. 귀찌가 미지근하다., effects: { 귀찌: -1 } }
-        - { id: name_slip, tag: 수치, weight: soft, text: 집안 이름을 말하려다 입을 다물었다., effects: { 의심: 1 } }
+        - { id: blade_press, tag: 자리, harm: 마음, weight: soft, text: 칼끝이 턱 밑을 눌렀다., effects: { 정신력: -1, flags: { 칼_밀착: true } } }
+        - { id: guard_laugh, tag: 상대행동, harm: 마음, weight: soft, text: 호위 둘이 눈을 마주치며 웃음을 참았다., effects: { 정신력: -1, 의심: 1 } }
+        - { id: sun_set, tag: 시간, weight: soft, text: 해가 지평선에 걸렸다., effects: { 귀찌: -1 } }
+        - { id: name_slip, tag: 수치, weight: soft, spoken: true, text: 집안 이름을 말하려다 입을 다물었다., effects: { 의심: 1 } }
         - { id: ring_demand, tag: 소지품, weight: hard, text: 남자가 증표로 귀찌를 내놓으라며 손을 내밀었다., effects: { 의심: 2, flags: { 귀찌_요구: true } } }
-        - { id: guard_seize, tag: 상대행동, weight: hard, text: 호위가 어깨를 눌러 무릎을 꿇렸다., effects: { 의심: 1, flags: { 무릎_꿇림: true } } }
-      aim: 변장을 풀지 않고, 귀한 신분이라는 말을 말과 몸가짐으로 믿게 만든다.
-      situation: 아시나가 귀한 신분이라고 내세우자 남자가 증명해 보라고 한다. 칼끝은 아직 아시나를 겨눈다. 아시나는 변장을 풀 수 없다.
+        - { id: guard_seize, tag: 상대행동, harm: 몸, weight: hard, text: 호위가 어깨를 눌러 무릎을 꿇렸다., effects: { 체력: -1, 의심: 1, flags: { 무릎_꿇림: true } } }
+      aim: 귀한 신분이라는 말을 말과 몸가짐으로 믿게 만든다.
+      situation: 아시나가 귀한 신분이라고 내세우자 남자가 증명해 보라고 한다. 칼끝은 아직 아시나를 겨눈다.
       goal: 아시나가 말과 몸가짐으로 신분을 뒷받침한다. 남자는 믿지 않지만 값을 따져 보기 시작한다.
       speakers: [나레이션, 속마음, 아시나, 남자]
       must_not:
@@ -1676,6 +1921,12 @@ beats:
         - 남자가 칼을 완전히 거두고 친절해진다
       state_guard: [모래바닥에 묶]
       echo_only: [웰든, 리세아, 몸값, 미소녀]
+      idle:
+        threat: false
+        lines:
+          - 나레이션: 호위 하나가 말없이 칼자루에 손을 얹었다.
+          - 남자: 지루하군.
+        effects: { 의심: 1 }
       default_approach: manners
       approaches:
         - id: manners
@@ -1720,10 +1971,10 @@ beats:
                 - 나레이션: 남자는 말없이 끝까지 들었다.
               effects: { 집착: 1, 탈주: 1 }
             mixed:
-              gist: 말은 통했지만 적국을 너무 잘 안다는 점이 위험해진다.
+              gist: 말은 통했지만 위험해진다.
               lines:
                 - 아시나: 제국 사정이라면 제가 잘 알아요!
-                - 남자: 적국을 잘 안다라. 자랑인가?
+                - 남자: …뭐?
                   tie: true
                 - 속마음: …아차.
                   tie: true
@@ -1733,7 +1984,7 @@ beats:
               lines:
                 - 아시나: 그, 그러니까 제국에서는… 음…
                 - 남자: 책으로 배웠나?
-              effects: { 의심: 2 }
+              effects: { 정신력: -1, 의심: 2 }
         - id: bluster
           label: 당당하게 호통친다
           before: { flags: { 신분_고집: true } }
@@ -1762,17 +2013,16 @@ beats:
               lines:
                 - 아시나: 감히 누구한테…!
                 - 나레이션: 호위들이 일제히 칼자루를 쥐었다. 남자가 손을 들어 그들을 멈췄다.
-              effects: { 의심: 2 }
+              effects: { 정신력: -1, 의심: 2 }
     next: r5_price
 
   r5_price:
     title: 값을 매기다
-    bg: desert_wide
+    bg: desert_near
     cast: { left: 아시나, right: 남자 }
     lines:
       - 남자: 진짜라면 쓸모가 있다. 가짜라면 그때 베면 된다.
         face: neutral
-        if: "flag:신분_고집"
       - 나레이션: 남자가 손짓하자 호위들이 한 걸음 물러났다. 포로가 아니라 귀한 물건을 대하는 거리였다.
         if: "flag:신분_고집"
       - 속마음: 살았… 나? 아니, 내 입으로 내 값을 매겨 버린 거 아니야?
@@ -1832,7 +2082,7 @@ beats:
     bg: blackout
     lines:
       - 남자: 데려가라. 귀한 몸이라니, 귀하게 모셔야지.
-        face: smile
+        face: sneer
         if: "flag:신분_고집"
       - 남자: 데려가라. 값은 크라차에서 매기지.
         if: "!flag:신분_고집"
@@ -1846,15 +2096,19 @@ beats:
   e_spy:
     title: 수상한 이방인
     bg: blackout
-    effects: { lose: [magic_bag] }
     lines:
       - 남자: 묶어라. 수상한 짓을 하면 그 자리에서 베어도 좋다.
         face: wary
+        if: "!flag:포박"
+      - 나레이션: 거친 밧줄이 손목을 파고들었다. 나는 정신을 잃었다.
+        if: "!item:magic_bag"
       - 나레이션: 거친 밧줄이 손목을 파고들었다. 마법 가방까지 빼앗기는 걸 보면서, 나는 정신을 잃었다.
+        if: "item:magic_bag"
+        effects: { lose: [magic_bag] }
     ending:
       id: spy
       title: 수상한 이방인
-      summary: 목숨은 건졌지만 그 남자는 아시나를 첩자로 굳게 의심한다. 마법 가방을 빼앗긴 채 끌려간다.
+      summary: 목숨은 건졌지만 그 남자는 아시나를 굳게 경계한다. 마법 가방을 빼앗긴 채 끌려간다.
       next_hook: 다음 장면에서는 감시가 삼엄해진다. 가방 없이, 몸에 지닌 것만으로 빠져나갈 길을 찾아야 한다.
 
   e_curious:
@@ -1862,7 +2116,7 @@ beats:
     bg: blackout
     lines:
       - 남자: 데려가라. 깨어나면 그 입이 얼마나 더 떠드는지 들어 보지.
-        face: smile
+        face: sneer
       - 나레이션: 붉은 눈은 끝까지 나를 놓아주지 않았다. 그게 사막에서의 마지막 기억이었다.
     ending:
       id: curious
@@ -1889,6 +2143,9 @@ beats:
     bg: blackout
     lines:
       - 나레이션: 귓불에서 마지막 온기가 빠져나갔다. 바람에 흩날린 머리칼이 햇빛을 받아 은빛으로 번쩍였다.
+        if: "!flag:밤"
+      - 나레이션: 귓불에서 마지막 온기가 빠져나갔다.
+        if: "flag:밤"
       - 나레이션: 붉은 눈이 그 은빛을 놓치지 않았다. 뒷말은 듣지 못했다.
         if: "flag:상대_곁"
       - 나레이션: 숨을 데 하나 없는 모래 위에서, 가릴 것도 없이 나는 나로 돌아와 있었다.
@@ -1901,17 +2158,17 @@ beats:
       bad: true
 
   x_spy_cut:
-    title: 첩자
+    title: 의심의 끝
     bg: blackout
     lines:
-      - 남자: 첩자군. 더 들을 것도 없다.
+      - 남자: 없다면, 잘 가라.
         face: wary
       - 나레이션: 칼이 움직이는 것을 보지 못했다. 모래가 얼굴에 닿는 감촉만 또렷했다.
       - 나레이션: 사막은 조용했다.
     ending:
       id: spy_cut
-      title: 첩자
-      summary: 의심이 끝까지 쌓였다. 그 남자는 아시나를 첩자로 보고 베었다.
+      title: 의심의 끝
+      summary: 의심이 끝까지 쌓였다. 그 남자는 아시나를 베었다.
       next_hook: 마지막 갈림길에서 다시 하면 의심을 덜 사는 길을 고를 수 있다.
       bad: true
 
@@ -1921,7 +2178,7 @@ beats:
     lines:
       - 나레이션: 맨손은 칼날에 닿기도 전에 멈췄다. 손목을 붙잡힌 채, 나는 그 붉은 눈을 올려다보았다.
       - 남자: 겁은 없군. 머리는 없고.
-        face: smile
+        face: sneer
       - 나레이션: 그다음은 기억나지 않는다. 모래 위로 쓰러지는 내 몸이 남의 것처럼 멀었다.
     ending:
       id: reckless

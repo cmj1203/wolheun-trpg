@@ -1,5 +1,5 @@
 import { buildAtlas, emptyAtlas, forkBeats, nextHint, recordAtlas, type AtlasRecord } from '../engine/atlas.ts';
-import { appendFile, mkdir } from 'node:fs/promises';
+import { appendFile, mkdir, rename } from 'node:fs/promises';
 import { join, relative, resolve, sep } from 'node:path';
 import { seedFrom } from '../engine/dice.ts';
 import { Engine } from '../engine/engine.ts';
@@ -10,6 +10,8 @@ import { GameError, type Action, type AssetSpec, type GameState, type Scenario }
 import { DEFAULT_GM_OPTIONS, LocalGm } from '../gm/gm.ts';
 import { LlmClient } from '../gm/llm.ts';
 import { loadLore, withNotes } from '../gm/lore.ts';
+import { gitShortHash, handleFeedback } from './feedback.ts';
+import { rejectForeignPost } from './same_origin.ts';
 
 const APP = resolve(import.meta.dir, '..', '..');
 const ROOT = resolve(APP, '..');
@@ -35,6 +37,8 @@ export interface ServerOptions {
   atlasFile: string;
   logsDir: string;
   llmTimeoutMs: number;
+  /** 게임 속 피드백을 덧붙이는 jsonl. 없으면 app/feedback/feedback.jsonl. */
+  feedbackFile?: string;
 }
 
 export function optionsFromEnv(env: Record<string, string | undefined> = process.env): ServerOptions {
@@ -48,7 +52,26 @@ export function optionsFromEnv(env: Record<string, string | undefined> = process
     atlasFile: env.WOLHEUN_ATLAS ?? join(APP, 'logs', 'atlas.json'),
     logsDir: env.WOLHEUN_LOGS ?? join(APP, 'logs'),
     llmTimeoutMs: Number(env.WOLHEUN_LLM_TIMEOUT_MS ?? 90_000),
+    feedbackFile: env.WOLHEUN_FEEDBACK ?? join(APP, 'feedback', 'feedback.jsonl'),
   };
+}
+
+const USER_PORT = 18081;
+const USER_LLM = 'http://127.0.0.1:18080';
+
+/** 사용자 판(18081)의 파일이나 LLM 을 함께 쓰게 된 옵션 이름. 다른 포트의 서버가 이 파일에 쓰면 사용자 저장이 덮인다. */
+export function sharedWithUser(opts: ServerOptions): string[] {
+  if (opts.port === USER_PORT) return [];
+  const within = (dir: string, path: string) => resolve(path) === dir || resolve(path).startsWith(dir + sep);
+  const userData = [join(APP, 'saves'), join(APP, 'logs')];
+  const inUserData = (path: string) => userData.some((dir) => within(dir, path));
+  return [
+    ...(inUserData(opts.savesDir) ? ['WOLHEUN_SAVES'] : []),
+    ...(inUserData(opts.atlasFile) ? ['WOLHEUN_ATLAS'] : []),
+    ...(inUserData(opts.logsDir) ? ['WOLHEUN_LOGS'] : []),
+    ...(within(join(APP, 'feedback'), opts.feedbackFile ?? join(APP, 'feedback', 'feedback.jsonl')) ? ['WOLHEUN_FEEDBACK'] : []),
+    ...(opts.llmUrl === USER_LLM ? ['WOLHEUN_LLM_URL'] : []),
+  ];
 }
 
 const CSP = [
@@ -71,6 +94,8 @@ const SECURITY_HEADERS = {
 };
 
 const MAX_VIEW_CHARS = 400_000;
+const MAX_MEMO_CHARS = 2000;
+const SESSION_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 /** 갈림길 비트에 들어선 직후 서버가 쓰는 자동 저장 칸. 화면 저장 칸과 별개라 목록에 보이지 않고, 작은 끝 뒤 '마지막 갈림길에서 다시'가 연다. */
 export const AUTO_FORK = 'auto_fork';
 
@@ -82,6 +107,7 @@ interface Session {
   state: GameState;
   logged: number;
   busy: boolean;
+  memo: string;
 }
 
 interface AssetRef {
@@ -130,7 +156,10 @@ function parseAction(v: unknown): Action {
   if (a?.type === 'free' && typeof a.text === 'string') return { type: 'free', text: a.text };
   if (a?.type === 'luck') return { type: 'luck', use: (v as { use?: unknown }).use === true };
   if (a?.type === 'confirm') return { type: 'confirm', ok: (v as { ok?: unknown }).ok === true };
-  if (a?.type === 'ask' && typeof a.text === 'string') return { type: 'ask', text: a.text };
+  if (a?.type === 'ask' && typeof a.text === 'string') {
+    const scene = (v as { scene?: unknown }).scene;
+    return { type: 'ask', text: a.text, scene: typeof scene === 'string' ? scene : null };
+  }
   if (a?.type === 'interject' && typeof a.text === 'string') {
     const raw = v as { scene?: unknown; shown?: unknown; pending?: unknown };
     const shown = Array.isArray(raw.shown) ? raw.shown.slice(-12) : [];
@@ -175,6 +204,8 @@ async function buildManifest(scenario: Scenario) {
     backgrounds: await refs(scenario.backgrounds),
     sprites: await refs(scenario.sprites),
     cgs: await refs(scenario.cgs),
+    items: Object.fromEntries((await Promise.all(scenario.sheet.items.map(async (i) => [i.id, await mediaUrl(i.file)] as const))).filter((p): p is readonly [string, string] => p[1] !== null)),
+    cutins: { crit: await mediaUrl('assets/ep01/gen/fx/cutin_crit.png'), miss: await mediaUrl('assets/ep01/gen/fx/cutin_miss.png') },
     cast: Object.fromEntries(
       Object.entries(scenario.cast).map(([key, c]) => [key, { display: c.display, style: c.style, sprite: c.sprite ?? null, lore: c.lore ?? null }]),
     ),
@@ -182,6 +213,8 @@ async function buildManifest(scenario: Scenario) {
 }
 
 export async function startServer(opts: ServerOptions) {
+  const shared = sharedWithUser(opts);
+  if (shared.length > 0) throw new Error(`포트 ${opts.port} 서버는 사용자 판(${USER_PORT})과 같은 파일·LLM 을 쓸 수 없습니다. 따로 주세요: ${shared.join(', ')} (LLM 이 필요 없으면 WOLHEUN_NO_LLM=1)`);
   const lore = await loadLore(opts.lorePath);
   const scenario = withNotes(await loadScenario(opts.scenarioPath), lore);
   const registry = (await Bun.file(join(APP, 'config', 'models.json')).json()) as { models: Record<string, ModelEntry> };
@@ -195,7 +228,20 @@ export async function startServer(opts: ServerOptions) {
     : null;
   const readAtlas = async (): Promise<AtlasRecord> => {
     const file = Bun.file(opts.atlasFile);
-    return (await file.exists()) ? ((await file.json()) as AtlasRecord) : emptyAtlas();
+    if (!(await file.exists())) return emptyAtlas();
+    try {
+      return (await file.json()) as AtlasRecord;
+    } catch {
+      // 깨진 기록(쓰다 만 파일 따위)은 빈 지도로 본다. 지도 때문에 판이 막히면 안 된다.
+      return emptyAtlas();
+    }
+  };
+  // 다른 요청이 쓰다 만 파일을 읽지 않게, 임시 파일에 다 쓴 뒤 이름을 바꾼다.
+  let atlasSeq = 0;
+  const writeAtlas = async (record: AtlasRecord): Promise<void> => {
+    const tmp = `${opts.atlasFile}.${process.pid}.${++atlasSeq}.tmp`;
+    await Bun.write(tmp, JSON.stringify(record));
+    await rename(tmp, opts.atlasFile);
   };
   const engine = new Engine(scenario, new LocalGm(llm, lore, DEFAULT_GM_OPTIONS), Date.now, true);
   const forks = forkBeats(scenario);
@@ -207,7 +253,14 @@ export async function startServer(opts: ServerOptions) {
   const manifest = await buildManifest(scenario);
   const sessions = new Map<string, Session>();
   await mkdir(opts.logsDir, { recursive: true });
+  const feedbackFile = opts.feedbackFile ?? join(APP, 'feedback', 'feedback.jsonl');
+  const version = await gitShortHash(APP);
 
+  const memoFile = (id: string) => join(opts.savesDir, 'notes', `${id}.txt`);
+  const writeMemo = async (id: string, memo: string) => {
+    await mkdir(join(opts.savesDir, 'notes'), { recursive: true });
+    await Bun.write(memoFile(id), memo);
+  };
   const persist = async (s: Session) => {
     const fresh = s.state.log.slice(s.logged);
     if (fresh.length === 0) return;
@@ -234,6 +287,12 @@ export async function startServer(opts: ServerOptions) {
       }
     };
 
+  const post = (fn: (req: Request) => Promise<Response>) =>
+    handle(async (req) => {
+      const foreign = rejectForeignPost(req);
+      return foreign ? json({ error: foreign.error }, foreign.status) : fn(req);
+    });
+
   const server = Bun.serve({
     hostname: '127.0.0.1',
     port: opts.port,
@@ -254,20 +313,34 @@ export async function startServer(opts: ServerOptions) {
         }),
       },
       '/api/manifest': { GET: () => json(manifest) },
+      '/feedback': {
+        POST: (req, srv): Promise<Response> =>
+          handleFeedback(req, {
+            file: feedbackFile,
+            version,
+            ip: srv.requestIP(req)?.address ?? null,
+            enrich: (id) => {
+              const s = typeof id === 'string' ? sessions.get(id) : undefined;
+              if (!s) return null;
+              const { state } = s;
+              return { seed: state.seed, beat: state.beat, beatTitle: scenario.beats[state.beat]?.title ?? null, lastInput: state.said?.at(-1) ?? null, tracks: state.tracks, flags: state.flags, ending: state.ending };
+            },
+          }),
+      },
       '/api/new': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const seed = typeof body.seed === 'number' || typeof body.seed === 'string' ? seedFrom(body.seed) : seedFrom(crypto.randomUUID());
           const id = crypto.randomUUID();
           const { state, step } = engine.newGame(seed, id);
-          const s: Session = { state, logged: 0, busy: false };
+          const s: Session = { state, logged: 0, busy: false, memo: '' };
           sessions.set(id, s);
           await persist(s);
           return json({ session: id, seed, step });
         }),
       },
       '/api/act': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const s = sessionOf(body.session);
           const action = parseAction(body.action);
@@ -287,12 +360,17 @@ export async function startServer(opts: ServerOptions) {
                 const logged = s.state.log.length;
                 const { state, step } = await engine.act(s.state, action, (event) => send({ event }));
                 s.state = state;
-                await persist(s);
-                // 갈림길 비트에 이번 행동으로 들어섰으번 그 자리를 자동 저장한다(화면 상태 없음 → 불러오면 비트 처음부터).
-                if (!state.ending && forks.has(state.beat) && state.log.slice(logged).some((e) => e.kind === 'beat' && e.beat === state.beat)) {
-                  await writeSave(opts.savesDir, AUTO_FORK, scenario, state);
+                // 세션은 이미 나아갔다. 기록·자동 저장·지도가 실패해도 화면에는 결과를 보내 둘이 어긋나지 않게 한다.
+                try {
+                  await persist(s);
+                  // 갈림길 비트에 이번 행동으로 들어섰으번 그 자리를 자동 저장한다(화면 상태 없음 → 불러오면 비트 처음부터).
+                  if (!state.ending && forks.has(state.beat) && state.log.slice(logged).some((e) => e.kind === 'beat' && e.beat === state.beat)) {
+                    await writeSave(opts.savesDir, AUTO_FORK, scenario, state, Date.now(), s.memo ? { memo: s.memo } : undefined);
+                  }
+                  await writeAtlas(recordAtlas(await readAtlas(), state));
+                } catch (err) {
+                  console.error(err);
                 }
-                await Bun.write(opts.atlasFile, JSON.stringify(recordAtlas(await readAtlas(), state)));
                 send({ done: { prompt: step.prompt, hud: step.hud } });
               } catch (err) {
                 if (!(err instanceof GameError)) console.error(err);
@@ -311,7 +389,7 @@ export async function startServer(opts: ServerOptions) {
         }),
       },
       '/api/save': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const s = sessionOf(body.session);
           const slot = typeof body.slot === 'string' ? body.slot : '';
@@ -319,49 +397,75 @@ export async function startServer(opts: ServerOptions) {
           const view = body.view;
           if (view !== undefined && (typeof view !== 'object' || view === null || JSON.stringify(view).length > MAX_VIEW_CHARS))
             throw new BadRequest('저장할 화면 상태가 올바르지 않습니다');
-          const next = engine.noteSlot(s.state, 'save', slot);
-          const meta = await writeSave(opts.savesDir, slot, scenario, next, Date.now(), view);
-          s.state = next;
-          await persist(s);
-          return json({ meta });
+          // 파일을 쓰는 동안 들어온 행동이 끝난 뒤 저장 전 상태로 덮이지 않게, 저장도 행동처럼 세션을 잡는다.
+          s.busy = true;
+          try {
+            const next = engine.noteSlot(s.state, 'save', slot);
+            const saved = s.memo ? { ...(view as object | undefined), memo: s.memo } : view;
+            const meta = await writeSave(opts.savesDir, slot, scenario, next, Date.now(), saved);
+            s.state = next;
+            await persist(s);
+            return json({ meta });
+          } finally {
+            s.busy = false;
+          }
+        }),
+      },
+      '/api/notes': {
+        GET: handle(async (req) => {
+          const id = new URL(req.url).searchParams.get('session') ?? '';
+          if (!SESSION_ID.test(id)) throw new BadRequest('session 값이 올바르지 않습니다');
+          const file = Bun.file(memoFile(id));
+          return json({ memo: (await file.exists()) ? await file.text() : '' });
+        }),
+        POST: post(async (req) => {
+          const body = await readBody(req);
+          const s = sessionOf(body.session);
+          if (typeof body.memo !== 'string' || body.memo.length > MAX_MEMO_CHARS) throw new BadRequest(`메모는 ${MAX_MEMO_CHARS}자까지 저장합니다`);
+          s.memo = body.memo;
+          await writeMemo(s.state.session, s.memo);
+          return json({ ok: true });
         }),
       },
       '/api/saves': { GET: handle(async () => json({ saves: (await listSaves(opts.savesDir)).filter((m) => m.slot !== AUTO_FORK) })) },
       '/api/load': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const slot = typeof body.slot === 'string' ? body.slot : '';
           const loaded = await readSave(opts.savesDir, slot, scenario);
           const id = crypto.randomUUID();
           const state = engine.noteSlot({ ...loaded, session: id }, 'load', slot);
-          const s: Session = { state, logged: 0, busy: false };
+          const view = await readSaveView(opts.savesDir, slot);
+          const memo = (view as { memo?: unknown } | null)?.memo;
+          const s: Session = { state, logged: 0, busy: false, memo: typeof memo === 'string' ? memo.slice(0, MAX_MEMO_CHARS) : '' };
           sessions.set(id, s);
           await persist(s);
-          return json({ session: id, step: engine.resume(state), view: await readSaveView(opts.savesDir, slot) });
+          if (s.memo) await writeMemo(id, s.memo);
+          return json({ session: id, step: engine.resume(state), view });
         }),
       },
       '/api/atlas': { GET: handle(async () => json(buildAtlas(scenario, await readAtlas()))) },
       '/api/atlas/hint': {
-        POST: handle(async (req) => {
+        POST: post(async (req) => {
           const body = await readBody(req);
           const hint = nextHint(scenario, await readAtlas(), typeof body.key === 'string' ? body.key : '');
           if (!hint) return json({ error: '없는 칸입니다' }, 400);
-          await Bun.write(opts.atlasFile, JSON.stringify(hint.record));
+          await writeAtlas(hint.record);
           return json({ level: hint.level, text: hint.text });
         }),
       },
       '/api/atlas/reset': {
-        POST: handle(async () => {
-          await Bun.write(opts.atlasFile, JSON.stringify(emptyAtlas()));
+        POST: post(async () => {
+          await writeAtlas(emptyAtlas());
           return json({ ok: true });
         }),
       },
       '/api/result': {
         GET: handle(async (req) => {
           const s = sessionOf(new URL(req.url).searchParams.get('session'));
-          // 같은 판(같은 seed)의 갈림길 자동 저장이 있을 때만 '마지막 갈림길에서 다시'가 연다.
+          // 같은 판의 갈림길 자동 저장이 있을 때만 '마지막 갈림길에서 다시'가 연다. 같은 시드로 새로 시작한 다른 판은 시작 시각이 다르다.
           const fork = await readSave(opts.savesDir, AUTO_FORK, scenario).catch(() => null);
-          return json({ ...summarize(scenario, s.state), fork: fork !== null && fork.seed === s.state.seed });
+          return json({ ...summarize(scenario, s.state), fork: fork !== null && fork.seed === s.state.seed && fork.startedAt === s.state.startedAt });
         }),
       },
     },

@@ -1,7 +1,7 @@
-export const ABILITIES = ['재치', '손재주', '매력', '체력', '교양'] as const;
+export const ABILITIES = ['재치', '손재주', '매력', '근력', '교양'] as const;
 export type Ability = (typeof ABILITIES)[number];
 
-export const TRACKS = ['의심', '집착', '호감', '귀찌', '탈주', '행운'] as const;
+export const TRACKS = ['체력', '정신력', '의심', '집착', '호감', '귀찌', '탈주', '행운'] as const;
 export type Track = (typeof TRACKS)[number];
 
 export interface TrackInfo {
@@ -9,20 +9,26 @@ export interface TrackInfo {
   max: number;
   unit: string;
   desc: string;
+  /** 조각 시계로 그리는 수치. progress 는 차오르면 끝(의심), countdown 은 바닥나면 끝(귀찌). */
+  clock?: 'progress' | 'countdown';
 }
 
 export const TRACK_INFO: Record<Track, TrackInfo> = {
-  의심: { label: '의심', max: 10, unit: '', desc: '그 남자가 아시나를 첩자로 의심하는 정도' },
+  체력: { label: '체력', max: 5, unit: '', desc: '1 이하면 근력 -1. 0에서 다시 다치면 쓰러져 붙잡힌다.' },
+  정신력: { label: '정신력', max: 5, unit: '', desc: '1 이하면 매력·재치에 흔들리는 마음 -1. 0이 되면 다음 판정에 겁에 질림 -2, 회복 전까지 행운을 쓸 수 없다.' },
+  의심: { label: '의심', max: 10, unit: '', desc: '그 남자가 아시나를 경계하는 정도', clock: 'progress' },
   집착: { label: '집착', max: 10, unit: '', desc: '그 남자가 아시나에게서 눈을 떼지 못하는 정도' },
   호감: { label: '호감', max: 10, unit: '', desc: '그 남자가 아시나에게 품은 호감' },
-  귀찌: { label: '귀찌 수명', max: 10, unit: '', desc: '변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다' },
+  귀찌: { label: '귀찌 수명', max: 7, unit: '일', clock: 'countdown', desc: '변색 마법이 버티는 시간은 일주일. 일주일은 변색을 풀고 귀찌를 쉬게 해야 한다.' },
   탈주: { label: '탈주 준비도', max: 10, unit: '', desc: '탈주에 쓸 정보, 도구, 기회를 모은 정도' },
   행운: { label: '행운', max: 10, unit: '', desc: '판정 실패를 모자란 만큼 메우는 데 쓴다' },
 };
 
-export type Tier = 'hit' | 'mixed' | 'miss';
-export const TIERS: readonly Tier[] = ['hit', 'mixed', 'miss'];
-export const TIER_LABEL: Record<Tier, string> = { hit: '성공', mixed: '대가 있는 성공', miss: '실패' };
+export type Tier = 'crit' | 'hit' | 'mixed' | 'miss';
+export const TIERS = ['hit', 'mixed', 'miss'] as const;
+/** 시나리오의 대성공 결과는 선택 사항이며 없으면 성공에서 계산한다. */
+export type Tiered<T> = Record<(typeof TIERS)[number], T> & { crit?: T };
+export const TIER_LABEL: Record<Tier, string> = { crit: '대성공', hit: '성공', mixed: '대가 있는 성공', miss: '실패' };
 
 export type FlagValue = boolean | number | string;
 
@@ -51,12 +57,8 @@ export interface NoteEntry {
   if?: string;
 }
 
-/** 입식 표정. GM 이 쓰는 인물 대사·속마음 줄은 줄마다 이 중 하나를 적는다. 나레이션·GM 여우 줄에는 없다. */
-export const FACES = ['neutral', 'smile', 'surprised', 'wary'] as const;
-export type Face = (typeof FACES)[number];
-export function isFace(v: unknown): v is Face {
-  return typeof v === 'string' && (FACES as readonly string[]).includes(v);
-}
+/** 표정 ID의 허용 범위는 해당 화자의 cast.faces가 정한다. */
+export type Face = string;
 
 export interface Line {
   speaker: string;
@@ -65,8 +67,14 @@ export interface Line {
   sfx?: string;
   face?: string;
   cg?: string;
+  /** 이 줄에서 cg 를 바로 보이지 않고, 같은 구도의 이 그림을 먼저 보인 뒤 cg 로 천천히 바꾼다(예: 귀찌 전 은발 → 갈색). */
+  cg_from?: string;
   /** 이 조건이 참일 때만 나오는 대사(예: 미소녀라고 말한 판에서만 나오는 원작 대사) */
   if?: string;
+  /** 이 줄이 나온 뒤 켜는 플래그(예: 원작 CG 에서 후드를 벗은 모습이 나오면 뒤 입식도 후드 없는 쪽으로). */
+  sets?: string;
+  /** 이 줄 뒤에 적용하는 변화. */
+  effects?: Effects;
   /** 플레이어의 특정 말·몸짓을 전제로 하는 줄. 직접 입력한 판에서 GM 이 실패하면 대신 쓰지 않는다. */
   tie?: boolean;
 }
@@ -84,9 +92,12 @@ export interface FactSpec {
   text: string;
   /** 엔진이 정한 상태와 어긋나는 표현. 플레이어가 먼저 한 행동이면 막지 않는다. */
   state_guard: string[];
+  /** 서술이 이 상태를 바꿨는지 뜻으로 다시 묻는다. about 낱말이 글에 있을 때만 묻고, sets 는 플레이어가 직접 한 행동일 때 켜는 플래그다. */
+  state_check?: { about: string[]; ask: string; sets?: string };
 }
 
 export interface Effects {
+  reason?: string;
   tracks?: Partial<Record<Track, number>>;
   flags?: Record<string, FlagValue>;
   gain?: string[];
@@ -109,12 +120,16 @@ export interface PriceSpec {
   id: string;
   tag: PriceTag;
   weight: PriceWeight;
+  /** 기존 무브 분류(tag)를 유지하면서 손상의 종류를 표시한다. */
+  harm?: '몸' | '마음';
   text: string;
   effects?: Effects;
   /** 상태 조건. 거짓이면 후보에서 빠진다. */
   if?: string;
   /** 한 판에 한 번만. */
   once?: boolean;
+  /** 이번 입력에서 실제 발화가 있을 때만 선택한다. */
+  spoken?: boolean;
 }
 
 /** 판정 결과 하나. gist 는 GM 이 반드시 연출할 줄거리 요지, lines 는 작가가 쓴 대사(버튼 선택이나 GM 실패 때 그대로 쓴다). */
@@ -146,7 +161,7 @@ export interface ChoiceSpec {
   text: string;
   if?: string;
   check?: CheckSpec;
-  outcomes?: Record<Tier, Outcome>;
+  outcomes?: Tiered<Outcome>;
   lines?: Line[];
   effects?: Effects;
   next?: Next;
@@ -155,6 +170,8 @@ export interface ChoiceSpec {
 /** 자유 입력 비트에서 플레이어 행동을 묶는 접근 방식. GM 이 입력을 이 중 하나로 해석하고 코드가 판정한다. */
 export interface ApproachSpec {
   id: string;
+  /** 위험을 감수하는 접근은 6 이하에서 몸·마음의 hard 피해가 두 칸이다. */
+  risky?: boolean;
   label: string;
   stat: Ability;
   hint: string;
@@ -168,7 +185,7 @@ export interface ApproachSpec {
   said?: { flag: string; words: string[] };
   /** 이 행동을 전제하는 낱말. 입력에 이 중 하나도 없으면 GM 서술에 쓸 수 없다(예: 달려든 판에 '피했다'). */
   presume?: string[];
-  outcomes: Record<Tier, Outcome>;
+  outcomes: Tiered<Outcome>;
 }
 
 /** 자유 입력 비트. turns 와 until 로 여러 턴에 걸친 계획(예: 감옥 탈옥)을 표현한다. */
@@ -194,11 +211,13 @@ export interface FreeSpec {
   /** 15세 이용가에 맞지 않는 입력을 인물 반응으로 돌릴 때 GM 이 실패하면 쓰는 대사. */
   deflect: Line[];
   /** 직접 입력한 판에서 GM 이 실패하고, 판정 대사가 모두 특정 입력을 전제로 할 때 쓰는 중립 줄 */
-  neutral?: Record<Tier, Line[]>;
+  neutral?: Tiered<Line[]>;
+  /** 아무것도 시도하지 않는 입력의 결과. 판정 없이 흘러간다. threat 면 바로 닥치고, 아니면 nudge 가 먼저 나온 뒤 한 번 더 그럴 때 닥친다. */
+  idle?: { threat: boolean; lines: Line[]; effects?: Effects };
   /** 목록에 없는 행동의 판정 결과. 능력치와 난이도는 GM 이 고른다. */
-  improv: Record<Tier, Outcome>;
+  improv: Tiered<Outcome>;
   /** 상대가 지나칠 수 없는 큰 즉흥 행동(몸에 닿기, 겨누기)의 판정 결과. 반응과 수치가 improv 보다 크다. 없으면 improv 를 쓴다. */
-  improv_bold?: Record<Tier, Outcome>;
+  improv_bold?: Tiered<Outcome>;
   /** 장면별 대가 표. 7~9 는 soft 중 하나, 6- 는 hard 우선 하나를 시드 난수로 뽑는다. */
   prices?: PriceSpec[];
   turns: number;
@@ -292,16 +311,34 @@ export interface GameHelp {
   track?: Track;
 }
 
+/** 장면 검사에서 뽑히는 사건 하나(작가가 미리 썼다). altered 는 장면 줄 뒤에 덧붙는 다른 결, interrupt 는 장면 줄 앞에 끼어드는 따로 일어난 일. */
+export interface TwistSpec {
+  id: string;
+  lines: Line[];
+  effects?: Effects;
+}
+
+/** 긴장값의 범위와 시작값. Mythic 카오스 팩터를 d6 에 맞춘 것. */
+export const TENSION_MIN = 1;
+export const TENSION_MAX = 6;
+export const TENSION_START = 3;
+
 export interface BeatSpec {
   id: string;
+  /** 같은 위협에 속한 연속 장면은 정신력 손실을 한 번만 받는다. */
+  threat?: string;
   title: string;
   cut?: string;
   bg?: string;
   cast?: CastSlots;
+  /** 장면에 들어서며 효과가 적용되기 전에 나오는 줄. 효과로 달라지는 일(후드가 벗겨짐)을 먼저 그린다. */
+  lead?: Line[];
   /** 이 장면에 자유 입력이 없을 때 끼어들기 GM 이 쓸 상황 설명. */
   situation?: string;
   time?: number;
   effects?: Effects;
+  /** 장면 검사: 장면 시작 때 d6 이 긴장값 이하면 홀수는 altered, 짝수는 interrupt 에서 하나를 뽑는다. */
+  twist?: { altered: TwistSpec[]; interrupt: TwistSpec[] };
   lines: Line[];
   choices?: ChoiceSpec[];
   free?: FreeSpec;
@@ -312,6 +349,7 @@ export interface BeatSpec {
 export interface CastSpec {
   display: string;
   style: LineStyle;
+  faces?: readonly Face[];
   sprite?: string;
   /** 조건이 참이면 sprite 대신 쓰는 입식 */
   sprite_alt?: { if: string; sprite: string };
@@ -322,7 +360,11 @@ export interface ItemSpec {
   id: string;
   name: string;
   desc: string;
+  file?: string;
   hidden?: boolean;
+  states?: { flag: string; label: string; desc: string }[];
+  /** 조건이 참이 되기 전까지 이 물건은 다른 소지품 안에 들어 있다. */
+  container?: { item: string; unless: string };
 }
 
 export type Crop = [number, number, number, number];
@@ -370,9 +412,13 @@ export interface Scenario {
     name: string;
     abilities: Record<Ability, number>;
     tracks: Record<Track, number>;
+    /** 체력 0에서 다시 다쳤을 때 이어질 기존 붙잡힘 비트. */
+    collapseTo?: string;
     items: ItemSpec[];
     /** 이 수첩 항목이 적히기 전에는 수치 패널에서 tracks 를 숨긴다(예: 남자를 만나기 전의 의심·집착·호감). */
-    reveal?: { note: string; tracks: Track[] }[];
+    reveal?: { note?: string; flag?: string; tracks: Track[] }[];
+    /** 시작 긴장값(1~6). 없으면 TENSION_START. */
+    tension?: number;
   };
   cast: Record<string, CastSpec>;
   backgrounds: Record<string, AssetSpec>;
@@ -407,6 +453,19 @@ export interface TrackChange {
   to: number;
 }
 
+export interface ChangePart {
+  text: string;
+  tone: 'good' | 'bad' | 'warm';
+}
+
+export function trackTone(key: string, diff: number): ChangePart['tone'] {
+  if (key === '체력' || key === '정신력') return diff < 0 ? 'bad' : 'good';
+  if (key === '의심') return diff > 0 ? 'bad' : 'good';
+  if (key === '귀찌') return diff < 0 ? 'bad' : 'good';
+  if (key === '탈주') return diff > 0 ? 'good' : 'bad';
+  return 'warm';
+}
+
 interface LogBase {
   at: number;
   playMs: number;
@@ -416,10 +475,13 @@ export type LogEntry =
   | (LogBase & { kind: 'start'; seed: number })
   | (LogBase & { kind: 'beat'; beat: string; title: string })
   | (LogBase & { kind: 'choice'; beat: string; choice: string; text: string })
-  | (LogBase & { kind: 'input'; beat: string; text: string; result: 'approach' | 'talk' | 'improv' | 'ask' | 'game' | 'bounced'; approach: string | null; item: string | null; source: 'llm' | 'rule' })
+  | (LogBase & { kind: 'input'; beat: string; text: string; result: 'approach' | 'talk' | 'improv' | 'idle' | 'ask' | 'game' | 'bounced'; approach: string | null; item: string | null; source: 'llm' | 'rule' })
   | (LogBase & { kind: 'check'; beat: string; roll: RollResult })
+  | (LogBase & { kind: 'price'; beat: string; id: string; tag: PriceTag; text: string })
+  | (LogBase & { kind: 'twist'; beat: string; tension: number; roll: number; result: TwistResult; id: string | null })
   | (LogBase & { kind: 'gm'; beat: string; task: GmTask; attempts: number; violations: string[]; fallback: boolean; ms: number; model: string | null; lines?: string[] })
   | (LogBase & { kind: 'tracks'; changes: TrackChange[] })
+  | (LogBase & { kind: 'change'; parts: ChangePart[] })
   | (LogBase & { kind: 'save' | 'load'; slot: string })
   | (LogBase & { kind: 'end'; ending: string; title: string });
 
@@ -432,6 +494,8 @@ export type WorldMove = (typeof WORLD_MOVES)[number];
 export interface FreeProgress {
   beat: string;
   talks: number;
+  /** 현재 판정 입력에서 확정된 발화 여부. 행운 확인 동안에도 유지한다. */
+  spoken?: boolean;
   /** 여우 힌트를 이미 주었다. */
   hinted?: boolean;
   /** 장면 사건으로 이미 밀었다. */
@@ -463,11 +527,24 @@ export interface GameState {
   /** 여우 한마디를 마지막으로 한 때의 said 길이. 연달아 나오지 않게 한다. */
   quipAt?: number;
   /** 실패 직후 행운을 쓸지 묻는 중인 판정. */
-  pendingLuck?: { beat: string; approach: string; label: string; stat: Ability; text: string | null; improv?: ImprovMark; need: number };
+  pendingLuck?: { beat: string; approach: string; label: string; stat: Ability; text: string | null; improv?: ImprovMark; need: number; /** 판정 전 긴장값. 행운을 쓰면 이 값으로 되돌린다. 이 필드가 없던 저장은 되돌리지 않는다. */ tension?: number };
   /** 플레이어가 먼저 해 버린 뒤 장면의 원작 줄(정규화한 글). 그 장면에 가면 이 줄만 건너뛴다. */
   preempted?: string[];
   /** 여우가 결과를 알리고 답을 기다리는 입력. */
-  pendingRisk?: { text: string; quit: boolean };
+  /** warn: 확인 창에 띄운 글이 그만두기 말의 기본 경고와 다를 때 그 글. 불러온 뒤 같은 창을 다시 띄울 때 쓴다. */
+  pendingRisk?: { text: string; quit: boolean; warn?: string };
+  /** 큰 즉흥 행동의 해석이 맞는지 카드로 묻고 답을 기다리는 입력. 그래면 이 해석대로 굴리고, 다른 뜻이면 지우고 다시 적게 한다. */
+  pendingIntent?: {
+    text: string;
+    deed: string;
+    stat: Ability;
+    difficulty: number;
+    source: 'llm' | 'rule';
+    /** 정체를 밝히는 말이 섞인 행동이다. 정체 대가는 "그래"라고 답할 때 붙인다. */
+    identity?: boolean;
+    /** 이 입력이 처음 세운 갈래 플래그. "다른 뜻"이면 거둔다. */
+    flags?: string[];
+  };
   /** 연속 실패에 안심 줄을 이미 준 판정 수. */
   /** 인물이 나중에 되받을 플레이어의 말(판정 없는 대화). */
   talked?: string;
@@ -476,6 +553,8 @@ export interface GameState {
   /** 위험 경고를 이미 거친 입력(공백 뺀 글). 같은 입력은 다시 묻지 않는다. */
   warned?: string[];
   recent: Line[];
+  /** 이번 판에 화면에 나온 줄(화자별). GM 이 같은 인물의 같은 말을 되풀이하지 못하게 한다. */
+  spoken?: Record<string, string[]>;
   ending: string | null;
   startedAt: number;
   playMs: number;
@@ -492,14 +571,18 @@ export interface ItemView {
 export type GameEvent =
   | { type: 'scene'; beat: string; title: string; bg: string | null; cast: { left: string | null; center: string | null; right: string | null }; sprites: Record<string, string> }
   | { type: 'sprite'; cast: string; sprite: string }
-  | { type: 'line'; speaker: string; display: string; style: LineStyle; text: string; fx?: string; sfx?: string; face?: string; cg?: string; by: 'script' | 'gm'; if?: string }
+  | { type: 'line'; speaker: string; display: string; style: LineStyle; text: string; fx?: string; sfx?: string; face?: string; cg?: string; cg_from?: string; by: 'script' | 'gm'; if?: string }
   | { type: 'echo'; text: string }
   | { type: 'revise'; drop: number[]; jump: boolean }
   | ({ type: 'roll'; tierLabel: string } & RollResult)
   | { type: 'tracks'; changes: TrackChange[] }
+  | { type: 'change'; parts: ChangePart[] }
   | { type: 'price'; id: string; tag: PriceTag; text: string }
+  /** 장면 검사 결과. 화면이 긴장·눈·결과를 그대로 보여 준다(여우는 말하지 않는다). */
+  | { type: 'twist'; beat: string; tension: number; roll: number; result: TwistResult; id: string | null }
   /** 규칙 목소리는 화면이 낸다. 여우가 말하지 않고 확인 창으로 묻는다. 답은 confirm 액션. */
-  | { type: 'confirm'; kind: 'quit'; text: string }
+  /** intent: 큰 행동의 해석 확인 카드. yes/no 는 단추 글(없으면 그만두기 창 기본). */
+  | { type: 'confirm'; kind: 'quit' | 'intent'; text: string; yes?: string; no?: string }
   /** 화면이 글로 내는 안내. ask: 이야기 입력칸에 적은 질문은 여우가 받지 않으니 GM 단추(질문 모드)로. */
   | { type: 'notice'; kind: 'ask' }
   | { type: 'items'; gained: ItemView[]; lost: ItemView[] }
@@ -533,6 +616,20 @@ export interface TrackView {
   max: number;
   unit: string;
   desc: string;
+  /** 조각 시계. warnAt 은 fates 의 징조 문턱(progress 는 이 값부터, countdown 은 이 값 이하가 위험 칸). */
+  clock?: { kind: 'progress' | 'countdown'; warnAt?: number };
+}
+
+/** 조각 시계 수치는 fates 의 징조 문턱(`귀찌 <= 2`, `의심 >= 7`)을 위험 칸 경계로 화면에 넘긴다. 문턱의 출처는 시나리오 하나다. */
+export function trackView(fates: readonly FateSpec[] | undefined, key: Track, value: number): TrackView {
+  const { clock, ...info } = TRACK_INFO[key];
+  if (!clock) return { key, ...info, value };
+  const re = new RegExp(`(?:^|&&\\s*)${key}\\s*(<=|>=)\\s*(\\d+)$`);
+  for (const fate of fates ?? []) {
+    const m = fate.warn?.when.trim().match(re);
+    if (m) return { key, ...info, value, clock: { kind: clock, warnAt: Number(m[2]) } };
+  }
+  return { key, ...info, value, clock: { kind: clock } };
 }
 
 export interface Hud {
@@ -544,9 +641,13 @@ export interface Hud {
   items: ItemView[];
   notes: NoteView[];
   /** 아직 보이지 않는 수치. note 가 적히면 화면이 바로 연다. */
-  trackGate: { note: string; tracks: Track[] }[];
+  trackGate: { note?: string; flag?: string; tracks: Track[] }[];
+  /** 긴장값(1~6). 판정 성공 -1, 실패 +1. */
+  tension: number;
   playMs: number;
 }
+
+export type TwistResult = 'none' | 'altered' | 'interrupt';
 
 export interface NoteView {
   id: string;
@@ -570,7 +671,7 @@ export type Action =
   /** 확인 창의 답. */
   | { type: 'confirm'; ok: boolean }
   /** 질문 모드(GM 단추): 여우에게 묻는다. 이야기 밖 말이라 판정·시간·참을성을 쓰지 않고, 여우 화자 줄은 여기서만 나온다. */
-  | { type: 'ask'; text: string };
+  | { type: 'ask'; text: string; scene?: string | null };
 
 /** 끼어든 순간 화면에 아직 나오지 않은 고정 줄. i 는 화면이 들고 있는 남은 사건 목록의 자리다. */
 export interface PendingLine {

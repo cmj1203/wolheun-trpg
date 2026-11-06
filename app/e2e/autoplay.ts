@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import type { ResultSummary } from '../src/engine/summary.ts';
 import { watchNetwork } from './netwatch.ts';
+import { e2eState } from './state.ts';
 import { FALLBACK_INPUT, ROUTES } from './routes.ts';
 
 const APP = join(import.meta.dir, '..');
@@ -14,6 +15,8 @@ const { values } = parseArgs({
     seed: { type: 'string' },
     port: { type: 'string', default: '18181' },
     'llm-port': { type: 'string', default: '18180' },
+    // 이미 떠 있는 LLM 을 함께 쓴다. run.sh 는 새 LLM 을 띄우므로 앱 서버만 직접 띄운다. 모델 키는 --model 로 준다.
+    'llm-url': { type: 'string' },
     shots: { type: 'string' },
     out: { type: 'string', default: join(APP, 'e2e', 'out') },
     'no-llm': { type: 'boolean', default: false },
@@ -58,10 +61,12 @@ let loadDialogMs = -1;
 let cpuBeforeLoad = '';
 
 const runLog = join(values.out, `run-${values.route}.log`);
-const runArgs = ['./run.sh', '--no-open', '--port', values.port, '--llm-port', values['llm-port'], ...(values.model ? ['--model', values.model] : []), ...(noLlm ? ['--no-llm'] : [])];
+const sharedLlm = values['llm-url'];
+const runArgs = sharedLlm ? ['bun', 'src/server/main.ts'] : ['./run.sh', '--no-open', '--port', values.port, '--llm-port', values['llm-port'], ...(values.model ? ['--model', values.model] : []), ...(noLlm ? ['--no-llm'] : [])];
 console.log(`[e2e ${values.route}] ${route.title} · 시드 ${seed} · ${runArgs.join(' ')}`);
 const started = Date.now();
-const runner = Bun.spawn(runArgs, { cwd: APP, stdout: Bun.file(runLog), stderr: Bun.file(runLog) });
+const state = e2eState();
+const runner = Bun.spawn(runArgs, { cwd: APP, stdout: Bun.file(runLog), stderr: Bun.file(runLog), env: { ...process.env, ...state.env, ...(sharedLlm ? { WOLHEUN_PORT: values.port, WOLHEUN_LLM_URL: sharedLlm, WOLHEUN_MODEL: values.model } : {}) } });
 
 let view: Bun.WebView | null = null;
 try {
@@ -75,8 +80,9 @@ try {
   );
   const bootMs = Date.now() - started;
   check(noLlm || health.llm.ok, `run.sh 하나로 ${noLlm ? '앱이' : 'LLM 서버와 앱이'} 떴다 (${Math.round(bootMs / 1000)}초, 모델 ${noLlm ? '없음(--no-llm)' : (health.model?.label ?? health.llm.model)})`);
-  const pidsPath = join(APP, 'logs', `run-${values.port}.pids`);
-  const pids = await waitUntil(
+  const pidsPath = join(state.logsDir, `run-${values.port}.pids`);
+  const sharedPids = sharedLlm ? [runner.pid, Number((await Bun.$`lsof -nP -t -iTCP:${new URL(sharedLlm).port} -sTCP:LISTEN`.text()).trim())] : null;
+  const pids = sharedPids ?? await waitUntil(
     async () => {
       const file = Bun.file(pidsPath);
       return (await file.exists()) ? (await file.text()).trim().split('\n').map(Number) : null;
@@ -179,7 +185,7 @@ try {
 
   const session = JSON.parse(await w.evaluate('JSON.stringify(window.__wolheun.session)')) as string;
   const result = (await (await fetch(`${base}/api/result?session=${session}`)).json()) as ResultSummary;
-  const logEntries = (await Bun.file(join(APP, 'logs', `${session}.jsonl`)).text())
+  const logEntries = (await Bun.file(join(state.logsDir, `${session}.jsonl`)).text())
     .trim()
     .split('\n')
     .map((l) => JSON.parse(l) as { kind: string; ending?: string });
@@ -212,6 +218,7 @@ try {
   view?.close?.();
   runner.kill('SIGINT');
   await runner.exited;
+  state.remove();
 }
 
 console.log(failures.length === 0 ? `[e2e ${values.route}] 통과` : `[e2e ${values.route}] 실패 ${failures.length}건`);

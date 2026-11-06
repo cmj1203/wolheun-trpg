@@ -1,9 +1,12 @@
 import type { ResultSummary } from '../src/engine/summary.ts';
 import type { Action, ChoiceView, GameEvent, Hud, Prompt, Step, Track, TrackChange, TrackView } from '../src/engine/types.ts';
+import { TRACK_INFO, trackTone, type ChangePart } from '../src/engine/types.ts';
+import { Introduction } from './introduction.ts';
 
 type LineEvent = Extract<GameEvent, { type: 'line' }>;
 type RollEvent = Extract<GameEvent, { type: 'roll' }>;
 type PriceEvent = Extract<GameEvent, { type: 'price' }>;
+type TwistEvent = Extract<GameEvent, { type: 'twist' }>;
 type ReviseEvent = Extract<GameEvent, { type: 'revise' }>;
 type SceneEvent = Extract<GameEvent, { type: 'scene' }>;
 type EndingEvent = Extract<GameEvent, { type: 'ending' }>;
@@ -36,6 +39,8 @@ interface Manifest {
   backgrounds: Record<string, AssetRef>;
   sprites: Record<string, AssetRef>;
   cgs: Record<string, AssetRef>;
+  items: Record<string, string>;
+  cutins: { crit: string | null; miss: string | null };
   cast: Record<string, CastRef>;
 }
 
@@ -50,8 +55,10 @@ interface SavedView {
   /** 아래 대사창에 남아 있던 마지막 인물·내레이션 줄. line 이 여우 줄이면 둘이 다르다. */
   dialog?: LineEvent | null;
   remaining: GameEvent[];
-  backlog: { who: string; text: string; by: 'script' | 'gm' }[];
+  backlog: { who: string; text: string; by: 'script' | 'gm'; parts?: ChangePart[] }[];
   faces?: Record<string, string>;
+  memo?: string;
+  changes?: ChangePart[][];
 }
 
 interface SaveMeta {
@@ -81,6 +88,7 @@ const ui = {
   bgNext: byId('bg-next'),
   cg: byId('cg'),
   cgArt: byId('cg-art'),
+  cgNext: byId('cg-art-next'),
   cgBlur: byId('cg-blur'),
   slots: { left: byId('slot-left'), center: byId('slot-center'), right: byId('slot-right') } as Record<SlotName, HTMLElement>,
   flash: byId('flash'),
@@ -90,6 +98,7 @@ const ui = {
   beatTitle: byId('beat-title'),
   gmStatus: byId('gm-status'),
   tracks: byId('tracks'),
+  vitals: byId('vitals'),
   tracksHead: byId('tracks-head'),
   abilities: byId('abilities'),
   items: byId('items'),
@@ -97,6 +106,7 @@ const ui = {
   free: byId('free'),
   say: byId<HTMLFormElement>('say'),
   clock: byId('clock'),
+  tension: byId('tension'),
   atlasDialog: byId<HTMLDialogElement>('atlas'),
   atlasMap: byId('atlas-map'),
   freePrompt: byId('free-prompt'),
@@ -116,8 +126,12 @@ const ui = {
   diceLabel: byId('dice-label'),
   diceFormula: byId('dice-formula'),
   diceTier: byId('dice-tier'),
+  cutin: byId<HTMLImageElement>('cutin'),
   diceNote: byId('dice-note'),
   priceLine: byId('price-line'),
+  changes: byId('changes'),
+  twistLine: byId('twist-line'),
+  twistText: byId('twist-text'),
   priceTag: byId('price-tag'),
   priceText: byId('price-text'),
   ending: byId('ending'),
@@ -132,10 +146,10 @@ const ui = {
   resultTitle: byId('result-title'),
   resultSummary: byId('result-summary'),
   resultHook: byId('result-hook'),
-  resultChecks: byId('result-checks'),
-  resultDecisions: byId('result-decisions'),
+  resultReplay: byId('result-replay'),
   resultTracks: byId('result-tracks'),
   resultStats: byId('result-stats'),
+  memo: byId<HTMLTextAreaElement>('memo'),
   resultMore: byId('result-more'),
   resultCredit: byId('result-credit'),
   slotsDialog: byId<HTMLDialogElement>('slots'),
@@ -150,6 +164,13 @@ const ui = {
   confirmText: byId('confirm-text'),
   confirmOk: byId<HTMLButtonElement>('confirm-ok'),
   confirmNo: byId<HTMLButtonElement>('confirm-no'),
+  feedbackOpen: byId<HTMLButtonElement>('feedback-open'),
+  feedbackResult: byId<HTMLButtonElement>('btn-feedback-result'),
+  feedback: byId<HTMLDialogElement>('feedback'),
+  feedbackForm: byId<HTMLFormElement>('feedback-form'),
+  feedbackText: byId<HTMLTextAreaElement>('feedback-text'),
+  feedbackClose: byId<HTMLButtonElement>('feedback-close'),
+  feedbackSend: byId<HTMLButtonElement>('feedback-send'),
   mascot: byId('gm-mascot'),
   gmBox: byId('gm-box'),
   gmText: byId('gm-text'),
@@ -159,6 +180,9 @@ const ui = {
   freeAimText: byId('free-aim-text'),
   notesDialog: byId<HTMLDialogElement>('notes'),
   notesList: byId('notes-list'),
+  topbar: byId('topbar'),
+  srLine: byId('sr-line'),
+  srNote: byId('sr-note'),
 };
 
 const game = {
@@ -172,6 +196,10 @@ const game = {
   inputs: [] as string[],
   /** 질문 모드(GM 단추). 켜져 있으면 입력은 이야기가 아니라 여우에게 묻는 말이다. 한 번 묻고 나면 꺼진다. */
   askMode: false,
+  /** 질문 모드의 답을 보여 주는 중이다. 이때 새 질문이 오면 앞 답을 끝내고 바로 새 답으로 간다. */
+  answering: false,
+  /** 이야기 중간에 열린 그만두기 확인 창의 답을 기다린다. */
+  onConfirm: null as ((ok: boolean) => void) | null,
   /** 바쁜 동안 받아 둔 질문. 응답이 끝나면 먼저 묻는다. */
   asks: [] as string[],
   /** 서버 응답을 받는 중이면 다음 요청을 보내지 않는다. */
@@ -186,7 +214,9 @@ const game = {
   bgRef: null as AssetRef | null,
   cgRef: null as AssetRef | null,
   cast: { left: null, center: null, right: null } as Record<SlotName, string | null>,
-  backlog: [] as { who: string; text: string; by: 'script' | 'gm' }[],
+  backlog: [] as { who: string; text: string; by: 'script' | 'gm'; parts?: ChangePart[] }[],
+  changes: [] as ChangePart[][],
+  sceneChanges: false,
   view: { scene: null as SceneEvent | null, line: null as LineEvent | null, dialog: null as LineEvent | null },
   spriteOf: {} as Record<string, string>,
   faces: {} as Record<string, string>,
@@ -273,12 +303,20 @@ function setPhase(phase: Phase): void {
   game.phase = phase;
   ui.stage.dataset.phase = phase;
   ui.say.hidden = phase === 'title' || phase === 'ending' || phase === 'result';
+  // 타이틀·결과 화면이 위쪽 메뉴를 덮는 동안에는 보이지 않는 단추에 Tab 이 멈추지 않게 한다.
+  ui.topbar.inert = phase === 'title' || phase === 'result';
   if (phase !== 'free') setStoryPlaceholder('말하거나 행동하기');
 }
 
 let toastTimer = 0;
+/** 스크린리더 전용 알림 칸에 글을 넣는다. 화면에는 보이지 않는다. */
+function announce(el: HTMLElement, text: string): void {
+  el.textContent = text;
+}
+
 function toast(message: string): void {
   ui.toast.textContent = message;
+  announce(ui.srNote, message);
   ui.toast.hidden = false;
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => {
@@ -293,8 +331,70 @@ async function api<T>(path: string, body?: unknown): Promise<T> {
   return data;
 }
 
+const MEMO_SESSION_KEY = 'wolheun-memo-session';
+let memoTimer: ReturnType<typeof setTimeout> | null = null;
+let memoAfterReload = '';
+
+/** 지금 칸의 글을 지금 판에 저장한다. */
+function sendMemo(): Promise<void> {
+  if (memoTimer !== null) clearTimeout(memoTimer);
+  memoTimer = null;
+  const body = JSON.stringify({ session: game.session, memo: ui.memo.value });
+  return fetch('/api/notes', { method: 'POST', headers: { 'content-type': 'application/json' }, body, keepalive: true }).then(
+    (res) => {
+      if (!res.ok) toast('메모를 저장하지 못했습니다');
+    },
+    () => toast('메모를 저장하지 못했습니다'),
+  );
+}
+
+/** 멈춘 뒤 500ms 를 기다리던 글을 바로 보낸다. */
+function flushMemo(): Promise<void> {
+  return memoTimer === null ? Promise.resolve() : sendMemo();
+}
+
+function showMemo(session: string, memo: string): void {
+  ui.memo.value = memo;
+  sessionStorage.setItem(MEMO_SESSION_KEY, session);
+}
+
 let resolveAdvance: (() => void) | null = null;
 let finishTyping: (() => void) | null = null;
+let introduction: Introduction | null = null;
+let afterIntroduction: (() => void) | null = null;
+
+function renderIntroduction(): void {
+  for (const node of document.querySelectorAll('.intro-highlight')) node.classList.remove('intro-highlight');
+  const line = introduction?.current;
+  if (!line) {
+    introduction = null;
+    delete ui.stage.dataset.intro;
+    byId('intro-skip').hidden = true;
+    byId('intro-roll').hidden = true;
+    ui.topbar.inert = false;
+    ui.say.inert = false;
+    ui.gmMore.hidden = true;
+    ui.gmHint.hidden = true;
+    mascot(null);
+    const done = afterIntroduction;
+    afterIntroduction = null;
+    done?.();
+    return;
+  }
+  setPhase('line');
+  ui.stage.dataset.intro = String(introduction?.position);
+  ui.stage.dataset.gm = '1';
+  ui.topbar.inert = true;
+  ui.say.inert = true;
+  byId('intro-skip').hidden = false;
+  byId('intro-roll').hidden = introduction?.position !== 4;
+  mascot('smile');
+  ui.gmText.textContent = line.text;
+  ui.gmHint.hidden = false;
+  ui.gmMore.hidden = false;
+  announce(ui.srLine, `GM: ${line.text}`);
+  for (const selector of line.targets) document.querySelector(selector)?.classList.add('intro-highlight');
+}
 
 function waitAdvance(): Promise<void> {
   if (game.skipWait) {
@@ -307,6 +407,11 @@ function waitAdvance(): Promise<void> {
 }
 
 function advance(): void {
+  if (introduction?.current) {
+    introduction.next();
+    renderIntroduction();
+    return;
+  }
   if (finishTyping) {
     finishTyping();
     return;
@@ -398,15 +503,47 @@ function crossfade(ref: AssetRef): void {
   });
 }
 
-function showCg(id: string | undefined): void {
+/** 바꿔 그리는 중인 윗장을 흐려지는 효과 없이 바로 감춘다. */
+function hideCgNext(): void {
+  ui.cgNext.style.transition = 'none';
+  ui.cgNext.classList.remove('go');
+  void ui.cgNext.offsetWidth;
+  ui.cgNext.style.transition = '';
+}
+
+function showCg(id: string | undefined, from?: string): void {
   const ref = id ? (game.manifest?.cgs[id] ?? null) : null;
   game.cgRef = ref;
   ui.stage.classList.toggle('cg-on', ref !== null);
   ui.cg.classList.toggle('on', ref !== null);
   ui.cg.classList.toggle('full', ref?.fit === 'cover');
+  hideCgNext();
   if (!ref) return;
   void paint(ui.cgBlur, ref, 'cover');
-  void paint(ui.cgArt, ref, ref.fit ?? 'contain');
+  const start = from ? game.manifest?.cgs[from] : undefined;
+  if (!start) {
+    void paint(ui.cgArt, ref, ref.fit ?? 'contain');
+    return;
+  }
+  // 같은 구도의 앞 그림을 먼저 보이고, 그 위에 이 그림을 천천히 겹쳐 올린 뒤 아랫장으로 옮긴다.
+  void Promise.all([paint(ui.cgArt, start, start.fit ?? 'contain'), paint(ui.cgNext, ref, ref.fit ?? 'contain')]).then(() => {
+    window.setTimeout(
+      () => {
+        if (game.cgRef !== ref) return;
+        ui.cgNext.classList.add('go');
+        window.setTimeout(
+          () => {
+            if (game.cgRef !== ref) return;
+            void paint(ui.cgArt, ref, ref.fit ?? 'contain').then(() => {
+              if (game.cgRef === ref) hideCgNext();
+            });
+          },
+          FAST ? 0 : 1600,
+        );
+      },
+      FAST ? 0 : 600,
+    );
+  });
 }
 
 window.addEventListener('resize', () => {
@@ -421,6 +558,7 @@ window.addEventListener('resize', () => {
 function setScene(ev: SceneEvent): void {
   ui.beatTitle.textContent = ev.title;
   ui.priceLine.hidden = true;
+  ui.twistLine.hidden = true;
   showCg(undefined);
   const bg = asset('backgrounds', ev.bg);
   if (bg && bg !== game.bgRef) crossfade(bg);
@@ -540,14 +678,18 @@ async function showLine(ev: LineEvent, restore: 'no' | 'wait' | 'still' = 'no'):
     mascot(null);
     game.dialogSpeaker = ev.speaker;
     ui.dialog.dataset.style = ev.style;
+    // 글 없는 줄은 그림만 보인다. 대사 창은 투명하게 두어 누르면 넘어가게 한다.
+    ui.dialog.classList.toggle('silent', text === '');
     ui.name.textContent = who;
     ui.name.hidden = who === '';
-    ui.gmBadge.hidden = ev.by !== 'gm';
+    ui.gmBadge.hidden = true;
   }
   ui.stage.dataset.gm = gm ? '1' : '0';
+  // 대사창은 글자를 한 자씩 찍으므로 읽기 칸에는 줄 전체를 한 번에 넣는다.
+  if (text) announce(ui.srLine, who ? `${who}: ${text}` : text);
   highlight(ev.speaker);
   if (ev.face && !gm) setFace(ev.speaker, ev.face);
-  showCg(ev.cg);
+  showCg(ev.cg, restore === 'no' ? ev.cg_from : undefined);
   more.hidden = true;
   if (restore === 'still') {
     target.textContent = text;
@@ -560,7 +702,6 @@ async function showLine(ev: LineEvent, restore: 'no' | 'wait' | 'still' = 'no'):
     }
     if (ev.fx === 'flash') replay(ui.flash, 'go');
     if (ev.fx === 'shake') replay(ui.stage, 'shake');
-    game.backlog.push({ who: who || '내레이션', text, by: ev.by });
     if (gm && !game.foxSeen) {
       game.foxSeen = true;
       ui.gmHint.hidden = false;
@@ -580,14 +721,68 @@ function showEcho(text: string): void {
 }
 
 /** 규칙 목소리는 화면이 낸다. 그만두기 확인은 여우 말풍선이 아니라 창으로 묻고, 답은 confirm 액션으로 보낸다. */
-function showConfirm(text: string): void {
+function showConfirm(text: string, yes = '끝낸다', no = '계속한다'): void {
   ui.confirmText.textContent = text;
+  ui.confirmOk.textContent = yes;
+  ui.confirmNo.textContent = no;
   if (!ui.confirm.open) ui.confirm.showModal();
 }
 
 function answerConfirm(ok: boolean): void {
   if (ui.confirm.open) ui.confirm.close();
+  if (game.onConfirm) {
+    const answer = game.onConfirm;
+    game.onConfirm = null;
+    answer(ok);
+    return;
+  }
   void act({ type: 'confirm', ok });
+}
+
+/** 피드백 창. 질문 모드·이야기 입력과 무관한 별도 상태다. 빈 글은 보내지 않고, 보내면 판 상태를 자동으로 덧붙여 POST /feedback 으로 보낸다. */
+let feedbackDraft = 0;
+
+function openFeedback(): void {
+  if (ui.feedback.open) return;
+  feedbackDraft += 1;
+  ui.feedbackText.value = '';
+  ui.feedback.showModal();
+  ui.feedbackText.focus();
+}
+
+function closeFeedback(): void {
+  if (ui.feedback.open) ui.feedback.close();
+}
+
+async function sendFeedback(): Promise<void> {
+  const text = ui.feedbackText.value.trim();
+  if (!text) {
+    ui.feedbackText.focus();
+    return;
+  }
+  const payload = {
+    text,
+    at: new Date().toISOString(),
+    session: game.session,
+    beatTitle: game.hud?.beatTitle ?? null,
+    recent: game.backlog.slice(-6).map((b) => ({ speaker: b.who, text: b.text })),
+    tracks: Object.fromEntries((game.hud?.tracks ?? []).map((t) => [t.key, t.value])),
+    askMode: game.askMode,
+    window: { width: window.innerWidth, height: window.innerHeight },
+    page: location.pathname + location.search,
+  };
+  const draft = feedbackDraft;
+  ui.feedbackSend.disabled = true;
+  try {
+    await api<{ ok: true; id: string }>('/feedback', payload);
+    // 보내는 동안 창을 닫고 다시 열었으면 새로 쓰는 글이니 닫지 않는다.
+    if (draft === feedbackDraft) closeFeedback();
+    toast('피드백을 보냈어');
+  } catch (err) {
+    toast((err as Error).message);
+  } finally {
+    ui.feedbackSend.disabled = false;
+  }
 }
 
 /** 이야기 입력칸의 안내 글. 질문 모드가 켜져 있는 동안에는 저장만 해 두고 끔 때 되돌린다. */
@@ -613,18 +808,60 @@ function setAskMode(on: boolean): void {
   } else if (wasOn) ui.freeInput.placeholder = askSavedPlaceholder;
 }
 
+const TWIST_LABEL: Record<TwistEvent['result'], string> = { none: '그대로', altered: '달라진 결', interrupt: '끼어드는 일' };
+
+/** 장면 검사는 규칙 목소리라 화면이 낸다: 긴장·눈·결과 한 줄. 다음 장면이나 판정까지 남는다. */
+function showTwist(ev: TwistEvent): void {
+  const text = `긴장 ${ev.tension} · 주사위 ${ev.roll} → ${TWIST_LABEL[ev.result]}`;
+  ui.twistText.textContent = text;
+  ui.twistLine.dataset.result = ev.result;
+  ui.twistLine.hidden = false;
+  announce(ui.srNote, `장면 검사 ${text}`);
+  game.backlog.push({ who: '장면 검사', text, by: 'script' });
+}
+
 function showPrice(ev: PriceEvent): void {
   ui.priceTag.textContent = ev.tag;
   ui.priceText.textContent = ev.text;
   ui.priceLine.hidden = false;
+  announce(ui.srNote, `대가 ${ev.tag} — ${ev.text}`);
   game.backlog.push({ who: '대가', text: `${ev.tag} — ${ev.text}`, by: 'script' });
+}
+
+function renderChanges(): void {
+  ui.changes.replaceChildren(...game.changes.map((parts) => {
+    const row = document.createElement('p');
+    parts.forEach((part, index) => {
+      if (index) row.append(' · ');
+      row.append(span(part.tone, part.text));
+    });
+    return row;
+  }));
+  ui.changes.hidden = game.changes.length === 0;
+}
+
+/** 판정 결과 컯인: 연출만 있고 주사위를 누르는 일을 막지 않는다. */
+const CUTIN_MS = 800;
+function showCutin(kind: 'crit' | 'miss'): void {
+  const url = game.manifest?.cutins[kind];
+  if (!url) return;
+  for (const running of ui.cutin.getAnimations()) running.cancel();
+  ui.cutin.src = url;
+  ui.cutin.hidden = false;
+  const hide = () => {
+    if (ui.cutin.getAnimations().length === 0) ui.cutin.hidden = true;
+  };
+  ui.cutin.animate([{ opacity: 0 }, { opacity: 1, offset: 0.2 }, { opacity: 1, offset: 0.7 }, { opacity: 0 }], { duration: CUTIN_MS, easing: 'ease' }).finished.then(hide, hide);
 }
 
 async function showRoll(ev: RollEvent): Promise<void> {
   mascot(null);
   setPhase('dice');
   ui.priceLine.hidden = true;
+  ui.twistLine.hidden = true;
   ui.dice.hidden = false;
+  game.changes = [];
+  renderChanges();
   delete ui.dice.dataset.tier;
   ui.diceLabel.textContent = `${ev.label} · ${ev.stat} 판정`;
   ui.diceFormula.textContent = '';
@@ -650,9 +887,12 @@ async function showRoll(ev: RollEvent): Promise<void> {
   ui.diceFormula.textContent = `${ev.dice[0]} + ${ev.dice[1]} ${signed(ev.statValue)}(${ev.stat})${mods} = ${ev.total} / 목표 10`;
   ui.diceTier.textContent = ev.tierLabel;
   ui.dice.dataset.tier = ev.tier;
+  if (ev.tier === 'crit') showCutin('crit');
+  else if (ev.tier === 'miss') showCutin('miss');
   ui.diceNote.textContent =
-    ev.tier === 'hit' ? '10 이상 · 원하는 대로 된다' : ev.tier === 'mixed' ? '7~9 · 해내지만 대가가 따른다' : '6 이하 · 실패';
+    ev.tier === 'crit' ? '6·6 · 대성공, 좋은 수치 변화 +1' : ev.tier === 'hit' ? '10 이상 · 원하는 대로 된다' : ev.tier === 'mixed' ? '7~9 · 해내지만 대가가 따른다' : '6 이하 · 실패';
   game.backlog.push({ who: '판정', text: `${ev.label}: ${ui.diceFormula.textContent} → ${ev.tierLabel}`, by: 'script' });
+  announce(ui.srNote, `${ev.label}: ${ui.diceFormula.textContent} → ${ev.tierLabel}. ${ui.diceNote.textContent}`);
   await waitAdvance();
   ui.dice.hidden = true;
   setPhase('story');
@@ -660,6 +900,46 @@ async function showRoll(ev: RollEvent): Promise<void> {
 
 function trackText(t: { value: number; max: number; unit: string }): string {
   return t.unit ? `${t.value}${t.unit}` : `${t.value} / ${t.max}`;
+}
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+/** 켜진 칸 수를 맞춘다. 차오르는 시계는 찬 만큼, 줄어드는 시계는 남은 만큼이 켜져 있다. 값이 징조 문턱 안이면 시계 전체가 위험 색이 된다. */
+function setClockFace(face: Element, value: number): void {
+  face.querySelectorAll('.seg').forEach((seg, i) => seg.classList.toggle('on', i < value));
+  const el = face as HTMLElement | SVGElement;
+  const warnAt = Number(el.dataset.warnAt ?? 'NaN');
+  const danger = Number.isFinite(warnAt) && (el.dataset.kind === 'progress' ? value >= warnAt : value <= warnAt);
+  face.classList.toggle('danger', danger);
+}
+
+/**
+ * Blades 식 조각 시계. 칸 수는 max, 위 가운데에서 시계 방향으로 채운다.
+ * warn 칸은 작은 끝의 징조 문턱 안쪽(차오름: warnAt 번째 칸부터, 줄어듦: 마지막 warnAt 칸).
+ */
+function clockFace(t: TrackView): SVGSVGElement {
+  const n = t.max;
+  const c = 16;
+  const r = 14;
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 32 32');
+  svg.classList.add('clock-face');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.dataset.kind = t.clock?.kind ?? '';
+  const warnAt = t.clock?.warnAt;
+  if (warnAt !== undefined) svg.dataset.warnAt = String(warnAt);
+  for (let i = 0; i < n; i++) {
+    const a0 = ((-90 + (360 / n) * i) * Math.PI) / 180;
+    const a1 = ((-90 + (360 / n) * (i + 1)) * Math.PI) / 180;
+    const seg = document.createElementNS(SVG_NS, 'path');
+    seg.setAttribute('d', `M${c} ${c} L${(c + r * Math.cos(a0)).toFixed(2)} ${(c + r * Math.sin(a0)).toFixed(2)} A${r} ${r} 0 0 1 ${(c + r * Math.cos(a1)).toFixed(2)} ${(c + r * Math.sin(a1)).toFixed(2)} Z`);
+    seg.classList.add('seg');
+    const danger = warnAt !== undefined && (t.clock?.kind === 'progress' ? i + 1 >= warnAt : i < warnAt);
+    if (danger) seg.classList.add('warn');
+    svg.append(seg);
+  }
+  setClockFace(svg, t.value);
+  return svg;
 }
 
 function trackRow(t: TrackView): HTMLLIElement {
@@ -670,6 +950,24 @@ function trackRow(t: TrackView): HTMLLIElement {
   li.dataset.unit = t.unit;
   li.title = t.desc;
   li.innerHTML = TRACK_ICON[t.key] ?? '';
+  li.querySelector('svg')?.setAttribute('aria-hidden', 'true');
+  if (t.key === '체력' || t.key === '정신력') {
+    li.classList.add('vital');
+    li.setAttribute('aria-label', `${t.label} ${t.value}/${t.max}`);
+    li.append(span('label', t.label), span('value', trackText(t)));
+    const pips = document.createElement('span');
+    pips.className = 'pips';
+    pips.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < t.max; i++) pips.append(span(i < t.value ? 'pip on' : 'pip', ''));
+    li.classList.toggle('danger', t.value <= 1);
+    li.append(pips);
+    return li;
+  }
+  if (t.clock) {
+    li.classList.add('is-clock', t.clock.kind);
+    li.append(span('label', t.label), span('value', trackText(t)), clockFace(t));
+    return li;
+  }
   const bar = document.createElement('span');
   bar.className = 'bar';
   const fill = document.createElement('i');
@@ -680,23 +978,28 @@ function trackRow(t: TrackView): HTMLLIElement {
 }
 
 function tone(key: string, diff: number): string {
-  if (key === '의심') return diff > 0 ? 'bad' : 'good';
-  if (key === '귀찌') return diff < 0 ? 'bad' : 'good';
-  if (key === '탈주') return diff > 0 ? 'good' : 'bad';
-  return 'warm';
+  return trackTone(key, diff);
 }
 
 function applyTrackChanges(changes: TrackChange[]): void {
   for (const c of changes) {
-    const row = ui.tracks.querySelector<HTMLElement>(`[data-track="${c.key}"]`);
+    const row = ui.vitals.querySelector<HTMLElement>(`[data-track="${c.key}"]`) ?? ui.tracks.querySelector<HTMLElement>(`[data-track="${c.key}"]`);
     if (!row) continue;
     const max = Number(row.dataset.max ?? '10');
     row.querySelector<HTMLElement>('.bar i')?.style.setProperty('--v', String(c.to / max));
+    const face = row.querySelector('.clock-face');
+    if (face) setClockFace(face, c.to);
+    if (row.classList.contains('vital')) {
+      row.querySelectorAll('.pip').forEach((pip, i) => pip.classList.toggle('on', i < c.to));
+      row.classList.toggle('danger', c.to <= 1);
+      row.setAttribute('aria-label', `${c.key} ${c.to}/${max}`);
+    }
     const value = row.querySelector('.value');
     if (value) value.textContent = trackText({ value: c.to, max, unit: row.dataset.unit ?? '' });
     const diff = c.to - c.from;
+    row.querySelectorAll('.delta').forEach((node) => node.remove());
     const delta = span(`delta ${tone(c.key, diff)}`, signed(diff));
-    row.append(delta);
+    value?.append(delta);
     window.setTimeout(() => delta.remove(), 1500);
     replay(row, 'pulse');
   }
@@ -714,8 +1017,11 @@ function renderClock(earring?: number): void {
   const bg = game.view.scene?.bg ?? '';
   const when = bg === 'desert_dusk' ? '해 질 녘' : bg === 'desert_night' ? '밤' : '한낮';
   const value = earring ?? game.hud?.tracks.find((v) => v.key === '귀찌')?.value;
-  ui.clock.hidden = value === undefined || !game.view.scene;
+  ui.clock.hidden = value === undefined || !game.view.scene || game.hud?.trackGate.some((g) => g.tracks.includes('귀찌')) === true;
   ui.clock.textContent = `${when} · 귀찌 ${value ?? ''}`;
+  ui.tension.hidden = !game.hud || !game.view.scene;
+  ui.tension.textContent = `긴장 ${game.hud?.tension ?? ''}`;
+  ui.tension.title = '장면이 시작될 때 주사위가 이 값 이하면 장면이 달라진다. 판정 성공 -1, 실패 +1.';
 }
 
 function renderHud(hud: Hud): void {
@@ -723,7 +1029,8 @@ function renderHud(hud: Hud): void {
   game.hud = hud;
   ui.episode.textContent = hud.episode;
   ui.beatTitle.textContent = hud.beatTitle;
-  ui.tracks.replaceChildren(...hud.tracks.map(trackRow));
+  ui.vitals.replaceChildren(...hud.tracks.filter((t) => t.key === '체력' || t.key === '정신력').map(trackRow));
+  ui.tracks.replaceChildren(...hud.tracks.filter((t) => t.key !== '체력' && t.key !== '정신력').map(trackRow));
   applyGate(hud.trackGate);
   ui.abilities.replaceChildren(
     ...hud.abilities.map((a) => {
@@ -737,7 +1044,14 @@ function renderHud(hud: Hud): void {
   ui.items.replaceChildren(
     ...hud.items.map((item) => {
       const li = document.createElement('li');
-      li.textContent = item.name;
+      const url = game.manifest?.items[item.id];
+      if (url) {
+        const art = document.createElement('img');
+        art.src = url;
+        art.alt = '';
+        li.append(art);
+      }
+      li.append(item.name);
       li.title = item.desc;
       return li;
     }),
@@ -754,6 +1068,7 @@ async function showEnding(ev: EndingEvent): Promise<void> {
   ui.endingTitle.textContent = ev.title;
   ui.endingSummary.textContent = ev.summary;
   ui.ending.hidden = false;
+  announce(ui.srLine, `${ui.endingKicker.textContent} · ${ev.title}. ${ev.summary}`);
   await waitAdvance();
   ui.ending.hidden = true;
   setPhase('story');
@@ -782,10 +1097,34 @@ async function interject(rest: GameEvent[], gen: number): Promise<GameEvent[]> {
   return ok ? left : [];
 }
 
+/** 이야기 줄이 흐르는 중에 온 질문에 답하고 남은 줄로 돌아온다. 그만두기를 물었으면 답을 받을 때까지 이야기를 멈춘다. */
+async function askAside(rest: GameEvent[], gen: number): Promise<GameEvent[]> {
+  const text = game.asks.shift() ?? '';
+  const outer = game.after;
+  game.after = [...rest, ...outer];
+  game.answering = true;
+  let ok = await runStream({ type: 'ask', text, scene: game.view.scene?.beat ?? null }, gen);
+  game.answering = false;
+  let left = rest;
+  if (ok && ui.confirm.open) {
+    const quit = await new Promise<boolean>((resolve) => {
+      game.onConfirm = resolve;
+    });
+    ok = await runStream({ type: 'confirm', ok: quit }, gen);
+    if (quit) left = [];
+  }
+  game.after = outer;
+  return ok ? left : [];
+}
+
 async function play(events: GameEvent[], gen: number): Promise<boolean> {
   let rest = events.slice();
   for (;;) {
     if (gen !== game.gen) return false;
+    if (game.asks.length && !game.streaming && !game.answering) {
+      rest = await askAside(rest, gen);
+      continue;
+    }
     if (game.inputs.length && !game.streaming) {
       rest = await interject(rest, gen);
       continue;
@@ -799,10 +1138,36 @@ async function play(events: GameEvent[], gen: number): Promise<boolean> {
       case 'scene':
         // 새 장면에 대사가 없으면 화면에는 앞 장면의 마지막 줄이 남는다. 저장도 그 줄을 기억한다.
         game.view = { scene: ev, line: game.view.line, dialog: game.view.dialog };
+        game.changes = [];
+        game.sceneChanges = true;
+        renderChanges();
         setScene(ev);
         renderClock();
         break;
       case 'line':
+        // 새 질문이 기다리면 앞 답의 남은 줄은 화면에 올리지 않고 기록에만 남긴다.
+        if (game.answering && game.asks.length) {
+          if (ev.text) game.backlog.push({ who: ev.display, text: shownText(ev.style, ev.text), by: ev.by });
+          break;
+        }
+        if (!game.sceneChanges) game.changes = [];
+        game.sceneChanges = false;
+        renderChanges();
+        if (ev.text) game.backlog.push({ who: ev.style === 'narration' ? '내레이션' : ev.display, text: shownText(ev.style, ev.text), by: ev.by });
+        // 줄 바로 뒤의 효과는 원인 줄을 읽는 동안 보인다. 다음 줄에는 기록만 남긴다.
+        while (rest[0]?.type === 'tracks' || rest[0]?.type === 'change' || rest[0]?.type === 'sprite' || rest[0]?.type === 'price') {
+          const effect = rest.shift();
+          if (effect?.type === 'tracks') {
+            applyTrackChanges(effect.changes);
+            renderClock(effect.changes.find((c) => c.key === '귀찌')?.to);
+          } else if (effect?.type === 'change') {
+            game.changes.push(effect.parts);
+            game.backlog.push({ who: '변화', text: effect.parts.map((p) => p.text).join(' · '), by: 'script', parts: effect.parts });
+            renderChanges();
+          } else if (effect?.type === 'sprite') swapSprite(effect.cast, effect.sprite);
+          else if (effect?.type === 'price') showPrice(effect);
+        }
+        game.remaining = [...rest, ...game.after];
         game.view.line = ev;
         if (ev.style !== 'gm') game.view.dialog = ev;
         await showLine(ev);
@@ -820,11 +1185,20 @@ async function play(events: GameEvent[], gen: number): Promise<boolean> {
         applyTrackChanges(ev.changes);
         renderClock(ev.changes.find((c) => c.key === '귀찌')?.to);
         break;
+      case 'change':
+        game.changes.push(ev.parts);
+        game.backlog.push({ who: '변화', text: ev.parts.map((part) => part.text).join(' · '), by: 'script', parts: ev.parts });
+        renderChanges();
+        announce(ui.srNote, ev.parts.map((part) => part.text).join(' · '));
+        break;
       case 'price':
         showPrice(ev);
         break;
+      case 'twist':
+        showTwist(ev);
+        break;
       case 'confirm':
-        showConfirm(ev.text);
+        showConfirm(ev.text, ev.yes, ev.no);
         break;
       case 'notice':
         toast('질문은 오른쪽 🦊 GM 단추로 물어 봐.');
@@ -861,6 +1235,8 @@ function renderChoices(options: ChoiceView[]): void {
       button.dataset.id = o.id;
       button.append(span('num', String(i + 1)), span('text', o.text));
       if (o.check) button.append(span('tag', `${o.check.stat} ${signed(o.check.statValue)} · 판정`));
+      // 칸 글이 붙어 읽히지 않게 스크린리더 이름은 쉼표로 나눈다(보이는 글은 같다).
+      button.setAttribute('aria-label', [`${i + 1}. ${o.text}`, ...(o.check ? [`${o.check.stat} ${signed(o.check.statValue)} · 판정`] : [])].join(', '));
       button.addEventListener('click', () => void act({ type: 'choose', id: o.id }));
       return button;
     }),
@@ -875,6 +1251,7 @@ function renderFree(p: FreePrompt): void {
   ui.free.classList.remove('busy');
   ui.thinking.hidden = true;
   ui.freePrompt.textContent = p.placeholder;
+  announce(ui.srNote, p.placeholder);
   ui.freeAim.hidden = true;
   ui.stage.dataset.gm = '0';
   // 장면 목표(aim)는 화면에 띄우지 않는다. 안내는 입력칸 위 prompt 한 줄과 접근법 단추가 전부다(18차).
@@ -889,6 +1266,7 @@ function renderFree(p: FreePrompt): void {
       button.dataset.id = a.id;
       button.disabled = a.locked;
       button.append(a.label, small(`${a.stat} ${signed(a.statValue)}`));
+      button.setAttribute('aria-label', `${a.label}, ${a.stat} ${signed(a.statValue)}`);
       button.addEventListener('click', () => void act({ type: 'approach', id: a.id }));
       return button;
     }),
@@ -929,8 +1307,10 @@ async function runStep(step: Step, hudFirst = false): Promise<void> {
   if (hudFirst) renderHud(step.hud);
   setPhase('story');
   game.latest = { prompt: step.prompt, hud: step.hud };
+  game.busy = true;
   const current = await play(step.events, gen);
   if (!current) return;
+  game.busy = false;
   settle();
 }
 
@@ -1010,6 +1390,7 @@ function gmThinking(): void {
   mascot('thinking');
   ui.gmMore.hidden = true;
   ui.gmText.replaceChildren(span('waiting', 'GM이 장면을 쓰는 중'), span('dots', ''));
+  announce(ui.srLine, 'GM이 장면을 쓰는 중');
 }
 
 function showWaiting(): void {
@@ -1025,6 +1406,7 @@ async function runStream(action: Action, gen: number, onRevise?: (ev: ReviseEven
   const stream = actStream(session, action);
   if (action.type === 'free') resetFaces();
   const held: GameEvent[] = [];
+  const lineAndEffects: GameEvent[] = [];
   // 앞 입력에 대한 답은 다 보여 주고 다음 입력을 받는다. 이야기 줄은 다음 입력이 끊을 수 있다.
   let answerFirst = action.type === 'interject';
   game.streaming = true;
@@ -1044,19 +1426,26 @@ async function runStream(action: Action, gen: number, onRevise?: (ev: ReviseEven
         continue;
       }
       if (message.event.type === 'revise') {
+        if (lineAndEffects.length && !(await play(lineAndEffects.splice(0), gen))) return false;
         onRevise?.(message.event);
         if (message.event.jump) answerFirst = false;
         if (silent?.length && !(await play(silent.splice(0), gen))) return false;
         continue;
       }
-      if (game.inputs.length) {
-        held.push(message.event);
+      if (game.inputs.length || (game.asks.length && !game.answering)) {
+        held.push(...lineAndEffects.splice(0), message.event);
         continue;
       }
-      if (!(await play([message.event], gen))) return false;
+      // SSE 한 건씩 재생하면 효과가 원인 줄을 넘긴 뒤에야 보인다.
+      // 다음 경계까지 줄과 바로 뒤 효과를 모아 같은 상자에서 재생한다.
+      const effect = message.event.type === 'tracks' || message.event.type === 'change' || message.event.type === 'sprite' || message.event.type === 'price';
+      if (lineAndEffects.length && !effect && !(await play(lineAndEffects.splice(0), gen))) return false;
+      if (message.event.type === 'line' || lineAndEffects.length) lineAndEffects.push(message.event);
+      else if (!(await play([message.event], gen))) return false;
     }
     // 밀린 입력은 앞 입력의 답을 다 보여 준 뒤에 처리한다.
     game.streaming = answerFirst;
+    if (lineAndEffects.length && !(await play(lineAndEffects.splice(0), gen))) return false;
     return await play(held, gen);
   } finally {
     game.streaming = false;
@@ -1066,6 +1455,7 @@ async function runStream(action: Action, gen: number, onRevise?: (ev: ReviseEven
 async function act(action: Action): Promise<void> {
   if (game.busy || !game.session) return;
   game.busy = true;
+  game.answering = action.type === 'ask';
   const gen = game.gen;
   const previous = game.prompt;
   ui.choices.hidden = true;
@@ -1076,10 +1466,12 @@ async function act(action: Action): Promise<void> {
     const ok = await runStream(action, gen);
     if (!ok) return;
     game.busy = false;
+    game.answering = false;
     settle();
   } catch (err) {
     if (gen !== game.gen) return;
     game.busy = false;
+    game.answering = false;
     ui.text.textContent = '';
     toast((err as Error).message);
     if (previous) renderPrompt(previous);
@@ -1087,6 +1479,9 @@ async function act(action: Action): Promise<void> {
 }
 
 function resetStage(): void {
+  afterIntroduction = null;
+  introduction = null;
+  renderIntroduction();
   game.gen += 1;
   finishTyping?.();
   const pending = resolveAdvance;
@@ -1099,6 +1494,9 @@ function resetStage(): void {
   mascot(null);
   showCg(undefined);
   game.busy = false;
+  game.answering = false;
+  game.onConfirm = null;
+  game.asks = [];
   game.view = { scene: null, line: null, dialog: null };
   game.remaining = [];
   game.inputs = [];
@@ -1106,28 +1504,45 @@ function resetStage(): void {
   game.skipWait = false;
   game.after = [];
   game.latest = null;
+  game.changes = [];
+  game.sceneChanges = false;
+  renderChanges();
   game.dialogSpeaker = '';
   ui.freeInput.value = '';
 }
 
-function startSession(session: string, step: Step): void {
+function startSession(session: string, step: Step, source: 'new' | 'load' = 'load'): void {
+  flushMemo();
   resetStage();
   game.session = session;
+  showMemo(session, '');
   game.backlog = [];
   game.bgRef = null;
   ui.title.hidden = true;
   ui.result.hidden = true;
-  void runStep(step, true);
+  introduction = new Introduction(source);
+  afterIntroduction = () => { void runStep(step, true); };
+  if (introduction.current) {
+    game.busy = true;
+    renderHud(step.hud);
+    ui.beatTitle.textContent = '';
+  }
+  renderIntroduction();
 }
 
 function restoreSession(session: string, step: Step, view: SavedView): void {
+  flushMemo();
   resetStage();
   game.session = session;
+  showMemo(session, view.memo ?? '');
   game.backlog = view.backlog.slice();
+  game.changes = view.changes ?? [];
+  renderChanges();
   game.bgRef = null;
   ui.title.hidden = true;
   ui.result.hidden = true;
   const gen = game.gen;
+  game.busy = true;
   void (async () => {
     renderHud(step.hud);
     setPhase('story');
@@ -1148,6 +1563,7 @@ function restoreSession(session: string, step: Step, view: SavedView): void {
     }
     game.latest = { prompt: step.prompt, hud: step.hud };
     if (!(await play(view.remaining, gen))) return;
+    game.busy = false;
     settle();
   })();
 }
@@ -1156,14 +1572,48 @@ async function newGame(): Promise<void> {
   const seed = params.get('seed');
   const body = seed === null ? {} : { seed: /^\d+$/.test(seed) ? Number(seed) : seed };
   const data = await api<{ session: string; step: Step }>('/api/new', body);
-  startSession(data.session, data.step);
+  startSession(data.session, data.step, 'new');
+  // 새로고침으로 잃을 뻔한 메모는 새로고침 뒤 처음 여는 판으로 옮긴다. 판은 서버 기억이라 같은 판으로 돌아갈 길이 없다.
+  if (memoAfterReload) {
+    ui.memo.value = memoAfterReload;
+    memoAfterReload = '';
+    sendMemo();
+  }
 }
 
-function cell(text: string, className = ''): HTMLTableCellElement {
-  const td = document.createElement('td');
-  td.textContent = text;
-  if (className) td.className = className;
-  return td;
+function replayRow(e: ResultSummary['replay'][number]): HTMLLIElement {
+  const li = document.createElement('li');
+  li.className = `replay-${e.kind}`;
+  if (e.kind === 'decision') {
+    li.append(`${e.text} `, small(e.detail));
+  } else if (e.kind === 'price') {
+    li.append(span('price-label', '대가'), span('', `${e.tag} — ${e.text}`));
+  } else {
+    const mods = e.mods.reduce((sum, m) => sum + m.value, 0);
+    li.append(
+      span('', `${e.label} (${e.stat} ${signed(e.statValue)}${mods ? `, 보정 ${signed(mods)}` : ''})`),
+      span('replay-dice', `주사위 ${e.dice[0]}·${e.dice[1]} + 수치 ${e.statValue + mods}${e.luck ? ` + 행운 ${e.luck}` : ''} = ${e.total} / 목표 10`),
+      span(`replay-tier tier-${e.tier}`, e.tierLabel),
+    );
+  }
+  return li;
+}
+
+/** 일어난 순서대로 놓고, 장면이 바뀔 때마다 장면 이름을 한 줄 넣는다. */
+function replayRows(replay: ResultSummary['replay']): HTMLLIElement[] {
+  const rows: HTMLLIElement[] = [];
+  let scene: string | null = null;
+  for (const e of replay) {
+    if (e.beatTitle !== scene) {
+      scene = e.beatTitle;
+      const head = document.createElement('li');
+      head.className = 'replay-scene';
+      head.textContent = scene;
+      rows.push(head);
+    }
+    rows.push(replayRow(e));
+  }
+  return rows;
 }
 
 async function showResult(): Promise<void> {
@@ -1181,26 +1631,7 @@ async function showResult(): Promise<void> {
   ui.resultTitle.textContent = r.ending?.title ?? '이야기의 끝';
   ui.resultSummary.textContent = r.ending?.summary ?? '';
   ui.resultHook.textContent = r.ending?.nextHook ?? '';
-  ui.resultChecks.replaceChildren(
-    ...r.checks.map((c) => {
-      const tr = document.createElement('tr');
-      const mods = c.mods.reduce((sum, m) => sum + m.value, 0);
-      tr.append(
-        cell(c.beatTitle),
-        cell(`${c.label} (${c.stat} ${signed(c.statValue)}${mods ? `, 보정 ${signed(mods)}` : ''})`),
-        cell(`주사위 ${c.dice[0] + c.dice[1]} + 수치 ${c.statValue + mods}${c.luck ? ` + 행운 ${c.luck}` : ''} = ${c.total} / 목표 10`),
-        cell(c.tierLabel, `tier-${c.tier}`),
-      );
-      return tr;
-    }),
-  );
-  ui.resultDecisions.replaceChildren(
-    ...r.decisions.map((d) => {
-      const li = document.createElement('li');
-      li.append(`${d.text} `, small(d.beatTitle));
-      return li;
-    }),
-  );
+  ui.resultReplay.replaceChildren(...replayRows(r.replay));
   ui.resultTracks.replaceChildren(...r.tracks.map(trackRow));
   const stats: [string, string][] = [
     ['플레이 시간', formatTime(r.playMs)],
@@ -1250,8 +1681,9 @@ async function openSlots(mode: 'save' | 'load'): Promise<void> {
 }
 
 async function saveTo(slot: string): Promise<void> {
+  await flushMemo();
   const unread = (game.live?.queue ?? []).flatMap((m) => ('event' in m && m.event.type !== 'revise' ? [m.event] : []));
-  const view: SavedView = { scene: game.view.scene, line: game.view.line, dialog: game.view.dialog, remaining: [...unread, ...game.remaining], backlog: game.backlog, faces: { ...game.faces } };
+  const view: SavedView = { scene: game.view.scene, line: game.view.line, dialog: game.view.dialog, remaining: [...unread, ...game.remaining], backlog: game.backlog, faces: { ...game.faces }, changes: game.changes };
   const { meta } = await api<{ meta: SaveMeta }>('/api/save', { session: game.session, slot, view });
   ui.slotsDialog.close();
   toast(`'${meta.beatTitle}' 장면을 저장했습니다`);
@@ -1259,9 +1691,15 @@ async function saveTo(slot: string): Promise<void> {
 
 async function loadFrom(slot: string): Promise<void> {
   ui.slotsDialog.close();
+  await flushMemo();
+  // 갈림길 저장은 지금 판의 것이다. 그 뒤에 적은 메모까지 그대로 가져간다.
+  const current = slot === 'auto_fork' ? ui.memo.value : '';
+  memoAfterReload = '';
   const data = await api<{ session: string; step: Step; view: SavedView | null }>('/api/load', { slot });
   if (data.view?.scene) restoreSession(data.session, data.step, data.view);
   else startSession(data.session, data.step);
+  ui.memo.value = current || (data.view?.memo ?? '');
+  if (current) sendMemo();
   toast('저장한 장면을 불러왔습니다');
 }
 
@@ -1269,6 +1707,11 @@ function openNotes(): void {
   const notes = game.hud?.notes ?? [];
   const kinds = [...new Set(notes.map((n) => n.kind))];
   ui.notesList.replaceChildren(
+    ...(['체력', '정신력'] as const).map((key) => {
+      const p = document.createElement('p');
+      p.append(span('note-name', key), span('note-text', TRACK_INFO[key].desc));
+      return p;
+    }),
     ...kinds.map((kind) => {
       const section = document.createElement('section');
       const h = document.createElement('h3');
@@ -1294,7 +1737,12 @@ function openLog(): void {
   ui.logList.replaceChildren(
     ...game.backlog.map((line) => {
       const li = document.createElement('li');
-      li.append(span('who', line.who), line.text);
+      li.append(span('who', line.who));
+      if (line.parts) line.parts.forEach((part, index) => {
+        if (index) li.append(' · ');
+        li.append(span(part.tone, part.text));
+      });
+      else li.append(line.text);
       return li;
     }),
   );
@@ -1325,6 +1773,7 @@ async function openAtlas(): Promise<void> {
   const at = (col: number, row: number) => ({ x: ((col + 0.5) / view.cols) * 100, y: ((row + 0.5) / view.rows) * 100 });
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('class', 'atlas-lines');
+  svg.setAttribute('aria-hidden', 'true');
   svg.setAttribute('viewBox', '0 0 100 100');
   svg.setAttribute('preserveAspectRatio', 'none');
   const place = new Map(view.nodes.map((n) => [n.key, n]));
@@ -1350,6 +1799,14 @@ async function openAtlas(): Promise<void> {
     if (n.label === null) {
       cell.dataset.key = n.key;
       cell.addEventListener('click', () => void showHint(cell, n.key));
+      // 마우스로만 열리던 힌트를 키보드로도 연다(Tab 으로 칸에 가서 Enter·Space).
+      cell.tabIndex = 0;
+      cell.setAttribute('role', 'button');
+      cell.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        void showHint(cell, n.key);
+      });
     }
     return cell;
   });
@@ -1379,6 +1836,7 @@ async function showHint(cell: HTMLElement, key: string): Promise<void> {
   const fox = asset('sprites', 'gm_smile');
   if (fox?.url) byId<HTMLImageElement>('atlas-hint-img').src = fox.url;
   byId('atlas-hint').hidden = false;
+  announce(ui.srNote, hint.text);
 }
 
 function goTitle(): void {
@@ -1390,8 +1848,20 @@ function goTitle(): void {
 }
 
 async function boot(): Promise<void> {
+  const lastSession = sessionStorage.getItem(MEMO_SESSION_KEY);
+  if (lastSession) {
+    // 메모를 못 받아도 게임은 시작한다.
+    const carried = await api<{ memo: string }>(`/api/notes?session=${encodeURIComponent(lastSession)}`).catch((err: unknown) => {
+      console.warn('메모를 불러오지 못했습니다', err);
+      return { memo: '' };
+    });
+    memoAfterReload = carried.memo;
+  }
   const [manifest, health] = await Promise.all([api<Manifest>('/api/manifest'), api<Health>('/api/health').catch(() => null)]);
   game.manifest = manifest;
+  const askFace = manifest.sprites['gm'];
+  if (askFace) byId<HTMLImageElement>('ask-gm-face').src = askFace.url;
+  for (const url of [manifest.cutins.crit, manifest.cutins.miss]) if (url) new Image().src = url;
   for (const sprite of Object.values(manifest.sprites)) new Image().src = sprite.url;
   ui.titleSub.textContent = `${manifest.episode} — ${manifest.title}`;
   for (const node of document.querySelectorAll('.credit-line')) node.textContent = manifest.credit;
@@ -1402,6 +1872,7 @@ async function boot(): Promise<void> {
     byId('title-text').hidden = true;
   }
   ui.episode.textContent = manifest.episode;
+  if (manifest.rating) byId('rating').setAttribute('aria-label', manifest.rating);
   const ok = health?.llm.ok === true;
   const label = health?.model?.label ?? health?.llm.model ?? '로컬 모델';
   ui.gmStatus.dataset.ok = ok ? '1' : '0';
@@ -1444,11 +1915,26 @@ byId('slots-close').addEventListener('click', () => ui.slotsDialog.close());
 byId('log-close').addEventListener('click', () => ui.logDialog.close());
 ui.dialog.addEventListener('click', advance);
 ui.gmBox.addEventListener('click', advance);
+byId('intro-skip').addEventListener('click', () => {
+  introduction?.skip();
+  renderIntroduction();
+});
 ui.free.addEventListener('click', (event) => event.stopPropagation());
 ui.askGm.addEventListener('click', (event) => {
   event.stopPropagation();
   setAskMode(!game.askMode);
 });
+ui.feedbackOpen.addEventListener('click', (event) => {
+  event.stopPropagation();
+  openFeedback();
+});
+ui.feedbackResult.addEventListener('click', openFeedback);
+ui.feedbackClose.addEventListener('click', closeFeedback);
+ui.feedbackForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  void sendFeedback();
+});
+ui.feedback.addEventListener('click', (event) => event.stopPropagation());
 ui.confirmOk.addEventListener('click', () => answerConfirm(true));
 ui.confirmNo.addEventListener('click', () => answerConfirm(false));
 // Esc 로 닫아도 '계속한다' 로 보낸다. 엔진이 답을 기다리는 상태를 남기지 않기 위해서다.
@@ -1467,10 +1953,16 @@ ui.say.addEventListener('submit', (event) => {
   }
   ui.freeInput.value = '';
   if (game.askMode) {
-    // 질문 모드: 이야기 밖 말. 바쁘면 버리지 않고 끝난 뒤 묻는다.
+    // 질문 모드: 이야기 밖 말. 떠 있는 줄을 넘겨 바로 답하고, 이야기는 그 뒤 남은 줄로 돌아온다.
     setAskMode(false);
     if (game.busy) {
       game.asks.push(text);
+      if (game.phase === 'line') {
+        if (finishTyping) {
+          game.skipWait = true;
+          finishTyping();
+        } else advance();
+      }
       return;
     }
     void act({ type: 'ask', text });
@@ -1487,12 +1979,35 @@ ui.say.addEventListener('submit', (event) => {
     finishTyping();
   } else advance();
 });
+ui.memo.addEventListener('input', () => {
+  if (!game.session) return;
+  if (memoTimer !== null) clearTimeout(memoTimer);
+  memoTimer = setTimeout(() => void sendMemo(), 500);
+});
+window.addEventListener('pagehide', () => void flushMemo());
 ui.freeInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && (event.isComposing || event.keyCode === 229)) event.preventDefault();
   if (event.key === 'Escape') ui.freeInput.blur();
 });
+/** 키보드로 고른 단추. 창을 닫으면 브라우저가 포커스를 여는 단추로 돌려놓으므로 포커스만으로는 고른 것인지 알 수 없다. */
+let tabbedTo: Element | null = null;
+let pressedByKey: Element | null = null;
+document.addEventListener('keyup', (event) => {
+  if (event.key === 'Tab') tabbedTo = document.activeElement;
+});
+document.addEventListener('pointerdown', () => {
+  tabbedTo = null;
+  pressedByKey = null;
+}, true);
 document.addEventListener('keydown', (event) => {
-  if (ui.slotsDialog.open || ui.logDialog.open || ui.notesDialog.open || ui.atlasDialog.open || event.target === ui.freeInput) return;
+  if (ui.slotsDialog.open || ui.logDialog.open || ui.notesDialog.open || ui.atlasDialog.open || ui.feedback.open || ui.confirm.open || event.target === ui.freeInput) return;
+  const target = event.target as HTMLElement;
+  if (target.closest('input, textarea, select')) return;
+  // 탭으로 고른 단추는 단추가 받는다. 마우스로 누른 뒤나 창이 닫혀 돌아온 포커스는 대사 넘기기로 둔다.
+  if ((event.key === 'Enter' || event.key === ' ') && (target === tabbedTo || target === pressedByKey) && target.closest('button, a[href], [role="button"]')) {
+    pressedByKey = target;
+    return;
+  }
   // 칸을 누르지 않아도 글자를 치면 입력칸으로 들어간다. 스페이스와 엔터는 대사 넘기기로 남긴다.
   if (!ui.say.hidden && !event.ctrlKey && !event.metaKey && !event.altKey && (event.key.length === 1 || event.key === 'Process') && event.key !== ' ' && !(game.phase === 'choices' && /^[1-9]$/.test(event.key))) {
     ui.freeInput.focus({ preventScroll: true });

@@ -37,7 +37,7 @@ export function roll2d6(
   const b = rollD6(a.state);
   const total = a.face + b.face + statValue + mods.reduce((sum, m) => sum + m.value, 0);
   return {
-    roll: { label, stat, statValue, mods, dice: [a.face, b.face], total, tier: tierOf(total) },
+    roll: { label, stat, statValue, mods, dice: [a.face, b.face], total, tier: a.face === 6 && b.face === 6 ? 'crit' : tierOf(total) },
     rng: b.state,
   };
 }

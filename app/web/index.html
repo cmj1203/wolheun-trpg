@@ -20,15 +20,17 @@
       <div id="cg" class="cg" aria-hidden="true">
         <div id="cg-blur" class="cg-blur"></div>
         <div id="cg-art" class="cg-art"></div>
+        <div id="cg-art-next" class="cg-art next"></div>
       </div>
       <div id="flash" class="flash"></div>
       <div id="sfx" class="sfx" aria-hidden="true"></div>
       <p id="temp-badge" class="temp-badge" hidden></p>
 
-      <header class="topbar">
+      <header id="topbar" class="topbar">
         <span id="episode" class="chip episode"></span>
         <span id="beat-title" class="beat-title"></span>
         <span id="clock" class="chip clock" hidden></span>
+        <span id="tension" class="chip tension" hidden></span>
         <span class="spacer"></span>
         <span id="gm-status" class="gm-status" title="로컬 GM 상태"></span>
         <nav class="menu">
@@ -40,32 +42,39 @@
       </header>
 
       <aside id="hud" class="hud" aria-label="진행 수치">
+        <ul id="vitals" class="tracks" aria-label="몸과 마음"></ul>
         <h2 id="tracks-head">그 남자의 마음</h2>
         <ul id="tracks" class="tracks"></ul>
         <h2>아시나</h2>
         <ul id="abilities" class="abilities"></ul>
         <ul id="items" class="items"></ul>
+        <h2 id="memo-head">메모</h2>
+        <textarea id="memo" class="memo" maxlength="2000" aria-labelledby="memo-head"></textarea>
       </aside>
 
       <section id="choices" class="choices" hidden></section>
+      <p id="intro-roll" class="intro-roll" hidden>주사위 2개 + 능력치</p>
+      <button id="intro-skip" class="intro-skip" type="button" hidden>건너뛰기</button>
 
-      <section id="gm-box" class="gm-box" hidden aria-live="polite">
+      <section id="gm-box" class="gm-box" hidden>
         <figure id="gm-mascot" class="gm-mascot" aria-hidden="true"><img alt="" /></figure>
         <div class="gm-bubble">
           <p class="gm-name">GM</p>
           <span id="gm-hint" class="gm-hint" hidden>클릭 · Space 넘기기</span>
           <p id="gm-text" class="gm-text"></p>
-          <span id="gm-more" class="more" hidden>▼</span>
+          <span id="gm-more" class="more" hidden aria-hidden="true">▼</span>
         </div>
       </section>
 
-      <section id="dialog" class="dialog" data-style="narration" aria-live="polite">
+      <section id="dialog" class="dialog" data-style="narration">
         <p id="name" class="nameplate" hidden></p>
         <span id="gm-badge" class="gm-badge" hidden title="로컬 GM이 쓴 대사">GM</span>
         <p id="echo" class="echo" hidden></p>
         <p id="text" class="text"></p>
-        <span id="more" class="more" hidden>▼</span>
+        <span id="more" class="more" hidden aria-hidden="true">▼</span>
         <p id="price-line" class="price-line" hidden><span class="price-label">대가</span><span id="price-tag" class="price-tag"></span><span id="price-text"></span></p>
+        <p id="twist-line" class="price-line twist-line" hidden><span class="price-label">장면 검사</span><span id="twist-text"></span></p>
+        <div id="changes" class="changes" aria-live="polite" hidden></div>
         <div id="free" class="free" hidden>
           <p id="free-aim" class="free-aim" hidden><span class="free-aim-label">아시나가 바라는 것</span><span id="free-aim-text"></span></p>
           <p id="free-prompt" class="free-prompt"></p>
@@ -79,12 +88,15 @@
       </section>
 
       <form id="say" class="say" hidden autocomplete="off">
-        <input id="free-input" name="free" maxlength="200" aria-label="말하거나 행동하기" placeholder="말하거나 행동하기" />
+        <span class="say-field">
+          <input id="free-input" name="free" maxlength="200" aria-label="말하거나 행동하기" placeholder="말하거나 행동하기" />
+          <button id="ask-gm" type="button" class="ask-gm" aria-pressed="false" aria-label="GM에게 묻기" title="GM에게 묻기"><img id="ask-gm-face" alt="" /></button>
+        </span>
         <button id="free-send" type="submit">말하기</button>
-        <button id="ask-gm" type="button" class="ask-gm" aria-pressed="false" aria-label="GM에게 묻기" title="GM에게 묻기">🦊 GM</button>
+        <button id="feedback-open" type="button" class="feedback-open" aria-label="피드백" title="피드백">피드백</button>
       </form>
 
-      <dialog id="confirm" class="confirm">
+      <dialog id="confirm" class="confirm" aria-labelledby="confirm-text">
         <p id="confirm-text" class="confirm-text"></p>
         <div class="confirm-actions">
           <button id="confirm-no" type="button">계속한다</button>
@@ -92,10 +104,21 @@
         </div>
       </dialog>
 
+      <dialog id="feedback" class="confirm feedback" aria-labelledby="feedback-title">
+        <form id="feedback-form" method="dialog">
+          <h2 id="feedback-title" class="feedback-title">피드백</h2>
+          <textarea id="feedback-text" class="feedback-text" rows="5" maxlength="2000" aria-label="피드백"></textarea>
+          <div class="confirm-actions">
+            <button id="feedback-close" type="button">닫기</button>
+            <button id="feedback-send" type="submit" class="confirm-ok">보내기</button>
+          </div>
+        </form>
+      </dialog>
+
       <div id="dice" class="dice" hidden>
         <div class="dice-card">
           <p id="dice-label" class="dice-label"></p>
-          <div class="dice-row">
+          <div class="dice-row" aria-hidden="true">
             <div id="die-a" class="die" data-face="1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             <div id="die-b" class="die" data-face="1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           </div>
@@ -105,6 +128,8 @@
           <p class="dice-hint">눌러서 계속</p>
         </div>
       </div>
+
+      <img id="cutin" class="cutin" alt="" hidden />
 
       <div id="ending" class="ending" hidden>
         <p id="ending-kicker" class="ending-kicker">결말</p>
@@ -128,11 +153,11 @@
           </div>
           <p id="title-status" class="title-status"></p>
         </div>
-        <span class="rating">15</span>
+        <span id="rating" class="rating" role="img" aria-label="15세 이용가">15</span>
       </section>
 
-      <dialog id="atlas" class="atlas-dialog">
-        <h2>이야기 지도</h2>
+      <dialog id="atlas" class="atlas-dialog" aria-labelledby="atlas-title">
+        <h2 id="atlas-title">이야기 지도</h2>
         <div id="atlas-map" class="atlas-map"></div>
         <div id="atlas-fates" class="atlas-fates" hidden></div>
         <p id="atlas-hint" class="atlas-hint" hidden><img id="atlas-hint-img" alt="" /><span id="atlas-hint-text"></span></p>
@@ -158,13 +183,8 @@
           </header>
           <div class="result-grid">
             <section>
-              <h2>판정 기록</h2>
-              <table class="checks">
-                <thead><tr><th>장면</th><th>판정</th><th>계산</th><th>결과</th></tr></thead>
-                <tbody id="result-checks"></tbody>
-              </table>
-              <h2>선택과 입력</h2>
-              <ol id="result-decisions" class="decisions"></ol>
+              <h2>돌아보기</h2>
+              <ol id="result-replay" class="replay"></ol>
             </section>
             <section>
               <h2>최종 진행 수치</h2>
@@ -175,6 +195,7 @@
                 <button id="btn-fork" type="button" class="primary" hidden>마지막 갈림길에서 다시</button>
                 <button id="btn-again" type="button" class="primary">다시 하기</button>
                 <button id="btn-map-result" type="button">이야기 지도</button>
+                <button id="btn-feedback-result" type="button">피드백</button>
                 <button id="btn-home" type="button">타이틀로</button>
               </div>
             </section>
@@ -184,25 +205,28 @@
         <div id="result-more" class="result-more" hidden><button id="result-down" type="button" aria-label="아래로">▼</button></div>
       </section>
 
-      <dialog id="slots" class="sheet">
+      <dialog id="slots" class="sheet" aria-labelledby="slots-title">
         <h2 id="slots-title">저장 칸</h2>
         <ul id="slots-list" class="slot-list"></ul>
         <button id="slots-close" type="button">닫기</button>
       </dialog>
 
-      <dialog id="notes" class="sheet">
-        <h2>아시나의 수첩</h2>
+      <dialog id="notes" class="sheet" aria-labelledby="notes-title">
+        <h2 id="notes-title">아시나의 수첩</h2>
         <div id="notes-list" class="notes-list"></div>
         <button id="notes-close" type="button">닫기</button>
       </dialog>
 
-      <dialog id="log" class="sheet">
-        <h2>대사 기록</h2>
+      <dialog id="log" class="sheet" aria-labelledby="log-title">
+        <h2 id="log-title">대사 기록</h2>
         <ol id="log-list" class="log-list"></ol>
         <button id="log-close" type="button">닫기</button>
       </dialog>
 
       <p id="toast" class="toast" hidden></p>
+      <!-- 스크린리더 전용 알림. 글자를 한 자씩 찍는 대사창 대신 한 줄을 통째로 읽힌다. 화면에는 안 보인다. -->
+      <p id="sr-line" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+      <p id="sr-note" class="sr-only" role="status" aria-atomic="true"></p>
     </main>
   </body>
 </html>

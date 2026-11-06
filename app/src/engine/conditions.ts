@@ -80,10 +80,14 @@ export function evalCond(src: string, ctx: CondContext): boolean {
 
 /**
  * 한 개의 비교식("귀찌 <= 0", "flag:머뭇 >= 3")이 참이 되기 직전 값. 작은 끝 경고가 처음 나온 턴에 수치를 문턱 바로 위에 멈추는 데 쓴다.
- * 비교식이 아니거나(플래그만, 두 항 결합) ==/!= 이면 null.
+ * 공개 플래그와 비교식 하나의 AND 결합도 받는다. OR·복수 비교식·==/!= 이면 null.
  */
 export function holdBefore(src: string): { name: string; flag: boolean; value: number } | null {
-  const c = CMP_RE.exec(src.trim());
+  if (src.includes('||')) return null;
+  const parts = src.split('&&').map((s) => s.trim());
+  const comparisons = parts.filter((s) => CMP_RE.test(s));
+  if (comparisons.length !== 1 || parts.some((s) => !CMP_RE.test(s) && !FLAG_RE.test(s))) return null;
+  const c = CMP_RE.exec(comparisons[0] ?? '');
   if (!c) return null;
   const value = Number(c[4]);
   switch (c[3] as Op) {
