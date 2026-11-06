@@ -1,0 +1,323 @@
+{
+  "summary": {
+    "count": 8,
+    "silentLines": 0,
+    "fallbackTurns": 0,
+    "addressRepeats": 0,
+    "overThirtyPercent": [],
+    "overThirtyPercentFromRun1": [
+      5
+    ],
+    "menacing": [
+      7
+    ],
+    "intrigued": [],
+    "sneer": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+    ],
+    "faceMatches": 6
+  },
+  "rows": [
+    {
+      "i": 1,
+      "input": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+      "beat": "b05_why",
+      "raw": [
+        "1회: 눈물이라도 흘릴 생각인가, 이방인."
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "눈물이라도 흘릴 생각인가, 이방인."
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "situation": "눈물이 차올라 말문이 막히는 몸 반응",
+      "expected": [
+        "sneer",
+        "neutral"
+      ],
+      "faceMatches": true,
+      "resultNarration": [
+        "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+        "호위 하나가 말없이 칼자루에 손을 얹었다."
+      ],
+      "prices": [],
+      "roll": [],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 8977,
+      "baselineMs": 18702,
+      "ratio": 0.4800021388086836,
+      "run1Ms": 9886,
+      "cpuBefore": "62215 RN     0.2 06:51",
+      "cpuAfter": "62215 SN    22.3 07:00"
+    },
+    {
+      "i": 2,
+      "input": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+      "beat": "b05_why",
+      "raw": [
+        "1회: 손끝이 떨리는군. 이방인, 죽음이 가까워진 건가?",
+        "2회: 손끝이 떨리는군. 겁을 먹은 건가?"
+      ],
+      "violations": [
+        "reaction_repeat(soft): 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+      ],
+      "rewrites": 1,
+      "final": [
+        "손끝이 떨리는군. 겁을 먹은 건가?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "situation": "긴장·차가운 손끝·가쁜 숨",
+      "expected": [
+        "sneer",
+        "neutral"
+      ],
+      "faceMatches": true,
+      "resultNarration": [],
+      "prices": [],
+      "roll": [],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 9528,
+      "baselineMs": 19549,
+      "ratio": 0.4873906593687657,
+      "run1Ms": 9725,
+      "cpuBefore": "62215 SN    22.3 07:00",
+      "cpuAfter": "62215 SN    13.7 07:09"
+    },
+    {
+      "i": 3,
+      "input": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+      "beat": "b05_why",
+      "raw": [
+        "1회: 붉게 달아오른 뺨이 꼴사납군. 이방인, 그게 분노인가?",
+        "2회: 붉게 달아오른 꼴이 제법 우스운 여자군."
+      ],
+      "violations": [
+        "reaction_repeat(soft): 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 겁을 먹은 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+      ],
+      "rewrites": 1,
+      "final": [
+        "붉게 달아오른 꼴이 제법 우스운 여자군."
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "situation": "분노로 얼굴이 붉고 말문이 막힘",
+      "expected": [
+        "sneer",
+        "neutral"
+      ],
+      "faceMatches": true,
+      "resultNarration": [
+        "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "그 바람에 후드가 벗겨졌다."
+      ],
+      "prices": [],
+      "roll": [],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 9549,
+      "baselineMs": 36052,
+      "ratio": 0.2648674137357151,
+      "run1Ms": 9620,
+      "cpuBefore": "62215 SN    13.7 07:09",
+      "cpuAfter": "62215 RN    15.8 07:19"
+    },
+    {
+      "i": 4,
+      "input": "힘이 쭉 빠져 무릎이 후들거린다",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 무릎이 떨리는군. 이방인, 벌써 죽을 생각인가?"
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "무릎이 떨리는군. 이방인, 벌써 죽을 생각인가?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "situation": "기력 저하·무릎 떨림",
+      "expected": [
+        "sneer",
+        "neutral"
+      ],
+      "faceMatches": true,
+      "resultNarration": [
+        "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+      ],
+      "prices": [],
+      "roll": [],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 6651,
+      "baselineMs": 24112,
+      "ratio": 0.27583775713337755,
+      "run1Ms": 8887,
+      "cpuBefore": "62215 RN    15.8 07:19",
+      "cpuAfter": "62215 SN    20.2 07:25"
+    },
+    {
+      "i": 5,
+      "input": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 눈물이라니, 이방인. 죽기 직전의 발악인가?",
+        "2회: 눈물이라. 여자, 죽음 앞에서 고작 그딴 게 의미가 있나?"
+      ],
+      "violations": [
+        "reaction_repeat(soft): 호칭 \"이방인\"이 직전 대사 \"무릎이 떨리는군. 이방인, 벌써 죽을 생각인가?\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+      ],
+      "rewrites": 1,
+      "final": [
+        "눈물이라. 여자, 죽음 앞에서 고작 그딴 게 의미가 있나?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "situation": "울음이 차오르는 몸 반응",
+      "expected": [
+        "sneer",
+        "neutral"
+      ],
+      "faceMatches": true,
+      "resultNarration": [],
+      "prices": [],
+      "roll": [],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 11185,
+      "baselineMs": 44709,
+      "ratio": 0.25017334317475226,
+      "run1Ms": 6718,
+      "cpuBefore": "62215 SN    20.2 07:25",
+      "cpuAfter": "62215 SN    12.9 07:36"
+    },
+    {
+      "i": 6,
+      "input": "다치게 할 생각은 없어요. 얘기부터 해요.",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 대화?"
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "대화?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "situation": "칼 앞에서도 대화를 요구하는 담대한 설득",
+      "expected": [
+        "intrigued"
+      ],
+      "faceMatches": false,
+      "resultNarration": [
+        "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 숨이 뜨거운 모래바람에 섞여 흩어졌다."
+      ],
+      "prices": [],
+      "roll": [],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 8163,
+      "baselineMs": 36843,
+      "ratio": 0.22156176207149256,
+      "run1Ms": 8055,
+      "cpuBefore": "62215 SN    12.9 07:36",
+      "cpuAfter": "62215 SN    12.8 07:45"
+    },
+    {
+      "i": 7,
+      "input": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 감히 내 몸에 손을 대다니."
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "감히 내 몸에 손을 대다니."
+      ],
+      "faces": [
+        "menacing"
+      ],
+      "situation": "남자의 무기 든 손목을 직접 붙잡아 미는 위협",
+      "expected": [
+        "menacing"
+      ],
+      "faceMatches": true,
+      "resultNarration": [
+        "양손으로 그의 손목을 낚아채 옆으로 거칠게 밀어냈다. 찰나의 순간, 칼날이 내 외투 자락을 스치며 날카로운 소리와 함께 옷감을 베어 갔다.",
+        "남자의 눈빛이 서늘하게 가라앉았다. 불쾌함이 서린 손이 다시 칼자루를 꽉 움켜쥐었고, 나를 향한 의심은 더욱 짙게 일렁였다."
+      ],
+      "prices": [
+        "칼끝이 외투 자락을 베어 갔다."
+      ],
+      "roll": [
+        "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다: 대가 있는 성공"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 11722,
+      "baselineMs": 82583,
+      "ratio": 0.1419420461838393,
+      "run1Ms": 11807,
+      "cpuBefore": "62215 SN    12.8 07:45",
+      "cpuAfter": "62215 SN    10.7 07:56"
+    },
+    {
+      "i": 8,
+      "input": "근처에 물을 얻을 곳이 있나요?",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 목숨이 아까운 이방인이군. 물을 찾는다고 살 수 있을까?"
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "목숨이 아까운 이방인이군. 물을 찾는다고 살 수 있을까?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "situation": "죽음의 위협 앞에서 물을 구하는 뜻밖의 담담함",
+      "expected": [
+        "intrigued"
+      ],
+      "faceMatches": false,
+      "resultNarration": [],
+      "prices": [],
+      "roll": [],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 7305,
+      "baselineMs": 88210,
+      "ratio": 0.08281373993878245,
+      "run1Ms": 6991,
+      "cpuBefore": "62215 SN    10.7 07:56",
+      "cpuAfter": "62215 SN    16.2 08:04"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+[
+  {
+    "request": 4,
+    "at": 1793970680658,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 8,
+    "at": 1793970687577,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 11,
+    "at": 1793970690173,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 15,
+    "at": 1793970697136,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 18,
+    "at": 1793970699711,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 23,
+    "at": 1793970706458,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 27,
+    "at": 1793970715102,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 30,
+    "at": 1793970717543,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 34,
+    "at": 1793970724197,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ],
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 37,
+    "at": 1793970733562,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  },
+  {
+    "request": 39,
+    "at": 1793970744341,
+    "scenarioRules": true,
+    "characterRules": true,
+    "faceEnums": [
+      [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    ],
+    "faceDefaultFound": false,
+    "neutralExample": true
+  }
+]

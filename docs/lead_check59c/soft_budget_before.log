@@ -1,0 +1,23 @@
+bun test v1.4.2 (744846f84)
+
+tests/gm.test.ts:
+849 |     const base = neutral(contexts('칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.').narrate);
+850 |     const reply = await gm.narrate({
+851 |       ...base, state: { ...base.state, spoken: { 남자: ['상인, 눈을 들어라.'] } },
+852 |       improv: { deed: '남자의 손목을 잡아 옆으로 밀어냈다.', bold: true, absurd: false },
+853 |     });
+854 |     expect(reply.meta.attempts).toBe(1);
+                                      ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:854:33)
+(fail) 이번 판 되풀이와 엔진 상태 > 큰 행동이어도 soft 반복만 남으면 설정한 재시도 횟수를 늘리지 않는다 [6.50ms]
+
+ 0 pass
+ 125 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [37.00ms]
