@@ -839,6 +839,23 @@ describe('이번 판 되풀이와 엔진 상태', () => {
     expect(mock.requests.some(request => request.messages[1]?.content.includes('엔진이 정한 결과') && request.messages[1]?.content.includes(gist))).toBe(true);
   });
 
+  test('큰 행동이어도 soft 반복만 남으면 설정한 재시도 횟수를 늘리지 않는다', async () => {
+    const draft = lines(['나레이션', '손목을 밀자 칼날이 옆으로 비껴갔다.'], ['남자', '상인, 그 손부터 놓아라.'], ['나레이션', '남자의 눈이 가늘어졌다.']);
+    const mock = mockLlama([draft]);
+    stop = () => mock.server.stop(true);
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore, {
+      ...DEFAULT_GM_OPTIONS, retries: 0,
+    });
+    const base = neutral(contexts('칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.').narrate);
+    const reply = await gm.narrate({
+      ...base, state: { ...base.state, spoken: { 남자: ['상인, 눈을 들어라.'] } },
+      improv: { deed: '남자의 손목을 잡아 옆으로 밀어냈다.', bold: true, absurd: false },
+    });
+    expect(reply.meta.attempts).toBe(1);
+    expect(reply.meta.fallback).toBe(false);
+    expect(reply.meta.violations.every(v => v.startsWith('beat/reaction_repeat'))).toBe(true);
+  });
+
   test.each([
     { tier: 'hit', gist: '붙잡은 손목이 밀리며 칼끝이 목에서 비껴났다.' },
     { tier: 'miss', gist: '손을 뻗었지만 남자가 내 손목을 잡아 멈춰 세웠다.' },

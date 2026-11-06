@@ -68,7 +68,7 @@ const cell = (text: string) => text.replaceAll('|', '\\|').replaceAll('\n', ' ')
 await Bun.write(new URL('model_table.md', dir), [
   '# 59c 실제 26B 연속 입력',
   '',
-  '같은 판의 상태·발화 기록을 유지했다. 각 1턴인 원래 위협 장면은 시험 복사본에서 b05 3턴·b06 20턴으로 늘려 8개 입력을 받을 자리를 만들었다. 실제 콘텐츠는 변경하지 않았다. 이 표는 기본 대본 완주 시험이 아니다.',
+  '정상 도입과 달려가서 길을 묻는 선택을 거쳐 b05에 도달해 마음 HUD를 열고, 같은 판의 상태·발화 기록을 유지했다. 시험 복사본에서 b05 3턴·b06 20턴으로 늘렸고, 의심 10의 spy_cut 결말 전환만 8개 반응을 비교하는 동안 유예했다. 수치·대가·판정은 그대로 적용했다. 실제 콘텐츠는 변경하지 않았다. 이 표는 기본 대본 완주 시험이 아니다.',
   '',
   '| 입력 | 모델 원문(남자, 생성 차례별) | 위반 | 다시 쓰기 횟수 | 결과 서술 | 최종 줄 | 고른 표정 | 상황 → 기대 표정 → 실제 표정 | 걸린 시간 |',
   '|---|---|---|---|---|---|---|---|---|',
@@ -116,7 +116,7 @@ const requestRows = requests.flatMap((request, index) => {
     if (value === null || typeof value !== 'object') return;
     for (const [key, item] of Object.entries(value)) {
       if (key === 'face' && item !== null && typeof item === 'object') {
-        if ('enum' in item && Array.isArray(item.enum)) enums.push(item.enum.filter((face): face is string => typeof face === 'string'));
+        if ('enum' in item && Array.isArray(item.enum)) enums.push(item.enum.filter((face: unknown): face is string => typeof face === 'string'));
         if ('default' in item) defaultFound = true;
       }
       visit(item);

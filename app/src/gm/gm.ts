@@ -520,7 +520,7 @@ export class LocalGm implements GmPort {
     let best: { lines: Line[]; soft: number; sets: string[] } | null = null;
     let softTries = 0;
     let lastAttemptMs = 0;
-    while (attempt <= Math.max(this.opts.retries, hardRetries)) {
+    while (attempt <= this.opts.retries || (hardPending && attempt <= hardRetries)) {
       if (attempt > 0 && performance.now() - started + lastAttemptMs > this.opts.budgetMs && !(hardPending && attempt <= hardRetries)) {
         violations.push(`budget: ${this.opts.budgetMs}ms 안에 다시 쓸 시간이 없음`);
         break;

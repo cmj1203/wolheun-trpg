@@ -11,7 +11,8 @@ const b05 = original.beats.b05_why;
 const b06 = original.beats.b06_swing;
 if (!b05?.free || !b06?.free) throw new Error('b05·b06 자유 입력 장면이 필요합니다');
 // 원래 각 1턴인 위협 장면에서 같은 판의 누적 반응을 시험하도록 시험 복사본의 턴 상한만 연장한다.
-const scenario = { ...original, beats: {
+// 공개된 의심 수치는 그대로 적용하되, 여덟 반응을 비교하는 시험 동안 의심 10의 결말 전환만 유예한다.
+const scenario = { ...original, fates: original.fates?.filter(fate => fate.id !== 'spy_cut'), beats: {
   ...original.beats,
   [b05.id]: { ...b05, free: { ...b05.free, turns: 3 } },
   [b06.id]: { ...b06, free: { ...b06.free, turns: 20 } },
