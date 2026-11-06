@@ -574,7 +574,7 @@ export type GameEvent =
   | { type: 'line'; speaker: string; display: string; style: LineStyle; text: string; fx?: string; sfx?: string; face?: string; cg?: string; cg_from?: string; by: 'script' | 'gm'; if?: string }
   | { type: 'echo'; text: string }
   | { type: 'revise'; drop: number[]; jump: boolean }
-  | ({ type: 'roll'; tierLabel: string } & RollResult)
+  | ({ type: 'roll'; tierLabel: string; /** 판정 결과에 맞춘 주인공 입식 표정. */ hero?: { speaker: string; face: string } } & RollResult)
   | { type: 'tracks'; changes: TrackChange[] }
   | { type: 'change'; parts: ChangePart[] }
   | { type: 'price'; id: string; tag: PriceTag; text: string }

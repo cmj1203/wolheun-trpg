@@ -545,10 +545,15 @@ export class LocalGm implements GmPort {
         for (const line of out.lines) {
           const rule = this.lore.characters[cast[line.speaker]?.lore ?? '']?.reactionCheck;
           if (rule && await this.answersYes(task, ctx, line.text, rule, violations, true)) {
-            out.violations.push({ kind: 'lore', rule: 'reaction_style', detail: '설명 독백·상황 해설·긴 문장 대신 눈앞의 감정이나 몸 반응에 짧게 답하세요.', severity: 'hard' });
+            out.violations.push({ kind: 'lore', rule: 'reaction_style', detail: ctx.spoken ? '설명 독백·상황 해설·긴 문장 대신 아시나가 한 말에 짧게 답하세요.' : '설명 독백·상황 해설·긴 문장 대신 눈앞의 감정이나 몸 반응에 짧게 답하세요.', severity: 'hard' });
           } else if (rule && !(await this.answersYes(task, ctx, `플레이어 입력: ${ctx.text}\n남자의 대사: ${line.text}`,
-            '남자의 대사가 입력에 실제로 드러난 감정·몸 반응을 구체적으로 받는가? 울음·떨림·굳음·탈진 등 그 모습에 대한 질문이나 명령, 비웃음이면 예다. 단순 감탄·침묵만 있거나, 입력에 없는 눈빛·말·행동을 지어내거나, 앞 장면의 질문을 되묻는 무관한 말이면 아니오다.', violations))) {
-            out.violations.push({ kind: 'beat', rule: 'reaction_response', detail: `입력 "${ctx.text}"에 실제 드러난 감정·몸 반응을 짧게 받아 주세요. 감탄만 하거나 입력에 없는 말을 전제하지 마세요.`, severity: 'hard' });
+            // 건넨 말을 몸 반응 질문으로 가리면 말을 제대로 받은 줄도 '드러난 몸 반응이 없다'며 거절해 대체 줄로 떨어진다(59d 11번).
+            ctx.spoken
+              ? '남자의 대사가 아시나가 한 말의 구체적인 내용을 받는가? 그 말에 대한 되물음·명령·비웃음·관심이면 예다. 단순 감탄·침묵만 있거나, 입력에 없는 눈빛·행동을 지어내거나, 앞 장면의 질문을 되묻는 무관한 말이면 아니오다.'
+              : '남자의 대사가 입력에 실제로 드러난 감정·몸 반응을 구체적으로 받는가? 울음·떨림·굳음·탈진 등 그 모습에 대한 질문이나 명령, 비웃음이면 예다. 단순 감탄·침묵만 있거나, 입력에 없는 눈빛·말·행동을 지어내거나, 앞 장면의 질문을 되묻는 무관한 말이면 아니오다.', violations))) {
+            out.violations.push({ kind: 'beat', rule: 'reaction_response', detail: ctx.spoken
+              ? `아시나가 한 말 "${ctx.text}"의 내용을 짚어 짧게 받아 주세요. 감탄만 하거나 입력에 없는 말을 전제하지 마세요.`
+              : `입력 "${ctx.text}"에 실제 드러난 감정·몸 반응을 짧게 받아 주세요. 감탄만 하거나 입력에 없는 말을 전제하지 마세요.`, severity: 'hard' });
           }
         }
       }

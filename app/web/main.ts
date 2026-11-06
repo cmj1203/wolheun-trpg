@@ -1177,6 +1177,7 @@ async function play(events: GameEvent[], gen: number): Promise<boolean> {
         break;
       case 'roll':
         await showRoll(ev);
+        if (ev.hero) setFace(ev.hero.speaker, ev.hero.face);
         break;
       case 'sprite':
         swapSprite(ev.cast, ev.sprite);

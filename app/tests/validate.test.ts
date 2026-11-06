@@ -377,13 +377,15 @@ describe('표정(face): GM 생성 줄의 표정 허용 집합', () => {
 
   test('출력 스키마는 인물 줄에만 face 를 필수로 두고, 섞인 화자는 anyOf 로 가른다', () => {
     const only = linesSchema(['남자'], 2, 80, undefined, scenario.cast) as { properties: { lines: { items: { required: string[]; properties: { face?: { enum: string[] } } } } } };
-    expect(only.properties.lines.items.required).toEqual(['speaker', 'text', 'face']);
+    expect(only.properties.lines.items.required).toEqual(['speaker', 'face', 'text']);
+    // llama.cpp 문법은 properties 순서로 생성한다: 표정을 대사보다 먼저 고른다.
+    expect(Object.keys(only.properties.lines.items.properties)).toEqual(['speaker', 'face', 'text']);
     expect(only.properties.lines.items.properties.face?.enum).toEqual([...(scenario.cast.남자?.faces ?? [])]);
     const plain = linesSchema(['나레이션'], 2, 80) as { properties: { lines: { items: { required: string[]; properties: Record<string, unknown> } } } };
     expect(plain.properties.lines.items.required).toEqual(['speaker', 'text']);
     expect('face' in plain.properties.lines.items.properties).toBe(false);
     const mixed = linesSchema(['나레이션', '남자'], 3, 80, undefined, scenario.cast) as { properties: { lines: { items: { anyOf: { required: string[]; properties: { speaker: { enum: string[] } } }[] } } } };
-    expect(mixed.properties.lines.items.anyOf.map((s) => [s.properties.speaker.enum, s.required])).toEqual([[['남자'], ['speaker', 'text', 'face']], [['나레이션'], ['speaker', 'text']]]);
+    expect(mixed.properties.lines.items.anyOf.map((s) => [s.properties.speaker.enum, s.required])).toEqual([[['남자'], ['speaker', 'face', 'text']], [['나레이션'], ['speaker', 'text']]]);
     expect(linesSchema(['아시나', '남자'], 2, 80, undefined, scenario.cast)).toMatchObject({
       properties: { lines: { items: { anyOf: [
         { properties: { speaker: { enum: ['아시나'] }, face: { enum: scenario.cast.아시나?.faces } } },

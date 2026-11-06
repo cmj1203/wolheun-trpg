@@ -88,7 +88,9 @@ export function buildSystem(ctx: GmContext, lore: Lore): string {
           ? [`화자: ${key}. 성격: ${character.personality}`, `허용 표정: ${(cast.faces ?? []).join(', ')}`, ...character.voice, ...character.faces.map(f => `표정: ${f}`)]
           : [];
       }),
-      '상대가 보이는 감정과 몸의 반응을 받아 짧게 질문하거나 명령하거나 비웃는다. 입력을 보고 지금 관찰할 수 있는 모습만 받는다. 감탄만 하거나 이유 없는 질문으로 넘기지 않는다.',
+      ctx.spoken
+        ? `아시나가 칼끝 앞에서 그에게 건넨 말을 받는다. ${SPOKEN_READ} 말투는 차갑게 두고 그 말의 구체적인 내용을 짚어 짧게 되묻거나 명령하거나 비웃는다. 감탄만 하거나 이유 없는 질문으로 넘기지 않는다.`
+        : '상대가 보이는 감정과 몸의 반응을 받아 짧게 질문하거나 명령하거나 비웃는다. 입력을 보고 지금 관찰할 수 있는 모습만 받는다. 감탄만 하거나 이유 없는 질문으로 넘기지 않는다.',
       '아시나가 말을 하지 않았다면 말을 했다고 전제하지 않는다. 모르는 이름·신분·미래 사건은 밝히지 않는다. 현재 칼과 복장 상태를 바꾸거나 다음 사건을 만들지 않는다.',
     ].join('\n');
   }
@@ -235,8 +237,9 @@ function limitRules({ ahead, unsaid }: WriteLimits): string[] {
 export function buildTalkUser(ctx: GmContext, feedback: string, maxLines: number, maxChars: number, limits: WriteLimits = NO_LIMITS): string {
   if (ctx.reaction) {
     return [
-      `아시나에게 지금 보이는 반응: ${quote(ctx.text)}`,
-      '이 모습을 본 상대의 대사 한 줄, 40자 이내. 그 반응의 구체적인 부분을 짚어서 받아라. 아시나의 말을 대신 쓰거나 단순 감탄·침묵으로 넘기지 않는다.',
+      ...(ctx.spoken
+        ? [`아시나가 칼끝 앞에서 그에게 한 말: ${quote(ctx.text)}`, '이 말을 들은 상대의 대사 한 줄, 40자 이내. 그 말의 구체적인 부분을 짚어서 받아라. 아시나의 말을 대신 쓰거나 단순 감탄·침묵으로 넘기지 않는다.']
+        : [`아시나에게 지금 보이는 반응: ${quote(ctx.text)}`, '이 모습을 본 상대의 대사 한 줄, 40자 이내. 그 반응의 구체적인 부분을 짚어서 받아라. 아시나의 말을 대신 쓰거나 단순 감탄·침묵으로 넘기지 않는다.']),
       '앞 장면의 대사를 되묻지 않는다. 원작의 어미와 성격을 지키면서 이 반응에 맞는 새 말을 쓴다. 설명 독백·상황 해설은 쓰지 않는다.',
       FACE_RULE,
       ...limitRules(limits),
@@ -273,7 +276,7 @@ export function buildTalkUser(ctx: GmContext, feedback: string, maxLines: number
         : '',
       '정체를 밝히는 답은 하지 않는다. 플레이어 입력을 되풀이하지 않는다.',
       ...(['b04_blade', 'b05_why', 'b06_swing'].includes(ctx.beat.id)
-        ? ['칼을 겨눈 이유나 자기 잘못을 따지는 말에는 남자가 "왜지?", "…뭐?" 같은 원작 1화의 짧고 차가운 반응으로 받는다. 숨은 첩자 의심은 나레이션이나 여우가 설명하지 않는다. 남자도 첩자라는 말을 입 밖에 내지 않는다. 이름·페샨·왕이라는 신분도 밝히지 않는다. 같은 판에서 이미 한 줄은 다시 쓰지 않는다.']
+        ? [...(ctx.self || ctx.shown ? [] : [SPOKEN_READ]), '칼을 겨눈 이유나 자기 잘못을 따지는 말에는 남자가 "왜지?", "…뭐?" 같은 원작 1화의 짧고 차가운 반응으로 받는다. 숨은 첩자 의심은 나레이션이나 여우가 설명하지 않는다. 남자도 첩자라는 말을 입 밖에 내지 않는다. 이름·페샨·왕이라는 신분도 밝히지 않는다. 같은 판에서 이미 한 줄은 다시 쓰지 않는다.']
         : []),
       THOUGHT_RULE,
       ITEM_RULE,
@@ -395,21 +398,24 @@ export function buildExplainUser(ctx: GmContext, unseen: readonly string[], feed
  * GM 대사 JSON 스키마. lead 가 있으면 첫 줄은 lead.first 가 말하고 나머지 maxLines-1 줄은 lead.rest 중에서 고른다.
  * llama.cpp 문법 변환은 prefixItems 를 길이가 정해진 묶음으로 만들므로 줄 수는 maxLines 로 고정된다.
  */
+/** 칼끝 앞에서 건넨 말을 받기 전에 그 말의 성격부터 가리게 한다. 말투(늘 차갑다)와 속 반응(face)을 나누는 출발점이다. */
+export const SPOKEN_READ = '그 말이 겁에 질린 애원·아첨·허풍인지, 겁먹은 기색 없이 태연하거나 당돌하게 자기 용건을 꺼내는 말인지 먼저 가린 뒤 face를 고른다.';
 /** 인물 줄의 표정 규칙. 화면 입식은 이 값으로 바뀝다. */
-export const FACE_RULE = '인물의 대사·속마음 줄에는 그 화자의 허용 목록에서 그 순간의 표정을 face에 적는다. 입력 낱말이 아니라 실제 사건과 화자의 의도·말투로 고른다. 남자에게 몸으로 덤비거나 그의 무기·몸을 직접 저지해 위협하는 상황은 menacing, 칼 앞에서도 예상 밖의 대담한 말·말솜씨를 보여 관심을 끄는 상황은 intrigued, 세계 밖의 뜻 모를 말·행동에는 dumbfounded, 울음·겁·기력 저하를 보고 깔보는 반응은 sneer 또는 neutral이다. 비웃는 말투라고 모든 상황을 sneer로 덮지 않는다. 놀람·위협·관심은 그 상황에서 인물이 실제로 보이는 반응으로 구별한다. 상대 감정을 화자에게 복사하지 않는다. 아시나의 teary·pouty와 남자의 cold는 허용 ID가 아니다. 미래 사건이나 모르는 관계를 표정에 반영하지 않는다. 나레이션과 GM 줄에는 face를 쓰지 않는다.';
-export const LINES_FORMAT = '형식: {"lines":[{"speaker":"나레이션","text":"서술"},{"speaker":"인물","text":"대사","face":"neutral"}]}';
+export const FACE_RULE = '인물의 대사·속마음 줄에는 그 화자의 허용 목록에서 그 순간의 표정을 face에 적는다. face는 text보다 먼저 정한다. 입력 낱말이 아니라 실제 사건과 화자의 의도로 고른다. face는 말투가 아니라 그 순간 인물이 속으로 보이는 반응이다. 남자의 말투는 늘 차갑고 깔보지만, 그렇다고 face가 늘 sneer인 것은 아니다. 남자에게 몸으로 덤비거나 그의 무기·몸을 직접 저지해 위협하는 상황은 menacing이다. 칼끝 앞에서도 칭찬·아첨·미인계·허풍으로 환심을 사려는 말은 속셈이 빤히 보여 sneer이고, 겁에 질려 비는 말도 sneer다. 그런 속셈·겁 없이 태연하게 말을 걸거나 당돌하게 자기 용건을 꺼내는 상황은, 그 침착함이 그에게 예상 밖이라 차가운 말로 받더라도 intrigued다. 세계 밖의 뜻 모를 말·행동에는 dumbfounded, 울음·겁·기력 저하를 보고 깔보는 반응은 sneer 또는 neutral이다. 비웃는 말투라고 모든 상황을 sneer로 덮지 않는다. 놀람·위협·관심은 그 상황에서 인물이 실제로 보이는 반응으로 구별한다. 상대 감정을 화자에게 복사하지 않는다. 아시나의 teary·pouty와 남자의 cold는 허용 ID가 아니다. 미래 사건이나 모르는 관계를 표정에 반영하지 않는다. 나레이션과 GM 줄에는 face를 쓰지 않는다.';
+export const LINES_FORMAT = '형식: {"lines":[{"speaker":"나레이션","text":"서술"},{"speaker":"인물","face":"neutral","text":"대사"}]}';
 
 export function linesSchema(speakers: readonly string[], maxLines: number, maxChars: number, lead?: { first: string; second?: string; rest: readonly string[] }, cast: Readonly<Record<string, CastSpec>> = {}): object {
   // 입식이 있는 화자의 줄은 face 가 필수, 나레이션·GM 줄에는 face 칸이 없다. 둘이 섞이면 anyOf 로 갈림다.
   const shape = (who: readonly string[], faces?: readonly string[]) => ({
     type: 'object',
     additionalProperties: false,
-    required: faces ? ['speaker', 'text', 'face'] : ['speaker', 'text'],
+    required: faces ? ['speaker', 'face', 'text'] : ['speaker', 'text'],
+    // llama.cpp 문법은 properties 순서대로 쓰게 한다. face 를 text 앞에 두어, 차가운 대사를 먼저 쓴 뒤 표정을 대사 말투에 맞춰 고르는 쏠림(59c sneer 7/8)을 막는다.
     properties: {
       speaker: { type: 'string', enum: [...who] },
+      ...(faces ? { face: { type: 'string', enum: [...faces] } } : {}),
       // 큰따옴표·역슬래시·줄바꿈을 못 쓰게 해 글 안에 JSON 조각이나 끝없는 줄바꿈을 쓰며 토큰 상한까지 가는 일을 막는다.
       text: { type: 'string', pattern: `^[^"\\\\\\n\\r]{1,${maxChars * 2}}$` },
-      ...(faces ? { face: { type: 'string', enum: [...faces] } } : {}),
     },
   });
   const line = (who: readonly string[]) => {

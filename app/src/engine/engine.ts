@@ -101,6 +101,8 @@ export interface GmContext {
   text: string;
   /** 말 없는 반응 뒤 장면을 진행한다. 상대의 짧은 한 줄만 받는다. */
   reaction?: boolean;
+  /** reaction 의 입력이 몸 반응이 아니라 상대에게 건넨 말이다. */
+  spoken?: boolean;
   tone?: TalkTone;
   /** 입력이 말이 아니라 몸이 먼저 드러난 모습이다. */
   shown?: boolean;
@@ -675,8 +677,21 @@ export class Engine {
     state.rng = rng;
     this.bumpTension(state, roll.tier);
     this.record(state, { kind: 'check', beat: beat.id, roll });
-    events.push({ type: 'roll', ...roll, tierLabel: TIER_LABEL[roll.tier] });
+    const hero = this.heroFace(beat, roll.tier);
+    events.push({ type: 'roll', ...roll, tierLabel: TIER_LABEL[roll.tier], ...(hero ? { hero } : {}) });
     return roll;
+  }
+
+  /**
+   * 판정 결과에는 주인공 줄이 없어 입식 표정을 아무도 정하지 않는다(저장본의 smile 이 칼 앞에서도 남았다).
+   * 상황 규칙: (대)성공은 해낸 뒤의 능청(smug), 대가 있는 성공은 치른 대가 앞의 경계(wary),
+   * 실패는 상대가 있으면 겁(scared), 혼자면 당황(flustered). 뒤에 오는 주인공 줄의 face 가 있으면 그것이 덮는다.
+   */
+  private heroFace(beat: BeatSpec, tier: RollResult['tier']): { speaker: string; face: string } | undefined {
+    const entry = Object.entries(this.scenario.cast).find(([, c]) => c.style === 'speech' && c.lore === this.scenario.sheet.name);
+    if (!entry) return undefined;
+    const face = tier === 'hit' || tier === 'crit' ? 'smug' : tier === 'mixed' ? 'wary' : facesPerson(this.scenario, beat) ? 'scared' : 'flustered';
+    return entry[1].faces?.includes(face) ? { speaker: entry[0], face } : undefined;
   }
 
   /** 규칙은 먼저 설명하지 않는다. 등급이 처음 나온 직후에 그 숫자로 한 줄만 말한다. */
@@ -754,7 +769,7 @@ export class Engine {
         this.noteHeard(state, beat, text, false);
       }
       if (free.idle?.threat && progress.talks >= 1) {
-        await this.letSceneFlow(state, beat, free, text, read.source, events);
+        await this.letSceneFlow(state, beat, free, text, read.source, events, !self && !read.shown);
         return;
       }
       this.record(state, { kind: 'input', beat: beat.id, text, result: 'talk', approach: null, item: null, source: read.source });
@@ -1568,22 +1583,22 @@ export class Engine {
     if (heading !== beat.id) {
       if (heading === 'b06_swing' && state.flags['말함_b05_why'] !== true && !reacted) {
         const input = state.log.findLast((entry) => entry.kind === 'input' || entry.kind === 'choice');
-        await this.silentReaction(state, beat, free, input && 'text' in input ? input.text : '', events);
+        await this.silentReaction(state, beat, free, input && 'text' in input ? input.text : '', events, input?.kind === 'input' && input.result === 'talk');
       }
       this.enter(state, heading, events, 0);
     }
   }
 
-  private async silentReaction(state: GameState, beat: BeatSpec, free: FreeSpec, text: string, events: GameEvent[]): Promise<void> {
+  private async silentReaction(state: GameState, beat: BeatSpec, free: FreeSpec, text: string, events: GameEvent[], spoken = false): Promise<void> {
     const speaker = free.speakers.find((s) => this.scenario.cast[s]?.style === 'speech' && this.scenario.cast[s]?.lore !== this.scenario.sheet.name);
     if (!speaker) return;
-    const reply = await this.gm.talk({ scenario: this.scenario, beat, free: { ...free, speakers: [speaker] }, state, text, reaction: true });
+    const reply = await this.gm.talk({ scenario: this.scenario, beat, free: { ...free, speakers: [speaker] }, state, text, reaction: true, ...(spoken ? { spoken: true } : {}) });
     this.recordGm(state, beat, 'talk', reply.meta, reply.lines);
     for (const line of reply.lines) this.say(state, line, reply.meta.fallback ? 'script' : 'gm', events);
   }
 
   /** 아무것도 시도하지 않은 입력. 주사위를 굴리지 않고 장면이 흘러간다. */
-  private async letSceneFlow(state: GameState, beat: BeatSpec, free: FreeSpec, text: string, source: Interpretation['source'], events: GameEvent[]): Promise<void> {
+  private async letSceneFlow(state: GameState, beat: BeatSpec, free: FreeSpec, text: string, source: Interpretation['source'], events: GameEvent[], spoken = false): Promise<void> {
     this.record(state, { kind: 'input', beat: beat.id, text, result: 'idle', approach: null, item: null, source });
     const progress = state.free;
     if (!progress) throw new Error(`${beat.id}: 자유 입력 진행 상태가 없습니다`);
@@ -1592,7 +1607,7 @@ export class Engine {
       this.makeMove(state, free, 'threat', events);
       return;
     }
-    if (free.idle?.threat) await this.silentReaction(state, beat, free, text, events);
+    if (free.idle?.threat) await this.silentReaction(state, beat, free, text, events, spoken);
     for (const line of free.idle?.lines ?? free.neutral?.miss ?? []) {
       if (!state.spoken?.[line.speaker]?.includes(line.text)) this.say(state, line, 'script', events);
     }
