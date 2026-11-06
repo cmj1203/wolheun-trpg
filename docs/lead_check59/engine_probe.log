@@ -1,0 +1,12 @@
+CASE 2/12: ...뭐? | dumbfounded |  | roll=false
+CASE 3/12: 죽기 직전이라 정신이 나간 건가? | sneer | 의심:1,집착:1,호감:1 | roll=true
+CASE 4/12: 죽기 직전에 입술을 놀리는 건가, 이방인. | menacing | 정신력:-1,의심:3 | roll=true
+CASE 5/12: …뭐? | dumbfounded | 의심:2,집착:3 | roll=true
+CASE 6/12: …뭐? | dumbfounded |  | roll=false
+CASE 7/12: …뭐? | dumbfounded |  | roll=false
+CASE 8/12: …뭐? | dumbfounded |  | roll=false
+CASE 9/12: 숨을 쉬어야 말을 할 것 아닌가. | intrigued | 정신력:1,호감:1 | roll=true
+CASE 10/12: 움직임 하나는 나쁘지 않군. | intrigued | 체력:-1,집착:1 | roll=true
+CASE 11/12: 목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가. | sneer | 의심:1,집착:2,호감:1 | roll=true
+CASE 12/12: 미모로 목숨을 구걸하겠다? | sneer | 정신력:-1,의심:2,집착:1 | roll=true
+ENGINE59_DONE

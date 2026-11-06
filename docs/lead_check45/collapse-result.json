@@ -1,0 +1,180 @@
+{
+  "scenarioTitle": "죽음의 사막 지르다",
+  "episode": "1화 · 사막 조우",
+  "ending": {
+    "id": "spy",
+    "title": "수상한 이방인",
+    "summary": "목숨은 건졌지만 그 남자는 아시나를 첩자로 굳게 의심한다. 마법 가방을 빼앗긴 채 끌려간다.",
+    "nextHook": "다음 장면에서는 감시가 삼엄해진다. 가방 없이, 몸에 지닌 것만으로 빠져나갈 길을 찾아야 한다.",
+    "bad": false
+  },
+  "playMs": 4641,
+  "startedAt": 0,
+  "decisions": [
+    {
+      "beatTitle": "사람?!",
+      "kind": "choice",
+      "text": "달려가서 길을 묻는다",
+      "detail": "행동 버튼",
+      "playMs": 4641
+    }
+  ],
+  "checks": [
+    {
+      "label": "달려가서 길을 묻는다",
+      "stat": "근력",
+      "statValue": 0,
+      "mods": [
+        {
+          "label": "지친 몸",
+          "value": -1
+        }
+      ],
+      "dice": [
+        2,
+        4
+      ],
+      "total": 5,
+      "tier": "miss",
+      "beatTitle": "사람?!",
+      "tierLabel": "실패",
+      "playMs": 4641
+    }
+  ],
+  "replay": [
+    {
+      "kind": "decision",
+      "beatTitle": "사람?!",
+      "text": "달려가서 길을 묻는다",
+      "detail": "행동 버튼",
+      "playMs": 4641
+    },
+    {
+      "kind": "check",
+      "label": "달려가서 길을 묻는다",
+      "stat": "근력",
+      "statValue": 0,
+      "mods": [
+        {
+          "label": "지친 몸",
+          "value": -1
+        }
+      ],
+      "dice": [
+        2,
+        4
+      ],
+      "total": 5,
+      "tier": "miss",
+      "beatTitle": "사람?!",
+      "tierLabel": "실패",
+      "playMs": 4641
+    },
+    {
+      "kind": "price",
+      "beatTitle": "사람?!",
+      "tag": "수치",
+      "text": "모래에 무릎까지 빠져 기운이 빠졌다.",
+      "playMs": 4641
+    }
+  ],
+  "tracks": [
+    {
+      "key": "체력",
+      "label": "체력",
+      "max": 5,
+      "unit": "",
+      "desc": "1 이하면 근력 -1. 0에서 다시 다치면 쓰러져 붙잡힌다.",
+      "value": 0
+    },
+    {
+      "key": "정신력",
+      "label": "정신력",
+      "max": 5,
+      "unit": "",
+      "desc": "1 이하면 매력·재치 -1. 0이 되면 다음 판정 -2, 회복 전까지 행운을 쓸 수 없다.",
+      "value": 0
+    },
+    {
+      "key": "의심",
+      "label": "의심",
+      "max": 10,
+      "unit": "",
+      "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+      "value": 1,
+      "clock": {
+        "kind": "progress",
+        "warnAt": 7
+      }
+    },
+    {
+      "key": "집착",
+      "label": "집착",
+      "max": 10,
+      "unit": "",
+      "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+      "value": 0
+    },
+    {
+      "key": "호감",
+      "label": "호감",
+      "max": 10,
+      "unit": "",
+      "desc": "그 남자가 아시나에게 품은 호감",
+      "value": 0
+    },
+    {
+      "key": "귀찌",
+      "label": "귀찌 수명",
+      "max": 8,
+      "unit": "",
+      "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+      "value": 6,
+      "clock": {
+        "kind": "countdown",
+        "warnAt": 2
+      }
+    },
+    {
+      "key": "탈주",
+      "label": "탈주 준비도",
+      "max": 10,
+      "unit": "",
+      "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+      "value": 0
+    },
+    {
+      "key": "행운",
+      "label": "행운",
+      "max": 10,
+      "unit": "",
+      "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+      "value": 6
+    }
+  ],
+  "items": [
+    {
+      "id": "earring",
+      "name": "마법 귀찌",
+      "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+    },
+    {
+      "id": "map",
+      "name": "낡은 지도",
+      "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+    },
+    {
+      "id": "pin",
+      "name": "가는 핀",
+      "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀."
+    }
+  ],
+  "gm": {
+    "calls": 0,
+    "retries": 0,
+    "blocked": 0,
+    "fallbacks": 0,
+    "llmMs": 0
+  },
+  "fork": true
+}

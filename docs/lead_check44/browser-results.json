@@ -1,0 +1,182 @@
+[
+  {
+    "id": "pin-hit",
+    "width": 1440,
+    "result": "hit",
+    "cost": "없음",
+    "displayed": "집착 +1",
+    "metrics": {
+      "x": 107.546875,
+      "y": 720.375,
+      "width": 1276.75,
+      "height": 16,
+      "bottom": 736.375,
+      "screenHeight": 1000,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/pin-hit-1440.png"
+  },
+  {
+    "id": "map-mixed",
+    "width": 1440,
+    "result": "mixed",
+    "cost": "map_wind",
+    "displayed": "귀찌 수명 -1\n\n낡은 지도 찢김\n\n의심 +3",
+    "metrics": {
+      "x": 107.546875,
+      "y": 683.21875,
+      "width": 1276.75,
+      "height": 53.15625,
+      "bottom": 736.375,
+      "screenHeight": 1000,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/map-mixed-1440.png"
+  },
+  {
+    "id": "bag-miss",
+    "width": 1440,
+    "result": "miss",
+    "cost": "bag_taken",
+    "displayed": "의심 +2\n\n의심 +1 · 마법 가방 잃음",
+    "metrics": {
+      "x": 107.546875,
+      "y": 701.796875,
+      "width": 1276.75,
+      "height": 34.578125,
+      "bottom": 736.375,
+      "screenHeight": 1000,
+      "overflow": false
+    },
+    "restored": true,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/bag-miss-1440.png"
+  },
+  {
+    "id": "pin-mixed",
+    "width": 1440,
+    "result": "mixed",
+    "cost": "man_doubt",
+    "displayed": "의심 +1 · 집착 +1\n\n의심 +1",
+    "metrics": {
+      "x": 107.546875,
+      "y": 701.796875,
+      "width": 1276.75,
+      "height": 34.578125,
+      "bottom": 736.375,
+      "screenHeight": 1000,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/pin-mixed-1440.png"
+  },
+  {
+    "id": "pin-hit",
+    "width": 390,
+    "result": "hit",
+    "cost": "없음",
+    "displayed": "집착 +1",
+    "metrics": {
+      "x": 29.859375,
+      "y": 468.375,
+      "width": 344.328125,
+      "height": 15,
+      "bottom": 483.375,
+      "screenHeight": 844,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/pin-hit-390.png"
+  },
+  {
+    "id": "map-mixed",
+    "width": 390,
+    "result": "mixed",
+    "cost": "map_wind",
+    "displayed": "귀찌 수명 -1\n\n낡은 지도 찢김\n\n의심 +3",
+    "metrics": {
+      "x": 29.859375,
+      "y": 433.59375,
+      "width": 344.328125,
+      "height": 49.78125,
+      "bottom": 483.375,
+      "screenHeight": 844,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/map-mixed-390.png"
+  },
+  {
+    "id": "bag-miss",
+    "width": 390,
+    "result": "miss",
+    "cost": "bag_taken",
+    "displayed": "의심 +2\n\n의심 +1 · 마법 가방 잃음",
+    "metrics": {
+      "x": 29.859375,
+      "y": 450.984375,
+      "width": 344.328125,
+      "height": 32.390625,
+      "bottom": 483.375,
+      "screenHeight": 844,
+      "overflow": false
+    },
+    "restored": true,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/bag-miss-390.png"
+  },
+  {
+    "id": "pin-mixed",
+    "width": 390,
+    "result": "mixed",
+    "cost": "man_doubt",
+    "displayed": "의심 +1 · 집착 +1\n\n의심 +1",
+    "metrics": {
+      "x": 29.859375,
+      "y": 450.984375,
+      "width": 344.328125,
+      "height": 32.390625,
+      "bottom": 483.375,
+      "screenHeight": 844,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/pin-mixed-390.png"
+  },
+  {
+    "id": "map-miss",
+    "width": 1440,
+    "result": "miss",
+    "cost": "map_lost",
+    "displayed": "귀찌 수명 -1\n\n낡은 지도 잃음",
+    "metrics": {
+      "x": 107.546875,
+      "y": 745.0625,
+      "width": 1276.75,
+      "height": 34.578125,
+      "bottom": 779.640625,
+      "screenHeight": 1000,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/map-miss-1440.png"
+  },
+  {
+    "id": "map-miss",
+    "width": 390,
+    "result": "miss",
+    "cost": "map_lost",
+    "displayed": "귀찌 수명 -1\n\n낡은 지도 잃음",
+    "metrics": {
+      "x": 29.859375,
+      "y": 472.234375,
+      "width": 344.328125,
+      "height": 32.390625,
+      "bottom": 504.625,
+      "screenHeight": 844,
+      "overflow": false
+    },
+    "restored": false,
+    "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check44/map-miss-390.png"
+  }
+]

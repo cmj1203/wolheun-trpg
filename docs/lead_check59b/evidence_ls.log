@@ -1,0 +1,11 @@
+-rw-r--r--@ 1 choeminju  staff  6109 Nov  6 21:20 docs/lead_check59b/engine_README.md
+-rw-r--r--@ 1 choeminju  staff  85372 Nov  6 21:18 docs/lead_check59b/tests.log
+-rw-r--r--@ 1 choeminju  staff  0 Nov  6 21:18 docs/lead_check59b/tsc.log
+-rw-r--r--@ 1 choeminju  staff  912 Nov  6 21:17 docs/lead_check59b/corpus_delta.json
+-rw-r--r--@ 1 choeminju  staff  8108 Nov  6 21:13 docs/lead_check59b/before.log
+-rw-r--r--@ 1 choeminju  staff  4979 Nov  6 21:14 docs/lead_check59b/regression.log
+-rw-r--r--@ 1 choeminju  staff  48714 Nov  6 21:16 docs/lead_check59b/input_corpus.md
+-rw-r--r--@ 1 choeminju  staff  0 Nov  6 21:16 docs/lead_check59b/corpus_run.log
+-rw-r--r--@ 1 choeminju  staff  105 Nov  6 21:17 docs/lead_check59b/offline.log
+-rw-r--r--@ 1 choeminju  staff  4143 Nov  6 21:17 docs/lead_check59b/model_repetition.md
+-rw-r--r--@ 1 choeminju  staff  5333 Nov  6 21:17 docs/lead_check59b/model_repetition.json

@@ -1,0 +1,9 @@
+{
+  "beforeMismatch": 47,
+  "afterMismatch": 46,
+  "added": [],
+  "removed": ["self-f11"],
+  "beforeMatch": 221,
+  "afterMatch": 222,
+  "total": 268
+}

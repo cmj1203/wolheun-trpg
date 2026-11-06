@@ -1,0 +1,10 @@
+-rw-r--r--@ 1 choeminju  staff      151 Nov  6 18:41 docs/lead_check57/corpus_delta.json
+-rw-r--r--@ 1 choeminju  staff    21427 Nov  6 18:48 docs/lead_check57/input_corpus.md
+-rw-r--r--@ 1 choeminju  staff    15467 Nov  6 18:51 docs/lead_check57/README.md
+-rw-r--r--@ 1 choeminju  staff  1226709 Nov  6 18:48 docs/lead_check57/replay.json
+-rw-r--r--@ 1 choeminju  staff       33 Nov  6 18:48 docs/lead_check57/replay.log
+-rw-r--r--@ 1 choeminju  staff     3638 Nov  6 18:45 docs/lead_check57/replay.mjs
+-rw-r--r--@ 1 choeminju  staff       33 Nov  6 18:51 docs/lead_check57/stopped.log
+-rw-r--r--@ 1 choeminju  staff   214555 Nov  6 18:30 docs/lead_check57/tests_initial.log
+-rw-r--r--@ 1 choeminju  staff    82082 Nov  6 18:47 docs/lead_check57/tests.log
+-rw-r--r--@ 1 choeminju  staff        0 Nov  6 18:47 docs/lead_check57/tsc.log

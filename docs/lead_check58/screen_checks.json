@@ -1,0 +1,193 @@
+[
+  {
+    "name": "delta_after",
+    "phase": "line",
+    "prompt": {
+      "type": "luck",
+      "need": 1,
+      "have": 6
+    },
+    "text": "모래에 무릎까지 빠져 기운이 빠졌다.",
+    "intro": false,
+    "gm": false,
+    "gmText": "막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.",
+    "beat": "사람?!",
+    "changes": "체력 -1",
+    "earringVisible": false,
+    "badge": true,
+    "by": "script",
+    "mental": "4 / 5",
+    "deltas": [
+      {
+        "text": "-1",
+        "overlap": false
+      },
+      {
+        "text": "+1",
+        "overlap": false
+      }
+    ]
+  },
+  {
+    "name": "change_cause_after",
+    "phase": "line",
+    "prompt": {
+      "type": "luck",
+      "need": 1,
+      "have": 6
+    },
+    "text": "모래에 무릎까지 빠져 기운이 빠졌다.",
+    "intro": false,
+    "gm": false,
+    "gmText": "막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.",
+    "beat": "사람?!",
+    "changes": "체력 -1",
+    "earringVisible": false,
+    "badge": true,
+    "by": "script",
+    "mental": "4 / 5",
+    "deltas": [
+      {
+        "text": "-1",
+        "overlap": false
+      },
+      {
+        "text": "+1",
+        "overlap": false
+      }
+    ]
+  },
+  {
+    "name": "b04_cause",
+    "phase": "line",
+    "prompt": {
+      "type": "luck",
+      "need": 1,
+      "have": 6
+    },
+    "text": "그리고 현재.",
+    "intro": false,
+    "gm": false,
+    "gmText": "막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.",
+    "beat": "그리고 현재",
+    "changes": "정신력 -1 · 의심 +2",
+    "earringVisible": false,
+    "badge": true,
+    "by": "script",
+    "mental": "3 / 5",
+    "deltas": [
+      {
+        "text": "-1",
+        "overlap": false
+      },
+      {
+        "text": "-1",
+        "overlap": false
+      },
+      {
+        "text": "+2",
+        "overlap": false
+      }
+    ]
+  },
+  {
+    "name": "b04_after",
+    "phase": "line",
+    "prompt": {
+      "type": "luck",
+      "need": 1,
+      "have": 6
+    },
+    "text": "억울해…",
+    "intro": false,
+    "gm": false,
+    "gmText": "막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.",
+    "beat": "그리고 현재",
+    "changes": "",
+    "earringVisible": false,
+    "badge": true,
+    "by": "script",
+    "mental": "3 / 5",
+    "deltas": [
+      {
+        "text": "-1",
+        "overlap": false
+      },
+      {
+        "text": "-1",
+        "overlap": false
+      },
+      {
+        "text": "+2",
+        "overlap": false
+      }
+    ]
+  },
+  {
+    "name": "character_badge_after",
+    "phase": "line",
+    "prompt": {
+      "type": "free",
+      "beat": "b05_why",
+      "placeholder": "왜 죽이면 안 되는지 아시나로서 말하거나 행동해 보세요.",
+      "aim": "목에 닿은 칼끝을 거두게 할 이유를 댄다.",
+      "example": "대륙에서 하나뿐인 미소녀니까요.",
+      "approaches": [
+        {
+          "id": "beauty",
+          "label": "미인계를 쓴다",
+          "stat": "매력",
+          "statValue": 2,
+          "locked": false
+        },
+        {
+          "id": "plead",
+          "label": "결백을 호소한다",
+          "stat": "매력",
+          "statValue": 2,
+          "locked": false
+        },
+        {
+          "id": "bluff",
+          "label": "말재주로 둘러댄다",
+          "stat": "재치",
+          "statValue": 1,
+          "locked": false
+        },
+        {
+          "id": "noble",
+          "label": "신분과 교양을 내세운다",
+          "stat": "교양",
+          "statValue": 1,
+          "locked": false
+        },
+        {
+          "id": "resist",
+          "label": "칼을 밀어내고 몸을 뺀다",
+          "stat": "근력",
+          "statValue": 0,
+          "locked": false
+        },
+        {
+          "id": "bag",
+          "label": "마법 가방에서 물건을 꺼낸다",
+          "stat": "손재주",
+          "statValue": 1,
+          "locked": false
+        }
+      ],
+      "rollsLeft": 1
+    },
+    "text": "…뭐?",
+    "intro": false,
+    "gm": false,
+    "gmText": "GM이 장면을 쓰는 중",
+    "beat": "왜지?",
+    "changes": "",
+    "earringVisible": false,
+    "badge": true,
+    "by": "gm",
+    "mental": "3 / 5",
+    "deltas": []
+  }
+]

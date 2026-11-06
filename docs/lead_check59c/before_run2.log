@@ -1,0 +1,99 @@
+bun test v1.4.2 (744846f84)
+
+tests/gm.test.ts:
+812 |     const reply = mode === 'talk' ? await gm.talk(base.ctx)
+813 |       : await gm.narrate({ ...neutral(base.narrate), improv: {
+814 |         deed: '남자의 손목을 잡아 옆으로 밀어냈다.', bold: true, absurd: false,
+815 |       } });
+816 |     expect(reply.meta.fallback).toBe(false);
+817 |     expect(reply.meta.attempts).toBe(2);
+                                      ^
+error: expect(received).toBe(expected)
+
+Expected: 2
+Received: 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:817:33)
+(fail) 이번 판 되풀이와 엔진 상태 > 직접 대화·큰 행동의 talk 반응이 말 없는 줄이면 다시 쓴다 [7.13ms]
+812 |     const reply = mode === 'talk' ? await gm.talk(base.ctx)
+813 |       : await gm.narrate({ ...neutral(base.narrate), improv: {
+814 |         deed: '남자의 손목을 잡아 옆으로 밀어냈다.', bold: true, absurd: false,
+815 |       } });
+816 |     expect(reply.meta.fallback).toBe(false);
+817 |     expect(reply.meta.attempts).toBe(2);
+                                      ^
+error: expect(received).toBe(expected)
+
+Expected: 2
+Received: 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:817:33)
+(fail) 이번 판 되풀이와 엔진 상태 > 직접 대화·큰 행동의 narrate 반응이 말 없는 줄이면 다시 쓴다 [3.34ms]
+
+tests/validate.test.ts:
+68 |     expect(checked.violations.find(v => v.rule === 'reaction_repeat')?.severity).toBe('soft');
+69 |   });
+70 | 
+71 |   test.each(['...', '…….', '… …', '?!'])('직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: %s', text => {
+72 |     const checked = validateOutput(out(['남자', text]), options({ reactor: '남자' }));
+73 |     expect(checked.violations.find(v => v.rule === 'reaction_response')?.severity).toBe('hard');
+                                                                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "hard"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/validate.test.ts:73:84)
+(fail) 판정 결과와 서술 > 직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: ... [0.49ms]
+68 |     expect(checked.violations.find(v => v.rule === 'reaction_repeat')?.severity).toBe('soft');
+69 |   });
+70 | 
+71 |   test.each(['...', '…….', '… …', '?!'])('직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: %s', text => {
+72 |     const checked = validateOutput(out(['남자', text]), options({ reactor: '남자' }));
+73 |     expect(checked.violations.find(v => v.rule === 'reaction_response')?.severity).toBe('hard');
+                                                                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "hard"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/validate.test.ts:73:84)
+(fail) 판정 결과와 서술 > 직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: ……. [0.13ms]
+68 |     expect(checked.violations.find(v => v.rule === 'reaction_repeat')?.severity).toBe('soft');
+69 |   });
+70 | 
+71 |   test.each(['...', '…….', '… …', '?!'])('직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: %s', text => {
+72 |     const checked = validateOutput(out(['남자', text]), options({ reactor: '남자' }));
+73 |     expect(checked.violations.find(v => v.rule === 'reaction_response')?.severity).toBe('hard');
+                                                                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "hard"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/validate.test.ts:73:84)
+(fail) 판정 결과와 서술 > 직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: … … [0.13ms]
+68 |     expect(checked.violations.find(v => v.rule === 'reaction_repeat')?.severity).toBe('soft');
+69 |   });
+70 | 
+71 |   test.each(['...', '…….', '… …', '?!'])('직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: %s', text => {
+72 |     const checked = validateOutput(out(['남자', text]), options({ reactor: '남자' }));
+73 |     expect(checked.violations.find(v => v.rule === 'reaction_response')?.severity).toBe('hard');
+                                                                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "hard"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/validate.test.ts:73:84)
+(fail) 판정 결과와 서술 > 직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: ?! [0.13ms]
+(pass) 판정 결과와 서술 > 실제 말이 있는 반응은 문장부호와 함께 쓸 수 있다: 그 손부터 놓아라. [0.17ms]
+(pass) 판정 결과와 서술 > 실제 말이 있는 반응은 문장부호와 함께 쓸 수 있다: ……왜지? [0.06ms]
+(pass) 판정 결과와 서술 > 실제 말이 있는 반응은 문장부호와 함께 쓸 수 있다: 셋. [0.04ms]
+(pass) 판정 결과와 서술 > 직접 반응할 상대가 없는 장면의 침묵과 나레이션은 그대로 둔다 [0.14ms]
+
+ 4 pass
+ 208 filtered out
+ 6 fail
+ 13 expect() calls
+Ran 10 tests across 2 files. [47.00ms]

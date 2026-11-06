@@ -1,0 +1,8 @@
+{
+  "위험도 단독": [
+    {"policy":"보통","count":300,"low":46,"zero":2,"bodyZero":1,"mindZero":1,"rolls":1326,"doubleSix":25,"critical":0,"endings":{"survivor":143,"spy":132,"curious":8,"spy_cut":17}},
+    {"policy":"무작위","count":300,"low":44,"zero":9,"bodyZero":9,"mindZero":0,"rolls":1083,"doubleSix":18,"critical":0,"endings":{"spy":77,"road":71,"curious":4,"value":23,"spy_cut":54,"survivor":31,"deal":40}},
+    {"policy":"무리","count":300,"low":114,"zero":58,"bodyZero":58,"mindZero":0,"rolls":1042,"doubleSix":21,"critical":0,"endings":{"road":172,"spy":65,"spy_cut":62,"unmasked":1}}
+  ],
+  "선택": "위험 접근 hard -2와 칼끝 위협당 정신력 -1; 수치는 final.json"
+}

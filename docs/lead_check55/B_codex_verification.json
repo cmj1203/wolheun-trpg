@@ -1,0 +1,928 @@
+{
+  "sprites": [
+    {
+      "path": "work/demo-slice/lane55/B_codex/asina/asina_neutral.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/asina/asina_neutral.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12873,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 2569,
+      "changed_pixels": 13474,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            75,
+            266
+          ],
+          "target_box": [
+            33,
+            125,
+            73,
+            286
+          ],
+          "original_box": [
+            20,
+            125,
+            78,
+            286
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            266
+          ],
+          "target_box": [
+            114,
+            125,
+            159,
+            286
+          ],
+          "original_box": [
+            106,
+            125,
+            166,
+            286
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 27
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 33,
+          "after": 28
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 31,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 31,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        99.07,
+        70.32,
+        56.65
+      ],
+      "shaft_mean_rgb_after": [
+        82.85,
+        60.83,
+        55.49
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/asina/asina_smile.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/asina/asina_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12867,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 2573,
+      "changed_pixels": 13464,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            75,
+            266
+          ],
+          "target_box": [
+            34,
+            125,
+            74,
+            286
+          ],
+          "original_box": [
+            21,
+            125,
+            79,
+            286
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            266
+          ],
+          "target_box": [
+            115,
+            125,
+            160,
+            286
+          ],
+          "original_box": [
+            107,
+            125,
+            166,
+            286
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 27
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 33,
+          "after": 28
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 32,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 31,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        105.63,
+        76.27,
+        56.75
+      ],
+      "shaft_mean_rgb_after": [
+        82.85,
+        60.83,
+        55.49
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/asina/asina_surprised.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/asina/asina_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12852,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 2543,
+      "changed_pixels": 13446,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            75,
+            266
+          ],
+          "target_box": [
+            33,
+            125,
+            73,
+            286
+          ],
+          "original_box": [
+            20,
+            125,
+            79,
+            286
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            266
+          ],
+          "target_box": [
+            114,
+            125,
+            159,
+            286
+          ],
+          "original_box": [
+            107,
+            125,
+            166,
+            286
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 27
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 33,
+          "after": 28
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 32,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 32,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        110.68,
+        79.95,
+        61.04
+      ],
+      "shaft_mean_rgb_after": [
+        82.85,
+        60.83,
+        55.49
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/asina/asina_wary.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/asina/asina_wary.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12876,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 2579,
+      "changed_pixels": 13471,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            75,
+            266
+          ],
+          "target_box": [
+            34,
+            125,
+            74,
+            286
+          ],
+          "original_box": [
+            21,
+            125,
+            79,
+            286
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            266
+          ],
+          "target_box": [
+            115,
+            125,
+            160,
+            286
+          ],
+          "original_box": [
+            107,
+            125,
+            167,
+            286
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 27
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 34,
+          "after": 28
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 31,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 31,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        106.48,
+        78.81,
+        58.6
+      ],
+      "shaft_mean_rgb_after": [
+        82.85,
+        60.83,
+        55.49
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/hood/asina_hood_neutral.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/hood/asina_hood_neutral.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12983,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 3041,
+      "changed_pixels": 13513,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            77,
+            273
+          ],
+          "target_box": [
+            31,
+            125,
+            73,
+            287
+          ],
+          "original_box": [
+            20,
+            125,
+            78,
+            287
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            273
+          ],
+          "target_box": [
+            113,
+            125,
+            158,
+            287
+          ],
+          "original_box": [
+            106,
+            125,
+            165,
+            287
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 28
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 33,
+          "after": 29
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 31,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 31,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        110.6,
+        79.2,
+        58.84
+      ],
+      "shaft_mean_rgb_after": [
+        80.28,
+        58.43,
+        50.92
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/hood/asina_hood_smile.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/hood/asina_hood_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12971,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 3058,
+      "changed_pixels": 13509,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            77,
+            273
+          ],
+          "target_box": [
+            32,
+            125,
+            74,
+            287
+          ],
+          "original_box": [
+            21,
+            125,
+            79,
+            287
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            273
+          ],
+          "target_box": [
+            114,
+            125,
+            159,
+            287
+          ],
+          "original_box": [
+            107,
+            125,
+            166,
+            287
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 28
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 33,
+          "after": 29
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 31,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 31,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        118.46,
+        86.84,
+        60.0
+      ],
+      "shaft_mean_rgb_after": [
+        80.28,
+        58.43,
+        50.92
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/hood/asina_hood_surprised.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/hood/asina_hood_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12963,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 3031,
+      "changed_pixels": 13496,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            77,
+            273
+          ],
+          "target_box": [
+            32,
+            125,
+            74,
+            287
+          ],
+          "original_box": [
+            21,
+            125,
+            79,
+            287
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            273
+          ],
+          "target_box": [
+            114,
+            125,
+            159,
+            287
+          ],
+          "original_box": [
+            107,
+            125,
+            166,
+            287
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 28
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 33,
+          "after": 29
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 31,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 31,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        118.7,
+        87.75,
+        60.22
+      ],
+      "shaft_mean_rgb_after": [
+        80.28,
+        58.43,
+        50.92
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/hood/asina_hood_wary.png",
+      "mask": "work/demo-slice/lane55/B_codex/masks/hood/asina_hood_wary.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "outside_mask_diff_pixels": 0,
+      "alpha_diff_pixels": 12961,
+      "outside_mask_alpha_diff_pixels": 0,
+      "removed_opaque_pixels": 3045,
+      "changed_pixels": 13492,
+      "alignment": [
+        {
+          "source_box": [
+            35,
+            125,
+            77,
+            273
+          ],
+          "target_box": [
+            32,
+            125,
+            74,
+            287
+          ],
+          "original_box": [
+            21,
+            125,
+            79,
+            287
+          ]
+        },
+        {
+          "source_box": [
+            110,
+            125,
+            155,
+            273
+          ],
+          "target_box": [
+            114,
+            125,
+            159,
+            287
+          ],
+          "original_box": [
+            107,
+            125,
+            166,
+            287
+          ]
+        }
+      ],
+      "shaft_width_pixels": [
+        {
+          "row": 1385,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 34,
+          "after": 28
+        },
+        {
+          "row": 1385,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 33,
+          "after": 29
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            400,
+            495
+          ],
+          "before": 31,
+          "after": 23
+        },
+        {
+          "row": 1410,
+          "x_range": [
+            495,
+            600
+          ],
+          "before": 31,
+          "after": 24
+        }
+      ],
+      "shaft_mean_rgb_before": [
+        120.9,
+        93.72,
+        65.04
+      ],
+      "shaft_mean_rgb_after": [
+        80.28,
+        58.43,
+        50.92
+      ],
+      "manual_3x_judgement": "통과: 길고 가는 장화, 살짝 뾰족한 앞코, 낮은 블록 굽, 짙은 갈색. 윗단 연결과 투명 영역에 이전 외곽 잔상 없음."
+    }
+  ],
+  "items": [
+    {
+      "path": "work/demo-slice/lane55/B_codex/item_magic_bag.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 218590
+    },
+    {
+      "path": "work/demo-slice/lane55/B_codex/item_earring.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 243996
+    }
+  ],
+  "generation": [
+    {
+      "name": "bag",
+      "exit_code": 0,
+      "elapsed": 128.91,
+      "target_exists": true,
+      "fallbacks": [
+        "/Users/choeminju/.codex/generated_images/01a1b027-5403-7432-8436-9ee7ffba246f/exec-a393a954-0bd1-4202-bfde-7b2cb66a0fc3.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-53b3-7c90-b437-06ad9f7e2360/exec-289e5061-a657-4245-a3ec-fd3b4c5f92fc.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-5561-7613-b5a3-aca3ecd253c1/exec-f1bb3a6f-92ba-4cf8-80a1-0e16b12a10f9.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-5440-75f3-aa63-51b8c864ba21/exec-15146c04-4104-4259-900b-08f887ce8b12.png"
+      ]
+    },
+    {
+      "name": "earring",
+      "exit_code": 0,
+      "elapsed": 93.49,
+      "target_exists": true,
+      "fallbacks": [
+        "/Users/choeminju/.codex/generated_images/01a1b027-5403-7432-8436-9ee7ffba246f/exec-a393a954-0bd1-4202-bfde-7b2cb66a0fc3.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-53b3-7c90-b437-06ad9f7e2360/exec-289e5061-a657-4245-a3ec-fd3b4c5f92fc.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-5561-7613-b5a3-aca3ecd253c1/exec-f1bb3a6f-92ba-4cf8-80a1-0e16b12a10f9.png"
+      ]
+    },
+    {
+      "name": "asina",
+      "exit_code": 0,
+      "elapsed": 84.01,
+      "target_exists": true,
+      "fallbacks": [
+        "/Users/choeminju/.codex/generated_images/01a1b027-5403-7432-8436-9ee7ffba246f/exec-a393a954-0bd1-4202-bfde-7b2cb66a0fc3.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-53b3-7c90-b437-06ad9f7e2360/exec-289e5061-a657-4245-a3ec-fd3b4c5f92fc.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-5561-7613-b5a3-aca3ecd253c1/exec-f1bb3a6f-92ba-4cf8-80a1-0e16b12a10f9.png"
+      ]
+    },
+    {
+      "name": "hood",
+      "exit_code": 0,
+      "elapsed": 89.45,
+      "target_exists": true,
+      "fallbacks": [
+        "/Users/choeminju/.codex/generated_images/01a1b027-5403-7432-8436-9ee7ffba246f/exec-a393a954-0bd1-4202-bfde-7b2cb66a0fc3.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-53b3-7c90-b437-06ad9f7e2360/exec-289e5061-a657-4245-a3ec-fd3b4c5f92fc.png",
+        "/Users/choeminju/.codex/generated_images/01a1b027-5561-7613-b5a3-aca3ecd253c1/exec-f1bb3a6f-92ba-4cf8-80a1-0e16b12a10f9.png"
+      ]
+    }
+  ],
+  "judgement": "세 항목 재검수 통과 후보. 원작과 완전히 같은 픽셀을 주장하지 않으며 귀찌 광택과 가죽 주름은 새 칠이다.",
+  "revision": 2,
+  "alpha_contract": "장화 마스크 내부 RGBA 변경 허용, 마스크 밖 RGBA 차이 0",
+  "visual_review": {
+    "scale": 3,
+    "method": "최종 PNG를 최근접 보간으로 정확히 3배 확대하고 직접 열어 확인",
+    "files": [
+      "work/demo-slice/lane55/B_codex/revision2/boots_neutral_3x.png",
+      "work/demo-slice/lane55/B_codex/revision2/boots_smile_3x.png",
+      "work/demo-slice/lane55/B_codex/revision2/boots_surprised_3x.png",
+      "work/demo-slice/lane55/B_codex/revision2/boots_wary_3x.png",
+      "work/demo-slice/lane55/B_codex/revision2/item_magic_bag_3x.png",
+      "work/demo-slice/lane55/B_codex/revision2/item_earring_3x.png"
+    ],
+    "bag": "통과: 닫힌 윗선, 안쪽 노출 없음, 덮개·잠금쇠 없음, 가는 긴 끈 하나, 납작한 적갈색 주머니.",
+    "earring": "통과: 타원형 분홍~붉은색·보랏빛 각면 보석, 얇은 장밋빛 톱니 금테, 작은 침. 노란 금 발톱 없음."
+  }
+}

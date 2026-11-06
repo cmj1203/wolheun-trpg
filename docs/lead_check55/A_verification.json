@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-06",
+  "measurement_method": "최종 합성본의 눈구석을 A_eyes_landmarks.jpg 8배 확대에서 수동 확인. 날개 아이라인과 앞머리는 제외한 눈 개구부의 수평 투영, 반올림 오차 약 ±1px. 자동 얼굴 검출 측정이 아니며 수동 좌표의 계산·보존 불변식을 코드로 검증.",
+  "faces": {
+    "neutral": {
+      "candidate": "work/demo-slice/lane55/A/out/behidat_neutral.png",
+      "sha256": "6bfbae527e4e5bf161da347a9aa8a4ec35ad68974a67189b3ff8caebcab29fba",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_identical": true,
+      "outside_mask_max_diff": 0,
+      "source_assets_unchanged": true,
+      "right_eye_max_diff": 0,
+      "mouth_max_diff": 0,
+      "eye_landmarks_x_manual": [
+        480,
+        502,
+        526,
+        549
+      ],
+      "D_gap_px": 24,
+      "E_mean_eye_width_px": 22.5,
+      "left_eye_width_px": 22,
+      "right_eye_width_px": 23,
+      "D_over_E": 1.067,
+      "D_over_E_pass": true,
+      "changed_pixels": 10118
+    },
+    "smile": {
+      "candidate": "work/demo-slice/lane55/A/out/behidat_smile.png",
+      "sha256": "145727c544a73fe3b0476047907e745c36e9fc383f83cda4cfe9462383e66dfd",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_identical": true,
+      "outside_mask_max_diff": 0,
+      "source_assets_unchanged": true,
+      "right_eye_max_diff": 0,
+      "mouth_max_diff": 0,
+      "eye_landmarks_x_manual": [
+        477,
+        501,
+        525,
+        549
+      ],
+      "D_gap_px": 24,
+      "E_mean_eye_width_px": 24.0,
+      "left_eye_width_px": 24,
+      "right_eye_width_px": 24,
+      "D_over_E": 1.0,
+      "D_over_E_pass": true,
+      "changed_pixels": 10170
+    },
+    "surprised": {
+      "candidate": "work/demo-slice/lane55/A/out/behidat_surprised.png",
+      "sha256": "1ad537d1acd0cc2b31d44b59af06e5567693dd1c9977d0e59ff36eebd3802fbb",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_identical": true,
+      "outside_mask_max_diff": 0,
+      "source_assets_unchanged": true,
+      "right_eye_max_diff": 0,
+      "mouth_max_diff": 0,
+      "eye_landmarks_x_manual": [
+        474,
+        501,
+        525,
+        551
+      ],
+      "D_gap_px": 24,
+      "E_mean_eye_width_px": 26.5,
+      "left_eye_width_px": 27,
+      "right_eye_width_px": 26,
+      "D_over_E": 0.906,
+      "D_over_E_pass": true,
+      "changed_pixels": 10191
+    },
+    "wary": {
+      "candidate": "work/demo-slice/lane55/A/out/behidat_wary.png",
+      "sha256": "f5637d4da6163742e9063ba44d2f709c9fe4bb3efef0b3a065585b950c17cf07",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_identical": true,
+      "outside_mask_max_diff": 0,
+      "source_assets_unchanged": true,
+      "right_eye_max_diff": 0,
+      "mouth_max_diff": 0,
+      "eye_landmarks_x_manual": [
+        475,
+        501,
+        526,
+        551
+      ],
+      "D_gap_px": 25,
+      "E_mean_eye_width_px": 25.5,
+      "left_eye_width_px": 26,
+      "right_eye_width_px": 25,
+      "D_over_E": 0.98,
+      "D_over_E_pass": true,
+      "changed_pixels": 10122
+    }
+  },
+  "registration": {
+    "neutral": {
+      "registration": {
+        "chest": [
+          1.0,
+          0,
+          0,
+          45.048
+        ],
+        "turban": [
+          1.0,
+          0,
+          0,
+          139.052
+        ],
+        "eye": [
+          "눈구석 기준 국소 가로 정렬",
+          [
+            [
+              478,
+              503
+            ],
+            [
+              480,
+              502
+            ]
+          ]
+        ]
+      },
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "outside_mask_max_diff": 0,
+      "changed_pixels": 10118,
+      "source_assets_unchanged": true
+    },
+    "smile": {
+      "registration": {
+        "chest": [
+          1.0,
+          0,
+          0,
+          36.593
+        ],
+        "turban": [
+          1.0,
+          0,
+          0,
+          170.465
+        ],
+        "eye": [
+          "눈구석 기준 국소 가로 정렬",
+          [
+            [
+              477,
+              501
+            ],
+            [
+              477,
+              501
+            ]
+          ]
+        ]
+      },
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "outside_mask_max_diff": 0,
+      "changed_pixels": 10170,
+      "source_assets_unchanged": true
+    },
+    "surprised": {
+      "registration": {
+        "chest": [
+          1.0,
+          0,
+          0,
+          36.294
+        ],
+        "turban": [
+          1.0,
+          0,
+          0,
+          193.245
+        ],
+        "eye": [
+          "눈구석 기준 국소 가로 정렬",
+          [
+            [
+              473,
+              501
+            ],
+            [
+              474,
+              501
+            ]
+          ]
+        ]
+      },
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "outside_mask_max_diff": 0,
+      "changed_pixels": 10191,
+      "source_assets_unchanged": true
+    },
+    "wary": {
+      "registration": {
+        "chest": [
+          1.0,
+          0,
+          0,
+          37.832
+        ],
+        "turban": [
+          1.0,
+          0,
+          0,
+          185.07
+        ],
+        "eye": [
+          "눈구석 기준 국소 가로 정렬",
+          [
+            [
+              476,
+              499
+            ],
+            [
+              475,
+              501
+            ]
+          ]
+        ]
+      },
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "outside_mask_max_diff": 0,
+      "changed_pixels": 10122,
+      "source_assets_unchanged": true
+    }
+  }
+}

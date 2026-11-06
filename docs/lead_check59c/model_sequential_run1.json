@@ -1,0 +1,6756 @@
+{
+  "initial": {
+    "v": 1,
+    "scenario": "ep01_desert",
+    "session": "laneC5-59c-sequential",
+    "seed": 59,
+    "rng": 59,
+    "beat": "b05_why",
+    "tracks": {
+      "체력": 4,
+      "정신력": 3,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "items": [
+      "magic_bag",
+      "earring",
+      "map",
+      "pin"
+    ],
+    "flags": {
+      "상대_곁": true,
+      "위협_칼끝": true,
+      "안내_입력": true
+    },
+    "said": [],
+    "free": {
+      "beat": "b05_why",
+      "talks": 0,
+      "rolls": 0
+    },
+    "recent": [
+      {
+        "speaker": "나레이션",
+        "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+      }
+    ],
+    "ending": null,
+    "startedAt": 1793968065071,
+    "playMs": 0,
+    "lastActiveAt": 1793968065071,
+    "log": [
+      {
+        "kind": "start",
+        "seed": 59,
+        "at": 1793968065071,
+        "playMs": 0
+      },
+      {
+        "kind": "beat",
+        "beat": "b05_why",
+        "title": "왜지?",
+        "at": 1793968065071,
+        "playMs": 0
+      },
+      {
+        "kind": "tracks",
+        "changes": [
+          {
+            "key": "정신력",
+            "from": 4,
+            "to": 3
+          }
+        ],
+        "at": 1793968065071,
+        "playMs": 0
+      },
+      {
+        "kind": "change",
+        "parts": [
+          {
+            "text": "정신력 -1",
+            "tone": "bad"
+          }
+        ],
+        "at": 1793968065071,
+        "playMs": 0
+      }
+    ],
+    "spoken": {
+      "나레이션": [
+        "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+      ]
+    }
+  },
+  "opening": {
+    "events": [
+      {
+        "type": "scene",
+        "beat": "b05_why",
+        "title": "왜지?",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "정신력",
+            "from": 4,
+            "to": 3
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "정신력 -1",
+            "tone": "bad"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+        "by": "script"
+      }
+    ],
+    "prompt": {
+      "type": "free",
+      "beat": "b05_why",
+      "placeholder": "왜 죽이면 안 되는지 아시나로서 말하거나 행동해 보세요.",
+      "aim": "목에 닿은 칼끝을 거두게 할 이유를 댄다.",
+      "example": "대륙에서 하나뿐인 미소녀니까요.",
+      "approaches": [
+        {
+          "id": "beauty",
+          "label": "미인계를 쓴다",
+          "stat": "매력",
+          "statValue": 2,
+          "locked": false
+        },
+        {
+          "id": "plead",
+          "label": "결백을 호소한다",
+          "stat": "매력",
+          "statValue": 2,
+          "locked": false
+        },
+        {
+          "id": "bluff",
+          "label": "말재주로 둘러댄다",
+          "stat": "재치",
+          "statValue": 1,
+          "locked": false
+        },
+        {
+          "id": "noble",
+          "label": "신분과 교양을 내세운다",
+          "stat": "교양",
+          "statValue": 1,
+          "locked": false
+        },
+        {
+          "id": "resist",
+          "label": "칼을 밀어내고 몸을 뺀다",
+          "stat": "근력",
+          "statValue": 0,
+          "locked": false
+        },
+        {
+          "id": "bag",
+          "label": "마법 가방에서 물건을 꺼낸다",
+          "stat": "손재주",
+          "statValue": 1,
+          "locked": false
+        }
+      ],
+      "rollsLeft": 3
+    },
+    "hud": {
+      "scenarioTitle": "죽음의 사막 지르다",
+      "episode": "1화 · 사막 조우",
+      "beatTitle": "왜지?",
+      "tracks": [
+        {
+          "key": "체력",
+          "label": "체력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 근력 -1. 0에서 다시 다치면 쓰러져 붙잡힌다.",
+          "value": 4
+        },
+        {
+          "key": "정신력",
+          "label": "정신력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 매력·재치에 흔들리는 마음 -1. 0이 되면 다음 판정에 겁에 질림 -2, 회복 전까지 행운을 쓸 수 없다.",
+          "value": 3
+        },
+        {
+          "key": "의심",
+          "label": "의심",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나를 경계하는 정도",
+          "value": 0,
+          "clock": {
+            "kind": "progress",
+            "warnAt": 7
+          }
+        },
+        {
+          "key": "집착",
+          "label": "집착",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+          "value": 0
+        },
+        {
+          "key": "호감",
+          "label": "호감",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게 품은 호감",
+          "value": 0
+        },
+        {
+          "key": "귀찌",
+          "label": "귀찌 수명",
+          "max": 7,
+          "unit": "일",
+          "desc": "변색 마법이 버티는 시간은 일주일. 일주일은 변색을 풀고 귀찌를 쉬게 해야 한다.",
+          "value": 7,
+          "clock": {
+            "kind": "countdown",
+            "warnAt": 2
+          }
+        },
+        {
+          "key": "탈주",
+          "label": "탈주 준비도",
+          "max": 10,
+          "unit": "",
+          "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+          "value": 0
+        },
+        {
+          "key": "행운",
+          "label": "행운",
+          "max": 10,
+          "unit": "",
+          "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+          "value": 6
+        }
+      ],
+      "abilities": [
+        {
+          "key": "재치",
+          "value": 1
+        },
+        {
+          "key": "손재주",
+          "value": 1
+        },
+        {
+          "key": "매력",
+          "value": 2
+        },
+        {
+          "key": "근력",
+          "value": 0
+        },
+        {
+          "key": "교양",
+          "value": 1
+        }
+      ],
+      "items": [
+        {
+          "id": "magic_bag",
+          "name": "마법 가방",
+          "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "earring",
+          "name": "마법 귀찌",
+          "desc": "귓불에 달린 마법 귀찌."
+        },
+        {
+          "id": "map",
+          "name": "낡은 지도",
+          "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "notes": [
+        {
+          "id": "nations",
+          "kind": "세계",
+          "name": "크롬웰 제국",
+          "text": "북대륙의 패자라고 불리는 크롬웰 제국. 아시나의 모국이다."
+        },
+        {
+          "id": "zirda",
+          "kind": "장소",
+          "name": "지르다",
+          "text": "두 대륙 사이의 죽음의 사막. 생명이 살지 않는 모래사막이고, 낮에는 태양이 살을 태울 듯 뜨겁다."
+        },
+        {
+          "id": "kracha",
+          "kind": "장소",
+          "name": "크라차",
+          "text": "사막 건너 남대륙의 도시. 아시나가 가려던 곳이다."
+        },
+        {
+          "id": "magic",
+          "kind": "세계",
+          "name": "마법",
+          "text": "마법은 드물고 귀하다. 마법이 깃든 물건은 그것만으로 눈길을 끈다."
+        },
+        {
+          "id": "asina",
+          "kind": "사람",
+          "name": "아시나",
+          "text": "이름은 아시나. 크롬웰 제국 출신으로 부족함 없이 자랐다. 여행을 좋아해 대륙을 떠돈다. 스스로를 대륙에서 하나뿐인 미소녀라 부른다."
+        },
+        {
+          "id": "item:magic_bag",
+          "kind": "소지품",
+          "name": "마법 가방",
+          "text": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "item:earring",
+          "kind": "소지품",
+          "name": "마법 귀찌",
+          "text": "귓불에 달린 마법 귀찌."
+        },
+        {
+          "id": "item:map",
+          "kind": "소지품",
+          "name": "낡은 지도",
+          "text": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "trackGate": [
+        {
+          "note": "man",
+          "tracks": [
+            "의심",
+            "집착",
+            "호감"
+          ]
+        },
+        {
+          "note": "captive",
+          "tracks": [
+            "탈주"
+          ]
+        },
+        {
+          "flag": "귀찌_설명",
+          "tracks": [
+            "귀찌"
+          ]
+        }
+      ],
+      "tension": 3,
+      "playMs": 0
+    }
+  },
+  "rows": [
+    {
+      "i": 1,
+      "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+      "beat": "b05_why",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b05_why",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 0,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b05_why",
+          "talks": 0,
+          "rolls": 0
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 0,
+        "lastActiveAt": 1793968065071,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+          ]
+        }
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b05_why",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 1,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b05_why",
+          "talks": 0,
+          "rolls": 1
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라도 흘릴 생각인가, 이방인."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 3,
+        "lastActiveAt": 1793968065074,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인."
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다"
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "눈물이라도 흘릴 생각인가, 이방인.",
+          "by": "gm",
+          "face": "sneer"
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+          "by": "script"
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "호위 하나가 말없이 칼자루에 손을 얹었다.",
+          "by": "script"
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 0,
+              "to": 1
+            }
+          ]
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b05_why",
+          "attempt": 1,
+          "input": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+          "raw": "{\"reason\":\"감정으로 인해 몸이 떨리는 반응은 idle에 해당함\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"감정으로 인해 몸이 떨리는 반응은 idle에 해당함\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+            "ttftMs": 5314.124625,
+            "totalMs": 6829.767584,
+            "promptTokens": 3236,
+            "completionTokens": 79,
+            "promptMs": 2720.285,
+            "genMs": 1581.579,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b05_why",
+          "attempt": 1,
+          "input": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라도 흘릴 생각인가, 이방인.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라도 흘릴 생각인가, 이방인.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 1002.7261250000001,
+            "totalMs": 2045.6468330000007,
+            "promptTokens": 1118,
+            "completionTokens": 60,
+            "promptMs": 845.393,
+            "genMs": 1104.15,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 9886,
+      "baselineMs": 18702,
+      "ratio": 0.5286065661426586,
+      "cpuBefore": "11908 RN     0.1 02:15",
+      "cpuAfter": "11908 SN    17.4 02:24"
+    },
+    {
+      "i": 2,
+      "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+      "beat": "b05_why",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b05_why",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 1,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b05_why",
+          "talks": 0,
+          "rolls": 1
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라도 흘릴 생각인가, 이방인."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 3,
+        "lastActiveAt": 1793968065074,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인."
+          ]
+        }
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b05_why",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 2,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b05_why",
+          "talks": 0,
+          "rolls": 2
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라도 흘릴 생각인가, 이방인."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          },
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 9894,
+        "lastActiveAt": 1793968074965,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다"
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+          "by": "gm",
+          "face": "sneer"
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 1,
+              "to": 2
+            }
+          ]
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b05_why",
+          "attempt": 1,
+          "input": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+          "raw": "{\"reason\":\"감정으로 인해 몸에 나타난 자연스러운 반응임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"감정으로 인해 몸에 나타난 자연스러운 반응임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+            "ttftMs": 3317.0141669999994,
+            "totalMs": 4709.223749999999,
+            "promptTokens": 3818,
+            "completionTokens": 77,
+            "promptMs": 3237.87,
+            "genMs": 1450.654,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b05_why",
+          "attempt": 1,
+          "input": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"손끝이 떨리는군. 이방인, 죽음이 가까워진 건가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [
+            {
+              "kind": "beat",
+              "rule": "reaction_repeat",
+              "detail": "호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요",
+              "severity": "soft"
+            }
+          ],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"손끝이 떨리는군. 이방인, 죽음이 가까워진 건가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 505.57495799999924,
+            "totalMs": 1656.305875,
+            "promptTokens": 461,
+            "completionTokens": 67,
+            "promptMs": 383.63,
+            "genMs": 1206.957,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b05_why",
+          "attempt": 2,
+          "input": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"손끝이 떨리는군. 이토록 겁에 질린 건가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"손끝이 떨리는군. 이토록 겁에 질린 건가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 452.29599999999846,
+            "totalMs": 1512.462707999999,
+            "promptTokens": 508,
+            "completionTokens": 64,
+            "promptMs": 381.369,
+            "genMs": 1115.379,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 9725,
+      "baselineMs": 19549,
+      "ratio": 0.4974679011714154,
+      "cpuBefore": "11908 SN    17.4 02:24",
+      "cpuAfter": "11908 SN    15.6 02:34"
+    },
+    {
+      "i": 3,
+      "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+      "beat": "b05_why",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b05_why",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 2,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b05_why",
+          "talks": 0,
+          "rolls": 2
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라도 흘릴 생각인가, 이방인."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          },
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 9894,
+        "lastActiveAt": 1793968074965,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          ]
+        }
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 3,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 0,
+          "rolls": 0
+        },
+        "recent": [
+          {
+            "speaker": "남자",
+            "text": "눈물이라도 흘릴 생각인가, 이방인."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          },
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          },
+          {
+            "speaker": "남자",
+            "text": "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 19623,
+        "lastActiveAt": 1793968084694,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다"
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+          "by": "gm",
+          "face": "sneer"
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 2,
+              "to": 3
+            }
+          ]
+        },
+        {
+          "type": "scene",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "bg": "desert_near",
+          "cast": {
+            "left": "아시나",
+            "center": null,
+            "right": "남자"
+          },
+          "sprites": {}
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "by": "script",
+          "if": "item:magic_bag && !flag:가방_끈"
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "그 바람에 후드가 벗겨졌다.",
+          "by": "script",
+          "if": "!flag:후드_벗음"
+        },
+        {
+          "type": "line",
+          "speaker": "속마음",
+          "display": "아시나",
+          "style": "thought",
+          "text": "미친―! 피해야 돼!!",
+          "by": "script",
+          "fx": "shake",
+          "sfx": "부웅",
+          "face": "surprised",
+          "cg": "cg_swing"
+        },
+        {
+          "type": "sprite",
+          "cast": "아시나",
+          "sprite": "asina"
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b05_why",
+          "attempt": 1,
+          "input": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+          "raw": "{\"reason\":\"감정 때문에 몸에 드러난 반응이므로 idle이다.\",\"kind\":\"idle\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"감정 때문에 몸에 드러난 반응이므로 idle이다.\",\"kind\":\"idle\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+            "ttftMs": 3195.2212919999984,
+            "totalMs": 4349.041792,
+            "promptTokens": 3848,
+            "completionTokens": 67,
+            "promptMs": 3121.897,
+            "genMs": 1212.791,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b05_why",
+          "attempt": 1,
+          "input": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"붉게 달아오른 뺨이 제법 볼만하군. 이방인, 말문이 막힌 건가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [
+            {
+              "kind": "beat",
+              "rule": "reaction_repeat",
+              "detail": "끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요",
+              "severity": "soft"
+            }
+          ],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"붉게 달아오른 뺨이 제법 볼만하군. 이방인, 말문이 막힌 건가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 491.9303340000006,
+            "totalMs": 1740.656959,
+            "promptTokens": 465,
+            "completionTokens": 75,
+            "promptMs": 373.51,
+            "genMs": 1302.9,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b05_why",
+          "attempt": 2,
+          "input": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"붉게 달아오른 꼴이 제법 볼만하군, 여자.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"붉게 달아오른 꼴이 제법 볼만하군, 여자.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 542.1390839999985,
+            "totalMs": 1617.8474590000005,
+            "promptTokens": 579,
+            "completionTokens": 65,
+            "promptMs": 471.667,
+            "genMs": 1130.424,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 9620,
+      "baselineMs": 36052,
+      "ratio": 0.26683679130145344,
+      "cpuBefore": "11908 SN    15.6 02:34",
+      "cpuAfter": "11908 RN    14.7 02:44"
+    },
+    {
+      "i": 4,
+      "text": "힘이 쭉 빠져 무릎이 후들거린다",
+      "beat": "b06_swing",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 3,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 0,
+          "rolls": 0
+        },
+        "recent": [
+          {
+            "speaker": "남자",
+            "text": "눈물이라도 흘릴 생각인가, 이방인."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          },
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          },
+          {
+            "speaker": "남자",
+            "text": "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 19623,
+        "lastActiveAt": 1793968084694,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        }
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 4,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 0,
+          "rolls": 1
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          },
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          },
+          {
+            "speaker": "남자",
+            "text": "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          },
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 29253,
+        "lastActiveAt": 1793968094324,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "힘이 쭉 빠져 무릎이 후들거린다"
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+          "by": "gm",
+          "face": "sneer"
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+          "by": "script"
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 3,
+              "to": 4
+            }
+          ]
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "힘이 쭉 빠져 무릎이 후들거린다",
+          "raw": "{\"reason\":\"공포로 인해 몸이 마음대로 움직이지 않는 상태를 묘사함\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"공포로 인해 몸이 마음대로 움직이지 않는 상태를 묘사함\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+            "ttftMs": 4854.470957999998,
+            "totalMs": 6316.327375000001,
+            "promptTokens": 2924,
+            "completionTokens": 82,
+            "promptMs": 2342.317,
+            "genMs": 1520.128,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "힘이 쭉 빠져 무릎이 후들거린다",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"무릎이 떨리는군. 이방인, 벌써 끝인가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"무릎이 떨리는군. 이방인, 벌써 끝인가?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 562.4301659999983,
+            "totalMs": 1617.945040999999,
+            "promptTokens": 426,
+            "completionTokens": 63,
+            "promptMs": 367.697,
+            "genMs": 1111.601,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 8887,
+      "baselineMs": 24112,
+      "ratio": 0.36857166556071663,
+      "cpuBefore": "11908 RN    14.7 02:44",
+      "cpuAfter": "11908 SN    16.0 02:53"
+    },
+    {
+      "i": 5,
+      "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+      "beat": "b06_swing",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 4,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 0,
+          "rolls": 1
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "호위 하나가 말없이 칼자루에 손을 얹었다."
+          },
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          },
+          {
+            "speaker": "남자",
+            "text": "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          },
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 29253,
+        "lastActiveAt": 1793968094324,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        }
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 5,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 0,
+          "rolls": 2
+        },
+        "recent": [
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          },
+          {
+            "speaker": "남자",
+            "text": "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          },
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 38146,
+        "lastActiveAt": 1793968103217,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4266,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2452,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 4,
+                "to": 5
+              }
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+            "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "눈시울이 뜨거워지고 콧등이 시큰해진다"
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?",
+          "by": "gm",
+          "face": "sneer"
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 4,
+              "to": 5
+            }
+          ]
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+          "raw": "{\"reason\":\"감정으로 인해 몸에 드러난 반응이므로 idle이다.\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"감정으로 인해 몸에 드러난 반응이므로 idle이다.\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+            "ttftMs": 2876.2173330000005,
+            "totalMs": 4265.229166000005,
+            "promptTokens": 3449,
+            "completionTokens": 78,
+            "promptMs": 2799.278,
+            "genMs": 1445.916,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라. 이 사막에서 그게 무슨 가치가 있지?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라. 이 사막에서 그게 무슨 가치가 있지?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 447.28783300000214,
+            "totalMs": 1486.997166000001,
+            "promptTokens": 430,
+            "completionTokens": 62,
+            "promptMs": 352.255,
+            "genMs": 1094.933,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 6718,
+      "baselineMs": 44709,
+      "ratio": 0.15026057393365988,
+      "cpuBefore": "11908 SN    16.0 02:53",
+      "cpuAfter": "11908 SN    16.0 02:59"
+    },
+    {
+      "i": 6,
+      "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+      "beat": "b06_swing",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 5,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true
+        },
+        "said": [],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 0,
+          "rolls": 2
+        },
+        "recent": [
+          {
+            "speaker": "남자",
+            "text": "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+          },
+          {
+            "speaker": "남자",
+            "text": "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          },
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 38146,
+        "lastActiveAt": 1793968103217,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4266,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2452,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 4,
+                "to": 5
+              }
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+            "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        }
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 5,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true,
+          "말함": true,
+          "말함_b06_swing": true
+        },
+        "said": [
+          "다치게 할 생각은 없어요. 얘기부터 해요."
+        ],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 1,
+          "rolls": 2,
+          "lastInput": "다치게할생각은없어요얘기부터해요"
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          },
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          },
+          {
+            "speaker": "남자",
+            "text": "대화?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 44869,
+        "lastActiveAt": 1793968109940,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4266,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2452,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 4,
+                "to": 5
+              }
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4278,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "result": "talk",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3776,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 대화?",
+              "나레이션: 남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+            ],
+            "at": 1793968117994,
+            "playMs": 44869
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+            "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+            "눈물이라. 이 사막에서 그게 무슨 가치가 있지?",
+            "대화?"
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        },
+        "heard": [
+          {
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "action": false
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "다치게 할 생각은 없어요. 얘기부터 해요."
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "대화?",
+          "by": "gm",
+          "face": "sneer"
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다.",
+          "by": "gm"
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "다치게 할 생각은 없어요. 얘기부터 해요.",
+          "raw": "{\"reason\":\"상대방에게 대화를 시도하며 설득하려 함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"상대방에게 대화를 시도하며 설득하려 함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+            "ttftMs": 2855.8259580000013,
+            "totalMs": 4277.059916999999,
+            "promptTokens": 3441,
+            "completionTokens": 79,
+            "promptMs": 2775.825,
+            "genMs": 1481.142,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "다치게 할 생각은 없어요. 얘기부터 해요.",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"대화?\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다.\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"대화?\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다.\"\n    }\n  ]\n}",
+            "ttftMs": 1686.8801250000033,
+            "totalMs": 3775.427875000001,
+            "promptTokens": 1974,
+            "completionTokens": 115,
+            "promptMs": 1621.497,
+            "genMs": 2149.018,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 8055,
+      "baselineMs": 36843,
+      "ratio": 0.2186304046901718,
+      "cpuBefore": "11908 SN    16.0 02:59",
+      "cpuAfter": "11908 SN    14.2 03:07"
+    },
+    {
+      "i": 7,
+      "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+      "beat": "b06_swing",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 59,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 3,
+          "의심": 5,
+          "집착": 0,
+          "호감": 0,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true,
+          "말함": true,
+          "말함_b06_swing": true
+        },
+        "said": [
+          "다치게 할 생각은 없어요. 얘기부터 해요."
+        ],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 1,
+          "rolls": 2,
+          "lastInput": "다치게할생각은없어요얘기부터해요"
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "그 바람에 후드가 벗겨졌다."
+          },
+          {
+            "speaker": "속마음",
+            "text": "미친―! 피해야 돼!!"
+          },
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          },
+          {
+            "speaker": "남자",
+            "text": "대화?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 44869,
+        "lastActiveAt": 1793968109940,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4266,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2452,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 4,
+                "to": 5
+              }
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4278,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "result": "talk",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3776,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 대화?",
+              "나레이션: 남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+            ],
+            "at": 1793968117994,
+            "playMs": 44869
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+            "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+            "눈물이라. 이 사막에서 그게 무슨 가치가 있지?",
+            "대화?"
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        },
+        "heard": [
+          {
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "action": false
+          }
+        ]
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 3663131685,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 4,
+          "의심": 5,
+          "집착": 2,
+          "호감": 1,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true,
+          "말함": true,
+          "말함_b06_swing": true,
+          "긴장": 2,
+          "큰_행동": true
+        },
+        "said": [
+          "다치게 할 생각은 없어요. 얘기부터 해요."
+        ],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 1,
+          "rolls": 3,
+          "lastInput": "다치게할생각은없어요얘기부터해요",
+          "spoken": false
+        },
+        "recent": [
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          },
+          {
+            "speaker": "남자",
+            "text": "대화?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다."
+          },
+          {
+            "speaker": "남자",
+            "text": "……."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 58761,
+        "lastActiveAt": 1793968123832,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4266,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2452,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 4,
+                "to": 5
+              }
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4278,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "result": "talk",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3776,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 대화?",
+              "나레이션: 남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+            ],
+            "at": 1793968117994,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 5832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968123831,
+            "playMs": 52928
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+            "result": "improv",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968123832,
+            "playMs": 58761
+          },
+          {
+            "kind": "check",
+            "beat": "b06_swing",
+            "roll": {
+              "label": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다",
+              "stat": "근력",
+              "statValue": 0,
+              "mods": [],
+              "dice": [
+                4,
+                6
+              ],
+              "total": 10,
+              "tier": "hit"
+            },
+            "at": 1793968123832,
+            "playMs": 58761
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "narrate",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 5973,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "나레이션: 미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.",
+              "남자: …….",
+              "나레이션: 남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "집착",
+                "from": 0,
+                "to": 2
+              },
+              {
+                "key": "호감",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 +1",
+                "tone": "good"
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+            "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다.",
+            "미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.",
+            "남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+            "눈물이라. 이 사막에서 그게 무슨 가치가 있지?",
+            "대화?",
+            "……."
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        },
+        "heard": [
+          {
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "action": false
+          },
+          {
+            "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+            "action": true
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다."
+        },
+        {
+          "type": "confirm",
+          "kind": "intent",
+          "text": "남자의 손목을 잡아 옆으로 밀어냈다. — 이렇게 하는 거야?",
+          "yes": "그래",
+          "no": "다른 뜻"
+        },
+        {
+          "type": "roll",
+          "label": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다",
+          "stat": "근력",
+          "statValue": 0,
+          "mods": [],
+          "dice": [
+            4,
+            6
+          ],
+          "total": 10,
+          "tier": "hit",
+          "tierLabel": "성공"
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.",
+          "by": "gm"
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "…….",
+          "by": "gm",
+          "face": "intrigued"
+        },
+        {
+          "type": "line",
+          "speaker": "나레이션",
+          "display": "",
+          "style": "narration",
+          "text": "남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다.",
+          "by": "gm"
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "집착",
+              "from": 0,
+              "to": 2
+            },
+            {
+              "key": "호감",
+              "from": 0,
+              "to": 1
+            }
+          ]
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 3,
+              "to": 4
+            }
+          ]
+        },
+        {
+          "type": "change",
+          "parts": [
+            {
+              "text": "정신력 +1",
+              "tone": "good"
+            }
+          ]
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+          "raw": "{\"reason\":\"칼을 든 남자의 손목을 직접 붙잡아 밀어내려 함\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":true, \"deed\":\"남자의 손목을 잡아 옆으로 밀어냈다.\", \"stat\":\"근력\", \"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"칼을 든 남자의 손목을 직접 붙잡아 밀어내려 함\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":true, \"deed\":\"남자의 손목을 잡아 옆으로 밀어냈다.\", \"stat\":\"근력\", \"difficulty\":\"보통\"}",
+            "ttftMs": 2939.0883749999994,
+            "totalMs": 4628.220582999995,
+            "promptTokens": 3514,
+            "completionTokens": 95,
+            "promptMs": 2873.705,
+            "genMs": 1748.418,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "narrate",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…….\",\n      \"face\": \"intrigued\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다.\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…….\",\n      \"face\": \"intrigued\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다.\"\n    }\n  ]\n}",
+            "ttftMs": 2358.148709000001,
+            "totalMs": 5972.323666999997,
+            "promptTokens": 2806,
+            "completionTokens": 197,
+            "promptMs": 2278.155,
+            "genMs": 3672.871,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 11807,
+      "baselineMs": 82583,
+      "ratio": 0.14297131370863253,
+      "cpuBefore": "11908 SN    14.2 03:07",
+      "cpuAfter": "11908 SN     9.8 03:19"
+    },
+    {
+      "i": 8,
+      "text": "근처에 물을 얻을 곳이 있나요?",
+      "beat": "b06_swing",
+      "before": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 3663131685,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 4,
+          "의심": 5,
+          "집착": 2,
+          "호감": 1,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true,
+          "말함": true,
+          "말함_b06_swing": true,
+          "긴장": 2,
+          "큰_행동": true
+        },
+        "said": [
+          "다치게 할 생각은 없어요. 얘기부터 해요."
+        ],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 1,
+          "rolls": 3,
+          "lastInput": "다치게할생각은없어요얘기부터해요",
+          "spoken": false
+        },
+        "recent": [
+          {
+            "speaker": "남자",
+            "text": "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          },
+          {
+            "speaker": "남자",
+            "text": "대화?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다."
+          },
+          {
+            "speaker": "남자",
+            "text": "……."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 58761,
+        "lastActiveAt": 1793968123832,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4266,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2452,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 4,
+                "to": 5
+              }
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4278,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "result": "talk",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3776,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 대화?",
+              "나레이션: 남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+            ],
+            "at": 1793968117994,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 5832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968123831,
+            "playMs": 52928
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+            "result": "improv",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968123832,
+            "playMs": 58761
+          },
+          {
+            "kind": "check",
+            "beat": "b06_swing",
+            "roll": {
+              "label": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다",
+              "stat": "근력",
+              "statValue": 0,
+              "mods": [],
+              "dice": [
+                4,
+                6
+              ],
+              "total": 10,
+              "tier": "hit"
+            },
+            "at": 1793968123832,
+            "playMs": 58761
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "narrate",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 5973,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "나레이션: 미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.",
+              "남자: …….",
+              "나레이션: 남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "집착",
+                "from": 0,
+                "to": 2
+              },
+              {
+                "key": "호감",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 +1",
+                "tone": "good"
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+            "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다.",
+            "미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.",
+            "남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+            "눈물이라. 이 사막에서 그게 무슨 가치가 있지?",
+            "대화?",
+            "……."
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        },
+        "heard": [
+          {
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "action": false
+          },
+          {
+            "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+            "action": true
+          }
+        ]
+      },
+      "after": {
+        "v": 1,
+        "scenario": "ep01_desert",
+        "session": "laneC5-59c-sequential",
+        "seed": 59,
+        "rng": 3663131685,
+        "beat": "b06_swing",
+        "tracks": {
+          "체력": 4,
+          "정신력": 4,
+          "의심": 6,
+          "집착": 2,
+          "호감": 1,
+          "귀찌": 7,
+          "탈주": 0,
+          "행운": 6
+        },
+        "abilities": {
+          "재치": 1,
+          "손재주": 1,
+          "매력": 2,
+          "근력": 0,
+          "교양": 1
+        },
+        "items": [
+          "magic_bag",
+          "earring",
+          "map",
+          "pin"
+        ],
+        "flags": {
+          "상대_곁": true,
+          "위협_칼끝": true,
+          "안내_입력": true,
+          "후드_벗음": true,
+          "말함": true,
+          "말함_b06_swing": true,
+          "긴장": 2,
+          "큰_행동": true
+        },
+        "said": [
+          "다치게 할 생각은 없어요. 얘기부터 해요."
+        ],
+        "free": {
+          "beat": "b06_swing",
+          "talks": 1,
+          "rolls": 4,
+          "lastInput": "다치게할생각은없어요얘기부터해요",
+          "spoken": false
+        },
+        "recent": [
+          {
+            "speaker": "나레이션",
+            "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다."
+          },
+          {
+            "speaker": "남자",
+            "text": "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+          },
+          {
+            "speaker": "남자",
+            "text": "대화?"
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다."
+          },
+          {
+            "speaker": "남자",
+            "text": "……."
+          },
+          {
+            "speaker": "나레이션",
+            "text": "남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+          },
+          {
+            "speaker": "남자",
+            "text": "목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?"
+          }
+        ],
+        "ending": null,
+        "startedAt": 1793968065071,
+        "playMs": 64742,
+        "lastActiveAt": 1793968129813,
+        "log": [
+          {
+            "kind": "start",
+            "seed": 59,
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "beat",
+            "beat": "b05_why",
+            "title": "왜지?",
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 4,
+                "to": 3
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 -1",
+                "tone": "bad"
+              }
+            ],
+            "at": 1793968065071,
+            "playMs": 0
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968071906,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3054,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라도 흘릴 생각인가, 이방인."
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968074960,
+            "playMs": 3
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4710,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968079674,
+            "playMs": 9894
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968079675,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5014,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 1,
+                "to": 2
+              }
+            ],
+            "at": 1793968084689,
+            "playMs": 9894
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4350,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "input",
+            "beat": "b05_why",
+            "text": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968089044,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b05_why",
+            "task": "talk",
+            "attempts": 2,
+            "violations": [
+              "beat/reaction_repeat: 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+            ],
+            "fallback": false,
+            "ms": 5270,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 2,
+                "to": 3
+              }
+            ],
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "beat",
+            "beat": "b06_swing",
+            "title": "마지막으로 남길 말인가",
+            "at": 1793968094314,
+            "playMs": 19623
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 6317,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "힘이 쭉 빠져 무릎이 후들거린다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968100641,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2570,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968103211,
+            "playMs": 29253
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4266,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968107483,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2452,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 4,
+                "to": 5
+              }
+            ],
+            "at": 1793968109935,
+            "playMs": 38146
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4278,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "result": "talk",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968114218,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 3776,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 대화?",
+              "나레이션: 남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다."
+            ],
+            "at": 1793968117994,
+            "playMs": 44869
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 5832,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968123831,
+            "playMs": 52928
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+            "result": "improv",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968123832,
+            "playMs": 58761
+          },
+          {
+            "kind": "check",
+            "beat": "b06_swing",
+            "roll": {
+              "label": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다",
+              "stat": "근력",
+              "statValue": 0,
+              "mods": [],
+              "dice": [
+                4,
+                6
+              ],
+              "total": 10,
+              "tier": "hit"
+            },
+            "at": 1793968123832,
+            "playMs": 58761
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "narrate",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 5973,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "나레이션: 미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.",
+              "남자: …….",
+              "나레이션: 남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "집착",
+                "from": 0,
+                "to": 2
+              },
+              {
+                "key": "호감",
+                "from": 0,
+                "to": 1
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "정신력",
+                "from": 3,
+                "to": 4
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "change",
+            "parts": [
+              {
+                "text": "정신력 +1",
+                "tone": "good"
+              }
+            ],
+            "at": 1793968129806,
+            "playMs": 58761
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "interpret",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 4385,
+            "model": "gemma-4-26b-a4b",
+            "at": 1793968134198,
+            "playMs": 64742
+          },
+          {
+            "kind": "input",
+            "beat": "b06_swing",
+            "text": "근처에 물을 얻을 곳이 있나요?",
+            "result": "idle",
+            "approach": null,
+            "item": null,
+            "source": "llm",
+            "at": 1793968134198,
+            "playMs": 64742
+          },
+          {
+            "kind": "gm",
+            "beat": "b06_swing",
+            "task": "talk",
+            "attempts": 1,
+            "violations": [],
+            "fallback": false,
+            "ms": 2605,
+            "model": "gemma-4-26b-a4b",
+            "lines": [
+              "남자: 목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?"
+            ],
+            "at": 1793968136803,
+            "playMs": 64742
+          },
+          {
+            "kind": "tracks",
+            "changes": [
+              {
+                "key": "의심",
+                "from": 5,
+                "to": 6
+              }
+            ],
+            "at": 1793968136803,
+            "playMs": 64742
+          }
+        ],
+        "spoken": {
+          "나레이션": [
+            "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+            "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+            "호위 하나가 말없이 칼자루에 손을 얹었다.",
+            "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+            "그 바람에 후드가 벗겨졌다.",
+            "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+            "남자가 칼을 거두기는커녕, 오히려 서늘한 눈빛으로 나를 훑어내렸다. 목구멍까지 차오른 공포 때문에 숨이 제대로 쉬어지지 않았다.",
+            "미친 짓이었다. 죽음을 각오하지 않고서는 불가능한 도박이었다. 하지만 내 양손은 남자의 단단한 손목을 꽉 움켜쥐었고, 그 반동으로 서늘한 칼날이 내 몸을 비껴갔다.",
+            "남자의 움직임이 멈췄다. 비웃음조차 사라진 무거운 침묵 속에서, 검붉은 눈동자가 집요하게 나를 꿰뚫어 보았다."
+          ],
+          "남자": [
+            "눈물이라도 흘릴 생각인가, 이방인.",
+            "손끝이 떨리는군. 이토록 겁에 질린 건가?",
+            "붉게 달아오른 꼴이 제법 볼만하군, 여자.",
+            "무릎이 떨리는군. 이방인, 벌써 끝인가?",
+            "눈물이라. 이 사막에서 그게 무슨 가치가 있지?",
+            "대화?",
+            "…….",
+            "목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?"
+          ],
+          "속마음": [
+            "미친―! 피해야 돼!!"
+          ]
+        },
+        "heard": [
+          {
+            "text": "다치게 할 생각은 없어요. 얘기부터 해요.",
+            "action": false
+          },
+          {
+            "text": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+            "action": true
+          },
+          {
+            "text": "근처에 물을 얻을 곳이 있나요?",
+            "action": false
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "echo",
+          "text": "근처에 물을 얻을 곳이 있나요?"
+        },
+        {
+          "type": "line",
+          "speaker": "남자",
+          "display": "붉은 눈의 남자",
+          "style": "speech",
+          "text": "목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?",
+          "by": "gm",
+          "face": "sneer"
+        },
+        {
+          "type": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 5,
+              "to": 6
+            }
+          ]
+        }
+      ],
+      "traces": [
+        {
+          "task": "interpret",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "근처에 물을 얻을 곳이 있나요?",
+          "raw": "{\"reason\":\"상대방에게 물을 얻을 곳이 있는지 질문함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "violations": [],
+          "llm": {
+            "text": "{\"reason\":\"상대방에게 물을 얻을 곳이 있는지 질문함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+            "ttftMs": 2990.4092910000036,
+            "totalMs": 4384.956208000003,
+            "promptTokens": 3577,
+            "completionTokens": 78,
+            "promptMs": 2926.058,
+            "genMs": 1453.05,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        },
+        {
+          "task": "talk",
+          "beat": "b06_swing",
+          "attempt": 1,
+          "input": "근처에 물을 얻을 곳이 있나요?",
+          "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "violations": [],
+          "llm": {
+            "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+            "ttftMs": 460.85679099999834,
+            "totalMs": 1626.818207999997,
+            "promptTokens": 425,
+            "completionTokens": 67,
+            "promptMs": 373.44,
+            "genMs": 1223.492,
+            "model": "gemma-4-26b-a4b"
+          },
+          "error": null
+        }
+      ],
+      "ms": 6991,
+      "baselineMs": 88210,
+      "ratio": 0.0792540528284775,
+      "cpuBefore": "11908 SN     9.8 03:19",
+      "cpuAfter": "11908 SN    12.7 03:26"
+    }
+  ]
+}

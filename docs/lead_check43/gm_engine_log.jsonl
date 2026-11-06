@@ -1,0 +1,39 @@
+{"kind":"start","seed":3,"at":1793942882390,"playMs":0}
+{"kind":"beat","beat":"b00_open","title":"여는 글","at":1793942882390,"playMs":0}
+{"kind":"beat","beat":"b01_sand","title":"길 잃은 지 일주일","at":1793942882390,"playMs":0}
+{"kind":"beat","beat":"b02_people","title":"사람?!","at":1793942882390,"playMs":0}
+{"kind":"tracks","changes":[{"key":"귀찌","from":8,"to":7}],"at":1793942882390,"playMs":0}
+{"kind":"twist","beat":"b02_people","tension":3,"roll":3,"result":"altered","id":"closer","at":1793942882390,"playMs":0}
+{"kind":"gm","beat":"b01_sand","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":10859,"model":"gemma-4-26b-a4b","at":1793942893251,"playMs":2}
+{"kind":"input","beat":"b01_sand","text":"여긴 대체 어디 땅이야?","result":"ask","approach":null,"item":null,"source":"llm","at":1793942893251,"playMs":2}
+{"kind":"gm","beat":"b01_sand","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":1760,"model":"gemma-4-26b-a4b","lines":["GM: 여긴 두 대륙 사이의 죽음의 사막, 지르다야. 낮에는 태양이 살을 태울 듯 뜨겁고 생명체라곤 살 수 없는 곳이지. 이제 저 사람들에게 어떻게 할지 결정해줘."],"at":1793942895011,"playMs":2}
+{"kind":"gm","beat":"b01_sand","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":5211,"model":"gemma-4-26b-a4b","at":1793942900224,"playMs":12622}
+{"kind":"input","beat":"b01_sand","text":"이 모래밭은 누구 나라에 속하는 거야?","result":"ask","approach":null,"item":null,"source":"llm","at":1793942900224,"playMs":12622}
+{"kind":"gm","beat":"b01_sand","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":2064,"model":"gemma-4-26b-a4b","lines":["GM: 지르다는 어느 나라의 소유도 아닌, 두 대륙 사이의 죽음의 사막이야. 이제 저 사람들에게 어떻게 할지 결정해줘."],"at":1793942902287,"playMs":12622}
+{"kind":"gm","beat":"b02_people","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":5292,"model":"gemma-4-26b-a4b","at":1793942907581,"playMs":19899}
+{"kind":"input","beat":"b02_people","text":"저 셋 어느 나라 사람 같아?","result":"ask","approach":null,"item":null,"source":"llm","at":1793942907581,"playMs":19899}
+{"kind":"gm","beat":"b02_people","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":1259,"model":"gemma-4-26b-a4b","lines":["GM: 그건 아직 아시나도 몰라. 이제 저 사람들에게 어떻게 할지 결정해줘."],"at":1793942908840,"playMs":19899}
+{"kind":"gm","beat":"b02_people","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":5227,"model":"gemma-4-26b-a4b","at":1793942914072,"playMs":26454}
+{"kind":"input","beat":"b02_people","text":"저 무리는 어느 왕국에서 온 걸까?","result":"ask","approach":null,"item":null,"source":"llm","at":1793942914072,"playMs":26454}
+{"kind":"gm","beat":"b02_people","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":1340,"model":"gemma-4-26b-a4b","lines":["GM: 저 사람들이 어느 나라 사람인지는 아직 알 수 없어. 이제 저 무리에게 어떻게 할지 결정해줘."],"at":1793942915412,"playMs":26454}
+{"kind":"choice","beat":"b02_people","choice":"approach:run","text":"달려가서 길을 묻는다","at":1793942915418,"playMs":33028}
+{"kind":"check","beat":"b02_people","roll":{"label":"달려가서 길을 묻는다","stat":"체력","statValue":0,"mods":[{"label":"가까운 거리","value":1}],"dice":[5,4],"total":10,"tier":"hit"},"at":1793942915418,"playMs":33028}
+{"kind":"beat","beat":"b03_ask","title":"길을 물어봤을 뿐인데","at":1793942915418,"playMs":33028}
+{"kind":"beat","beat":"b04_blade","title":"그리고 현재","at":1793942915418,"playMs":33028}
+{"kind":"tracks","changes":[{"key":"의심","from":0,"to":3}],"at":1793942915418,"playMs":33028}
+{"kind":"beat","beat":"b05_why","title":"왜지?","at":1793942915418,"playMs":33028}
+{"kind":"gm","beat":"b03_ask","task":"interpret","attempts":0,"violations":[],"fallback":false,"ms":0,"model":"gemma-4-26b-a4b","at":1793942915419,"playMs":33029}
+{"kind":"input","beat":"b03_ask","text":"저 칼 든 놈 정체가 뭐야?","result":"ask","approach":null,"item":null,"source":"rule","at":1793942915419,"playMs":33029}
+{"kind":"gm","beat":"b03_ask","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":6267,"model":"gemma-4-26b-a4b","lines":["GM: 그냥 붉은 눈을 가진 남자일 뿐이야. 이름이나 신분은 아시나도 몰라. 자, 이제 목에 닿은 칼끝을 어떻게든 피할 구실을 만들어봐."],"at":1793942921686,"playMs":33029}
+{"kind":"gm","beat":"b03_ask","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":5992,"model":"gemma-4-26b-a4b","at":1793942927679,"playMs":39297}
+{"kind":"input","beat":"b03_ask","text":"터번 쓴 사람이 어느 쪽 사람인지 알아?","result":"ask","approach":null,"item":null,"source":"llm","at":1793942927679,"playMs":39297}
+{"kind":"gm","beat":"b03_ask","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":1813,"model":"gemma-4-26b-a4b","lines":["GM: 그건 아시나도 몰라. 일단은 저 남자의 칼끝부터 어떻게든 피할 구실을 만들어봐."],"at":1793942929492,"playMs":39297}
+{"kind":"gm","beat":"b04_blade","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":6251,"model":"gemma-4-26b-a4b","at":1793942935747,"playMs":47106}
+{"kind":"input","beat":"b04_blade","text":"들키면 어떻게 돼?","result":"ask","approach":null,"item":null,"source":"llm","at":1793942935747,"playMs":47106}
+{"kind":"gm","beat":"b04_blade","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":1630,"model":"gemma-4-26b-a4b","lines":["GM: 변장이 풀려서 은발과 붉은 눈이 드러나게 돼. 자, 이제 저 칼끝부터 어떻게든 피할 구실을 만들어봐."],"at":1793942937378,"playMs":47106}
+{"kind":"gm","beat":"b04_blade","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":6222,"model":"gemma-4-26b-a4b","at":1793942943603,"playMs":54991}
+{"kind":"input","beat":"b04_blade","text":"내가 공녀란 걸 알아채면 무슨 일이 벌어져?","result":"ask","approach":null,"item":null,"source":"llm","at":1793942943603,"playMs":54991}
+{"kind":"gm","beat":"b04_blade","task":"explain","attempts":1,"violations":[],"fallback":false,"ms":1558,"model":"gemma-4-26b-a4b","lines":["GM: 변장이 풀려서 은발과 붉은 눈이 드러나게 돼. 자, 이제 저 칼끝부터 어떻게든 피할 구실을 만들어봐."],"at":1793942945162,"playMs":54991}
+{"kind":"input","beat":"b04_blade","text":"페시안은 어떤 나라야?","result":"bounced","approach":null,"item":null,"source":"rule","at":1793942945163,"playMs":62773}
+{"kind":"gm","beat":"b05_why","task":"interpret","attempts":1,"violations":[],"fallback":false,"ms":7886,"model":"gemma-4-26b-a4b","at":1793942953051,"playMs":62774}
+{"kind":"input","beat":"b05_why","text":"페시안으로 가는 길을 묻는다","result":"bounced","approach":null,"item":null,"source":"llm","at":1793942953051,"playMs":62774}

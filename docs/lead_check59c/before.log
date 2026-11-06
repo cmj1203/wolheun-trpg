@@ -1,0 +1,51 @@
+bun test v1.4.2 (744846f84)
+
+tests/gm.test.ts:
+830 |     const base = neutral(contexts('칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.').narrate);
+831 |     const gist = '손목을 붙잡은 힘에 칼날이 목에서 비껴난다.';
+832 |     const reply = await gm.narrate({ ...base, outcome: { ...base.outcome, gist }, improv: {
+833 |       deed: '남자의 손목을 잡아 옆으로 밀어냈다.', bold: true, absurd: false,
+834 |     } });
+835 |     expect(reply.meta.attempts).toBe(3);
+                                      ^
+error: expect(received).toBe(expected)
+
+Expected: 3
+Received: 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:835:33)
+(fail) 이번 판 되풀이와 엔진 상태 > 직접 큰 행동의 hard 위반은 시간·횟수 예산이 0이어도 두 번 다시 쓴다 [5.54ms]
+848 |       ...base, state: { ...base.state, spoken: { 남자: pool.map(line => line.text) } },
+849 |       roll: { ...base.roll, tier }, outcome: { ...base.outcome, gist },
+850 |       improv: { deed: '남자의 손목을 잡아 옆으로 밀어냈다.', bold: true, absurd: false },
+851 |     });
+852 |     expect(reply.meta.fallback).toBe(true);
+853 |     expect(reply.lines.some(line => line.speaker === '나레이션' && line.text.includes(gist))).toBe(true);
+                                                                                                ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:853:91)
+(fail) 이번 판 되풀이와 엔진 상태 > 큰 행동 hit 대체에도 엔진 결과와 기존 인물 대사가 남는다 [0.51ms]
+848 |       ...base, state: { ...base.state, spoken: { 남자: pool.map(line => line.text) } },
+849 |       roll: { ...base.roll, tier }, outcome: { ...base.outcome, gist },
+850 |       improv: { deed: '남자의 손목을 잡아 옆으로 밀어냈다.', bold: true, absurd: false },
+851 |     });
+852 |     expect(reply.meta.fallback).toBe(true);
+853 |     expect(reply.lines.some(line => line.speaker === '나레이션' && line.text.includes(gist))).toBe(true);
+                                                                                                ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:853:91)
+(fail) 이번 판 되풀이와 엔진 상태 > 큰 행동 miss 대체에도 엔진 결과와 기존 인물 대사가 남는다 [0.34ms]
+
+ 0 pass
+ 122 filtered out
+ 3 fail
+ 5 expect() calls
+Ran 3 tests across 1 file. [29.00ms]

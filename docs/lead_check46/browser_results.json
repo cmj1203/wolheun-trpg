@@ -1,0 +1,130 @@
+[
+  {
+    "width": 1440,
+    "lines": [
+      {
+        "number": 1,
+        "text": "난 이 판을 진행하는 사막여우야.",
+        "storyLines": 0,
+        "highlights": 0,
+        "gmVisible": true,
+        "width": 1440,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_intro_1.png"
+      },
+      {
+        "number": 2,
+        "text": "넌 아시나가 돼.",
+        "storyLines": 0,
+        "highlights": 0,
+        "gmVisible": true,
+        "width": 1440,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_intro_2.png"
+      },
+      {
+        "number": 3,
+        "text": "장면이 오면 아래 입력창에 아시나가 할 말이나 행동을 적어. 뜬 단추를 골라도 돼.",
+        "storyLines": 0,
+        "highlights": 1,
+        "gmVisible": true,
+        "width": 1440,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_intro_3.png"
+      },
+      {
+        "number": 4,
+        "text": "결과가 확실하지 않은 행동이면 주사위 두 개에 능력치를 더해 굴려. 주사위 둘이 다 6이면 대성공, 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야.",
+        "storyLines": 0,
+        "highlights": 2,
+        "gmVisible": true,
+        "width": 1440,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_intro_4.png"
+      },
+      {
+        "number": 5,
+        "text": "결과에 따라 오른쪽 판의 체력·정신력·귀찌 수명이 오르내리고, 바뀐 건 이야기 창에 적혀. 행운은 실패를 메울 때 써.",
+        "storyLines": 0,
+        "highlights": 3,
+        "gmVisible": true,
+        "width": 1440,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_intro_5.png"
+      },
+      {
+        "number": 6,
+        "text": "막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.",
+        "storyLines": 0,
+        "highlights": 1,
+        "gmVisible": true,
+        "width": 1440,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_intro_6.png"
+      }
+    ],
+    "after": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_b00_after_intro.png",
+    "load": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_load_no_intro.png",
+    "loadWithoutView": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_load_without_view_no_intro.png",
+    "skip": "/Users/choeminju/월흔_trpg/docs/lead_check46/1440_skip_to_b00.png",
+    "result": "통과"
+  },
+  {
+    "width": 390,
+    "lines": [
+      {
+        "number": 1,
+        "text": "난 이 판을 진행하는 사막여우야.",
+        "storyLines": 0,
+        "highlights": 0,
+        "gmVisible": true,
+        "width": 390,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_intro_1.png"
+      },
+      {
+        "number": 2,
+        "text": "넌 아시나가 돼.",
+        "storyLines": 0,
+        "highlights": 0,
+        "gmVisible": true,
+        "width": 390,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_intro_2.png"
+      },
+      {
+        "number": 3,
+        "text": "장면이 오면 아래 입력창에 아시나가 할 말이나 행동을 적어. 뜬 단추를 골라도 돼.",
+        "storyLines": 0,
+        "highlights": 1,
+        "gmVisible": true,
+        "width": 390,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_intro_3.png"
+      },
+      {
+        "number": 4,
+        "text": "결과가 확실하지 않은 행동이면 주사위 두 개에 능력치를 더해 굴려. 주사위 둘이 다 6이면 대성공, 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야.",
+        "storyLines": 0,
+        "highlights": 2,
+        "gmVisible": true,
+        "width": 390,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_intro_4.png"
+      },
+      {
+        "number": 5,
+        "text": "결과에 따라 오른쪽 판의 체력·정신력·귀찌 수명이 오르내리고, 바뀐 건 이야기 창에 적혀. 행운은 실패를 메울 때 써.",
+        "storyLines": 0,
+        "highlights": 3,
+        "gmVisible": true,
+        "width": 390,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_intro_5.png"
+      },
+      {
+        "number": 6,
+        "text": "막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.",
+        "storyLines": 0,
+        "highlights": 1,
+        "gmVisible": true,
+        "width": 390,
+        "screenshot": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_intro_6.png"
+      }
+    ],
+    "after": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_b00_after_intro.png",
+    "load": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_load_no_intro.png",
+    "loadWithoutView": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_load_without_view_no_intro.png",
+    "skip": "/Users/choeminju/월흔_trpg/docs/lead_check46/390_skip_to_b00.png",
+    "result": "통과"
+  }
+]

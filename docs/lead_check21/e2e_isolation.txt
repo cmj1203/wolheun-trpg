@@ -1,0 +1,28 @@
+시작 2026-11-04T16:22:42.741Z
+--- 전
+/Users/choeminju/월흔_trpg/app/saves/slot1.json 2026-11-05 01:17:38 15354
+/Users/choeminju/월흔_trpg/app/saves/slot2.json 2026-11-03 15:46:20 9645
+/Users/choeminju/월흔_trpg/app/saves/slot3.json 2026-11-03 16:49:35 7195
+/Users/choeminju/월흔_trpg/app/saves/auto_fork.json 2026-11-05 01:17:42 5363
+/Users/choeminju/월흔_trpg/app/logs/atlas.json 2026-11-05 01:17:44 387
+9220b8abae6a8cf0c6fb1f2d5365e2ad6873fbb8  /Users/choeminju/월흔_trpg/app/saves/slot1.json
+5196e232b030c5fa7df7333073af72a358a30fa3  /Users/choeminju/월흔_trpg/app/saves/auto_fork.json
+119d65ac0e0549a5fa2e5dd8dcccea880a028ef6  /Users/choeminju/월흔_trpg/app/logs/atlas.json
+
+route 1 exit 0 [e2e 1] 통과
+route 2 exit 0 [e2e 2] 통과
+route 3 exit 0 [e2e 3] 통과
+route 4 exit 0 [e2e 4] 통과
+route 5 exit 0 [e2e 5] 통과
+feedback exit 0 [e2e 피드백] 통과
+--- 후
+/Users/choeminju/월흔_trpg/app/saves/slot1.json 2026-11-05 01:17:38 15354
+/Users/choeminju/월흔_trpg/app/saves/slot2.json 2026-11-03 15:46:20 9645
+/Users/choeminju/월흔_trpg/app/saves/slot3.json 2026-11-03 16:49:35 7195
+/Users/choeminju/월흔_trpg/app/saves/auto_fork.json 2026-11-05 01:17:42 5363
+/Users/choeminju/월흔_trpg/app/logs/atlas.json 2026-11-05 01:17:44 387
+9220b8abae6a8cf0c6fb1f2d5365e2ad6873fbb8  /Users/choeminju/월흔_trpg/app/saves/slot1.json
+5196e232b030c5fa7df7333073af72a358a30fa3  /Users/choeminju/월흔_trpg/app/saves/auto_fork.json
+119d65ac0e0549a5fa2e5dd8dcccea880a028ef6  /Users/choeminju/월흔_trpg/app/logs/atlas.json
+
+같음: 시각 true, 해시 true

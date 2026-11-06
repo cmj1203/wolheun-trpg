@@ -1,0 +1,6 @@
+(pass) 메모 > 판 번호 꼴이 아니면 파일을 찾지 않는다 [0.11ms]
+
+ 587 pass
+ 0 fail
+ 2402 expect() calls
+Ran 587 tests across 13 files. [1133.00ms]

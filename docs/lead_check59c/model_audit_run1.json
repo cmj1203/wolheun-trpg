@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "count": 8,
+    "silentLines": 1,
+    "fallbackTurns": 0,
+    "addressRepeats": 0,
+    "overThirtyPercent": [],
+    "menacing": [],
+    "intrigued": [
+      7
+    ]
+  },
+  "rows": [
+    {
+      "i": 1,
+      "input": "울컥한 마음에 턱 끝이 떨리고 눈앞이 흐려진다",
+      "beat": "b05_why",
+      "raw": [
+        "1회: 눈물이라도 흘릴 생각인가, 이방인."
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "눈물이라도 흘릴 생각인가, 이방인."
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 9886,
+      "baselineMs": 18702,
+      "ratio": 0.5286065661426586,
+      "cpuBefore": "11908 RN     0.1 02:15",
+      "cpuAfter": "11908 SN    17.4 02:24"
+    },
+    {
+      "i": 2,
+      "input": "긴장이 몰려와 손끝이 차갑고 숨이 가빠진다",
+      "beat": "b05_why",
+      "raw": [
+        "1회: 손끝이 떨리는군. 이방인, 죽음이 가까워진 건가?",
+        "2회: 손끝이 떨리는군. 이토록 겁에 질린 건가?"
+      ],
+      "violations": [
+        "reaction_repeat(soft): 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+      ],
+      "rewrites": 1,
+      "final": [
+        "손끝이 떨리는군. 이토록 겁에 질린 건가?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 9725,
+      "baselineMs": 19549,
+      "ratio": 0.4974679011714154,
+      "cpuBefore": "11908 SN    17.4 02:24",
+      "cpuAfter": "11908 SN    15.6 02:34"
+    },
+    {
+      "i": 3,
+      "input": "치밀어 오른 분노에 뺨이 달아오르고 말문이 막힌다",
+      "beat": "b05_why",
+      "raw": [
+        "1회: 붉게 달아오른 뺨이 제법 볼만하군. 이방인, 말문이 막힌 건가?",
+        "2회: 붉게 달아오른 꼴이 제법 볼만하군, 여자."
+      ],
+      "violations": [
+        "reaction_repeat(soft): 끝맺음 \"-가\"이 직전 대사 두 줄 \"눈물이라도 흘릴 생각인가, 이방인.\" / \"손끝이 떨리는군. 이토록 겁에 질린 건가?\"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요 / 호칭 \"이방인\"이 직전 대사 \"눈물이라도 흘릴 생각인가, 이방인.\"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요"
+      ],
+      "rewrites": 1,
+      "final": [
+        "붉게 달아오른 꼴이 제법 볼만하군, 여자."
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 9620,
+      "baselineMs": 36052,
+      "ratio": 0.26683679130145344,
+      "cpuBefore": "11908 SN    15.6 02:34",
+      "cpuAfter": "11908 RN    14.7 02:44"
+    },
+    {
+      "i": 4,
+      "input": "힘이 쭉 빠져 무릎이 후들거린다",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 무릎이 떨리는군. 이방인, 벌써 끝인가?"
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "무릎이 떨리는군. 이방인, 벌써 끝인가?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 8887,
+      "baselineMs": 24112,
+      "ratio": 0.36857166556071663,
+      "cpuBefore": "11908 RN    14.7 02:44",
+      "cpuAfter": "11908 SN    16.0 02:53"
+    },
+    {
+      "i": 5,
+      "input": "눈시울이 뜨거워지고 콧등이 시큰해진다",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "눈물이라. 이 사막에서 그게 무슨 가치가 있지?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 6718,
+      "baselineMs": 44709,
+      "ratio": 0.15026057393365988,
+      "cpuBefore": "11908 SN    16.0 02:53",
+      "cpuAfter": "11908 SN    16.0 02:59"
+    },
+    {
+      "i": 6,
+      "input": "다치게 할 생각은 없어요. 얘기부터 해요.",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 대화?"
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "대화?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 8055,
+      "baselineMs": 36843,
+      "ratio": 0.2186304046901718,
+      "cpuBefore": "11908 SN    16.0 02:59",
+      "cpuAfter": "11908 SN    14.2 03:07"
+    },
+    {
+      "i": 7,
+      "input": "칼을 든 손목을 양손으로 잡아 옆으로 밀어낸다.",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: ……."
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "……."
+      ],
+      "faces": [
+        "intrigued"
+      ],
+      "silentLines": 1,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 11807,
+      "baselineMs": 82583,
+      "ratio": 0.14297131370863253,
+      "cpuBefore": "11908 SN    14.2 03:07",
+      "cpuAfter": "11908 SN     9.8 03:19"
+    },
+    {
+      "i": 8,
+      "input": "근처에 물을 얻을 곳이 있나요?",
+      "beat": "b06_swing",
+      "raw": [
+        "1회: 목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?"
+      ],
+      "violations": [],
+      "rewrites": 0,
+      "final": [
+        "목숨을 구걸하기 전에 갈증부터 참는 게 어때, 이방인?"
+      ],
+      "faces": [
+        "sneer"
+      ],
+      "silentLines": 0,
+      "fallback": false,
+      "addressRepeats": [],
+      "ms": 6991,
+      "baselineMs": 88210,
+      "ratio": 0.0792540528284775,
+      "cpuBefore": "11908 SN     9.8 03:19",
+      "cpuAfter": "11908 SN    12.7 03:26"
+    }
+  ]
+}

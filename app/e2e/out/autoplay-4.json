@@ -3,8 +3,8 @@
   "title": "길잡이 계약",
   "seed": "1",
   "model": null,
-  "bootMs": 102,
-  "wallMs": 4863,
+  "bootMs": 103,
+  "wallMs": 3984,
   "result": {
     "scenarioTitle": "죽음의 사막 지르다",
     "episode": "1화 · 사막 조우",
@@ -15,29 +15,29 @@
       "nextHook": "다음 장면에서는 일행 안에서 움직인다. 쓸모를 계속 증명하면서, 일행이 어디로 가는지 알아내야 한다.",
       "bad": false
     },
-    "playMs": 2936,
-    "startedAt": 1793773587002,
+    "playMs": 2299,
+    "startedAt": 1793844521976,
     "decisions": [
       {
         "beatTitle": "사람?!",
         "kind": "input",
         "text": "달려가서 길을 묻는다",
         "detail": "자유 입력 → 달려가서 길을 묻는다",
-        "playMs": 888
+        "playMs": 533
       },
       {
         "beatTitle": "왜지?",
         "kind": "input",
         "text": "저를 살려 주시면 크라차까지 길잡이를 해 드리고 보상도 드릴게요",
         "detail": "자유 입력 → 말재주로 둘러댄다",
-        "playMs": 2622
+        "playMs": 2000
       },
       {
         "beatTitle": "그럼 증명해라",
         "kind": "input",
         "text": "지도를 펼쳐 크라차 쪽 길을 짚어 보인다",
         "detail": "자유 입력 → 지도와 해로 길을 읽어 보인다",
-        "playMs": 2936
+        "playMs": 2299
       }
     ],
     "checks": [
@@ -54,7 +54,7 @@
         "tier": "miss",
         "beatTitle": "사람?!",
         "tierLabel": "실패",
-        "playMs": 888
+        "playMs": 533
       },
       {
         "label": "말재주로 둘러댄다",
@@ -69,7 +69,7 @@
         "tier": "hit",
         "beatTitle": "왜지?",
         "tierLabel": "성공",
-        "playMs": 2622
+        "playMs": 2000
       },
       {
         "label": "지도와 해로 길을 읽어 보인다",
@@ -89,7 +89,97 @@
         "tier": "mixed",
         "beatTitle": "그럼 증명해라",
         "tierLabel": "대가 있는 성공",
-        "playMs": 2936
+        "playMs": 2299
+      }
+    ],
+    "replay": [
+      {
+        "kind": "decision",
+        "beatTitle": "사람?!",
+        "text": "달려가서 길을 묻는다",
+        "detail": "자유 입력 → 달려가서 길을 묻는다",
+        "playMs": 533
+      },
+      {
+        "kind": "check",
+        "label": "달려가서 길을 묻는다",
+        "stat": "체력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          2,
+          4
+        ],
+        "total": 6,
+        "tier": "miss",
+        "beatTitle": "사람?!",
+        "tierLabel": "실패",
+        "playMs": 533
+      },
+      {
+        "kind": "price",
+        "beatTitle": "사람?!",
+        "tag": "수치",
+        "text": "모래에 무릎까지 빠져 기운이 빠졌다.",
+        "playMs": 762
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "왜지?",
+        "text": "저를 살려 주시면 크라차까지 길잡이를 해 드리고 보상도 드릴게요",
+        "detail": "자유 입력 → 말재주로 둘러댄다",
+        "playMs": 2000
+      },
+      {
+        "kind": "check",
+        "label": "말재주로 둘러댄다",
+        "stat": "재치",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          6,
+          6
+        ],
+        "total": 13,
+        "tier": "hit",
+        "beatTitle": "왜지?",
+        "tierLabel": "성공",
+        "playMs": 2000
+      },
+      {
+        "kind": "decision",
+        "beatTitle": "그럼 증명해라",
+        "text": "지도를 펼쳐 크라차 쪽 길을 짚어 보인다",
+        "detail": "자유 입력 → 지도와 해로 길을 읽어 보인다",
+        "playMs": 2299
+      },
+      {
+        "kind": "check",
+        "label": "지도와 해로 길을 읽어 보인다",
+        "stat": "교양",
+        "statValue": 1,
+        "mods": [
+          {
+            "label": "계획",
+            "value": 1
+          }
+        ],
+        "dice": [
+          4,
+          3
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "beatTitle": "그럼 증명해라",
+        "tierLabel": "대가 있는 성공",
+        "playMs": 2299
+      },
+      {
+        "kind": "price",
+        "beatTitle": "그럼 증명해라",
+        "tag": "상대행동",
+        "text": "호위 하나가 코웃음을 쳤다.",
+        "playMs": 2299
       }
     ],
     "tracks": [
@@ -99,7 +189,11 @@
         "max": 10,
         "unit": "",
         "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
-        "value": 5
+        "value": 6,
+        "clock": {
+          "kind": "progress",
+          "warnAt": 7
+        }
       },
       {
         "key": "집착",
@@ -120,10 +214,14 @@
       {
         "key": "귀찌",
         "label": "귀찌 수명",
-        "max": 10,
+        "max": 8,
         "unit": "",
-        "desc": "변장 귀찌의 남은 힘. 낮아져도 변장은 풀리지 않지만 마음이 급해져 판정에 불리해진다",
-        "value": 7
+        "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+        "value": 5,
+        "clock": {
+          "kind": "countdown",
+          "warnAt": 2
+        }
       },
       {
         "key": "탈주",
@@ -179,18 +277,18 @@
   "cpuBeforeLoad": "",
   "net": {
     "pids": [
-      21790
+      38437
     ],
-    "samples": 10,
+    "samples": 8,
     "endpoints": [
-      "TCP 127.0.0.1:18183 (LISTEN)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56231 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56233 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56234 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56235 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56236 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56237 (ESTABLISHED)",
-      "TCP 127.0.0.1:18183->127.0.0.1:56238 (ESTABLISHED)"
+      "TCP 127.0.0.1:18204 (LISTEN)",
+      "TCP 127.0.0.1:18204->127.0.0.1:50421 (ESTABLISHED)",
+      "TCP 127.0.0.1:18204->127.0.0.1:50437 (ESTABLISHED)",
+      "TCP 127.0.0.1:18204->127.0.0.1:50438 (ESTABLISHED)",
+      "TCP 127.0.0.1:18204->127.0.0.1:50439 (ESTABLISHED)",
+      "TCP 127.0.0.1:18204->127.0.0.1:50441 (ESTABLISHED)",
+      "TCP 127.0.0.1:18204->127.0.0.1:50442 (ESTABLISHED)",
+      "TCP 127.0.0.1:18204->127.0.0.1:50443 (ESTABLISHED)"
     ],
     "external": [],
     "publicListeners": []

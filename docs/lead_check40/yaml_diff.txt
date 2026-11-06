@@ -1,0 +1,12 @@
+73a74
+>   cg_travel_3cuts: { label: 여행, file: assets/ep01/gen/cg/cg_travel_3cuts.png, fit: cover }
+361c362
+<         cg: cg_travel
+---
+>         cg: cg_travel_3cuts
+363,365c364
+<         cg: cg_travel
+<       - 나레이션: 남대륙은 적국 페시안의 땅. 크롬웰의 공녀라는 게 들키면 끝이다.
+<       - 나레이션: 그래서 귀찌로 은발과 붉은 눈을 갈색으로 바꿨다.
+---
+>         cg: cg_travel_3cuts

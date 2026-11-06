@@ -1,0 +1,521 @@
+bun test v1.4.2 (744846f84)
+
+tests/fuzz.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/kracha51.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/feedback.test.ts:
+(pass) 피드백 받기 > 127.0.0.1 에서 온 글은 jsonl 에 한 줄로 덧붙고, 보낸 자동 첨부와 id·받은 시각·버전이 함께 남는다 [0.83ms]
+(pass) 피드백 받기 > 보낸 글에 id·받은 시각·버전이 들어 있어도 서버 값을 덮어쓰지 못한다 [0.30ms]
+(pass) 피드백 받기 > 본문이 16KB 를 넘으면 413 이고 아무것도 저장하지 않는다 [0.07ms]
+(pass) 피드백 받기 > 잘못된 JSON·배열·빈 글은 400 이고 저장하지 않는다 [0.10ms]
+(pass) 피드백 받기 > 다른 사이트 화면에서 보낸 글과 JSON 이 아닌 글은 저장하지 않고, 게임 화면의 글은 받는다 [0.17ms]
+(pass) 피드백 받기 > 길이를 알리지 않은 큰 본문도 상한을 넘으면 읽기를 멈추고 저장하지 않는다 [0.05ms]
+(pass) 피드백 받기 > 이 컴퓨터로 돌린 다른 도메인의 화면(DNS 리바인딩)은 출처가 같아 보여도 막는다 [0.01ms]
+(pass) 피드백 받기 > 127.0.0.1 이 아닌 주소는 403 으로 거부한다 [0.38ms]
+
+tests/introduction.test.ts:
+(pass) 이야기 시작 전 안내 > 새 게임은 안내 여섯 줄을 한 번씩 넘긴 뒤 이야기를 시작한다 [0.05ms]
+(pass) 이야기 시작 전 안내 > 불러오기는 안내 없이 저장한 장면으로 간다
+(pass) 이야기 시작 전 안내 > 0번 넘긴 자리에서 건너뛰면 남은 안내가 나오지 않는다
+(pass) 이야기 시작 전 안내 > 2번 넘긴 자리에서 건너뛰면 남은 안내가 나오지 않는다
+(pass) 이야기 시작 전 안내 > 5번 넘긴 자리에서 건너뛰면 남은 안내가 나오지 않는다
+
+tests/input_kind.test.ts:
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 바위 뒤로 몸을 숨긴다 → action [1.31ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 남자의 손목을 덥석 잡는다 → action [0.04ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 물을 마신다 → action [0.02ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 남자를 꽉 안는다 → action [0.02ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 눈을 피하지 않고 노려본다 → action [0.01ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 팔을 흔들며 그쪽으로 걸어간다 → action
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 일단 뛰어 볼게 → action [0.02ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 모래를 던질래 → action [0.02ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 도망가자 → action [0.02ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 던져 볼까? → action [0.02ms]
+(pass) 행동: 현재 서술 "-ㄴ다/-는다"와 다짐 "-ㄹ게/-ㄹ래/-자" > 저 사람들 누구지? 일단 말 걸어본다 → action [0.08ms]
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 아무것도 안 한다 → refrain [0.01ms]
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 칼을 잡지 않는다 → refrain
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 던지려다 만다 → refrain [0.01ms]
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 그냥 안 할래 → refrain [0.01ms]
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 안할래 → refrain
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 싸우지 말자 → refrain [0.02ms]
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 그만 둔다 → refrain [0.01ms]
+(pass) 시도하지 않음: 마지막 서술어의 부정 > 그만하자 → refrain
+(pass) 건넨말: 듣는 이 표지 > 칼부터 좀 내려 주시면 안 될까요 → speech [0.16ms]
+(pass) 건넨말: 듣는 이 표지 > 실례합니다, 길 좀 여쭤도 될까요? → speech [0.06ms]
+(pass) 건넨말: 듣는 이 표지 > 물 좀 나눠 주실 수 있나요? → speech [0.03ms]
+(pass) 건넨말: 듣는 이 표지 > 저 아세요? 처음 보는 사이잖아요 → speech [0.03ms]
+(pass) 건넨말: 듣는 이 표지 > 제가 무기라도 든 것처럼 보여요? → speech [0.02ms]
+(pass) 건넨말: 듣는 이 표지 > 팔 안 아파요? → speech [0.02ms]
+(pass) 건넨말: 듣는 이 표지 > 너 여기서 뭐 하는 놈이야? → speech [0.03ms]
+(pass) 건넨말: 듣는 이 표지 > 그 칼 진짜로 쓸 거야? → speech [0.01ms]
+(pass) 건넨말: 듣는 이 표지 > 내가 뭘 잘못했는데? → speech [0.02ms]
+(pass) 건넨말: 듣는 이 표지 > 당신을 믿는다 → speech [0.02ms]
+(pass) 건넨말: 듣는 이 표지 > 이봐, 칼 치워 → speech [0.03ms]
+(pass) 건넨말: 듣는 이 표지 > 아저씨, 진정 좀 해 → speech [0.02ms]
+(pass) 건넨말: 듣는 이 표지 > 아저씨 이름이 뭐야? → speech [0.03ms]
+(pass) 건넨말: 듣는 이 표지 > 거기 세 분! → speech [0.01ms]
+(pass) 건넨말: 듣는 이 표지 > 거기 멈춰! 누구냐! → speech [0.05ms]
+(pass) 건넨말: 듣는 이 표지 > 됐고, 물이나 좀 줘 → speech [0.03ms]
+(pass) 건넨말: 듣는 이 표지 > 웃기지 마 → speech [0.02ms]
+(pass) 건넨말: 듣는 이 표지 > 비켜라 → speech [0.02ms]
+(pass) 건넨말: 듣는 이 표지 > 뭐라고? → speech [0.01ms]
+(pass) 건넨말: 듣는 이 표지 > 네 → speech [0.03ms]
+(pass) 건넨말: 듣는 이 표지 > "살려 주세요" 하고 외친다 → speech [0.09ms]
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 다리 아파… → self [0.04ms]
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 발바닥 다 익겠다 → self [0.01ms]
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 진짜 최악이다 → self
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 망했다 망했어 → self [0.01ms]
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 손이 왜 이렇게 떨리지 → self [0.03ms]
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 하필 이런 데서 걸리냐 → self
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 아까 숨어 있을걸 그랬나 → self
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 이러다 진짜 죽는 거 아니야? → self [0.01ms]
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 신이시여, 한 번만 살려 주세요 → self [0.01ms]
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 후, 정신 차려 아시나 → self
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 울면 안 돼, 울면 안 돼 → self
+(pass) 혼잣말: 듣는 이 없음·자문·반어·기도·제 이름 > 괜찮아, 할 수 있어 → self
+(pass) 게임질문: 듣는 이 표지가 없는 물음 > 저장은 어디서 하나요? → question [0.01ms]
+(pass) 게임질문: 듣는 이 표지가 없는 물음 > 판정은 어떻게 정해지나요? → question
+(pass) 게임질문: 듣는 이 표지가 없는 물음 > 이 남자랑 싸우면 이길 확률 있어? → question [0.01ms]
+(pass) 게임질문: 듣는 이 표지가 없는 물음 > 판정 목표 숫자가 몇이었지? → question [0.01ms]
+(pass) 게임질문: 듣는 이 표지가 없는 물음 > 저 아저씨 누구야? → question
+(pass) 게임질문: 듣는 이 표지가 없는 물음 > 선택지 없이 그냥 써도 돼? → question
+(pass) 세계밖: 로마자·자모 웃음·"이거"·채팅체·넘겨받은 목록 > ㅋㅋ 개웃기네 이거 → outside [0.01ms]
+(pass) 세계밖: 로마자·자모 웃음·"이거"·채팅체·넘겨받은 목록 > 친구가 이거 해 보라고 해서 왔어 → outside [0.01ms]
+(pass) 세계밖: 로마자·자모 웃음·"이거"·채팅체·넘겨받은 목록 > 나 지금 수업 시간에 몰래 하는 중 → outside [0.02ms]
+(pass) 세계밖: 로마자·자모 웃음·"이거"·채팅체·넘겨받은 목록 > GPS 켜서 길을 찾는다 → outside [0.07ms]
+(pass) 세계밖: 로마자·자모 웃음·"이거"·채팅체·넘겨받은 목록 > 세계에 없는 물건은 넘겨받은 목록으로만 안다 [0.03ms]
+(pass) 세계밖: 로마자·자모 웃음·"이거"·채팅체·넘겨받은 목록 > 세계 밖 물건을 묻는 말은 게임 질문이다 [0.07ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 문을 엽니다 → action [0.04ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 아시나는 칼을 피합니다 → action [0.02ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 문 열어 볼게요 → action
+(pass) 말 높이가 달라도 행동은 행동이다 > 조사할게요 → action
+(pass) 말 높이가 달라도 행동은 행동이다 > 던질 게 → action
+(pass) 말 높이가 달라도 행동은 행동이다 > 그쪽 길로 간다 → action
+(pass) 말 높이가 달라도 행동은 행동이다 > 길을 안내한다 → action
+(pass) 말 높이가 달라도 행동은 행동이다 > 아는 걸 다 말한다 → action
+(pass) 말 높이가 달라도 행동은 행동이다 > 품에 안긴다 → action
+(pass) 말 높이가 달라도 행동은 행동이다 > 정말 감사합니다 → speech
+(pass) 말 높이가 달라도 행동은 행동이다 > 같이 갈래? → speech
+(pass) 말 높이가 달라도 행동은 행동이다 > 도와줄래? → speech
+(pass) 말 높이가 달라도 행동은 행동이다 > 정말 아무 짓도 안 할게요 나리 → speech [0.01ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 무슨 일인지 설명해 줄 수 있소? → speech
+(pass) 말 높이가 달라도 행동은 행동이다 > 하지마! → speech
+(pass) 말 높이가 달라도 행동은 행동이다 > 그거 내려놔. 나 아무것도 안 가졌어 → speech [0.01ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 베지 마! 난 길을 잃었을 뿐이야 → speech [0.02ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 왜 이러는데 → speech
+(pass) 말 높이가 달라도 행동은 행동이다 > 안 할래요 → refrain
+(pass) 말 높이가 달라도 행동은 행동이다 > 소리치려다 입을 꾹 다문다 → refrain
+(pass) 말 높이가 달라도 행동은 행동이다 > 칼을 잡으려고 손을 뻗다가 도로 거둔다 → refrain [0.02ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 손을 흔들까 하다가, 관둔다 → refrain
+(pass) 말 높이가 달라도 행동은 행동이다 > 말을 걸지 않기로 한다 → refrain
+(pass) 말 높이가 달라도 행동은 행동이다 > 도망치지 않을래. 그냥 이대로 있을래 → refrain [0.01ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 아무말도안함 → refrain
+(pass) 말 높이가 달라도 행동은 행동이다 > 그건 안 된다! → self
+(pass) 말 높이가 달라도 행동은 행동이다 > 저 칼 진짜 날카로워 보인다… → self
+(pass) 말 높이가 달라도 행동은 행동이다 > 침착하자 침착하자 → self
+(pass) 말 높이가 달라도 행동은 행동이다 > 침착하자 아시나, 침착하자 → self
+(pass) 말 높이가 달라도 행동은 행동이다 > 구석에 웬 상자 → self
+(pass) 말 높이가 달라도 행동은 행동이다 > 날씨, 좋다! → self
+(pass) 말 높이가 달라도 행동은 행동이다 > 얼음 → self
+(pass) 말 높이가 달라도 행동은 행동이다 > 그 사람 누구야? → question
+(pass) 말 높이가 달라도 행동은 행동이다 > 저 사람 누구예요? → question
+(pass) 말 높이가 달라도 행동은 행동이다 > 이 도시는 어디예요? → question
+(pass) 말 높이가 달라도 행동은 행동이다 > 아시나 머리 색이 뭐야? → question
+(pass) 말 높이가 달라도 행동은 행동이다 > 맨손으로 싸워도 되는 거야? 규칙상 → question
+(pass) 말 높이가 달라도 행동은 행동이다 > 경비병은 몇 명 보여? 묘사 좀 더 해줘 → question [0.03ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 이 남자 정체가 뭔지 알려줘 → question [0.01ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 지금 몇 턴째야 → question
+(pass) 말 높이가 달라도 행동은 행동이다 > "도망가자, 빨리 도망가자"는 되풀이가 아니라 다짐이다 [0.02ms]
+(pass) 말 높이가 달라도 행동은 행동이다 > 따옴표 말 뒤에 다른 마디가 있으면 행동이다 [0.02ms]
+(pass) 두 번째 검토에서 고친 꼴 > 칼을 뽑는다. 천천히. → action [0.01ms]
+(pass) 두 번째 검토에서 고친 꼴 > 칼을 뽑는다 (진지) → action
+(pass) 두 번째 검토에서 고친 꼴 > 칼을 뽑았다 → action
+(pass) 두 번째 검토에서 고친 꼴 > 칼을 뽑음 → action
+(pass) 두 번째 검토에서 고친 꼴 > 남자에게 다가감 → action
+(pass) 두 번째 검토에서 고친 꼴 > 칼을 뽑는다. 꺼져! → speech
+(pass) 두 번째 검토에서 고친 꼴 > 남자에게 말을 건다. "괜찮아요?" → speech [0.03ms]
+(pass) 두 번째 검토에서 고친 꼴 > 멈춰라! → speech
+(pass) 두 번째 검토에서 고친 꼴 > 놔라 → speech
+(pass) 두 번째 검토에서 고친 꼴 > 네 이름이 뭐야? → speech
+(pass) 두 번째 검토에서 고친 꼴 > 그대는 누구인가? → speech
+(pass) 두 번째 검토에서 고친 꼴 > 왜 그러는데? → speech
+(pass) 두 번째 검토에서 고친 꼴 > 뭐라고요? → speech
+(pass) 두 번째 검토에서 고친 꼴 > 아저씨~ → speech
+(pass) 두 번째 검토에서 고친 꼴 > 그 칼 진짜로 쓸 거야? → speech
+(pass) 두 번째 검토에서 고친 꼴 > '뭐지?' → self
+(pass) 두 번째 검토에서 고친 꼴 > 배고팠다 → self
+(pass) 두 번째 검토에서 고친 꼴 > 칼 든 남자 → self
+(pass) 두 번째 검토에서 고친 꼴 > 하느님 맙소사 → self
+(pass) 두 번째 검토에서 고친 꼴 > 저 남자 누구예요? → question
+(pass) 두 번째 검토에서 고친 꼴 > 저 여자 누구예요? → question
+(pass) 두 번째 검토에서 고친 꼴 > 제가 다쳤나요? → question
+(pass) 두 번째 검토에서 고친 꼴 > 말 안 할 거야 → refrain
+(pass) 두 번째 검토에서 고친 꼴 > 싸우지 않을 거야 → refrain
+(pass) 두 번째 검토에서 고친 꼴 > 안 함 → refrain
+(pass) 두 번째 검토에서 고친 꼴 > "-나요"는 받침 없는 줄기("물러나요")에서 물음이 아니다 [0.03ms]
+(pass) 두 번째 검토에서 고친 꼴 > 물은 뒤 부탁을 되풀이한 긴 입력도 곧 끝난다 [11.63ms]
+(pass) 글자 없음 > ? → noise [0.07ms]
+(pass) 글자 없음 > ㅋㅋㅋ → noise
+(pass) 글자 없음 > ... → noise
+(pass) 글자 없음 >  → noise
+(pass) 읽은 꼴 > 서술어 꼴과 물음 여부를 함께 돌려준다 [0.09ms]
+(pass) 읽은 꼴 > 곁에 있는 인물의 이름을 부르면 건넨 말이다 [0.04ms]
+(pass) 측정 뒤 고친 버그 > "그대로"는 2인칭 "그대"가 아니다 [0.02ms]
+(pass) 측정 뒤 고친 버그 > 붙여 쓴 "주실수"도 듣는 이 높임이다
+(pass) docs/research/input_corpus.jsonl 회귀 문턱 > 세계밖을 뺀 종류는 85% 넘게, 전체는 80% 넘게 맞힌다 [2.99ms]
+
+tests/gm.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/engine.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/validate.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/branches.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/prices.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/silence52.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/bughunt.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/changes44.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/script56.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/gm_prompt_audit.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/critical.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/dice.test.ts:
+(pass) 시드 고정 난수 > 같은 시드는 같은 주사위 순서를 만든다 [0.12ms]
+(pass) 시드 고정 난수 > 다른 시드는 다른 순서를 만든다 [0.02ms]
+(pass) 시드 고정 난수 > 시드 42의 첫 주사위 열 개는 고정값이다(난수 알고리즘이 바뀌면 깨진다)
+(pass) 시드 고정 난수 > d6 는 1~6 이 고르게 나온다(60,000번, 각 면 ±5% 안) [2.28ms]
+(pass) 시드 고정 난수 > nextU32 는 상태를 바꾸고 32비트 정수를 낸다 [0.01ms]
+(pass) 시드 고정 난수 > 문자열 시드는 같은 글자면 같은 값이다 [0.01ms]
+(pass) 2d6 + 능력치 판정 등급 > 합계 2 는 miss
+(pass) 2d6 + 능력치 판정 등급 > 합계 6 는 miss
+(pass) 2d6 + 능력치 판정 등급 > 합계 7 는 mixed
+(pass) 2d6 + 능력치 판정 등급 > 합계 9 는 mixed
+(pass) 2d6 + 능력치 판정 등급 > 합계 10 는 hit
+(pass) 2d6 + 능력치 판정 등급 > 합계 12 는 hit
+(pass) 2d6 + 능력치 판정 등급 > 합계 15 는 hit
+(pass) 2d6 + 능력치 판정 등급 > 합계는 주사위 두 개 + 능력치 + 보정이고 등급은 합계로 정해진다 [0.08ms]
+(pass) 2d6 + 능력치 판정 등급 > 같은 난수 상태에서 굴리면 같은 결과가 나온다
+(pass) 2d6 + 능력치 판정 등급 > 시드 1~300 에서 대성공을 포함한 네 등급이 모두 나온다 [0.10ms]
+
+tests/vitals.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/flow57.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/helpers.ts:12:74)
+-------------------------------
+
+
+tests/offline.test.ts:
+(pass) 게임 실행 코드에 외부 네트워크 호출이 없다 > 실행 코드, 화면, 콘텐츠에 이 컴퓨터 밖을 가리키는 주소가 없다 [4.39ms]
+(pass) 게임 실행 코드에 외부 네트워크 호출이 없다 > 외부 AI 서비스나 HTTP 클라이언트 패키지를 쓰지 않는다 [1.77ms]
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async startServer (/Users/choeminju/월흔_trpg/app/src/server/main.ts:219:36)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/offline.test.ts:45:30)
+(fail) 게임 실행 코드에 외부 네트워크 호출이 없다 > 앱 서버는 127.0.0.1 에만 열리고, 화면은 같은 출처만 허용하는 CSP 를 받는다 [2.37ms]
+(pass) 시험 서버와 사용자 판 분리 > 사용자 포트가 아니면 기본 경로 넷과 사용자 LLM 을 모두 거부한다 [0.08ms]
+(pass) 시험 서버와 사용자 판 분리 > 경로를 일부만 나누거나 사용자 폴더를 직접 적어도 거부한다 [0.04ms]
+(pass) 시험 서버와 사용자 판 분리 > 사용자 포트의 기본 경로는 그대로 쓴다
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async startServer (/Users/choeminju/월흔_trpg/app/src/server/main.ts:219:36)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/offline.test.ts:101:30)
+(fail) 시험 서버와 사용자 판 분리 > 경로를 다 나누면 시험 포트에서 뜬다 [2.58ms]
+(pass) 시험 서버와 사용자 판 분리 > 실제 시작 명령도 사용자 파일을 건드리기 전에 끝난다 [26.76ms]
+
+tests/notes.test.ts:
+677 | 
+678 | export async function loadScenario(path: string): Promise<Scenario> {
+679 |   try {
+680 |     return parseScenario(await Bun.file(path).text());
+681 |   } catch (err) {
+682 |     if (err instanceof ScenarioError) throw new ScenarioError(`${path}\n${err.message}`);
+                                                  ^
+ScenarioError: /Users/choeminju/월흔_trpg/app/content/ep01_desert.yaml
+beats.b08_gaze.free.approaches[2].outcomes.hit.lines[1]: "화자: 대사" 한 쌍이 필요합니다
+      at loadScenario (/Users/choeminju/월흔_trpg/app/src/engine/scenario.ts:682:45)
+      at async startServer (/Users/choeminju/월흔_trpg/app/src/server/main.ts:219:36)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/notes.test.ts:23:30)
+(fail) 메모 > (unnamed) [2.25ms]
+24 |     base = `http://127.0.0.1:${server.port}`;
+25 |     stop = () => server.stop(true);
+26 |   });
+27 | 
+28 |   afterAll(async () => {
+29 |     stop();
+         ^
+TypeError: stop is not a function. (In 'stop()', 'stop' is undefined)
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/notes.test.ts:29:5)
+(fail) 메모 > (unnamed) [0.07ms]
+
+19 tests failed:
+(fail) 게임 실행 코드에 외부 네트워크 호출이 없다 > 앱 서버는 127.0.0.1 에만 열리고, 화면은 같은 출처만 허용하는 CSP 를 받는다 [2.37ms]
+(fail) 시험 서버와 사용자 판 분리 > 경로를 다 나누면 시험 포트에서 뜬다 [2.58ms]
+(fail) 메모 > (unnamed) [2.25ms]
+(fail) 메모 > (unnamed) [0.07ms]
+
+ 177 pass
+ 19 fail
+ 15 errors
+ 423 expect() calls
+Ran 196 tests across 21 files. [145.00ms]

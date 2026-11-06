@@ -1,0 +1,5 @@
+[
+  {"policy":"보통","count":300,"low":75,"zero":18,"bodyZero":1,"mindZero":17,"rolls":1321,"doubleSix":25,"critical":0,"endings":{"survivor":143,"spy":127,"curious":8,"spy_cut":22}},
+  {"policy":"무작위","count":300,"low":56,"zero":11,"bodyZero":9,"mindZero":3,"rolls":1083,"doubleSix":18,"critical":0,"endings":{"spy":77,"road":71,"curious":4,"value":23,"spy_cut":54,"survivor":31,"deal":40}},
+  {"policy":"무리","count":300,"low":116,"zero":60,"bodyZero":58,"mindZero":2,"rolls":1042,"doubleSix":21,"critical":0,"endings":{"road":172,"spy":65,"spy_cut":62,"unmasked":1}}
+]

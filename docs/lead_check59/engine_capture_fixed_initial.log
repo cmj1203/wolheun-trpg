@@ -1,0 +1,11 @@
+31 |     else if (s.phase === 'dice') await view.click('#dice');
+32 |     else if (s.phase === 'choices') await view.click('#choices button[data-id="luck-skip"]');
+33 |     else await Bun.sleep(30);
+34 |   }
+35 |   await Bun.write(new URL('./engine_fixed_screen_checks.json', import.meta.url), JSON.stringify(checks, null, 2));
+36 |   if (!checks.some(s => s.text === '억울해…')) throw new Error('b04 화면 미도달');
+                                                           ^
+error: b04 화면 미도달
+      at /Users/choeminju/월흔_trpg/docs/lead_check59/engine_capture_fixed.mjs:36:55
+
+Bun v1.4.2 (macOS arm64)

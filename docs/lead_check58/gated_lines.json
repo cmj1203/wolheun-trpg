@@ -1,0 +1,27 @@
+[
+  {
+    "path": "b08_gaze.free.prices[1]",
+    "condition": "flag:귀찌_설명",
+    "text": "귀찌가 뜨거워져 귓불이 따끔했다."
+  },
+  {
+    "path": "b08_gaze.free.approaches[2].outcomes.hit.lines[1]",
+    "condition": "flag:귀찌_변장_설명",
+    "text": "이것만은 들키면 안 돼. 은발이 드러나는 순간 끝이야."
+  },
+  {
+    "path": "x_unmasked",
+    "condition": "flag:귀찌_설명 && 귀찌 <= 0",
+    "text": "귀찌가 다 식어 변장이 풀렸다. 은발이 드러난 채 사막에 남았다."
+  },
+  {
+    "path": "도움말.earring",
+    "condition": "flag:귀찌_설명",
+    "text": "귀찌에 걸린 변색 마법이 버티는 시간은 일주일이야. 일주일은 변색을 풀고 귀찌를 쉬게 해 줘야 해."
+  },
+  {
+    "path": "운명.unmasked",
+    "condition": "flag:귀찌_설명 && 귀찌 <= 0",
+    "text": "귀찌가 귓불에서 차갑게 식어 갔다. / …오래 못 버티겠어."
+  }
+]

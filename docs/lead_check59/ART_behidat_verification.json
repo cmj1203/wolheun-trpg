@@ -1,0 +1,507 @@
+{
+  "status": "passed",
+  "base": "assets/sprites/pilot/behidat_neutral.png",
+  "base_sha256": "ab3e48739aaad6f94126ff09fa962648ce48bad46b98a09b067ec01256655048",
+  "latest_edge_cleanup_base": true,
+  "generation_attempts_this_request": {
+    "sneer": 1,
+    "dumbfounded": 1,
+    "menacing": 1,
+    "intrigued": 2
+  },
+  "alignment_method": "네 점 가중 최소제곱 닮음 변환, 안쪽 가중치 16/바깥 1. 비균일 축소나 눈별 개별 워프 없음.",
+  "feather": "눈·눈썹·입별 독립 마스크, 중심 불투명 및 바깥 3px 이내 페더",
+  "assets_modified": false,
+  "commit_created": false,
+  "crq_requested": false,
+  "faces": [
+    {
+      "expression": "sneer",
+      "similarity_a": [
+        1.040302317867923,
+        -0.0046950039604630196
+      ],
+      "translation": [
+        1.2640465178973272,
+        -20.82863689899534
+      ],
+      "base_sha256": "ab3e48739aaad6f94126ff09fa962648ce48bad46b98a09b067ec01256655048",
+      "source_points": [
+        [
+          220.0,
+          226.0
+        ],
+        [
+          358.0,
+          247.0
+        ],
+        [
+          490.0,
+          246.0
+        ],
+        [
+          650.0,
+          222.0
+        ]
+      ],
+      "target_points": [
+        [
+          240.0,
+          210.0
+        ],
+        [
+          372.0,
+          234.0
+        ],
+        [
+          516.0,
+          234.0
+        ],
+        [
+          654.0,
+          198.0
+        ]
+      ],
+      "transformed_points": [
+        [
+          478.53193789065085,
+          233.5411310113089
+        ],
+        [
+          502.4753237154747,
+          237.07420403275597
+        ],
+        [
+          525.361192207909,
+          236.79753022598115
+        ],
+        [
+          553.0838073352116,
+          232.5111208488971
+        ]
+      ],
+      "landmark_errors_px": [
+        1.5646178857174364,
+        0.48108094222272696,
+        0.6701264094389482,
+        4.354419429855153
+      ],
+      "inner_corner_max_error_px": 0.6701264094389482,
+      "outside_mask_diff": 0,
+      "hair_diff": 0,
+      "corner_protected_diff": 0,
+      "registration_weights": [
+        1.0,
+        16.0,
+        16.0,
+        1.0
+      ],
+      "alpha_equal": true,
+      "size": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 1246,
+      "laplacian_variance": [
+        8550.227669713719,
+        7914.147395918367
+      ],
+      "neutral_laplacian_variance": [
+        9872.482107426305,
+        3495.9514204081634
+      ],
+      "sharpness_ratio": [
+        0.8660666665865155,
+        2.263803595701672
+      ],
+      "left_right_sharpness_ratio": 0.9256066272891832,
+      "eye_corners_x": [
+        480,
+        502,
+        526,
+        549
+      ],
+      "D": 24,
+      "E": 22.5,
+      "D_over_E": 1.0667,
+      "ratio_pass": true,
+      "final_corner_displacement_px": 0,
+      "nose_axis_x": 513.5,
+      "nose_to_inner_left_px": 11.5,
+      "nose_to_inner_right_px": 12.5,
+      "nose_symmetry_difference_px": 1,
+      "measurement_method": "55A와 동일한 가시 눈 개구부 끝점. 끝점 반경 2px 원본 보존을 배열로 검사해 기준 좌표를 유지함. 자동 눈 검출 결과가 아님.",
+      "sharpness_pass": true,
+      "registration_pass": true,
+      "visual_pass": true,
+      "visual_judgement": "반쯤 내린 눈꺼풀과 한쪽 올라간 입꼬리로 비웃음이 읽힌다. 흥미 표정의 무표정 입과 구별된다. 이중 눈꺼풀 선이나 앞머리 절단을 발견하지 못했다.",
+      "installation_approved": true
+    },
+    {
+      "expression": "dumbfounded",
+      "similarity_a": [
+        1.0371354638254868,
+        -0.00576081011062938
+      ],
+      "translation": [
+        -2.4763453711647685,
+        -9.353662943316237
+      ],
+      "base_sha256": "ab3e48739aaad6f94126ff09fa962648ce48bad46b98a09b067ec01256655048",
+      "source_points": [
+        [
+          220.0,
+          201.0
+        ],
+        [
+          363.0,
+          238.0
+        ],
+        [
+          495.0,
+          237.0
+        ],
+        [
+          650.0,
+          200.0
+        ]
+      ],
+      "target_points": [
+        [
+          240.0,
+          210.0
+        ],
+        [
+          372.0,
+          234.0
+        ],
+        [
+          516.0,
+          234.0
+        ],
+        [
+          654.0,
+          198.0
+        ]
+      ],
+      "transformed_points": [
+        [
+          477.80856325044647,
+          230.97386451021134
+        ],
+        [
+          502.5624834673028,
+          237.23223389616518
+        ],
+        [
+          525.378503536445,
+          236.93264016309377
+        ],
+        [
+          552.1356446895879,
+          230.38815054164533
+        ]
+      ],
+      "landmark_errors_px": [
+        2.9845636281163106,
+        0.6085394264277644,
+        0.625136146642751,
+        3.194781272486413
+      ],
+      "inner_corner_max_error_px": 0.625136146642751,
+      "outside_mask_diff": 0,
+      "hair_diff": 0,
+      "corner_protected_diff": 0,
+      "registration_weights": [
+        1.0,
+        16.0,
+        16.0,
+        1.0
+      ],
+      "alpha_equal": true,
+      "size": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 1527,
+      "laplacian_variance": [
+        10894.068310657594,
+        7747.931012244898
+      ],
+      "neutral_laplacian_variance": [
+        9872.482107426305,
+        3495.9514204081634
+      ],
+      "sharpness_ratio": [
+        1.1034781519090147,
+        2.216258202850056
+      ],
+      "left_right_sharpness_ratio": 0.7112063915245647,
+      "eye_corners_x": [
+        480,
+        502,
+        526,
+        549
+      ],
+      "D": 24,
+      "E": 22.5,
+      "D_over_E": 1.0667,
+      "ratio_pass": true,
+      "final_corner_displacement_px": 0,
+      "nose_axis_x": 513.5,
+      "nose_to_inner_left_px": 11.5,
+      "nose_to_inner_right_px": 12.5,
+      "nose_symmetry_difference_px": 1,
+      "measurement_method": "55A와 동일한 가시 눈 개구부 끝점. 끝점 반경 2px 원본 보존을 배열로 검사해 기준 좌표를 유지함. 자동 눈 검출 결과가 아님.",
+      "sharpness_pass": true,
+      "registration_pass": true,
+      "visual_pass": true,
+      "visual_judgement": "세로로 열린 눈과 작게 벌어진 입으로 순간적인 어이없음이 읽힌다. 기존 surprised보다 입 벌어짐을 작게 유지했다. 앞머리 연속성 유지.",
+      "installation_approved": true
+    },
+    {
+      "expression": "menacing",
+      "similarity_a": [
+        1.0710923339880585,
+        -0.004831169271246192
+      ],
+      "translation": [
+        -18.913298342048904,
+        -24.066467304287443
+      ],
+      "base_sha256": "ab3e48739aaad6f94126ff09fa962648ce48bad46b98a09b067ec01256655048",
+      "source_points": [
+        [
+          220.0,
+          206.0
+        ],
+        [
+          369.0,
+          244.0
+        ],
+        [
+          493.0,
+          243.0
+        ],
+        [
+          651.0,
+          204.0
+        ]
+      ],
+      "target_points": [
+        [
+          240.0,
+          210.0
+        ],
+        [
+          372.0,
+          234.0
+        ],
+        [
+          516.0,
+          234.0
+        ],
+        [
+          654.0,
+          198.0
+        ]
+      ],
+      "transformed_points": [
+        [
+          476.28703933420013,
+          230.58594937626307
+        ],
+        [
+          502.9164297002881,
+          237.24956012128484
+        ],
+        [
+          525.0515327411628,
+          236.97120056734775
+        ],
+        [
+          553.2255616025852,
+          229.88187960561586
+        ]
+      ],
+      "landmark_errors_px": [
+        4.428737666620342,
+        0.9498019002433465,
+        0.9489043937127003,
+        4.370991200354948
+      ],
+      "inner_corner_max_error_px": 0.9498019002433465,
+      "outside_mask_diff": 0,
+      "hair_diff": 0,
+      "corner_protected_diff": 0,
+      "registration_weights": [
+        1.0,
+        16.0,
+        16.0,
+        1.0
+      ],
+      "alpha_equal": true,
+      "size": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 1173,
+      "laplacian_variance": [
+        8498.919075963719,
+        8903.466620408162
+      ],
+      "neutral_laplacian_variance": [
+        9872.482107426305,
+        3495.9514204081634
+      ],
+      "sharpness_ratio": [
+        0.8608695344781266,
+        2.5467935762587497
+      ],
+      "left_right_sharpness_ratio": 0.9545629178283034,
+      "eye_corners_x": [
+        480,
+        502,
+        526,
+        549
+      ],
+      "D": 24,
+      "E": 22.5,
+      "D_over_E": 1.0667,
+      "ratio_pass": true,
+      "final_corner_displacement_px": 0,
+      "nose_axis_x": 513.5,
+      "nose_to_inner_left_px": 11.5,
+      "nose_to_inner_right_px": 12.5,
+      "nose_symmetry_difference_px": 1,
+      "measurement_method": "55A와 동일한 가시 눈 개구부 끝점. 끝점 반경 2px 원본 보존을 배열로 검사해 기준 좌표를 유지함. 자동 눈 검출 결과가 아님.",
+      "sharpness_pass": true,
+      "registration_pass": true,
+      "visual_pass": true,
+      "visual_judgement": "내려누르는 눈썹과 굳은 입으로 위협이 읽힌다. 기존 방향을 유지했다. 짙은 얼굴 전체 음영을 덧씌우지 않았다.",
+      "installation_approved": true
+    },
+    {
+      "expression": "intrigued",
+      "similarity_a": [
+        1.0545480376008491,
+        0.0017297043934673083
+      ],
+      "translation": [
+        -9.339676533352986,
+        -15.27348267502208
+      ],
+      "base_sha256": "ab3e48739aaad6f94126ff09fa962648ce48bad46b98a09b067ec01256655048",
+      "source_points": [
+        [
+          225.0,
+          215.0
+        ],
+        [
+          365.0,
+          236.0
+        ],
+        [
+          495.0,
+          235.0
+        ],
+        [
+          650.0,
+          205.0
+        ]
+      ],
+      "target_points": [
+        [
+          240.0,
+          210.0
+        ],
+        [
+          372.0,
+          234.0
+        ],
+        [
+          516.0,
+          234.0
+        ],
+        [
+          654.0,
+          198.0
+        ]
+      ],
+      "transformed_points": [
+        [
+          477.92695758037377,
+          233.30725481628178
+        ],
+        [
+          502.52702449234977,
+          237.03853271706566
+        ],
+        [
+          525.3758535911004,
+          236.90025163932395
+        ],
+        [
+          552.626993084423,
+          231.6721954814843
+        ]
+      ],
+      "landmark_errors_px": [
+        2.0956885254488875,
+        0.5284312498528082,
+        0.6320668281121912,
+        3.6887566468635895
+      ],
+      "inner_corner_max_error_px": 0.6320668281121912,
+      "outside_mask_diff": 0,
+      "hair_diff": 0,
+      "corner_protected_diff": 0,
+      "registration_weights": [
+        1.0,
+        16.0,
+        16.0,
+        1.0
+      ],
+      "alpha_equal": true,
+      "size": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 989,
+      "laplacian_variance": [
+        10590.345796130952,
+        7846.267142857143
+      ],
+      "neutral_laplacian_variance": [
+        9872.482107426305,
+        3495.9514204081634
+      ],
+      "sharpness_ratio": [
+        1.0727135973398882,
+        2.24438677753167
+      ],
+      "left_right_sharpness_ratio": 0.7408886634961133,
+      "eye_corners_x": [
+        480,
+        502,
+        526,
+        549
+      ],
+      "D": 24,
+      "E": 22.5,
+      "D_over_E": 1.0667,
+      "ratio_pass": true,
+      "final_corner_displacement_px": 0,
+      "nose_axis_x": 513.5,
+      "nose_to_inner_left_px": 11.5,
+      "nose_to_inner_right_px": 12.5,
+      "nose_symmetry_difference_px": 1,
+      "measurement_method": "55A와 동일한 가시 눈 개구부 끝점. 끝점 반경 2px 원본 보존을 배열로 검사해 기준 좌표를 유지함. 자동 눈 검출 결과가 아님.",
+      "sharpness_pass": true,
+      "registration_pass": true,
+      "visual_pass": true,
+      "visual_judgement": "살짝 가늘어진 눈과 화면 오른쪽 눈썹의 상승으로 호기심이 읽힌다. 입은 원본 픽셀 그대로여서 냉소와 구별된다. 재생성 후 양쪽 선명도 기준 통과.",
+      "installation_approved": true
+    }
+  ]
+}

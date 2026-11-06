@@ -1,0 +1,51 @@
+[
+  {
+    "phase": "line",
+    "prompt": {
+      "type": "luck",
+      "need": 1,
+      "have": 6
+    },
+    "text": "그리고 현재.",
+    "intro": false,
+    "gm": false,
+    "geometry": [
+      {
+        "text": "-1",
+        "inside": true,
+        "overlap": false,
+        "left": 1399.28125,
+        "right": 1408.765625,
+        "numberRight": 1394.236083984375
+      },
+      {
+        "text": "-1",
+        "inside": true,
+        "overlap": false,
+        "left": 1399.28125,
+        "right": 1408.765625,
+        "numberRight": 1394.236083984375
+      },
+      {
+        "text": "+2",
+        "inside": true,
+        "overlap": false,
+        "left": 1367.125,
+        "right": 1381.46875,
+        "numberRight": 1362.0933837890625
+      }
+    ]
+  },
+  {
+    "phase": "line",
+    "prompt": {
+      "type": "luck",
+      "need": 1,
+      "have": 6
+    },
+    "text": "억울해…",
+    "intro": false,
+    "gm": false,
+    "geometry": []
+  }
+]

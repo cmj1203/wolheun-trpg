@@ -1,0 +1,18 @@
+{"i":1,"beat":"b05_why","ms":11876,"ratio":0.64,"male":[{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"눈물이라도 흘릴 생각인가, 이방인.","by":"gm","face":"sneer"}]}
+{"i":2,"beat":"b05_why","ms":9832,"ratio":0.5,"male":[{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"손끝이 떨리는군. 겁을 먹은 건가?","by":"gm","face":"sneer"}]}
+{"i":3,"beat":"b05_why","ms":10384,"ratio":0.29,"male":[{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"붉게 달아오른 꼴이 제법 우스운 여자군.","by":"gm","face":"sneer"}]}
+{"i":4,"beat":"b06_swing","ms":9040,"ratio":0.37,"male":[{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"무릎이 떨리는군. 이방인, 벌써 죽을 생각인가?","by":"gm","face":"sneer"}]}
+{"i":5,"beat":"b06_swing","ms":9402,"ratio":0.21,"male":[{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"눈물이라. 여자, 죽음 앞에서 고작 그딴 게 의미가 있나?","by":"gm","face":"sneer"}]}
+{"i":6,"beat":"b06_swing","ms":10541,"ratio":0.29,"male":[{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"대화?","by":"gm","face":"sneer"}]}
+{"i":7,"beat":"b06_swing","ms":11548,"ratio":0.14,"male":[{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"…뭐?","by":"gm","face":"dumbfounded"},{"type":"line","speaker":"남자","display":"붉은 눈의 남자","style":"speech","text":"없다면, 잘 가라.","by":"script","face":"wary"}]}
+70 |   cpuBefore: string; cpuAfter: string;
+71 |   situation: string; expected: string[];
+72 | };
+73 | const rows: Row[] = [];
+74 | for (const [index, text] of inputs.entries()) {
+75 |   if (state.ending) throw new Error(`입력 ${index + 1} 전에 결말 도달: ${state.ending}`);
+                                   ^
+error: 입력 8 전에 결말 도달: spy_cut
+      at /Users/choeminju/월흔_trpg/app/scripts/lead_check59c_model.ts:75:31
+
+Bun v1.4.2 (macOS arm64)

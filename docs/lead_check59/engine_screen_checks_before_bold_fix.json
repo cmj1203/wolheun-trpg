@@ -1,0 +1,242 @@
+[
+  {
+    "i": 1,
+    "file": "engine_input_01.png",
+    "face": "dumbfounded",
+    "text": "…뭐?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_dumbfounded.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 2,
+    "file": "engine_input_02.png",
+    "face": "dumbfounded",
+    "text": "...뭐?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_dumbfounded.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 3,
+    "file": "engine_input_03.png",
+    "face": "sneer",
+    "text": "죽기 직전이라 정신이 나간 건가?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_sneer.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 4,
+    "file": "engine_input_04.png",
+    "face": "menacing",
+    "text": "죽기 직전에 입술을 놀리는 건가, 이방인.",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_menacing.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 5,
+    "file": "engine_input_05.png",
+    "face": "dumbfounded",
+    "text": "…뭐?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_dumbfounded.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 6,
+    "file": "engine_input_06.png",
+    "face": "dumbfounded",
+    "text": "…뭐?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_dumbfounded.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 7,
+    "file": "engine_input_07.png",
+    "face": "dumbfounded",
+    "text": "…뭐?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_dumbfounded.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 8,
+    "file": "engine_input_08.png",
+    "face": "dumbfounded",
+    "text": "…뭐?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_dumbfounded.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 9,
+    "file": "engine_input_09.png",
+    "face": "intrigued",
+    "text": "숨을 쉬어야 말을 할 것 아닌가.",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_intrigued.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 10,
+    "file": "engine_input_10.png",
+    "face": "intrigued",
+    "text": "움직임 하나는 나쁘지 않군.",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_intrigued.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 11,
+    "file": "engine_input_11.png",
+    "face": "sneer",
+    "text": "목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_sneer.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  {
+    "i": 12,
+    "file": "engine_input_12.png",
+    "face": "sneer",
+    "text": "미모로 목숨을 구걸하겠다?",
+    "foxHidden": true,
+    "gmBoxHidden": true,
+    "badgeHidden": true,
+    "images": [
+      {
+        "src": "/media/sprites/pilot/behidat_sneer.png",
+        "complete": true,
+        "width": 1024
+      }
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  }
+]

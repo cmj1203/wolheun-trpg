@@ -1,0 +1,23 @@
+bun test v1.4.2 (744846f84)
+
+tests/gm.test.ts:
+788 |     const ctx = neutral(contexts('남자에게 다가간다').narrate);
+789 |     const allowed = await gm.narrate({ ...ctx, price: {
+790 |       id: 'bag_taken', tag: '소지품', weight: 'hard', text: '호위가 가방을 빼앗았다.',
+791 |       effects: { lose: ['magic_bag'] },
+792 |     } });
+793 |     expect(allowed.meta.attempts).toBe(1);
+                                        ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:793:35)
+(fail) 이번 판 되풀이와 엔진 상태 > 명시된 소지품 압수 대가는 서술할 수 있고 대가 없는 상실은 막는다 [7.22ms]
+
+ 0 pass
+ 115 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [40.00ms]

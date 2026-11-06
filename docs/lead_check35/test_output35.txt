@@ -1,0 +1,8 @@
+bunx tsc --noEmit -p . (app/): 출력 없음(오류 0)
+
+bun test (app/):
+
+ 586 pass
+ 0 fail
+ 2393 expect() calls
+Ran 586 tests across 13 files. [1063.00ms]

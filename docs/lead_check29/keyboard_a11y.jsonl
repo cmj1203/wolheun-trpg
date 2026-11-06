@@ -1,0 +1,6 @@
+{"name":"타이틀_Tab순서","pass":true,"value":["btn-new","btn-continue","btn-map","btn-atlas-clear"]}
+{"name":"타이틀_포커스테두리","pass":true,"value":["btn-new:auto 1px","btn-continue:auto 1px","btn-map:auto 1px","btn-atlas-clear:auto 1px"]}
+{"name":"이야기_Tab순서","pass":true,"value":["btn-notes","btn-log","btn-save","btn-load","free-input","ask-gm","free-send","feedback-open"]}
+{"name":"이야기_포커스테두리","pass":true,"value":{"rings":["btn-notes:auto 1px","btn-log:auto 1px","btn-save:auto 1px","btn-load:auto 1px","free-input:none 3px","ask-gm:solid 2px","free-send:auto 1px","feedback-open:auto 1px"],"inputBorder":{"off":"rgba(247, 240, 228, 0.3)","on":"rgb(217, 171, 79)"}}}
+{"name":"지도칸_Enter_힌트","pass":true,"value":{"cells":9,"landed":"n4","outline":"solid 2px","hint":{"hidden":false,"text":"네가 얼마나 대단한 집안 사람인지 내세워 봐."}}}
+{"name":"지도칸_Space_힌트","pass":true,"value":{"cells":9,"landed":"n5","outline":"solid 2px","hint":{"hidden":false,"text":"살려 두면 뭐가 좋은지 말해 보면 어때?"}}}

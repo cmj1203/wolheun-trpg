@@ -1,0 +1,133 @@
+{"group":"idle4","text":"그대로 굳어 버린다","linked":false,"clauses":["그대로 굳어 버린다"],"stay":false,"one":"자기 몸에서 끝남"}
+{"group":"idle4","text":"체념하고 고개를 떨군다","linked":true,"clauses":["체념하고","고개를 떨군다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남"]}
+{"group":"idle4","text":"손을 내려놓고 칼을 받아들인다","linked":true,"clauses":["손을 내려놓고","칼을 받아들인다"],"stay":false,"each":["자기 몸에서 끝남","물건을 잡거나 씀"]}
+{"group":"idle4","text":"살길을 찾지 않고 죽음을 기다린다","linked":true,"clauses":["살길을 찾지 않고","죽음을 기다린다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남"]}
+{"group":"idleNew","text":"숨을 죽이고 칼끝만 바라본다","linked":true,"clauses":["숨을 죽이고","칼끝만 바라본다"],"stay":true,"each":["무언가를 살피거나 알아냄","자기 몸에서 끝남"]}
+{"group":"idleNew","text":"고개를 숙이고 처분을 기다린다","linked":true,"clauses":["고개를 숙이고","처분을 기다린다"],"stay":false,"each":["자기 몸에서 끝남","닥친 일을 받아들임"]}
+{"group":"idleNew","text":"두 손을 늘어뜨리고 눈을 감는다","linked":true,"clauses":["두 손을 늘어뜨리고","눈을 감는다"],"stay":true,"each":["자기 몸에서 끝남","자기 몸에서 끝남"]}
+{"group":"idleNew","text":"모든 걸 내려놓고 끝을 기다린다","linked":true,"clauses":["모든 걸 내려놓고","끝을 기다린다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남"]}
+{"group":"idleNew","text":"마음을 비우고 운명에 맡긴다","linked":true,"clauses":["마음을 비우고","운명에 맡긴다"],"stay":false,"each":["자기 몸에서 끝남","자기 몸에서 끝남"]}
+{"group":"idleNew","text":"힘을 빼고 칼이 오기를 기다린다","linked":true,"clauses":["힘을 빼고","칼이 오기를 기다린다"],"stay":false,"each":["자기 몸에서 끝남","닥친 일을 받아들임"]}
+{"group":"idleNew","text":"반항하지 않고 고개를 숙인다","linked":true,"clauses":["반항하지 않고","고개를 숙인다"],"stay":false,"each":["남에게 보이려는 몸짓","자기 몸에서 끝남"]}
+{"group":"idleNew","text":"더 버티지 않고 눈을 감아 버린다","linked":true,"clauses":["더 버티지 않고","눈을 감아 버린다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남"]}
+{"group":"idleNew","text":"그대로 얼어 버린다","linked":false,"clauses":["그대로 얼어 버린다"],"stay":false,"one":"자기 몸에서 끝남"}
+{"group":"idleNew","text":"넋을 잃고 바라만 본다","linked":true,"clauses":["넋을 잃고","바라만 본다"],"stay":true,"each":["자기 몸에서 끝남","무언가를 살피거나 알아냄"]}
+{"group":"idleNew","text":"말없이 처분을 받아들인다","linked":false,"clauses":["말없이 처분을 받아들인다"],"stay":false,"one":"닥친 일을 받아들임"}
+{"group":"idleNew","text":"아무 저항 없이 묶이기를 기다린다","linked":false,"clauses":["아무 저항 없이 묶이기를 기다린다"],"stay":false,"one":"닥친 일을 받아들임"}
+{"group":"idleCorpus","text":"그대로 뒤로 털썩 주저앉는다","linked":false,"clauses":["그대로 뒤로 털썩 주저앉는다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"idleCorpus","text":"눈물을 뚝뚝 흘린다","linked":false,"clauses":["눈물을 뚝뚝 흘린다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"idleCorpus","text":"가만히 있는다","linked":false,"clauses":["가만히 있는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"그냥 서 있다","linked":false,"clauses":["그냥 서","있다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"멍하니 지평선을 본다","linked":false,"clauses":["멍하니 지평선을 본다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"아무것도 안 한다","linked":false,"clauses":["아무것도 안 한다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"그 자리에 그대로 앉아 있는다","linked":false,"clauses":["그 자리에 그대로 앉아","있는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"눈만 감는다","linked":false,"clauses":["눈만 감는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"포기한다","linked":false,"clauses":["포기한다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"한참을 멀뚱멀뚱 서 있는다","linked":false,"clauses":["한참을 멀뚱멀뚱 서","있는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"숨만 쉰다","linked":false,"clauses":["숨만 쉰다"],"stay":false,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"모래 위에 그대로 누워 있는다","linked":false,"clauses":["모래 위에 그대로 누워 있는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"그저 기다린다","linked":false,"clauses":["그저 기다린다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"손가락 하나 까딱 안 한다","linked":false,"clauses":["손가락 하나 까딱 안 한다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"가만히 있는다","linked":false,"clauses":["가만히 있는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"그냥 서 있다","linked":false,"clauses":["그냥 서","있다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"눈만 감는다","linked":false,"clauses":["눈만 감는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"멍하니 본다","linked":false,"clauses":["멍하니 본다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"포기한다","linked":false,"clauses":["포기한다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"아무 말도 안 한다","linked":false,"clauses":["아무 말도 안 한다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"칼을 안 피한다","linked":false,"clauses":["칼을 안 피한다"],"stay":true,"one":"닥친 일을 받아들임"}
+{"group":"idleCorpus","text":"피하지 않는다","linked":false,"clauses":["피하지 않는다"],"stay":true,"one":"닥친 일을 받아들임"}
+{"group":"idleCorpus","text":"넋 놓고 쳐다본다","linked":true,"clauses":["넋 놓고","쳐다본다"],"stay":true,"each":["무언가를 살피거나 알아냄","무언가를 살피거나 알아냄"]}
+{"group":"idleCorpus","text":"입을 벌린 채 얼어붙어 있다","linked":false,"clauses":["입을 벌린 채 얼어붙어","있다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"꼼짝 않고 서 있는다","linked":false,"clauses":["꼼짝 않고","서","있는다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"그냥 칼을 맞는다","linked":false,"clauses":["그냥 칼을 맞는다"],"stay":true,"one":"닥친 일을 받아들임"}
+{"group":"idleCorpus","text":"모래 위에 털썩 앉아만 있는다","linked":false,"clauses":["모래 위에 털썩 앉아만 있는다"],"stay":false,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"넋을 잃고 서 있다","linked":false,"clauses":["넋을 잃고","서","있다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"숨죽인 채 아무것도 안 한다","linked":false,"clauses":["숨죽인 채 아무것도 안 한다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"그대로 굳어 버린다","linked":false,"clauses":["그대로 굳어 버린다"],"stay":false,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"될 대로 되라지 하고 서 있는다","linked":false,"clauses":["될 대로 되라지 하고","서","있는다"],"stay":true,"one":"닥친 일을 받아들임"}
+{"group":"idleCorpus","text":"체념하고 고개를 떨군다","linked":true,"clauses":["체념하고","고개를 떨군다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남"]}
+{"group":"idleCorpus","text":"그냥 당한다","linked":false,"clauses":["그냥 당한다"],"stay":false,"one":"닥친 일을 받아들임"}
+{"group":"idleCorpus","text":"눈도 깜빡 않는다","linked":false,"clauses":["눈도 깜빡 않는다"],"stay":false,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"아무 대꾸도 없이 쳐다만 본다","linked":false,"clauses":["아무 대꾸도 없이 쳐다만 본다"],"stay":true,"one":"자기 몸에서 끝남"}
+{"group":"idleCorpus","text":"손을 내려놓고 칼을 받아들인다","linked":true,"clauses":["손을 내려놓고","칼을 받아들인다"],"stay":false,"each":["자기 몸에서 끝남","물건을 잡거나 씀"]}
+{"group":"idleCorpus","text":"얼이 빠져 서 있기만 한다","linked":true,"clauses":["얼이 빠져 서","있기만 한다"],"stay":true,"each":["자기 몸에서 끝남","자기 몸에서 끝남"]}
+{"group":"idleCorpus","text":"살길을 찾지 않고 죽음을 기다린다","linked":true,"clauses":["살길을 찾지 않고","죽음을 기다린다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남"]}
+{"group":"shown","text":"눈물을 뚝뚝 흘린다","linked":false,"clauses":["눈물을 뚝뚝 흘린다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"shown","text":"그대로 뒤로 털썩 주저앉는다","linked":false,"clauses":["그대로 뒤로 털썩 주저앉는다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"shown","text":"다리가 풀려 털썩 무너진다","linked":true,"clauses":["다리가 풀려","털썩 무너진다"],"stay":false,"each":["저절로 드러난 몸 상태","저절로 드러난 몸 상태"]}
+{"group":"shown","text":"온몸을 부들부들 떤다","linked":false,"clauses":["온몸을 부들부들 떤다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"shown","text":"어깨를 들썩이며 흐느낀다","linked":true,"clauses":["어깨를 들썩이며","흐느낀다"],"stay":false,"each":["저절로 드러난 몸 상태","저절로 드러난 몸 상태"]}
+{"group":"shown","text":"무릎이 꺾여 모래에 주저앉는다","linked":true,"clauses":["무릎이 꺾여","모래에 주저앉는다"],"stay":false,"each":["저절로 드러난 몸 상태","자리가 바뀜"]}
+{"group":"shown","text":"참았던 눈물을 터뜨린다","linked":false,"clauses":["참았던 눈물을 터뜨린다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"shown","text":"얼굴이 새파랗게 질린다","linked":false,"clauses":["얼굴이 새파랗게 질린다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"shown","text":"식은땀을 줄줄 흘린다","linked":false,"clauses":["식은땀을 줄줄 흘린다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"shown","text":"모래 위에 주저앉는다","linked":false,"clauses":["모래 위에 주저앉는다"],"stay":false,"one":"저절로 드러난 몸 상태"}
+{"group":"actNew","text":"모래를 한 줌 쥐고 남자 얼굴에 뿌린다","linked":true,"clauses":["모래를 한 줌 쥐고","남자 얼굴에 뿌린다"],"stay":false,"each":["물건을 잡거나 씀","상대나 주변에 닿거나 신호함"]}
+{"group":"actNew","text":"가방을 끌어안고 뒷걸음질 친다","linked":true,"clauses":["가방을 끌어안고","뒷걸음질 친다"],"stay":false,"each":["물건을 잡거나 씀","자리가 바뀜"]}
+{"group":"actNew","text":"눈물을 닦고 칼자루를 붙잡는다","linked":true,"clauses":["눈물을 닦고","칼자루를 붙잡는다"],"stay":false,"each":["저절로 드러난 몸 상태","물건을 잡거나 씀"]}
+{"group":"actNew","text":"무릎을 꿇고 살려 달라고 빈다","linked":true,"clauses":["무릎을 꿇고","살려","달라고","빈다"],"stay":false,"each":["남에게 보이려는 몸짓","닥친 일을 받아들임","남에게 보이려는 몸짓","남에게 보이려는 몸짓"]}
+{"group":"actNew","text":"우는 척하며 틈을 본다","linked":true,"clauses":["우는 척하며","틈을 본다"],"stay":false,"each":["남에게 보이려는 몸짓","무언가를 살피거나 알아냄"]}
+{"group":"actNew","text":"주저앉는 척하며 모래를 쥔다","linked":true,"clauses":["주저앉는 척하며","모래를 쥔다"],"stay":false,"each":["남에게 보이려는 몸짓","상대나 주변에 닿거나 신호함"]}
+{"group":"actNew","text":"손을 들어 항복 표시를 한다","linked":true,"clauses":["손을 들어","항복 표시를 한다"],"stay":false,"each":["남에게 보이려는 몸짓","남에게 보이려는 몸짓"]}
+{"group":"actNew","text":"후드를 깊이 눌러쓰고 천천히 걸어간다","linked":true,"clauses":["후드를 깊이 눌러쓰고","천천히 걸어간다"],"stay":false,"each":["물건을 잡거나 씀","자리가 바뀜"]}
+{"group":"actNew","text":"그늘에 쪼그려 앉아 저들이 지나가길 기다린다","linked":true,"clauses":["그늘에 쪼그려","앉아","저들이 지나가길 기다린다"],"stay":false,"each":["자리가 바뀜","자리가 바뀜","자기 몸에서 끝남"]}
+{"group":"actNew","text":"고개를 천천히 뒤로 젖혀 칼끝에서 목을 뗀다","linked":true,"clauses":["고개를 천천히 뒤로 젖혀","칼끝에서","목을 뗀다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남","상대나 주변에 닿거나 신호함"]}
+{"group":"actNew","text":"숨을 길게 내쉬고 떨리는 손을 꽉 쥔다","linked":true,"clauses":["숨을 길게 내쉬고","떨리는 손을 꽉 쥔다"],"stay":false,"each":["자기 몸에서 끝남","자기 몸에서 끝남"]}
+{"group":"actNew","text":"입술을 깨물고 남자를 노려본다","linked":true,"clauses":["입술을 깨물고","남자를 노려본다"],"stay":false,"each":["자기 몸에서 끝남","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"바위 그늘로 살금살금 몸을 옮긴다","linked":false,"clauses":["바위 그늘로 살금살금 몸을 옮긴다"],"stay":false,"one":"자리가 바뀜"}
+{"group":"actCorpus","text":"모래 언덕을 기어 올라가 저쪽을 내려다본다","linked":true,"clauses":["모래 언덕을 기어","올라가 저쪽을 내려다본다"],"stay":false,"each":["자리가 바뀜","무언가를 살피거나 알아냄"]}
+{"group":"actCorpus","text":"후드를 깊이 눌러쓰고 천천히 걸어간다","linked":true,"clauses":["후드를 깊이 눌러쓰고","천천히 걸어간다"],"stay":false,"each":["물건을 잡거나 씀","자리가 바뀜"]}
+{"group":"actCorpus","text":"손차양을 하고 세 사람 쪽을 가늘게 본다","linked":true,"clauses":["손차양을 하고","세 사람 쪽을 가늘게 본다"],"stay":false,"each":["상대나 주변에 닿거나 신호함","무언가를 살피거나 알아냄"]}
+{"group":"actCorpus","text":"가방에서 물병을 꺼내 한 모금 마신다","linked":true,"clauses":["가방에서","물병을 꺼내 한 모금 마신다"],"stay":false,"each":["물건을 잡거나 씀","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"발자국을 지우면서 뒷걸음질 친다","linked":true,"clauses":["발자국을 지우면서","뒷걸음질 친다"],"stay":false,"each":["자리가 바뀜","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"납작 엎드려서 숨을 죽인다","linked":true,"clauses":["납작 엎드려서","숨을 죽인다"],"stay":false,"each":["자리가 바뀜","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"그 사람들 반대편으로 냅다 뛴다","linked":false,"clauses":["그 사람들 반대편으로 냅다 뛴다"],"stay":false,"one":"자리가 바뀜"}
+{"group":"actCorpus","text":"팔을 크게 흔들며 그쪽으로 걸어간다","linked":true,"clauses":["팔을 크게 흔들며","그쪽으로 걸어간다"],"stay":false,"each":["자리가 바뀜","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"돌멩이를 하나 주워 손에 쥔다","linked":false,"clauses":["돌멩이를 하나 주워 손에 쥔다"],"stay":false,"one":"물건을 잡거나 씀"}
+{"group":"actCorpus","text":"신발을 벗어 모래를 털어 낸다","linked":true,"clauses":["신발을 벗어","모래를 털어 낸다"],"stay":false,"each":["물건을 잡거나 씀","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"모래 위에 화살표를 그려 둔다","linked":false,"clauses":["모래 위에 화살표를 그려 둔다"],"stay":false,"one":"상대나 주변에 닿거나 신호함"}
+{"group":"actCorpus","text":"그늘에 쪼그려 앉아 저들이 지나가길 기다린다","linked":true,"clauses":["그늘에 쪼그려","앉아","저들이 지나가길 기다린다"],"stay":false,"each":["자리가 바뀜","자리가 바뀜","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"바람 부는 쪽을 등지고 슬금슬금 옆으로 빠진다","linked":true,"clauses":["바람 부는 쪽을 등지고","슬금슬금 옆으로 빠진다"],"stay":false,"each":["자리가 바뀜","자리가 바뀜"]}
+{"group":"actCorpus","text":"귀를 기울여 저 사람들 말소리를 엿듣는다","linked":true,"clauses":["귀를 기울여","저 사람들 말소리를 엿듣는다"],"stay":false,"each":["무언가를 살피거나 알아냄","무언가를 살피거나 알아냄"]}
+{"group":"actCorpus","text":"망토 자락으로 얼굴 아래쪽을 가린다","linked":false,"clauses":["망토 자락으로 얼굴 아래쪽을 가린다"],"stay":false,"one":"물건을 잡거나 씀"}
+{"group":"actCorpus","text":"언덕 그림자를 따라 한 발씩 다가간다","linked":false,"clauses":["언덕 그림자를 따라 한 발씩 다가간다"],"stay":false,"one":"자리가 바뀜"}
+{"group":"actCorpus","text":"제자리에서 빙글빙글 돈다","linked":true,"clauses":["제자리에서","빙글빙글 돈다"],"stay":false,"each":["자기 몸에서 끝남","자리가 바뀜"]}
+{"group":"actCorpus","text":"모래를 한 움큼 쥐어 하늘로 뿌린다","linked":true,"clauses":["모래를 한 움큼 쥐어","하늘로 뿌린다"],"stay":false,"each":["물건을 잡거나 씀","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"숨을 고르고 저쪽을 향해 걸음을 뗀다","linked":true,"clauses":["숨을 고르고","저쪽을 향해 걸음을 뗀다"],"stay":false,"each":["자기 몸에서 끝남","자리가 바뀜"]}
+{"group":"actCorpus","text":"무릎을 꿇고 모래에 귀를 대 본다","linked":true,"clauses":["무릎을 꿇고","모래에 귀를 대 본다"],"stay":false,"each":["자리가 바뀜","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"저 사람들 뒤를 멀찍이 밟아 간다","linked":true,"clauses":["저 사람들 뒤를 멀찍이 밟아","간다"],"stay":false,"each":["자리가 바뀜","자리가 바뀜"]}
+{"group":"actCorpus","text":"바위 틈새에 몸을 구겨 넣는다","linked":false,"clauses":["바위 틈새에 몸을 구겨 넣는다"],"stay":false,"one":"자리가 바뀜"}
+{"group":"actCorpus","text":"손가락을 침에 적셔 바람 방향을 잰다","linked":false,"clauses":["손가락을 침에 적셔 바람 방향을 잰다"],"stay":false,"one":"무언가를 살피거나 알아냄"}
+{"group":"actCorpus","text":"고개를 천천히 뒤로 젖혀 칼끝에서 목을 뗀다","linked":true,"clauses":["고개를 천천히 뒤로 젖혀","칼끝에서","목을 뗀다"],"stay":false,"each":["닥친 일을 받아들임","자기 몸에서 끝남","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"두 손을 펴서 어깨 높이로 든다","linked":true,"clauses":["두 손을 펴서","어깨 높이로 든다"],"stay":false,"each":["물건을 잡거나 씀","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"한쪽 무릎을 모래에 대고 몸을 웅크린다","linked":true,"clauses":["한쪽 무릎을 모래에 대고","몸을 웅크린다"],"stay":false,"each":["자리가 바뀜","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"칼등을 손가락으로 살짝 밀어낸다","linked":false,"clauses":["칼등을 손가락으로 살짝 밀어낸다"],"stay":false,"one":"물건을 잡거나 씀"}
+{"group":"actCorpus","text":"남자의 눈을 피하지 않고 빤히 쳐다본다","linked":true,"clauses":["남자의 눈을 피하지 않고","빤히 쳐다본다"],"stay":false,"each":["상대나 주변에 닿거나 신호함","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"발밑 모래를 남자 얼굴로 걷어찬다","linked":false,"clauses":["발밑 모래를 남자 얼굴로 걷어찬다"],"stay":false,"one":"상대나 주변에 닿거나 신호함"}
+{"group":"actCorpus","text":"옆으로 굴러서 칼끝을 벗어난다","linked":true,"clauses":["옆으로 굴러서","칼끝을 벗어난다"],"stay":false,"each":["자리가 바뀜","자리가 바뀜"]}
+{"group":"actCorpus","text":"가방을 열어 안에 든 걸 하나씩 보여 준다","linked":true,"clauses":["가방을 열어","안에 든 걸 하나씩 보여","준다"],"stay":false,"each":["무언가를 살피거나 알아냄","물건을 잡거나 씀","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"지도를 꺼내 남자 앞에 펼쳐 놓는다","linked":false,"clauses":["지도를 꺼내 남자 앞에 펼쳐 놓는다"],"stay":false,"one":"물건을 잡거나 씀"}
+{"group":"actCorpus","text":"호위 쪽으로 슬쩍 눈길을 돌려 빈틈을 찾는다","linked":true,"clauses":["호위 쪽으로 슬쩍 눈길을 돌려","빈틈을 찾는다"],"stay":false,"each":["무언가를 살피거나 알아냄","무언가를 살피거나 알아냄"]}
+{"group":"actCorpus","text":"숨을 길게 내쉬고 떨리는 손을 꽉 쥔다","linked":true,"clauses":["숨을 길게 내쉬고","떨리는 손을 꽉 쥔다"],"stay":false,"each":["자기 몸에서 끝남","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"남자의 칼 쥔 손목을 덥석 잡는다","linked":false,"clauses":["남자의 칼 쥔 손목을 덥석 잡는다"],"stay":false,"one":"상대나 주변에 닿거나 신호함"}
+{"group":"actCorpus","text":"몸을 낮춰 호위 사이로 빠져나가려 한다","linked":true,"clauses":["몸을 낮춰 호위 사이로 빠져나가려","한다"],"stay":false,"each":["자리가 바뀜","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"후드 끈을 꽉 조여 얼굴을 더 가린다","linked":true,"clauses":["후드 끈을 꽉 조여","얼굴을 더 가린다"],"stay":false,"each":["물건을 잡거나 씀","물건을 잡거나 씀"]}
+{"group":"actCorpus","text":"터번 쓴 남자 발치에 침을 뱉는다","linked":false,"clauses":["터번 쓴 남자 발치에 침을 뱉는다"],"stay":false,"one":"상대나 주변에 닿거나 신호함"}
+{"group":"actCorpus","text":"비틀거리는 척하며 한 걸음 물러선다","linked":true,"clauses":["비틀거리는 척하며","한 걸음 물러선다"],"stay":false,"each":["남에게 보이려는 몸짓","자리가 바뀜"]}
+{"group":"actCorpus","text":"머리를 숙여 공손하게 절을 한다","linked":true,"clauses":["머리를 숙여","공손하게 절을 한다"],"stay":false,"each":["남에게 보이려는 몸짓","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"손바닥으로 칼날을 밀치고 달아난다","linked":true,"clauses":["손바닥으로 칼날을 밀치고","달아난다"],"stay":false,"each":["상대나 주변에 닿거나 신호함","자리가 바뀜"]}
+{"group":"actCorpus","text":"가방끈을 풀어 남자 발 앞에 던진다","linked":true,"clauses":["가방끈을 풀어","남자 발 앞에 던진다"],"stay":false,"each":["물건을 잡거나 씀","물건을 잡거나 씀"]}
+{"group":"actCorpus","text":"입술을 깨물고 남자를 노려본다","linked":true,"clauses":["입술을 깨물고","남자를 노려본다"],"stay":false,"each":["자기 몸에서 끝남","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"쓰러지는 척 눈을 감고 늘어진다","linked":true,"clauses":["쓰러지는 척 눈을 감고","늘어진다"],"stay":false,"each":["남에게 보이려는 몸짓","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"모래바닥에 손가락으로 글자를 쓴다","linked":false,"clauses":["모래바닥에 손가락으로 글자를 쓴다"],"stay":false,"one":"상대나 주변에 닿거나 신호함"}
+{"group":"actCorpus","text":"갑자기 남자를 와락 끌어안는다","linked":false,"clauses":["갑자기 남자를 와락 끌어안는다"],"stay":false,"one":"상대나 주변에 닿거나 신호함"}
+{"group":"actCorpus","text":"가만히 다가간다","linked":false,"clauses":["가만히 다가간다"],"stay":false,"one":"자리가 바뀜"}
+{"group":"actCorpus","text":"그냥 도망친다","linked":false,"clauses":["그냥 도망친다"],"stay":false,"one":"자리가 바뀜"}
+{"group":"actCorpus","text":"기다렸다가 몰래 따라간다","linked":false,"clauses":["기다렸다가 몰래 따라간다"],"stay":false,"one":"무언가를 살피거나 알아냄"}
+{"group":"actCorpus","text":"눈을 감고 달려든다","linked":true,"clauses":["눈을 감고","달려든다"],"stay":false,"each":["자리가 바뀜","상대나 주변에 닿거나 신호함"]}
+{"group":"actCorpus","text":"포기하지 않고 버틴다","linked":true,"clauses":["포기하지 않고","버틴다"],"stay":false,"each":["남에게 보이려는 몸짓","자기 몸에서 끝남"]}
+{"group":"actCorpus","text":"아무 말 없이 칼을 밀어낸다","linked":false,"clauses":["아무 말 없이 칼을 밀어낸다"],"stay":false,"one":"물건을 잡거나 씀"}
+{"group":"actCorpus","text":"가만히 칼자루를 잡는다","linked":false,"clauses":["가만히 칼자루를 잡는다"],"stay":false,"one":"물건을 잡거나 씀"}
+{"group":"actCorpus","text":"조용히 뒤로 물러난다","linked":false,"clauses":["조용히 뒤로 물러난다"],"stay":false,"one":"자리가 바뀜"}
+{"group":"actCorpus","text":"눈을 감은 척하다 칼을 걷어찬다","linked":false,"clauses":["눈을 감은 척하다 칼을 걷어찬다"],"stay":false,"one":"남에게 보이려는 몸짓"}
+{"group":"actCorpus","text":"서 있다가 달려 나간다","linked":true,"clauses":["서","있다가 달려","나간다"],"stay":false,"each":["자리가 바뀜","자리가 바뀜","자리가 바뀜"]}

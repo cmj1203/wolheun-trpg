@@ -1,0 +1,1274 @@
+[
+  {
+    "path": "run",
+    "events": [
+      {
+        "type": "scene",
+        "beat": "b03_ask",
+        "title": "길을 물어봤을 뿐인데",
+        "bg": "desert_meet",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "……",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "저… 저기…",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "혹시 크라차까지 가는 길을 아시나요?",
+        "by": "script",
+        "if": "!flag:이미_길_물음",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "정말이지 난, 그저 길을 물어봤을 뿐이었다.",
+        "by": "script"
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 1,
+            "to": 2
+          }
+        ]
+      },
+      {
+        "type": "note",
+        "id": "man",
+        "name": "붉은 눈의 남자"
+      },
+      {
+        "type": "note",
+        "id": "guards",
+        "name": "호위 둘"
+      },
+      {
+        "type": "scene",
+        "beat": "b04_blade",
+        "title": "그리고 현재",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "정신력",
+            "from": 4,
+            "to": 3
+          },
+          {
+            "key": "의심",
+            "from": 2,
+            "to": 4
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "정신력 -1",
+            "tone": "bad"
+          },
+          {
+            "text": "의심 +2",
+            "tone": "bad"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그리고 현재.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "스릉",
+        "cg": "cg_now"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "마지막으로 할 말은 있나?",
+        "by": "script",
+        "fx": "shake",
+        "face": "neutral",
+        "cg": "cg_last"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "억울해…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "없다면, 잘 가라.",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "화악",
+        "face": "neutral"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!",
+        "by": "script",
+        "sfx": "다급",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "……왜지?",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "scene",
+        "beat": "b05_why",
+        "title": "왜지?",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+        "by": "script"
+      }
+    ],
+    "hud": {
+      "scenarioTitle": "죽음의 사막 지르다",
+      "episode": "1화 · 사막 조우",
+      "beatTitle": "왜지?",
+      "tracks": [
+        {
+          "key": "체력",
+          "label": "체력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 근력 -1. 0에서 다시 다치면 쓰러져 붙잡힌다.",
+          "value": 3
+        },
+        {
+          "key": "정신력",
+          "label": "정신력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 매력·재치에 흔들리는 마음 -1. 0이 되면 다음 판정에 겁에 질림 -2, 회복 전까지 행운을 쓸 수 없다.",
+          "value": 3
+        },
+        {
+          "key": "의심",
+          "label": "의심",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+          "value": 4,
+          "clock": {
+            "kind": "progress",
+            "warnAt": 7
+          }
+        },
+        {
+          "key": "집착",
+          "label": "집착",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+          "value": 0
+        },
+        {
+          "key": "호감",
+          "label": "호감",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게 품은 호감",
+          "value": 0
+        },
+        {
+          "key": "귀찌",
+          "label": "귀찌 수명",
+          "max": 8,
+          "unit": "",
+          "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+          "value": 5,
+          "clock": {
+            "kind": "countdown",
+            "warnAt": 2
+          }
+        },
+        {
+          "key": "탈주",
+          "label": "탈주 준비도",
+          "max": 10,
+          "unit": "",
+          "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+          "value": 0
+        },
+        {
+          "key": "행운",
+          "label": "행운",
+          "max": 10,
+          "unit": "",
+          "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+          "value": 6
+        }
+      ],
+      "abilities": [
+        {
+          "key": "재치",
+          "value": 1
+        },
+        {
+          "key": "손재주",
+          "value": 1
+        },
+        {
+          "key": "매력",
+          "value": 2
+        },
+        {
+          "key": "근력",
+          "value": 0
+        },
+        {
+          "key": "교양",
+          "value": 1
+        }
+      ],
+      "items": [
+        {
+          "id": "magic_bag",
+          "name": "마법 가방",
+          "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "earring",
+          "name": "마법 귀찌",
+          "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+        },
+        {
+          "id": "map",
+          "name": "낡은 지도",
+          "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "notes": [
+        {
+          "id": "nations",
+          "kind": "세계",
+          "name": "크롬웰 제국",
+          "text": "북대륙의 패자라고 불리는 크롬웰 제국. 아시나의 모국이다."
+        },
+        {
+          "id": "zirda",
+          "kind": "장소",
+          "name": "지르다",
+          "text": "두 대륙 사이의 죽음의 사막. 생명이 살지 않는 모래사막이고, 낮에는 태양이 살을 태울 듯 뜨겁다."
+        },
+        {
+          "id": "kracha",
+          "kind": "장소",
+          "name": "크라차",
+          "text": "사막 건너 남대륙의 도시. 아시나가 가려던 곳이다."
+        },
+        {
+          "id": "magic",
+          "kind": "세계",
+          "name": "마법",
+          "text": "마법은 드물고 귀하다. 마법이 깃든 물건은 그것만으로 눈길을 끈다."
+        },
+        {
+          "id": "stars",
+          "kind": "세계",
+          "name": "별과 길",
+          "text": "지도는 낡았지만 별은 그대로다. 밤하늘의 별과 지도를 맞추면 방향을 잡을 수 있다."
+        },
+        {
+          "id": "asina",
+          "kind": "사람",
+          "name": "아시나",
+          "text": "이름은 아시나. 크롬웰 제국 웰든 대공가의 공녀. 여행이 좋아 신분을 숨기고 대륙을 떠돈다. 스스로를 대륙에서 하나뿐인 미소녀라 부른다."
+        },
+        {
+          "id": "disguise",
+          "kind": "세계",
+          "name": "변장",
+          "text": "본모습은 은발에 붉은 눈. 마법 귀찌로 갈색 머리, 갈색 눈으로 바꿨다."
+        },
+        {
+          "id": "earring_power",
+          "kind": "세계",
+          "name": "귀찌의 힘",
+          "text": "귀찌의 힘에는 끝이 있고, 힘이 닳을수록 귀찌가 뜨겁게 달아오른다. 힘이 바닥나면(0) 변장이 풀려 은발이 드러난다. 3 이하로 떨어지면 마음이 급해져 하는 일마다 손이 떨린다."
+        },
+        {
+          "id": "strangers",
+          "kind": "사람",
+          "name": "사막의 세 사람",
+          "text": "일주일 만에 본 사람들."
+        },
+        {
+          "id": "man",
+          "kind": "사람",
+          "name": "붉은 눈의 남자",
+          "text": "흰 터번에 붉은 보석, 허리에 찬 곡도. 호위 둘을 거느린 걸 보면 보통 신분은 아니다. 이름은 모른다."
+        },
+        {
+          "id": "guards",
+          "kind": "사람",
+          "name": "호위 둘",
+          "text": "복면을 쓴 무장 호위와 검은 머리의 남자. 붉은 눈의 남자가 손짓만 해도 움직인다."
+        },
+        {
+          "id": "item:magic_bag",
+          "kind": "소지품",
+          "name": "마법 가방",
+          "text": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "item:earring",
+          "kind": "소지품",
+          "name": "마법 귀찌",
+          "text": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+        },
+        {
+          "id": "item:map",
+          "kind": "소지품",
+          "name": "낡은 지도",
+          "text": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "trackGate": [
+        {
+          "note": "captive",
+          "tracks": [
+            "탈주"
+          ]
+        }
+      ],
+      "tension": 4,
+      "playMs": 1
+    }
+  },
+  {
+    "path": "watch",
+    "events": [
+      {
+        "type": "scene",
+        "beat": "b03_ask",
+        "title": "길을 물어봤을 뿐인데",
+        "bg": "desert_meet",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "……",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "저… 저기…",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "혹시 크라차까지 가는 길을 아시나요?",
+        "by": "script",
+        "if": "!flag:이미_길_물음",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "정말이지 난, 그저 길을 물어봤을 뿐이었다.",
+        "by": "script"
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 2,
+            "to": 3
+          }
+        ]
+      },
+      {
+        "type": "note",
+        "id": "man",
+        "name": "붉은 눈의 남자"
+      },
+      {
+        "type": "note",
+        "id": "guards",
+        "name": "호위 둘"
+      },
+      {
+        "type": "scene",
+        "beat": "b04_blade",
+        "title": "그리고 현재",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "정신력",
+            "from": 4,
+            "to": 3
+          },
+          {
+            "key": "의심",
+            "from": 3,
+            "to": 5
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "정신력 -1",
+            "tone": "bad"
+          },
+          {
+            "text": "의심 +2",
+            "tone": "bad"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그리고 현재.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "스릉",
+        "cg": "cg_now"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "마지막으로 할 말은 있나?",
+        "by": "script",
+        "fx": "shake",
+        "face": "neutral",
+        "cg": "cg_last"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "억울해…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "없다면, 잘 가라.",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "화악",
+        "face": "neutral"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!",
+        "by": "script",
+        "sfx": "다급",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "……왜지?",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "scene",
+        "beat": "b05_why",
+        "title": "왜지?",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+        "by": "script"
+      }
+    ],
+    "hud": {
+      "scenarioTitle": "죽음의 사막 지르다",
+      "episode": "1화 · 사막 조우",
+      "beatTitle": "왜지?",
+      "tracks": [
+        {
+          "key": "체력",
+          "label": "체력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 근력 -1. 0에서 다시 다치면 쓰러져 붙잡힌다.",
+          "value": 2
+        },
+        {
+          "key": "정신력",
+          "label": "정신력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 매력·재치에 흔들리는 마음 -1. 0이 되면 다음 판정에 겁에 질림 -2, 회복 전까지 행운을 쓸 수 없다.",
+          "value": 3
+        },
+        {
+          "key": "의심",
+          "label": "의심",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+          "value": 5,
+          "clock": {
+            "kind": "progress",
+            "warnAt": 7
+          }
+        },
+        {
+          "key": "집착",
+          "label": "집착",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+          "value": 0
+        },
+        {
+          "key": "호감",
+          "label": "호감",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게 품은 호감",
+          "value": 0
+        },
+        {
+          "key": "귀찌",
+          "label": "귀찌 수명",
+          "max": 8,
+          "unit": "",
+          "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+          "value": 5,
+          "clock": {
+            "kind": "countdown",
+            "warnAt": 2
+          }
+        },
+        {
+          "key": "탈주",
+          "label": "탈주 준비도",
+          "max": 10,
+          "unit": "",
+          "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+          "value": 0
+        },
+        {
+          "key": "행운",
+          "label": "행운",
+          "max": 10,
+          "unit": "",
+          "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+          "value": 6
+        }
+      ],
+      "abilities": [
+        {
+          "key": "재치",
+          "value": 1
+        },
+        {
+          "key": "손재주",
+          "value": 1
+        },
+        {
+          "key": "매력",
+          "value": 2
+        },
+        {
+          "key": "근력",
+          "value": 0
+        },
+        {
+          "key": "교양",
+          "value": 1
+        }
+      ],
+      "items": [
+        {
+          "id": "magic_bag",
+          "name": "마법 가방",
+          "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "earring",
+          "name": "마법 귀찌",
+          "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+        },
+        {
+          "id": "map",
+          "name": "낡은 지도",
+          "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "notes": [
+        {
+          "id": "nations",
+          "kind": "세계",
+          "name": "크롬웰 제국",
+          "text": "북대륙의 패자라고 불리는 크롬웰 제국. 아시나의 모국이다."
+        },
+        {
+          "id": "zirda",
+          "kind": "장소",
+          "name": "지르다",
+          "text": "두 대륙 사이의 죽음의 사막. 생명이 살지 않는 모래사막이고, 낮에는 태양이 살을 태울 듯 뜨겁다."
+        },
+        {
+          "id": "kracha",
+          "kind": "장소",
+          "name": "크라차",
+          "text": "사막 건너 남대륙의 도시. 아시나가 가려던 곳이다."
+        },
+        {
+          "id": "magic",
+          "kind": "세계",
+          "name": "마법",
+          "text": "마법은 드물고 귀하다. 마법이 깃든 물건은 그것만으로 눈길을 끈다."
+        },
+        {
+          "id": "stars",
+          "kind": "세계",
+          "name": "별과 길",
+          "text": "지도는 낡았지만 별은 그대로다. 밤하늘의 별과 지도를 맞추면 방향을 잡을 수 있다."
+        },
+        {
+          "id": "asina",
+          "kind": "사람",
+          "name": "아시나",
+          "text": "이름은 아시나. 크롬웰 제국 웰든 대공가의 공녀. 여행이 좋아 신분을 숨기고 대륙을 떠돈다. 스스로를 대륙에서 하나뿐인 미소녀라 부른다."
+        },
+        {
+          "id": "disguise",
+          "kind": "세계",
+          "name": "변장",
+          "text": "본모습은 은발에 붉은 눈. 마법 귀찌로 갈색 머리, 갈색 눈으로 바꿨다."
+        },
+        {
+          "id": "earring_power",
+          "kind": "세계",
+          "name": "귀찌의 힘",
+          "text": "귀찌의 힘에는 끝이 있고, 힘이 닳을수록 귀찌가 뜨겁게 달아오른다. 힘이 바닥나면(0) 변장이 풀려 은발이 드러난다. 3 이하로 떨어지면 마음이 급해져 하는 일마다 손이 떨린다."
+        },
+        {
+          "id": "strangers",
+          "kind": "사람",
+          "name": "사막의 세 사람",
+          "text": "일주일 만에 본 사람들."
+        },
+        {
+          "id": "man",
+          "kind": "사람",
+          "name": "붉은 눈의 남자",
+          "text": "흰 터번에 붉은 보석, 허리에 찬 곡도. 호위 둘을 거느린 걸 보면 보통 신분은 아니다. 이름은 모른다."
+        },
+        {
+          "id": "guards",
+          "kind": "사람",
+          "name": "호위 둘",
+          "text": "복면을 쓴 무장 호위와 검은 머리의 남자. 붉은 눈의 남자가 손짓만 해도 움직인다."
+        },
+        {
+          "id": "item:magic_bag",
+          "kind": "소지품",
+          "name": "마법 가방",
+          "text": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "item:earring",
+          "kind": "소지품",
+          "name": "마법 귀찌",
+          "text": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+        },
+        {
+          "id": "item:map",
+          "kind": "소지품",
+          "name": "낡은 지도",
+          "text": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "trackGate": [
+        {
+          "note": "captive",
+          "tracks": [
+            "탈주"
+          ]
+        }
+      ],
+      "tension": 4,
+      "playMs": 0
+    }
+  },
+  {
+    "path": "avoid",
+    "events": [
+      {
+        "type": "scene",
+        "beat": "b03_ask",
+        "title": "길을 물어봤을 뿐인데",
+        "bg": "desert_meet",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "……",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "저… 저기…",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "혹시 크라차까지 가는 길을 아시나요?",
+        "by": "script",
+        "if": "!flag:이미_길_물음",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "정말이지 난, 그저 길을 물어봤을 뿐이었다.",
+        "by": "script"
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 2,
+            "to": 3
+          }
+        ]
+      },
+      {
+        "type": "note",
+        "id": "man",
+        "name": "붉은 눈의 남자"
+      },
+      {
+        "type": "note",
+        "id": "guards",
+        "name": "호위 둘"
+      },
+      {
+        "type": "scene",
+        "beat": "b04_blade",
+        "title": "그리고 현재",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "정신력",
+            "from": 4,
+            "to": 3
+          },
+          {
+            "key": "의심",
+            "from": 3,
+            "to": 5
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "정신력 -1",
+            "tone": "bad"
+          },
+          {
+            "text": "의심 +2",
+            "tone": "bad"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그리고 현재.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "스릉",
+        "cg": "cg_now"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "마지막으로 할 말은 있나?",
+        "by": "script",
+        "fx": "shake",
+        "face": "neutral",
+        "cg": "cg_last"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "다짜고짜 사람 목에 칼이나 들이대고 말이야! 크라차에 원수라도 진 건지…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "억울해…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "없다면, 잘 가라.",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "화악",
+        "face": "neutral"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!",
+        "by": "script",
+        "sfx": "다급",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "……왜지?",
+        "by": "script",
+        "face": "wary"
+      },
+      {
+        "type": "scene",
+        "beat": "b05_why",
+        "title": "왜지?",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+        "by": "script"
+      }
+    ],
+    "hud": {
+      "scenarioTitle": "죽음의 사막 지르다",
+      "episode": "1화 · 사막 조우",
+      "beatTitle": "왜지?",
+      "tracks": [
+        {
+          "key": "체력",
+          "label": "체력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 근력 -1. 0에서 다시 다치면 쓰러져 붙잡힌다.",
+          "value": 4
+        },
+        {
+          "key": "정신력",
+          "label": "정신력",
+          "max": 5,
+          "unit": "",
+          "desc": "1 이하면 매력·재치에 흔들리는 마음 -1. 0이 되면 다음 판정에 겁에 질림 -2, 회복 전까지 행운을 쓸 수 없다.",
+          "value": 3
+        },
+        {
+          "key": "의심",
+          "label": "의심",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나를 첩자로 의심하는 정도",
+          "value": 5,
+          "clock": {
+            "kind": "progress",
+            "warnAt": 7
+          }
+        },
+        {
+          "key": "집착",
+          "label": "집착",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게서 눈을 떼지 못하는 정도",
+          "value": 0
+        },
+        {
+          "key": "호감",
+          "label": "호감",
+          "max": 10,
+          "unit": "",
+          "desc": "그 남자가 아시나에게 품은 호감",
+          "value": 0
+        },
+        {
+          "key": "귀찌",
+          "label": "귀찌 수명",
+          "max": 8,
+          "unit": "",
+          "desc": "변장 귀찌의 남은 힘. 0이 되면 변장이 풀려 은발이 드러나고, 낮아질수록 마음이 급해져 판정에 불리해진다",
+          "value": 6,
+          "clock": {
+            "kind": "countdown",
+            "warnAt": 2
+          }
+        },
+        {
+          "key": "탈주",
+          "label": "탈주 준비도",
+          "max": 10,
+          "unit": "",
+          "desc": "탈주에 쓸 정보, 도구, 기회를 모은 정도",
+          "value": 0
+        },
+        {
+          "key": "행운",
+          "label": "행운",
+          "max": 10,
+          "unit": "",
+          "desc": "판정 실패를 모자란 만큼 메우는 데 쓴다",
+          "value": 6
+        }
+      ],
+      "abilities": [
+        {
+          "key": "재치",
+          "value": 1
+        },
+        {
+          "key": "손재주",
+          "value": 1
+        },
+        {
+          "key": "매력",
+          "value": 2
+        },
+        {
+          "key": "근력",
+          "value": 0
+        },
+        {
+          "key": "교양",
+          "value": 1
+        }
+      ],
+      "items": [
+        {
+          "id": "magic_bag",
+          "name": "마법 가방",
+          "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "earring",
+          "name": "마법 귀찌",
+          "desc": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+        },
+        {
+          "id": "map",
+          "name": "낡은 지도",
+          "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "notes": [
+        {
+          "id": "nations",
+          "kind": "세계",
+          "name": "크롬웰 제국",
+          "text": "북대륙의 패자라고 불리는 크롬웰 제국. 아시나의 모국이다."
+        },
+        {
+          "id": "zirda",
+          "kind": "장소",
+          "name": "지르다",
+          "text": "두 대륙 사이의 죽음의 사막. 생명이 살지 않는 모래사막이고, 낮에는 태양이 살을 태울 듯 뜨겁다."
+        },
+        {
+          "id": "kracha",
+          "kind": "장소",
+          "name": "크라차",
+          "text": "사막 건너 남대륙의 도시. 아시나가 가려던 곳이다."
+        },
+        {
+          "id": "magic",
+          "kind": "세계",
+          "name": "마법",
+          "text": "마법은 드물고 귀하다. 마법이 깃든 물건은 그것만으로 눈길을 끈다."
+        },
+        {
+          "id": "stars",
+          "kind": "세계",
+          "name": "별과 길",
+          "text": "지도는 낡았지만 별은 그대로다. 밤하늘의 별과 지도를 맞추면 방향을 잡을 수 있다."
+        },
+        {
+          "id": "asina",
+          "kind": "사람",
+          "name": "아시나",
+          "text": "이름은 아시나. 크롬웰 제국 웰든 대공가의 공녀. 여행이 좋아 신분을 숨기고 대륙을 떠돈다. 스스로를 대륙에서 하나뿐인 미소녀라 부른다."
+        },
+        {
+          "id": "disguise",
+          "kind": "세계",
+          "name": "변장",
+          "text": "본모습은 은발에 붉은 눈. 마법 귀찌로 갈색 머리, 갈색 눈으로 바꿨다."
+        },
+        {
+          "id": "earring_power",
+          "kind": "세계",
+          "name": "귀찌의 힘",
+          "text": "귀찌의 힘에는 끝이 있고, 힘이 닳을수록 귀찌가 뜨겁게 달아오른다. 힘이 바닥나면(0) 변장이 풀려 은발이 드러난다. 3 이하로 떨어지면 마음이 급해져 하는 일마다 손이 떨린다."
+        },
+        {
+          "id": "strangers",
+          "kind": "사람",
+          "name": "사막의 세 사람",
+          "text": "일주일 만에 본 사람들."
+        },
+        {
+          "id": "man",
+          "kind": "사람",
+          "name": "붉은 눈의 남자",
+          "text": "흰 터번에 붉은 보석, 허리에 찬 곡도. 호위 둘을 거느린 걸 보면 보통 신분은 아니다. 이름은 모른다."
+        },
+        {
+          "id": "guards",
+          "kind": "사람",
+          "name": "호위 둘",
+          "text": "복면을 쓴 무장 호위와 검은 머리의 남자. 붉은 눈의 남자가 손짓만 해도 움직인다."
+        },
+        {
+          "id": "item:magic_bag",
+          "kind": "소지품",
+          "name": "마법 가방",
+          "text": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+        },
+        {
+          "id": "item:earring",
+          "kind": "소지품",
+          "name": "마법 귀찌",
+          "text": "머리색과 눈 색을 바꿔 주는 귀찌. 지금은 갈색 머리와 갈색 눈으로 변장 중이다."
+        },
+        {
+          "id": "item:map",
+          "kind": "소지품",
+          "name": "낡은 지도",
+          "text": "사막 한가운데서는 별 도움이 되지 않는 지도."
+        }
+      ],
+      "trackGate": [
+        {
+          "note": "captive",
+          "tracks": [
+            "탈주"
+          ]
+        }
+      ],
+      "tension": 3,
+      "playMs": 0
+    }
+  }
+]

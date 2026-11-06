@@ -1,0 +1,214 @@
+{
+  "mask_box": [
+    420,
+    330,
+    580,
+    470
+  ],
+  "mask": "work/demo-slice/lane59/asina/face_mask_native.png",
+  "results": [
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_flustered.png",
+      "face": "flustered",
+      "set": "asina",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6135,
+      "alignment": [
+        1.0,
+        1,
+        0
+      ],
+      "alignment_error": 9.33
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_scared.png",
+      "face": "scared",
+      "set": "asina",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6190,
+      "alignment": [
+        1.02,
+        2,
+        1
+      ],
+      "alignment_error": 9.595
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_indignant.png",
+      "face": "indignant",
+      "set": "asina",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6137,
+      "alignment": [
+        1.0,
+        0,
+        0
+      ],
+      "alignment_error": 6.179
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_smug.png",
+      "face": "smug",
+      "set": "asina",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6110,
+      "alignment": [
+        1.0,
+        0,
+        0
+      ],
+      "alignment_error": 9.582
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_tired.png",
+      "face": "tired",
+      "set": "asina",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6157,
+      "alignment": [
+        1.0,
+        0,
+        0
+      ],
+      "alignment_error": 6.038
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_hood_flustered.png",
+      "face": "flustered",
+      "set": "asina_hood",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6160,
+      "alignment": [
+        1.0,
+        1,
+        0
+      ],
+      "alignment_error": 6.988
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_hood_scared.png",
+      "face": "scared",
+      "set": "asina_hood",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6176,
+      "alignment": [
+        1.0,
+        0,
+        0
+      ],
+      "alignment_error": 7.068
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_hood_indignant.png",
+      "face": "indignant",
+      "set": "asina_hood",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6149,
+      "alignment": [
+        1.0,
+        0,
+        0
+      ],
+      "alignment_error": 6.72
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_hood_smug.png",
+      "face": "smug",
+      "set": "asina_hood",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6186,
+      "alignment": [
+        1.0,
+        1,
+        0
+      ],
+      "alignment_error": 8.602
+    },
+    {
+      "candidate": "work/demo-slice/lane59/asina/asina_hood_tired.png",
+      "face": "tired",
+      "set": "asina_hood",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "earring_pixels_equal": true,
+      "outside_mask_different_pixels": 0,
+      "changed_pixels": 6153,
+      "alignment": [
+        1.0,
+        0,
+        0
+      ],
+      "alignment_error": 5.356
+    }
+  ],
+  "visual_judgement": {
+    "status": "PASS",
+    "reviewed": ["docs/lead_check59/orig_faces_asina.jpg", "docs/lead_check59/faces_sheet_asina.jpg", "docs/lead_check59/faces_zoom_asina.jpg"],
+    "flustered": "PASS: 올라간 안쪽 눈썹, 식은땀과 작은 열린 입. 당황으로 읽힘.",
+    "scared": "PASS: 당황보다 커진 눈과 작은 동공, 긴장한 입. 현재 위험에 겁먹은 얼굴로 읽힘.",
+    "indignant": "PASS: 내린 눈썹과 항의하는 열린 입. 네모 눈과 분노 기호 없이 불만을 표현.",
+    "smug": "PASS: 낮아진 눈꺼풀과 비대칭 미소. 기존 친근한 smile과 구분.",
+    "tired": "PASS: 무거운 눈꺼풀, 힘 빠진 입과 땀. 기존 wary의 긴장과 구분.",
+    "consistency": "두 복장 모두 가르마·머리 외곽·귀찌 위치·얼굴 크기가 유지됨. 눈 간격에 눈에 띄는 변화 없음. 눈 간격은 시각 판정이며 별도의 랜드마크 수치 검증은 하지 않음.",
+    "problems": [],
+    "not_tested": ["게임 설치와 런타임 표정 전환", "보조 스크립트 별도 타입 검사"],
+    "diagnostics": "기본 편집기의 numpy·PIL import 진단은 남음. uv run --with pillow --with numpy 실행과 compileall은 종료 코드 0."
+  }
+}

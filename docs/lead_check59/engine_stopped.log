@@ -1,0 +1,5 @@
+lsof -nP -iTCP:18194-18196 -sTCP:LISTEN
+exit=1
+검증 서버 bash_45(18194), bash_22(18196) 종료. 18195 모음 서버는 스크립트 finally에서 종료.
+기존 모델 유지:
+16678 SN   llama-server -m /Users/choeminju/월흔_trpg/models/gemma-4-26B-A4B-it-UD-IQ4_XS.gguf --host 127.0.0.1 --port 18097 -c 8192 -np 1 -ngl 99 --alias gemma-4-26b-a4b --no-webui --offline --reasoning off

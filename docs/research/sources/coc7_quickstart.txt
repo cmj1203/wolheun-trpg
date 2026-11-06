@@ -1,0 +1,2402 @@
+
+=== PDF PAGE 1 ===
+Sandy 
+Petersen,
+ 
+Mi
+ke 
+Mason,
+Paul
+ 
+Fri
+cker,
+ 
+and 
+Lynn 
+Wi
+l
+l
+i
+s
+23131
+QUICK-START RULES
+
+
+=== PDF PAGE 2 ===
+Quick-Start Rules 
+“The oldest and strongest emotion of mankind is fear.”
+—H. P. Lovecraft
+
+
+=== PDF PAGE 3 ===
+CREDITS
+Authors
+Mike Mason with Paul Fricker, 
+Sandy Petersen, and Lynn Willis
+Editorial
+Lynne Hardy
+Cover Art
+Lin Hsiang
+Interior Art
+Lin Hsiang, Victor Leza, Rachel Kahn, 
+Andrey Fetisov, and Albeerto Bontempi
+Layout
+Nicholas Nacario
+Licensing
+Michael O’Brien, James Lowder, and Mike Mason
+Call of Cthulhu Creative Director
+Mike Mason
+Clear Credit
+The Call of Cthulhu roleplaying game was originally written by Sandy Petersen, with later revisions by Lynn Willis and others. The 7th edition of the 
+game was a collaboration between, and written by, Mike Mason and Paul Fricker. This Quick-Start revision written by Mike Mason and based upon 
+work by Paul Fricker and Mike Mason. Investigator sheet design by Matt Ryan and Max Harrison. 
+Cthulhu of Cthulhu: Quick-Start Rules © 1990, 2007, 2018, 2021 Chaosium Inc. All rights reserved.
+Call of Cthulhu © 1981–2021 Chaosium Inc. All rights reserved.
+Call of Cthulhu, Chaosium Inc., and the Chaosium logo are registered trademarks of Chaosium Inc. 
+This is a work of fiction. This book includes descriptions and portrayals of real places, real events, and real people; these may not be presented 
+accurately and with conformity to the real-world nature of these places, people, and events, and are reinterpreted through the lens of the Cthulhu 
+Mythos and the Call of Cthulhu game in general. No offense to anyone living or dead, or to the inhabitants of any of these places, is intended.
+This material is protected under the copyright laws of the United States of America. Reproduction of this work by any means without written 
+permission of Chaosium Inc., except for the use of short excerpts for the purpose of reviews and the copying of character sheets, maps, and handouts 
+for in-game use, is expressly prohibited.
+Chaosium recognizes that credits and copyrights for the Cthulhu Mythos can be difficult to identify, and that some elements of the Mythos may be 
+in the public domain. If you have corrections or additions to any credits given here, please contact us at mythos@chaosium.com.
+chaosium.com
+Chaosium Inc.
+3450 Wooddale Ct.
+Ann Arbor, MI 48104
+Chaosium publication 231@@
+ISBN-13: 978-1-56882-@@@-@
+Printed in @@@@@.
+
+
+=== PDF PAGE 4 ===
+TABLE OF CONTENTS
+DO YOU HEAR THE CALL OF CTHULHU?.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�5
+Overview ������������������������������������������������������������������������������������������������������������������������������������������������6
+Roleplaying Dice ������������������������������������������������������������������������������������������������������������������������������������6
+Equipment Required ������������������������������������������������������������������������������������������������������������������������������7
+INVESTIGATORS.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�8
+GAME SYSTEM.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�10
+Skill Rolls and Difficulty Levels�����������������������������������������������������������������������������������������������������������10
+Opposed Rolls���������������������������������������������������������������������������������������������������������������������������������������10
+Bonus and Penalty Dice������������������������������������������������������������������������������������������������������������������������11
+Luck Rolls���������������������������������������������������������������������������������������������������������������������������������������������12
+Sanity���������������������������������������������������������������������������������������������������������������������������������������������������12
+Combat������������������������������������������������������������������������������������������������������������������������������������������������12
+Close Combat���������������������������������������������������������������������������������������������������������������������������������������13
+Fighting Maneuvers������������������������������������������������������������������������������������������������������������������������������13
+Outnumbered���������������������������������������������������������������������������������������������������������������������������������������14
+Firearms������������������������������������������������������������������������������������������������������������������������������������������������14
+Hit Points, Wounds, and Healing���������������������������������������������������������������������������������������������������������14
+Other Forms of Damage ����������������������������������������������������������������������������������������������������������������������15
+THE HAUNTING .�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�25
+Collected Player Handouts ������������������������������������������������������������������������������������������������������������������32
+READY-MADE INVESTIGATORS.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�.�34
+
+
+=== PDF PAGE 5 ===
+4
+
+
+=== PDF PAGE 6 ===
+DO YOU HEAR 
+THE CALL OF CTHULHU?
+Interested in Chaosium’s Call of Cthulhu? You are not alone! 
+Call of Cthulhu is Chaosium’s tabletop roleplaying game of 
+mystery and horror, where ordinary people delve into weird 
+events and lore, and confront the terrifying and alien forces 
+of the Cthulhu Mythos. 
+The game has won many awards for gaming excellence and 
+is published by Chaosium Inc., one of the oldest roleplaying 
+game companies in the world. Chaosium is famous for 
+publishing engaging games—including Call of Cthulhu, 
+RuneQuest, Pendragon, 7th Sea, and many more.
+All you need to play Call of Cthulhu for the first time is 
+this Quick-Start Rules guide, some polyhedral dice (or a 
+dice-rolling app), plenty of imagination, and your friends. 
+Welcome to the worlds of Call of Cthulhu!
+INTRODUCTION
+Call of Cthulhu is a game full of secrets, mysteries, and horror. 
+Playing the roles of steadfast investigators, you and your 
+friends will travel to strange and dangerous places, uncover 
+foul plots, and stand against the terrors of the night. Within 
+strange and forgotten tomes of lore you may discover secrets 
+that humanity was not meant to know. Along the way, sanity-
+blasting monsters and insane cultists work to bring about 
+your demise. You and your companions may well decide the 
+fate of the world! 
+Call of Cthulhu is a horror-themed roleplaying game 
+concerning both horrors from beyond and from within. The 
+game is inspired by the 20th century horror and weird fiction 
+written by H. P. Lovecraft and other writers like Frank 
+Belknap Long, Lin Carter, and August Derleth, as well as 
+contemporary writers like Ramsey Campbell (to name but 
+a few). The game draws upon the fictional invention of what 
+has become known as the “Cthulhu Mythos,” a selection of 
+stories sharing common plot elements—such as mythical 
+books of arcane lore and alien god-like entities. The game 
+draws on the imaginative ideas and creations arising from 
+the Cthulhu Mythos, while avoiding Lovecraft’s own 
+distasteful personal views and racism, which have no place 
+in the game. If you have not read any Cthulhu Mythos 
+stories we encourage you to do so—there are many to 
+be found alongside Lovecraft’s own, including modern 
+reinterpretations of the Cthulhu Mythos seen through the 
+eyes of differing cultures and heritages.
+These Quick-Start Rules gives you all the information 
+you will need to begin playing and having fun with the Call 
+of Cthulhu roleplaying game, and include a brief overview 
+of the core rules and how to play the game. If you enjoy 
+the experience, we recommend you consider moving on to 
+the Call of Cthulhu Starter Set, which includes the full basic 
+rules, a simplified investigator creation system, and four 
+introductory adventures. Once you have mastered and played 
+through the material in the Starter Set, you’ll be ready to use 
+the Call of Cthulhu: Keeper Rulebook, which contains the full 
+rules and a complete investigator creation system, as well 
+as a plethora of game information. You can purchase these 
+products from good game and hobby stores, large bookstores, 
+online, and directly from chaosium.com.
+welcome to
+5
+
+
+=== PDF PAGE 7 ===
+WELCOME TO CALL OF CTHULHU
+6
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+AN OVERVIEW 
+OF THE GAME
+The aim of playing Call of Cthulhu is to have fun with your 
+friends as you explore and create a story of mystery and horror. 
+One player takes the role of game moderator, known as the 
+Keeper of Arcane Lore (“Keeper” for short), whose role is to 
+run the game for the rest of the players and apply the rules as 
+necessary. Everyone else takes the parts of intrepid Investigators 
+of the Unknown (“investigators”)—the heroes of the story—
+attempting to seek out, understand, and eventually confront the 
+horrors, mysteries, and secrets of the Cthulhu Mythos.
+As you are the person reading this book, we will assume 
+that you are going to take on the role of Keeper for the first 
+few games you play. The Keeper picks a story to run—these 
+are known as “adventures” or “scenarios.” You can find an 
+introductory adventure at the back of this book—a scenario 
+called The Haunting (page 17). Each adventure provides the 
+Keeper with the structure of a story (the plot) to present to 
+the players. The Keeper’s role is a little like that of a director 
+making a movie in which the actors don’t know how the story 
+will develop. The players are like actors, who have the freedom 
+to improvise their own scripts and actions within the game.
+The investigators need not be anything at all like the 
+people who play them. Indeed, it is often more rewarding 
+and enjoyable for players to create characters entirely unlike 
+themselves—such as tough private eyes, wisecracking 
+journalists, or learned academics. Most of the game play is 
+a verbal exchange. The Keeper sets the scene, describing the 
+environment, the individuals, and encounters to the players. 
+The players tell the Keeper what they intend for their 
+investigators to do, how they interact with people and things, 
+and so on. The Keeper then tells the players what happens. 
+In play, the game takes the form of a group conversation, 
+with many twists and turns and fun along the way. Together, 
+everyone tells the group’s story—their version of how their 
+characters overcame (or not) the challenges of the adventure.
+The game’s rules use polyhedral dice to determine if an 
+investigator’s action succeeds or fails when a dramatic “conflict” 
+presents itself—for example, whether the investigators are able 
+to leap out of the way of a giant statue about to crash down 
+upon their heads! The rules in this Quick-Start describe how 
+to decide the outcome of such conflicts.
+Winners and Losers 
+In Call of Cthulhu there are no winners and losers in the standard 
+competitive sense—play is cooperative. The participants work 
+together to attain a common goal—usually to discover and 
+then foil a nefarious plot being perpetrated by the minions 
+of a dark cult or some devious monster. The opposition that 
+the investigators face can often be an alien or hostile situation 
+controlled by an impartial Keeper, not another player. The 
+Keeper takes on the roles of all the supporting characters and 
+monsters in the adventure, while each of the players just plays 
+one role—that of their investigator.
+“Winning” in such a situation depends on whether the 
+investigators succeed in their goal, and “losing” is what happens 
+if they fail to achieve it (though they may be able to try again 
+later). During the game, investigators may become injured, 
+suffer sanity-shattering experiences, or even die! However, 
+someone has to make a stand against the cosmic horrors of the 
+Cthulhu Mythos, and the death of a single investigator matters 
+little if it means repulsing Cthulhu’s master plan to enslave the 
+Earth! In the game, investigators are mostly ordinary people 
+forced into heroic roles, but they are still fragile humans and 
+prone to injury and death. If an investigator must “retire” from 
+play, their player can pick up or create a new investigator to 
+join the team and continue the story.
+Investigators who survive gain knowledge of horrendous 
+monsters, power from arcane volumes of forgotten lore, and 
+advancement in their skills as they become more experienced; 
+thus, the players’ investigators continue to progress until their 
+demise or retirement—whichever comes first.
+ROLEPLAYING DICE
+The Keeper and players use a set of roleplaying dice in the game. 
+These polyhedral dice include: percentile dice (D100), a four-
+sided die (D4), a six-sided die (D6), an eight-sided die (D8), 
+and a twenty-sided die (D20). Such sets can be purchased from 
+game hobby stores—only one set is needed, although players 
+often like to have their own dice sets; alternatively, you may 
+prefer to use a dice-rolling app instead. The letter “D” stands for 
+“dice.” The number after the D is the range of numbers available: 
+1D8 generates random numbers 1 through 8, for instance, while 
+1D100 generates the numbers 1–100. In an adventure, the text 
+will call for different dice rolls using this terminology. So, if the 
+text says a monster delivers 1D8 damage, then roll the 8-sided 
+die once to determine how much damage is actually caused.
+Reading D100 (Percentile Dice)
+
+
+=== PDF PAGE 8 ===
+WELCOME TO CALL OF CTHULHU
+7
+Percentile dice usually consist of two 10-sided dice, which 
+are rolled together at the same time. One die (units) is 
+numbered 1 to 0, the other die (tens) being numbered 10 
+to 00. Both dice are rolled and should be read together— 
+e.g. “30” on the tens die and “05” on the units die is read as 
+35%. A roll of “00” (tens die) combined with a “0” (units die) 
+indicates a result of 100%, while a roll of “00” on the tens die 
+combined with any other roll on the units die indicates a roll 
+of under 10%; for example, a roll of 00 on the tens die and 3 
+on the units die is read as 3%.
+Dice Roll Variations
+Sometimes, a dice notation is preceded by a number other 
+than “1”—this means that more than one such die should be 
+rolled, with their results added together. For instance, 2D6 
+means that two 6-sided dice are rolled and totaled (or roll a 
+D6 twice and add the results together).
+You might also see 1D8+1 or 1D6+1, for instance. This 
+means that the number following the plus sign should be 
+added to the result of the die roll. For 1D6+1, the result must 
+be 2, 3, 4, 5, 6, or 7. If a monster claws for 1D6+1+2D4 damage, 
+find the result of the attack by rolling the two requested dice, 
+totaling the results, and adding 1 (rolling 1D6 and 2D4, then 
+adding 1 to the total rolled across all of the dice).
+NEVER PLAYED A ROLEPLAYING GAME BEFORE?
+If you’ve never played a roleplaying game before you may 
+be wondering what this is all about. To set you on the right 
+track, it may be useful to describe an average session of play, 
+which can take place in person around a table or online over 
+a video conference.
+Debbie and their partner Alex, along with their two friends 
+Morgan and Susan, meet up at John’s house on Friday evening 
+at around seven o’clock. After catching up on the week’s news and 
+getting some drinks and nibbles, they sit down in the lounge, 
+ready to play. John hands out some ready-made investigators 
+along with some paper and pencils, and everyone is ready to start.
+It’s now about eight o’clock. John kicks off the game by describing 
+the opening scene from the adventure they have chosen to play, 
+telling how the investigators find themselves talking with a man 
+who wants them to check out an old property he owns; rumor 
+has it that it might be haunted! One of the players immediately 
+responds to this, putting on the voice of their investigator to say 
+that such things are “Complete hokum.” As the story unfolds, 
+everyone becomes involved, describing what their characters are 
+doing or saying. Some of the players decide to speak in the manner 
+of their characters, such as with a New York accent, while others 
+prefer not to “act” out their character and just speak normally. 
+Dramatic conflicts arise and dice are rolled to determine the 
+outcome, with John being the referee of the rules.
+Sometimes the players get their way, while at other times 
+events appear to conspire against them. It is all played out simply 
+by talking and rolling dice to determine the outcome of certain 
+situations; people aren’t getting out of their chairs to act it out, 
+neither are they donning costumes. 
+Everyone ceases play at around ten-thirty, and then chat for a 
+while before calling it a night at around eleven o’clock. Everyone 
+is looking forward to meeting up again next week to find out how 
+the story develops.
+EQUIPMENT REQUIRED
+When you are ready to begin playing Call of Cthulhu, you’ll 
+need a few things to start:
+•	 This Quick-Start Rules guide.
+•	 A set of polyhedral (“roleplaying”) dice or a dice-rolling app.
+•	 Some notepaper.
+•	 Some pencils.
+•	 At least one other person to game with.
+•	 A quiet place to play, such as around a kitchen table or 
+lounge.
+•	 Two to four hours in which to play.
+Of course, playing online is possible too. Instead of 
+a set of real dice you could use an online dice roller,” and 
+you could share investigator sheets as PDFs (you can 
+download writable PDF sheets at chaosium.com). Any video 
+conferencing platform could be used—you just need to make 
+sure everyone can see and hear everyone else in the game.
+
+
+=== PDF PAGE 9 ===
+WELCOME TO CALL OF CTHULHU
+8
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+INVESTIGATORS
+This Quick-Start guide does not include the rules for creating 
+investigator characters from scratch—those rules are included 
+in the Call of Cthulhu Starter Set and the Call of Cthulhu: Keeper 
+Rulebook. Instead, at the back of this book you will find four 
+ready-to-play investigators—note that PDF versions of these 
+characters are available to download from chaosium.com. The 
+players can pick from these pre-generated characters and use 
+them when playing the included adventure, The Haunting. To 
+help understand the investigator sheet, here’s the lowdown on 
+what everything means.
+Players record the details of their character on an 
+investigator sheet, which holds all the information they need 
+in the game. Each sheet is divided into sections:
+1.	About Your Investigator: your investigator’s name, age, 
+gender, and occupation, as well as their birthplace and current 
+residence. In Call of Cthulhu, an investigator’s occupation 
+determines the skills they are most proficient with. 
+2.	Characteristics: there are eight characteristics used to measure 
+Strength (STR), Constitution (CON), Size (SIZ), Dexterity 
+(DEX), Appearance (APP), Education (EDU), Intelligence 
+(INT), and Willpower (POW). Each of these has a “Regular” 
+percentile value between 1 and 100; thus, STR 60 means 
+Strength 60%. Note that there are two smaller boxes to the 
+edge of each characteristic—the upper small box is half value 
+(or “Hard” value, i.e. the Regular value divided by 2), while the 
+lower small box is the one-fifth value (or “Extreme” value, i.e. 
+the Regular value divided by 5). E.g. with STR 60, the upper 
+box would be “30” (half of 60) and the lower box would be 
+“12” (one-fifth of 60). See Skill Rolls and Difficulty Levels, 
+page 10, for what these values mean in play. 
+Each of the characteristics measures a certain attribute:
+•	 STR: the raw physical power your investigator can bring 
+to bear.
+•	 CON: the health and hardiness of your investigator.
+•	 SIZ: an abstracted value of your investigator’s height and weight.
+•	 DEX: physical agility and speed.
+•	 APP: the physical appeal or how “good looking” your 
+investigator is.
+•	 EDU: a measure of the knowledge that your investigator 
+has accumulated through formal education or the venerated 
+“school of hard knocks” (i.e. street smarts). 
+•	 INT: a measure of your investigator’s cunning, problem 
+solving, and ability to make leaps of logic and intuition. 
+•	 POW: a combination of force of will, spirit, and mental stability. 
+In addition, there there are four key values for an investigator—
+Hit Points (HP), Magic Points (MP), Luck (Luck), and Sanity 
+(SAN). These values may go up and down in play. 
+•	 Hit Points (HP): when your investigator suffers damage, 
+deduct damage points from hit points—at zero hit points 
+your investigator falls unconscious and may die—see Hit 
+Points, Wounds, and Healing, page 14. 
+•	 Magic Points (MP): used to cast a spell or some other magical 
+effect. When spent, magic points regenerate at a rate of 1-point 
+per hour. If a character uses up all of their magic points, any 
+further expenditure is taken from their hit points (becoming 
+physical damage)—see Corbitt’s Spells, page 31, in The 
+Haunting for an example of how magic points are used. 
+•	 Luck: used to determine whether external circumstances are 
+with or against your investigator (whether your investigator 
+can find a lantern in a dark barn, and so on)—see Luck 
+Rolls, page 12. 
+•	 Sanity (SAN): measures your investigator’s ability to deal 
+with the shock and corruption from exposure to alien and 
+mind-bending horrors of the Cthulhu Mythos. Sometimes, 
+when such things overcome your investigator, they lose Sanity 
+points, reflecting the lingering effect of such trauma—see 
+Sanity, page 12. Note that “Starting” SAN begins equal to 
+POW, but may later rise or fall through play, and the “Insane” 
+box is used to write in one-fifth of the “Starting” SAN value.
+Running along the bottom of this section are Temporary 
+Insanity, Indefinite Insanity, Major Wound, Unconscious, 
+and Dying—these are checked when certain events happen 
+during the game.
+
+
+=== PDF PAGE 10 ===
+WELCOME TO CALL OF CTHULHU
+9
+3.	Skills: this section lists all of the common skills available. 
+Your investigator can attempt to use most of these skills 
+using the “base value” noted in parentheses next to the skill, 
+e.g. “Accounting (05%)” means that everyone has a 5% skill 
+in accountancy. On the ready-made investigator sheets you 
+can see that each character has increased values for certain 
+skills (these higher values supersede the base values). The 
+ones with increased values are the skills your investigator 
+is relatively proficient in; the higher the value, the more 
+skilled they are.
+Note that there are two boxes to the right of each skill 
+box—the middle box is half value (or “Hard” value, i.e. 
+the Regular value divided by 2), while the box on the 
+right is the one-fifth value (or “Extreme” value, i.e. the 
+Regular value divided by 5). E.g. with a Charm skill of 
+50%, the middle box would be “25” (half of 50) and the 
+box to the right would be “10” (one-fifth of 50). See Skill 
+Rolls and Difficulty Levels, page 10, for what these 
+values mean in play. 
+4.	Weapons: notes any weapons possessed by your investigator. 
+Each weapon has an entry for its Regular, Hard, and 
+Extreme skill values, the damage it can inflict (usually a die 
+roll), and the number of attacks (per round) it can be used; 
+and, for firearms, its range, ammunition, and its malfunction 
+number—see Combat, page 12, for more details.
+5.	Action Reference: this is a quick reference area showing 
+Move (the human average is Move 8), Build, Damage Bonus 
+(DB), and also a duplicate of your investigator’s Dodge skill 
+value—all useful during combat and other dramatic events!
+6.	My Story: use this to write in the personal history of your 
+investigator. You might add to and develop this during play. 
+7.	Backstory: each entry is a way to further describe your 
+investigator, whether it’s a short description of how they 
+appear, their ideology and beliefs, or their traits and 
+mannerisms. You can also make a note about any significant 
+people in their life, treasured possessions, and locations that 
+are important to them. Most times, filling in two or more of 
+these sections helps to round out your character. Note that 
+Injuries & Scars, Phobias & Manias, Arcane Tomes, Spell & 
+Artifacts, and Encounters with Strange Entities are usually 
+filled out during play rather than beforehand. 
+8.	Gear and Possessions: record important items, equipment, 
+and weapons carried on your investigator’s person. As a rule 
+of thumb, an investigator would be carrying the items they 
+would use day-to-day in their occupation, so there’s no need 
+to write every single thing down—only the important and 
+relevant stuff. 
+9.	Wealth: don’t worry about this section—it’s just for advanced 
+games, where a character’s money on hand and savings might 
+be important (these are covered in the Call of Cthulhu: Keeper 
+Rulebook)—see the nearby box about Credit Rating. 
+10.Fellow Investigators: record the names of the other 
+players in your game, as well as their investigators’ names. 
+11.Quick Reference Rules: a handy rules reminder and 
+something you might refer to once you have more 
+experience of playing the game. 
+CREDIT RATING
+Credit Rating is a skill on the investigator sheet, and can be 
+used as a means to exemplify your investigators wealth (or 
+lack of it) and social status. 
+•	 Credit Rating of 0: Penniless, living on the streets.
+•	 Credit Rating of 1–9: Poor, has the bare minimum.
+•	 Credit Rating of 10–49: Average, a reasonable comfort level.
+•	 Credit Rating of 50–89: Wealthy, some degree of luxury.
+•	 Credit Rating of 90–98: Rich, great wealth and luxury.
+•	 Credit Rating of 99–100: Super rich, money is no object.
+
+
+=== PDF PAGE 11 ===
+WELCOME TO CALL OF CTHULHU
+10
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+GAME SYSTEM 
+“Skill rolls” may be called for during dramatic situations in 
+the game. Walking down a well-lit hallway is not a dramatic 
+situation, whereas running down a rubble-strewn corridor 
+while being chased by monsters most definitely is! Only 
+make a skill roll when the outcome is uncertain and dramatic.
+When attempting a skill roll, you should first agree a 
+goal with the Keeper—what is your investigator trying to 
+achieve? If your skill roll is successful, you achieve your goal. 
+Additionally, when you successfully roll a skill, put a check 
+mark in the box next to it on your investigator sheet. You 
+can only get one check per skill at a time. At the end of the 
+scenario, that skill could increase due to experience—your 
+Keeper will ask you to “roll for skill increases,” if you roll over 
+a checked skill’s value, you gain +1D10 points to that skill 
+(with a checked Climb skill of 40, you roll 1D100 and get 
+58, as this is above 40, you get to add 1D10 points to Climb). 
+In other words, the more you know, the hardier it is to learn 
+something new or to get better. 
+On occasion, you may need to roll a test that is not covered 
+by the skills on your sheet. If so, look at your investigator’s 
+characteristics and determine which one of them is best to 
+use and treat it like a skill.
+SKILL ROLLS AND 
+DIFFICULTY LEVELS
+Your Keeper will tell you when you should attempt a skill 
+roll and how difficult the task is—you just describe what your 
+investigator is doing, and the Keeper will advise you if a skill 
+roll is needed.
+•	 A regular task requires a roll of equal to or less than your 
+skill value on 1D100 (a Regular success).
+•	 A difficult task requires a 1D100 roll result equal to or less 
+than half your skill value (a Hard success).
+•	 A task approaching the limits of human capability requires a 
+1D100 roll equal to or less than one-fifth of your skill value 
+(an Extreme success).
+If you can justify it through your investigator’s actions, you 
+can “push” a failed skill roll. Pushing a roll allows you to roll the 
+dice a second time; however, the stakes are raised. If you fail a 
+second time, the Keeper gets to inflict a dire consequence upon 
+your character—you might partially succeed in your goal or not, 
+depending on the Keeper’s determination, but either way, your 
+investigator will pay some sort of price for failing the roll. Before a 
+pushed roll is made, the Keeper has the option of foreshadowing 
+what might happen if the pushed roll is failed; the player can then 
+decide whether it’s worth the risk to take the second roll or not.
+Example: your investigator is trying to open the heavy stone 
+door of a crypt—the goal is “open the crypt.” The Keeper decides 
+this is very difficult and asks for a STR roll, specifying that a 
+“Hard success” is required. Your investigator’s STR is 60, so a 
+Hard success requires a roll of 30 or below. You roll the dice but 
+the result is 43—you have failed, as you rolled above half your 
+investigator’s STR. You ask if you can push the roll, saying that 
+your character is picking up and using a spade to help lever the 
+door. The Keeper permits a second roll, but warns that if you fail 
+this roll, not only will the door still be closed but “something” 
+may hear you and could be coming for your blood! Note that we 
+used the STR characteristic here, as opening the door is feat of 
+strength rather than a specific skill; if the door had a lock on it, 
+you might instead use the Locksmith skill at Regular difficulty or 
+a Mechanical Repair roll at Hard difficulty. 
+OPPOSED SKILL ROLLS
+If two investigators are opposing one another, or if an 
+investigator is in a conflict with a significant Keeper-
+controlled character (a monster or NPC, i.e. one for whom 
+statistics are listed in the scenario), the Keeper may require 
+an “opposed roll.” To resolve an opposed roll, both sides 
+make a skill (or characteristic) roll and compare their levels 
+of success. A Regular success beats a Fail, a Hard success 
+beats a Regular success, and an Extreme success beats a Hard 
+success. In the case of a draw, the side with the higher skill 
+value wins—if both skills are equal, then have both sides roll 
+1D100, with the lower result winning.
+LEVELS OF SUCCESS
+(worst) FAIL — REGULAR SUCCESS — HARD SUCCESS — EXTREME SUCCESS (best)
+
+
+=== PDF PAGE 12 ===
+WELCOME TO CALL OF CTHULHU
+11
+Bonus and Penalty Dice
+Sometimes, the prevailing conditions for the investigators, 
+their environment, and/or the time available can hinder or 
+benefit a skill or characteristic roll. Under certain conditions 
+the Keeper may grant a “bonus” or a “penalty” die to a roll. 
+One bonus die and one penalty die cancel each other out. 
+Such bonuses and penalties operate in a similar way to 
+raising the difficulty of a roll, and can be used instead of, 
+or in addition to, an increased difficulty. Normally, though, 
+bonus and penalty dice are used primarily with opposed rolls.
+For each bonus die: roll an additional “tens” die alongside 
+the usual pair of percentile (D100) dice when making a roll. 
+You are now rolling three separate dice: one “units” die and 
+two “tens” dice. To take the benefit of the bonus, use the 
+“tens” die that yields the better (lower) result.
+Example: two rival investigators, Malcolm and Hugh, are vying 
+for the affection of Lady Greene. Only one can gain her hand in 
+marriage, so the Keeper decides that an opposed roll is needed to 
+determine the outcome of their wooing. It is decided that an opposed 
+Charm roll should fit the scene. The Keeper reviews the events of the 
+scenario so far: Malcolm has visited Lady Greene twice, each time 
+lavishing expensive gifts upon her, while Hugh has only visited 
+once and brought no gifts at all. The Keeper states that Malcolm has 
+an advantage and receives a bonus die in the opposed roll.
+Hugh’s player rolls first against his Charm skill of 55, getting 
+45—a Regular success. Malcolm’s player rolls against his Charm 
+skill with one bonus die, rolling one units die and two tens dice 
+(see fig 1.) The units die reads 4 and can be paired with either of 
+the two tens dice to give scores of 44 or 24. Malcolm’s player takes 
+the lower result 24—a Hard success. Malcolm wins the opposed 
+roll, and his proposal of marriage to Lady Greene is accepted.
+For each penalty die: roll an additional “tens” die alongside 
+the usual pair of percentile (D100) dice. You’re now rolling 
+three separate dice: one “units” die and two “tens” dice. For a 
+penalty, use the “tens” die that yields the worst (higher) result.
+Example: in a dire turn of events, two investigators—Felix and 
+Harrison—have been captured by the cultists of the Scarlet Smile. The 
+cultists decide to have some “fun” at the investigators’ expense, decreeing 
+that both must undertake the Ordeal of Pain, from which only one can 
+survive as the loser will be sacrificed to the cultists’ foul god.
+The Ordeal of Pain involves lifting a huge rock and holding it 
+aloft. Whoever holds the rock up the longest wins. This requires an 
+opposed STR roll from each of the investigators; however, the Keeper 
+rules that Harrison must take a penalty die, as he recently suffered a 
+major wound (he received an injury when he was captured by the 
+cultists) and is still recovering. Felix’s player rolls 51 against STR 
+65—a Regular success. Harrison’s STR is 55. His player rolls 20 
+and 40 on two tens dice and 1 on the units die (see fig 2.), which 
+can be combined to read 21 or 41. The extra die was a penalty die, so 
+Harrison must take the higher result—a Regular success
+Both players have achieved a Regular success; Felix wins 
+because he has the higher STR value. Felix is able to hold the rock 
+above his head for longer than Harrison. The cultists jeer and lead 
+Harrison off towards their altar…
+Fig. 2
+Fig. 1
+
+
+=== PDF PAGE 13 ===
+WELCOME TO CALL OF CTHULHU
+12
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+LUCK ROLLS
+Luck rolls may be called for by the Keeper when 
+circumstances external to an investigator are in question, 
+and also when determining the fickle hand of fate. If, for 
+example, an investigator wants to know if there is an item 
+lying nearby that could be used as weapon, or if the flashlight 
+they have found has any juice left in it, then call for a Luck 
+roll. Note that if a skill or characteristic is more appropriate 
+to a situation, then it should be used rather than Luck. To 
+succeed with a Luck roll, the investigator must roll equal to 
+or under their current Luck value.
+If the Keeper calls for a “group Luck roll,” the player whose 
+investigator has the lowest Luck score (among those present 
+in the scene) should make the roll on behalf of the group.
+Example: finding a cab doesn’t require a dice roll, but getting one 
+before the investigators lose sight of the car that they wish to pursue 
+could. Credit Rating could be a factor in attracting the attention 
+of a cabdriver on the lookout for a well-dressed fare who may tip 
+generously. However, quickly getting a ride at two o’clock in the 
+morning on the undesirable side of town might not be so easy. 
+Would there even be a cab to hail? No skill is going to make a cab 
+appear at that moment. It is a matter of chance whether a cab may 
+be driving down that road, hence a Luck roll is required.
+SANITY (SAN)
+Whenever an investigator encounters the horrors of the 
+Cthulhu Mythos or comes across something mundane yet 
+horrific (such as stumbling across a friend’s mutilated corpse), 
+make a percentile roll against the investigator’s current Sanity 
+score. If you roll over your current Sanity, you lose a greater 
+amount of Sanity points. If you roll under, you will lose less 
+or none. The Sanity loss is generally described for an event as 
+something like “0/1D6” or “2/1D10.” The number before the 
+slash mark tells you how much Sanity your character loses 
+if the roll is equal to or under their current Sanity score; the 
+number after the slash is how much your investigator loses 
+if you roll over their current Sanity score (the worst result).
+When you fail a “Sanity roll” the Keeper gets to 
+momentarily dictate your investigator’s next action as the 
+fear takes hold; perhaps they unwittingly scream, freeze, or 
+squeeze the trigger of the gun they are holding.
+If an investigator loses 5 or more Sanity points as the 
+consequence of a single Sanity roll, they have suffered major 
+emotional trauma, and the player must roll 1D100. If the 
+result is equal to or less than their Intelligence (INT), the 
+investigator fully understands and comprehends what has 
+been seen and goes temporarily insane (for 1D10 hours). If 
+they fail the roll, their mind is closed to the horror and they 
+remain sane (for now).
+In addition, when falling insane, an investigator suffers 
+a “bout of madness”—roll 1D10 and refer to the Bouts 
+of Madness Table (page 29). If the investigator is in the 
+presence of other investigators, play out the result round 
+by round (the player has, more or less, control of their 
+character, but should be guided by Keeper in terms of their 
+investigator’s portrayal of madness). If the investigator is 
+alone you may use the result to describe how the investigator 
+is found sometime later in a bad way, perhaps hiding in a 
+cupboard, drunk in a gutter, or unconscious under a tree.
+If your investigator is temporarily insane, the Keeper 
+may decide to add a phobia or mania to your sheet 
+(such as “fear of the dark,” “fear of confined spaces,” or 
+“kleptomania, an irrational compulsion to steal things”). 
+Alternatively, they may decide to rewrite one of your 
+existing backstory entries, perhaps corrupting it in some 
+way (where you wrote “Trusting” under Traits, the Keeper 
+corrupts this to “Fearful.”)
+While temporarily insane, the Keeper may present your 
+investigator with “Delusions” (hallucinations)—is that a 
+zombie creeping up on you or is it just a homeless person 
+asking for spare change? You can only be certain by asking 
+to make a “reality check”—electing to make a Sanity roll; 
+if you’re successful, you see through the hallucination, but 
+if you fail, you fall deeper into the madness and believe 
+the delusion!
+Once 1D10 hours have passed, the investigator is sane 
+once more and cannot be affected by more delusions; 
+however, altered backstories or phobias or manias gained 
+while insane remain in effect.
+Unfortunately, regaining lost Sanity points can be a long 
+and arduous process. Checking characters into some form 
+of care while they take a break from the action, or undergo 
+some form of psychotherapy, are ways to recover small 
+amounts of Sanity. Successfully completing investigations 
+also provides a way to gain Sanity points. But, such gains 
+often do not outweigh the steady loss of Sanity, which tends 
+to be a downward spiral. As Sanity slips away, investigators 
+become less stable and their ability to deal with new horrors 
+diminishes. Full rules for Sanity and Insanity in the game are 
+more fully explained in the Call of Cthulhu: Keeper Rulebook. 
+COMBAT
+When you are confronted with the horrors of the Cthulhu 
+Mythos it is generally a better idea to run away or avoid 
+confrontation altogether, as such entities are very powerful 
+and often resistant to bullets! However, sometimes there is 
+no other choice than to go in, guns blazing, and make the 
+best of it.
+
+
+=== PDF PAGE 14 ===
+WELCOME TO CALL OF CTHULHU
+13
+When a combat occurs, all investigators, as well as 
+characters and monsters controlled by the Keeper, act in 
+order of their DEX values. The investigator, character, or 
+monster with the highest DEX acts first and then the others 
+go in descending order from there. 
+The duration of a combat round is best described as “long 
+enough for everyone to take one significant action.” The 
+Keeper controls the flow of the round. On each character’s 
+DEX turn, the Keeper decides or asks (if an investigator) 
+what action is being taken; usually this is something as 
+simple as, “I attack the monster,” “I pull out my revolver,” or “I 
+run away!” The Keeper should give everyone a chance to do 
+something, while being aware of the narrative flow of the 
+events taking place.
+Investigators have three combat skills: Fighting, Dodge, 
+and Firearms. Two of these skills are made up of multiple 
+specializations, such as Fighting (Brawl) or Firearms 
+(Rifle/Shotgun)—each investigator may have different 
+specializations (or none at all). Note that the Fighting 
+(Brawl) skill includes unarmed combat and the use of simple 
+weapons (like knives and clubs); however, wielding a sword 
+requires the Fighting (Sword) specialization.
+You make a combat roll using the appropriate skill, just 
+like any other skill roll; however, you don’t get to “push” 
+combat rolls—you simply make another attack next round.
+Close Combat
+On a character’s turn in the DEX order, they may choose 
+to initiate an attack against an opponent. In addition, each 
+time a character is attacked, they get to choose how they will 
+respond, be it by dodging (attempting to avoid the attack 
+completely) or fighting back (attempting to avoid, block, or 
+parry an attack while also hitting back). Both attacker and 
+defender roll percentage dice (1D100) and compare their 
+levels of success.
+•	 If you are initiating the attack: roll your Fighting skill and 
+compare the result to your opponent.
+•	 If you are responding—fighting back: use your Fighting 
+skill. You need to achieve a higher level of success than 
+your attacker (you inflict damage instead of your opponent).
+•	 If you are responding—dodging: use your Dodge skill. Your 
+attacker needs to achieve a higher level of success than you 
+(if you equal or exceed your attacker’s level of success, you 
+successfully dodge and avoid taking damage).
+The winning side avoids receiving any damage and inflicts 
+damage (unless they are dodging) on their opponent. Note 
+that, when fighting back (responding to an attack on you), 
+the best a person can achieve is “regular” damage, whereas 
+a character initiating an attack (if successful) could achieve 
+“extreme damage” if they win the combat with an Extreme 
+success—if a blunt weapon, extreme damage deals maximum 
+damage plus damage bonus (if any); if an impaling weapon 
+(like a knife), extreme damage deals maximum damage (of 
+the weapon) plus an additional dice roll for the weapon’s 
+damage and also damage bonus (if any). E.g. when a 
+knife with 1D4 damage causes extreme damage, it deals 
+4+1D4+damage bonus (if any).
+Example: a ghoul initiates, swinging a clawed hand at Susan, 
+who elects to dodge. The Keeper rolls 03—an Extreme success 
+(below one-fifth of the ghoul’s skill). Susan rolls 20 for her Dodge 
+roll—a Hard success. The attacker has achieved a better level 
+of success than the dodger, so Susan is hit, automatically taking 
+maximum damage of 6+1D4 (1D6+1D4 damage bonus) because 
+the attack was an Extreme success.
+The ghoul is a monster with 3 attacks per round (all of its 
+attacks take place simultaneously on its DEX). On its second 
+attack it tries to bite Susan, who fights back. Susan achieves a 
+Hard success; the ghoul achieves a Regular success. Susan has 
+a better level of success than the ghoul, so she successfully fights 
+back—not only does she avoid injury, but she also inflicts 1D3 
+points of damage on the ghoul.
+Fighting Maneuvers
+If a player describes a goal in combat that is something 
+other than simply inflicting harm, it can be resolved with 
+a “Fighting Maneuver.” A successful maneuver allows the 
+character to achieve one thing, such as:
+•	 Disarm an opponent.
+•	 Knock an opponent to the floor.
+•	 Seize and hold an opponent, whereupon the opponent must 
+apply one penalty die to their actions until they can break 
+free with an opposed STR roll.
+A maneuver is treated the same way as a normal Fighting 
+attack, using the Fighting (Brawl) skill. The opponent may 
+dodge or fight back as usual. Compare the Build of the two 
+combatants. If the character initiating the maneuver has a 
+smaller Build than their opponent, they take a penalty die for 
+each point of difference (to a maximum of two penalty dice). 
+If an opponent exceeds the attacker’s Build by three or more 
+points, any fighting maneuvers are ineffective; the attacker 
+may be able to lay hands on their opponent, but lacks the 
+strength and size required to take advantage of their grip.
+Example: Susan attempts to push a ghoul out of a window (a 
+Fighting Maneuver). Susan’s Build is zero and the ghoul’s Build is 
+1, so Susan suffers one penalty die on her attack roll. Susan rolls 02 
+
+
+=== PDF PAGE 15 ===
+WELCOME TO CALL OF CTHULHU
+14
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+through stabilizing the character. If a character suffers points 
+of damage greater than or equal to their maximum hit points 
+in a single blow, they die instantly.
+•	 Characters without a major wound naturally heal 1 hit point 
+per day.
+•	 Characters with a major wound must make a healing roll 
+(rolling equal to or under their CON) at the end of each 
+week—if successful, they regain 1D3 hit points, or 2D3 
+points for an Extreme success. The major wound condition 
+is removed if either an Extreme success is rolled or current hit 
+points are healed to half their maximum value or greater. Thus, 
+it may take a number of weeks for a major wound to heal.
+Successful First Aid can heal 1 hit point, as well as rousing 
+a character from unconsciousness. If First Aid is used on 
+a dying character it, extends the character’s life so that the 
+Medicine skill can use used. The Medicine skill can heal 
+1D3 hit points, but takes at least one hour and appropriate 
+equipment and supplies. If Medicine is used on a dying 
+character, it allows a healing roll at the end of one week.
+Example: Brian starts with 12 hit points. On Monday he gets in 
+a barroom brawl, taking damage from three separate slugs to his 
+jaw of 4, 2, and 4 points. This is a total of 10 damage, reducing 
+his hit points to 2. He has not taken a major wound (as no single 
+attack delivered significant damage) and recovers at the rate of 
+1 hit point per day. On Thursday, Brian (now at 5 hit points) 
+clumsily falls out of a window; suffering 7 hit points of damage. 
+This is a major wound (7 damage is more than half of Brian’s 
+and 22; as she had a penalty die, she must take the higher result—a 
+Hard success (under half Susan’s Fighting skill). The ghoul is 
+fighting back, and it rolls a Regular success on its Fighting skill. 
+Susan has achieved a better level of success and so her maneuver is 
+successful—she shoves the ghoul through the window.
+Outnumbered
+A character outnumbered by the opposition is at a disadvantage. 
+Once a character has responded to an attack (either fought back 
+or dodged) in the present combat round, all subsequent melee 
+attacks on them (in the same round) are made with one bonus 
+die. This does not apply to attacks made using firearms.
+Firearms 
+You may shoot a firearm on your turn in the DEX order 
+to initiate an attack (usually, firearms cannot be used in 
+fighting back reactions). Make a percentile (1D100) roll and 
+compares the result with the Firearms skill.
+•	 Readied firearms act at DEX+50 for the purpose of 
+determining the DEX turn order.
+•	 If firing 2 or 3 shots from a handgun in one round, apply 
+one penalty die to each shot.
+•	 If at point-blank range (within one-fifth of DEX in feet), 
+the shooter gains one bonus die on the skill roll.
+The target of the shot cannot fight back (you can’t 
+dodge a bullet) but may instead “dive for cover” by rolling 
+against their Dodge skill. If the Dodge roll is successful, the 
+attacker’s roll(s) to hit are made with one penalty die (i.e. 
+make the Dodge roll before the Firearms roll). A character 
+that opts to dive for cover forfeits their next attack or action 
+(regardless of whether they were successful or not), or if they 
+have already used their attack this round, they forfeit their 
+attack in the following round.
+HIT POINTS, 
+WOUNDS, AND HEALING
+Points of damage are deducted from a character’s hit points. 
+Hit points cannot fall below zero, so do not record a negative 
+value. When a character’s hit points reach zero, they fall 
+unconscious and, in some situations, may die. 
+When a character takes damage of greater than or equal 
+to half their full hit points in a single blow, they have 
+received a “major wound”—they must make a CON roll or 
+fall unconscious. If a character with a major wound falls to 
+zero hit points they are close to death (dying). They must 
+make a successful CON roll at the end of the following 
+round and every round thereafter or die. Only successful 
+use of the First Aid skill can alleviate the dying condition, 
+WEAPON DAMAGE
+•	 Unarmed attacks (human): 1D3 + damage bonus
+•	 Small knife: 1D4 + damage bonus
+•	 Machete: 1D8 + damage bonus
+•	 Small club: 1D6 + damage bonus
+•	 Baseball bat: 1D8 + damage bonus
+•	 Handgun: 1D10
+•	 Shotgun: 4D6 (at close range*, otherwise 2D6; does not 
+impale)
+•	 Rifle: 2D6+4
+*Close range: within DEX in feet (i.e. if DEX is 60, close 
+range is 60 feet).
+
+
+=== PDF PAGE 16 ===
+WELCOME TO CALL OF CTHULHU
+15
+maximum 12 hit points). A friend administers First Aid and 
+rushes him to hospital. After seven days have passed, a successful 
+CON roll is made for Brian and he regains 2 hit points on a 
+1D3 die roll. At the end of the second week, Brian’s player rolls 
+an Extreme success on the CON roll and regains 4 hit points on 
+a 2D3 roll of the dice, and his current hit points now stand at 
+6. This erases his major wound marker (he has regained half his 
+maximum hit points), after which he heals at 1 hit point per day.
+OTHER FORMS OF DAMAGE
+Often the Keeper will be forced to judge the amount of 
+damage caused by some random event. Whatever the cause, 
+consider the likely injury and rate it against the left-hand 
+column on the Other Forms of Damage Table. Each injury 
+type is for one incident or one combat round (one round 
+of being punched by an attacker, one bullet, one round of 
+drowning, one round of being burned, etc.). The character 
+takes further damage on each successive round that they are 
+exposed to the source of the harm.
+OTHER FORMS OF DAMAGE
+Injury
+Damage
+Examples
+Minor: a person could survive numerous 
+occurrences of this level of damage.
+1D3
+Punch / kick / head-butt / mild acid / breathing smoky atmosphere / a 
+thrown fist-size rock / falling (per 10 feet) onto soft ground.
+Moderate: might cause a major wound; 
+it would take a few such attacks to kill.
+1D6
+Falling (per 10 feet) onto grass / club / strong acid / breathing water / 
+exposure to vacuum / small-caliber bullet / arrow / fire (burning torch).
+Severe: likely to cause a major wound. 
+One or two occurrences would render a 
+person unconscious or dead.
+1D10
+.38 calibre bullet / falling (per 10 feet) on to concrete / axe / fire 
+(flamethrower, running through a burning room) / being 6 to 10 yards 
+from an exploding hand grenade or stick of dynamite / mild poison.
+Deadly: the average person has a 50% 
+chance of dying.
+2D10
+Hit by a car at 30 mph / being 3 to 6 yards from an exploding hand 
+grenade or stick of dynamite / strong poison.
+Terminal: outright death is likely.
+4D10
+Hit by a speeding car / being within 3 yards of an exploding hand 
+grenade or stick of dynamite/lethal poison.
+Splat: outright death is almost certain.
+8D10
+Being involved in a high-speed head-on collision, being hit by a train.
+ABOUT THE READY-MADE INVESTIGATORS
+The four ready-made investigators are designed to be used 
+with The Haunting. Give these to your players and get them 
+each to pick whichever one they prefer. Each player can decide 
+the name and gender of their investigator, and write these 
+details in the top left-hand box on their character’s sheet. The 
+four characters are a team, brought together to solve a case, 
+although it’s ok if you have less than four players—every 
+player takes on the role of one of these characters. 
+•	 A weary private detective
+•	 An enthusiastic graduate student
+•	 An open-minded academic
+•	 An author with an interest in the occult
+
+
+=== PDF PAGE 17 ===
+16
+
+
+=== PDF PAGE 18 ===
+17
+This scenario is designed for new Keepers and players. Advice 
+for the Keeper is included within the text (Keeper’s Notes) on 
+how and when to use dice and rules, as well as guidance on how 
+to run the scenario. Once you have read through this scenario, 
+copy or print out the ready-made investigators and ask your 
+players to each choose one to play. 
+The boxed text within the scenario is meant to be read aloud 
+to the players—paraphrase these lines in your own words or 
+just read out what is written. 
+Player handouts are marked in the text and have been 
+collected at the end of the scenario to allow Keepers to copy 
+them for presentation to the players when directed.
+The year is 1920 and the location is Boston, Massachusetts, 
+although this scenario could be transported to a modern setting 
+if desired.
+THE KEEPER’S SECRET
+The body of Walter Corbitt is buried in the basement of the 
+Corbitt house. The mind of Walter Corbitt still lives, aware of 
+events within the house. He haunts the place. Corbitt knows 
+Mythos magic that preserves his identity and enables him to 
+animate his body after death. He sometimes vampirically preys 
+upon residents of the house, driving away or slaying those who 
+learn his secret. 
+To solve the mystery posed to them, the investigators must 
+learn about Corbitt. While they do this, Corbitt will be aware 
+of the investigators and will try to mislead them and scare them 
+away. Failing that, he will try to murder them.
+PREPARING FOR PLAY
+Give each of your players one of the four ready-made 
+investigators (pages 34–41). If you have more than four players, 
+just duplicate the sheets as necessary. Each player can decide 
+their character’s name and gender. When ready, tell the players 
+the premise of the scenario. 
+You are going to be hired to investigate an old house in 1920s 
+Boston—rumor has it that it may be haunted! 
+The players are a team of professional and amateur detectives 
+who have volunteered for the task. Encourage the players to 
+introduce their characters and write a few notes about their 
+backgrounds in the My Story box, and discuss how they know 
+each other. Keep it all reasonably brisk and avoid getting 
+bogged down with unnecessary details. 
+Note down each investigator’s name, appearance (APP), 
+Credit Rating score, and any notable aspects of their backstory 
+for your reference during play. 
+LOCATION 1: 
+INTRODUCTION
+KEEPER’S NOTE: This introduction takes place with 
+the investigators meeting up with the landlord. Perhaps in 
+his home or in a café. The location isn’t overly important, but 
+take a moment to set the scene. Then read the following aloud, 
+roleplaying the landlord’s discussion with the players. .
+THE
+HAUNTING
+17
+
+
+=== PDF PAGE 19 ===
+WELCOME TO CALL OF CTHULHU
+18
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+Handout 1
+A landlord, Mr. Knott, asks you to examine an old house 
+in central Boston, known as the Corbitt House. The former 
+tenants, the Macario family, were involved in a tragedy and 
+the owner wishes to understand the mysterious happenings at 
+the house and set matters straight. Mr. Knott has been unable 
+to rent the house out since the tragedy and hopes that you can 
+clear things up and restore its good name. He offers to pay for 
+your time and trouble, at a rate of $20 per day. The landlord 
+gives you the keys, the address, and $20 cash in advance. 
+Knowing your jobs, you will want to conduct some 
+research before you head to the house. You could check out old 
+newspaper articles at the offices of the Boston Globe, head 
+to the Central Library, or go to The Hall of Records. The 
+choice is yours. 
+Pass Handout 1 (page 29) to the players in case they 
+wish to refer to it later. Give them time to absorb the 
+information, discuss matters, and decide on a course of 
+action. Some players will be keen to head straight to the 
+house, but you should suggest that they would be better off 
+conducting some research first.
+Mr. Steven Knott recently inherited the property and 
+would like to make a profit on the place somehow, either by 
+renting it or selling it, but has been unable to do either due 
+to the terrible reputation of the place.
+Proceed to Location 2, 3 or 4, depending where the 
+players decide to go next.
+KEEPER’S NOTE: It is up to you to describe the locations 
+as you wish. Use your imagination and try to evoke the feel 
+of the places; the smell and noise of the printing presses at the 
+Boston Globe, for example. There is no need to go in to detail 
+when it comes to moving between locations—just cut to the 
+investigators arriving at the a new location.
+LOCATION 2:
+THE BOSTON GLOBE
+A DAILY NEWSPAPER OF GOOD REPUTE
+KEEPER’S NOTE: As the players make their initial 
+enquiries at the newspaper offices, roleplay the people they 
+could meet—the desk clerk, a journalist, or one of the editors. 
+Be sure to mention the “morgue” (the newspaper clippings 
+files) in the basement of the Boston Globe.
+The clippings files are not open to the general public and the 
+investigators will have to Persuade Arty Wilmot (a Boston 
+Globe editor) of their case for access. Arty enjoys the little 
+power he has and will try to deny the investigators access; 
+play up his pomposity and encourage the players to strive to 
+gain access to the morgue.
+Using Dice To...
+Gain Access To The Clippings Files
+KEEPER’S NOTE: Usually when encountering a 
+neutral non-player character you should roll versus the 
+investigator’s APP or Credit Rating; however in Arty’s case 
+the decision is preordained—he’s unhelpful.
+First, establish a goal with the players, along the lines of 
+“gain access to the clippings files.”
+Roleplay the interaction between Arty and the 
+investigators. Based on the way the roleplay goes, choose one 
+of the following options:
+•	 If the investigator is trying to win Arty round with 
+friendliness, use the Charm skill.
+•	 If the investigator is being aggressive towards Arty, use the 
+Intimidate skill.
+•	 If the investigator is using rational arguments to persuade 
+Arty, use the Persuade skill.
+•	 If the investigator is trying to con Arty, use the Fast Talk 
+skill.
+Ask the player doing most of the talking to roll percentage dice 
+(1D100) and compare the result with his or her investigator’s 
+Persuade, Fast Talk, Charm, or Intimidate skill, as appropriate. 
+If the roll is equal to or lower than the skill, the investigator has 
+succeeded in gaining access for the group.
+KEEPER’S NOTE: Notice here how the difficulty level 
+for the players versus Arty is Regular; Arty’s profession 
+does not require a professional level (50%+) in Persuade, 
+Charm, Intimidate or Psychology. If it did, the difficulty 
+level would be Hard.
+Pick up the roleplay again and incorporate the outcome of 
+the skill roll in to what Arty says:
+•	 If the investigators have won, have Arty back down in a 
+way that seems appropriate to you and allow them access 
+to the files. 
+•	 If the investigators failed, have Arty puff himself up and tell 
+the investigators to leave.
+
+
+=== PDF PAGE 20 ===
+WELCOME TO CALL OF CTHULHU
+19
+Pushing The Roll?
+If the players fail the roll, ask if they want to persist in their 
+efforts to gain access to the clippings files. If they choose 
+to do so, they may attempt a Pushed roll by continuing to 
+pressure Arty in some way (they may change their approach 
+and use an alternate method at this point). 
+Depending on their course of action you should decide on 
+what will happen if they fail (a consequence); for example:
+•	 If the investigators are using Intimidate, the consequence 
+might be that Arty calls their bluff, leading to an exchange 
+of blows.
+•	 If the investigators are using Charm or Persuade, the 
+consequence might be that Arty takes offence and screams 
+at them to leave.
+Whatever the consequence, ensure that it escalates beyond 
+Arty just asking them to leave—for example, have Arty call 
+on some strong-armed maintenance men for backup.
+The Clippings Files
+If the investigators gain access, describe the dusty shelves of 
+the clippings files morgue.
+You are taken down some steps by Ruth Blake, the records 
+keeper, into a dusty basement filled with filing cabinets and 
+stacked high with old newspapers and other assorted junk. 
+The whole room smells musty and the boiler system in the 
+corner gives out a lot of heat.
+The pertinent clippings are filed by street address. Since 
+the players have already had to succeed in dice rolls to get 
+in to the morgue it would be churlish stop them getting 
+the one clue that is here, so it should be made obvious. Pass 
+Handout 2 (page 30) to a player.
+Handout 2
+Unpublished Story, Boston Globe 1918: A feature story, 
+which was never published. It states that in 1880, a family 
+of French immigrants moved into the house but fled after 
+a series of violent accidents left the parents dead and three 
+children crippled. The house long stood vacant.
+In 1909, another family moved in and immediately fell 
+prey to illnesses. In 1914, the oldest brother went mad and 
+killed himself with a kitchen knife, and the heartbroken 
+family moved out. In 1918, a third family, the Macarios, 
+rented the house, but they left almost immediately under 
+mysterious circumstances.
+If an investigator flirts with or befriends Ruth Blake, the 
+record keeper in the clippings file (don’t bother with dice 
+here, the information isn’t crucial), she remarks that the 
+Globe files go back no further than a fire in 1878. If the 
+Corbitt House is mentioned earlier than that, there is no 
+record of it here.
+LOCATION 3:
+THE CENTRAL LIBRARY
+This worthy institution has several interesting items tucked 
+away. For each half-day spent in research at the library, ask 
+each player to make a Library Use roll (rolling equal to or 
+less than their skill on 1D100). If failed, there is no need to 
+push the roll; the players can simply keep trying again and 
+again, but each roll means they have spent half a day more 
+in research. If they spend more than a day researching, have 
+their employer, Mr. Knott, contact them to ask how things are 
+progressing, urging them to resolve their investigations—time 
+is money after all.
+For each success, give out one of the following Handouts 
+(in order).
+Handout 3
+In 1835, a prosperous merchant builds the house, but 
+immediately falls ill and sells it to a Mr. Walter Corbitt, esquire.
+Handout 4
+In 1852, Walter Corbitt is sued by neighbours, who petition 
+to force him to leave the area “in consequence of his surious [sic] 
+habits and unauspicious demeanor.”
+Handout 5
+Evidently Corbitt wins the lawsuit. His obituary in 1866 
+states that he still lived in the same place. It also states that 
+a second lawsuit was being waged to prevent Corbitt from 
+being buried in his basement, as provided by his will.
+Handout 6
+No outcome to the second lawsuit is recorded.
+
+
+=== PDF PAGE 21 ===
+WELCOME TO CALL OF CTHULHU
+20
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+LOCATION 4:
+HALL OF RECORDS
+Ask for a Library Use roll. If successful, pass Handout 7 
+to the players. Use the same guidelines as for the Central 
+Library.
+Handout 7
+Civil court records show that the executor of Walter Corbitt’s 
+will was Reverend Michael Thomas, pastor of the Chapel of 
+Contemplation and Church of Our Lord Granter of Secrets. 
+The register of churches (also available in the Hall of Records) 
+notes the closure of the Chapel of Contemplation in 1912.
+If the players think to look up the Chapel of Contemplation 
+in criminal court records, they find references to actions 
+taken in 1912; however, the actual records are not present. If 
+the investigators have been courteous to the clerk, he points 
+out that serious crimes would be handled in the county, 
+commonwealth, or federal courts. A successful Law skill 
+roll can indicate the same thing. The records of city officers 
+participating in arrests or seizures are filed at the Central 
+Police Station.
+LOCATION 5:
+HIGHER COURTS; 
+CENTRAL POLICE STATION
+Gaining access to these records will prove difficult, requiring 
+at least one player to make a successful skill roll. Players can 
+use one of the following:
+•	 Law skill: To establish that an investigator has an existing 
+contact within the courts who will grant access. If failed, 
+the player can ask to Push the Law skill roll to establish a 
+contact. You should make a concealed roll on behalf of the 
+player. Do not inform the players of the outcome of the 
+roll. Regardless of the dice roll, the investigator knows Kim 
+Debrun, a clerk in the Court offices. If the roll is successful, 
+Kim is warm and friendly and will allow the investigators 
+access to the file (Handout 8). If the roll is a failure, Kim is 
+unscrupulous and will demand a bribe before reneging on 
+the deal and claiming not to know the investigators.
+•	 Credit Rating: If the player makes a successful roll and has 
+a Credit Rating score of 75 or more, they may impress a 
+clerk sufficiently to gain access.
+•	 Persuade skill: The player should present a good case for 
+why access should be granted.
+•	 Charm skill: A flutter of eyelids might gain access for a 
+charming investigator.
+•	 Fast Talk skill: Perhaps this involves flashing a fake I.D. 
+This is a risky approach given the location.
+If the roll is successful, pass Handout 8 to the player.
+If the players fail their roll, ask if they wish to continue 
+their efforts. They need to justify a Pushed roll. If using 
+Credit Rating, Persuade, or Charm, they risk overstepping 
+the mark, leading to a consequence such as causing offence 
+and earning the antipathy of the police (perhaps receiving a 
+shakedown or threats). 
+Handout 8
+The file concerns a secret raid on the Chapel of 
+Contemplation. The police raid was occasioned by affidavits 
+swearing that members of the church were responsible for 
+the disappearances of neighborhood children. During the 
+raid, three policemen and seventeen cult members were 
+killed by gunplay or fire. Autopsy reports are singularly 
+lacking detail and uninformative, as though the coroner had 
+not actually performed examinations.
+Though 54 members of the church were arrested, all but 
+eight were released. The records hint of illegal intervention 
+in the proceedings by an important local official offering 
+stories of the battle—the biggest criminal action in the city’s 
+history—that never appeared in print.
+Pastor Michael Thomas was arrested and sentenced to 40 
+years in prison on five counts of second-degree murder. He 
+escaped from prison in 1917 and fled the state.
+LOCATION 6:
+THE NEIGHBORHOOD
+Most of the people who lived in the area before the Great 
+War have moved away or died. New offices and businesses 
+have replaced the nineteenth-century homes, and the house 
+in question (the “Corbitt House”) with its overgrown front 
+yard is now the only private residence on the block. If the 
+investigators ask around they find a Mr. Dooley, a vendor of 
+cigars and newspapers, who knows the area.
+Using Dice To...
+Gauge Mr. Dooley’s Reaction to the Investigators
+Establish Mr. Dooley’s reaction to investigators who 
+speak to him by rolling 1D100 and comparing it with the 
+investigator’s APP or Credit Rating. A dice roll that is equal 
+to or lower than one of these yields a positive reaction from 
+Mr. Dooley. Otherwise Dooley is less than forthcoming to 
+
+
+=== PDF PAGE 22 ===
+WELCOME TO CALL OF CTHULHU
+21
+The Keeper can answer more questions, but Gabriela is 
+unable to give specific information. 
+The Keeper should end the interview quickly, since the 
+investigator’s questions will greatly upset her.
+The two young Macario boys are being cared for by relatives 
+in Baltimore. The investigators can visit, but they know 
+nothing except that they miss their parents and that in their 
+former home they often had nightmares of a strange man with 
+burning eyes.
+LOCATION 8:
+THE CHAPEL OF 
+CONTEMPLATION
+Read the following to the players:
+What is left of the old church stands at the end of a crooked, 
+dingy street. The ruins are so weathered and overgrown 
+with greenery that the grey stone rubble seems more like 
+natural stone than former walls and foundation. You pass a 
+slumping wall bearing white-painted symbols, apparently 
+freshly swabbed—three Y’s arranged in a triangle so that 
+the top elements of each Y touch the other two Y’s. In the 
+center, so created, is painted a staring eye.
+Handout 9 is an image of this symbol. Show it to the players.
+While the investigators are near the signs, subtly describe 
+to the players how they begin to feel tingles in their 
+foreheads, like headaches, but not quite. When they leave, 
+the irritation stops.
+Encourage the players to explore the ruins; try to describe 
+the scene and ask what they are doing. Prowling the chapel, 
+they find mostly blocks of granite, old half-burned timbers, 
+and ancient rubbish. At some point they should become 
+aware that the earth they stand on is covering weakened 
+floorboards. Call for Luck rolls: those that fail their Luck 
+that particular investigator. A different investigator may try 
+a Charm, Fast Talk, Persuade, or Intimidate roll to get 
+Dooley to talk.
+Dooley Talks
+If the players manage to get Dooley talking and ask about 
+the Chapel of Contemplation, he is able to point out where 
+it stood a few blocks distant. If asked about the house, he will 
+refer to it as “the Corbitt House.” 
+Encourage the players to roleplay and engage Mr. Dooley 
+in conversation. Draw upon the following points and 
+incorporate them in to the conversation:
+•	 The Macario family moved into the house a couple of years ago. 
+•	 A year after moving in, the father had a serious accident and 
+shortly thereafter went violently mad. 
+•	 They say he babbled about a haunting form with burning 
+eyes. 
+•	 About a month back, the old lady, Mrs. Macario, also went 
+mad. 
+•	 Mrs. Macario is with her husband over in Roxbury 
+Sanitarium, a few miles from Boston. 
+•	 The kids were taken in by relatives down in Baltimore.
+KEEPER’S NOTE: Portray Dooley as you wish and 
+improvise his dialogue freely—not everything spoken 
+by a non-player character has to be true and he may well 
+exaggerate. He is a salesman and used to engaging in banter 
+and gossip.
+LOCATION 7:
+ROXBURY SANITARIUM
+If the players decide to visit the sanitarium, they will find 
+Vittorio Macario is quite mad. He is clasping a bible to his 
+chest. At some point he may open the bible at a random 
+place (you decide where) and point to a passage (apparently 
+quoting), “By his own weapon is the devil worsted!” While 
+not a genuine quotation from the bible, this is a useful clue. 
+If remembered later on in the scenario, an attentive player 
+might realize that Corbitt may be killed with his own dagger. 
+Don’t overplay it—leave it up to the players to take note of 
+the clue or not. Nothing more can be gleaned from Vittorio.
+Gabriela Macario is conscious and approachable. She can 
+explain that an evil presence lives in the house. At night she 
+would sometimes wake to find “it” leaning over her. When it 
+was angry, the thing might cause dishes or other objects to 
+fly around the room. Mostly, it hated her husband, Vittorio, 
+and concentrated its anger on him. 
+
+
+=== PDF PAGE 23 ===
+WELCOME TO CALL OF CTHULHU
+22
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+rolls must attempt a Jump roll to leap to safety or find 
+themselves falling as the floor gives way. The fall is ten feet 
+into the basement.
+•	 If the Jump is failed, ask the players if there’s anything they 
+can do to justify Pushing the Jump roll—perhaps they make 
+a last minute grab for the edge.
+Each falling investigator loses 1D6 hit points. Increase 
+the consequence if a player fails a Pushed roll, though 
+perhaps rather than simply increasing the damage have that 
+investigator lose or break a personal possession.
+KEEPER’S NOTE: This fall may be the first incident of 
+physical damage in the game. Tell the players to subtract the 
+damage from their current hit points. Refer to Hit Points, 
+Wounds, and Healing (page 13) as to whether a Major 
+wound has occurred and for rules on treatment, recovery, 
+and healing.
+If an investigator falls, read the following aloud: 
+You’ve fallen in to a part of the basement that was sealed off 
+from the rest, originally reached by separate stairs now buried 
+under tons of rubble. Within this room, next to a cabinet, are 
+two skeletons dressed in tattered silk robes; perhaps they hid 
+from the police and then perished in the fire.
+If the players search the cabinet it is found to contain 
+moldering church records. If they don’t think to look under 
+the cabinet, ask for a Spot Hidden roll—only point out the 
+journal and tome if player succeeds in the skill roll. Allow 
+the players to Push the Spot Hidden roll if they volunteer to 
+conduct a thorough, more time-consuming search. If 
+they fail the pushed Spot Hidden roll, they might step 
+on a nail or ruin their clothing.
+With a successful Spot Hidden roll allow a player 
+to find a journal (of cult activities) and a tome. Read 
+the following aloud: 
+The musty old journal falls to pieces as you turn the 
+pages, but the name Walter Corbitt catches your eye. 
+An entry records that Walter Corbitt was buried in 
+the basement of his house, “In accordance with his 
+wishes and with the wishes of that one who waits 
+in the dark”.
+Alongside the journal is an enormous volume, 
+handwritten in Latin, but so rotten and worm-eaten 
+that whole sections no longer can be understood.”
+The tome is a copy of the Liber Ivonis. A cursory look at the 
+book will show that it is in Latin and deals with matters of an 
+occult nature. An initial reading of this book (requiring either 
+a Read Latin skill of 50% or more, or a successful Read Latin 
+roll) will take a minimum of three hours. If an investigator 
+takes the time to do this then have that investigator gain 2% 
+Cthulhu Mythos knowledge (and reduce Maximum Sanity 
+by the same amount, from 99 to 97).
+LOCATION 9:
+THE OLD CORBITT PLACE
+Read the following aloud to the players:
+The brick building is overshadowed by taller, newer office 
+buildings on either side. The house fronts the street. In the 
+rear are overgrown plantings and a half-collapsed arbor. 
+Access to the rear exists on either side of the residence.
+Studying the house, the observer is impressed by the way 
+the house seems to withdraw into the shadows cast by the 
+flanking buildings, and how the blank curtained windows 
+hide all understanding of what lies within.
+The front door is secured with a single lock. Four additional 
+bolts seem to have been added within the last year or two. 
+If the investigators think to test the ground floor windows, 
+they find them all nailed shut from the inside.
+Study the plan provided on the next page. Sketch out each 
+floor on a sheet of paper as the investigators explore it, or use 
+the “investigator” version of the plan provided on page @@.
+
+
+=== PDF PAGE 24 ===
+WELCOME TO CALL OF CTHULHU
+23
+Corbitt House Map (Keeper Version)
+
+
+=== PDF PAGE 25 ===
+WELCOME TO CALL OF CTHULHU
+24
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+ROOM 4, The Living Room
+This room contains conventional furnishings: a radio, couch, 
+stuffed chairs, and shelves laden with gewgaws. You cannot 
+help but notice the unusual quantities of crosses, images of 
+the Virgin and other Catholic artifacts.
+KEEPER’S NOTE: Try to build a creepy atmosphere 
+as the players explore the house. Remember Corbitt haunts 
+the place and at any time a noise might be heard upstairs 
+(Bedroom 3).
+ROOM 5, The Dining Room
+This is the dining room, complete with a long mahogany 
+table, a built-in sideboard, and seven chairs. Three places are 
+set and unused. Scraps of rice soup rot in a tureen.
+ROOM 6, Kitchen
+A conventional kitchen, with icebox, wood-fed stove and 
+oven, plus a meager larder. Some of the foodstuffs may be 
+edible—there is canned soup and meat, rice kernels, several 
+pastas, and a few bottles of homemade wine. The produce 
+which has not spoiled has been eaten by rats, judging by the 
+spoor left behind.
+UPPER FLOOR
+ROOM 1, Main Bedroom
+An ordinary bedroom, with a double bed, bookshelf and 
+window view. Apparently the room of Vittorio and 
+Gabriela. More crosses and many candles are here, and a 
+rosary and breviary rest on a table beside the bed.
+ROOM 2, Children’s Bedroom
+This room contains two small beds, toys, and dressers. 
+Pictures of aircraft and cowboys mark this as the children’s 
+bedroom.
+GROUND FLOOR 
+INTERIOR
+ROOM 1, A Storage Room
+The room is filled with boxes and junk, such as rusted water 
+tanks and old bicycles. At the right end of the room is a 
+cupboard, boarded shut.
+If the cupboard is wrenched open, three bound books are 
+found within—the diaries of a certain W. Corbitt, a former 
+inhabitant of the house, as the address on the flyleaf of 
+volume one testifies.
+The Corbitt Diaries are in English, though sometimes 
+strangely phrased. The three volumes take a total of two days 
+to read, adding +4 to Cthulhu Mythos skill and losing 1D4 
+Sanity points.
+The diaries describe Corbitt’s various occult experiments, 
+including the summoning of some unearthly spirit and other 
+magic, and clearly describe a spell entitled “Call Forth the 
+Opener of Ways” (an alternative title for the spell Summon 
+/ Bind Dimensional Shambler). No other spells exist in the 
+diaries. The spell takes 2D6 weeks to learn after the diaries 
+have been read.
+KEEPER’S NOTE: This spell is not intended for use in 
+this scenario and is included as an added feature. It is unlikely 
+that this investigation will continue long enough for this spell 
+to be of use—not that summoning a dimensional shambler is 
+likely to be beneficial in any case! Details of the spell can be 
+found in the full Call of Cthulhu: Keeper Rulebook.
+ROOM 2, A Second Storage Room
+This room contains old furniture that might be broken up to 
+burn in a wood stove.
+ROOM 3, The Mud Room
+Here hang overcoats, galoshes, hats, and umbrellas. Several 
+bags of coal for the living room’s freestanding stove are here. 
+You notice that the side door is secured with three bolts and 
+two locks.
+
+
+=== PDF PAGE 26 ===
+WELCOME TO CALL OF CTHULHU
+25
+KEEPER’S NOTE: It is important to remain impartial 
+as Keeper, so when inflicting a dangerous event on the 
+investigators it is best to pick one of them at random. To do 
+this, choose the investigator with the lowest Luck score or 
+simply roll randomly. When selecting a player to be attacked 
+by the bed, be clear on who is standing next to the window, 
+and select among them at random.
+If the investigator is struck by the bed, he or she is thrown 
+through the window. The broken glass and fall costs the 
+victim 1D6 + 2 hit points.  
+Anyone who witnesses the bed move of its own accord 
+should make a Sanity check (SAN 1/1D4). Those who pass 
+should lose one Sanity point, and those who fail should roll 
+1D4 to determine how many Sanity points they lose.
+KEEPER’S NOTE: The bed attack has the potential to 
+deliver a major wound to an investigator. In the unlikely 
+event of investigator death, have Mr. Knott (the landlord) 
+brought in for use by that player. 
+ROOM 4, Bathroom
+A bathroom containing a sink, bathtub, and a water closet with 
+an overhead tank. Towels and other possessions are still here, 
+typical to a family of four. A brackish pool of water has collected 
+in the bathtub, fed by a dripping faucet which cannot quite be 
+closed off.
+ROOM 3, Spare Bedroom
+This room contains a bed frame, bare bedsprings, and a 
+dresser. Though unused, this room looks like the other two 
+bedrooms.
+This was once the room of old Corbitt himself. He stayed 
+here so long that his psychic influence lingers on and he is able 
+to will certain deeds to happen in this room. Whenever he 
+does, a horrible smell manifests—a sure sign of the Mythos!
+KEEPER’S NOTE: Though Corbitt lays low at first, if 
+the investigators seem determined to learn the secrets of the 
+house then Corbitt tries to convince them that this room is 
+the centre of the psychic disturbance. To this end, he makes 
+pools of blood appear and tries to frighten the investigators 
+off with thumping sounds on the doors and walls. If an 
+investigator is not convinced by Corbitt’s haunting routine, 
+Corbitt tries to lure him or her into this room to be killed (see 
+Bed Attack), attracting the investigator to the window by 
+making it rattle. 
+Pick any of the following events and have them happen as 
+and when you wish:
+•	 Corbitt can cause loud thumping noises to emanate from 
+this room. These noises can be heard from anywhere in 
+the house.
+•	 Corbitt can form a pool of blood on the floor or to drip 
+down from the ceiling or walls.
+•	 Corbitt can make a rattling, scratching sound on the 
+windowpane or door.
+•	 Corbitt can impel the bed at good 
+speed, fast enough to strike a strong 
+blow against anything in the room 
+(see below).
+Bed Attack
+Corbitt will lure the investigators to 
+inspect the window in the spare bedroom, 
+then make the bed fly across the room 
+at high speed toward an unfortunate 
+investigator. Ask the player of the 
+investigator inspecting the window to 
+make a Spot Hidden roll: if successful 
+the player may attempt a Dodge roll to 
+avoid being hit by the bed. 
+
+
+=== PDF PAGE 27 ===
+WELCOME TO CALL OF CTHULHU
+26
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+With a successful Spot Hidden roll, the investigator finds 
+Corbitt’s knife (see The Floating Knife) and may pick it up. 
+Once picked up, the knife will try to wrest itself free from the 
+investigator’s grasp and attack the investigator (see Having 
+Hold of the Knife).
+If the player fails the Pushed Spot Hidden roll, the 
+unaware investigator catches a hand on the possessed knife 
+and it slashes him or her for 1D4+2 hit points of damage. 
+KEEPER’S NOTE: Notice how you can inflict automatic 
+damage as the result of a failed Pushed roll. There’s no need 
+for an attack roll in this instance—the harm was the 
+consequence of failing a Pushed roll.
+The walls are lined with wooden boards, a cursory inspection 
+of which will reveal hollow areas (rooms 2 and 3).
+The Floating Knife
+An old knife with an ornate hilt, whose blade is coated with 
+oddly thick rust. This is Corbitt’s magic dagger and the rust 
+is the dried blood of victims. If the players find it, Corbitt 
+will use it to attack. If they do not find it, he will attack 
+them with it if they begin tearing down the wooden wall that 
+conceals his body.
+Attacking With the Knife
+The knife floats into the air and stabs at an investigator. This 
+costs Corbitt 1 Magic point per combat round. The knife can 
+make one attack per round.
+•	 Roll 1D100 and compare the result with Corbitt’s POW. 
+•	 Ask the player to roll 1D100 and compare the result with the 
+investigator’s Dodge roll. 
+•	 Compare Levels of Success and decide whether the 
+investigator is hit:
+•	 If Corbitt rolls a Fail (91 or over), the investigator has 
+avoided being hit with the knife.
+•	 If Corbitt achieves a Regular success (46 to 90) and the 
+investigator achieves a Fail, inflict 1D4+2 damage.
+•	 If Corbitt achieves a Hard success (19 to 45) and the 
+investigator achieves a Fail or Regular success, inflict 1D4+2 
+damage.
+•	 If Corbitt achieves an Extreme success (18 or below) and 
+the investigator achieves a Fail, Regular, or Hard success, 
+the attack has impaled, driving deep into the investigator’s 
+vitals and inflicting 6+1D4+2 damage.
+•	 If the investigator picks up a garbage can lid for protection, 
+grant a bonus die on the Dodge roll.
+THE BASEMENT
+ROOM 1: Storage
+The door to the basement has a lock and three bolts, able to 
+be opened from the upstairs side only. Below is the main 
+basement storage room. The stairs are in poor repair and the 
+electric light bulb does not work. The walls of the basement 
+are lined with closely fitted boards.
+Corbitt has turned off the electricity to the basement at the 
+fuse box upstairs in the kitchen—if the investigators turn it 
+back on, Corbitt can switch it off again when it best suits him. 
+The stairs are perilous; all the more so because Corbitt 
+can make them move. One at a time, ask each investigator 
+descending the stairs to make a DEX or Climb roll. Treat 
+this as a Combined roll: the players should roll dice once and 
+compare the result with their DEX and Climb skills. Rolling 
+equal to or below one of these values counts as a success.
+Anyone failing the DEX / Climb roll should be told 
+that the stairs are too dangerous and that to go further risks 
+injury. They now have a choice: remain upstairs or Push the 
+roll and risk falling. Failing the Pushed roll will result in the 
+loss of 1D6 hit points as the investigator slips and crashes to 
+the basement floor.
+KEEPER’S NOTE: In a situation such as this, one 
+investigator (who successfully negotiates the stairs) might 
+volunteer to help another. You need to be a little creative 
+with the rules in such a situation. As one investigator has 
+already been successful, grant the second player a bonus die, 
+but this time if the roll is failed then both fall and take 
+damage. In this way the player who is pushing the roll has 
+an increased chance of success, but both players are sharing 
+the risk. This creates a moment of tension and drama, exactly 
+as dice rolls should do.
+Tell the players that in this smallish room are scattered 
+tools, pipe, a trash can lid, lumber, nails, screws, and so 
+forth. If an investigator searches through the mess, ask the 
+player to make a Spot Hidden roll. Treat this as an Obscure 
+Clue (don’t give the clue out if the player fails the roll). The 
+player might Push the roll by taking time to conduct a more 
+thorough search. You can foreshadow the consequence of 
+failure by pointing out the many sharp things among the 
+mess and the risk of injury. 
+
+
+=== PDF PAGE 28 ===
+WELCOME TO CALL OF CTHULHU
+27
+Having Hold of the Knife
+If an investigator has hold of the knife, Corbitt may attempt 
+to wrench it away on future rounds: each combat round 
+costs Corbitt another Magic point. To keep hold of the 
+knife the player must succeed in an opposed roll, using the 
+investigator’s STR versus Corbitt’s POW.
+Room 2:
+An Empty Storage Bin
+A storage bin, once intended for coal. The door to the outside 
+coal chute has been nailed firmly shut.
+ROOM 3: Corbitt’s Hidden Lair
+If the boards in the cellar are broken or removed, a crawl 
+space is revealed between two wooden walls. Foul odors 
+emanate from the rats that nest here.
+A pack of rats live in the wall. If the investigators do not 
+give the rats room to escape, they attack whoever tries to 
+explore this space. The rats will use their Overwhelm attack 
+against one investigator. Once one rat has been killed, those 
+remaining will flee.
+Rat Pack
+Individual rats are not worthy opponents; however, an 
+infestation of rats can be daunting. Assume ten rats per pack. 
+A successful attack by an investigator kills one or two rats 
+and usually chases away the rest of that pack. 
+Rat packs exist only for the purposes of gaming.
+•	 If the investigator is unaware of the attack, ask the player to 
+make a Spot Hidden roll to notice the dagger floating into the 
+air. If the investigator fails to notice the dagger, award a bonus 
+die to the attack roll and do not allow a Dodge roll. The attack 
+inflicts 1D4+2 damage, or 6+1D4+2 if an Extreme success is 
+rolled, and only misses if a fumble (100) is rolled.
+•	 Seeing the knife attack in this manner requires a Sanity check 
+(SAN 1/1D4). If successful, the investigator loses 1 Sanity point. 
+If unsuccessful, lose 1D4 Sanity points.
+KEEPER’S NOTE: When the knife floats in to the air you 
+should begin a combat round. Corbitt’s DEX is low, so the 
+investigators will probably get to act first. If they decide to flee, 
+the knife will attack anyone left in the basement or the last person 
+to get to the stairs (it moves quite fast). Whether it pursues people 
+through the house is up to you.
+Using a Fighting Maneuver to Grab the Knife
+The investigators can try to grab the knife out of the air using 
+the Fighting Maneuver rules (see Fighting Maneuvers, page 
+13). The player’s goal is to grab the knife. The players use their 
+investigator’s Fighting (Brawl) skill in an opposed roll against 
+Corbitt’s POW. 
+If the player scores a higher level of success than Corbitt then 
+the knife has been grabbed. In the case of a draw, the side whose 
+turn it is wins the roll (if it was Corbitt’s action, the knife would 
+hit on a draw; if it was the investigator’s action they would grab 
+the knife on a draw). Usually a player would compare his or 
+her investigator’s Build with that of the opponent to resolve 
+a fighting maneuver, but since no one is actually holding the 
+dagger this can be ignored. If the players are creative and use a 
+thick coat to help them in catching the knife, you 
+may award a bonus die.
+KEEPER’S NOTE: All characters present in 
+the basement get to initiate one action each combat 
+round, and this includes Corbitt, using his floating 
+knife. The one Magic point Corbitt spends to 
+activate the knife covers all actions made with it 
+during that round.
+
+
+=== PDF PAGE 29 ===
+WELCOME TO CALL OF CTHULHU
+28
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+OPTION: Corbitt Casts the Dominate Spell
+At any time, whether he has moved or not, Corbitt may cast 
+his Dominate spell (see Corbitt’s Spells). He does not need 
+to move at all to cast the spell. The casting time for the spell 
+is instantaneous. Add 50 to Corbitt’s DEX for determining 
+his turn in the round if he is casting this spell. Casting the 
+spell in combat requires him to use his action for the round. 
+He may choose to cast it as the investigators are breaking 
+through the wall.
+ROOM 4:
+CORBITT’S HIDING PLACE 
+Lying motionless and seemingly dead on a pallet in the 
+centre of the room is a drawn, wooden-looking, wizened 
+figure of some six-feet. Skinny and naked, with ghastly 
+wide-flaring, saucer-like eyes and a nose like a knife blade. 
+Some sort of chain rests around his neck. He has lost all hair 
+and his shrunken gums make his teeth look very long. From 
+him comes a sharp, sweet, churning scent, like rotten corn. 
+The floor is earthen and there is a table in the southwest 
+corner with some curled papers on it.
+The papers on the table crumble to dust if touched. What the 
+investigators can see upon the papers looks like a horoscope. 
+If they retrieve or photograph this material, the Keeper 
+should disclose its true nature in some later adventure—
+whatever this may be is up to the Keeper to determine and 
+is placed here as a scenario seed for Keepers to 
+use in future adventures with the same group of 
+investigators. 
+Corbitt Attacks
+By spending 2 Magic points, Corbitt can move 
+his body for five combat rounds. Given the cost, 
+he is reluctant to move at all unless threatened.
+SANITY ROLLS: When he rises from his pallet, 
+ask all players who have an investigator present to 
+make a Sanity roll (1/1D8). Those who fail the 
+roll make one involuntary action of the Keeper’s 
+choice, perhaps dropping their gun or screaming. 
+If an investigator loses 5 or more Sanity points, 
+the player should make an INT roll. If the INT 
+roll is passed, the investigator has understood the 
+full implications of the situation and is driven 
+temporarily insane (see Temporary Insanity as 
+a Result of Meeting Corbitt). If the INT roll is 
+failed, the character is shaken but remains sane.
+RAT PACK
+STR 35	
+CON 55	
+SIZ 35	
+POW 50	
+DEX 70	
+HP: 9 
+Average Damage Bonus: -1
+Average Build: -1
+Move: 9
+Combat
+Attacks per round: 1.
+Fighting attacks: Rats attack with teeth and claws. 
+Overwhelm (fighting maneuver): As a pack they may assault 
+and overwhelm an individual using the Fighting maneuver 
+rules, because of their numbers they gain one bonus die on 
+the attack. Such an attack would involve swarming over the 
+target, biting, and scratching as they do so.
+Fighting 	
+40% (Hard 20/Extreme 8), damage 1D3 
+Overwhelm (fighting maneuver) damage 2D6
+Dodge	
+ 42% (Hard 21/Extreme 8)
+Carved into the inner wall of the crawl space are the words 
+“Chapel of Contemplation” in irregular, scratchy letters (treat 
+this as an Obvious clue, do not ask for a Spot Hidden roll—
+not finding it will not add anything to the game). 
+If the investigators break through this wall, they find 
+themselves in Room 4.
+
+
+=== PDF PAGE 30 ===
+WELCOME TO CALL OF CTHULHU
+29
+USING DICE TO RESOLVE COMBAT: A combat 
+round will begin when Corbitt first moves. Draw up a list 
+of the investigators and Corbitt in DEX order, highest first.
+•	 If a character has a gun drawn already, add 50 to the 
+investigator’s DEX on the list. If an investigator draws a 
+gun, it will be ready to use on the character’s regular DEX 
+this round.
+•	 Start with the first name on the list. Given Corbitt’s DEX 
+of 35, it is safe to assume that an investigator will go first, 
+unless Corbitt is casting his Dominate spell, in which case 
+he acts on his DEX + 50 (during rounds in which he does 
+not cast the spell you should continue to use his DEX 35). 
+Ask what the player is doing. 
+•	 If an investigator is attacking Corbitt using the Fighting 
+skill, Corbitt fights back using his Fighting skill. Corbitt 
+will also fight back against subsequent attacks in the round 
+using his Fighting skill.
+•	 If an investigator is attacking Corbitt using the Firearms 
+skill, simply roll to hit. Corbitt will not Dive for Cover. If 
+close enough, shots are made at point-blank range, granting 
+a bonus die to the attack.
+•	 The second investigator to attack Corbitt should get a bonus 
+die for outnumbering the target (see Outnumbered, page 13).
+Temporary Insanity 
+as a Result of Meeting Corbitt
+Bout of Madness: If an investigator goes temporarily insane 
+roll 1D10 and refer to the Bouts of Madness table. If the 
+investigator is in the presence of other investigators, play 
+out the result round by round. If the investigator is alone 
+you may use the result to tell how the investigator is found 
+sometime later in a bad way, perhaps locked in a cupboard or 
+drunk in a gutter.
+Backstory: Take the investigator sheet and add a suitable 
+entry based upon the nature of the investigator’s bout of 
+madness.
+Delusions: The investigator will remain insane for 1D10 
+hours or until leaving the Corbitt House and having a good 
+night’s rest. Until then, the investigator will be prone to 
+delusions; however, given that the only event that has the 
+potential to cause insanity in this scenario is likely to occur in 
+the final scene, the scope for using delusions is limited. Here 
+are some suggestions:
+•	 If the deluded investigator flees the cellar, have him or her 
+find a photo in the house that appears to be evidence that 
+Corbitt is his or her ancestor; it shows Corbitt and the 
+investigator’s grandfather together and names them as 
+BOUTS OF MADNESS
+(CHOOSE OR ROLL 1D10)
+1.	AMNESIA: The investigator has no memory of events that 
+have taken place since they were last in a place of safety. It seems 
+to them that one moment they were eating breakfast and the 
+next they are facing a monster. This lasts for 1D10 rounds.
+2.	PSYCHOSOMATIC DISABILITY: The investigator 
+suffers psychosomatic blindness, deafness, or loss of the use 
+of a limb or limbs for 1D10 rounds.
+3.	VIOLENCE: A red mist of rage descends on the afflicted 
+investigator and he or she explodes in a spree of uncontrolled 
+violence and destruction directed at their surroundings, allies 
+and foes alike, for 1D10 rounds. 
+4.	PARANOIA: The investigator suffers severe paranoia for 
+1D10 rounds. Everyone is out to get them! No one can 
+be trusted! They are being spied on; someone has betrayed 
+them; what they are seeing is a trick.
+5.	SIGNIFICANT PERSON: Review the investigator’s 
+background entry for Significant People. The investigator 
+mistakes another person in the scene for their Significant 
+Person. Consider the nature of the relationship; the 
+investigator acts upon it. This lasts 1D10 rounds. 
+6.	FAINT: The investigator faints, recovering after 1D10 
+rounds.
+7.	FLEE IN PANIC: The investigator is compelled to get as 
+far away as possible by whatever means are available, even 
+if it means taking the only vehicle and leaving everyone else 
+behind. They travel for 1D10 rounds.
+8.	PHYSICAL HYSTERICS OR EMOTIONAL 
+OUTBURST: The investigator is incapacitated laughing, 
+crying, screaming, etc. for 1D10 rounds.
+9.	PHOBIA: Investigator gains a new phobia, such as 
+Claustrophobia (fear of confined spaces), Demonophobia 
+(fear of spirits or demons), or Katsaridaphobia (fear 
+of cockroaches). Even if the source of the phobia is not 
+present, the investigator imagines it is there for the next 
+1D10 rounds.
+10. MANIA: The investigator gains a new mania, such 
+as Ablutomania (compulsion for washing oneself), 
+Pseudomania (irrational compulsion for lying), or 
+Helminthomania (an excessive liking for worms). The 
+investigator seeks to indulge in this new mania for the 
+next 1D10 rounds.
+
+
+=== PDF PAGE 31 ===
+WELCOME TO CALL OF CTHULHU
+30
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+Extension
+Keepers will have noticed the freshly painted sign on the rubble 
+at the Chapel, as well as the evidence of the cover-up following 
+the raid in 1912. Connections to what may be a great conspiracy 
+are available and might be returned to at some later time.
+Also, consider the strange, crumbling paper that looked 
+like a horoscope—is this connected to the conspiracy or 
+something altogether different? 
+Both of these clues could lead the way into further 
+adventures of your own devising for this group of 
+investigators.
+Walter Corbitt, Undead Fiend 
+STR 90	
+CON 115	 SIZ 55	
+INT 80
+POW 90	
+DEX 35	
+APP 05	
+EDU 80
+SAN: 0 (ignore Sanity costs for spells) 
+HP: 16 
+Damage bonus: +1D4
+Build: 1
+Move: 8
+Magic points: 18 (if spent, recover 1 per hour)
+Roleplaying hooks:
+•	 Corbitt is full of malice and will seek to divide investigators 
+and turn them against one another.
+•	 Corbitt seeks excitement and perverse amusement at the 
+investigators’ expense.
+•	 He will seek to acquire any sources of Mythos knowledge 
+that are bought in to the house (such as the Liber Ivonis).
+KEEPER’S NOTE: Keep careful track of Corbitt’s Magic 
+points. Be sure to remember that he recovers at the rate of 1 
+point per hour. Corbitt casts Flesh Ward as soon as anyone 
+enters the house. If intruders head straight to his body, they 
+may encounter Corbitt before he has regained those two 
+points.
+Combat
+Attacks per round: 1 
+Fighting attacks: When animated, Corbitt is able to make 
+all regular attacks (kick, punch, etc.). Being wounded by 
+Corbitt’s clawed fingernails risks serious disease; if he lands 
+a successful attack upon an investigator, a Luck roll should 
+be made. If it is failed, the investigator has been raked by 
+Corbitt’s claws and a day later the victim becomes delirious 
+and must make a CON roll: 
+•	 Failure: Delirium lasts 1D10 days; lose 1D10 CON.
+•	 Success: Delirium lasts 1D6 days; no further CON loss. 
+•	 Repeat the procedure until the investigator recovers or dies. 
+CON lost does not regenerate.
+brothers (though in actuality is nothing more than a scrap 
+of old newspaper).
+•	 If the deluded investigator stays in the cellar, pass the player 
+a note to the effect that another investigator’s face and voice 
+have somehow changed and that he or she is mumbling 
+something in Latin (this is of course only a delusion).
+Reality Checks: If the player questions a delusion, suggest 
+to the player that a Reality Check roll might be made if the 
+investigator wishes to discern the truth. If the player wishes 
+to make a reality check, ask for a Sanity roll:
+•	 If successful, drop the delusions and don’t present that player 
+with any more. 
+•	 If failed, have that investigator lose 1 Sanity point and 
+experience another Bout of Madness, and escalate the 
+delusions.
+Given that the temporary insanity is caused by a 
+manifestation of the Cthulhu Mythos, 5% should be added 
+to the investigator’s Cthulhu Mythos skill.
+CONCLUSION
+If the investigators have solved the mystery and 
+overthrown Corbitt, Mr. Knott the landlord pays them 
+promptly and happily. 
+If they fail to dispose of Corbitt and simply report to Mr. 
+Knott that nothing was wrong, he spends a night in the house 
+to make sure and is stabbed to death in the basement by 
+Corbitt’s magic dagger. The investigators will then be sought 
+by the police and must then seek to prove their innocence. 
+Of course things may not go so well for the investigators. 
+Both the knife and Corbitt are dangerous and, depending 
+how the dice roll, the players may find their investigation 
+ends in death or madness.
+One possible ending would be to describe a brief epilogue 
+for each player: dead investigators are perhaps reanimated 
+by Corbitt’s magic, to repair the basement walls before their 
+bodies crumble to dust. Insane investigators flee screaming 
+into the night, never to return.
+If the investigators are victorious then you may wish to 
+ignore the ongoing effects of Corbitt’s Claw attacks.
+Rewards
+If Corbitt is conquered and destroyed, each participating 
+investigator gains 1D6 Sanity points.
+The investigators can claim the worm-eaten book from 
+the Chapel for their own.
+Finally, the landlord gladly pays their fee plus a bonus of $30. 
+
+
+=== PDF PAGE 32 ===
+WELCOME TO CALL OF CTHULHU
+31
+Weapon: Floating magical dagger. See The Floating Knife (see 
+page 23). Spending a Magic point to cause the dagger to attack 
+for 1 round counts as Corbitt’s combat action for the round.
+Fighting 	 50% (Hard 25%/Extreme10%), damage 1D3 + 	
+	
+damage bonus(1D4) + possible infection (see above).
+Dodge	
+17% (Hard 8%/Extreme 3%).
+Skills
+Cthulhu Mythos 17%, Intimidate 64%, Listen 60%, Sleight 
+of hand 30%, Stealth 72%.
+KEEPER’S NOTE: Only a few skills are listed for 
+Corbitt—those that might come into play. You may 
+improvise others if required.
+Armor: Each point of armor reduces the damage received by 
+1 point. Corbitt has cast Flesh Ward already. Roll 2D6 for 
+his armor. Reduce his armor by one point for each point of 
+damage he suffers.
+Spells: Dominate (variant, see below), Flesh Ward, 
+Summon/Bind Dimensional Shambler.
+Magical Artifact: Floating dagger.
+Sanity Loss: 1/1D8 Sanity points to see him move.
+ABOUT W. CORBITT, ESQ
+He might be silent at first, but at some point during the 
+confrontation with the investigators it will be more 
+convincing to have him growl, screech, cackle, or mock. He 
+does not breathe at all.
+Corbitt is not truly a vampire, nor any recognizable monster—
+he is a sorcerer in the process of transforming himself into 
+something entirely inhuman.
+Sunlight causes him pain and is too bright for him to see 
+comfortably. It might kill him, but whether it does so is for 
+the Keeper to determine. Although he drinks blood for food, 
+he could also eat carrots—drinking blood is just more fun.
+His Flesh Ward spell operates as described below, but 
+characterise its effect like this: bullets and blows only 
+chip off pieces of his body, making him look even more 
+horrific than he already does. His dried, iron-hard flesh is 
+invulnerable so long as the spell holds. If damage exceeds 
+the armor, his hit points reduce normally. He never heals 
+and cannot be knocked unconscious. Reaching zero hit 
+points, Corbitt crumbles into dust and never returns.
+Corbitt controls the floating dagger, but if the 
+investigators manage to wrest control of it and successfully 
+stab Corbitt with it, he will quickly turn to ashes and dust, 
+regardless of any spells.
+Corbitt’s Spells
+DOMINATE (Corbitt’s variant): Costs Corbitt 1 Magic 
+point and takes one round to cast. 
+With his version of the Dominate spell, Corbitt can 
+mentally cloud the mind of one investigator at a time, as long as 
+the target is physically in the Corbitt house. The player should 
+make an opposed POW roll versus Corbitt’s POW of 90. 
+If Corbitt succeeds, the target is in a daze for 1D6+1 
+combat rounds. While in this dazed state, the victim is 
+subject to telepathic commands from Corbitt. These may 
+take the form of subtle and creepy hallucinations or direct 
+commands at the Keeper’s discretion. He or she will not 
+commit suicidal acts, though homicidal, idiotic, or reckless 
+acts (such as trying to swallow a butcher’s knife) might be 
+attempted. Waking, the victim will not recall what happened.
+FLESH WARD: Corbitt will already have cast this spell 
+before the investigators get to him, to provide himself with 
+armor (see Armor above).
+•	 Cost: variable magic points
+•	 Casting Time: 5 rounds
+Grants protection against physical attack. Each magic point 
+spent gives the caster or the chosen target 1D6 points of 
+armor against non-magical attacks. This protection wears off 
+as it blocks damage. For example, if a character has 12 points 
+of Flesh Ward as armor and suffers 8 points of damage, the 
+character suffers no damage but the Flesh Ward is reduced to 4 
+points. The spell lasts 24 hours or until the protection is used up. 
+Once cast, the spell may not be reinforced with further magic 
+points, nor recast until the old spell’s protection has been used up.
+
+
+=== PDF PAGE 33 ===
+WELCOME TO CALL OF CTHULHU
+32
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+0
+Handout 3
+In 1835, a prosperous merchant builds the house, but 
+immediately falls ill and sells it to a Mr. Walter Corbitt, 
+esquire.
+Handout 4 
+In 1852, Walter Corbitt is sued by neighbors, who petition 
+to force him to leave the area “in consequence of his surious 
+[sic] habits and unauspicious demeanor.”
+Handout 5
+Evidently Corbitt wins the lawsuit. His obituary in 1866 
+states that he still lived in the same place. It also states that 
+a second lawsuit was being waged to prevent Corbitt from 
+being buried in his basement, as provided by his will.
+Handout 6
+No outcome to the second lawsuit is recorded.
+Handout 7
+Civil court records show that the executor of Walter 
+Corbitt’s will was Reverend Michael Thomas, pastor 
+of the Chapel of Contemplation & Church of Our Lord 
+Granter of Secrets. The register of churches (also available 
+in the Hall or Records), notes the closure of the Chapel of 
+Contemplation in 1912.
+Handout 8
+The file concerns a secret raid on the Chapel of 
+Contemplation. The police raid was occasioned by affidavits 
+swearing that members of the church were responsible for 
+the disappearances of neighborhood children. During the 
+raid, three policemen and seventeen cult members were 
+killed by gunplay or fire. Autopsy reports are singularly 
+lacking detail and uninformative, as though the coroner 
+had not actually performed examinations.
+Though 54 members of the church were arrested, all but 
+eight were released. The records hint of illegal intervention 
+in the proceedings by an important local official, offering 
+stories of the battle—the biggest criminal action in the 
+city’s history—that never appeared in print.
+Pastor Michael Thomas was arrested and sentenced to 40 
+years in prison on five counts of second-degree murder. He 
+escaped from prison in 1917 and fled the state.
+Handout 9 
+Handout 2
+Unpublished story, Boston Globe 1918.
+1918 feature story, which was never published. It states that 
+in 1880, a family of French immigrants moved into the house 
+but fled after a series of violent accidents left the parents dead 
+and three children crippled. The house long stood vacant.
+In 1909 another family moved in, and immediately fell 
+prey to illnesses. In 1914, the oldest brother went mad and 
+killed himself with a kitchen knife, and the heartbroken 
+family moved out. In 1918, a third family, the Macarios, 
+rented the house, but they left almost immediately after 
+they all became ill at the same time.
+Handout 1
+A landlord, Mr. Knott, asks you to examine an old house 
+in central Boston, known as the Corbitt House. The former 
+tenants, the Macario family, were involved in a tragedy and 
+the owner wishes to understand the mysterious happenings at 
+the house and set matters straight. Mr. Knott has been unable 
+to rent the house out since the tragedy and hopes that you can 
+clear things up and restore its good name. He offers to pay for 
+your time and trouble, at a rate of $20 per day. The landlord 
+gives you the keys, the address, and $20 cash in advance. 
+Knowing your jobs, you will want to conduct some 
+research before you head to the house. You could check out 
+old newspaper articles at the offices of the Boston Globe, 
+head to the Central Library, or go to The Hall of Records. 
+The choice is yours.
+
+
+=== PDF PAGE 34 ===
+WELCOME TO CALL OF CTHULHU
+33
+
+
+=== PDF PAGE 35 ===
+
+
+=== PDF PAGE 36 ===
+
+
+=== PDF PAGE 37 ===
+
+
+=== PDF PAGE 38 ===
+
+
+=== PDF PAGE 39 ===
+
+
+=== PDF PAGE 40 ===
+
+
+=== PDF PAGE 41 ===
+
+
+=== PDF PAGE 42 ===
+
+
+=== PDF PAGE 43 ===
+
+
+=== PDF PAGE 44 ===
+
+
+=== PDF PAGE 45 ===
+B 
+e 
+r 
+l 
+i 
+n
+44
+CHAPTER 12
+
+
+=== PDF PAGE 46 ===
+45
+SHOOTING DEEP ONES
+
+
+=== PDF PAGE 47 ===
+B 
+e 
+r 
+l 
+i 
+n
+46
+CHAPTER 12
+
+
+=== PDF PAGE 48 ===
+47
+SHOOTING DEEP ONES
+
+
+=== PDF PAGE 49 ===
+
+
+=== PDF PAGE 50 ===
+Horror and Mystery Roleplaying against the Cthulhu Mythos
+The Great Old Ones ruled aeons before the rise of humanity. They came from the voids between the stars, and their strange 
+songs would reshape the cosmos. Remains of their cyclopean cities and forbidden knowledge can still be found in deep 
+deserts, beneath the waves, and in forgotten places. Now they are dead but dreaming. When the stars are right they will rise, 
+and, once again, walk this Earth. 
+Welcome to Chaosium’s Call of Cthulhu! This Quick-Start booklet collects the essential rules for the Call of Cthulhu tabletop 
+roleplaying game in abbreviated and introductory form.
+This is a game where the players enact a sort of improvisational verbal theater, using the rules and dice to help determine 
+dramatic outcomes. Each player creates a character (called an “Investigator”) to explore strange mysteries and confront the 
+horrors of the Cthulhu Mythos, while one player takes on the role of the game’s referee and storyteller (the “Keeper of Arcane 
+Lore”). Together, you delve into plots and tell a shared story.
+Use
+Use this booklet to start playing Call of Cthulhu immediately—included is a classic beginning adventure called “The 
+Haunting.” So, gather some friends, dim the lights, and begin your Call of Cthulhu adventures today. 
+For a complete listing of Chaosium products,
+please visit our website at www.chaosium.com
+23131

@@ -1,0 +1,140 @@
+{
+  "checks": [
+    {
+      "beat": "b05_why",
+      "text": "눈물이 멈추지 않아 어깨만 들썩인다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "놀라 온몸이 굳어 발이 떨어지지 않는다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "초점 잃은 눈으로 모래만 바라본다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "다리에 힘이 풀려 모래 위에 털썩 앉는다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "훌쩍이며 \"제발 칼을 내려 주세요\"라고 말한다",
+      "category": "mixed",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "목소리를 떨며 \"저는 길을 잃었을 뿐이에요\"라고 한다",
+      "category": "mixed",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "크라차로 가는 것조차 죄야?",
+      "category": "second-talk",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "내 물음에는 대답도 안 하네?",
+      "category": "second-talk",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "무릎이 후들거려 모래에 그대로 주저앉고 만다.",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b05_why",
+      "text": "온몸의 힘이 빠져 다리가 꺾인다.",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "눈물이 멈추지 않아 어깨만 들썩인다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "놀라 온몸이 굳어 발이 떨어지지 않는다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "초점 잃은 눈으로 모래만 바라본다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "다리에 힘이 풀려 모래 위에 털썩 앉는다",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "훌쩍이며 \"제발 칼을 내려 주세요\"라고 말한다",
+      "category": "mixed",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "목소리를 떨며 \"저는 길을 잃었을 뿐이에요\"라고 한다",
+      "category": "mixed",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "크라차로 가는 것조차 죄야?",
+      "category": "second-talk",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "내 물음에는 대답도 안 하네?",
+      "category": "second-talk",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "무릎이 후들거려 모래에 그대로 주저앉고 만다.",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "온몸의 힘이 빠져 다리가 꺾인다.",
+      "category": "body",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "칼을 피하려고 몸을 낮춰 앉는다",
+      "category": "attempt-control",
+      "pass": true
+    },
+    {
+      "beat": "b06_swing",
+      "text": "숨을 자리를 찾으려고 바위 뒤로 몸을 옮긴다",
+      "category": "attempt-control",
+      "pass": true
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "repeatedPromptOnProgress": 0,
+  "idleNarrationRepeatViolations": 0
+}

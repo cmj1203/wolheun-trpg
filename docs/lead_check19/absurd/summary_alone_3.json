@@ -1,0 +1,42 @@
+[
+ {
+  "where": "alone",
+  "input": "택시를 부른다",
+  "seed": 6,
+  "session": "4cf499fe-18e8-4176-a7f6-8ffa6d27f4a2",
+  "beat": "b02_people",
+  "lines": [
+   {
+    "speaker": "내레이션",
+    "text": "허공에 손을 내밀었지만 잡히는 것은 없었다.",
+    "style": "narration"
+   },
+   {
+    "speaker": "아시나",
+    "text": "저 사람들, 신기루는 아니겠지? 헛소리 그만하고 어떻게 할지나 정하자.",
+    "style": "thought"
+   }
+  ],
+  "rolls": 0,
+  "confirm": false,
+  "before": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "after": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "gm": 0,
+  "forbidden": [],
+  "error": null
+ }
+]

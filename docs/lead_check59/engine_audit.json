@@ -1,0 +1,106 @@
+{
+  "count": 12,
+  "odd": 8,
+  "normal": 4,
+  "photos": 12,
+  "rows": [
+    {
+      "i": 1,
+      "validFaces": true,
+      "outside": {
+        "noRoll": true,
+        "noTrackChange": true,
+        "sameBeat": true
+      },
+      "modelFallback": [],
+      "screen": "engine_input_01.png"
+    },
+    {
+      "i": 2,
+      "validFaces": true,
+      "outside": {
+        "noRoll": true,
+        "noTrackChange": true,
+        "sameBeat": true
+      },
+      "modelFallback": [],
+      "screen": "engine_input_02.png"
+    },
+    {
+      "i": 3,
+      "validFaces": true,
+      "large": {
+        "hasChange": true,
+        "hasReaction": true,
+        "hasSceneResult": true
+      },
+      "modelFallback": [],
+      "screen": "engine_input_03.png"
+    },
+    {
+      "i": 4,
+      "validFaces": true,
+      "large": {
+        "hasChange": true,
+        "hasReaction": true,
+        "hasSceneResult": true
+      },
+      "modelFallback": [],
+      "screen": "engine_input_04.png"
+    },
+    {
+      "i": 5,
+      "validFaces": true,
+      "large": {
+        "hasChange": true,
+        "hasReaction": true,
+        "hasSceneResult": true
+      },
+      "modelFallback": [],
+      "screen": "engine_input_05.png"
+    },
+    {
+      "i": 6,
+      "validFaces": true,
+      "modelFallback": [],
+      "screen": "engine_input_06.png"
+    },
+    {
+      "i": 7,
+      "validFaces": true,
+      "modelFallback": [],
+      "screen": "engine_input_07.png"
+    },
+    {
+      "i": 8,
+      "validFaces": true,
+      "modelFallback": [],
+      "screen": "engine_input_08.png"
+    },
+    {
+      "i": 9,
+      "validFaces": true,
+      "modelFallback": [],
+      "screen": "engine_input_09.png"
+    },
+    {
+      "i": 10,
+      "validFaces": true,
+      "modelFallback": [],
+      "screen": "engine_input_10.png"
+    },
+    {
+      "i": 11,
+      "validFaces": true,
+      "modelFallback": [],
+      "screen": "engine_input_11.png"
+    },
+    {
+      "i": 12,
+      "validFaces": true,
+      "modelFallback": [],
+      "screen": "engine_input_12.png"
+    }
+  ],
+  "cgCharacterClear": true
+}

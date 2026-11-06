@@ -1,0 +1,41 @@
+bun test v1.4.2 (744846f84)
+
+tests/gm.test.ts:
+419 |     });
+420 |     const mock = mockLlama([reply('action', true), reply('person', false)]);
+421 |     stop = () => mock.server.stop(true);
+422 |     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
+423 |     expect(await gm.interpret(contexts('남자에게 입을 맞춘다').ctx))
+424 |       .toMatchObject({ kind: 'improv', bold: true, deed: '남자의 입에 입을 맞추려 했다' });
+             ^
+error: expect(received).toMatchObject(expected)
+
+  {
+-   "bold": true,
+-   "deed": "남자의 입에 입을 맞추려 했다",
+-   "kind": "improv",
++   "approach": "beauty",
++   "item": null,
++   "kind": "approach",
++   "meta": {
++     "attempts": 1,
++     "fallback": false,
++     "model": "mock-gm",
++     "ms": 11,
++     "violations": [],
++   },
++   "source": "llm",
++   "spoken": false,
+  }
+
+- Expected  - 3
++ Received  + 12
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:424:8)
+(fail) 로컬 GM 생성과 재생성 > 큰 신체 행동은 같은 목적의 말 접근법에 가리지 않고 실제 시도를 남긴다 [19.35ms]
+
+ 0 pass
+ 114 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [88.00ms]

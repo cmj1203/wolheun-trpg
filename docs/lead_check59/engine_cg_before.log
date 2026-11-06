@@ -1,0 +1,22 @@
+bun test v1.4.2 (744846f84)
+
+tests/engine.test.ts:
+83 |     }
+84 |     const narration = events.find(e => e.type === 'line' && e.text === '나는 뻔뻔하게 웃었다.');
+85 |     const male = events.find(e => e.type === 'line' && e.text === '그런 수를 쓸 셈인가.');
+86 |     expect(narration).toMatchObject({ type: 'line', cg: 'cg_beauty' });
+87 |     expect(male).toMatchObject({ type: 'line', face: 'sneer' });
+88 |     expect(male?.type === 'line' ? male.cg : '줄 없음').toBeUndefined();
+                                                          ^
+error: expect(received).toBeUndefined()
+
+Received: "cg_beauty"
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/engine.test.ts:88:54)
+(fail) 엔진 진행 > 주인공의 미인계 CG가 남자의 표정 반응 줄을 덮지 않는다 [2.35ms]
+
+ 0 pass
+ 133 filtered out
+ 1 fail
+ 3 expect() calls
+Ran 1 test across 1 file. [34.00ms]

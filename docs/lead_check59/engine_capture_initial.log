@@ -1,0 +1,11 @@
+45 |       images:[...document.querySelectorAll('#slot-right img')].map(img=>({src:img.getAttribute('src'),complete:img.complete,width:img.naturalWidth})),
+46 |       viewport:{width:innerWidth,height:innerHeight}
+47 |     })`));
+48 |     const expected = `behidat_${row.male.face}.png`;
+49 |     if (!check.images.some(img => img.complete && img.width > 0 && img.src.endsWith(expected))) throw new Error(`${row.i}: 실제 표정 이미지 불일치`);
+50 |     if (!check.foxHidden || !check.gmBoxHidden || !check.badgeHidden) throw new Error(`${row.i}: 이야기 중 여우 또는 GM 배지 노출`);
+                                                                                     ^
+error: 1: 이야기 중 여우 또는 GM 배지 노출
+      at /Users/choeminju/월흔_trpg/docs/lead_check59/engine_capture.mjs:50:81
+
+Bun v1.4.2 (macOS arm64)

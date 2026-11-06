@@ -1,0 +1,13 @@
+서버 PID=63637 PGID=63637 부모 PGID=63636
+WOLHEUN_PORT=18194
+WOLHEUN_NO_LLM=1
+WOLHEUN_SAVES=/tmp/lane45/srv/saves
+WOLHEUN_ATLAS=/tmp/lane45/srv/atlas.json
+WOLHEUN_LOGS=/tmp/lane45/srv/logs
+WOLHEUN_FEEDBACK=/tmp/lane45/srv/feedback.jsonl
+종료: SIGTERM, 프로세스 종료 코드 -15
+확인 명령: lsof -nP -iTCP:18194-18199 -sTCP:LISTEN
+확인 종료 코드: 1
+표준 출력: 없음
+표준 오류: 없음
+결과: 지정 시험 포트에 리스너 없음

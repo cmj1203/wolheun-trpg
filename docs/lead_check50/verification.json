@@ -1,0 +1,130 @@
+{
+  "method": "existing_pixel_translation",
+  "generation": "provider_native_bypass_no_image",
+  "sprites": {
+    "neutral": {
+      "shift_x_px": 7,
+      "skin_donor_box": [
+        495,
+        253,
+        501,
+        258
+      ],
+      "skin_donor_skin_only": true,
+      "outside_mask_max_diff": 0,
+      "alpha_max_diff": 0,
+      "stationary_hair_core_max_diff": 0,
+      "visible_eye_translation_max_diff": 0,
+      "visible_eye_translation_sample_pixels": 17,
+      "screen_right_eye_max_diff": 0,
+      "canvas_before": [
+        1024,
+        1536
+      ],
+      "canvas_after": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 505,
+      "support_bbox": [
+        469,
+        227,
+        510,
+        245
+      ]
+    },
+    "smile": {
+      "shift_x_px": 4,
+      "skin_donor_box": [
+        495,
+        253,
+        501,
+        258
+      ],
+      "skin_donor_skin_only": true,
+      "outside_mask_max_diff": 0,
+      "alpha_max_diff": 0,
+      "stationary_hair_core_max_diff": 0,
+      "visible_eye_translation_max_diff": 0,
+      "visible_eye_translation_sample_pixels": 1,
+      "screen_right_eye_max_diff": 0,
+      "canvas_before": [
+        1024,
+        1536
+      ],
+      "canvas_after": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 464,
+      "support_bbox": [
+        470,
+        228,
+        508,
+        246
+      ]
+    },
+    "surprised": {
+      "shift_x_px": 2,
+      "skin_donor_box": [
+        495,
+        253,
+        501,
+        258
+      ],
+      "skin_donor_skin_only": true,
+      "outside_mask_max_diff": 0,
+      "alpha_max_diff": 0,
+      "stationary_hair_core_max_diff": 0,
+      "visible_eye_translation_max_diff": 0,
+      "visible_eye_translation_sample_pixels": 78,
+      "screen_right_eye_max_diff": 0,
+      "canvas_before": [
+        1024,
+        1536
+      ],
+      "canvas_after": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 535,
+      "support_bbox": [
+        466,
+        225,
+        508,
+        246
+      ]
+    },
+    "wary": {
+      "shift_x_px": 2,
+      "skin_donor_box": [
+        495,
+        253,
+        501,
+        258
+      ],
+      "skin_donor_skin_only": true,
+      "outside_mask_max_diff": 0,
+      "alpha_max_diff": 0,
+      "stationary_hair_core_max_diff": 0,
+      "visible_eye_translation_max_diff": 0,
+      "visible_eye_translation_sample_pixels": 2,
+      "screen_right_eye_max_diff": 0,
+      "canvas_before": [
+        1024,
+        1536
+      ],
+      "canvas_after": [
+        1024,
+        1536
+      ],
+      "changed_pixels": 293,
+      "support_bbox": [
+        470,
+        232,
+        507,
+        247
+      ]
+    }
+  }
+}

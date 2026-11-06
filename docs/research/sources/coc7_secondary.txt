@@ -1,0 +1,76 @@
+SOURCE: https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html
+RETRIEVED: 2026-11-06
+
+There are a number of attributes that are determined after you have worked out the investigator’s characteristics. These are [Damage Bonus and Build](https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html#damage-bonus-and-build), [Hit Points](https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html#hit-points-hp), [Move Rate](https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html#move-rate-mov), [Sanity](https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html#sanity-points-san), and [Magic Points](https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html#magic-points-mp). Additionally, you will need to determine a [Luck](https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html#luck) value.
+
+## [#](#damage-bonus-and-build) Damage Bonus and Build
+
+Damage Bonus is how much extra damage your investigator inflicts when making a successful close combat (melee) attack. Build is a scale of combined size and strength used when making a “[Fighting Maneuver](https://cthulhuwiki.chaosium.com/rules/combat.html#fighting-maneuvers)”. Add your Regular STR and SIZ characteristics together and consult the [Damage Bonus and Build Table](https://cthulhuwiki.chaosium.com/investigators/step-two-secondary-attributes.html#damage-bonus-and-build). You’ll find boxes on the investigator sheet to write in the Build and Damage Bonus values.
+
+### [#](#damage-bonus-and-build-table) Damage Bonus and Build Table
+
+***Example:** Brian set his STR to 60 and his SIZ to 70, totaling 130. When he makes a successful physical attack, he deals an extra 1D4 points of damage (Damage Bonus). His Build is 1.*
+
+STR + SIZ
+
+Damage Bonus
+
+Build
+
+2–64
+
+–2
+
+–2
+
+65–84
+
+–1
+
+–1
+
+85–124
+
+None
+
+0
+
+125–164
+
++1D4
+
+1
+
+165–204
+
++1D6
+
+2
+
+## [#](#hit-points-hp) Hit Points (HP)
+
+Hit Points are figured by adding SIZ and CON together, then dividing the total by ten and rounding down to the nearest whole number. As your investigator takes damage from combat or other events, your hit points will drop.
+
+**Example:** SIZ 50 and CON 50 totals 100; divided by ten, this gives 10 hit points. The investigator can suffer up to 10 points of damage before they fall unconscious and, possibly, die.
+
+## [#](#move-rate-mov) Move Rate (MOV):
+
+All human characters have a Move Rate of 8.
+
+## [#](#sanity-points-san) Sanity Points (SAN)
+
+SAN begins at a level equal to the investigator’s POW value. Fill in the box for Sanity on the investigator sheet. This score is used as a percentile roll that presents your investigator’s ability to remain stoic in the face of horror. As you encounter the monstrosities of the Cthulhu Mythos, your Sanity points score fluctuates.
+
+**Example:** POW 40 gives a Sanity value of 40. When making a Sanity roll, roll equal to or below 40 on 1D100 to make a successful roll. A roll of 41 or higher means the Sanity roll has failed.
+
+## [#](#magic-points-mp) Magic Points (MP)
+
+Magic Points are equal to one-fifth POW. Enter this value on the box on the investigator sheet. Magic points are used when casting spells, as well as for powering arcane devices and magical effects. Points that are spent regenerate naturally at a rate of 1 point per hour. Once an individual is out of magic points, any further expenditure is deducted directly from hit points—any such loss manifesting as physical damage in a form chosen by the Keeper.
+
+**Example:** POW 40 provides 8 magic points. When casting a spell, the spell calls for the expenditure of 2 magic points, so the investigator’s value temporarily drops to 6.
+
+## [#](#luck) Luck
+
+Calculate Luck by rolling 3D6 and multiplying the result by 5. Enter the value on the investigator sheet. A Luck roll is often used to determine whether external circumstances are in your favor or against you. As with Sanity, you must roll equal to or below a Luck value to succeed in a [Luck roll](https://cthulhuwiki.chaosium.com/rules/game-system.html#luck-rolls).
+
+**Example:** Brian is fleeing a hoard of zombies and jumps into a nearby car. The Keeper asks for a Luck roll to determine whether the keys are in the ignition (as it’s a completely random chance). Brian makes a percentage roll using 1D100, rolling 28, which is lower than his Luck score—he turns the keys and the engine roars in to action!

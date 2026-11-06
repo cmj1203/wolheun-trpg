@@ -1,0 +1,91 @@
+[
+  {
+    "id": "pin-hit",
+    "beat": "b05_why",
+    "text": "핀으로 밧줄을 쑤셔 본다",
+    "tier": "hit",
+    "seed": 2,
+    "total": 12,
+    "dice": [
+      6,
+      5
+    ],
+    "cost": "없음",
+    "lines": [
+      "집착 +1"
+    ]
+  },
+  {
+    "id": "map-mixed",
+    "beat": "b02_people",
+    "text": "지도를 펼쳐 저 남자 눈앞에 들이민다",
+    "tier": "mixed",
+    "hidden": true,
+    "price": "map_wind",
+    "seed": 1,
+    "total": 7,
+    "dice": [
+      2,
+      4
+    ],
+    "cost": "map_wind",
+    "lines": [
+      "귀찌 수명 -1",
+      "낡은 지도 찢김",
+      "의심 +3"
+    ]
+  },
+  {
+    "id": "bag-miss",
+    "beat": "b05_why",
+    "text": "가방을 방패처럼 휘두른다",
+    "tier": "miss",
+    "price": "bag_taken",
+    "seed": 5,
+    "total": 4,
+    "dice": [
+      1,
+      2
+    ],
+    "cost": "bag_taken",
+    "lines": [
+      "의심 +2",
+      "의심 +1 · 마법 가방 잃음"
+    ]
+  },
+  {
+    "id": "map-miss",
+    "beat": "r3_dusk",
+    "text": "지도를 펼쳐 별이 뜰 방향을 짚는다",
+    "tier": "miss",
+    "price": "map_lost",
+    "seed": 5,
+    "total": 5,
+    "dice": [
+      1,
+      2
+    ],
+    "cost": "map_lost",
+    "lines": [
+      "귀찌 수명 -1",
+      "낡은 지도 잃음"
+    ]
+  },
+  {
+    "id": "pin-mixed",
+    "beat": "b05_why",
+    "text": "핀으로 밧줄을 쑤셔 본다",
+    "tier": "mixed",
+    "seed": 1,
+    "total": 7,
+    "dice": [
+      2,
+      4
+    ],
+    "cost": "man_doubt",
+    "lines": [
+      "의심 +1 · 집착 +1",
+      "의심 +1"
+    ]
+  }
+]

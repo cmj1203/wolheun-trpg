@@ -1,0 +1,18 @@
+{"name":"처음부터_키보드_Enter","pass":true,"value":{"reached":true,"phase":"line"}}
+{"name":"처음부터_키보드_Space","pass":true,"value":{"reached":true,"phase":"line"}}
+{"name":"포커스없음_Space_대사넘김","pass":true,"value":{"active":"BODY"}}
+{"name":"포커스없음_Enter_대사넘김","pass":true,"value":{"active":"BODY"}}
+{"name":"글자치면_입력칸으로","pass":true,"value":{"active":"free-input","value":"x"}}
+{"name":"마우스로_수첩_열고닫은뒤_Space_대사넘김","pass":true,"value":{"notesOpen":true,"movedAfterMouse":true,"reopened":false}}
+{"name":"탭으로_수첩_Enter","pass":true,"value":{"openedByKey":true,"notesByKey":true}}
+{"name":"탭으로_연_수첩_닫은뒤_Enter_다시열림","pass":true,"value":{"reopenByKey":true,"active":"notes-list"}}
+{"name":"피드백칸_값","pass":true,"value":{"value":"a b\nc"}}
+{"name":"피드백칸_치는동안_대사안넘어감","pass":true,"value":{"same":true,"phaseBefore":"line","phaseAfter":"line"}}
+{"name":"피드백_키보드로_보내기","pass":true,"value":{"onSend":true,"closed":true}}
+{"name":"피드백_저장값","pass":true,"value":{"savedText":"a b\nc"}}
+{"name":"마우스로_열고_키보드로_보낸뒤_Space","pass":true,"value":{"focusAfter":"feedback-open","movedAfterSend":true,"reopened":false}}
+{"name":"피드백_마우스_회귀","pass":true,"value":{"mouseSaved":"마우스","movedMouse":true}}
+{"name":"확인창_키보드_no","pass":true,"value":{"free":true,"opened":true,"focused":true,"closed":true,"phase":"story"}}
+{"name":"확인창_키보드_ok","pass":true,"value":{"free":true,"opened":true,"focused":true,"closed":true,"phase":"result"}}
+{"name":"확인창_마우스_회귀","pass":true,"value":{"phase":"result"}}
+{"name":"결과화면_마우스_타이틀로","pass":true,"value":{"phase":"title"}}

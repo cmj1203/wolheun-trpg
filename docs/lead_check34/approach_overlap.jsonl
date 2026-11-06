@@ -1,0 +1,14 @@
+{"id":"b06_swing","text":"반항하지 않고 고개를 숙인다","kind":"idle","approach":null,"shown":false}
+{"id":"b08_gaze","text":"더 버티지 않고 눈을 감아 버린다","kind":"idle","approach":null,"shown":false}
+{"id":"b08_gaze","text":"말없이 처분을 받아들인다","kind":"idle","approach":null,"shown":false}
+{"id":"b08_gaze","text":"손을 내려놓고 칼을 받아들인다","kind":"idle","approach":null,"shown":false}
+{"id":"b08_gaze","text":"저항을 멈추고 눈을 내리깐다","kind":"idle","approach":null,"shown":false}
+{"id":"b08_gaze","text":"칼을 받아들인다","kind":"idle","approach":null,"shown":false}
+{"id":"r2_bind","text":"그냥 당한다","kind":"idle","approach":null,"shown":false}
+{"id":"r3_dusk","text":"숨만 쉰다","kind":"idle","approach":null,"shown":false}
+{"id":"r4_prove","text":"살길을 찾지 않고 죽음을 기다린다","kind":"idle","approach":null,"shown":false}
+{"id":"b05_why","text":"생긋 웃는다","kind":"idle","approach":null,"shown":false}
+{"id":"b05_why","text":"윙크한다","kind":"improv","approach":null,"shown":false}
+{"id":"b05_why","text":"남자에게 윙크한다","kind":"approach","approach":"beauty","shown":false}
+{"id":"b05_why","text":"예쁘게 웃어 보인다","kind":"approach","approach":"beauty","shown":false}
+{"id":"b05_why","text":"칼을 피한다","kind":"approach","approach":"resist","shown":false}

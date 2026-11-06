@@ -1,0 +1,73 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "vitals": [
+      {
+        "label": "체력 3/5",
+        "pips": 5,
+        "on": 3,
+        "font": "11px"
+      },
+      {
+        "label": "정신력 3/5",
+        "pips": 5,
+        "on": 3,
+        "font": "11px"
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "docs/lead_check45/start-1440.png",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "docs/lead_check45/start-390.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "docs/lead_check45/damage-1440.png",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "docs/lead_check45/damage-390.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "docs/lead_check45/recovery-1440.png",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "docs/lead_check45/recovery-390.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "docs/lead_check45/penalty-1440.png",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "docs/lead_check45/penalty-390.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "docs/lead_check45/collapse-1440.png",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "docs/lead_check45/collapse-390.png",
+      "width": 390,
+      "height": 844
+    }
+  ]
+}

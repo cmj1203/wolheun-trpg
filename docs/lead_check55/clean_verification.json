@@ -1,0 +1,479 @@
+{
+  "files": [
+    {
+      "source": "assets/sprites/pilot/behidat_neutral.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_neutral.png",
+      "source_sha256": "6bfbae527e4e5bf161da347a9aa8a4ec35ad68974a67189b3ff8caebcab29fba",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_neutral_mask.png",
+      "mask_bbox": [
+        290,
+        83,
+        731,
+        1522
+      ],
+      "mask_pixels": 16563,
+      "changed_pixels": 16562,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "assets/sprites/pilot/behidat_smile.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_smile.png",
+      "source_sha256": "145727c544a73fe3b0476047907e745c36e9fc383f83cda4cfe9462383e66dfd",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_smile_mask.png",
+      "mask_bbox": [
+        289,
+        83,
+        731,
+        1522
+      ],
+      "mask_pixels": 16754,
+      "changed_pixels": 16754,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "assets/sprites/pilot/behidat_surprised.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_surprised.png",
+      "source_sha256": "1ad537d1acd0cc2b31d44b59af06e5567693dd1c9977d0e59ff36eebd3802fbb",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_surprised_mask.png",
+      "mask_bbox": [
+        35,
+        77,
+        731,
+        1522
+      ],
+      "mask_pixels": 16746,
+      "changed_pixels": 16743,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "assets/sprites/pilot/behidat_wary.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_wary.png",
+      "source_sha256": "f5637d4da6163742e9063ba44d2f709c9fe4bb3efef0b3a065585b950c17cf07",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_wary_mask.png",
+      "mask_bbox": [
+        35,
+        77,
+        731,
+        1522
+      ],
+      "mask_pixels": 16634,
+      "changed_pixels": 16631,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "work/demo-slice/lane59/behidat/behidat_sneer.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_sneer.png",
+      "source_sha256": "9b2174ea1107b3f97bdf61f13d4eb2a98f8fdb81935894845c47def54b39a159",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_sneer_mask.png",
+      "mask_bbox": [
+        290,
+        83,
+        731,
+        1522
+      ],
+      "mask_pixels": 16563,
+      "changed_pixels": 16562,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "work/demo-slice/lane59/behidat/behidat_dumbfounded.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_dumbfounded.png",
+      "source_sha256": "18c1c7b240d1f955a817bbfcacda5fc52ed482155392b123632f957c3403a489",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_dumbfounded_mask.png",
+      "mask_bbox": [
+        290,
+        83,
+        731,
+        1522
+      ],
+      "mask_pixels": 16563,
+      "changed_pixels": 16562,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "work/demo-slice/lane59/behidat/behidat_menacing.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_menacing.png",
+      "source_sha256": "728e94424a849ce015af6ebf71ce07024fdf026a1a1d4ea50c31b623b4c68897",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_menacing_mask.png",
+      "mask_bbox": [
+        290,
+        83,
+        731,
+        1522
+      ],
+      "mask_pixels": 16563,
+      "changed_pixels": 16562,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "work/demo-slice/lane59/behidat/behidat_intrigued.png",
+      "output": "work/demo-slice/cleanup/behidat/behidat_intrigued.png",
+      "source_sha256": "cb2f8c4760eeaf4790853413a49b3ae4964e52bf04f3e4e5c803599c099fba71",
+      "mask": "work/demo-slice/cleanup/behidat/behidat_intrigued_mask.png",
+      "mask_bbox": [
+        290,
+        83,
+        731,
+        1522
+      ],
+      "mask_pixels": 16563,
+      "changed_pixels": 16562,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 0,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": null
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_neutral.png",
+      "output": "work/demo-slice/cleanup/asina/asina_neutral.png",
+      "source_sha256": "da2652380175dd35e0809de04eba5cbc0e31e9a0622aa2de61c17eb811dfba93",
+      "mask": "work/demo-slice/cleanup/asina/asina_neutral_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 103,
+      "changed_pixels": 103,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 103,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_smile.png",
+      "output": "work/demo-slice/cleanup/asina/asina_smile.png",
+      "source_sha256": "276ad64fcdff541b5797d54ea4c450544309a725c8a33a29e6983c0105844486",
+      "mask": "work/demo-slice/cleanup/asina/asina_smile_mask.png",
+      "mask_bbox": [
+        431,
+        1353,
+        558,
+        1362
+      ],
+      "mask_pixels": 104,
+      "changed_pixels": 104,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 104,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": false
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_surprised.png",
+      "output": "work/demo-slice/cleanup/asina/asina_surprised.png",
+      "source_sha256": "3870e36dacfe1749272727bc3f4362049bb033cb8f293fe1408059433d38e6a2",
+      "mask": "work/demo-slice/cleanup/asina/asina_surprised_mask.png",
+      "mask_bbox": [
+        431,
+        1353,
+        556,
+        1362
+      ],
+      "mask_pixels": 107,
+      "changed_pixels": 107,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 107,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": false
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_wary.png",
+      "output": "work/demo-slice/cleanup/asina/asina_wary.png",
+      "source_sha256": "c59f91dd645434ea34ffbdf28702f4c16d0c44d52ad8668ff049c67cfdd413fd",
+      "mask": "work/demo-slice/cleanup/asina/asina_wary_mask.png",
+      "mask_bbox": [
+        431,
+        1353,
+        558,
+        1362
+      ],
+      "mask_pixels": 105,
+      "changed_pixels": 105,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 105,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": false
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_flustered.png",
+      "output": "work/demo-slice/cleanup/asina/asina_flustered.png",
+      "source_sha256": "894414b1fa76044b042a28aa3c960875ae5ac64e2b71716d7b39196968edf6ed",
+      "mask": "work/demo-slice/cleanup/asina/asina_flustered_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 103,
+      "changed_pixels": 103,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 103,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_scared.png",
+      "output": "work/demo-slice/cleanup/asina/asina_scared.png",
+      "source_sha256": "001d27be35368a6aa3e8c33ecc5e704fd62b10b7041db9bedb293e35d92ab7b1",
+      "mask": "work/demo-slice/cleanup/asina/asina_scared_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 103,
+      "changed_pixels": 103,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 103,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_indignant.png",
+      "output": "work/demo-slice/cleanup/asina/asina_indignant.png",
+      "source_sha256": "bef2bee8923f5c6f10dc117a7f175ae01a85d29fb14471243507a8f5c155d3f3",
+      "mask": "work/demo-slice/cleanup/asina/asina_indignant_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 103,
+      "changed_pixels": 103,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 103,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_smug.png",
+      "output": "work/demo-slice/cleanup/asina/asina_smug.png",
+      "source_sha256": "9c1199612f7e7b262bdb1c0ef143443c9be2301b17fb8d97a436f0f8a3375b6b",
+      "mask": "work/demo-slice/cleanup/asina/asina_smug_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 103,
+      "changed_pixels": 103,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 103,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/asina/asina_tired.png",
+      "output": "work/demo-slice/cleanup/asina/asina_tired.png",
+      "source_sha256": "416b0c58ba16055f5247bc9c41edf027c078c8e3d9296fbf63c83672671427ea",
+      "mask": "work/demo-slice/cleanup/asina/asina_tired_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 103,
+      "changed_pixels": 103,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 103,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_neutral.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_neutral.png",
+      "source_sha256": "6abb81182b0a242ea16733b997154b7386bc7634ea4daffc5c0dbcbf612837ec",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_neutral_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 104,
+      "changed_pixels": 104,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 104,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_smile.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_smile.png",
+      "source_sha256": "d99765e536c65504f0ba5d9008be5015e70ccf0c250a84bccd5e745ea687f23e",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_smile_mask.png",
+      "mask_bbox": [
+        431,
+        1353,
+        558,
+        1362
+      ],
+      "mask_pixels": 105,
+      "changed_pixels": 105,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 105,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": false
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_surprised.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_surprised.png",
+      "source_sha256": "a46ab50a72e2244398869155ed7d7f401c365d3bfb614c5b99bf87bed038f040",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_surprised_mask.png",
+      "mask_bbox": [
+        431,
+        1353,
+        558,
+        1362
+      ],
+      "mask_pixels": 110,
+      "changed_pixels": 110,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 110,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": false
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_wary.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_wary.png",
+      "source_sha256": "0c1232ddc9334acafeed628a2a95307ec9baa6c280456cbcb172087d5653e6fd",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_wary_mask.png",
+      "mask_bbox": [
+        431,
+        1353,
+        558,
+        1362
+      ],
+      "mask_pixels": 108,
+      "changed_pixels": 108,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 108,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": false
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_flustered.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_flustered.png",
+      "source_sha256": "71999df37a852ad5dad54218a47ff39adc504cdc2acd858fc696ab46e4cae468",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_flustered_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 104,
+      "changed_pixels": 104,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 104,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_scared.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_scared.png",
+      "source_sha256": "e3fcfd98c0c5169f8c7caced9e92a73d8053c78b33c8d1506d6b5276d96bd5e4",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_scared_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 104,
+      "changed_pixels": 104,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 104,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_indignant.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_indignant.png",
+      "source_sha256": "f9265579187803af47d62c142fb7cd5ca2451d31f831be1d0ba15856dc2f8505",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_indignant_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 104,
+      "changed_pixels": 104,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 104,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_smug.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_smug.png",
+      "source_sha256": "fe0eb694c9450d658165342f648ee7deb82eb969ba0ff20f67755979a6bbc774",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_smug_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 104,
+      "changed_pixels": 104,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 104,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    },
+    {
+      "source": "assets/ep01/gen/hood/asina_hood_tired.png",
+      "output": "work/demo-slice/cleanup/hood/asina_hood_tired.png",
+      "source_sha256": "9d7146ad832b685e75c54feef97dbe165f358953a1be231499602d66521afb8e",
+      "mask": "work/demo-slice/cleanup/hood/asina_hood_tired_mask.png",
+      "mask_bbox": [
+        430,
+        1353,
+        557,
+        1362
+      ],
+      "mask_pixels": 104,
+      "changed_pixels": 104,
+      "outside_mask_diff": 0,
+      "alpha_changed_pixels": 104,
+      "unresolved_pixels": 0,
+      "boot_reference_equal": true
+    }
+  ],
+  "missing_optional": [],
+  "backgrounds": [
+    "#9fd4f0",
+    "#e8c48c",
+    "#101010"
+  ],
+  "outside_mask_diff_total": 0
+}

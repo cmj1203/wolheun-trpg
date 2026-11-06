@@ -1,0 +1,1818 @@
+[
+  {
+    "text": "눈가가 따끔해져 말문이 막힌다",
+    "beat": "b05_why",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "눈물이라. 이방인, 겨우 그 정도로 죽음을 피할 수 있을 것 같나?",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "호위 하나가 말없이 칼자루에 손을 얹었다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "item:magic_bag && !flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그 바람에 후드가 벗겨졌다.",
+        "by": "script",
+        "if": "!flag:후드_벗음"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 11914,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 6788,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 눈물이라. 이방인, 겨우 그 정도로 죽음을 피할 수 있을 것 같나?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "눈가가 따끔해져 말문이 막힌다",
+        "raw": "{\"reason\":\"감정 때문에 저절로 나온 반응이므로 idle이다.\",\"kind\":\"idle\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"감정 때문에 저절로 나온 반응이므로 idle이다.\",\"kind\":\"idle\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+          "ttftMs": 9123.22325,
+          "totalMs": 11911.221709,
+          "promptTokens": 3231,
+          "completionTokens": 67,
+          "promptMs": 8835.218,
+          "genMs": 2885.82,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "눈가가 따끔해져 말문이 막힌다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라. 이방인, 겨우 그 정도로 죽음을 피할 수 있을 것 같나?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라. 이방인, 겨우 그 정도로 죽음을 피할 수 있을 것 같나?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 2229.711874999999,
+          "totalMs": 4208.4580000000005,
+          "promptTokens": 804,
+          "completionTokens": 68,
+          "promptMs": 1892.914,
+          "genMs": 2088.421,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "설움이 북받쳐 목소리가 잠긴다",
+    "beat": "b06_swing",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "목소리까지 잠기는군. 이방인, 그게 네 한계인가?",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+        "by": "script",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "반칙이지!!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "버럭",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "반칙?",
+        "by": "script",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "남는 것은 살아남는 자와 죽는 자.",
+        "by": "script",
+        "sfx": "저벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그 둘뿐이다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "마치… 한여름의 태양 같아.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "오싹",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "터벅, 터벅.",
+        "by": "script",
+        "sfx": "터벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…",
+        "by": "script",
+        "sfx": "스윽"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "뭐, 뭐야",
+        "by": "script",
+        "sfx": "주춤…",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "설마 다시 죽이려는 건 아니겠…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "뭐야… 이 반응은.",
+        "by": "script",
+        "cg": "cg_lean"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+        "by": "script"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 13525,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 6024,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 목소리까지 잠기는군. 이방인, 그게 네 한계인가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "설움이 북받쳐 목소리가 잠긴다",
+        "raw": "{\"reason\":\"감정 때문에 몸에 드러난 반응이므로 idle임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"감정 때문에 몸에 드러난 반응이므로 idle임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 10283.591790999999,
+          "totalMs": 13524.306375,
+          "promptTokens": 3331,
+          "completionTokens": 77,
+          "promptMs": 8515.376,
+          "genMs": 3357.321,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "설움이 북받쳐 목소리가 잠긴다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"목소리까지 잠기는군. 이방인, 그게 네 한계인가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"목소리까지 잠기는군. 이방인, 그게 네 한계인가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 1426.6087499999958,
+          "totalMs": 3426.2036249999983,
+          "promptTokens": 392,
+          "completionTokens": 65,
+          "promptMs": 861.802,
+          "genMs": 2113.565,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "등골이 서늘해져 온몸이 굳는다",
+    "beat": "b05_why",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "몸이 굳은 걸 보니, 죽음이 눈앞이라도 온 건가?",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "호위 하나가 말없이 칼자루에 손을 얹었다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "item:magic_bag && !flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그 바람에 후드가 벗겨졌다.",
+        "by": "script",
+        "if": "!flag:후드_벗음"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 27917,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 8135,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 몸이 굳은 걸 보니, 죽음이 눈앞이라도 온 건가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "등골이 서늘해져 온몸이 굳는다",
+        "raw": "{\"reason\":\"공포로 인해 몸이 굳어버린 상태를 묘사함\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"공포로 인해 몸이 굳어버린 상태를 묘사함\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 23679.145167000002,
+          "totalMs": 27915.697417000003,
+          "promptTokens": 6239,
+          "completionTokens": 82,
+          "promptMs": 16148.883,
+          "genMs": 4393.178,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "등골이 서늘해져 온몸이 굳는다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"몸이 굳은 걸 보니, 죽음이 눈앞이라도 온 건가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"몸이 굳은 걸 보니, 죽음이 눈앞이라도 온 건가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 1888.4622499999969,
+          "totalMs": 5460.7100419999915,
+          "promptTokens": 424,
+          "completionTokens": 65,
+          "promptMs": 1012.204,
+          "genMs": 3687.559,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "분해서 입술만 파르르 떨린다",
+    "beat": "b06_swing",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "입술을 떨 만큼 분한가?",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+        "by": "script",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "반칙이지!!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "버럭",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "반칙?",
+        "by": "script",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "남는 것은 살아남는 자와 죽는 자.",
+        "by": "script",
+        "sfx": "저벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그 둘뿐이다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "마치… 한여름의 태양 같아.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "오싹",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "터벅, 터벅.",
+        "by": "script",
+        "sfx": "터벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…",
+        "by": "script",
+        "sfx": "스윽"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "뭐, 뭐야",
+        "by": "script",
+        "sfx": "주춤…",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "설마 다시 죽이려는 건 아니겠…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "뭐야… 이 반응은.",
+        "by": "script",
+        "cg": "cg_lean"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+        "by": "script"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 16743,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 7369,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 입술을 떨 만큼 분한가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "분해서 입술만 파르르 떨린다",
+        "raw": "{\"reason\":\"감정으로 인해 몸이 저절로 반응하는 상태임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"감정으로 인해 몸이 저절로 반응하는 상태임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 12435.881041999994,
+          "totalMs": 16740.566416999995,
+          "promptTokens": 3329,
+          "completionTokens": 78,
+          "promptMs": 9980.447,
+          "genMs": 4442.198,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "분해서 입술만 파르르 떨린다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"입술을 떨 만큼 분한가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"입술을 떨 만큼 분한가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 2034.7319579999894,
+          "totalMs": 4538.260832999993,
+          "promptTokens": 390,
+          "completionTokens": 55,
+          "promptMs": 797.197,
+          "genMs": 2600.701,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "헛웃음이 새어 나오고 눈물이 맺힌다",
+    "beat": "b05_why",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "눈물이라. 그게 이방인의 마지막 반응인가?",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "호위 하나가 말없이 칼자루에 손을 얹었다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "item:magic_bag && !flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그 바람에 후드가 벗겨졌다.",
+        "by": "script",
+        "if": "!flag:후드_벗음"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 35561,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 9148,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 눈물이라. 그게 이방인의 마지막 반응인가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "헛웃음이 새어 나오고 눈물이 맺힌다",
+        "raw": "{\"reason\":\"감정 때문에 저절로 나온 반응이므로 idle이다.\",\"kind\":\"idle\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"감정 때문에 저절로 나온 반응이므로 idle이다.\",\"kind\":\"idle\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+          "ttftMs": 30774.676083000013,
+          "totalMs": 35559.45962500002,
+          "promptTokens": 6239,
+          "completionTokens": 67,
+          "promptMs": 20736.569,
+          "genMs": 4961.837,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "헛웃음이 새어 나오고 눈물이 맺힌다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라. 그게 이방인의 마지막 반응인가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈물이라. 그게 이방인의 마지막 반응인가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 1999.756916000013,
+          "totalMs": 5442.980249999993,
+          "promptTokens": 424,
+          "completionTokens": 59,
+          "promptMs": 1457.634,
+          "genMs": 3609.348,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "맥이 풀려 어깨가 축 처진다",
+    "beat": "b06_swing",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "맥이 풀린 건가, 이방인. 벌써 끝인가?",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+        "by": "script",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "반칙이지!!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "버럭",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "반칙?",
+        "by": "script",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "남는 것은 살아남는 자와 죽는 자.",
+        "by": "script",
+        "sfx": "저벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그 둘뿐이다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "마치… 한여름의 태양 같아.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "오싹",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "터벅, 터벅.",
+        "by": "script",
+        "sfx": "터벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…",
+        "by": "script",
+        "sfx": "스윽"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "뭐, 뭐야",
+        "by": "script",
+        "sfx": "주춤…",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "설마 다시 죽이려는 건 아니겠…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "뭐야… 이 반응은.",
+        "by": "script",
+        "cg": "cg_lean"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+        "by": "script"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 24718,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 12125,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 맥이 풀린 건가, 이방인. 벌써 끝인가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "맥이 풀려 어깨가 축 처진다",
+        "raw": "{\"reason\":\"공포와 긴장으로 인해 몸에 힘이 빠진 상태를 나타냄\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"공포와 긴장으로 인해 몸에 힘이 빠진 상태를 나타냄\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 16172.504291999998,
+          "totalMs": 24716.792125000007,
+          "promptTokens": 2922,
+          "completionTokens": 82,
+          "promptMs": 11771.925,
+          "genMs": 8764.352,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "맥이 풀려 어깨가 축 처진다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"맥이 풀린 건가, 이방인. 벌써 끝인가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"맥이 풀린 건가, 이방인. 벌써 끝인가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 2600.906166999979,
+          "totalMs": 7734.122166999994,
+          "promptTokens": 390,
+          "completionTokens": 62,
+          "promptMs": 1175.983,
+          "genMs": 5288.281,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "이가 덜덜 떨려 말이 안 나온다",
+    "beat": "b05_why",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "이빨 부딪히는 소리가 여기까지 들리는군. 겁에 질린 건가?",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "호위 하나가 말없이 칼자루에 손을 얹었다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "item:magic_bag && !flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그 바람에 후드가 벗겨졌다.",
+        "by": "script",
+        "if": "!flag:후드_벗음"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 62169,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 20414,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 이빨 부딪히는 소리가 여기까지 들리는군. 겁에 질린 건가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "이가 덜덜 떨려 말이 안 나온다",
+        "raw": "{\"reason\":\"공포로 인해 몸이 떨리는 것은 의도적인 행동이 아닌 신체적 반응이다.\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"공포로 인해 몸이 떨리는 것은 의도적인 행동이 아닌 신체적 반응이다.\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 50084.44504199998,
+          "totalMs": 62167.40875,
+          "promptTokens": 3229,
+          "completionTokens": 85,
+          "promptMs": 20480.845,
+          "genMs": 12419.757,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "이가 덜덜 떨려 말이 안 나온다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"이빨 부딪히는 소리가 여기까지 들리는군. 겁에 질린 건가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"이빨 부딪히는 소리가 여기까지 들리는군. 겁에 질린 건가?\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 3606.294499999989,
+          "totalMs": 13437.381957999984,
+          "promptTokens": 421,
+          "completionTokens": 66,
+          "promptMs": 2500.388,
+          "genMs": 10170.622,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "어이가 없어 멍하니 눈만 깜빡인다",
+    "beat": "b06_swing",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "눈만 깜빡이는군. 이방인, 겁을 먹은 건가?",
+        "by": "gm",
+        "face": "neutral"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+        "by": "script",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "반칙이지!!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "버럭",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "반칙?",
+        "by": "script",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "남는 것은 살아남는 자와 죽는 자.",
+        "by": "script",
+        "sfx": "저벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그 둘뿐이다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "마치… 한여름의 태양 같아.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "오싹",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "터벅, 터벅.",
+        "by": "script",
+        "sfx": "터벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…",
+        "by": "script",
+        "sfx": "스윽"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "뭐, 뭐야",
+        "by": "script",
+        "sfx": "주춤…",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "설마 다시 죽이려는 건 아니겠…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "뭐야… 이 반응은.",
+        "by": "script",
+        "cg": "cg_lean"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+        "by": "script"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 58408,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 29802,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 눈만 깜빡이는군. 이방인, 겁을 먹은 건가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "어이가 없어 멍하니 눈만 깜빡인다",
+        "raw": "{\"reason\":\"칼날이 날아오는 위급한 상황에서 아무런 대응 없이 멍하니 있는 상태임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"칼날이 날아오는 위급한 상황에서 아무런 대응 없이 멍하니 있는 상태임\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 40276.485083000036,
+          "totalMs": 58406.197916000034,
+          "promptTokens": 2923,
+          "completionTokens": 86,
+          "promptMs": 30109.264,
+          "genMs": 18752.278,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "어이가 없어 멍하니 눈만 깜빡인다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈만 깜빡이는군. 이방인, 겁을 먹은 건가?\",\n      \"face\": \"neutral\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"눈만 깜빡이는군. 이방인, 겁을 먹은 건가?\",\n      \"face\": \"neutral\"\n    }\n  ]\n}",
+          "ttftMs": 5248.419707999972,
+          "totalMs": 17290.456082999997,
+          "promptTokens": 391,
+          "completionTokens": 64,
+          "promptMs": 3537.672,
+          "genMs": 12620.009,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "입 안이 바싹 마르고 숨이 막힌다",
+    "beat": "b05_why",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "숨이 막힐 듯한 압박감에 몸이 굳었다. 목을 겨누는 서늘한 감각이 뇌를 울렸다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자는 미동도 없이 나를 내려다보았다. 그 무심한 눈빛이 오히려 더 위협적이었다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "왜지?",
+        "by": "gm",
+        "face": "neutral"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "숨이 막히나, 이방인?",
+        "by": "gm",
+        "face": "neutral"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "item:magic_bag && !flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그 바람에 후드가 벗겨졌다.",
+        "by": "script",
+        "if": "!flag:후드_벗음"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [
+          "error:LLM 응답을 읽다가 끊겼습니다: The operation timed out."
+        ],
+        "fallback": true,
+        "ms": 90008,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "narrate",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 63354,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 숨이 막힐 듯한 압박감에 몸이 굳었다. 목을 겨누는 서늘한 감각이 뇌를 울렸다.",
+          "나레이션: 남자는 미동도 없이 나를 내려다보았다. 그 무심한 눈빛이 오히려 더 위협적이었다.",
+          "남자: 왜지?"
+        ],
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 18898,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 숨이 막히나, 이방인?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "입 안이 바싹 마르고 숨이 막힌다",
+        "raw": "",
+        "violations": [],
+        "llm": null,
+        "error": "LLM 응답을 읽다가 끊겼습니다: The operation timed out."
+      },
+      {
+        "task": "narrate",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "입 안이 바싹 마르고 숨이 막힌다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"숨이 막힐 듯한 압박감에 몸이 굳었다. 목을 겨누는 서늘한 감각이 뇌를 울렸다.\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 미동도 없이 나를 내려다보았다. 그 무심한 눈빛이 오히려 더 위협적이었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"왜지?\",\n      \"face\": \"neutral\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"숨이 막힐 듯한 압박감에 몸이 굳었다. 목을 겨누는 서늘한 감각이 뇌를 울렸다.\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 미동도 없이 나를 내려다보았다. 그 무심한 눈빛이 오히려 더 위협적이었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"왜지?\",\n      \"face\": \"neutral\"\n    }\n  ]\n}",
+          "ttftMs": 37679.712291,
+          "totalMs": 63349.68995800003,
+          "promptTokens": 4669,
+          "completionTokens": 153,
+          "promptMs": 36665.856,
+          "genMs": 25960.998,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "입 안이 바싹 마르고 숨이 막힌다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"숨이 막히나, 이방인?\",\n      \"face\": \"neutral\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"숨이 막히나, 이방인?\",\n      \"face\": \"neutral\"\n    }\n  ]\n}",
+          "ttftMs": 3434.2655000000377,
+          "totalMs": 10396.636500000022,
+          "promptTokens": 423,
+          "completionTokens": 56,
+          "promptMs": 2793.166,
+          "genMs": 7279.127,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "text": "가슴이 먹먹해 아무 말도 못 한다",
+    "beat": "b06_swing",
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "가슴이 막히기라도 했나? 하, 우습군.",
+        "by": "gm",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+        "by": "script",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "반칙이지!!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "버럭",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "반칙?",
+        "by": "script",
+        "face": "smile"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "남는 것은 살아남는 자와 죽는 자.",
+        "by": "script",
+        "sfx": "저벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그 둘뿐이다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "마치… 한여름의 태양 같아.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "오싹",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "터벅, 터벅.",
+        "by": "script",
+        "sfx": "터벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…",
+        "by": "script",
+        "sfx": "스윽"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "뭐, 뭐야",
+        "by": "script",
+        "sfx": "주춤…",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "설마 다시 죽이려는 건 아니겠…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "뭐야… 이 반응은.",
+        "by": "script",
+        "cg": "cg_lean"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+        "by": "script"
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 43570,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "talk",
+        "attempts": 2,
+        "violations": [
+          "lore/reaction_style: 설명 독백·상황 해설·긴 문장 대신 눈앞의 감정이나 몸 반응에 짧게 답하세요."
+        ],
+        "fallback": false,
+        "ms": 49549,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 가슴이 막히기라도 했나? 하, 우습군."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "가슴이 먹먹해 아무 말도 못 한다",
+        "raw": "{\"reason\":\"공포와 충격으로 인해 아무 말도 하지 못하고 얼어붙음\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"공포와 충격으로 인해 아무 말도 하지 못하고 얼어붙음\", \"kind\":\"idle\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 25961.533667,
+          "totalMs": 43567.731458999995,
+          "promptTokens": 2923,
+          "completionTokens": 82,
+          "promptMs": 24748.498,
+          "genMs": 18533.077,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "가슴이 먹먹해 아무 말도 못 한다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"가슴이 막히기라도 했나? 말도 못 할 만큼.\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [
+          {
+            "kind": "lore",
+            "rule": "reaction_style",
+            "detail": "설명 독백·상황 해설·긴 문장 대신 눈앞의 감정이나 몸 반응에 짧게 답하세요.",
+            "severity": "hard"
+          }
+        ],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"가슴이 막히기라도 했나? 말도 못 할 만큼.\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 5782.971708999998,
+          "totalMs": 18251.577124999996,
+          "promptTokens": 391,
+          "completionTokens": 62,
+          "promptMs": 5047.338,
+          "genMs": 13058.445,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 2,
+        "input": "가슴이 먹먹해 아무 말도 못 한다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"가슴이 막히기라도 했나? 하, 우습군.\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"가슴이 막히기라도 했나? 하, 우습군.\",\n      \"face\": \"smile\"\n    }\n  ]\n}",
+          "ttftMs": 5651.913666000008,
+          "totalMs": 15540.19537500001,
+          "promptTokens": 424,
+          "completionTokens": 62,
+          "promptMs": 5090.747,
+          "genMs": 10415.052,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ]
+  }
+]

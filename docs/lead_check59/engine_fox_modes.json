@@ -1,0 +1,15 @@
+[
+  {
+    "mode": "시작 안내",
+    "foxVisible": true
+  },
+  {
+    "mode": "이야기 자유 입력",
+    "foxHidden": true
+  },
+  {
+    "mode": "질문 모드",
+    "foxVisible": true,
+    "text": "그건 아시나도 몰라."
+  }
+]

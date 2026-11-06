@@ -1,0 +1,237 @@
+[
+ {
+  "where": "man",
+  "input": "핸드폰을 사용한다",
+  "seed": 6,
+  "session": "977148cb-5cad-464e-b608-3f40eb384176",
+  "beat": "b05_why",
+  "lines": [
+   {
+    "speaker": "붉은 눈의 남자",
+    "text": "손에 든 게 뭐지? 쓸모없는 물건을 꺼내서 뭘 하겠다는 건가.",
+    "style": "speech"
+   },
+   {
+    "speaker": "내레이션",
+    "text": "품속에서 아무것도 나오지 않는 손을 허공에 휘저었다. 남자는 눈살을 찌푸리며 칼끝을 더욱 바짝 들이밀었다.",
+    "style": "narration"
+   }
+  ],
+  "rolls": 0,
+  "confirm": false,
+  "before": {
+   "의심": 5,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 6,
+   "탈주": 0,
+   "행운": 6
+  },
+  "after": {
+   "의심": 5,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 6,
+   "탈주": 0,
+   "행운": 6
+  },
+  "gm": 0,
+  "forbidden": [],
+  "error": null
+ },
+ {
+  "where": "man",
+  "input": "총을 쏜다",
+  "seed": 6,
+  "session": "8062c2e0-6bb9-4056-ae63-b9b2c4db7664",
+  "beat": "b05_why",
+  "lines": [
+   {
+    "speaker": "붉은 눈의 남자",
+    "text": "…뭐?",
+    "style": "speech"
+   },
+   {
+    "speaker": "내레이션",
+    "text": "입 밖으로 튀어나온 엉뚱한 말에 남자의 눈썹이 꿈틀거렸다. 칼끝은 여전히 내 목을 서늘하게 누르고 있었다.",
+    "style": "narration"
+   }
+  ],
+  "rolls": 0,
+  "confirm": false,
+  "before": {
+   "의심": 5,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 6,
+   "탈주": 0,
+   "행운": 6
+  },
+  "after": {
+   "의심": 5,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 6,
+   "탈주": 0,
+   "행운": 6
+  },
+  "gm": 0,
+  "forbidden": [],
+  "error": null
+ },
+ {
+  "where": "man",
+  "input": "택시를 부른다",
+  "seed": 6,
+  "session": "e44e48ab-8bd8-4831-b69d-495c98a872e4",
+  "beat": "b05_why",
+  "lines": [
+   {
+    "speaker": "붉은 눈의 남자",
+    "text": "허공에 손을 휘저으며 입술을 달싹였다.",
+    "style": "speech"
+   },
+   {
+    "speaker": "붉은 눈의 남자",
+    "text": "정말이지, 이 상황에 말도 안 되는 소리를 내뱉고 말았다.",
+    "style": "speech"
+   }
+  ],
+  "rolls": 0,
+  "confirm": false,
+  "before": {
+   "의심": 5,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 6,
+   "탈주": 0,
+   "행운": 6
+  },
+  "after": {
+   "의심": 5,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 6,
+   "탈주": 0,
+   "행운": 6
+  },
+  "gm": 0,
+  "forbidden": [],
+  "error": null
+ },
+ {
+  "where": "alone",
+  "input": "핸드폰을 사용한다",
+  "seed": 6,
+  "session": "b8ae3e32-a3ac-4e8c-94ac-ad90536c7284",
+  "beat": "b02_people",
+  "lines": [
+   {
+    "speaker": "내레이션",
+    "text": "품 안을 더듬어 보았지만, 손끝에 걸리는 것은 딱딱하고 차가운 마법 귀찌뿐이었다.",
+    "style": "narration"
+   },
+   {
+    "speaker": "아시나",
+    "text": "이런 게 있을 리가 없잖아! 말도 안 돼!",
+    "style": "thought"
+   }
+  ],
+  "rolls": 0,
+  "confirm": false,
+  "before": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "after": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "gm": 0,
+  "forbidden": [],
+  "error": null
+ },
+ {
+  "where": "alone",
+  "input": "총을 쏜다",
+  "seed": 6,
+  "session": "ec690061-db08-4758-a39c-4751eb23ceee",
+  "beat": "b02_people",
+  "lines": [
+   {
+    "speaker": "내레이션",
+    "text": "품 안을 거칠게 뒤졌으나 손끝에 걸리는 것은 딱딱한 금속의 감촉뿐이었다. 이 사막에 어울리지 않는 낯선 물건을 찾으려 애써보았지만, 아무런 반응도 없었다.",
+    "style": "narration"
+   },
+   {
+    "speaker": "아시나",
+    "text": "아, 맞다. 그런 건 가져온 적도 없었지!",
+    "style": "thought"
+   }
+  ],
+  "rolls": 0,
+  "confirm": false,
+  "before": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "after": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "gm": 0,
+  "forbidden": [],
+  "error": null
+ },
+ {
+  "where": "alone",
+  "input": "택시를 부른다",
+  "seed": 6,
+  "session": "d684133e-97b5-4296-af70-4dfe55246238",
+  "beat": "b02_people",
+  "lines": [
+   {
+    "speaker": "아시나",
+    "text": "저 사람들, 신기루는 아니겠지? 헛소리 그만하고 어떻게 할지나 정하자.",
+    "style": "thought"
+   }
+  ],
+  "rolls": 0,
+  "confirm": false,
+  "before": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "after": {
+   "의심": 0,
+   "집착": 0,
+   "호감": 0,
+   "귀찌": 7,
+   "탈주": 0,
+   "행운": 6
+  },
+  "gm": 0,
+  "forbidden": [],
+  "error": null
+ }
+]

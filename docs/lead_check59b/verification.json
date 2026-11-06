@@ -1,0 +1,285 @@
+{
+  "status": "PASS",
+  "generation_count": {
+    "intrigued": 1,
+    "menacing": 1
+  },
+  "checks": [
+    {
+      "expression": "intrigued",
+      "raw": "raw_intrigued_1.png",
+      "resize_sharpness_restoration": false,
+      "base_sha256": "ab3e48739aaad6f94126ff09fa962648ce48bad46b98a09b067ec01256655048",
+      "canvas_equal": true,
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "outside_mask_diff": 0,
+      "hair_diff": 0,
+      "corner_diff": 0,
+      "changed_pixels": 1373,
+      "D": 24,
+      "E": 22.5,
+      "D_over_E": 1.0666666666666667,
+      "source_points_6x": [
+        [
+          239,
+          211
+        ],
+        [
+          365,
+          236
+        ],
+        [
+          498,
+          235
+        ],
+        [
+          654,
+          194
+        ]
+      ],
+      "target_points_6x": [
+        [
+          240.0,
+          210.0
+        ],
+        [
+          372.0,
+          234.0
+        ],
+        [
+          516.0,
+          234.0
+        ],
+        [
+          654.0,
+          198.0
+        ]
+      ],
+      "registration_residual_px": [
+        0.5340342337423354,
+        0.2699537256961443,
+        0.5180409527927085,
+        3.8807321582028003
+      ],
+      "inner_residual_max_px": 0.5180409527927085,
+      "sharpness_variance": [
+        7042.615327380952,
+        6746.192040816326
+      ],
+      "neutral_sharpness_variance": [
+        9872.482107426305,
+        3495.9514204081634
+      ],
+      "sharpness_to_neutral": [
+        0.7133581252158803,
+        1.9297156137337534
+      ],
+      "left_right_sharpness_ratio": 0.9579100557413432,
+      "D_over_E_method": "원본 네 끝점 반경 2px 픽셀 보존. 자동 검출 아님. 외안각 480/549, 내안각 502/526."
+    },
+    {
+      "expression": "menacing",
+      "raw": "raw_menacing_1.png",
+      "resize_sharpness_restoration": true,
+      "base_sha256": "ab3e48739aaad6f94126ff09fa962648ce48bad46b98a09b067ec01256655048",
+      "canvas_equal": true,
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_equal": true,
+      "outside_mask_diff": 0,
+      "hair_diff": 0,
+      "corner_diff": 0,
+      "changed_pixels": 1818,
+      "D": 24,
+      "E": 22.5,
+      "D_over_E": 1.0666666666666667,
+      "source_points_6x": [
+        [
+          234,
+          217
+        ],
+        [
+          368,
+          253
+        ],
+        [
+          491,
+          254
+        ],
+        [
+          653,
+          204
+        ]
+      ],
+      "target_points_6x": [
+        [
+          240.0,
+          210.0
+        ],
+        [
+          372.0,
+          234.0
+        ],
+        [
+          516.0,
+          234.0
+        ],
+        [
+          654.0,
+          198.0
+        ]
+      ],
+      "registration_residual_px": [
+        2.6916737293694584,
+        0.7673876063531212,
+        1.002895830813179,
+        6.095187184130917
+      ],
+      "inner_residual_max_px": 1.002895830813179,
+      "sharpness_variance": [
+        9297.78053252551,
+        8779.615869387755
+      ],
+      "neutral_sharpness_variance": [
+        9872.482107426305,
+        3495.9514204081634
+      ],
+      "sharpness_to_neutral": [
+        0.9417875293520672,
+        2.5113666677790127
+      ],
+      "left_right_sharpness_ratio": 0.944270069472482,
+      "D_over_E_method": "원본 네 끝점 반경 2px 픽셀 보존. 자동 검출 아님. 외안각 480/549, 내안각 502/526."
+    }
+  ],
+  "scale": {
+    "screenshot": "docs/lead_check58b/b04_after.png",
+    "physical_size": [
+      2880,
+      2000
+    ],
+    "comparison_size": [
+      1440,
+      1000
+    ],
+    "dpr": 2,
+    "stage_height": 810,
+    "stage_top": 95,
+    "css_canvas_height": 1053,
+    "css_scale": 0.685546875,
+    "measured_scale_ncc": 0.686,
+    "ncc": 0.9219168842743138,
+    "measured_canvas_height": 1053.6960000000001,
+    "measured_canvas_left_top": [
+      527.4,
+      146.03
+    ],
+    "feather_top": 202.96800000000002,
+    "face_width": 94.60546875,
+    "method": "중립 눈·코·입 패치(459,179,561,301)를 캡처와 정규화 상관 비교. 밝기 차이는 정규화. CSS 130% 독립 대조."
+  },
+  "pairwise_pixel_differences_not_a_perceptual_score": [
+    {
+      "pair": [
+        "neutral",
+        "sneer"
+      ],
+      "face_changed_pixels": 1246,
+      "face_mean_absolute_rgb_difference": 2.6845238095238093
+    },
+    {
+      "pair": [
+        "neutral",
+        "dumbfounded"
+      ],
+      "face_changed_pixels": 1527,
+      "face_mean_absolute_rgb_difference": 3.0324792960662528
+    },
+    {
+      "pair": [
+        "neutral",
+        "menacing"
+      ],
+      "face_changed_pixels": 1818,
+      "face_mean_absolute_rgb_difference": 2.6978735334713595
+    },
+    {
+      "pair": [
+        "neutral",
+        "intrigued"
+      ],
+      "face_changed_pixels": 1373,
+      "face_mean_absolute_rgb_difference": 2.37924861973775
+    },
+    {
+      "pair": [
+        "sneer",
+        "dumbfounded"
+      ],
+      "face_changed_pixels": 1669,
+      "face_mean_absolute_rgb_difference": 3.5284247757073843
+    },
+    {
+      "pair": [
+        "sneer",
+        "menacing"
+      ],
+      "face_changed_pixels": 1933,
+      "face_mean_absolute_rgb_difference": 2.994931849551415
+    },
+    {
+      "pair": [
+        "sneer",
+        "intrigued"
+      ],
+      "face_changed_pixels": 1493,
+      "face_mean_absolute_rgb_difference": 3.0266778812974464
+    },
+    {
+      "pair": [
+        "dumbfounded",
+        "menacing"
+      ],
+      "face_changed_pixels": 2122,
+      "face_mean_absolute_rgb_difference": 3.940540890269151
+    },
+    {
+      "pair": [
+        "dumbfounded",
+        "intrigued"
+      ],
+      "face_changed_pixels": 1652,
+      "face_mean_absolute_rgb_difference": 3.017317977915804
+    },
+    {
+      "pair": [
+        "menacing",
+        "intrigued"
+      ],
+      "face_changed_pixels": 2022,
+      "face_mean_absolute_rgb_difference": 3.2258885438233262
+    }
+  ],
+  "visual_judgements": {
+    "intrigued": "조건 충족. 화면 오른쪽 눈썹과 눈 개방, 작은 비대칭 입꼬리가 중립의 일자 입·냉소의 낮은 눈꺼풀과 다르다. 다섯 표정 중 중립과의 차이가 가장 작지만 실배율에서 미소를 읽을 수 있다.",
+    "menacing": "조건 충족. 양쪽 눈썹의 안쪽 하강·미간과 굳은 아래 입꼬리가 중립·냉소·관심과 다르다. 턱은 외곽선 이동 없이 입 아래 작은 음영과 긴장만 바뀐다.",
+    "menacing_vs_intrigued": "실배율에서도 위협은 양쪽이 눌린 미간과 굳은 입, 관심은 오른쪽이 열린 눈썹과 미소로 구별된다.",
+    "other_pairs": "어이없음은 열린 눈·벌어진 입으로 모든 쌍에서 분명하다. 냉소와 관심은 입꼬리만 보면 가깝지만 눈꺼풀과 눈썹을 함께 보면 구별된다."
+  },
+  "visual_inspected": [
+    "docs/lead_check59/lead_behi_faces_zoom.png",
+    "docs/lead_check58b/b04_after.png",
+    "docs/lead_check59b/behi_faces_game1440.png",
+    "docs/lead_check59b/behi_faces_zoom2x.png",
+    "docs/lead_check59b/behi_faces_refs.png"
+  ],
+  "syntax_compile": "PASS",
+  "editor_diagnostics": "기본 편집기 환경은 PIL/numpy와 sys.path로 읽는 이전 도구의 import를 못 찾는다. 지정 uv 환경의 실행·구문 검사는 정상. 별도 정적 타입 검사는 하지 않았다.",
+  "runtime_install_test": "후보만 전달하므로 미실행. 실제 게임 캡처의 실측 배율로 비교판을 제작했다."
+}

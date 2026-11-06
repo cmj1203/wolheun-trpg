@@ -1,0 +1,48 @@
+{
+  "phase": "ending",
+  "photos": 66,
+  "states": 110,
+  "forbiddenPattern": "귀찌 수명|변장|은발|첩자|웰든|공녀",
+  "forbiddenMatches": 0,
+  "fesianMatches": 0,
+  "deltaFailures": [],
+  "missingImages": [],
+  "stackedChangeLines": [],
+  "errors": [],
+  "actions": [
+    {
+      "turn": 32,
+      "kind": "approach",
+      "beat": "b02_people",
+      "id": "run"
+    },
+    {
+      "turn": 52,
+      "kind": "approach",
+      "beat": "b05_why",
+      "id": "beauty"
+    },
+    {
+      "turn": 70,
+      "kind": "approach",
+      "beat": "b06_swing",
+      "id": "dodge"
+    },
+    {
+      "turn": 89,
+      "kind": "input",
+      "beat": "b08_gaze",
+      "text": "가만히 있는다"
+    },
+    {
+      "turn": 91,
+      "kind": "approach",
+      "beat": "b08_gaze",
+      "id": "stare_back"
+    }
+  ],
+  "face": {
+    "베히다트": "menacing",
+    "아시나": "indignant"
+  }
+}

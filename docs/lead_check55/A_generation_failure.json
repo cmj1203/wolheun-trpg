@@ -1,0 +1,44 @@
+{
+  "order": 55,
+  "branch": "A",
+  "status": "blocked_no_generated_image",
+  "attempt_started_utc": "2026-11-06T08:48:32.538Z",
+  "attempt_finished_utc": "2026-11-06T08:48:32.551Z",
+  "attempt_started_kst": "2026-11-06T17:48:32.538+09:00",
+  "tool": "generate_image",
+  "requested_model": "gpt-image-2.5-sunburst",
+  "requested_count": 1,
+  "requested_changes": [
+    "short necklace: alternating flat oval plates and open rings",
+    "long necklace: alternating long tubes and small beads",
+    "pendant: faceted red gemstone, ornate gold setting, small teardrop",
+    "turban: octagonal faceted red gemstone, ornate gold frame"
+  ],
+  "reference_images": [
+    "work/demo-slice/lane50/behidat_neutral.png",
+    "work/style/sheets/behidat_style_sheet.png",
+    "assets/ep01/cuts/full_res/clean/ep01_c007.png",
+    "assets/ep01/cuts/full_res/clean/ep01_c047.png",
+    "assets/ep01/cuts/full_res/clean/ep01_c064.png"
+  ],
+  "requested_output": "work/demo-slice/lane55/A_astra_jewelry.png",
+  "tool_response": {
+    "text": "Image generation is handled by the provider's native server-side tool for the current model. Call the native image_generation tool instead of generate_image.",
+    "source": "none",
+    "paths": [],
+    "generated": 0,
+    "reason": "provider_native_bypass",
+    "hasError": false
+  },
+  "native_tool_probe": {
+    "requested_tool_schema": "image_generation",
+    "response": "schema() found no tool named \"image_generation\"."
+  },
+  "completed_candidates": [],
+  "local_generation_used": false,
+  "pixel_move_substitute_used": false,
+  "assets_written": false,
+  "commit_created": false,
+  "game_screenshot_taken": false,
+  "note": "This is a provider routing failure, not a completed image-generation request. No edited after image exists to mask or compare."
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "text": "어째서 내 목에 칼을 댔어요?",
+    "lines": [
+      {
+        "speaker": "남자",
+        "text": "왜지?",
+        "face": "neutral"
+      },
+      {
+        "speaker": "나레이션",
+        "text": "남자는 눈 하나 깜빡이지 않고 되물었다. 서늘한 칼날이 목을 압박해 오는 가운데, 그의 붉은 눈동자에는 어떠한 죄책감도 느껴지지 않았다."
+      }
+    ],
+    "meta": {
+      "attempts": 1,
+      "violations": [],
+      "fallback": false,
+      "ms": 9957,
+      "model": "gemma-4-26b-a4b"
+    }
+  },
+  {
+    "text": "제가 뭘 했다고 칼부터 대요?",
+    "lines": [
+      {
+        "speaker": "남자",
+        "text": "…뭐?",
+        "face": "neutral"
+      },
+      {
+        "speaker": "나레이션",
+        "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 황당하다는 듯한 눈빛이 목을 겨눈 칼날보다 더 서늘하게 피부를 훑고 지나갔다."
+      }
+    ],
+    "meta": {
+      "attempts": 1,
+      "violations": [],
+      "fallback": false,
+      "ms": 6825,
+      "model": "gemma-4-26b-a4b"
+    }
+  },
+  {
+    "text": "칼을 들이대는 이유가 대체 뭔데요?",
+    "lines": [
+      {
+        "speaker": "남자",
+        "text": "이유?",
+        "face": "neutral"
+      },
+      {
+        "speaker": "나레이션",
+        "text": "남자는 아주 당연한 것을 묻는다는 듯 눈을 가늘게 떴다. 목을 겨눈 칼날은 미동조차 없었고, 그 서늘한 기운은 더욱 짙어졌다."
+      }
+    ],
+    "meta": {
+      "attempts": 2,
+      "violations": [
+        "beat/repeat_play: 이번 판에 남자이(가) 이미 한 말(\"…뭐?\")입니다. 이번 입력에 맞는 다른 말로 쓰세요"
+      ],
+      "fallback": false,
+      "ms": 6251,
+      "model": "gemma-4-26b-a4b"
+    }
+  }
+]

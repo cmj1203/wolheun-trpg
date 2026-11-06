@@ -1,0 +1,161 @@
+[
+  {
+    "speaker": "아시나",
+    "text": "억울해…",
+    "before": "미지정(smile 상속)",
+    "after": "indignant"
+  },
+  {
+    "line": 182,
+    "speaker": "남자",
+    "text": "하. 별짓을 다 하는군.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 673,
+    "speaker": "남자",
+    "text": "마지막으로 할 말은 있나?",
+    "before": "neutral",
+    "after": "menacing"
+  },
+  {
+    "line": 679,
+    "speaker": "남자",
+    "text": "없다면, 잘 가라.",
+    "before": "neutral",
+    "after": "menacing"
+  },
+  {
+    "line": 682,
+    "speaker": "아시나",
+    "text": "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!",
+    "before": "surprised",
+    "after": "scared"
+  },
+  {
+    "line": 685,
+    "speaker": "아시나",
+    "text": "그것 좀 치워봐요! 난 죽이면 안 돼요.",
+    "before": "wary",
+    "after": "indignant"
+  },
+  {
+    "line": 760,
+    "speaker": "아시나",
+    "text": "미소녀니까요.",
+    "before": "smile",
+    "after": "smug"
+  },
+  {
+    "line": 764,
+    "speaker": "남자",
+    "text": "…뭐?",
+    "before": "surprised",
+    "after": "dumbfounded"
+  },
+  {
+    "line": 778,
+    "speaker": "아시나",
+    "text": "미소녀니까요.",
+    "before": "smile",
+    "after": "smug"
+  },
+  {
+    "line": 781,
+    "speaker": "남자",
+    "text": "…뭐?",
+    "before": "surprised",
+    "after": "dumbfounded"
+  },
+  {
+    "line": 792,
+    "speaker": "아시나",
+    "text": "미소녀니까요.",
+    "before": "surprised",
+    "after": "smug"
+  },
+  {
+    "line": 840,
+    "speaker": "남자",
+    "text": "하. 혀는 잘 돌아가는군.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 984,
+    "speaker": "남자",
+    "text": "웃기는 여자군.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 1179,
+    "speaker": "남자",
+    "text": "반칙?",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 1349,
+    "speaker": "남자",
+    "text": "하.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 1373,
+    "speaker": "남자",
+    "text": "마음이 바뀌었다.",
+    "before": "smile",
+    "after": "intrigued"
+  },
+  {
+    "line": 1376,
+    "speaker": "남자",
+    "text": "여자.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 1725,
+    "speaker": "남자",
+    "text": "하. 웃기는 여자군.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 1894,
+    "speaker": "남자",
+    "text": "귀한 몸이 호위도 없이 사막을 헤맸다?",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 2085,
+    "speaker": "남자",
+    "text": "데려가라. 귀한 몸이라니, 귀하게 모셔야지.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 2119,
+    "speaker": "남자",
+    "text": "데려가라. 깨어나면 그 입이 얼마나 더 떠드는지 들어 보지.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "line": 2181,
+    "speaker": "남자",
+    "text": "겁은 없군. 머리는 없고.",
+    "before": "smile",
+    "after": "sneer"
+  },
+  {
+    "speaker": "남자",
+    "text": "하. 웃기는 여자군. (콜백)",
+    "before": "미지정",
+    "after": "sneer"
+  }
+]

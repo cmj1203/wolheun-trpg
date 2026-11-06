@@ -1,0 +1,650 @@
+SOURCE: https://help.alchemyrpg.com/en/articles/10157823-call-of-cthulhu
+RETRIEVED: 2026-11-06
+
+Call of Cthulhu | Alchemy Help CenterCopyright (c) 2023, Intercom, Inc. ([email protected]) with Reserved Font Name "Montserrat".
+This Font Software is licensed under the SIL Open Font License, Version 1.1.Skip to main content
+Sign In
+Sign In
+Search for articles...
+All Collections
+Alchemy Guides
+Call of Cthulhu
+Call of Cthulhu
+A useful tool to use during your Call of Cthulhu investigations
+November 22, 2024
+Table of contents
+Character Creation
+Generate Characteristics
+Take note of your totals before placing them on your sheet as they may change depending on your Investigators age.
+No Stat above 99 during creation
+Characteristics
+Roll Required
+Copy Into Journal
+Stat Effects
+STR (Strength)
+3d6 x 5
+/r 3d6*5 STR
+N/A
+DEX  (Dexterity)
+3d6 x 5
+/r 3d6*5 DEX
+Turn Order
+POW (Power)
+3d6 x 5
+/r 3d6*5 POW
+Sanity Points = POW when creating a character; Magic Points = 1/5th of POW
+CON (Constitution)
+3d6 x 5
+/r 3d6*5 CON
+Hit Points
+APP (Appearance)
+3d6 x 5
+/r 3d6*5 APP
+N/A
+EDU (Education)
+(2d6+6) x 5
+/r (2d6+6)*5 EDU
+Occupational Skill Points; Own Language skill
+SIZ (Size)
+(2d6+6) x 5
+/r (2d6+6)*5 SIZ
+Hit Points; Damage Bonus; Build
+INT (Intelligence)
+(2d6+6) x 5
+/r (2d6+6)*5 INT
+Personal Interest Skill Points (INTx2)
+Before writing anything in, determine your investigators Age and, using the table below, make the necessary changes to your Characteristics:
+Age
+Modifiers
+15 - 19
+STR or SIZ -5; EDU -5; Roll twice for Luck (3d6 x 5) and use the higher result
+20s or 30s
+One Improvement Check* for EDU
+40s
+STR, CON or DEX -5 (can split points between the three); APP -5; Two Improvement Checks* for EDU
+50s
+STR, CON or DEX -10 (can split points between the three); APP -10; Three Improvement Checks* for EDU
+60s
+STR, CON or DEX -20 (can split points between the three); APP -15; Four Improvement Checks* for EDU
+70s
+STR, CON or DEX -40 (can split points between the three); APP -20; Four Improvement Checks* for EDU
+80s
+STR, CON or DEX -80 (can split points between the three); APP -25; Four Improvement Checks* for EDU
+Improvement Check*
+If anything asks for an Improvement Check, roll a d100 against said Skill or Characteristic. Rolling above the Skill or Characteristic results in a 1d10 roll to add to said stat.
+Aging spells or long term campaigns can affect an Investigators age. Ensure you adjust your stats using to the table above according to your current age.
+Quick Characteristics
+The array below gives predetermined values for you to use in place of rolling for Characteristics in order to speed up Character Creation.
+40, 50, 50, 50, 60, 60, 70, 80
+Move Rating
+A character can move a number of yards/meters equal to their MOV value times 5.
+Requirement
+Move Rating
+Both DEX and STR each < SIZ
+MOV 7 (35 yards/meters)
+Either DEX or STR > or = SIZ or all three =
+MOV 8 (40 yards/meters)
+Both DEX and STR each > SIZ
+MOV 9 (45 yards/meters)
+Age
+Move Reduction
+40s
+-1 MOV (-5 yards/meters)
+50s
+-2 MOV (-10 yards/meters)
+60s
+-3 MOV (-15 yards/meters)
+70s
+-4 MOV (-20 yards/meters)
+80s
+-5 MOV (-25 yards/meters)
+NOTE: 8 is a good average Move Rating
+Melee Damage Bonus
+STR + SIZ
+Damage Bonus
+Build
+2 - 64
+-2
+-2
+65 - 84
+-1
+-1
+85 -124
+None
+0
+125 - 164
++1d4
+1
+165 - 204
++1d6
+2
+STR + SIZ
+Damage Bonus
+Build
+205 - 284
++2d6
+3
+285 - 364
++3d6
+4
+365 - 444
++4d6
+5
+445 - 524
++5d6
+6
+Choose an Occupation
+Using the list of Occupations, find or create an Occupation that best suits your character.
+This will give you:
+The number of Occupational Skill Points you have to allocate
+Credit Rating
+Specific Skills that you'll need to put your Occupational Skill Points into
+Personal narrative connections based on chosen Occupation (Keeper's discretion)
+Allocating Skill Points
+Numbers next to stats are the Base Values, meaning you automatically have that value in the space before adding your own Skill Points. (unless using Quick Skills below)
+Your Occupation and Personal Interests will give you all the Skill Points you'll be spending.
+Occupational Skill Points = varies by occupation
+Personal Skill Points = INT x 2
+Own Language - Base Value is your EDU value
+Dodge - Base Value is 1/2 your DEX value
+Credit Rating - Skill points MUST be used to reach at least the minimum Credit Rating of chosen Occupation.
+Unarmed Weapon - is your Brawl value
+Note
+You can't put any points into Cthulhu Mythos during Character Creation.
+Quick Skills
+The array below gives predetermined values for you to use in place of calculating Occupational Skill Points in order to speed up Character Creation. If  your chosen Occupational Credit Rating is below 40%, place correct % in Credit Rating and distribute any remaining points elsewhere.
+Place these values in the Skill related to your Occupation. Ignore Base Value of Skill (Total value should be these percentages exactly)
+1 x 70%
+2 x 60%
+3 x 50%
+3 x 40%
+These remaining values should be placed anywhere other than Occupational Skill and Cthulhu Mythos. Add to Base Value of Skill (Total value should be: Base Value of Skill + 20%)
+4 x (+20%)
+Cash and Assets
+1920's
+Credit Rating
+Cash
+Assets
+Spending Level
+Penniless (CR 0 or less)
+$0.50
+None
+$0.50
+Poor (CR 1 - 9)
+CR x 1 ($1 - $9)
+CR x 10 ($10 - $90)
+$2
+Average (CR 10 - 49)
+CR x 2 ($20 - $98)
+CR x 50 ($500 - $2450)
+$10
+Wealthy (CR 50 - 89)
+CR x 5 ($250 - $445)
+CR x 500 ($25,000 - $44,500)
+$50
+Rich (CR 90 - 98)
+CR x 20 ($1800 - $1960)
+CR x 2000 ($180,000 - $196,000)
+$250
+Super Rich (CR 99)
+$50,000
+$5M+
+$5000
+Modern
+Credit Rating
+Cash
+Assets
+Spending Level
+Penniless (CR 0 or less)
+$10
+None
+$10
+Poor (CR 1 - 9)
+CR x 20 ($20 - $180)
+CR x 200 ($200 - $1,800)
+$40
+Average (CR 10 - 49)
+CR x 40 ($400 - $1,960)
+CR x 1000 ($10,000 - $49,000)
+$200
+Wealthy (CR 50 - 89)
+CR x 100 ($5,000 - $8,900)
+CR x 10,000 ($500,000 - $890,000)
+$1,000
+Rich (CR 90 - 98)
+CR x 400 ($36,000 - $39,200)
+CR x 40,000 ($3.6M - $3.92M)
+$5,000
+Super Rich (CR 99)
+$1 Million
+$100 million+
+$100,000
+Credit Rating also determines your character's general living standards and relative status in society.
+Gear and Equipment
+Try to purchase items that would suit your Occupation or Personal Interests.​
+Derived Attributes/Mechanics Tab
+Hit Points - (SIZ + CON) / 10 rounded down​Sanity - Always starts equal to your POW​Luck - 3d6 x 5 ( /r 3d6*5 Luck )
+Magic Points - 1/5th of your POW rounded down
+Optional Rules
+Spending Luck
+Luck points can be spent 1 to 1 to improve a Skill roll made by an investigator and are deducted from the total Luck score. Luck points may not be spent on Luck rolls, Damage rolls, Sanity rolls or rolls to determine Sanity points lost. Criticals, fumbles and firearm malfunctions cannot be affected by Luck Points. When a Skill roll is failed a player can choose to either Push the roll OR spend Luck points. No skill improvement check is earned if Luck points were used to alter the roll.
+Recovering Luck
+At the end of a session each player may make a Skill Improvement check against their remaining Luck. Rolling above the remaining Luck results in a 1d10 roll to add to Luck.
+Rolling Dice
+Successes and Failures
+Roll 1d100 against any Skill or Characteristic
+Fumble = If target Skill or Characteristic value is 50 or above: 100 Fumbles; If the target Skill or Characteristic value is below 50: 96-100 Fumbles
+Failure = Above Skill or Characteristic value
+Regular Success = Equal to or below Skill or Characteristic value
+Hard Success = 1/2 Skill or Characteristic value
+Extreme Success = 1/5 Skill or Characteristic value
+Critical Success is always 01
+Extreme Success
+Out of Combat - Achieves goal set
+In Combat (Blunt melee weapon) - Max weapon/Unarmed Damage + Max Damage Bonus if applicable.
+In Combat (Impale melee weapon) - Roll weapon damage + Max Weapon Damage + Max Damage Bonus if applicable.
+In Combat (Shotguns) - Max Weapon Damage
+In Combat (Ranged Impale weapons) - Roll weapon damage + Max Weapon Damage + Max Damage Bonus if applicable. UNLESS AT EXTREME RANGE, See below.
+Critical Success
+Out of Combat - Something beneficial occurs beyond simply achieving the goal.
+In Combat (Blunt melee weapon) - Same as Extreme Success.
+In Combat (Impale melee weapon) - Same as Extreme Success.
+In Combat (Shotguns) - Same as Extreme Success.
+In Combat (Ranged Impale weapons) - Same as Extreme Success, with one exception: While at Extreme range and while using an Impale weapon, the player MUST roll a Critical Success in order to get the same bonus as Extreme Success above.
+Fumble
+Keeper's discretion, but simply means something really bad occurs, worse than a normal failure.
+Bonus/Penalty roll
+Roll the 10's position of the dice twice (or possibly even three times if the Keeper sees fit) and either take the best or worst of the two/three dice depending on if it's a Bonus or a Penalty. (Lowest for Bonus and Highest for Penalty)
+Development Phase/Leveling Up
+The moment an Investigator Succeeds on a Skill roll, they should mark that Skill for Improvement.
+At the end of a Scenario or, if playing a campaign, at the end of a Chapter, the player will roll 1d100. If they roll higher than their current Skill value, they may roll 1d10 and add the number rolled to their current Skill value.
+When an Investigator increases a Skill to 90% or more, immediately add 2d6 points to their current Sanity.
+During this Development Phase, an Investigator can also: Seek Self Help in order to increase current Sanity; Note any changes to their Credit Rating; Reduce Sanity limits by 1 for each individual Mythos entity encountered.
+You can also Train at the Keeper's discretion allowing a 1d10 dice roll in a Skill once per four months after a successful Skill roll. (better suited for campaign play)
+Pushing a roll
+Re-roll the dice in an attempt to succeed.
+Note that, although simply a re-roll of the dice, it's not meant to be simple in terms of how it's handled in game narratively.
+The player must describe how their investigator is pushing the limits of the attempted check and must realize that when given the opportunity to Push a roll by the Keeper, a failure could lead to dire consequences, essentially heightening the stakes of any roll made.
+Multiple skills in a single roll
+If a situation occurs where there are multiple ways to achieve a singular goal, the Keeper may give the player multiple Skill or Characteristic options to roll.
+A single dice roll is made and a success in ANY Skill or Characteristic called for wins the roll.
+If a situation REQUIRES multiple Skills or Characteristics to succeed on a single task, only one roll is made for both tasks and then compared to the Skills or Characteristics.
+Assisting/Help Rolls
+Multiple people may make the same roll with only one of them needing to Succeed on the roll for them to succeed as a group. Sneaking being an exception, where if multiple people attempt to sneak, a single failure will cause the group to fail.
+Physical Human limits and assisting
+Investigators can share their STR to overcome something with a difficulty over 90.
+Anything above 100 + Investigator's STR is impossible, but by adding other Investigator's STR to the problem, you can overcome those limitations.
+Mechanically, you'll subtract helping Investigators STR from the opposed difficulty starting with the lowest STR first. Then, any remaining Investigators who didn't use their STR to reduce the difficulty of the roll can make a Skill roll against the lowered difficulty (Now needing a Regular, Hard, or Extreme Success determined by the Keeper). An attempt at the roll can only be made once the total difficulty is reduced to a total that is below 100 + an Investigator's STR.
+Example
+Opposing difficulty = 150
+Investigator A (STR 45)
+Investigator B (STR 50)
+Investigator C (STR 25)
+Investigator D (STR 60)
+Investigators C,A, & B use their STR to lower the Difficulty: 150 - (25+45+50) = 30
+This leaves Investigator D to make the STR roll, only needing a Regular Success to succeed in the roll.
+In this example, technically, Investigator D could have made the roll without help as the max they could attempt would be 100 + their 60 (160), but it would have had to be an Extreme Success for them to succeed in the roll. By gaining help, the difficulty of the task was lowered tremendously, and a Regular Success was all that was needed.
+Idea Rolls
+Idea rolls are meant to be proposed to the players by the Keeper in times that the players are stumped by the investigation. A successful INT roll will help give the players a clue about how to proceed, while a failure still provides the clue, but possibly at some difficulty or cost to the Investigators.
+Know Rolls
+By tapping into an Investigators formal/informal education, they can attempt to recall information using an EDU roll. This is used as if the Investigator has indirect knowledge of a subject while not exactly specializing in the subject in question.
+Combat
+Turn order
+Turn Order is determined by DEX, highest to lowest.
+In the case of a tie, the combatant with the highest Combat skill goes first.
+A player may delay their turn in a single round of combat until another Investigator acts. The turn order returns to normal after that round.
+Readied firearms may shoot at DEX + 50
+Combat Actions
+Use the Fighting or Firearms Skill
+Use a Fighting Maneuver
+Flee from combat
+Cast a spell
+Perform some other form of non-combat action that may require a roll
+As part of any of the options above, a character may also move a number of yards equal to their MOV rate times 5. (i.e. MOV 7 = 35 yards/meters)
+Combat rolls cannot be Pushed!
+Opposed Rolls
+Both opponents will roll with a chosen Skill or Characteristic approved by the Keeper.
+Compare results by the level of Success scale. (Fumble through Critical Success)
+In the case of a tie, while not in combat, the side with the higher Skill or Characteristic value wins. (for tie results while in combat, see Fighting Back and Dodging below)
+If STILL a tie, re-roll.
+Melee Combat
+Melee combat is solved with opposed Fighting Skill rolls.
+When attacked, you may choose to Dodge using the Dodge Skill against the opposing Fighting Skill or Fight Back with your own Fighting skill, using your current or improvised melee weapon.
+Multiple Melee attacks against a single target gain a Bonus die for each attack after the first one of a round. (Characters or Monsters with multiple attacks per round can Dodge or Fight Back that number of times before a Bonus die is added to the multiple attacks against them)
+Dodging
+If the attacker succeeds they deal damage to the target. If the defender succeeds, they dodge the attack and take no damage. In case of a draw, the defender wins, and if both fail no damage is inflicted.
+Fighting Back
+If the attacker succeeds, they deal damage to the target. If the defender succeeds, they dodge, parry, or avoid the attack and deal THEIR damage to the attacker. If it's a draw the attacker wins, and if both fail no damage is inflicted.
+Note that while Fighting Back, a Defender does not gain the bonus damage of an Extreme/Critical Success.
+If a player chooses to Fight Back against a melee attacker with a ranged weapon, they can only use the weapon as an Improvised melee weapon. (Keeper determines damage dealt after a successful contested Fighting roll.)
+Fighting Maneuvers
+A maneuver can be defined as an Action that is taken on an opponent other than inflicting physical harm. (i.e. trying to disarm someone, restraining them, pushing them away, throwing them to the floor etc.)
+Normally made with a Brawl Skill roll but could be argued that a Fighting (sword) skill could disarm an opponent. The roll needed is left up to the Keeper. The opponent will choose to either Dodge or Fight Back as normal.
+Build Comparison
+Dice Penalty
+Target's build 3 or greater than aggressor
+Impossible
+Target's build 2 more than aggressor
+2 dice Penalty
+Target's build 1 more than aggressor
+1 die Penalty
+Target's build matches the aggressor
+No dice modifiers
+Fighting Maneuver: Dodging
+If the attacker succeeds they perform the maneuver. If the defender succeeds or the roll is a draw, the target dodges the maneuver.
+Fighting Maneuver: Fighting Back
+If the attacker succeeds they perform the maneuver. If the defender succeeds, they dodge, parry, or avoid the attack and deal THEIR damage to the attacker. If it's a draw apply the effect of the maneuver.
+Note that while Fighting Back, a Defender does not gain the bonus damage of an Extreme/Critical Success.
+The target can also choose to use a maneuver in response to an attack. Same results as Fighting Back, but instead of dealing damage, they instead deploy their own maneuver.
+Extreme Successes and Crits with Melee Weaponry
+Don't forget that an Extreme Success and Critical Success, while using a melee weapon, immediately imparts Max weapon damage + the investigator's Max Damage Bonus (if any).
+If an Extreme Success or Critical Success is rolled with a melee weapon that has the "Impaled" Property, add ANOTHER weapon damage roll on top of the Max weapon damage + Max Damage Bonus (if any).
+Ranged Attacks
+A defender can Dive For Cover forfeiting their next attack and causing the shooter to roll with a Penalty die.
+Thrown weapons can be dodged in the same way Fighting attacks can be.
+A character can't choose to Fight Back against a ranged or thrown weapon attack unless within 1/5th their DEX in feet to the attacker.
+Firearms
+The difficulty of Firearm attacks is always based on range. Each doubling of range above a weapon's base range increases the difficulty by one step. At Extreme difficulty, only a roll of 01 will cause an Impale to occur.
+Malfunctions: If a weapon include a Malfunction number, rolling equal or above that number causes the gun to not fire at all. In the case of using a lever-action weapon, the gun jams. Fixing a jam takes 1d6 combat rounds + a successful Mechanical Repair or Firearms Skill roll.
+Automatic Weapon fire
+Full Auto - Player states the number of "Volleys" they want to fire, up to the capacity of the gun before rolling any dice.
+A Volley is calculated as an Investigators Submachine Gun or Machine Gun Skill divided by 10 rounded down. (just simply use at the tens digit).
+A Volley is the number of bullets a character can fire per dice roll.
+An Investigator can shoot off as many Volleys as they'd like in a single round, but the more Volleys they take, the harder it will be to hit with each subsequent Volley after the first adding a Penalty die (maximum of 2) to the roll.
+A Regular/Hard Success means only half the bullets in a Volley actually hit.
+On an Extreme Success all bullets in a Volley hit and the first half of which Impale.
+Burst Fire - 2 or 3 bullets are fired in a single Volley as an action, determined by the weapon.
+Semi Automatic - Most Handguns are capable of shooting off 2 or 3 bullets in one action, but unlike Burst Fire, you'll need to roll for each bullet shot off during the action with each shot taking an additional Penalty die than the last, starting with the second shot.
+Example of Full Auto
+Daniel has a Submachine Gun with a 20 round clip. His Firearms (SMG) is 48%.
+48/10 = 4.8 rounded down to 4. So this is 5 Volleys of 4 bullets each.
+Daniel wants to empty the clip into the enemy that has 1 Armor.
+1st Volley/Roll: 40; Regular hit; 2 bullets hit (half the bullets in the Volley)
+2nd Volley/Roll: 27; 1 Penalty dice: 7 (Result of 77); Miss
+3rd Volley/Roll: 07; 2 Penalty dice: 2, 3 (result of 37); Regular hit; 2 bullets hit (half the bullets in the Volley)
+Difficulty to hit raises from Regular to Hard
+4th Volley/Roll: 13; 2 Penalty dice: 1, 4 (result of 43); Regular success; Miss
+Difficulty to hit raises from Hard to Extreme
+5th Volley/Roll: 81; 2 Penalty dice: 3, 6 (result of 81); Miss
+2 Volleys hit for a total of 4 bullets. This Submachine Gun deals 1d10+2 per bullet.
+Because of the enemies armor, the damage is reduced by 1 per bullet.
+Damage Roll = 8 + 2 + 6 + 4 + (2x4) = 28 - 4 = 24 points of Damage
+Surprise attack
+The Keeper may allow a skill roll to determine if a target anticipates a surprise attack. (Listen, Spot Hidden, or Psychology)
+The attackers Stealth Skill value can be used to set the difficulty of the roll.
+Successful Surprise attack
+The Keeper can allow the attack to be an automatic success or award the attacker a Bonus die. If it's a Surprise ranged attack, the attacker must always roll to hit.
+Failed Surprise attack
+The target can choose to Dodge or Fight Back as normal.
+Prone Attacks
+Fighting Attacks made AGAINST a Prone character gain a Bonus die.
+A Firearms roll made AGAINST a Prone character gain a Penalty die.
+A Firearms roll made WHILE Prone gains a Bonus die.
+A Prone character can immediately stand up if they successfully Dodge or Fight Back against an opponent, or, during the Prone character's turn, they may stand up and then use their Action.
+Movement
+The maximum distance a character can move in a combat round equals their MOV rate times 5 in yards.
+Melee Movement
+You may choose to attack or use your Action AFTER you've made your movement for the round.
+Ranged Movement
+You may choose to attack or use your ranged attack ANYTIME during movement, except in the case of a Readied firearm. If you've Readied a firearm previously, you must make the shot before moving that round to benefit from the +50 DEX.
+If the player chooses to move and shoot in the same round, they must roll to shoot with a Penalty die.
+Armor
+Armor simply reduces damage dealt after damage is calculated according to its Armor Point value which is decided by the Keeper.
+Shotguns damage, specifically, is reduced for each roll of a damage die, meaning a 4d6 of damage would have the Armor Reduction activated 4 times in the final amount of damage dealt.
+Armor does not reduce damage from magic, drowning, etc.
+Examples of Armor Point values:
+Armor
+Damage Reduction
+Heavy Leather Jacket
+1 point
+WWI Helmet
+2 points
+1 " Hardwood
+3 points
+Present U.S. Helmet
+5 points
+Heavy Kevlar Vest
+8 points
+Military Body Armor
+12 points
+1.5 " Bulletproof Glass
+15 points
+1 " Steel Plate
+19 points
+Large Sand Bag
+20 points
+Taking Damage/Healing
+Damage
+Regular Damage - Less than half the character's Max HP from a single attack.
+A character cannot die as a result of Regular Damage.
+Major Wound - Equal to or more than half the character's Max HP from a single attack.
+When a Major Wound is taken: Mark the Major Wound tracker; fall prone; make a CON roll to avoid going Unconscious; if taken below 0 with the Major Wound tracker marked, the character is Dying.
+Instant Death - More than a character's Max HP from a single attack.
+Unconscious
+At 0 Hit Points the player is Unconscious. Any sincere attempt to kill an Unconscious character should result in Death.
+Regular Damage to 0 means the character is not dead and will heal in time.
+Major Wound damage to 0 means Dying immediately.
+Dying
+Dying - Have marked a Major Wound and reduced to 0.
+When Dying, the character is unconscious and must make a CON roll at the end of the next round and every round after; if the CON roll fails, the character dies immediately.
+First Aid MUST be used to help a dying character before making a Medicine roll to heal the character.
+Healing
+First Aid
+Used within 1 hour of injury to restore 1 Hit Point. It can be attempted with further attempts counting as Pushed rolls. Two people can roll First Aid at the same time with one success between the two counting as a full success.
+When using First Aid to treat a Dying character, the 1 Hit Points restored is temporary in order to Stabilize the patient. During the first hour of Stabilization you must make a Medicine roll in an attempt to bring the patient back up.
+If you don't make a Medicine roll before the hour is over, the patient must make a CON roll. If the patient fails their CON roll at the end of that hour, they lose that 1 HP and revert to the Dying condition, making CON rolls at the end of each round.
+Medicine
+A Medicine roll unchecks the Dying condition and restores 1d3 Hit Points taking a minimum of 1 hour.
+Regular Damage Recovery
+Recover 1 Hit Point per day if Major Wound has not been marked.
+Major Wound Recovery
+Recovery CON roll at the end of each week if Major Wound is marked.
+If the CON roll fails, the Major Wound persists for the next week.
+If the CON roll succeeds, 1d3 Hit Points are recovered.
+If the CON roll is an Extreme Success, recover 2d3 Hit Points
+Add a bonus die to the roll if the character is resting in a comfortable environment.
+Add a penalty die if the character is in a poor resting environment.
+Removing the Major Wound mark
+Roll an Extreme Success on the CON recovery roll.
+Anytime the character's current Hit Points are equal to or more than half of their full Hit Point total.
+Fumbling During Major Wound Recovery
+A fumble during a Major Wound recovery roll should result in an entry in a character's Wounds and Scars section that relates to the nature of the injury.
+Chases
+Part 1: Establish the Chase
+Simply determine whether a chase is needed or not. Is the pursuer slower than the character being chased? Simply describe the scene as the pursuer loses their quarry.
+If the pursuer has a chance to catch the fleeing character, determine each individual's chase Speed.
+If the resulting MOV speed of the pursuer is now **less** than that of the character being chased, the pursuer loses their quarry.
+If the resulting MOV speed of the pursuer is now **equal or more** than that of the character being chased, move on to Part 2!
+Chase Speed
+If on foot or using a self propelled method of movement, roll CON. If driving, roll Drive Auto:
+Success: No change to individual MOV rating during the chase.
+Extreme Success: +1 to all MOV rolls during the chase.
+Failure: -1 to all MOV rolls during the chase.
+Part 2: Cut to the Chase
+No matter how far away the pursuer was from their target, if they've made it to this step, the narrative of the chase starts just as the pursuer is just two Locations behind their target.
+"Location" is a simplified term to describe 2 separate obstacles separating the pursuer and the target. They can be as close as two separate rooms away or as far as multiple points on a stretch of road.
+Just like combat, a chase takes place in rounds and the characters act in DEX order.
+Determining number of Movement Actions
+Every character gets 1 movement action by default. Additional movement actions are then given by how much higher ones MOV stat is above the others. Thus the slowest participant always has 1 movement action, while someone with a MOV that is 1 above them gets 2 movement actions; 2 above the slowest gets 3 movement actions, and so on.
+Actions in a chase round
+Move forward one Location by spending a movement action.
+Initiate a character's attack using Fighting, Firearms, or Drive Auto skill.
+Cast a spell
+Perform another action requiring time and perhaps a roll, such as picking a lock.
+You may NOT Push rolls during a chase
+Part 3: Movement
+If there are no Hazards to worry about during the chase, the characters can move 1 Location per movement action spent.
+Hazards
+Adding Hazards add the chance for the character being pursued to actually get away.
+By using a Hazard, a skill roll will be used to determine changes in movement actions. During a Hazard skill roll, a character may exchange 1 movement action for 1 Bonus die (up to 2).
+Success: On a successful Hazard skill roll, the character or vehicle continues unhindered.
+Failure: On a failed Hazard skill roll, the character or vehicle will take damage according to the Keepers liking, depending on the severity of the Hazard. In addition, roll 1d3 to determine the number of lost movement actions.
+Barriers
+Barriers are similar to Hazards with the added effect of: Until the barrier has been successfully overcome the character's movement actions become zero. Damage may still be taken on a failure determined by the Keeper.
+On Foot Barriers: If a character encounters a barrier AND tries to brute force their way through it, they'll roll weapon or unarmed damage to the barrier (depending what they have available) without making a skill roll first.
+Vehicular Barriers: If a vehicle encounters a barrier, the driver will roll 1d10 per point of the vehicle's Build. If the vehicle fails to destroy the barrier, the vehicle is wrecked.
+Part 4: Conflict
+The characters or vehicles must be in the same Location before being able to attack one another unless using Firearms. Initiating an attack costs 1 movement action. A character can always respond to an attack (Dodge or Fight Back) even without any movement actions.
+Vehicle attack: Use the Drive Auto skill and then 1d10 damage per point of the vehicle's Build. Every 10 Hit Points of damage to a vehicle lowers its Build  by 1 point. The attack vehicle also receives damage equal to half of the damage dealt. An on foot character may still attempt to Fight Back or Dodge a vehicular attack.
+Fighting Maneuvers in a chase
+Fighting maneuvers (i.e. pushing, tripping, etc.) can be used with a Success causing the same effects as a failed Hazard roll above. (i.e. Situational based damage, and a 1d3 loss of movement actions)
+Vehicles can also make a fighting maneuver as long as the opposing car is less than three build points higher than the contesting vehicle. For each point of Build larger the contesting car is (1 or 2 only) the player takes a 1 or 2 Penalty dice to the roll.
+More Chase Rules!
+For more in-depth and situational Chase rules, check out the Part 5: Optional Rules section under Chases in the Core Rulebook.
+Sanity
+Sanity Rolls
+Sanity rolls require a 1d100 roll against the player's current Sanity. No Bonus or Penalty dice may be used on a Sanity roll (The exception being the use of your Key Connection when attempting Self-Help to regain Sanity, which rewards 1 Bonus die). Luck points may also not be spent during a Sanity roll if using the Luck Optional Rule.
+Success: The investigator loses no Sanity or very few Sanity points.
+Failure: The investigator loses a number Sanity points dependent on the source.
+Fumble: The investigator loses the max amount of Sanity points dependent on the source.
+Failing a Sanity roll also causes the investigator to do something involuntary decided by the Keeper:
+Jump in fright (Dropping a held item)
+Cry out in terror (Alerting nearby listeners)
+Involuntary movement (Run away)
+Involuntary combat action (Take a swing or shot)
+Freeze in place (Can't move)
+Regaining Sanity
+Sanity may be rewarded by the Keeper in the form of a die roll at the end of scenario or campaign chapter.
+A character is awarded 2d6 Sanity back when a character increases a Skill to 90%.
+Psychotherapy can give 1d3 points of Sanity back if the player succeeds on a 1d100 roll against the doctors Psychoanalysis skill once per month. Failing this roll results in 1d6 Sanity points lost and treatment by that analyst concludes.
+Self-Help is defined as time spent with someone included in their backstory which could act as psychological support. This action may be taken between adventures or during the Development Phase. The investigator will roll Sanity (with 1 Bonus die if obtaining Self-Help from the investigator's Key Connection), on a success the investigator gains 1d6 Sanity back. In addition, they may recover from any Indefinite Insanity. On a failure, they lose 1 Sanity and possibly sever ties with that backstory individual in some way.
+Max Sanity Points
+Max Sanity equals 99 minus the investigator's current Cthulhu Mythos skill
+Insanity
+3 stages of Insanity can be obtained: temporary, indefinite, and permanent.
+Temporary Insanity
+If an investigator loses 5 or more Sanity points in a single Sanity roll, they must roll INT. If the investigator FAILS, they carry on, repressing the memory. If they SUCCEED, the investigator goes temporarily insane for 1d10 hours.
+Indefinite Insanity
+If the investigator loses 1/5th or more of their Sanity in one game day. Indefinite insanity lasts until the character is Cured or Recovers.
+Permanent Insanity
+When Sanity points are reduced to 0, the character is permanently and irreparably insane and ceases to be a Playable Character.
+Cthulhu Mythos Gain
+Any Insanity brought on by Mythos-induced trauma (i.e. Mythos monster, or Mythos tome under the effects of a Mythos spell) results in the Cthulhu Mythos skill rising. The first time Mythos related Insanity is encountered in these ways, 5 points are added to the Cthulhu Mythos skill. (Thus lowering Maximum Sanity)
+Any Insanity gained due to future Mythos-induced trauma results in 1 point added per instance.
+Phases of Insanity
+Phase 1: Bout of Madness
+The player loses control of their investigator fully for a short period of time, normally around 1d10 Combat rounds or possibly longer (Keeper's discretion). In that time the character will act irrationally (Keeper may decide or roll on the Bouts of Madness table)
+The Keeper will also change, erase, add, or obscure things within the investigators backstory or description!
+Phase 2: Underlying Insanity
+Control is returned to the player. The player may choose to roleplay their fragile mental state after the Bout of Madness.
+Losing even a single point of Sanity while in this phase will result in another Bout of Madness.
+Underlying Insanity lasts until the Temporary/Indefinite Insanity is cured.
+While under the effects of Underlying Insanity, any actions other than fighting or fleeing may only be made with one Penalty die applied as well as being in the presence of their Phobia/Mania.
+Reality Checks
+To see through what the character believes is an illusion or manifestation of their own making, they must make a Sanity roll:
+Success: The investigator sees through any delusions, and be immune to delusions until losing any more Sanity.
+Failure: Lose 1 Sanity point (Possibly activating a Bout of Madness) and the delusion remains
+Treatment and Recovery from insanity
+Temporary Insanity can be recovered in 1d10 hours or after a good night's sleep. Indefinite Insanity can be cured by either Private Care or Institutionalization. Alternatively, the Keeper may deem an Investigator's Development Phase a good time to cure Indefinite Insanity.
+Private Care
+After each month of treatment an investigator in private/home care can roll 1d100.
+On a result of 01-95: Regain 1d3 Sanity; Then make a Sanity roll, if successful, they are cured of their Insanity. If unsuccessful, the player may attempt another Sanity roll in one month's time.
+On a result of 96-100: 1d6 Sanity points are lost and the player may attempt another 1d100 roll in one month's time.
+Institutionalization
+After each month of treatment an investigator in an Asylum/Institution can roll 1d100.
+On a result of 01-50: Regain 1d3 Sanity; Then make a Sanity roll, if successful, they are cured of their Insanity. If unsuccessful, the player may attempt another Sanity roll in one month's time.
+On a result of 51-95: No progress is made and the player may attempt another 1d100 roll in one month's time.
+On a result of 96-100: 1d6 Sanity points are lost and the player may attempt another 1d100 roll in one month's time.
+Getting Used To The Awfulness
+A character should never lose more than the maximum Sanity loss from a Mythos creature as described in their stat block even upon seeing the creature multiple times. (i.e. A creature with a Sanity loss of 2d6 means an investigator can not lose more than 12 Sanity, even upon multiple sightings.)
+But... each Investigator Development Phase lowers ALL monster sightings Sanity loss by 1. (i.e. If a player lost 12 Sanity on the creature above, they can no longer lose Sanity upon seeing it again, but once the player goes through an Investigator Development Phase, they can now stand to lose 1 additional Sanity when encountering any/all Mythos creatures again.)
+Magic and Spells
+Reading a Mythos Tome
+Make an appropriate Language skill roll (if necessary) with it's Difficulty determined by the age, form and condition of the book.
+A Failed roll results in nothing being accomplished, and re-attempting to understand the Tome takes an additional amount of time determined by the Keeper.
+Tomes have 5 values:
+Cthulhu Mythos Initial: How much to add to the Cthulhu Mythos skill immediately upon opening and understanding a tome. Roll Sanity point loss.
+Cthulhu Mythos Full: Upon completing the Full Study time of a tome, roll Sanity point loss, then compare the Mythos Rating of the book against the character's own Cthulhu Mythos skill. If the reader's Cthulhu Mythos skill is below the tomes Mythos rating, they will add to the Cthulhu Mythos Full value to their Cthulhu Mythos skill. If the reader's Cthulhu Mythos skill is at or above the tomes Mythos rating, they will only add the Cthulhu Mythos Initial value to their Cthulhu Mythos skill again.
+Sanity point loss: An immediate loss in Sanity upon Initial reading and Fully Studying the tome.
+Full Study time: The amount of time necessary to fully comprehend everything a tome has to offer as well as take advantage of the benefits of a Fully Studied tome.
+Mythos Rating: Functions as a way to determine Cthulhu Mythos gain (as above) and a rating to roll against when researching through the book for useful information during an investigation. (can only be used if Fully Studied)
+Fully Studied advantages
+Ability to research Mythos information in a tome (using the tomes Mythos Rating)
+The Keeper may decide to allow a tome, once Fully Studied, to increase other skills as well as Cthulhu Mythos. (limited to 1d6 to 1d10 increase per skill or possibly a skill tick for improvement during the next Development Phase)
+Occult/Non-Mythos Books
+Occult books grant points to the Occult skill after being read as opposed to Cthulhu Mythos. Occult books may cost Sanity points if the contents warrant it.
+Using Magic
+Magic Points (MP)
+Casting a spell expends a certain amount of Magic Points. When out of Magic Points, casting a spell pulls directly from Hit Points, manifesting as open sores, cuts, etc.
+Magic Points regenerate at a rate of 1 MP per hour but never above 1/5th of the Character's POW score. (2 per hour for those with a POW of over 100, 3 per hour for those with a POW over 300 and so on)
+Learning Spells
+There are three ways to learn spells: From a Mythos Book, From another person, or from a Mythos Entity
+NOTE: Specific spells can be found in the Grimoire chapter of the Keeper's Rulebook
+From a Mythos Book
+If a Mythos book/tome contains a spell, the Keeper will reveal the spells name upon Initial reading of the book. The spell then takes, typically, 2d6 weeks to learn. If the spell isn't automatically given to the investigator, a hard INT roll should be ma
+de to learn the spell with a failure resulting in nothing being accomplished, and re-attempting to understand the Tome takes an additional amount of time determined by the Keeper.
+From Another Person
+If learning a spell from someone with successful knowledge of said spell, it may be learned within 1d8 days. The rules above, other than time it takes to learn, apply here.
+From a Mythos Entity
+With a minimum of 1d6 Sanity loss, a Mythos creature may implant a spell into an investigators mind through dreams, visions, telepathy etc. The Keeper may require an INT roll to retain the knowledge. This is method of spell learning is much more rare.
+Casting Spells
+A Casting roll must be made when casting a certain spell for the first time. After that, the spell may be cast without first needing to succeed a Casting roll. (NPCs and Monsters don't need to make a Casting roll)
+If all prerequisites and items necessary to cast a spell is met, the character may attempt to cast. Casting a spell for the first time requires succeeding on a hard POW roll. A success casts the spell.
+A character only has two chances to cast a spell for the first time (one normal POW roll and one Pushed roll which takes place anytime the caster wants to cast the spell ever again) If the second "Pushed" roll fails, the spell is cast, but dire consequences happen to the caster.
+Any Magic Point cost, Sanity Point loss, and/or POW are multiplied by 1d6 (don't forget the effects of casting a spell past zero Magic Points)
+Lesser spell effect occurs
+Possibly a Powerful spell effect occurs
+Playing It Safe
+If the investigator is in no rush, they could potentially quit after failing the first roll to cast a spell, take the time to re-learn the spell (taking another 2d6 weeks and a hard INT roll to re-learn) and then re-attempting the spell as if it were the first time attempting the spell!
+Interrupting a spell being cast
+A distraction such as being struck or shot will cause a spell to be disrupted and possibly set off a failed spell casting effect as above. The caster still pays the Sanity and Magic Point cost on a spell interrupted.
+Increasing your POW score
+If a spell calls for a contested POW roll vs a target and the caster wins the roll, the caster may may a 1d100 roll against their own POW score. If the amount rolled is GREATER than their score the caster's POW score increases by 1d10 points permanently.
+POW can also increase by 1d10 if a character rolls a 01 on a Luck roll and then succeeds on a follow-up 1d100 roll against their own POW score, same as above.
+NOTE: Increasing Power does not increase current Sanity points.
+Keeper Tips
+Determining Difficulty
+Regular Success needed - If opposed Skill or Characteristic is below 50
+Hard Success needed - If opposed Skill or Characteristic is equal to or above 50
+Extreme Success needed - If opposed Skill or Characteristic is equal to or above 90
+For Charm, Fast Talk, Intimidate, and Persuade Skills, take into account the opposing target and adjust the difficulty value accordingly.
+Idea Rolls
+Don't forget to ask for Idea rolls if the players become stumped at what to do next, or while trying to come up with a solution to something.
+Poisons
+The physical effects of a Poison are up to the Keeper (i.e. stomach pains, vomiting, impaired vision, unconsciousness etc.) but there is still a certain amount of damage that should be taken that coincides with the potency of a poison.
+Very Mild - No damage, only temporary unconsciousness
+Mild - 1d10
+Strong - 2d10
+Lethal - 4d10
+A player should roll a CON test in an attempt to resist the Poisons damage and effect. If the CON test is an Extreme Success, they lesson the damage by one step or if the CON test is a Critical Success, the Keeper may allow the effects and damage to be completely nullified.
+Running NPCs
+Remember that creatures in Call of Cthulhu are normally as intelligent if not more intelligent than the investigators. Don't have them mindlessly attack or keep themselves in immediate danger. Use their attacks uniquely and intelligently depending on their surroundings and enemies.
+Don't forget to have the players roll for Sanity upon seeing the creature/monster for the first time. Note that a number of the same creatures together does not call for multiple Sanity rolls. Only one roll, defined on the monster stat block, is necessary.
+Remind players to keep track of the creatures they encounter. Sanity Loss stacks with multiple encounters but should never exceed the max amount of Sanity a character can lose by seeing a Mythos creature. (i.e. A creature with a Sanity loss of 2d6 means an investigator can not lose more than 12 Sanity, even upon multiple sightings.) They need to track this, as each Investigator Development Phase lowers ALL their monster sightings Sanity loss by one. (i.e. If a player lost 12 Sanity on the creature above, they can no longer lose Sanity upon seeing it again, but once the player goes through an Investigator Development Phase, they can now stand to lose 1 additional Sanity if encountering that Mythos creature again.)
+Try and give your Monsters spells before the session starts to make your monsters more unique and speed up gameplay. (as not having to look up spells during gameplay is always nice)
+Use a Monster's Build to out maneuver the Investigators. Grab, carry, push, pull, disarm, knock prone. Have fun with your environment and don't be afraid to toss your players around adding chaos to the fight!
+Remember, a Monster can Fight Back or Dodge a number of times equal to their attacks per round. So, it's fully possible to Fight Back multiple times and then still attack on the Monster's turn.
+Bonus/Penalty Dice Examples
+Situations that could call for Bonus dice when rolled:
+Point Blank Range
+Aiming
+Target Size Difference (Brawling while larger than target)
+Target Size (Shooting a large target; Build 4+)
+Helping
+Social Advantages (friend, close contact, relative, leverage, blackmail, etc.)
+Surprise Attack
+Outnumbering A Target
+Skill Roll Expertise
+Using Key Connection To Try And Regain Sanity
+Situations that could call for Penalty dice when rolled:
+Fast Moving Targets (MOV 8+)
+Target Size (Brawling while smaller than target)
+Target Size (Shooting a small target, Build -2)
+Loading A Single Bullet And Shooting In Same Round
+Multiple Shots (handguns)
+Firing Into Melee
+Shooting While Moving
+Targeting A Specific Body Part
+Weather (downpouring rain, thick fog, blizzard etc.)
+Major Wounds
+Being Outnumbered
+Out Of Base Range For A Ranged Weapon Attack
+Shooting A Target That Is Diving For Cover
+Shooting A Partially Concealed Target
+Additional Shots After First While Shooting Full Auto
+Hazards During A Chase
+Phobias/Manias
+Did this answer your question?Disappointed Reaction😞Neutral Reaction😐Smiley Reaction😃
+Table of contents
+A window into any world
+IntercomWe run on Intercom

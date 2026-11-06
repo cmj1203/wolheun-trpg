@@ -1,0 +1,46 @@
+{
+ "twist_altered_b02_closer.png": {
+  "seed": 3,
+  "phase": "line",
+  "title": "사람?!",
+  "text": "(…이 거리면 숨을 데가 없어.)",
+  "twist": "긴장 3 · 주사위 3 → 달라진 결",
+  "result": "altered",
+  "tension": "긴장 3",
+  "tip": "장면이 시작될 때 주사위가 이 값 이하면 장면이 달라진다. 판정 성공 -1, 실패 +1.",
+  "clock": "한낮 · 귀찌 7"
+ },
+ "twist_interrupt_b02_sandstorm.png": {
+  "seed": 1,
+  "phase": "line",
+  "title": "사람?!",
+  "text": "모래바람이 덮쳤다. 후드를 움켜쥐고 바위 뒤에 웅크린 채 한참을 버텼다.",
+  "twist": "긴장 3 · 주사위 2 → 끼어드는 일",
+  "result": "interrupt",
+  "tension": "긴장 3",
+  "tip": "장면이 시작될 때 주사위가 이 값 이하면 장면이 달라진다. 판정 성공 -1, 실패 +1.",
+  "clock": "한낮 · 귀찌 7"
+ },
+ "twist_altered_r3_clouds.png": {
+  "seed": 8,
+  "phase": "line",
+  "title": "해가 지는 모래",
+  "text": "구름이 몰려와 첫 별을 가렸다. 하늘은 금세 잿빛 한 장이 됐다.",
+  "twist": "긴장 3 · 주사위 1 → 달라진 결",
+  "result": "altered",
+  "tension": "긴장 3",
+  "tip": "장면이 시작될 때 주사위가 이 값 이하면 장면이 달라진다. 판정 성공 -1, 실패 +1.",
+  "clock": "해 질 녘 · 귀찌 4"
+ },
+ "twist_interrupt_r3_howl.png": {
+  "seed": 13,
+  "phase": "line",
+  "title": "해가 지는 모래",
+  "text": "멀리서 짐승 울음이 길게 이어졌다. 한 번, 그리고 또 한 번. 두 번째가 더 가까웠다.",
+  "twist": "긴장 4 · 주사위 4 → 끼어드는 일",
+  "result": "interrupt",
+  "tension": "긴장 4",
+  "tip": "장면이 시작될 때 주사위가 이 값 이하면 장면이 달라진다. 판정 성공 -1, 실패 +1.",
+  "clock": "해 질 녘 · 귀찌 5"
+ }
+}

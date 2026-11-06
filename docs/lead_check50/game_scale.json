@@ -1,0 +1,15 @@
+{
+  "reference_screenshot": "docs/lead_check41/game/game_behidat_neutral_1440.png",
+  "screenshot_size": [
+    1440,
+    810
+  ],
+  "matched_scale": 0.67,
+  "template_rmse": 9.249853787450203,
+  "matched_jewel_top_left": [
+    856,
+    154
+  ],
+  "method": "unchanged_jewel_grayscale_template_mse",
+  "game_scale_is_reconstruction_not_live_screenshot": true
+}

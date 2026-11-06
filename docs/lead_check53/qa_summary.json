@@ -1,0 +1,14 @@
+{
+  "total": 22,
+  "passed": 22,
+  "failed": 0,
+  "bodyCases": 12,
+  "bodyRolls": 0,
+  "progressCases": 16,
+  "repeatedPromptOnProgress": 0,
+  "idleNarrationRepeatViolations": 0,
+  "endingsOnProgress": 0,
+  "identityLeaks": [],
+  "foxLines": [],
+  "bodyReactionMaxChars": 24
+}

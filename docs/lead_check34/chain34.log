@@ -1,0 +1,17 @@
+22:18:17 START 모델 최종 load=2.36 1.75 1.58 | CPU usage: 2.31% user, 5.78% sys, 91.90% idle
+23:03:41 END 모델 최종 code=0 2723s load=1.86 1.44 1.46 | CPU usage: 7.6% user, 7.59% sys, 85.33% idle
+23:03:42 START 규칙 최종 load=1.86 1.44 1.46 | CPU usage: 6.1% user, 5.28% sys, 88.70% idle
+23:03:42 END 규칙 최종 code=0 0s load=1.86 1.44 1.46 | CPU usage: 4.97% user, 5.86% sys, 89.16% idle
+23:03:42 START 대조표 load=1.86 1.44 1.46 | CPU usage: 2.1% user, 5.49% sys, 92.49% idle
+23:17:19 END 대조표 code=0 816s load=1.50 1.71 1.61 | CPU usage: 2.40% user, 5.73% sys, 91.86% idle
+23:17:20 START 대체율 load=1.50 1.71 1.61 | CPU usage: 6.43% user, 8.34% sys, 85.21% idle
+23:25:52 END 대체율 code=0 512s load=1.09 1.50 1.54 | CPU usage: 2.20% user, 5.15% sys, 92.63% idle
+23:26:25 e2e route 1 (--no-llm): exit 1 30s | [e2e 1] 오류: run.sh 의 프로세스 목록: 30000ms 안에 끝나지 않았습니다
+23:26:58 e2e route 1 (--no-llm): exit 0 6s | [e2e 1] 통과
+23:27:03 e2e route 2 (--no-llm): exit 0 5s | [e2e 2] 통과
+23:27:08 e2e route 3 (--no-llm): exit 0 4s | [e2e 3] 통과
+23:27:12 e2e route 4 (--no-llm): exit 0 4s | [e2e 4] 통과
+23:27:16 e2e route 5 (--no-llm): exit 0 4s | [e2e 5] 통과
+23:27:19 e2e 피드백: exit 0 3s | [e2e 피드백] 통과
+23:28:17 e2e route 1 (실제 LLM 18097): exit 0 58s | [e2e 1] 통과
+23:28:17 FINISHED_CHAIN

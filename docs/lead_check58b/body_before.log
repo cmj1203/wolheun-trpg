@@ -1,0 +1,23 @@
+bun test v1.4.2 (744846f84)
+
+tests/silence52.test.ts:
+21 |     '입 안이 바싹 마르고 숨이 막힌다',
+22 |     '기운이 빠지고 손끝이 저린다',
+23 |     '정신이 아득해지고 다리가 풀린다',
+24 |   ]) {
+25 |     const state = structuredClone(base);
+26 |     expect((await gm.interpret({ scenario, state, beat, free: beat.free, text })).kind).toBe('idle');
+                                                                                             ^
+error: expect(received).toBe(expected)
+
+Expected: "idle"
+Received: "improv"
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/silence52.test.ts:26:89)
+(fail) 모델 없이도 주어에 저절로 생긴 복합 몸 반응은 시도로 읽지 않는다 [1.94ms]
+
+ 0 pass
+ 8 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [45.00ms]

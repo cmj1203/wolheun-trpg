@@ -1,0 +1,250 @@
+{
+ "cg_manor": {
+  "before": {
+   "chip0": {
+    "worst": 1.91,
+    "mean": 2.47
+   },
+   "chip1": {
+    "worst": 1.94,
+    "mean": 2.41
+   },
+   "chip2": {
+    "worst": 1.89,
+    "mean": 2.38
+   },
+   "title": {
+    "worst": 1.71,
+    "mean": 2.05
+   },
+   "status": {
+    "worst": 1.7,
+    "mean": 1.92
+   },
+   "menu": {
+    "worst": 4.33,
+    "mean": 5.55
+   },
+   "placeholder": {
+    "worst": 2.69,
+    "mean": 2.89
+   }
+  },
+  "after": {
+   "chip0": {
+    "worst": 7.03,
+    "mean": 7.28
+   },
+   "chip1": {
+    "worst": 7.05,
+    "mean": 7.24
+   },
+   "chip2": {
+    "worst": 7.02,
+    "mean": 7.21
+   },
+   "title": {
+    "worst": 9.74,
+    "mean": 10.13
+   },
+   "status": {
+    "worst": 5.87,
+    "mean": 6.05
+   },
+   "menu": {
+    "worst": 13.9,
+    "mean": 14.3
+   },
+   "placeholder": {
+    "worst": 8.88,
+    "mean": 9.14
+   }
+  }
+ },
+ "cg_last": {
+  "before": {
+   "chip0": {
+    "worst": 4.13,
+    "mean": 5.62
+   },
+   "chip1": {
+    "worst": 3.17,
+    "mean": 4.64
+   },
+   "chip2": {
+    "worst": 2.37,
+    "mean": 3.88
+   },
+   "title": {
+    "worst": 4.64,
+    "mean": 6.42
+   },
+   "status": {
+    "worst": 2.57,
+    "mean": 3.36
+   },
+   "menu": {
+    "worst": 7.75,
+    "mean": 10.72
+   },
+   "placeholder": {
+    "worst": 2.74,
+    "mean": 2.96
+   }
+  },
+  "after": {
+   "chip0": {
+    "worst": 8.45,
+    "mean": 8.78
+   },
+   "chip1": {
+    "worst": 7.96,
+    "mean": 8.47
+   },
+   "chip2": {
+    "worst": 7.41,
+    "mean": 8.13
+   },
+   "title": {
+    "worst": 13.53,
+    "mean": 14.82
+   },
+   "status": {
+    "worst": 6.82,
+    "mean": 7.2
+   },
+   "menu": {
+    "worst": 15.82,
+    "mean": 16.49
+   },
+   "placeholder": {
+    "worst": 8.97,
+    "mean": 9.23
+   }
+  }
+ },
+ "cg_beauty": {
+  "before": {
+   "chip0": {
+    "worst": 1.77,
+    "mean": 2.98
+   },
+   "chip1": {
+    "worst": 1.74,
+    "mean": 2.74
+   },
+   "chip2": {
+    "worst": 1.93,
+    "mean": 3.32
+   },
+   "title": {
+    "worst": 1.63,
+    "mean": 2.68
+   },
+   "status": {
+    "worst": 1.44,
+    "mean": 1.93
+   },
+   "menu": {
+    "worst": 3.39,
+    "mean": 5.15
+   },
+   "placeholder": {
+    "worst": 2.34,
+    "mean": 2.98
+   }
+  },
+  "after": {
+   "chip0": {
+    "worst": 6.88,
+    "mean": 7.52
+   },
+   "chip1": {
+    "worst": 6.85,
+    "mean": 7.38
+   },
+   "chip2": {
+    "worst": 7.05,
+    "mean": 7.78
+   },
+   "title": {
+    "worst": 9.58,
+    "mean": 10.88
+   },
+   "status": {
+    "worst": 5.44,
+    "mean": 5.91
+   },
+   "menu": {
+    "worst": 12.98,
+    "mean": 13.8
+   },
+   "placeholder": {
+    "worst": 8.36,
+    "mean": 9.22
+   }
+  }
+ },
+ "cg_lean": {
+  "before": {
+   "chip0": {
+    "worst": 1.86,
+    "mean": 2.48
+   },
+   "chip1": {
+    "worst": 2.09,
+    "mean": 2.85
+   },
+   "chip2": {
+    "worst": 2.13,
+    "mean": 2.64
+   },
+   "title": {
+    "worst": 1.78,
+    "mean": 2.08
+   },
+   "status": {
+    "worst": 1.88,
+    "mean": 5.02
+   },
+   "menu": {
+    "worst": 3.68,
+    "mean": 4.84
+   },
+   "placeholder": {
+    "worst": 2.64,
+    "mean": 3.17
+   }
+  },
+  "after": {
+   "chip0": {
+    "worst": 6.97,
+    "mean": 7.29
+   },
+   "chip1": {
+    "worst": 7.23,
+    "mean": 7.49
+   },
+   "chip2": {
+    "worst": 7.27,
+    "mean": 7.4
+   },
+   "title": {
+    "worst": 9.98,
+    "mean": 10.2
+   },
+   "status": {
+    "worst": 5.86,
+    "mean": 7.72
+   },
+   "menu": {
+    "worst": 13.2,
+    "mean": 13.71
+   },
+   "placeholder": {
+    "worst": 8.8,
+    "mean": 9.47
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+대상: visibility_audit.mjs로 열거한 1화 플레이어 노출 문구 739개(visible_lines.txt).
+보존된 내부 설정·닫힌 귀찌 운명/도움말·플레이어가 먼저 정체를 밝히는 omen은 별도다.
+
+귀찌 수명|변장|은발|본모습|귀찌.{0,8}(뜨거|미지근|식어)
+No matches found
+
+[grep: matches=0 files=0 searched=1 elapsedMs=18 engine=rg nextSkip=none]
+
+첩자|웰든|대공가|공녀
+No matches found
+
+[grep: matches=0 files=0 searched=1 elapsedMs=13 engine=rg nextSkip=none]
+
+전체 소스에는 공개 후 사용할 귀찌 수치·대가·결말, GM 전용 첩자 의심 동기, 플레이어가 먼저 밝히는 신분 분기가 남아 있다. gated_lines.json은 닫힌 노출 항목 5개를 기록한다.

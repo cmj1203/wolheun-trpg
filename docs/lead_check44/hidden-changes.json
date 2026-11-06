@@ -1,0 +1,180 @@
+{
+  "definitionCount": 26,
+  "trackChangeCount": 28,
+  "byTrack": {
+    "의심": 10,
+    "집착": 2,
+    "호감": 1,
+    "탈주": 15
+  },
+  "changes": [
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.improv.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.improv_bold.hit.effects",
+      "track": "집착",
+      "delta": 2
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.improv_bold.hit.effects",
+      "track": "호감",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.improv_bold.mixed.effects",
+      "track": "집착",
+      "delta": 2
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.improv_bold.mixed.effects",
+      "track": "의심",
+      "delta": 2
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.improv_bold.miss.effects",
+      "track": "의심",
+      "delta": 2
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.idle.effects",
+      "track": "의심",
+      "delta": 2
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.prices.3.effects",
+      "track": "의심",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.prices.4.effects",
+      "track": "의심",
+      "delta": 2
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.prices.5.effects",
+      "track": "탈주",
+      "delta": -1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.approaches.0.outcomes.miss.effects",
+      "track": "의심",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.approaches.1.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.approaches.1.outcomes.mixed.effects",
+      "track": "의심",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.approaches.1.outcomes.miss.effects",
+      "track": "의심",
+      "delta": 2
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.approaches.2.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.approaches.2.outcomes.mixed.effects",
+      "track": "의심",
+      "delta": 1
+    },
+    {
+      "beat": "b02_people",
+      "path": "b02_people.free.approaches.2.outcomes.miss.effects",
+      "track": "의심",
+      "delta": 2
+    },
+    {
+      "beat": "b05_why",
+      "path": "b05_why.free.approaches.4.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "b06_swing",
+      "path": "b06_swing.free.approaches.2.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "b08_gaze",
+      "path": "b08_gaze.free.approaches.2.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "r3_dusk",
+      "path": "r3_dusk.free.improv.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "r3_dusk",
+      "path": "r3_dusk.free.prices.5.effects",
+      "track": "탈주",
+      "delta": -1
+    },
+    {
+      "beat": "r3_dusk",
+      "path": "r3_dusk.free.approaches.0.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 2
+    },
+    {
+      "beat": "r3_dusk",
+      "path": "r3_dusk.free.approaches.0.outcomes.mixed.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "r3_dusk",
+      "path": "r3_dusk.free.approaches.1.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "r3_dusk",
+      "path": "r3_dusk.free.approaches.2.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "r4_prove",
+      "path": "r4_prove.free.approaches.0.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    },
+    {
+      "beat": "r5_claim",
+      "path": "r5_claim.free.approaches.1.outcomes.hit.effects",
+      "track": "탈주",
+      "delta": 1
+    }
+  ]
+}

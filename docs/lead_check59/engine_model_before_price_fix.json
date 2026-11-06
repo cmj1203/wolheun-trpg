@@ -1,0 +1,6676 @@
+[
+  {
+    "i": 1,
+    "beat": "b05_why",
+    "text": "주머니에서 핸드폰을 꺼내 남자 얼굴 앞에 흔든다",
+    "outside": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-0",
+      "seed": 2,
+      "rng": 2,
+      "beat": "b05_why",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b05_why",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 2,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-0",
+      "seed": 2,
+      "rng": 2,
+      "beat": "b05_why",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b05_why",
+        "talks": 1,
+        "rolls": 0,
+        "spoken": false,
+        "lastInput": "주머니에서핸드폰을꺼내남자얼굴앞에흔든다"
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다."
+        },
+        {
+          "speaker": "남자",
+          "text": "…뭐?"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 2,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "interpret",
+          "attempts": 0,
+          "violations": [],
+          "fallback": false,
+          "ms": 3,
+          "model": null,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b05_why",
+          "text": "주머니에서 핸드폰을 꺼내 남자 얼굴 앞에 흔든다",
+          "result": "talk",
+          "approach": null,
+          "item": null,
+          "source": "rule",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "talk",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 67376,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다.",
+            "남자: …뭐?"
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+          "품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다."
+        ],
+        "남자": [
+          "…뭐?"
+        ]
+      },
+      "heard": [
+        {
+          "text": "품을 더듬었지만 잡히는 것이 없었다",
+          "action": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "주머니에서 핸드폰을 꺼내 남자 얼굴 앞에 흔든다"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "…뭐?",
+      "by": "gm",
+      "face": "dumbfounded"
+    },
+    "delta": [],
+    "traces": [
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "주머니에서 핸드폰을 꺼내 남자 얼굴 앞에 흔든다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    }\n  ]\n}",
+          "ttftMs": 50336.096,
+          "totalMs": 67368.346458,
+          "promptTokens": 1482,
+          "completionTokens": 92,
+          "promptMs": 17464.934,
+          "genMs": 17560.203,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 0,
+        "violations": [],
+        "fallback": false,
+        "ms": 3,
+        "model": null,
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 67376,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 품속에서 매끄럽고 검은 물건을 꺼내 남자에게 내밀었다.",
+          "남자: …뭐?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 67387,
+    "cpuBefore": "16678 SN     0.0 03-03:40:09",
+    "cpuAfter": "16678 SN     6.0 03-03:41:16"
+  },
+  {
+    "i": 2,
+    "beat": "b06_swing",
+    "text": "허공에 리모컨을 겨누고 전원 단추를 누른다",
+    "outside": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-1",
+      "seed": 3,
+      "rng": 3,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 3,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-1",
+      "seed": 3,
+      "rng": 3,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 1,
+        "rolls": 0,
+        "spoken": false,
+        "lastInput": "허공에리모컨을겨누고전원단추를누른다"
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다."
+        },
+        {
+          "speaker": "남자",
+          "text": "...뭐?"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 3,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 80423,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b06_swing",
+          "text": "허공에 리모컨을 겨누고 전원 단추를 누른다",
+          "result": "talk",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "talk",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 36012,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다.",
+            "남자: ...뭐?"
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다.",
+          "허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ],
+        "남자": [
+          "...뭐?"
+        ]
+      },
+      "heard": [
+        {
+          "text": "품을 더듬었지만 잡히는 것이 없었다",
+          "action": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "허공에 리모컨을 겨누고 전원 단추를 누른다"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "...뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "...뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "...뭐?",
+      "by": "gm",
+      "face": "dumbfounded"
+    },
+    "delta": [],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "허공에 리모컨을 겨누고 전원 단추를 누른다",
+        "raw": "{\"reason\":\"리모컨은 이 세계에 없는 물건이다.\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":true, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"리모컨은 이 세계에 없는 물건이다.\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":true, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 54848.914542,
+          "totalMs": 68256.504083,
+          "promptTokens": 2930,
+          "completionTokens": 76,
+          "promptMs": 30108.732,
+          "genMs": 13921.627,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "허공에 리모컨을 겨누고 전원 단추를 누른다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"...뭐?\",\n      \"face\": \"dumbfounded\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"...뭐?\",\n      \"face\": \"dumbfounded\"\n    }\n  ]\n}",
+          "ttftMs": 17786.690959,
+          "totalMs": 36003.990834,
+          "promptTokens": 1924,
+          "completionTokens": 98,
+          "promptMs": 16858.967,
+          "genMs": 19049.301,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 80423,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 36012,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 허공을 향해 손가락을 까닥이며 정체 모를 물건을 쥐고 휘둘렀다.",
+          "남자: ...뭐?"
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 116446,
+    "cpuBefore": "16678 SN     0.1 03-03:43:12",
+    "cpuAfter": "16678 SN     5.0 03-03:45:09"
+  },
+  {
+    "i": 3,
+    "beat": "b08_gaze",
+    "text": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다",
+    "large": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-2",
+      "seed": 4,
+      "rng": 4,
+      "beat": "b08_gaze",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "작전_회의": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b08_gaze",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 4,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-2",
+      "seed": 4,
+      "rng": 3663131630,
+      "beat": "e_survivor",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 1,
+        "집착": 1,
+        "호감": 1,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "작전_회의": true,
+        "안내_입력": true,
+        "퇴로_막힘": true,
+        "말함_b09_verdict": true,
+        "수첩:captive": true
+      },
+      "said": [],
+      "free": null,
+      "recent": [
+        {
+          "speaker": "아시나",
+          "text": "…네? 뭐가요?"
+        },
+        {
+          "speaker": "남자",
+          "text": "…바로 죽일까 했는데,"
+        },
+        {
+          "speaker": "남자",
+          "text": "마음이 바뀌었다."
+        },
+        {
+          "speaker": "남자",
+          "text": "그러니… 이대로 살려주는 것만으로도 감사히 여겨라."
+        },
+        {
+          "speaker": "남자",
+          "text": "여자."
+        },
+        {
+          "speaker": "남자",
+          "text": "끌고 가라."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "살아남는 자와 죽는 자. 적어도 오늘, 나는 살아남는 쪽이었다."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "긴장이 풀리자 눈앞이 하얘졌다. 일주일 만에 처음으로, 나는 정신을 놓았다."
+        }
+      ],
+      "ending": "survivor",
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 4,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b08_gaze",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 115645,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b08_gaze",
+          "text": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다",
+          "result": "improv",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "check",
+          "beat": "b08_gaze",
+          "roll": {
+            "label": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다",
+            "stat": "재치",
+            "statValue": 1,
+            "mods": [],
+            "dice": [
+              3,
+              5
+            ],
+            "total": 9,
+            "tier": "mixed"
+          },
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b08_gaze",
+          "task": "narrate",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 57364,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 목에 칼이 닿아 있는 상황에서 갑작스럽게 어깨를 들썩이며 춤을 추자, 남자의 눈썹이 아주 잠깐 꿈틀거렸다. 당황한 듯 칼끝이 내 목을 아슬아슬하게 스치며 비껴갔다.",
+            "나레이션: 하지만 나는 뒤로 물러나다 호위의 단단한 가슴에 등이 닿고 말았다.",
+            "남자: 죽기 직전이라 정신이 나간 건가?",
+            "나레이션: 남자는 어이없다는 듯 비웃었지만, 나를 꿰뚫을 듯한 붉은 눈동자는 그 어느 때보다 집요하게 나를 살피고 있었다."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "price",
+          "beat": "b08_gaze",
+          "id": "step_back",
+          "tag": "자리",
+          "text": "한 걸음 물러서다 호위의 가슴에 등이 닿았다.",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 0,
+              "to": 1
+            },
+            {
+              "key": "집착",
+              "from": 0,
+              "to": 1
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b09_verdict",
+          "title": "마음이 바뀌었다",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "호감",
+              "from": 0,
+              "to": 1
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "e_survivor",
+          "title": "살아남은 자",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "end",
+          "ending": "survivor",
+          "title": "살아남은 자",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+          "목에 칼이 닿아 있는 상황에서 갑작스럽게 어깨를 들썩이며 춤을 추자, 남자의 눈썹이 아주 잠깐 꿈틀거렸다. 당황한 듯 칼끝이 내 목을 아슬아슬하게 스치며 비껴갔다.",
+          "하지만 나는 뒤로 물러나다 호위의 단단한 가슴에 등이 닿고 말았다.",
+          "남자는 어이없다는 듯 비웃었지만, 나를 꿰뚫을 듯한 붉은 눈동자는 그 어느 때보다 집요하게 나를 살피고 있었다.",
+          "살아남는 자와 죽는 자. 적어도 오늘, 나는 살아남는 쪽이었다.",
+          "긴장이 풀리자 눈앞이 하얘졌다. 일주일 만에 처음으로, 나는 정신을 놓았다."
+        ],
+        "남자": [
+          "죽기 직전이라 정신이 나간 건가?",
+          "하.",
+          "이상한 여자군.",
+          "…바로 죽일까 했는데,",
+          "마음이 바뀌었다.",
+          "그러니… 이대로 살려주는 것만으로도 감사히 여겨라.",
+          "여자.",
+          "끌고 가라."
+        ],
+        "아시나": [
+          "…네? 뭐가요?"
+        ]
+      },
+      "heard": [
+        {
+          "text": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다",
+          "action": true
+        }
+      ],
+      "preempted": [
+        "묶어라수상한짓을하면그자리에서베어도좋다"
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다"
+      },
+      {
+        "type": "roll",
+        "label": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다",
+        "stat": "재치",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "tierLabel": "대가 있는 성공"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "목에 칼이 닿아 있는 상황에서 갑작스럽게 어깨를 들썩이며 춤을 추자, 남자의 눈썹이 아주 잠깐 꿈틀거렸다. 당황한 듯 칼끝이 내 목을 아슬아슬하게 스치며 비껴갔다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "하지만 나는 뒤로 물러나다 호위의 단단한 가슴에 등이 닿고 말았다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "죽기 직전이라 정신이 나간 건가?",
+        "by": "gm",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자는 어이없다는 듯 비웃었지만, 나를 꿰뚫을 듯한 붉은 눈동자는 그 어느 때보다 집요하게 나를 살피고 있었다.",
+        "by": "gm"
+      },
+      {
+        "type": "price",
+        "id": "step_back",
+        "tag": "자리",
+        "text": "한 걸음 물러서다 호위의 가슴에 등이 닿았다."
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 0,
+            "to": 1
+          },
+          {
+            "key": "집착",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      {
+        "type": "scene",
+        "beat": "b09_verdict",
+        "title": "마음이 바뀌었다",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "호감",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "하.",
+        "by": "script",
+        "sfx": "빠안",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "이상한 여자군.",
+        "by": "script",
+        "if": "!flag:미소녀 && !flag:눈_맞섬 && !flag:큰_행동"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "…네? 뭐가요?",
+        "by": "script",
+        "if": "!flag:미소녀 && !flag:눈_맞섬 && !flag:큰_행동",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…바로 죽일까 했는데,",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "마음이 바뀌었다.",
+        "by": "script",
+        "face": "intrigued"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그러니… 이대로 살려주는 것만으로도 감사히 여겨라.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "여자.",
+        "by": "script",
+        "face": "sneer"
+      },
+      {
+        "type": "scene",
+        "beat": "e_survivor",
+        "title": "살아남은 자",
+        "bg": "blackout",
+        "cast": {
+          "left": null,
+          "center": null,
+          "right": null
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "끌고 가라.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "살아남는 자와 죽는 자. 적어도 오늘, 나는 살아남는 쪽이었다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "긴장이 풀리자 눈앞이 하얘졌다. 일주일 만에 처음으로, 나는 정신을 놓았다.",
+        "by": "script"
+      },
+      {
+        "type": "note",
+        "id": "captive",
+        "name": "붙잡힌 몸"
+      },
+      {
+        "type": "ending",
+        "id": "survivor",
+        "title": "살아남은 자",
+        "summary": "아시나는 살아남았다. 다음에 눈을 뜨는 곳은 낯선 나라 어딘가일 것이다.",
+        "nextHook": "다음 장면의 탈주 난이도는 지금의 탈주 준비도와 귀찌 수명으로 정해진다.",
+        "bad": false
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "목에 칼이 닿아 있는 상황에서 갑작스럽게 어깨를 들썩이며 춤을 추자, 남자의 눈썹이 아주 잠깐 꿈틀거렸다. 당황한 듯 칼끝이 내 목을 아슬아슬하게 스치며 비껴갔다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "하지만 나는 뒤로 물러나다 호위의 단단한 가슴에 등이 닿고 말았다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "죽기 직전이라 정신이 나간 건가?",
+        "by": "gm",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자는 어이없다는 듯 비웃었지만, 나를 꿰뚫을 듯한 붉은 눈동자는 그 어느 때보다 집요하게 나를 살피고 있었다.",
+        "by": "gm"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "죽기 직전이라 정신이 나간 건가?",
+      "by": "gm",
+      "face": "sneer"
+    },
+    "delta": [
+      {
+        "key": "의심",
+        "from": 0,
+        "to": 1
+      },
+      {
+        "key": "집착",
+        "from": 0,
+        "to": 1
+      },
+      {
+        "key": "호감",
+        "from": 0,
+        "to": 1
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b08_gaze",
+        "attempt": 1,
+        "input": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다",
+        "raw": "{\"reason\":\"목에 칼이 있는 위기 상황에서 춤을 추는 것은 생존 목적이 없는 딴짓이다\",\"kind\":\"action\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":true,\"absurd\":false,\"bold\":false,\"deed\":\"제자리에서 어깨춤을 췄다\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"목에 칼이 있는 위기 상황에서 춤을 추는 것은 생존 목적이 없는 딴짓이다\",\"kind\":\"action\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":true,\"absurd\":false,\"bold\":false,\"deed\":\"제자리에서 어깨춤을 췄다\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+          "ttftMs": 60836.45049999999,
+          "totalMs": 79760.93754200001,
+          "promptTokens": 2951,
+          "completionTokens": 89,
+          "promptMs": 26909.717,
+          "genMs": 19312.098,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b08_gaze",
+        "attempt": 1,
+        "input": "목에 칼이 있는데도 제자리에서 어깨춤을 춘다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"목에 칼이 닿아 있는 상황에서 갑작스럽게 어깨를 들썩이며 춤을 추자, 남자의 눈썹이 아주 잠깐 꿈틀거렸다. 당황한 듯 칼끝이 내 목을 아슬아슬하게 스치며 비껴갔다. 하지만 나는 뒤로 물러나다 호위의 단단한 가슴에 등이 닿고 말았다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"하. 죽기 직전이라 정신이 나간 건가?\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 어이없다는 듯 비웃었지만, 나를 꿰뚫을 듯한 붉은 눈동자는 그 어느 때보다 집요하게 나를 살피고 있었다.\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"목에 칼이 닿아 있는 상황에서 갑작스럽게 어깨를 들썩이며 춤을 추자, 남자의 눈썹이 아주 잠깐 꿈틀거렸다. 당황한 듯 칼끝이 내 목을 아슬아슬하게 스치며 비껴갔다. 하지만 나는 뒤로 물러나다 호위의 단단한 가슴에 등이 닿고 말았다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"하. 죽기 직전이라 정신이 나간 건가?\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 어이없다는 듯 비웃었지만, 나를 꿰뚫을 듯한 붉은 눈동자는 그 어느 때보다 집요하게 나를 살피고 있었다.\"\n    }\n  ]\n}",
+          "ttftMs": 18522.77895899999,
+          "totalMs": 57358.277375000005,
+          "promptTokens": 2302,
+          "completionTokens": 230,
+          "promptMs": 17909.162,
+          "genMs": 39299.846,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b08_gaze",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 115645,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b08_gaze",
+        "task": "narrate",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 57364,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 목에 칼이 닿아 있는 상황에서 갑작스럽게 어깨를 들썩이며 춤을 추자, 남자의 눈썹이 아주 잠깐 꿈틀거렸다. 당황한 듯 칼끝이 내 목을 아슬아슬하게 스치며 비껴갔다.",
+          "나레이션: 하지만 나는 뒤로 물러나다 호위의 단단한 가슴에 등이 닿고 말았다.",
+          "남자: 죽기 직전이라 정신이 나간 건가?",
+          "나레이션: 남자는 어이없다는 듯 비웃었지만, 나를 꿰뚫을 듯한 붉은 눈동자는 그 어느 때보다 집요하게 나를 살피고 있었다."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 173021,
+    "cpuBefore": "16678 SN     5.0 03-03:45:09",
+    "cpuAfter": "16678 SN     3.8 03-03:48:02"
+  },
+  {
+    "i": 4,
+    "beat": "b05_why",
+    "text": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+    "large": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-3",
+      "seed": 5,
+      "rng": 5,
+      "beat": "b05_why",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b05_why",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 5,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-3",
+      "seed": 5,
+      "rng": 3663131631,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 3,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "earring",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true,
+        "긴장": 4,
+        "큰_행동": true,
+        "후드_벗음": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "남자의 입술에 입을 맞추려 했다."
+        },
+        {
+          "speaker": "남자",
+          "text": "시간을 끌 셈인가?"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "호위가 마법 가방을 낚아채 갔다."
+        },
+        {
+          "speaker": "남자",
+          "text": "죽기 직전에 입술을 놀리는 건가, 이방인."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 5,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 10554,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b05_why",
+          "text": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+          "result": "improv",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "check",
+          "beat": "b05_why",
+          "roll": {
+            "label": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+            "stat": "매력",
+            "statValue": 2,
+            "mods": [
+              {
+                "label": "어려운 행동",
+                "value": -1
+              }
+            ],
+            "dice": [
+              1,
+              2
+            ],
+            "total": 4,
+            "tier": "miss"
+          },
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "narrate",
+          "attempts": 3,
+          "violations": [
+            "format/too_few: 2줄입니다. 큰 행동에는 행동이 어떻게 됐는지와 상대의 대사·몸짓 반응을 합쳌 3줄 이상 쓰세요",
+            "beat/item_lost: 가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요",
+            "beat/item_lost: 가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요",
+            "beat/item_lost: 가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요"
+          ],
+          "fallback": true,
+          "ms": 49343,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 남자의 입술에 입을 맞추려 했다.",
+            "남자: 시간을 끌 셈인가?"
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "price",
+          "beat": "b05_why",
+          "id": "bag_taken",
+          "tag": "소지품",
+          "text": "호위가 마법 가방을 낚아채 갔다.",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 0,
+              "to": 2
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 2,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "마법 가방 잃음",
+              "tone": "bad"
+            },
+            {
+              "text": "낡은 지도 잃음",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "talk",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 6178,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "남자: 죽기 직전에 입술을 놀리는 건가, 이방인."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+          "남자의 입술에 입을 맞추려 했다.",
+          "호위가 마법 가방을 낚아채 갔다.",
+          "뜨거운 모래가 발을 붙잡았다. 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다."
+        ],
+        "남자": [
+          "시간을 끌 셈인가?",
+          "죽기 직전에 입술을 놀리는 건가, 이방인."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ]
+      },
+      "heard": [
+        {
+          "text": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+          "action": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다"
+      },
+      {
+        "type": "confirm",
+        "kind": "intent",
+        "text": "남자의 입술에 입을 맞추려 했다 — 이렇게 하는 거야?",
+        "yes": "그래",
+        "no": "다른 뜻"
+      },
+      {
+        "type": "roll",
+        "label": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [
+          {
+            "label": "어려운 행동",
+            "value": -1
+          }
+        ],
+        "dice": [
+          1,
+          2
+        ],
+        "total": 4,
+        "tier": "miss",
+        "tierLabel": "실패"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 입술에 입을 맞추려 했다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "시간을 끌 셈인가?",
+        "by": "script",
+        "face": "neutral"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "호위가 마법 가방을 낚아채 갔다.",
+        "by": "script"
+      },
+      {
+        "type": "price",
+        "id": "bag_taken",
+        "tag": "소지품",
+        "text": "호위가 마법 가방을 낚아채 갔다."
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 0,
+            "to": 2
+          }
+        ]
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 2,
+            "to": 3
+          }
+        ]
+      },
+      {
+        "type": "items",
+        "gained": [],
+        "lost": [
+          {
+            "id": "magic_bag",
+            "name": "마법 가방",
+            "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다."
+          },
+          {
+            "id": "map",
+            "name": "낡은 지도",
+            "desc": "사막 한가운데서는 별 도움이 되지 않는 지도."
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "마법 가방 잃음",
+            "tone": "bad"
+          },
+          {
+            "text": "낡은 지도 잃음",
+            "tone": "bad"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "죽기 직전에 입술을 놀리는 건가, 이방인.",
+        "by": "gm",
+        "face": "menacing"
+      },
+      {
+        "type": "scene",
+        "beat": "b06_swing",
+        "title": "마지막으로 남길 말인가",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "!item:magic_bag || flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그 바람에 후드가 벗겨졌다.",
+        "by": "script",
+        "if": "!flag:후드_벗음"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      },
+      {
+        "type": "sprite",
+        "cast": "아시나",
+        "sprite": "asina"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "죽기 직전에 입술을 놀리는 건가, 이방인.",
+        "by": "gm",
+        "face": "menacing"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "죽기 직전에 입술을 놀리는 건가, 이방인.",
+      "by": "gm",
+      "face": "menacing"
+    },
+    "delta": [
+      {
+        "key": "의심",
+        "from": 0,
+        "to": 3
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+        "raw": "{\"reason\":\"살기 위해 갑작스럽게 신체 접촉을 시도함\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"beauty\", \"item\":\"\", \"odd\":true, \"absurd\":false, \"bold\":true, \"deed\":\"남자의 입술에 입을 맞추려 했다\", \"stat\":\"매력\", \"difficulty\":\"어려움\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"살기 위해 갑작스럽게 신체 접촉을 시도함\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"beauty\", \"item\":\"\", \"odd\":true, \"absurd\":false, \"bold\":true, \"deed\":\"남자의 입술에 입을 맞추려 했다\", \"stat\":\"매력\", \"difficulty\":\"어려움\"}",
+          "ttftMs": 3325.3066670000003,
+          "totalMs": 7224.365167,
+          "promptTokens": 3238,
+          "completionTokens": 93,
+          "promptMs": 2664.25,
+          "genMs": 3962.227,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"발끝을 세워 입술을 맞추려던 찰나, 강한 힘이 손목을 낚아챘다. 남자의 눈빛이 서늘하게 가라앉았고, 옆에 있던 호위가 내 마법 가방을 거칠게 빼앗아 갔다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전인 주제에 겁이 없군.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+        "violations": [
+          {
+            "kind": "format",
+            "rule": "too_few",
+            "detail": "2줄입니다. 큰 행동에는 행동이 어떻게 됐는지와 상대의 대사·몸짓 반응을 합쳌 3줄 이상 쓰세요",
+            "severity": "hard"
+          },
+          {
+            "kind": "beat",
+            "rule": "item_lost",
+            "detail": "가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요",
+            "severity": "hard"
+          }
+        ],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"발끝을 세워 입술을 맞추려던 찰나, 강한 힘이 손목을 낚아챘다. 남자의 눈빛이 서늘하게 가라앉았고, 옆에 있던 호위가 내 마법 가방을 거칠게 빼앗아 갔다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전인 주제에 겁이 없군.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "ttftMs": 16384.758,
+          "totalMs": 24726.313334,
+          "promptTokens": 5416,
+          "completionTokens": 146,
+          "promptMs": 16142.181,
+          "genMs": 8485.687,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b05_why",
+        "attempt": 2,
+        "input": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"무모한 도발이었다. 닿기도 전에 남자의 손이 내 손목을 거칠게 낚아채 멈춰 세웠다. 차갑게 식은 붉은 눈동자가 나를 꿰뚫을 듯 내려다보았다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전인 주제에 겁이 없군.\",\n      \"face\": \"menacing\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"옆에 서 있던 호위가 내 마법 가방의 끈을 낚아채 멀찍이 치워버렸다.\"\n    }\n  ]\n}",
+        "violations": [
+          {
+            "kind": "beat",
+            "rule": "item_lost",
+            "detail": "가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요",
+            "severity": "hard"
+          }
+        ],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"무모한 도발이었다. 닿기도 전에 남자의 손이 내 손목을 거칠게 낚아채 멈춰 세웠다. 차갑게 식은 붉은 눈동자가 나를 꿰뚫을 듯 내려다보았다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전인 주제에 겁이 없군.\",\n      \"face\": \"menacing\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"옆에 서 있던 호위가 내 마법 가방의 끈을 낚아채 멀찍이 치워버렸다.\"\n    }\n  ]\n}",
+          "ttftMs": 1668.9235000000044,
+          "totalMs": 13963.831416,
+          "promptTokens": 145,
+          "completionTokens": 187,
+          "promptMs": 1480.708,
+          "genMs": 12476.012,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b05_why",
+        "attempt": 3,
+        "input": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"발꿈치를 들어 입술을 맞추려던 찰나, 남자가 내 손목을 거칠게 낚아채 멈춰 세웠다. 얼음처럼 차갑게 식은 붉은 눈이 나를 꿰뚫었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전인 주제에 겁이 없군.\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"옆에 서 있던 호위가 내 마법 가방의 끈을 낚아채 멀찍이 가져가 버렸다.\"\n    }\n  ]\n}",
+        "violations": [
+          {
+            "kind": "beat",
+            "rule": "item_lost",
+            "detail": "가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요",
+            "severity": "hard"
+          }
+        ],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"발꿈치를 들어 입술을 맞추려던 찰나, 남자가 내 손목을 거칠게 낚아채 멈춰 세웠다. 얼음처럼 차갑게 식은 붉은 눈이 나를 꿰뚫었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전인 주제에 겁이 없군.\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"옆에 서 있던 호위가 내 마법 가방의 끈을 낚아채 멀찍이 가져가 버렸다.\"\n    }\n  ]\n}",
+          "ttftMs": 743.2950830000045,
+          "totalMs": 10646.350833000004,
+          "promptTokens": 90,
+          "completionTokens": 186,
+          "promptMs": 564.954,
+          "genMs": 10067.836,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "발뒤꿈치를 들고 남자의 입술에 뽀뽀하려 든다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전에 입술을 놀리는 건가, 이방인.\",\n      \"face\": \"menacing\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전에 입술을 놀리는 건가, 이방인.\",\n      \"face\": \"menacing\"\n    }\n  ]\n}",
+          "ttftMs": 1631.949625000001,
+          "totalMs": 4467.4365839999955,
+          "promptTokens": 464,
+          "completionTokens": 63,
+          "promptMs": 1273.019,
+          "genMs": 2984.57,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 10554,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "narrate",
+        "attempts": 3,
+        "violations": [
+          "format/too_few: 2줄입니다. 큰 행동에는 행동이 어떻게 됐는지와 상대의 대사·몸짓 반응을 합쳌 3줄 이상 쓰세요",
+          "beat/item_lost: 가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요",
+          "beat/item_lost: 가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요",
+          "beat/item_lost: 가방이(가) 아시나 손을 떠났다고 썼습니다. 소지품은 잃지 않습니다. 끈을 쥔 채 휘두르거나 바로 되찾는 모습으로 쓰세요"
+        ],
+        "fallback": true,
+        "ms": 49343,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 남자의 입술에 입을 맞추려 했다.",
+          "남자: 시간을 끌 셈인가?"
+        ],
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 6178,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 죽기 직전에 입술을 놀리는 건가, 이방인."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 66083,
+    "cpuBefore": "16678 SN     0.1 03-04:03:34",
+    "cpuAfter": "16678 RN    18.5 03-04:04:40"
+  },
+  {
+    "i": 5,
+    "beat": "b06_swing",
+    "text": "혀를 내밀어 목 앞의 칼날을 핥으려 한다",
+    "large": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-4",
+      "seed": 6,
+      "rng": 6,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 6,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-4",
+      "seed": 6,
+      "rng": 3663131632,
+      "beat": "b08_gaze",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 2,
+        "집착": 3,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true,
+        "큰_행동": true,
+        "말함_b07_rule": true,
+        "작전_회의": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b08_gaze",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "속마음",
+          "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?"
+        },
+        {
+          "speaker": "속마음",
+          "text": "마치… 한여름의 태양 같아."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "터벅, 터벅."
+        },
+        {
+          "speaker": "남자",
+          "text": "…"
+        },
+        {
+          "speaker": "아시나",
+          "text": "뭐, 뭐야"
+        },
+        {
+          "speaker": "속마음",
+          "text": "설마 다시 죽이려는 건 아니겠…"
+        },
+        {
+          "speaker": "속마음",
+          "text": "뭐야… 이 반응은."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 6,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 113319,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b06_swing",
+          "text": "혀를 내밀어 목 앞의 칼날을 핥으려 한다",
+          "result": "improv",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "check",
+          "beat": "b06_swing",
+          "roll": {
+            "label": "혀를 내밀어 목 앞의 칼날을 핥으려 한다",
+            "stat": "매력",
+            "statValue": 2,
+            "mods": [],
+            "dice": [
+              4,
+              1
+            ],
+            "total": 7,
+            "tier": "mixed"
+          },
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "narrate",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 65636,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 서늘한 금속의 감촉이 혀끝에 닿았다. 죽음을 핥는 듯한 기괴한 행동에 남자의 눈동자가 크게 일렁였다.",
+            "남자: …뭐?",
+            "나레이션: 찰나의 당혹감이 지나간 자리에 서늘한 불쾌감이 들어찼다. 남자의 손이 칼자루를 강하게 움켜쥐었다."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "price",
+          "beat": "b06_swing",
+          "id": "man_amused",
+          "tag": "수치",
+          "text": "남자의 눈에 흥미가 스쳤다.",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 0,
+              "to": 2
+            },
+            {
+              "key": "집착",
+              "from": 0,
+              "to": 2
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "집착",
+              "from": 2,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b07_rule",
+          "title": "반칙",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다.",
+          "서늘한 금속의 감촉이 혀끝에 닿았다. 죽음을 핥는 듯한 기괴한 행동에 남자의 눈동자가 크게 일렁였다.",
+          "찰나의 당혹감이 지나간 자리에 서늘한 불쾌감이 들어찼다. 남자의 손이 칼자루를 강하게 움켜쥐었다.",
+          "터벅, 터벅.",
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!",
+          "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+          "마치… 한여름의 태양 같아.",
+          "설마 다시 죽이려는 건 아니겠…",
+          "뭐야… 이 반응은."
+        ],
+        "남자": [
+          "…뭐?",
+          "반칙?",
+          "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+          "남는 것은 살아남는 자와 죽는 자.",
+          "그 둘뿐이다.",
+          "…"
+        ],
+        "아시나": [
+          "가… 갑자기 휘두르는 법이 어디 있어요!!",
+          "반칙이지!!!",
+          "뭐, 뭐야"
+        ]
+      },
+      "heard": [
+        {
+          "text": "혀를 내밀어 목 앞의 칼날을 핥으려 한다",
+          "action": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "혀를 내밀어 목 앞의 칼날을 핥으려 한다"
+      },
+      {
+        "type": "confirm",
+        "kind": "intent",
+        "text": "칼날을 혀로 핥으려 했다 — 이렇게 하는 거야?",
+        "yes": "그래",
+        "no": "다른 뜻"
+      },
+      {
+        "type": "roll",
+        "label": "혀를 내밀어 목 앞의 칼날을 핥으려 한다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [],
+        "dice": [
+          4,
+          1
+        ],
+        "total": 7,
+        "tier": "mixed",
+        "tierLabel": "대가 있는 성공"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "서늘한 금속의 감촉이 혀끝에 닿았다. 죽음을 핥는 듯한 기괴한 행동에 남자의 눈동자가 크게 일렁였다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "찰나의 당혹감이 지나간 자리에 서늘한 불쾌감이 들어찼다. 남자의 손이 칼자루를 강하게 움켜쥐었다.",
+        "by": "gm"
+      },
+      {
+        "type": "price",
+        "id": "man_amused",
+        "tag": "수치",
+        "text": "남자의 눈에 흥미가 스쳤다."
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 0,
+            "to": 2
+          },
+          {
+            "key": "집착",
+            "from": 0,
+            "to": 2
+          }
+        ]
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "집착",
+            "from": 2,
+            "to": 3
+          }
+        ]
+      },
+      {
+        "type": "scene",
+        "beat": "b07_rule",
+        "title": "반칙",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {
+          "아시나": "asina"
+        }
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+        "by": "script",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "반칙이지!!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "버럭",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "반칙?",
+        "by": "script",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "남는 것은 살아남는 자와 죽는 자.",
+        "by": "script",
+        "sfx": "저벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그 둘뿐이다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "마치… 한여름의 태양 같아.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "오싹",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "터벅, 터벅.",
+        "by": "script",
+        "sfx": "터벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…",
+        "by": "script",
+        "sfx": "스윽"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "뭐, 뭐야",
+        "by": "script",
+        "sfx": "주춤…",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "설마 다시 죽이려는 건 아니겠…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "뭐야… 이 반응은.",
+        "by": "script",
+        "cg": "cg_lean"
+      },
+      {
+        "type": "scene",
+        "beat": "b08_gaze",
+        "title": "한여름의 태양",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {
+          "아시나": "asina"
+        }
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+        "by": "script"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "서늘한 금속의 감촉이 혀끝에 닿았다. 죽음을 핥는 듯한 기괴한 행동에 남자의 눈동자가 크게 일렁였다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "찰나의 당혹감이 지나간 자리에 서늘한 불쾌감이 들어찼다. 남자의 손이 칼자루를 강하게 움켜쥐었다.",
+        "by": "gm"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "…뭐?",
+      "by": "gm",
+      "face": "dumbfounded"
+    },
+    "delta": [
+      {
+        "key": "의심",
+        "from": 0,
+        "to": 2
+      },
+      {
+        "key": "집착",
+        "from": 0,
+        "to": 3
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "혀를 내밀어 목 앞의 칼날을 핥으려 한다",
+        "raw": "{\"reason\":\"칼날에 혀를 대는 돌발적이고 큰 행동임\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":true, \"absurd\":false, \"bold\":true, \"deed\":\"칼날을 혀로 핥으려 했다\", \"stat\":\"매력\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"칼날에 혀를 대는 돌발적이고 큰 행동임\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":true, \"absurd\":false, \"bold\":true, \"deed\":\"칼날을 혀로 핥으려 했다\", \"stat\":\"매력\", \"difficulty\":\"보통\"}",
+          "ttftMs": 53986.08679199999,
+          "totalMs": 74091.81175000005,
+          "promptTokens": 2930,
+          "completionTokens": 94,
+          "promptMs": 37069.271,
+          "genMs": 20623.624,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "혀를 내밀어 목 앞의 칼날을 핥으려 한다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"서늘한 금속의 감촉이 혀끝에 닿았다. 죽음을 핥는 듯한 기괴한 행동에 남자의 눈동자가 크게 일렁였다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"찰나의 당혹감이 지나간 자리에 서늘한 불쾌감이 들어찼다. 남자의 손이 칼자루를 강하게 움켜쥐었다.\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"서늘한 금속의 감촉이 혀끝에 닿았다. 죽음을 핥는 듯한 기괴한 행동에 남자의 눈동자가 크게 일렁였다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"찰나의 당혹감이 지나간 자리에 서늘한 불쾌감이 들어찼다. 남자의 손이 칼자루를 강하게 움켜쥐었다.\"\n    }\n  ]\n}",
+          "ttftMs": 29606.86504199996,
+          "totalMs": 65631.90145800007,
+          "promptTokens": 2612,
+          "completionTokens": 170,
+          "promptMs": 28849.025,
+          "genMs": 36694.415,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 113319,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "narrate",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 65636,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 서늘한 금속의 감촉이 혀끝에 닿았다. 죽음을 핥는 듯한 기괴한 행동에 남자의 눈동자가 크게 일렁였다.",
+          "남자: …뭐?",
+          "나레이션: 찰나의 당혹감이 지나간 자리에 서늘한 불쾌감이 들어찼다. 남자의 손이 칼자루를 강하게 움켜쥐었다."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 178972,
+    "cpuBefore": "16678 RN     2.4 03-03:50:47",
+    "cpuAfter": "16678 RN     2.9 03-03:53:46"
+  },
+  {
+    "i": 6,
+    "beat": "b08_gaze",
+    "text": "오늘 저녁엔 뭘 먹을 건데요, 저도 한 자리 껴요?",
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-5",
+      "seed": 7,
+      "rng": 7,
+      "beat": "b08_gaze",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "작전_회의": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b08_gaze",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 7,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-5",
+      "seed": 7,
+      "rng": 7,
+      "beat": "b08_gaze",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "작전_회의": true,
+        "안내_입력": true,
+        "말함": true,
+        "말함_b08_gaze": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b08_gaze",
+        "talks": 1,
+        "rolls": 0,
+        "lastInput": "오늘저녁엔뭘먹을건데요저도한자리껴요"
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        },
+        {
+          "speaker": "남자",
+          "text": "…뭐?"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 7,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b08_gaze",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 63869,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b08_gaze",
+          "text": "오늘 저녁엔 뭘 먹을 건데요, 저도 한 자리 껴요?",
+          "result": "talk",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b08_gaze",
+          "task": "talk",
+          "attempts": 2,
+          "violations": [
+            "format/too_long: 한 줄이 183자입니다(최대 100자)",
+            "format/too_long: 한 줄이 132자입니다(최대 100자)"
+          ],
+          "fallback": false,
+          "ms": 70900,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "남자: …뭐?",
+            "나레이션: 남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다."
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+          "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다."
+        ],
+        "남자": [
+          "…뭐?"
+        ]
+      },
+      "heard": [
+        {
+          "text": "오늘 저녁엔 뭘 먹을 건데요, 저도 한 자리 껴요?",
+          "action": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "오늘 저녁엔 뭘 먹을 건데요, 저도 한 자리 껴요?"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다.",
+        "by": "gm"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다.",
+        "by": "gm"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "…뭐?",
+      "by": "gm",
+      "face": "dumbfounded"
+    },
+    "delta": [],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b08_gaze",
+        "attempt": 1,
+        "input": "오늘 저녁엔 뭘 먹을 건데요, 저도 한 자리 껴요?",
+        "raw": "{\"reason\":\"상대방에게 뻔뻔하게 말을 건네며 상황을 넘기려 함\",\"kind\":\"person\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"상대방에게 뻔뻔하게 말을 건네며 상황을 넘기려 함\",\"kind\":\"person\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+          "ttftMs": 54087.63079199998,
+          "totalMs": 63866.43558300007,
+          "promptTokens": 2952,
+          "completionTokens": 72,
+          "promptMs": 25134.034,
+          "genMs": 10159.363,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b08_gaze",
+        "attempt": 1,
+        "input": "오늘 저녁엔 뭘 먹을 건데요, 저도 한 자리 껴요?",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다.\"\n    }\n  ]\n}",
+        "violations": [
+          {
+            "kind": "format",
+            "rule": "too_long",
+            "detail": "한 줄이 183자입니다(최대 100자)",
+            "severity": "soft"
+          }
+        ],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다.\"\n    }\n  ]\n}",
+          "ttftMs": 10977.751166000031,
+          "totalMs": 39463.72870800004,
+          "promptTokens": 1481,
+          "completionTokens": 192,
+          "promptMs": 10593.753,
+          "genMs": 28851.957,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b08_gaze",
+        "attempt": 2,
+        "input": "오늘 저녁엔 뭘 먹을 건데요, 저도 한 자리 껴요?",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전에 밥 타령이라니.\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 어이없다는 듯 눈썹을 까딱였다. 칼끝은 여전히 내 목줄기를 위협하며 서늘한 감각을 전해왔다. 하지만 남자는 눈을 떼지 않았다. 마치 이 황당한 여자의 정체가 무엇인지, 그 뻔뻔함의 끝이 어디인지 확인하려는 듯이 빤히 들여다보았다.\"\n    }\n  ]\n}",
+        "violations": [
+          {
+            "kind": "format",
+            "rule": "too_long",
+            "detail": "한 줄이 132자입니다(최대 100자)",
+            "severity": "soft"
+          }
+        ],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"죽기 직전에 밥 타령이라니.\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 어이없다는 듯 눈썹을 까딱였다. 칼끝은 여전히 내 목줄기를 위협하며 서늘한 감각을 전해왔다. 하지만 남자는 눈을 떼지 않았다. 마치 이 황당한 여자의 정체가 무엇인지, 그 뻔뻔함의 끝이 어디인지 확인하려는 듯이 빤히 들여다보았다.\"\n    }\n  ]\n}",
+          "ttftMs": 4144.573500000057,
+          "totalMs": 27749.832042000024,
+          "promptTokens": 555,
+          "completionTokens": 163,
+          "promptMs": 3778.729,
+          "genMs": 23877.587,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b08_gaze",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 63869,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b08_gaze",
+        "task": "talk",
+        "attempts": 2,
+        "violations": [
+          "format/too_long: 한 줄이 183자입니다(최대 100자)",
+          "format/too_long: 한 줄이 132자입니다(최대 100자)"
+        ],
+        "fallback": false,
+        "ms": 70900,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: …뭐?",
+          "나레이션: 남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음의 문턱에서 저녁 식사 메뉴를 묻는 황당한 소리에, 그는 칼을 들이댄 채 잠시 말을 잃었다. 붉은 눈동자가 차갑게 가라앉으며 내 얼굴을 뚫어지게 살폈다. 숨결이 닿을 듯한 거리에서 느껴지는 압박감은 여전했지만, 그가 나를 죽일 듯이 노려보던 기운이 아주 조금 흩어지는 기분이 들었다."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 134779,
+    "cpuBefore": "16678 RN     2.9 03-03:53:46",
+    "cpuAfter": "16678 SN     7.5 03-03:56:01"
+  },
+  {
+    "i": 7,
+    "beat": "b05_why",
+    "text": "당신 터번에 모래가 몇 알 붙었나 세어 볼게요",
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-6",
+      "seed": 8,
+      "rng": 8,
+      "beat": "b05_why",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b05_why",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 8,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-6",
+      "seed": 8,
+      "rng": 8,
+      "beat": "b05_why",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true,
+        "말함": true,
+        "말함_b05_why": true
+      },
+      "said": [
+        "당신 터번에 모래가 몇 알 붙었나 세어 볼게요"
+      ],
+      "free": {
+        "beat": "b05_why",
+        "talks": 1,
+        "rolls": 0,
+        "lastInput": "당신터번에모래가몇알붙었나세어볼게요"
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        },
+        {
+          "speaker": "남자",
+          "text": "…뭐?"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 8,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 51432,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b05_why",
+          "text": "당신 터번에 모래가 몇 알 붙었나 세어 볼게요",
+          "result": "talk",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "talk",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 26762,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "남자: …뭐?",
+            "나레이션: 남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다."
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+          "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다."
+        ],
+        "남자": [
+          "…뭐?"
+        ]
+      },
+      "heard": [
+        {
+          "text": "당신 터번에 모래가 몇 알 붙었나 세어 볼게요",
+          "action": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "당신 터번에 모래가 몇 알 붙었나 세어 볼게요"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다.",
+        "by": "gm"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다.",
+        "by": "gm"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "…뭐?",
+      "by": "gm",
+      "face": "dumbfounded"
+    },
+    "delta": [],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "당신 터번에 모래가 몇 알 붙었나 세어 볼게요",
+        "raw": "{\"reason\":\"상대방의 주의를 돌리기 위해 엉뚱한 말을 건넴\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"상대방의 주의를 돌리기 위해 엉뚱한 말을 건넴\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 40769.17749999999,
+          "totalMs": 51430.82683399995,
+          "promptTokens": 3234,
+          "completionTokens": 81,
+          "promptMs": 21037.414,
+          "genMs": 10983.326,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "당신 터번에 모래가 몇 알 붙었나 세어 볼게요",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다.\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다.\"\n    }\n  ]\n}",
+          "ttftMs": 11593.741624999908,
+          "totalMs": 26759.30254199996,
+          "promptTokens": 1788,
+          "completionTokens": 117,
+          "promptMs": 11107.884,
+          "genMs": 15632.648,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 51432,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 26762,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: …뭐?",
+          "나레이션: 남자의 눈썹이 아주 미세하게 꿈틀거렸다. 죽음이 코앞에 닥친 상황에서 나온 뜬금없는 소리에, 그는 잠시 할 말을 잃은 듯 보였다."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 78203,
+    "cpuBefore": "16678 SN     7.5 03-03:56:01",
+    "cpuAfter": "16678 SN     8.6 03-03:57:19"
+  },
+  {
+    "i": 8,
+    "beat": "b06_swing",
+    "text": "지금 칼싸움 대신 가위바위보로 정하면 안 돼요?",
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-7",
+      "seed": 9,
+      "rng": 9,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 9,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-7",
+      "seed": 9,
+      "rng": 9,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true,
+        "말함": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 1,
+        "rolls": 0,
+        "lastInput": "지금칼싸움대신가위바위보로정하면안돼요"
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        },
+        {
+          "speaker": "남자",
+          "text": "…뭐?"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 9,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 31069,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b06_swing",
+          "text": "지금 칼싸움 대신 가위바위보로 정하면 안 돼요?",
+          "result": "talk",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "talk",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 22222,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "남자: …뭐?",
+            "나레이션: 남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다."
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다.",
+          "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ],
+        "남자": [
+          "…뭐?"
+        ]
+      },
+      "heard": [
+        {
+          "text": "지금 칼싸움 대신 가위바위보로 정하면 안 돼요?",
+          "action": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "지금 칼싸움 대신 가위바위보로 정하면 안 돼요?"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다.",
+        "by": "gm"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…뭐?",
+        "by": "gm",
+        "face": "dumbfounded"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다.",
+        "by": "gm"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "…뭐?",
+      "by": "gm",
+      "face": "dumbfounded"
+    },
+    "delta": [],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "지금 칼싸움 대신 가위바위보로 정하면 안 돼요?",
+        "raw": "{\"reason\":\"칼날이 날아오는 위기 상황에서 대화로 상황을 바꾸려 함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"칼날이 날아오는 위기 상황에서 대화로 상황을 바꾸려 함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"none\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 21833.645541000064,
+          "totalMs": 31068.128832999966,
+          "promptTokens": 2927,
+          "completionTokens": 83,
+          "promptMs": 17630.361,
+          "genMs": 9481.005,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "지금 칼싸움 대신 가위바위보로 정하면 안 돼요?",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다.\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…뭐?\",\n      \"face\": \"dumbfounded\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다.\"\n    }\n  ]\n}",
+          "ttftMs": 11087.322000000044,
+          "totalMs": 22219.329625000013,
+          "promptTokens": 1770,
+          "completionTokens": 111,
+          "promptMs": 10858.978,
+          "genMs": 11364.657,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": false,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 31069,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 22222,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: …뭐?",
+          "나레이션: 남자의 눈썹이 아주 미세하게 꿈틀거렸다. 생사가 오가는 순간에 나온 뜬금없는 소리에 그는 잠시 할 말을 잃은 듯 보였다."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 53299,
+    "cpuBefore": "16678 SN     8.6 03-03:57:19",
+    "cpuAfter": "16678 SN     7.4 03-03:58:13"
+  },
+  {
+    "i": 9,
+    "beat": "b05_why",
+    "text": "제발 칼을 조금만 내려 주세요, 숨도 못 쉬겠어요",
+    "normal": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-8",
+      "seed": 10,
+      "rng": 10,
+      "beat": "b05_why",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b05_why",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 10,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-8",
+      "seed": 10,
+      "rng": 3663131636,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 1,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true,
+        "말함_b05_why": true,
+        "긴장": 2,
+        "후드_벗음": true
+      },
+      "said": [
+        "제발 칼을 조금만 내려 주세요, 숨도 못 쉬겠어요"
+      ],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "남자",
+          "text": "숨을 쉬어야 말을 할 것 아닌가."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "남자",
+          "text": "하."
+        },
+        {
+          "speaker": "남자",
+          "text": "그것뿐인가?"
+        },
+        {
+          "speaker": "남자",
+          "text": "그게… 마지막으로 남길 말인가?"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 10,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 28082,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b05_why",
+          "text": "제발 칼을 조금만 내려 주세요, 숨도 못 쉬겠어요",
+          "result": "approach",
+          "approach": "plead",
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "check",
+          "beat": "b05_why",
+          "roll": {
+            "label": "결백을 호소한다",
+            "stat": "매력",
+            "statValue": 2,
+            "mods": [
+              {
+                "label": "입력한 말",
+                "value": 1
+              }
+            ],
+            "dice": [
+              6,
+              1
+            ],
+            "total": 10,
+            "tier": "hit"
+          },
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "narrate",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 27865,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 남자는 대답 대신 내 눈을 가만히 들여다보았다. 서늘한 시선이 머무는 사이, 목을 압박하던 칼끝이 아주 조금 물러났다.",
+            "남자: 숨을 쉬어야 말을 할 것 아닌가.",
+            "나레이션: 칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "호감",
+              "from": 0,
+              "to": 1
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 3,
+              "to": 4
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 +1",
+              "tone": "good"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+          "남자는 대답 대신 내 눈을 가만히 들여다보았다. 서늘한 시선이 머무는 사이, 목을 압박하던 칼끝이 아주 조금 물러났다.",
+          "칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다.",
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다."
+        ],
+        "남자": [
+          "숨을 쉬어야 말을 할 것 아닌가.",
+          "하.",
+          "그것뿐인가?",
+          "그게… 마지막으로 남길 말인가?"
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ]
+      },
+      "heard": [
+        {
+          "text": "제발 칼을 조금만 내려 주세요, 숨도 못 쉬겠어요",
+          "action": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "제발 칼을 조금만 내려 주세요, 숨도 못 쉬겠어요"
+      },
+      {
+        "type": "roll",
+        "label": "결백을 호소한다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [
+          {
+            "label": "입력한 말",
+            "value": 1
+          }
+        ],
+        "dice": [
+          6,
+          1
+        ],
+        "total": 10,
+        "tier": "hit",
+        "tierLabel": "성공"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자는 대답 대신 내 눈을 가만히 들여다보았다. 서늘한 시선이 머무는 사이, 목을 압박하던 칼끝이 아주 조금 물러났다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "숨을 쉬어야 말을 할 것 아닌가.",
+        "by": "gm",
+        "face": "intrigued"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다.",
+        "by": "gm"
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "호감",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "정신력",
+            "from": 3,
+            "to": 4
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "정신력 +1",
+            "tone": "good"
+          }
+        ]
+      },
+      {
+        "type": "scene",
+        "beat": "b06_swing",
+        "title": "마지막으로 남길 말인가",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "item:magic_bag && !flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "하.",
+        "by": "script",
+        "if": "flag:말함_b05_why",
+        "sfx": "피식"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그것뿐인가?",
+        "by": "script",
+        "if": "flag:말함_b05_why && !flag:미소녀",
+        "face": "wary"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그게… 마지막으로 남길 말인가?",
+        "by": "script",
+        "if": "flag:말함_b05_why && !flag:미소녀",
+        "fx": "shake",
+        "sfx": "휘익"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "그 바람에 후드가 벗겨졌다.",
+        "by": "script",
+        "if": "!flag:후드_벗음"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      },
+      {
+        "type": "sprite",
+        "cast": "아시나",
+        "sprite": "asina"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자는 대답 대신 내 눈을 가만히 들여다보았다. 서늘한 시선이 머무는 사이, 목을 압박하던 칼끝이 아주 조금 물러났다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "숨을 쉬어야 말을 할 것 아닌가.",
+        "by": "gm",
+        "face": "intrigued"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다.",
+        "by": "gm"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "숨을 쉬어야 말을 할 것 아닌가.",
+      "by": "gm",
+      "face": "intrigued"
+    },
+    "delta": [
+      {
+        "key": "정신력",
+        "from": 3,
+        "to": 4
+      },
+      {
+        "key": "호감",
+        "from": 0,
+        "to": 1
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "제발 칼을 조금만 내려 주세요, 숨도 못 쉬겠어요",
+        "raw": "{\"reason\":\"살려달라는 애원이 섞인 말로 상대에게 건네는 말임\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"plead\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"살려달라는 애원이 섞인 말로 상대에게 건네는 말임\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"plead\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 19238.728874999913,
+          "totalMs": 28080.85124999995,
+          "promptTokens": 3234,
+          "completionTokens": 84,
+          "promptMs": 15958.672,
+          "genMs": 9104.063,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "제발 칼을 조금만 내려 주세요, 숨도 못 쉬겠어요",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 대답 대신 내 눈을 가만히 들여다보았다. 서늘한 시선이 머무는 사이, 목을 압박하던 칼끝이 아주 조금 물러났다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"숨을 쉬어야 말을 할 것 아닌가.\",\n      \"face\": \"intrigued\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다.\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 대답 대신 내 눈을 가만히 들여다보았다. 서늘한 시선이 머무는 사이, 목을 압박하던 칼끝이 아주 조금 물러났다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"숨을 쉬어야 말을 할 것 아닌가.\",\n      \"face\": \"intrigued\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다.\"\n    }\n  ]\n}",
+          "ttftMs": 10714.59937499999,
+          "totalMs": 27862.614166000043,
+          "promptTokens": 2093,
+          "completionTokens": 177,
+          "promptMs": 10445.186,
+          "genMs": 17401.581,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 28082,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "narrate",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 27865,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 남자는 대답 대신 내 눈을 가만히 들여다보았다. 서늘한 시선이 머무는 사이, 목을 압박하던 칼끝이 아주 조금 물러났다.",
+          "남자: 숨을 쉬어야 말을 할 것 아닌가.",
+          "나레이션: 칼날은 여전히 위협적이었지만, 아까처럼 당장이라도 목숨을 앗아갈 듯한 기세는 아니었다."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 55957,
+    "cpuBefore": "16678 SN     7.4 03-03:58:13",
+    "cpuAfter": "16678 RN     5.7 03-03:59:09"
+  },
+  {
+    "i": 10,
+    "beat": "b06_swing",
+    "text": "몸을 낮춰 칼을 든 손의 바깥으로 빠져나가려 한다",
+    "normal": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-9",
+      "seed": 11,
+      "rng": 11,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그 바람에 후드가 벗겨졌다."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 11,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-9",
+      "seed": 11,
+      "rng": 3663131637,
+      "beat": "b08_gaze",
+      "tracks": {
+        "체력": 3,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 1,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "후드_벗음": true,
+        "안내_입력": true,
+        "자리_낮음": true,
+        "말함_b07_rule": true,
+        "작전_회의": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b08_gaze",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "속마음",
+          "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?"
+        },
+        {
+          "speaker": "속마음",
+          "text": "마치… 한여름의 태양 같아."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "터벅, 터벅."
+        },
+        {
+          "speaker": "남자",
+          "text": "…"
+        },
+        {
+          "speaker": "아시나",
+          "text": "뭐, 뭐야"
+        },
+        {
+          "speaker": "속마음",
+          "text": "설마 다시 죽이려는 건 아니겠…"
+        },
+        {
+          "speaker": "속마음",
+          "text": "뭐야… 이 반응은."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 11,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 33531,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b06_swing",
+          "text": "몸을 낮춰 칼을 든 손의 바깥으로 빠져나가려 한다",
+          "result": "approach",
+          "approach": "dodge",
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "check",
+          "beat": "b06_swing",
+          "roll": {
+            "label": "몸을 던져 칼날을 피한다",
+            "stat": "근력",
+            "statValue": 0,
+            "mods": [],
+            "dice": [
+              6,
+              3
+            ],
+            "total": 9,
+            "tier": "mixed"
+          },
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b06_swing",
+          "task": "narrate",
+          "attempts": 2,
+          "violations": [
+            "beat/tier_mismatch: 판정 결과와 반대되는 서술입니다(\"허공을 갈\"). 정해진 결과대로 입력한 행동이 어떻게 됐는지 쓰세요"
+          ],
+          "fallback": false,
+          "ms": 42814,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 칼날이 귓가를 스치며 공기를 가르는 소리가 들렸다. 몸을 낮춘 덕에 치명상은 면했지만, 중심을 잃은 무릎이 깊은 모래 속으로 처박혔다.",
+            "나레이션: 휘청이며 모래 위로 나동그라졌다. 일어서려 해도 발이 모래에 묶인 듯 움직이지 않았다.",
+            "남자: 움직임 하나는 나쁘지 않군."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "price",
+          "beat": "b06_swing",
+          "id": "knee_sand",
+          "tag": "자리",
+          "text": "피하다 무릎이 모래에 박혔다. 일어설 틈이 없다.",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "집착",
+              "from": 0,
+              "to": 1
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "체력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "체력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b07_rule",
+          "title": "반칙",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+          "그 바람에 후드가 벗겨졌다.",
+          "칼날이 귓가를 스치며 공기를 가르는 소리가 들렸다. 몸을 낮춘 덕에 치명상은 면했지만, 중심을 잃은 무릎이 깊은 모래 속으로 처박혔다.",
+          "휘청이며 모래 위로 나동그라졌다. 일어서려 해도 발이 모래에 묶인 듯 움직이지 않았다.",
+          "터벅, 터벅.",
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!",
+          "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+          "마치… 한여름의 태양 같아.",
+          "설마 다시 죽이려는 건 아니겠…",
+          "뭐야… 이 반응은."
+        ],
+        "남자": [
+          "움직임 하나는 나쁘지 않군.",
+          "반칙?",
+          "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+          "남는 것은 살아남는 자와 죽는 자.",
+          "그 둘뿐이다.",
+          "…"
+        ],
+        "아시나": [
+          "가… 갑자기 휘두르는 법이 어디 있어요!!",
+          "반칙이지!!!",
+          "뭐, 뭐야"
+        ]
+      },
+      "heard": [
+        {
+          "text": "몸을 낮춰 칼을 든 손의 바깥으로 빠져나가려 한다",
+          "action": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "몸을 낮춰 칼을 든 손의 바깥으로 빠져나가려 한다"
+      },
+      {
+        "type": "roll",
+        "label": "몸을 던져 칼날을 피한다",
+        "stat": "근력",
+        "statValue": 0,
+        "mods": [],
+        "dice": [
+          6,
+          3
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "tierLabel": "대가 있는 성공"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날이 귓가를 스치며 공기를 가르는 소리가 들렸다. 몸을 낮춘 덕에 치명상은 면했지만, 중심을 잃은 무릎이 깊은 모래 속으로 처박혔다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "휘청이며 모래 위로 나동그라졌다. 일어서려 해도 발이 모래에 묶인 듯 움직이지 않았다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "움직임 하나는 나쁘지 않군.",
+        "by": "gm",
+        "face": "intrigued"
+      },
+      {
+        "type": "price",
+        "id": "knee_sand",
+        "tag": "자리",
+        "text": "피하다 무릎이 모래에 박혔다. 일어설 틈이 없다."
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "집착",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "체력",
+            "from": 4,
+            "to": 3
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "체력 -1",
+            "tone": "bad"
+          }
+        ]
+      },
+      {
+        "type": "scene",
+        "beat": "b07_rule",
+        "title": "반칙",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {
+          "아시나": "asina"
+        }
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "가… 갑자기 휘두르는 법이 어디 있어요!!",
+        "by": "script",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "반칙이지!!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "버럭",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "반칙?",
+        "by": "script",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "인간을 죽이는 데 규칙이고 율법이 필요한가?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "남는 것은 살아남는 자와 죽는 자.",
+        "by": "script",
+        "sfx": "저벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그 둘뿐이다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "어떻게… 사람 눈이 저렇게 강렬할 수 있지?",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "마치… 한여름의 태양 같아.",
+        "by": "script",
+        "fx": "flash",
+        "sfx": "오싹",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "터벅, 터벅.",
+        "by": "script",
+        "sfx": "터벅"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…",
+        "by": "script",
+        "sfx": "스윽"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "뭐, 뭐야",
+        "by": "script",
+        "sfx": "주춤…",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "설마 다시 죽이려는 건 아니겠…",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "뭐야… 이 반응은.",
+        "by": "script",
+        "cg": "cg_lean"
+      },
+      {
+        "type": "scene",
+        "beat": "b08_gaze",
+        "title": "한여름의 태양",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {
+          "아시나": "asina"
+        }
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+        "by": "script"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "칼날이 귓가를 스치며 공기를 가르는 소리가 들렸다. 몸을 낮춘 덕에 치명상은 면했지만, 중심을 잃은 무릎이 깊은 모래 속으로 처박혔다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "휘청이며 모래 위로 나동그라졌다. 일어서려 해도 발이 모래에 묶인 듯 움직이지 않았다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "움직임 하나는 나쁘지 않군.",
+        "by": "gm",
+        "face": "intrigued"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "움직임 하나는 나쁘지 않군.",
+      "by": "gm",
+      "face": "intrigued"
+    },
+    "delta": [
+      {
+        "key": "체력",
+        "from": 4,
+        "to": 3
+      },
+      {
+        "key": "집착",
+        "from": 0,
+        "to": 1
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "몸을 낮춰 칼을 든 손의 바깥으로 빠져나가려 한다",
+        "raw": "{\"reason\":\"칼날을 피해 몸을 움직이려는 시도임\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"dodge\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"몸을 낮춰 칼날의 바깥으로 빠져나갔다.\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"칼날을 피해 몸을 움직이려는 시도임\", \"kind\":\"action\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"dodge\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"몸을 낮춰 칼날의 바깥으로 빠져나갔다.\", \"stat\":\"재치\", \"difficulty\":\"보통\"}",
+          "ttftMs": 20139.49320899998,
+          "totalMs": 28634.207209000015,
+          "promptTokens": 2930,
+          "completionTokens": 93,
+          "promptMs": 14596.035,
+          "genMs": 8684.106,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b06_swing",
+        "attempt": 1,
+        "input": "몸을 낮춰 칼을 든 손의 바깥으로 빠져나가려 한다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"날카로운 곡도가 허공을 갈랐다. 간신히 궤적 밖으로 몸을 낮췄지만, 미끄러운 모래 위로 무릎이 깊게 박히며 그대로 나동그라졌다.\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"휘익, 모래 먼지가 일었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…쥐새끼처럼 빠르군.\",\n      \"face\": \"intrigued\"\n    }\n  ]\n}",
+        "violations": [
+          {
+            "kind": "beat",
+            "rule": "tier_mismatch",
+            "detail": "판정 결과와 반대되는 서술입니다(\"허공을 갈\"). 정해진 결과대로 입력한 행동이 어떻게 됐는지 쓰세요",
+            "severity": "hard"
+          }
+        ],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"날카로운 곡도가 허공을 갈랐다. 간신히 궤적 밖으로 몸을 낮췄지만, 미끄러운 모래 위로 무릎이 깊게 박히며 그대로 나동그라졌다.\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"휘익, 모래 먼지가 일었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"…쥐새끼처럼 빠르군.\",\n      \"face\": \"intrigued\"\n    }\n  ]\n}",
+          "ttftMs": 10932.444457999896,
+          "totalMs": 25891.246790999896,
+          "promptTokens": 2143,
+          "completionTokens": 164,
+          "promptMs": 10682.666,
+          "genMs": 15157.317,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b06_swing",
+        "attempt": 2,
+        "input": "몸을 낮춰 칼을 든 손의 바깥으로 빠져나가려 한다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"칼날이 귓가를 스치며 공기를 가르는 소리가 들렸다. 몸을 낮춘 덕에 치명상은 면했지만, 중심을 잃은 무릎이 깊은 모래 속으로 처박혔다.\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"휘청이며 모래 위로 나동그라졌다. 일어서려 해도 발이 모래에 묶인 듯 움직이지 않았다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"움직임 하나는 나쁘지 않군.\",\n      \"face\": \"intrigued\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"칼날이 귓가를 스치며 공기를 가르는 소리가 들렸다. 몸을 낮춘 덕에 치명상은 면했지만, 중심을 잃은 무릎이 깊은 모래 속으로 처박혔다.\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"휘청이며 모래 위로 나동그라졌다. 일어서려 해도 발이 모래에 묶인 듯 움직이지 않았다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"움직임 하나는 나쁘지 않군.\",\n      \"face\": \"intrigued\"\n    }\n  ]\n}",
+          "ttftMs": 1510.2066670000786,
+          "totalMs": 16917.385458000004,
+          "promptTokens": 91,
+          "completionTokens": 185,
+          "promptMs": 1200.919,
+          "genMs": 15696.455,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 33531,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b06_swing",
+        "task": "narrate",
+        "attempts": 2,
+        "violations": [
+          "beat/tier_mismatch: 판정 결과와 반대되는 서술입니다(\"허공을 갈\"). 정해진 결과대로 입력한 행동이 어떻게 됐는지 쓰세요"
+        ],
+        "fallback": false,
+        "ms": 42814,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 칼날이 귓가를 스치며 공기를 가르는 소리가 들렸다. 몸을 낮춘 덕에 치명상은 면했지만, 중심을 잃은 무릎이 깊은 모래 속으로 처박혔다.",
+          "나레이션: 휘청이며 모래 위로 나동그라졌다. 일어서려 해도 발이 모래에 묶인 듯 움직이지 않았다.",
+          "남자: 움직임 하나는 나쁘지 않군."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 76356,
+    "cpuBefore": "16678 RN     5.7 03-03:59:09",
+    "cpuAfter": "16678 RN     6.6 03-04:00:25"
+  },
+  {
+    "i": 11,
+    "beat": "b08_gaze",
+    "text": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다",
+    "normal": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-10",
+      "seed": 12,
+      "rng": 12,
+      "beat": "b08_gaze",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "작전_회의": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b08_gaze",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 12,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-10",
+      "seed": 12,
+      "rng": 3663131638,
+      "beat": "e_survivor",
+      "tracks": {
+        "체력": 4,
+        "정신력": 4,
+        "의심": 1,
+        "집착": 2,
+        "호감": 1,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "작전_회의": true,
+        "안내_입력": true,
+        "말함_b09_verdict": true,
+        "수첩:captive": true
+      },
+      "said": [],
+      "free": null,
+      "recent": [
+        {
+          "speaker": "아시나",
+          "text": "…네? 뭐가요?"
+        },
+        {
+          "speaker": "남자",
+          "text": "…바로 죽일까 했는데,"
+        },
+        {
+          "speaker": "남자",
+          "text": "마음이 바뀌었다."
+        },
+        {
+          "speaker": "남자",
+          "text": "그러니… 이대로 살려주는 것만으로도 감사히 여겨라."
+        },
+        {
+          "speaker": "남자",
+          "text": "여자."
+        },
+        {
+          "speaker": "남자",
+          "text": "끌고 가라."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "살아남는 자와 죽는 자. 적어도 오늘, 나는 살아남는 쪽이었다."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "긴장이 풀리자 눈앞이 하얘졌다. 일주일 만에 처음으로, 나는 정신을 놓았다."
+        }
+      ],
+      "ending": "survivor",
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 12,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b08_gaze",
+          "title": "한여름의 태양",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b08_gaze",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 51580,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b08_gaze",
+          "text": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다",
+          "result": "improv",
+          "approach": null,
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "check",
+          "beat": "b08_gaze",
+          "roll": {
+            "label": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다",
+            "stat": "재치",
+            "statValue": 1,
+            "mods": [],
+            "dice": [
+              3,
+              5
+            ],
+            "total": 9,
+            "tier": "mixed"
+          },
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b08_gaze",
+          "task": "narrate",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 39329,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 더위를 피하려 그늘로 한 걸음 물러나며 물을 청했다. 남자는 잠시 멈칫하더니, 이내 차가운 비웃음을 흘렸다.",
+            "남자: 목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.",
+            "나레이션: 남자가 턱을 들어 올리며, 내 얼굴을 집요하게 들여다보기 위해 거리를 좁혀왔다."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "price",
+          "beat": "b08_gaze",
+          "id": "man_closer",
+          "tag": "상대행동",
+          "text": "남자가 턱을 들어 얼굴을 더 가까이 들여다본다.",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 0,
+              "to": 1
+            },
+            {
+              "key": "집착",
+              "from": 0,
+              "to": 1
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "집착",
+              "from": 1,
+              "to": 2
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b09_verdict",
+          "title": "마음이 바뀌었다",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "호감",
+              "from": 0,
+              "to": 1
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "e_survivor",
+          "title": "살아남은 자",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "end",
+          "ending": "survivor",
+          "title": "살아남은 자",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.",
+          "더위를 피하려 그늘로 한 걸음 물러나며 물을 청했다. 남자는 잠시 멈칫하더니, 이내 차가운 비웃음을 흘렸다.",
+          "남자가 턱을 들어 올리며, 내 얼굴을 집요하게 들여다보기 위해 거리를 좁혀왔다.",
+          "살아남는 자와 죽는 자. 적어도 오늘, 나는 살아남는 쪽이었다.",
+          "긴장이 풀리자 눈앞이 하얘졌다. 일주일 만에 처음으로, 나는 정신을 놓았다."
+        ],
+        "남자": [
+          "목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.",
+          "하.",
+          "이상한 여자군.",
+          "…바로 죽일까 했는데,",
+          "마음이 바뀌었다.",
+          "그러니… 이대로 살려주는 것만으로도 감사히 여겨라.",
+          "여자.",
+          "끌고 가라."
+        ],
+        "아시나": [
+          "…네? 뭐가요?"
+        ]
+      },
+      "heard": [
+        {
+          "text": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다",
+          "action": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다"
+      },
+      {
+        "type": "roll",
+        "label": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다",
+        "stat": "재치",
+        "statValue": 1,
+        "mods": [],
+        "dice": [
+          3,
+          5
+        ],
+        "total": 9,
+        "tier": "mixed",
+        "tierLabel": "대가 있는 성공"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "더위를 피하려 그늘로 한 걸음 물러나며 물을 청했다. 남자는 잠시 멈칫하더니, 이내 차가운 비웃음을 흘렸다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.",
+        "by": "gm",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자가 턱을 들어 올리며, 내 얼굴을 집요하게 들여다보기 위해 거리를 좁혀왔다.",
+        "by": "gm"
+      },
+      {
+        "type": "price",
+        "id": "man_closer",
+        "tag": "상대행동",
+        "text": "남자가 턱을 들어 얼굴을 더 가까이 들여다본다."
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 0,
+            "to": 1
+          },
+          {
+            "key": "집착",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "집착",
+            "from": 1,
+            "to": 2
+          }
+        ]
+      },
+      {
+        "type": "scene",
+        "beat": "b09_verdict",
+        "title": "마음이 바뀌었다",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {}
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "호감",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "하.",
+        "by": "script",
+        "sfx": "빠안",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "이상한 여자군.",
+        "by": "script",
+        "if": "!flag:미소녀 && !flag:눈_맞섬 && !flag:큰_행동"
+      },
+      {
+        "type": "line",
+        "speaker": "아시나",
+        "display": "아시나",
+        "style": "speech",
+        "text": "…네? 뭐가요?",
+        "by": "script",
+        "if": "!flag:미소녀 && !flag:눈_맞섬 && !flag:큰_행동",
+        "face": "surprised"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "…바로 죽일까 했는데,",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "마음이 바뀌었다.",
+        "by": "script",
+        "face": "intrigued"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "그러니… 이대로 살려주는 것만으로도 감사히 여겨라.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "여자.",
+        "by": "script",
+        "face": "sneer"
+      },
+      {
+        "type": "scene",
+        "beat": "e_survivor",
+        "title": "살아남은 자",
+        "bg": "blackout",
+        "cast": {
+          "left": null,
+          "center": null,
+          "right": null
+        },
+        "sprites": {}
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "끌고 가라.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "살아남는 자와 죽는 자. 적어도 오늘, 나는 살아남는 쪽이었다.",
+        "by": "script"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "긴장이 풀리자 눈앞이 하얘졌다. 일주일 만에 처음으로, 나는 정신을 놓았다.",
+        "by": "script"
+      },
+      {
+        "type": "note",
+        "id": "captive",
+        "name": "붙잡힌 몸"
+      },
+      {
+        "type": "ending",
+        "id": "survivor",
+        "title": "살아남은 자",
+        "summary": "아시나는 살아남았다. 다음에 눈을 뜨는 곳은 낯선 나라 어딘가일 것이다.",
+        "nextHook": "다음 장면의 탈주 난이도는 지금의 탈주 준비도와 귀찌 수명으로 정해진다.",
+        "bad": false
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "더위를 피하려 그늘로 한 걸음 물러나며 물을 청했다. 남자는 잠시 멈칫하더니, 이내 차가운 비웃음을 흘렸다.",
+        "by": "gm"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.",
+        "by": "gm",
+        "face": "sneer"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자가 턱을 들어 올리며, 내 얼굴을 집요하게 들여다보기 위해 거리를 좁혀왔다.",
+        "by": "gm"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.",
+      "by": "gm",
+      "face": "sneer"
+    },
+    "delta": [
+      {
+        "key": "의심",
+        "from": 0,
+        "to": 1
+      },
+      {
+        "key": "집착",
+        "from": 0,
+        "to": 2
+      },
+      {
+        "key": "호감",
+        "from": 0,
+        "to": 1
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b08_gaze",
+        "attempt": 1,
+        "input": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다",
+        "raw": "{\"reason\":\"그늘로 피하며 물을 요구하는 행동\",\"kind\":\"action\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"그늘로 비키며 물을 달라고 했다\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"그늘로 피하며 물을 요구하는 행동\",\"kind\":\"action\",\"about\":\"none\",\"risk\":\"none\",\"approach\":\"none\",\"item\":\"\",\"odd\":false,\"absurd\":false,\"bold\":false,\"deed\":\"그늘로 비키며 물을 달라고 했다\",\"stat\":\"재치\",\"difficulty\":\"보통\"}",
+          "ttftMs": 37187.91579100001,
+          "totalMs": 44371.51495800004,
+          "promptTokens": 2953,
+          "completionTokens": 76,
+          "promptMs": 10391.679,
+          "genMs": 7311.159,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b08_gaze",
+        "attempt": 1,
+        "input": "그늘 쪽으로 한 걸음 비키며 물 한 모금만 달라고 한다",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"더위를 피하려 그늘로 한 걸음 물러나며 물을 청했다. 남자는 잠시 멈칫하더니, 이내 차가운 비웃음을 흘렸다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자가 턱을 들어 올리며, 내 얼굴을 집요하게 들여다보기 위해 거리를 좁혀왔다.\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"더위를 피하려 그늘로 한 걸음 물러나며 물을 청했다. 남자는 잠시 멈칫하더니, 이내 차가운 비웃음을 흘렸다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자가 턱을 들어 올리며, 내 얼굴을 집요하게 들여다보기 위해 거리를 좁혀왔다.\"\n    }\n  ]\n}",
+          "ttftMs": 20660.3832080001,
+          "totalMs": 35563.05862500006,
+          "promptTokens": 5292,
+          "completionTokens": 180,
+          "promptMs": 20458.413,
+          "genMs": 15036.316,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b08_gaze",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 51580,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b08_gaze",
+        "task": "narrate",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 39329,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 더위를 피하려 그늘로 한 걸음 물러나며 물을 청했다. 남자는 잠시 멈칫하더니, 이내 차가운 비웃음을 흘렸다.",
+          "남자: 목숨이 아까운 건가, 아니면 다른 속셈이 있는 건가.",
+          "나레이션: 남자가 턱을 들어 올리며, 내 얼굴을 집요하게 들여다보기 위해 거리를 좁혀왔다."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 90919,
+    "cpuBefore": "16678 RN     6.6 03-04:00:25",
+    "cpuAfter": "16678 SN    16.0 03-04:01:56"
+  },
+  {
+    "i": 12,
+    "beat": "b05_why",
+    "text": "이 정도 미모면 그냥 보내 주실 만하지 않아요?",
+    "normal": true,
+    "before": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-11",
+      "seed": 13,
+      "rng": 13,
+      "beat": "b05_why",
+      "tracks": {
+        "체력": 4,
+        "정신력": 3,
+        "의심": 0,
+        "집착": 0,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b05_why",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 13,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        ]
+      }
+    },
+    "after": {
+      "v": 1,
+      "scenario": "ep01_desert",
+      "session": "faces59-11",
+      "seed": 13,
+      "rng": 3663131639,
+      "beat": "b06_swing",
+      "tracks": {
+        "체력": 4,
+        "정신력": 2,
+        "의심": 2,
+        "집착": 1,
+        "호감": 0,
+        "귀찌": 7,
+        "탈주": 0,
+        "행운": 6
+      },
+      "abilities": {
+        "재치": 1,
+        "손재주": 1,
+        "매력": 2,
+        "근력": 0,
+        "교양": 1
+      },
+      "items": [
+        "magic_bag",
+        "earring",
+        "map",
+        "pin"
+      ],
+      "flags": {
+        "상대_곁": true,
+        "위협_칼끝": true,
+        "안내_입력": true,
+        "후드_벗음": true,
+        "미인계": true
+      },
+      "said": [],
+      "free": {
+        "beat": "b06_swing",
+        "talks": 0,
+        "rolls": 0
+      },
+      "recent": [
+        {
+          "speaker": "나레이션",
+          "text": "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다."
+        },
+        {
+          "speaker": "남자",
+          "text": "미모로 목숨을 구걸하겠다?"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다."
+        },
+        {
+          "speaker": "남자",
+          "text": "얼굴로 목숨을 구걸하는 건가, 이방인."
+        },
+        {
+          "speaker": "나레이션",
+          "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        },
+        {
+          "speaker": "속마음",
+          "text": "미친―! 피해야 돼!!"
+        }
+      ],
+      "ending": null,
+      "startedAt": 0,
+      "playMs": 0,
+      "lastActiveAt": 0,
+      "log": [
+        {
+          "kind": "start",
+          "seed": 13,
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b05_why",
+          "title": "왜지?",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 4,
+              "to": 3
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "interpret",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 29574,
+          "model": "gemma-4-26b-a4b",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "input",
+          "beat": "b05_why",
+          "text": "이 정도 미모면 그냥 보내 주실 만하지 않아요?",
+          "result": "approach",
+          "approach": "beauty",
+          "item": null,
+          "source": "llm",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "check",
+          "beat": "b05_why",
+          "roll": {
+            "label": "미인계를 쓴다",
+            "stat": "매력",
+            "statValue": 2,
+            "mods": [
+              {
+                "label": "입력한 말",
+                "value": 1
+              }
+            ],
+            "dice": [
+              1,
+              3
+            ],
+            "total": 7,
+            "tier": "mixed"
+          },
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "narrate",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 19708,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "나레이션: 뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다.",
+            "남자: 미모로 목숨을 구걸하겠다?",
+            "나레이션: 남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "price",
+          "beat": "b05_why",
+          "id": "man_doubt",
+          "tag": "수치",
+          "text": "남자의 눈이 가늘어졌다.",
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "의심",
+              "from": 0,
+              "to": 1
+            },
+            {
+              "key": "집착",
+              "from": 0,
+              "to": 1
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "tracks",
+          "changes": [
+            {
+              "key": "정신력",
+              "from": 3,
+              "to": 2
+            },
+            {
+              "key": "의심",
+              "from": 1,
+              "to": 2
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "change",
+          "parts": [
+            {
+              "text": "정신력 -1",
+              "tone": "bad"
+            }
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "gm",
+          "beat": "b05_why",
+          "task": "talk",
+          "attempts": 1,
+          "violations": [],
+          "fallback": false,
+          "ms": 8819,
+          "model": "gemma-4-26b-a4b",
+          "lines": [
+            "남자: 얼굴로 목숨을 구걸하는 건가, 이방인."
+          ],
+          "at": 0,
+          "playMs": 0
+        },
+        {
+          "kind": "beat",
+          "beat": "b06_swing",
+          "title": "마지막으로 남길 말인가",
+          "at": 0,
+          "playMs": 0
+        }
+      ],
+      "spoken": {
+        "나레이션": [
+          "쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.",
+          "뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다.",
+          "남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다.",
+          "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔."
+        ],
+        "남자": [
+          "미모로 목숨을 구걸하겠다?",
+          "얼굴로 목숨을 구걸하는 건가, 이방인."
+        ],
+        "속마음": [
+          "미친―! 피해야 돼!!"
+        ]
+      },
+      "heard": [
+        {
+          "text": "이 정도 미모면 그냥 보내 주실 만하지 않아요?",
+          "action": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "echo",
+        "text": "이 정도 미모면 그냥 보내 주실 만하지 않아요?"
+      },
+      {
+        "type": "roll",
+        "label": "미인계를 쓴다",
+        "stat": "매력",
+        "statValue": 2,
+        "mods": [
+          {
+            "label": "입력한 말",
+            "value": 1
+          }
+        ],
+        "dice": [
+          1,
+          3
+        ],
+        "total": 7,
+        "tier": "mixed",
+        "tierLabel": "대가 있는 성공"
+      },
+      {
+        "type": "sprite",
+        "cast": "아시나",
+        "sprite": "asina"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다.",
+        "by": "gm",
+        "cg": "cg_beauty"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "미모로 목숨을 구걸하겠다?",
+        "by": "gm",
+        "face": "sneer",
+        "cg": "cg_beauty"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다.",
+        "by": "gm",
+        "cg": "cg_beauty"
+      },
+      {
+        "type": "price",
+        "id": "man_doubt",
+        "tag": "수치",
+        "text": "남자의 눈이 가늘어졌다."
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "의심",
+            "from": 0,
+            "to": 1
+          },
+          {
+            "key": "집착",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      {
+        "type": "tracks",
+        "changes": [
+          {
+            "key": "정신력",
+            "from": 3,
+            "to": 2
+          },
+          {
+            "key": "의심",
+            "from": 1,
+            "to": 2
+          }
+        ]
+      },
+      {
+        "type": "change",
+        "parts": [
+          {
+            "text": "정신력 -1",
+            "tone": "bad"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "얼굴로 목숨을 구걸하는 건가, 이방인.",
+        "by": "gm",
+        "face": "sneer"
+      },
+      {
+        "type": "scene",
+        "beat": "b06_swing",
+        "title": "마지막으로 남길 말인가",
+        "bg": "desert_near",
+        "cast": {
+          "left": "아시나",
+          "center": null,
+          "right": "남자"
+        },
+        "sprites": {
+          "아시나": "asina"
+        }
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.",
+        "by": "script",
+        "if": "item:magic_bag && !flag:가방_끈"
+      },
+      {
+        "type": "line",
+        "speaker": "속마음",
+        "display": "아시나",
+        "style": "thought",
+        "text": "미친―! 피해야 돼!!",
+        "by": "script",
+        "fx": "shake",
+        "sfx": "부웅",
+        "face": "surprised",
+        "cg": "cg_swing"
+      }
+    ],
+    "lines": [
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다.",
+        "by": "gm",
+        "cg": "cg_beauty"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "미모로 목숨을 구걸하겠다?",
+        "by": "gm",
+        "face": "sneer",
+        "cg": "cg_beauty"
+      },
+      {
+        "type": "line",
+        "speaker": "나레이션",
+        "display": "",
+        "style": "narration",
+        "text": "남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다.",
+        "by": "gm",
+        "cg": "cg_beauty"
+      },
+      {
+        "type": "line",
+        "speaker": "남자",
+        "display": "붉은 눈의 남자",
+        "style": "speech",
+        "text": "얼굴로 목숨을 구걸하는 건가, 이방인.",
+        "by": "gm",
+        "face": "sneer"
+      }
+    ],
+    "male": {
+      "type": "line",
+      "speaker": "남자",
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "text": "미모로 목숨을 구걸하겠다?",
+      "by": "gm",
+      "face": "sneer",
+      "cg": "cg_beauty"
+    },
+    "delta": [
+      {
+        "key": "정신력",
+        "from": 3,
+        "to": 2
+      },
+      {
+        "key": "의심",
+        "from": 0,
+        "to": 2
+      },
+      {
+        "key": "집착",
+        "from": 0,
+        "to": 1
+      }
+    ],
+    "traces": [
+      {
+        "task": "interpret",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "이 정도 미모면 그냥 보내 주실 만하지 않아요?",
+        "raw": "{\"reason\":\"자신의 미모를 내세워 상황을 모면하려 함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"beauty\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"매력\", \"difficulty\":\"보통\"}",
+        "violations": [],
+        "llm": {
+          "text": "{\"reason\":\"자신의 미모를 내세워 상황을 모면하려 함\", \"kind\":\"person\", \"about\":\"none\", \"risk\":\"none\", \"approach\":\"beauty\", \"item\":\"\", \"odd\":false, \"absurd\":false, \"bold\":false, \"deed\":\"\", \"stat\":\"매력\", \"difficulty\":\"보통\"}",
+          "ttftMs": 22171.026041999925,
+          "totalMs": 29572.695209000027,
+          "promptTokens": 3232,
+          "completionTokens": 80,
+          "promptMs": 11386.924,
+          "genMs": 7526.19,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "narrate",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "이 정도 미모면 그냥 보내 주실 만하지 않아요?",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"미모로 목숨을 구걸하겠다?\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다.\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다.\"\n    },\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"미모로 목숨을 구걸하겠다?\",\n      \"face\": \"sneer\"\n    },\n    {\n      \"speaker\": \"나레이션\",\n      \"text\": \"남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다.\"\n    }\n  ]\n}",
+          "ttftMs": 8843.839417000068,
+          "totalMs": 19705.31608300004,
+          "promptTokens": 2246,
+          "completionTokens": 176,
+          "promptMs": 8711.571,
+          "genMs": 10981.934,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      },
+      {
+        "task": "talk",
+        "beat": "b05_why",
+        "attempt": 1,
+        "input": "이 정도 미모면 그냥 보내 주실 만하지 않아요?",
+        "raw": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"얼굴로 목숨을 구걸하는 건가, 이방인.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+        "violations": [],
+        "llm": {
+          "text": "{\n  \"lines\": [\n    {\n      \"speaker\": \"남자\",\n      \"text\": \"얼굴로 목숨을 구걸하는 건가, 이방인.\",\n      \"face\": \"sneer\"\n    }\n  ]\n}",
+          "ttftMs": 1771.4287499999627,
+          "totalMs": 5447.346791000105,
+          "promptTokens": 436,
+          "completionTokens": 63,
+          "promptMs": 1441.367,
+          "genMs": 3831.862,
+          "model": "gemma-4-26b-a4b"
+        },
+        "error": null
+      }
+    ],
+    "rolled": true,
+    "gm": [
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "interpret",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 29574,
+        "model": "gemma-4-26b-a4b",
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "narrate",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 19708,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "나레이션: 뻔뻔한 외침에도 목을 겨눈 칼날은 미동조차 없었다. 다만 남자의 눈이 가늘어지며 나를 훑어내릴 뿐이었다.",
+          "남자: 미모로 목숨을 구걸하겠다?",
+          "나레이션: 남자는 짧게 비웃음을 흘렸다. 흥미로운 것을 발견했다는 듯한 눈빛이었지만, 여전히 서늘한 살기가 느껴졌다."
+        ],
+        "at": 0,
+        "playMs": 0
+      },
+      {
+        "kind": "gm",
+        "beat": "b05_why",
+        "task": "talk",
+        "attempts": 1,
+        "violations": [],
+        "fallback": false,
+        "ms": 8819,
+        "model": "gemma-4-26b-a4b",
+        "lines": [
+          "남자: 얼굴로 목숨을 구걸하는 건가, 이방인."
+        ],
+        "at": 0,
+        "playMs": 0
+      }
+    ],
+    "ms": 58109,
+    "cpuBefore": "16678 SN    16.0 03-04:01:56",
+    "cpuAfter": "16678 RN    13.5 03-04:02:54"
+  }
+]

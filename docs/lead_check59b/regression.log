@@ -1,0 +1,78 @@
+bun test v1.4.2 (744846f84)
+
+tests/gm.test.ts:
+(pass) 이번 판 되풀이와 엔진 상태 > 직전 두 줄과 같은 끝맺음 반응은 다시 쓰고 다른 구조를 표시한다 [6.13ms]
+774 |   ])('직전 두 줄과 같은 $reason 반응은 다시 쓰고 다른 구조를 표시한다', async ({ previous, draft, reason }) => {
+775 |     const mock = mockLlama([lines(['남자', draft]), lines(['남자', '떨지 마라.']), NO, YES]);
+776 |     stop = () => mock.server.stop(true);
+777 |     const base = contexts('이가 덜덜 떨려 말이 안 나온다').ctx;
+778 |     const reply = await gmOn(mock.url).talk({ ...base, reaction: true, state: { ...base.state, spoken: { 남자: [...previous] } } });
+779 |     expect(reply.meta.fallback).toBe(false);
+                                      ^
+error: expect(received).toBe(expected)
+
+Expected: false
+Received: true
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:779:33)
+(fail) 이번 판 되풀이와 엔진 상태 > 직전 두 줄과 같은 호칭 반응은 다시 쓰고 다른 구조를 표시한다 [2.87ms]
+774 |   ])('직전 두 줄과 같은 $reason 반응은 다시 쓰고 다른 구조를 표시한다', async ({ previous, draft, reason }) => {
+775 |     const mock = mockLlama([lines(['남자', draft]), lines(['남자', '떨지 마라.']), NO, YES]);
+776 |     stop = () => mock.server.stop(true);
+777 |     const base = contexts('이가 덜덜 떨려 말이 안 나온다').ctx;
+778 |     const reply = await gmOn(mock.url).talk({ ...base, reaction: true, state: { ...base.state, spoken: { 남자: [...previous] } } });
+779 |     expect(reply.meta.fallback).toBe(false);
+                                      ^
+error: expect(received).toBe(expected)
+
+Expected: false
+Received: true
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/gm.test.ts:779:33)
+(fail) 이번 판 되풀이와 엔진 상태 > 직전 두 줄과 같은 호칭 반응은 다시 쓰고 다른 구조를 표시한다 [2.56ms]
+
+tests/engine.test.ts:
+315 |       }
+316 |     }
+317 |     const engine = new Engine(story, new EllipsisGm(() => ({ kind: 'talk', source: 'llm', meta: META })));
+318 |     const fresh = engine.newGame(5, 'ellipsis');
+319 |     for (const step of [fresh.step, engine.resume(fresh.state)]) {
+320 |       expect(step.events.filter(e => e.type === 'line').map(e => e.text)).toContain(displayed);
+                                                                                ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "…뭐? 잠깐… 1.25 1...3 v1...2 ...items https://a/.../b"
+Received: [ "바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.",
+  "응?", "저건…", "사람?!"
+]
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/engine.test.ts:320:75)
+(fail) 엔진 진행 > 고정·모델·복원 대사의 말줄임표만 통일하고 숫자와 코드 표기는 보존한다 [0.57ms]
+
+tests/validate.test.ts:
+(pass) 판정 결과와 서술 > 최근 실제 남자 줄과 끝 절·호칭 구조를 비교한다: 겁이 난 건가? [0.17ms]
+(pass) 판정 결과와 서술 > 최근 실제 남자 줄과 끝 절·호칭 구조를 비교한다: 숨이 막히나, 여행자? [0.14ms]
+(pass) 판정 결과와 서술 > 최근 실제 남자 줄과 끝 절·호칭 구조를 비교한다: 상인의 고집도 대단하군. [0.05ms]
+(pass) 판정 결과와 서술 > 최근 실제 남자 줄과 끝 절·호칭 구조를 비교한다: 겁이 난 건가? [0.04ms]
+48 |     { previous: ['그게 한계인가?', '눈을 들어라.', '그만 떨지.'], text: '겁이 난 건가?', repeat: false },
+49 |     { previous: ['그게 한계인가?', '눈을 들어라.'], text: '다리는 떨리는가? 버텨라.', repeat: false },
+50 |     { previous: ['고개를 들어라.', '그만 떨지.'], text: '여행자, 아직 버티는군.', repeat: false },
+51 |   ])('최근 실제 남자 줄과 끝 절·호칭 구조를 비교한다: $text', ({ previous, text, repeat }) => {
+52 |     const checked = rules(out(['남자', text]), options({ spoken: { 남자: previous } }));
+53 |     expect(checked.includes('beat/reaction_repeat')).toBe(repeat);
+                                                          ^
+error: expect(received).toBe(expected)
+
+Expected: false
+Received: true
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/validate.test.ts:53:54)
+(fail) 판정 결과와 서술 > 최근 실제 남자 줄과 끝 절·호칭 구조를 비교한다: 다리는 떨리는가? 버텨라. [0.14ms]
+(pass) 판정 결과와 서술 > 최근 실제 남자 줄과 끝 절·호칭 구조를 비교한다: 여행자, 아직 버티는군. [0.04ms]
+(pass) 판정 결과와 서술 > 다른 화자와 다른 판의 기록은 남자 반복 구조로 쓰지 않는다 [0.07ms]
+
+ 7 pass
+ 328 filtered out
+ 4 fail
+ 17 expect() calls
+Ran 11 tests across 3 files. [39.00ms]

@@ -1,0 +1,318 @@
+[
+  {
+    "line": 168,
+    "text": "          face: smile"
+  },
+  {
+    "line": 174,
+    "text": "          face: wary"
+  },
+  {
+    "line": 182,
+    "text": "          face: neutral"
+  },
+  {
+    "line": 197,
+    "text": "          face: wary"
+  },
+  {
+    "line": 205,
+    "text": "          face: wary"
+  },
+  {
+    "line": 403,
+    "text": "        face: wary"
+  },
+  {
+    "line": 439,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 443,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 523,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 529,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 535,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 566,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 576,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 610,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 633,
+    "text": "        face: wary"
+  },
+  {
+    "line": 635,
+    "text": "        face: wary"
+  },
+  {
+    "line": 638,
+    "text": "        face: smile"
+  },
+  {
+    "line": 659,
+    "text": "        face: neutral"
+  },
+  {
+    "line": 661,
+    "text": "      - 아시나: 억울해…"
+  },
+  {
+    "line": 664,
+    "text": "        face: neutral"
+  },
+  {
+    "line": 667,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 670,
+    "text": "        face: wary"
+  },
+  {
+    "line": 672,
+    "text": "        face: wary"
+  },
+  {
+    "line": 745,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 749,
+    "text": "                  face: surprised"
+  },
+  {
+    "line": 763,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 766,
+    "text": "                  face: surprised"
+  },
+  {
+    "line": 777,
+    "text": "                  face: surprised"
+  },
+  {
+    "line": 787,
+    "text": "            - 억울해요! 저는 그냥 길을 물었을 뿐이에요!"
+  },
+  {
+    "line": 794,
+    "text": "                - 아시나: 억울해요! 전 정말 길을 물어본 것밖에 없다고요!"
+  },
+  {
+    "line": 825,
+    "text": "                  face: smile"
+  },
+  {
+    "line": 843,
+    "text": "                  face: wary"
+  },
+  {
+    "line": 862,
+    "text": "                  face: surprised"
+  },
+  {
+    "line": 969,
+    "text": "        face: smile"
+  },
+  {
+    "line": 972,
+    "text": "        face: wary"
+  },
+  {
+    "line": 990,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1158,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1160,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1164,
+    "text": "        face: smile"
+  },
+  {
+    "line": 1172,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1179,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1271,
+    "text": "                  face: wary"
+  },
+  {
+    "line": 1284,
+    "text": "                  face: wary"
+  },
+  {
+    "line": 1317,
+    "text": "                  face: wary"
+  },
+  {
+    "line": 1334,
+    "text": "        face: smile"
+  },
+  {
+    "line": 1339,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1345,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1350,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1355,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1358,
+    "text": "        face: smile"
+  },
+  {
+    "line": 1361,
+    "text": "        face: smile"
+  },
+  {
+    "line": 1378,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1382,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1384,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1505,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1515,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1551,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1710,
+    "text": "        face: smile"
+  },
+  {
+    "line": 1712,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1715,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1722,
+    "text": "        face: neutral"
+  },
+  {
+    "line": 1732,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1735,
+    "text": "        face: neutral"
+  },
+  {
+    "line": 1862,
+    "text": "        face: smile"
+  },
+  {
+    "line": 1865,
+    "text": "        face: surprised"
+  },
+  {
+    "line": 1869,
+    "text": "        face: wary"
+  },
+  {
+    "line": 1879,
+    "text": "        face: smile"
+  },
+  {
+    "line": 1882,
+    "text": "        face: wary"
+  },
+  {
+    "line": 2010,
+    "text": "        face: neutral"
+  },
+  {
+    "line": 2014,
+    "text": "        face: wary"
+  },
+  {
+    "line": 2017,
+    "text": "        face: wary"
+  },
+  {
+    "line": 2022,
+    "text": "        face: wary"
+  },
+  {
+    "line": 2043,
+    "text": "        face: smile"
+  },
+  {
+    "line": 2058,
+    "text": "        face: wary"
+  },
+  {
+    "line": 2070,
+    "text": "        face: smile"
+  },
+  {
+    "line": 2086,
+    "text": "        face: wary"
+  },
+  {
+    "line": 2104,
+    "text": "        face: smile"
+  },
+  {
+    "line": 2150,
+    "text": "        face: wary"
+  },
+  {
+    "line": 2166,
+    "text": "        face: smile"
+  }
+]

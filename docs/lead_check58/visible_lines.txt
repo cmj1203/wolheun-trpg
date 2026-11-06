@@ -1,0 +1,739 @@
+b00_open.title	여는 글
+b00_open.lines[0]	꿈에도 몰랐다. 거대한 태양 아래,
+b00_open.lines[1]	고국이 아닌 낯선 땅에서
+b00_open.lines[2]	죽음을 맞이하게 될 줄은―
+b00_open.lines[4]	북대륙의 패자라고 불리는 크롬웰 제국.
+b00_open.lines[5]	나는 그곳에서 뭐 하나 부족함 없는 삶을 살았다.
+b00_open.lines[6]	거대한 저택, 아름다운 드레스, 화려한 보석…
+b00_open.lines[7]	하지만 나의 가슴을 뛰게 하는 것은 따로 있었다.
+b00_open.lines[8]	와아…
+b00_open.lines[9]	내가 태어난 이 세상을 모험하는 것.
+b00_open.lines[10]	선사시대 유적지부터 사이베리아의 펜족에게까지…
+b00_open.lines[11]	어느새 난 북대륙의 모든 나라를 둘러보았고, 남대륙으로 향하는 건 당연한 수순이었다.
+b00_open.lines[12]	그렇게 남대륙의 크라차로 가기 위해 사막을 횡단하던 중이었다―
+b00_open.lines[13]	살아서 이 사막을 건너야 해. 정체도 들키면 안 되고.
+b01_sand.title	길 잃은 지 일주일
+b01_sand.lines[0]	뜨거운 모래 냄새가 코끝을 찔렀다. 허리춤의 물통, 가방 속 낡은 지도, 귓불의 귀찌.
+b01_sand.lines[1]	하아…
+b01_sand.lines[2]	하아…
+b01_sand.lines[3]	길을 헤맨 지 벌써 일주일째야…
+b01_sand.lines[4]	사방이 온통 모래뿐이라 길을 알 수가 없어…
+b01_sand.lines[5]	심지어 물도 다 떨어져 가고…
+b02_people.title	사람?!
+b02_people.lines[0]	바람에 낯선 냄새가 섞여 왔다. 왼쪽엔 모래 언덕, 오른쪽엔 바위 그늘.
+b02_people.lines[1]	응?
+b02_people.lines[2]	저건…
+b02_people.lines[3]	사람?!
+b02_people.twist.altered[0].lines[0]	바람이 방향을 바꿨다. 세 사람의 말소리가 끊어질 듯 이어져 들렸다. 생각보다 가까웠다.
+b02_people.twist.altered[0].lines[1]	…이 거리면 숨을 데가 없어.
+b02_people.twist.altered[1].lines[0]	해가 정수리 위에 섰다. 모래가 빛을 되쏘아 눈을 뜨기 힘들었다. 세 사람의 그림자가 아지랑이 속에서 흔들렸다.
+b02_people.twist.interrupt[0].lines[0]	모래바람이 덮쳤다. 후드를 움켜쥐고 바위 뒤에 웅크린 채 한참을 버텼다.
+b02_people.twist.interrupt[0].lines[1]	바람이 걷히자 발자국이 모두 지워져 있었다. 해는 그새 한 뼘 기울어 있었다.
+b02_people.twist.interrupt[1].lines[0]	마법 가방의 끈이 툭 끊어졌다. 쏟아진 짐을 주워 담느라 손이 모래투성이가 됐다.
+b02_people.twist.interrupt[1].lines[1]	지도… 지도는 있어. 끈은 손으로 쥐고 가자.
+b02_people.free.aim	저 사람들에게 다가갈지, 먼저 살필지, 피해 갈지 정한다.
+b02_people.free.talk_fallback[0]	저 사람들, 신기루는 아니겠지? 헛소리 그만하고 어떻게 할지나 정하자.
+b02_people.free.talk_fallback[1]	사람이야, 사람! 이럴 때가 아니잖아.
+b02_people.free.press[0]	해는 기다려 주지 않았다. 이러고 있을 시간이 없었다.
+b02_people.free.nudge[0]	멀리 세 사람의 그림자가 움직이기 시작했다. 곧 시야에서 사라질 것 같았다.
+b02_people.free.deflect[0]	…더위를 먹었나 봐. 정신 차려, 아시나.
+b02_people.free.improv.hit.lines[0]	어이없는 짓이었지만, 이상하게도 기운이 조금 돌아왔다.
+b02_people.free.improv.hit.lines[1]	좋아, 아직 이럴 힘은 남았네.
+b02_people.free.improv.mixed.lines[0]	잠깐 기분은 나아졌지만, 그만큼 해가 기울고 목이 말랐다.
+b02_people.free.improv.miss.lines[0]	아무 소용도 없었다. 나는 뜨거운 모래 위에 그대로 주저앉았다.
+b02_people.free.improv.miss.lines[1]	내가 지금 뭘 하는 거야…
+b02_people.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+b02_people.free.improv_bold.hit.lines[1]	……미친 여자군.
+b02_people.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+b02_people.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+b02_people.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+b02_people.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+b02_people.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+b02_people.free.neutral.hit[0]	숨을 고르자 조금은 버틸 만해졌다.
+b02_people.free.neutral.mixed[0]	버티긴 했지만 그만큼 기운이 빠졌다.
+b02_people.free.neutral.miss[0]	아무것도 나아지지 않았다.
+b02_people.free.idle.lines[0]	세 사람이 먼저 이쪽으로 방향을 틀었다. 거리는 이제 그들이 정한다.
+b02_people.free.prices[0].text	해가 한 뼘 더 기울었다.
+b02_people.free.prices[1].text	바람에 지도 한 귀퉁이가 찢겨 날아갔다.
+b02_people.free.prices[2].text	바위 그늘을 벗어나 트인 모래 위에 서 버렸다. 숨을 데가 없다.
+b02_people.free.prices[3].text	셋 중 하나가 걸음을 멈추고 이쪽을 똑바로 본다.
+b02_people.free.prices[4].text	세 사람이 먼저 이쪽으로 방향을 틀었다. 거리는 이제 그들이 정한다.
+b02_people.free.prices[5].text	모래에 무릎까지 빠져 기운이 빠졌다.
+b02_people.free.approaches[0].hint	소리치며 달려가 길을 물으려 한다.
+b02_people.free.approaches[0].label	달려가서 길을 묻는다
+b02_people.free.approaches[0].outcomes.hit.lines[0]	이봐요! 저기요!
+b02_people.free.approaches[0].outcomes.hit.lines[1]	잠시만요!
+b02_people.free.approaches[0].outcomes.hit.lines[2]	역시 잘못 본 게 아니었어.
+b02_people.free.approaches[0].outcomes.hit.lines[3]	살았다…!!
+b02_people.free.approaches[0].outcomes.mixed.lines[0]	이봐요! 저기요!
+b02_people.free.approaches[0].outcomes.mixed.lines[1]	모래에 발이 푹푹 빠졌다. 그들 앞에 닿았을 땐 숨이 턱까지 차올랐다.
+b02_people.free.approaches[0].outcomes.miss.lines[0]	몇 걸음 못 가 모래에 고꾸라졌다. 고개를 드니 세 남자가 나를 내려다보고 있었다.
+b02_people.free.approaches[0].outcomes.miss.lines[1]	하, 하하… 안녕하세요…
+b02_people.free.approaches[1].hint	다가가기 전에 몸을 숨기고 상대를 살핀다.
+b02_people.free.approaches[1].label	모래 언덕 뒤에서 먼저 살핀다
+b02_people.free.approaches[1].outcomes.hit.lines[0]	세 사람. 가운데 남자의 터번에는 붉은 보석이 박혀 있고, 양옆의 둘은 그를 지키듯 서 있었다.
+b02_people.free.approaches[1].outcomes.hit.lines[1]	보통 신분은 아니야. 호위가 둘… 한 사람은 복면까지 썼어.
+b02_people.free.approaches[1].outcomes.hit.lines[2]	저기요! 길 좀 여쭤봐도 될까요?
+b02_people.free.approaches[1].outcomes.mixed.lines[0]	가운데 남자의 터번에서 붉은 보석이 번쩍였다. 붉은 눈이 이쪽을 스쳤다 — 숨은 건 들켰지만, 노려보는 눈은 아니었다.
+b02_people.free.approaches[1].outcomes.mixed.lines[1]	봤네…. 그래도 적을 본 눈은 아니야. 웃으면서 나가자.
+b02_people.free.approaches[1].outcomes.mixed.lines[2]	아, 안녕하세요! 길 좀 여쭤보려고요!
+b02_people.free.approaches[1].outcomes.miss.lines[0]	발밑의 모래가 와르르 무너졌다. 나는 언덕 아래로 데굴데굴 굴러떨어졌다.
+b02_people.free.approaches[1].outcomes.miss.lines[1]	세 남자의 시선이 한꺼번에 꽂혔다.
+b02_people.free.approaches[1].outcomes.miss.lines[2]	하, 하하… 그게, 길을 좀 물어보려고…
+b02_people.free.approaches[2].hint	수상한 사람들을 만나지 않으려고 멀리 돌아간다.
+b02_people.free.approaches[2].label	몰래 돌아서 피해 간다
+b02_people.free.approaches[2].outcomes.hit.lines[0]	나는 몸을 낮추고 언덕 그림자를 골라 디뎠다.
+b02_people.free.approaches[2].outcomes.hit.lines[1]	좋아, 아무도 못 봤어.
+b02_people.free.approaches[2].outcomes.mixed.lines[0]	몇 걸음 못 가 붉은 눈이 이쪽을 스쳤다. 피하려던 건 들켰지만, 쫓아오는 발은 없었다.
+b02_people.free.approaches[2].outcomes.mixed.lines[1]	봤네…. 그래도 쫓아오지는 않아. 길 묻는 척하자.
+b02_people.free.approaches[2].outcomes.mixed.lines[2]	아, 안녕하세요! 길 좀 여쭤보려고요!
+b02_people.free.approaches[2].outcomes.miss.lines[0]	발밑의 모래가 무너졌다. 나는 피하려던 사람들 바로 앞으로 굴러떨어졌다.
+b02_people.free.approaches[2].outcomes.miss.lines[1]	하, 하하… 그게…
+b03_ask.title	길을 물어봤을 뿐인데
+b03_ask.lines[0]	그때 등 뒤에서 모래 밟는 소리가 났다. 호위 하나가 내 팔을 붙잡아 세 사람 앞으로 끌어냈다.
+b03_ask.lines[1]	……
+b03_ask.lines[2]	저… 저기…
+b03_ask.lines[3]	정말이지 난
+b03_ask.lines[4]	혹시 크라차까지 가는 길을 아시나요?
+b03_ask.lines[5]	그저 길을 물어봤을 뿐이었다.
+b04_blade.title	그리고 현재
+b04_blade.lines[0]	그리고 현재.
+b04_blade.lines[1]	크라차에 원수라도 진 건지… 다짜고짜 사람 목에 칼이나 들이대고 말이야!
+b04_blade.lines[2]	마지막으로 할 말은 있나?
+b04_blade.lines[3]	억울해…
+b04_blade.lines[4]	없다면, 잘 가라.
+b04_blade.lines[5]	잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!
+b04_blade.lines[6]	그것 좀 치워봐요! 난 죽이면 안 돼요.
+b04_blade.lines[7]	……왜지?
+b05_why.title	왜지?
+b05_why.lines[0]	쇠 냄새가 코앞까지 왔다. 목에 닿은 칼끝, 남자의 터번, 뒤에 선 호위 둘.
+b05_why.free.aim	목에 닿은 칼끝을 거두게 할 이유를 댄다.
+b05_why.free.talk_fallback[0]	묻는 말에나 답해라.
+b05_why.free.press[0]	할 말은 그것뿐인가?
+b05_why.free.nudge[0]	칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.
+b05_why.free.offer.lines[0]	남자가 칼끝을 살짝 내렸다. 말할 틈이 생겼다. 그가 다시 들어 올리기 전까지.
+b05_why.free.deflect[0]	입을 닫아라, 여자. 목숨이 아깝지 않은 모양이군.
+b05_why.free.deflect[1]	하. 그런 소리로 살아남을 수 있다고 생각하나?
+b05_why.free.improv.hit.lines[0]	어이가 없었는지 남자의 눈썹이 아주 조금 올라갔다.
+b05_why.free.improv.hit.lines[1]	하. 별짓을 다 하는군.
+b05_why.free.improv.mixed.lines[0]	무슨 속셈이지?
+b05_why.free.improv.mixed.lines[1]	비웃음 섞인 목소리였지만, 붉은 눈은 나를 놓치지 않았다.
+b05_why.free.improv.miss.lines[0]	호위 하나가 말없이 칼자루에 손을 얹었다.
+b05_why.free.improv.miss.lines[1]	지루하군.
+b05_why.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+b05_why.free.improv_bold.hit.lines[1]	……미친 여자군.
+b05_why.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+b05_why.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+b05_why.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+b05_why.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+b05_why.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+b05_why.free.neutral.hit[0]	붉은 눈이 나를 한참 훑어보았다. 아까보다는 덜 차가운 눈빛이었다.
+b05_why.free.neutral.mixed[0]	남자는 대꾸 없이 나를 재는 듯 내려다보았다.
+b05_why.free.neutral.miss[0]	붉은 눈이 한층 더 차갑게 가라앉았다.
+b05_why.free.idle.lines[0]	칼끝이 살갗에 닿았다. 남자의 인내심도 슬슬 바닥나는 듯했다.
+b05_why.free.idle.lines[1]	호위 하나가 말없이 칼자루에 손을 얹었다.
+b05_why.free.prices[0].text	곡도 끝이 살갗을 눌러 피 한 방울이 맺혔다. 고개도 못 돌린다.
+b05_why.free.prices[1].text	호위 하나가 아시나의 뒤로 돌아가 섰다. 퇴로가 막혔다.
+b05_why.free.prices[2].text	후드가 어깨 뒤로 흘러내렸다.
+b05_why.free.prices[3].text	남자의 눈이 가늘어졌다.
+b05_why.free.prices[4].text	호위가 마법 가방을 낚아채 갔다.
+b05_why.free.prices[5].text	호위가 아시나의 팔을 붙들었다. 손목이 저릿하다.
+b05_why.free.approaches[0].hint	자기 미모와 매력을 내세워 상대의 마음을 흔든다.
+b05_why.free.approaches[0].label	미인계를 쓴다
+b05_why.free.approaches[0].outcomes.hit.lines[0]	왜냐하면 저는…
+b05_why.free.approaches[0].outcomes.hit.lines[1]	대륙에서 하나뿐인,
+b05_why.free.approaches[0].outcomes.hit.lines[2]	미소녀니까요.
+b05_why.free.approaches[0].outcomes.hit.lines[3]	미인계다!
+b05_why.free.approaches[0].outcomes.hit.lines[4]	…뭐?
+b05_why.free.approaches[0].outcomes.hit.lines[5]	저는 말이죠.
+b05_why.free.approaches[0].outcomes.hit.lines[6]	미소녀는 나라에서 보호해야 할 의무가 있다고 생각해요.
+b05_why.free.approaches[0].outcomes.hit.lines[7]	예쁘고 아름다운 걸 지키는 건 당연한 일이니까…
+b05_why.free.approaches[0].outcomes.hit.lines[8]	안 그래요?
+b05_why.free.approaches[0].outcomes.hit.lines[9]	싸아… 사막 한가운데에 서늘한 침묵이 내려앉았다.
+b05_why.free.approaches[0].outcomes.mixed.lines[0]	왜냐하면 저는…
+b05_why.free.approaches[0].outcomes.mixed.lines[1]	대륙에서 하나뿐인,
+b05_why.free.approaches[0].outcomes.mixed.lines[2]	미소녀니까요.
+b05_why.free.approaches[0].outcomes.mixed.lines[3]	…뭐?
+b05_why.free.approaches[0].outcomes.mixed.lines[4]	칼끝이 아주 잠깐 흔들렸다. 그러나 남자의 눈빛은 여전히 나를 재고 있었다.
+b05_why.free.approaches[0].outcomes.miss.lines[0]	왜냐하면 저는…
+b05_why.free.approaches[0].outcomes.miss.lines[1]	대륙에서 하나뿐인,
+b05_why.free.approaches[0].outcomes.miss.lines[2]	미소녀니까요.
+b05_why.free.approaches[0].outcomes.miss.lines[3]	……
+b05_why.free.approaches[0].outcomes.miss.lines[4]	싸늘한 침묵. 남자의 눈빛이 한층 더 차가워졌다.
+b05_why.free.approaches[0].outcomes.miss.lines[5]	망했다.
+b05_why.free.approaches[1].hint	억울함을 호소하고 길 잃은 여행자일 뿐이라고 애원한다.
+b05_why.free.approaches[1].label	결백을 호소한다
+b05_why.free.approaches[1].outcomes.hit.lines[0]	억울해요! 전 정말 길을 물어본 것밖에 없다고요!
+b05_why.free.approaches[1].outcomes.hit.lines[1]	남자는 한참 동안 내 눈을 들여다보았다. 목에 닿아 있던 칼끝이 손가락 한 마디만큼 물러났다.
+b05_why.free.approaches[1].outcomes.mixed.lines[0]	제발요, 전 그냥 길 잃은 여행자예요!
+b05_why.free.approaches[1].outcomes.mixed.lines[1]	왜지?
+b05_why.free.approaches[1].outcomes.mixed.lines[2]	말이 안 통해…!
+b05_why.free.approaches[1].outcomes.miss.lines[0]	사, 살려 주세요…
+b05_why.free.approaches[1].outcomes.miss.lines[1]	남자는 지루하다는 듯 칼자루를 고쳐 쥐었다. 목소리가 떨릴수록 그의 눈빛은 차가워졌다.
+b05_why.free.approaches[2].hint	그럴듯한 거짓말이나 말재주로 자기가 쓸모 있다고 내세운다(상인, 길잡이, 보상 약속 등).
+b05_why.free.approaches[2].label	말재주로 둘러댄다
+b05_why.free.approaches[2].outcomes.hit.lines[0]	저를 살려 두면 분명 쓸모가 있을 거예요. 장담해요!
+b05_why.free.approaches[2].outcomes.hit.lines[1]	하. 혀는 잘 돌아가는군.
+b05_why.free.approaches[2].outcomes.hit.lines[2]	믿는 눈치는 아니었다. 다만 당장 벨 생각도 사라진 듯했다.
+b05_why.free.approaches[2].outcomes.mixed.lines[0]	저는 크라차 상단 사람이에요. 저를 해치면 곤란해지실걸요?
+b05_why.free.approaches[2].outcomes.mixed.lines[1]	상단 사람이 짐도 낙타도 없이 사막을 헤맨다?
+b05_why.free.approaches[2].outcomes.mixed.lines[2]	…아차.
+b05_why.free.approaches[2].outcomes.miss.lines[0]	저, 저를 해치면 큰일 날 거예요! 제 뒤에는… 아무튼 엄청난 사람들이 있다고요!
+b05_why.free.approaches[2].outcomes.miss.lines[1]	…뭐?
+b05_why.free.approaches[2].outcomes.miss.lines[2]	칼끝이 목에 한층 바짝 다가왔다.
+b05_why.free.approaches[3].hint	몸에 밴 예법이나 귀한 신분을 내세워 함부로 대할 사람이 아님을 보인다.
+b05_why.free.approaches[3].label	신분과 교양을 내세운다
+b05_why.free.approaches[3].outcomes.hit.lines[0]	나는 칼끝 앞에서도 허리를 곧게 펴고, 몸에 밴 예법대로 고개를 숙였다.
+b05_why.free.approaches[3].outcomes.hit.lines[1]	…떠돌이의 몸가짐은 아니군.
+b05_why.free.approaches[3].outcomes.hit.lines[2]	통했다…! 이제 함부로는 못 하겠지.
+b05_why.free.approaches[3].outcomes.mixed.lines[0]	저는 귀한 집안 사람이에요. 함부로 대하면 후회하실 거예요.
+b05_why.free.approaches[3].outcomes.mixed.lines[1]	사막 한복판에서 집안 타령이라.
+b05_why.free.approaches[3].outcomes.mixed.lines[2]	비웃음 섞인 목소리였지만, 그는 내 말투를 곱씹는 듯했다.
+b05_why.free.approaches[3].outcomes.miss.lines[0]	감히 누구에게 칼을 겨누는 거예요? 저는…
+b05_why.free.approaches[3].outcomes.miss.lines[1]	하. 웃기는 여자군.
+b05_why.free.approaches[3].outcomes.miss.lines[2]	말하면 안 될 걸 말해 버렸어…!
+b05_why.free.approaches[4].hint	칼날을 밀쳐 내거나 몸을 날려 칼끝에서 벗어나려 한다.
+b05_why.free.approaches[4].label	칼을 밀어내고 몸을 뺀다
+b05_why.free.approaches[4].outcomes.hit.lines[0]	나는 칼날을 가방으로 밀쳐 내고 뒤로 몸을 날렸다.
+b05_why.free.approaches[4].outcomes.hit.lines[1]	하.
+b05_why.free.approaches[4].outcomes.hit.lines[2]	남자는 쫓아오지 않았다. 오히려 재미있다는 듯 나를 내려다볼 뿐이었다.
+b05_why.free.approaches[4].outcomes.mixed.lines[0]	몸을 빼는 데는 성공했지만, 모래에 발이 걸려 몇 번이나 넘어졌다.
+b05_why.free.approaches[4].outcomes.mixed.lines[1]	등 뒤에 붉은 눈이 박혀 있는 것 같았다.
+b05_why.free.approaches[4].outcomes.miss.lines[0]	움직이기도 전에 호위 하나가 내 팔을 붙들었다.
+b05_why.free.approaches[4].outcomes.miss.lines[1]	남자의 칼끝이 내 턱을 천천히 들어 올렸다.
+b05_why.free.approaches[5].hint	마법 가방에서 무언가를 꺼내 보여 주거나 상황을 바꾸려 한다.
+b05_why.free.approaches[5].label	마법 가방에서 물건을 꺼낸다
+b05_why.free.approaches[5].outcomes.hit.lines[0]	나는 천천히 가방에서 낡은 지도를 꺼내 펼쳐 보였다.
+b05_why.free.approaches[5].outcomes.hit.lines[1]	보세요, 전 정말 길을 잃었을 뿐이라고요.
+b05_why.free.approaches[5].outcomes.hit.lines[2]	남자의 시선이 지도와 내 얼굴을 오갔다. 경계가 아주 조금 풀렸다.
+b05_why.free.approaches[5].outcomes.mixed.lines[0]	가방에서 지도를 꺼내는데, 손이 들어간 깊이가 가방 크기와 맞지 않았다.
+b05_why.free.approaches[5].outcomes.mixed.lines[1]	마법 가방이라. 떠돌이치고는 귀한 걸 지녔군.
+b05_why.free.approaches[5].outcomes.mixed.lines[2]	…뭐?
+b05_why.free.approaches[5].outcomes.miss.lines[0]	가방에 손을 넣는 순간 호위가 내 손목을 낚아챘다.
+b05_why.free.approaches[5].outcomes.miss.lines[1]	무기라도 꺼낼 셈이었나?
+b06_swing.title	마지막으로 남길 말인가
+b06_swing.lines[0]	뜨거운 모래가 발을 붙잡았다. 어깨의 가방, 등 뒤의 바위, 남자의 오른팔.
+b06_swing.lines[1]	뜨거운 모래가 발을 붙잡았다. 등 뒤의 바위, 남자의 오른팔.
+b06_swing.lines[2]	하.
+b06_swing.lines[3]	웃기는 여자군.
+b06_swing.lines[4]	그것뿐인가?
+b06_swing.lines[5]	그게…
+b06_swing.lines[6]	마지막으로 남길 말인가?
+b06_swing.lines[7]	그게… 마지막으로 남길 말인가?
+b06_swing.lines[8]	그 바람에 후드가 벗겨졌다.
+b06_swing.lines[9]	미친―! 피해야 돼!!
+b06_swing.free.aim	날아드는 칼날에서 살아남는다.
+b06_swing.free.talk_fallback[0]	쓸데없는 소리다. 묻는 말에나 답해라.
+b06_swing.free.talk_fallback[1]	하. 그 입은 쉬지를 않는군.
+b06_swing.free.talk_fallback[2]	시간을 끌 셈인가?
+b06_swing.free.press[0]	할 말은 그것뿐인가?
+b06_swing.free.press[1]	칼끝이 한 치 다가왔다. 더는 기다려 줄 눈치가 아니었다.
+b06_swing.free.nudge[0]	칼날이 허공을 가르고 되돌아왔다.
+b06_swing.free.deflect[0]	입을 닫아라, 여자. 목숨이 아깝지 않은 모양이군.
+b06_swing.free.deflect[1]	하. 그런 소리로 살아남을 수 있다고 생각하나?
+b06_swing.free.improv.hit.lines[0]	어이가 없었는지 남자의 눈썹이 아주 조금 올라갔다.
+b06_swing.free.improv.hit.lines[1]	하. 별짓을 다 하는군.
+b06_swing.free.improv.mixed.lines[0]	무슨 속셈이지?
+b06_swing.free.improv.mixed.lines[1]	비웃음 섞인 목소리였지만, 붉은 눈은 나를 놓치지 않았다.
+b06_swing.free.improv.miss.lines[0]	호위 하나가 말없이 칼자루에 손을 얹었다.
+b06_swing.free.improv.miss.lines[1]	지루하군.
+b06_swing.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+b06_swing.free.improv_bold.hit.lines[1]	……미친 여자군.
+b06_swing.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+b06_swing.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+b06_swing.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+b06_swing.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+b06_swing.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+b06_swing.free.neutral.hit[0]	칼날이 아슬아슬하게 비껴갔다.
+b06_swing.free.neutral.mixed[0]	칼바람에 휘청이다 모래 위로 나동그라졌다.
+b06_swing.free.neutral.mixed[1]	그 바람에 후드가 벗겨졌다.
+b06_swing.free.neutral.miss[0]	칼끝이 코앞에서 멈췄다. 숨이 턱 막혔다.
+b06_swing.free.idle.lines[0]	칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.
+b06_swing.free.prices[0].text	칼끝이 외투 자락을 베어 갔다.
+b06_swing.free.prices[1].text	피하다 무릎이 모래에 박혔다. 일어설 틈이 없다.
+b06_swing.free.prices[2].text	호위 둘이 한 발씩 거리를 좁혔다.
+b06_swing.free.prices[3].text	남자의 눈에 흥미가 스쳤다.
+b06_swing.free.prices[4].text	칼날이 팔을 스쳐 피가 비쳤다.
+b06_swing.free.prices[5].text	호위가 뒤에서 팔을 꺾어 잡았다.
+b06_swing.free.approaches[0].hint	몸을 던지거나 숙여 칼날을 피한다.
+b06_swing.free.approaches[0].label	몸을 던져 칼날을 피한다
+b06_swing.free.approaches[0].outcomes.hit.lines[0]	칼날이 머리카락 끝을 스치고 지나갔다.
+b06_swing.free.approaches[0].outcomes.hit.lines[1]	피하지 않았으면 베었을 거야. 진짜 미친놈인가….
+b06_swing.free.approaches[0].outcomes.mixed.lines[0]	간신히 피했지만 모래 위로 나동그라졌다.
+b06_swing.free.approaches[0].outcomes.mixed.lines[1]	피하지 않았으면 베었을 거야…
+b06_swing.free.approaches[0].outcomes.miss.lines[0]	칼날이 뺨 옆을 스쳤다. 잘려 나간 머리카락 몇 가닥이 모래 위로 흩어졌다.
+b06_swing.free.approaches[0].outcomes.miss.lines[1]	피하지 않았으면… 정말 베였을 거야.
+b06_swing.free.approaches[1].hint	마법 가방을 들어 칼날을 막는다.
+b06_swing.free.approaches[1].label	가방을 방패 삼아 막는다
+b06_swing.free.approaches[1].outcomes.hit.lines[0]	가방이 칼날을 비껴 냈다. 묵직한 충격이 팔을 타고 올라왔다.
+b06_swing.free.approaches[1].outcomes.hit.lines[1]	살았다…! 이 가방, 생각보다 튼튼하잖아.
+b06_swing.free.approaches[1].outcomes.mixed.lines[0]	막아 내긴 했지만 가방끈이 끊어지며 짐이 모래 위로 쏟아졌다.
+b06_swing.free.approaches[1].outcomes.mixed.lines[1]	막아 내긴 했지만 짐이 모래 위로 쏟아졌다.
+b06_swing.free.approaches[1].outcomes.mixed.lines[2]	가방 속에서 나올 리 없는 양의 짐이었다.
+b06_swing.free.approaches[1].outcomes.mixed.lines[3]	마법 가방인 거 들켰으려나…
+b06_swing.free.approaches[1].outcomes.miss.lines[0]	가방째 밀려 모래 위로 넘어졌다. 칼끝이 코앞에서 멈췄다.
+b06_swing.free.approaches[2].hint	칼날을 피하는 김에 그대로 달아난다.
+b06_swing.free.approaches[2].label	칼날을 피하며 달아난다
+b06_swing.free.approaches[2].outcomes.hit.lines[0]	칼날 아래로 몸을 굴린 나는 그대로 모래 언덕 쪽으로 내달렸다.
+b06_swing.free.approaches[2].outcomes.mixed.lines[0]	몇 걸음 못 가 복면을 쓴 호위가 앞을 막아섰다.
+b06_swing.free.approaches[2].outcomes.mixed.lines[1]	언제 저기까지…!
+b06_swing.free.approaches[2].outcomes.miss.lines[0]	등을 돌리는 순간 호위 하나가 내 팔을 붙들어 모래 위로 넘어뜨렸다.
+b07_rule.title	반칙
+b07_rule.lines[0]	가… 갑자기 휘두르는 법이 어디 있어요!!
+b07_rule.lines[1]	반칙이지!!!
+b07_rule.lines[2]	반칙?
+b07_rule.lines[3]	인간을 죽이는 데 규칙이고 율법이 필요한가?
+b07_rule.lines[4]	남는 것은 살아남는 자와 죽는 자.
+b07_rule.lines[5]	그 둘뿐이다.
+b07_rule.lines[6]	어떻게… 사람 눈이 저렇게 강렬할 수 있지?
+b07_rule.lines[7]	마치… 한여름의 태양 같아.
+b07_rule.lines[8]	터벅, 터벅.
+b07_rule.lines[9]	…
+b07_rule.lines[10]	뭐, 뭐야
+b07_rule.lines[11]	설마 다시 죽이려는 건 아니겠…
+b07_rule.lines[12]	뭐야… 이 반응은.
+b08_gaze.title	한여름의 태양
+b08_gaze.lines[0]	남자의 숨에서 향신료 냄새가 났다. 붉은 눈, 터번의 보석, 곡도의 손잡이.
+b08_gaze.free.aim	붉은 눈을 마주한 채, 죽이기보다 살려 둘 마음이 들게 한다.
+b08_gaze.free.talk_fallback[0]	……
+b08_gaze.free.press[0]	남자는 대답 대신 얼굴을 더 가까이 들이밀었다.
+b08_gaze.free.nudge[0]	남자의 얼굴이 한 뼘 더 가까워졌다.
+b08_gaze.free.deflect[0]	입을 닫아라, 여자. 목숨이 아깝지 않은 모양이군.
+b08_gaze.free.deflect[1]	하. 그런 소리로 살아남을 수 있다고 생각하나?
+b08_gaze.free.improv.hit.lines[0]	어이가 없었는지 남자의 눈썹이 아주 조금 올라갔다.
+b08_gaze.free.improv.hit.lines[1]	하. 별짓을 다 하는군.
+b08_gaze.free.improv.mixed.lines[0]	무슨 속셈이지?
+b08_gaze.free.improv.mixed.lines[1]	비웃음 섞인 목소리였지만, 붉은 눈은 나를 놓치지 않았다.
+b08_gaze.free.improv.miss.lines[0]	호위 하나가 말없이 칼자루에 손을 얹었다.
+b08_gaze.free.improv.miss.lines[1]	지루하군.
+b08_gaze.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+b08_gaze.free.improv_bold.hit.lines[1]	……미친 여자군.
+b08_gaze.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+b08_gaze.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+b08_gaze.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+b08_gaze.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+b08_gaze.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+b08_gaze.free.neutral.hit[0]	붉은 눈이 나를 한참 훑어보았다. 아까보다는 덜 차가운 눈빛이었다.
+b08_gaze.free.neutral.mixed[0]	남자는 대꾸 없이 나를 재는 듯 내려다보았다.
+b08_gaze.free.neutral.miss[0]	붉은 눈이 한층 더 차갑게 가라앉았다.
+b08_gaze.free.idle.lines[0]	왜, 왜 이렇게 가까워! 얼굴이 뜨거워…
+b08_gaze.free.idle.lines[1]	허둥대는 나를 보며 남자가 시시하다는 듯 눈을 가늘게 떴다.
+b08_gaze.free.prices[0].text	숨을 참는 사이 해가 더 기울었다.
+b08_gaze.free.prices[2].text	한 걸음 물러서다 호위의 가슴에 등이 닿았다.
+b08_gaze.free.prices[3].text	남자가 턱을 들어 얼굴을 더 가까이 들여다본다.
+b08_gaze.free.prices[4].text	호위가 남자에게 몸을 기울여 귓속말을 했다.
+b08_gaze.free.approaches[0].hint	붉은 눈을 정면으로 마주 보며 기죽지 않는 모습을 보인다.
+b08_gaze.free.approaches[0].label	눈을 피하지 않는다
+b08_gaze.free.approaches[0].outcomes.hit.lines[0]	피하면 지는 거야. 절대 먼저 눈 안 피해.
+b08_gaze.free.approaches[0].outcomes.hit.lines[1]	붉은 눈이 내 눈동자에 한참을 머물렀다. 그의 입가에 아주 옅은 무언가가 스쳤다.
+b08_gaze.free.approaches[0].outcomes.mixed.lines[0]	눈부셔… 결국 먼저 피해 버렸어.
+b08_gaze.free.approaches[0].outcomes.mixed.lines[1]	남자의 입꼬리가 비웃듯 올라갔다.
+b08_gaze.free.approaches[0].outcomes.miss.lines[0]	왜, 왜 이렇게 가까워! 얼굴이 뜨거워…
+b08_gaze.free.approaches[0].outcomes.miss.lines[1]	허둥대는 나를 보며 남자가 시시하다는 듯 눈을 가늘게 떴다.
+b08_gaze.free.approaches[1].hint	말대꾸나 농담으로 기세를 되찾는다.
+b08_gaze.free.approaches[1].label	지지 않고 받아친다
+b08_gaze.free.approaches[1].outcomes.hit.lines[0]	사람 얼굴을 그렇게 빤히 보는 건 실례라고요.
+b08_gaze.free.approaches[1].outcomes.hit.lines[1]	하.
+b08_gaze.free.approaches[1].outcomes.mixed.lines[0]	그, 그러니까 사람을 그렇게… 아무튼 실례예요!
+b08_gaze.free.approaches[1].outcomes.mixed.lines[1]	남자는 대답 없이 나를 흥미롭다는 듯 지켜보았다.
+b08_gaze.free.approaches[1].outcomes.miss.lines[0]	뭘 봐요! 구경났어요?
+b08_gaze.free.approaches[1].outcomes.miss.lines[1]	호위들이 일제히 칼자루를 쥐었다. 남자가 손을 들어 그들을 멈췄지만, 눈빛은 얼음장 같았다.
+b08_gaze.free.approaches[2].hint	머리카락을 쓸어 넘기며 귀찌를 가린다.
+b08_gaze.free.approaches[2].label	귀찌를 머리카락으로 가린다
+b08_gaze.free.approaches[2].outcomes.hit.lines[0]	만지작. 나는 자연스럽게 머리카락을 쓸어 넘겨 귀찌를 덮었다.
+b08_gaze.free.approaches[2].outcomes.mixed.lines[0]	만지작. 머리카락을 쓸어 넘기는 손끝이 떨렸다.
+b08_gaze.free.approaches[2].outcomes.mixed.lines[1]	붉은 눈이 잠깐 내 귀 쪽으로 향했다가 돌아왔다.
+b08_gaze.free.approaches[2].outcomes.mixed.lines[2]	봤나…? 아니, 못 봤을 거야.
+b08_gaze.free.approaches[2].outcomes.miss.lines[0]	남자가 내 손목을 붙잡아 내렸다. 귀찌가 햇빛에 반짝였다.
+b08_gaze.free.approaches[2].outcomes.miss.lines[1]	무엇을 감추지?
+b08_gaze.free.approaches[2].outcomes.miss.lines[2]	큰일이다…!
+b09_verdict.title	마음이 바뀌었다
+b09_verdict.lines[0]	미인계가 통한 건가…?
+b09_verdict.lines[1]	하.
+b09_verdict.lines[2]	도대체 어디가 아름답다는 거지?
+b09_verdict.lines[3]	뭬야?!
+b09_verdict.lines[4]	끝까지 눈을 피하지 않는군.
+b09_verdict.lines[5]	…뭐, 뭐예요.
+b09_verdict.lines[6]	죽기 직전에 그런 짓을 하는 여자는 처음 보는군.
+b09_verdict.lines[7]	…뭐, 뭐예요.
+b09_verdict.lines[8]	이상한 여자군.
+b09_verdict.lines[9]	…네? 뭐가요?
+b09_verdict.lines[10]	…바로 죽일까 했는데,
+b09_verdict.lines[11]	마음이 바뀌었다.
+b09_verdict.lines[12]	그러니… 이대로 살려주는 것만으로도 감사히 여겨라.
+b09_verdict.lines[13]	여자.
+r2_bind.title	묶인 손목
+r2_bind.lines[0]	마른 풀 냄새가 나는 밧줄이 눈에 들어왔다. 호위의 칼, 남자의 등, 어깨의 가방.
+r2_bind.lines[1]	마른 풀 냄새가 나는 밧줄이 눈에 들어왔다. 호위의 칼, 남자의 등.
+r2_bind.lines[2]	하지만 살려 두는 이유는 따로 있었다. 거친 손이 내 두 팔을 등 뒤로 꺾었다.
+r2_bind.lines[3]	묶어라. 수상한 짓을 하면 그 자리에서 베어도 좋다.
+r2_bind.lines[4]	거친 밧줄이 손목을 파고들었다.
+r2_bind.lines[5]	말씨는 북쪽이다. 혼자 사막을 건너는 여자도 드물지.
+r2_bind.lines[6]	어디서 왔고, 누가 보냈지?
+r2_bind.free.aim	묶인 채 심문을 버티고, 길을 잃었다는 말을 밀고 나간다.
+r2_bind.free.talk_fallback[0]	쓸데없는 소리다. 묻는 말에나 답해라.
+r2_bind.free.talk_fallback[1]	하. 그 입은 쉬지를 않는군.
+r2_bind.free.talk_fallback[2]	시간을 끌 셈인가?
+r2_bind.free.press[0]	할 말은 그것뿐인가?
+r2_bind.free.press[1]	칼끝이 한 치 다가왔다. 더는 기다려 줄 눈치가 아니었다.
+r2_bind.free.nudge[0]	호위가 붙든 팔에 힘을 주었다.
+r2_bind.free.deflect[0]	입을 닫아라, 여자. 목숨이 아깝지 않은 모양이군.
+r2_bind.free.deflect[1]	하. 그런 소리로 살아남을 수 있다고 생각하나?
+r2_bind.free.improv.hit.lines[0]	어이가 없었는지 남자의 눈썹이 아주 조금 올라갔다.
+r2_bind.free.improv.hit.lines[1]	하. 별짓을 다 하는군.
+r2_bind.free.improv.mixed.lines[0]	무슨 속셈이지?
+r2_bind.free.improv.mixed.lines[1]	비웃음 섞인 목소리였지만, 붉은 눈은 나를 놓치지 않았다.
+r2_bind.free.improv.miss.lines[0]	호위 하나가 말없이 칼자루에 손을 얹었다.
+r2_bind.free.improv.miss.lines[1]	지루하군.
+r2_bind.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+r2_bind.free.improv_bold.hit.lines[1]	……미친 여자군.
+r2_bind.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+r2_bind.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+r2_bind.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+r2_bind.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+r2_bind.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+r2_bind.free.neutral.hit[0]	붉은 눈이 나를 한참 훑어보았다. 아까보다는 덜 차가운 눈빛이었다.
+r2_bind.free.neutral.mixed[0]	남자는 대꾸 없이 나를 재는 듯 내려다보았다.
+r2_bind.free.neutral.miss[0]	붉은 눈이 한층 더 차갑게 가라앉았다.
+r2_bind.free.idle.lines[0]	호위가 밧줄을 들고 다가왔다.
+r2_bind.free.idle.lines[1]	먼저 풀린 건 다리였다. 남자는 시시하다는 듯 등을 돌렸다.
+r2_bind.free.prices[0].text	호위가 붙든 팔에 힘을 주었다.
+r2_bind.free.prices[1].text	남자가 답을 기다리며 아시나 주위를 한 바퀴 돌았다.
+r2_bind.free.prices[2].text	심문이 길어지는 사이 해가 모래 위로 내려앉았다.
+r2_bind.free.prices[3].text	호위가 가방을 뒤집어 짐을 모래에 쏟았다.
+r2_bind.free.prices[4].text	말끝이 떨렸다. 남자의 눈빛이 굳었다.
+r2_bind.free.approaches[0].hint	그저 길 잃은 여행자라고 버틴다.
+r2_bind.free.approaches[0].label	끝까지 결백을 주장한다
+r2_bind.free.approaches[0].outcomes.hit.lines[0]	아무도 안 보냈어요! 전 그냥 길 잃은 여행자라고요!
+r2_bind.free.approaches[0].outcomes.hit.lines[1]	눈은 피하지 않는군.
+r2_bind.free.approaches[0].outcomes.mixed.lines[0]	전, 전 그냥 여행자예요…
+r2_bind.free.approaches[0].outcomes.mixed.lines[1]	…뭐?
+r2_bind.free.approaches[0].outcomes.miss.lines[0]	그, 그러니까 저는… 아무도…
+r2_bind.free.approaches[0].outcomes.miss.lines[1]	말이 꼬일수록 붉은 눈은 더 차가워졌다.
+r2_bind.free.approaches[1].hint	상인이나 순례자 같은 거짓 사정을 지어낸다.
+r2_bind.free.approaches[1].label	그럴듯하게 둘러댄다
+r2_bind.free.approaches[1].outcomes.hit.lines[0]	크라차에 사는 친척을 만나러 가는 길이에요. 물어보면 알 거예요.
+r2_bind.free.approaches[1].outcomes.hit.lines[1]	남자는 잠시 말이 없었다.
+r2_bind.free.approaches[1].outcomes.mixed.lines[0]	크라차에 친척이 있어요!
+r2_bind.free.approaches[1].outcomes.mixed.lines[1]	…아차.
+r2_bind.free.approaches[1].outcomes.miss.lines[0]	저, 저는 그러니까… 장사를 하는데…
+r2_bind.free.approaches[1].outcomes.miss.lines[1]	짐도 없이 무슨 장사지?
+r2_bind.free.approaches[2].hint	아무 말도 하지 않고 남자를 노려본다.
+r2_bind.free.approaches[2].label	입을 다물고 버틴다
+r2_bind.free.approaches[2].outcomes.hit.lines[0]	나는 입을 꾹 다문 채 붉은 눈을 노려보았다.
+r2_bind.free.approaches[2].outcomes.hit.lines[1]	하. 언제까지 그럴 수 있는지 보지.
+r2_bind.free.approaches[2].outcomes.mixed.lines[0]	입을 다물고 버텼지만, 갈증에 눈앞이 핑 돌았다.
+r2_bind.free.approaches[2].outcomes.miss.lines[0]	먼저 풀린 건 다리였다. 남자는 시시하다는 듯 등을 돌렸다.
+r3_flee.title	등 뒤의 붉은 눈
+r3_flee.lines[0]	나는 뒤도 돌아보지 않고 모래 언덕을 향해 내달렸다.
+r3_flee.lines[1]	등 뒤에서 호위가 움직이는 기척이 났다. 그러나 곧 멈췄다.
+r3_flee.lines[2]	내버려 둬라. 사막이 대신 할 일이다.
+r3_flee.lines[3]	뭐야, 왜 안 쫓아와…? 아니, 지금은 뛰어!
+r3_slip.title	만나지 않은 사람들
+r3_slip.lines[0]	나는 세 사람에게서 멀어졌다.
+r3_slip.lines[1]	터번에 호위까지… 저런 사람들한테 길을 물었다간 무슨 꼴을 당할지 몰라.
+r3_slip.lines[2]	등 뒤로 따가운 시선이 스친 것 같았지만, 돌아보지 않았다.
+r3_dusk.title	해가 지는 모래
+r3_dusk.lines[0]	식어 가는 모래가 발바닥에 닿았다. 기우는 해, 첫 별, 바위 그늘.
+r3_dusk.lines[1]	해가 기울자 모래가 빠르게 식기 시작했다. 낮에는 살을 태우던 사막이 이제는 뼈를 시리게 했다.
+r3_dusk.lines[2]	물도 힘도 얼마 안 남았어. 어떻게든 오늘 밤을 넘겨야 해.
+r3_dusk.twist.altered[0].lines[0]	바위 그늘이 생각보다 깊었다. 돌에는 낮의 열기가 아직 남아 있었다.
+r3_dusk.twist.altered[1].lines[0]	구름이 몰려와 첫 별을 가렸다. 하늘은 금세 잿빛 한 장이 됐다.
+r3_dusk.twist.altered[1].lines[1]	별이 없으면… 방향은 낮에 봐 둔 걸로 잡는 수밖에.
+r3_dusk.twist.interrupt[0].lines[0]	멀리서 짐승 울음이 길게 이어졌다. 한 번, 그리고 또 한 번. 두 번째가 더 가까웠다.
+r3_dusk.twist.interrupt[0].lines[1]	오늘 밤은 눈을 붙이면 안 돼.
+r3_dusk.twist.interrupt[1].lines[0]	모래 위에 발자국이 있었다. 사람의 것이었고, 아직 바람에 지워지지 않았다.
+r3_dusk.twist.interrupt[1].lines[1]	누군가 가까이 있어. 나보다 먼저 이 길을 지나갔어.
+r3_dusk.free.aim	오늘 밤을 버티고 크라차 쪽으로 계속 걷는다.
+r3_dusk.free.talk_fallback[0]	혼잣말이라도 해야 정신이 버티겠어.
+r3_dusk.free.talk_fallback[1]	그런 생각 할 힘이 있으면 한 걸음이라도 더 가야지.
+r3_dusk.free.press[0]	해는 기다려 주지 않았다. 이러고 있을 시간이 없었다.
+r3_dusk.free.nudge[0]	해가 지평선에 걸렸다. 모래가 빠르게 식어 갔다.
+r3_dusk.free.deflect[0]	…더위를 먹었나 봐. 정신 차려, 아시나.
+r3_dusk.free.improv.hit.lines[0]	어이없는 짓이었지만, 이상하게도 기운이 조금 돌아왔다.
+r3_dusk.free.improv.hit.lines[1]	좋아, 아직 이럴 힘은 남았네.
+r3_dusk.free.improv.mixed.lines[0]	잠깐 기분은 나아졌지만, 그만큼 해가 기울고 목이 말랐다.
+r3_dusk.free.improv.miss.lines[0]	아무 소용도 없었다. 나는 모래 위에 그대로 주저앉았다.
+r3_dusk.free.improv.miss.lines[1]	내가 지금 뭘 하는 거야…
+r3_dusk.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+r3_dusk.free.improv_bold.hit.lines[1]	……미친 여자군.
+r3_dusk.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+r3_dusk.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+r3_dusk.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+r3_dusk.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+r3_dusk.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+r3_dusk.free.neutral.hit[0]	숨을 고르자 조금은 버틸 만해졌다.
+r3_dusk.free.neutral.mixed[0]	버티긴 했지만 그만큼 기운이 빠졌다.
+r3_dusk.free.neutral.miss[0]	아무것도 나아지지 않았다.
+r3_dusk.free.idle.lines[0]	아무 소용도 없었다. 나는 모래 위에 그대로 주저앉았다.
+r3_dusk.free.idle.lines[1]	내가 지금 뭘 하는 거야…
+r3_dusk.free.prices[0].text	바람이 차가워졌다. 밤이 가깝다.
+r3_dusk.free.prices[1].text	물통이 기울어 몇 방울이 모래에 스몄다.
+r3_dusk.free.prices[2].text	모래 비탈이 무너져 아래로 미끄러졌다.
+r3_dusk.free.prices[3].text	모래바람에 눈이 따가워 걸음이 느려졌다.
+r3_dusk.free.prices[4].text	바람이 지도를 낚아채 어둠 속으로 날려 버렸다.
+r3_dusk.free.prices[5].text	추위에 손끝이 굳어 한참을 웅크렸다.
+r3_dusk.free.approaches[0].hint	별이나 낮에 읽어 둔 방향으로 크라차 쪽을 잡는다.
+r3_dusk.free.approaches[0].label	방향을 가늠해 길을 잡는다
+r3_dusk.free.approaches[0].outcomes.hit.lines[0]	저 별이 저쪽이니까… 크라차는 이쪽이야.
+r3_dusk.free.approaches[0].outcomes.hit.lines[1]	낮에 봐 둔 쪽이 저기니까… 크라차는 이쪽이야.
+r3_dusk.free.approaches[0].outcomes.hit.lines[2]	방향을 알고 걷는 길은 훨씬 덜 막막했다.
+r3_dusk.free.approaches[0].outcomes.mixed.lines[0]	방향은 대강 맞았다. 다만 한참을 돌아온 뒤에야 알아챘다.
+r3_dusk.free.approaches[0].outcomes.miss.lines[0]	별을 올려다봤지만 이 하늘의 별자리는 낯설었다. 남쪽이라 믿은 쪽으로 걸음을 옮겼다.
+r3_dusk.free.approaches[0].outcomes.miss.lines[1]	낮에 봐 둔 방향은 어둠 속에서 믿을 게 못 됐다. 남쪽이라 믿은 쪽으로 걸음을 옮겼다.
+r3_dusk.free.approaches[0].outcomes.miss.lines[2]	모래 언덕을 넘고 또 넘었는데, 낯익은 바위가 다시 나타났다.
+r3_dusk.free.approaches[0].outcomes.miss.lines[3]	아까 그 바위잖아…
+r3_dusk.free.approaches[1].hint	남은 물을 조금씩 마시며 걷는다.
+r3_dusk.free.approaches[1].label	남은 물로 버틴다
+r3_dusk.free.approaches[1].outcomes.hit.lines[0]	미지근한 물 한 모금이 온몸으로 퍼졌다. 다리에 다시 힘이 돌았다.
+r3_dusk.free.approaches[1].outcomes.mixed.lines[0]	물통을 기울이자 마지막 몇 방울이 혀끝에 닿았다.
+r3_dusk.free.approaches[1].outcomes.mixed.lines[1]	이제 진짜 없어…
+r3_dusk.free.approaches[1].outcomes.miss.lines[0]	얼어붙은 손끝에서 물통이 미끄러졌다. 모래는 남은 물을 순식간에 삼켰다.
+r3_dusk.free.approaches[2].hint	바위 그늘이나 모래 구덩이로 추위를 피한다.
+r3_dusk.free.approaches[2].label	바람을 피할 곳을 찾는다
+r3_dusk.free.approaches[2].outcomes.hit.lines[0]	바위 틈으로 기어들자 칼 같던 바람이 뚝 끊겼다.
+r3_dusk.free.approaches[2].outcomes.mixed.lines[0]	잠깐 눈을 감았을 뿐인데, 달이 한참이나 옮겨 가 있었다.
+r3_dusk.free.approaches[2].outcomes.miss.lines[0]	바람이 방향을 바꾸더니 모래를 한가득 퍼부었다.
+r3_night.title	웃기는 여자
+r3_night.lines[0]	모래 언덕 위에 그림자 하나가 서 있었다.
+r3_night.lines[1]	하. 웃기는 여자군.
+r3_night.lines[2]	다, 당신 누구예요?! 여긴 어떻게…!
+r3_night.lines[3]	다, 당신은 아까 그…! 여긴 어떻게…!
+r3_night.lines[4]	……
+r3_night.lines[5]	남자는 품에서 물주머니를 꺼내 내 발치에 던졌다.
+r3_night.lines[6]	죽는 것도, 살아남는 것도 네 몫이다. 여자.
+r4_prove.title	그럼 증명해라
+r4_prove.lines[0]	낙타 가죽 냄새가 훅 끼쳤다. 남자의 곡도, 호위의 눈길, 가방 속 지도.
+r4_prove.lines[1]	쓸모가 있다고 했나.
+r4_prove.lines[2]	칼끝이 내 목에서 내려와 가방을 가리켰다.
+r4_prove.lines[3]	증명해라. 못 하면 그때 벤다.
+r4_prove.free.aim	데려갈 값이 있는 사람이라는 걸 보여 준다.
+r4_prove.free.talk_fallback[0]	쓸데없는 소리다. 묻는 말에나 답해라.
+r4_prove.free.talk_fallback[1]	하. 그 입은 쉬지를 않는군.
+r4_prove.free.talk_fallback[2]	시간을 끌 셈인가?
+r4_prove.free.press[0]	할 말은 그것뿐인가?
+r4_prove.free.press[1]	칼끝이 한 치 다가왔다. 더는 기다려 줄 눈치가 아니었다.
+r4_prove.free.nudge[0]	호위 하나가 칼자루를 고쳐 쥐었다.
+r4_prove.free.deflect[0]	입을 닫아라, 여자. 목숨이 아깝지 않은 모양이군.
+r4_prove.free.deflect[1]	하. 그런 소리로 살아남을 수 있다고 생각하나?
+r4_prove.free.improv.hit.lines[0]	어이가 없었는지 남자의 눈썹이 아주 조금 올라갔다.
+r4_prove.free.improv.hit.lines[1]	하. 별짓을 다 하는군.
+r4_prove.free.improv.mixed.lines[0]	무슨 속셈이지?
+r4_prove.free.improv.mixed.lines[1]	비웃음 섞인 목소리였지만, 붉은 눈은 나를 놓치지 않았다.
+r4_prove.free.improv.miss.lines[0]	호위 하나가 말없이 칼자루에 손을 얹었다.
+r4_prove.free.improv.miss.lines[1]	지루하군.
+r4_prove.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+r4_prove.free.improv_bold.hit.lines[1]	……미친 여자군.
+r4_prove.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+r4_prove.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+r4_prove.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+r4_prove.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+r4_prove.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+r4_prove.free.neutral.hit[0]	붉은 눈이 나를 한참 훑어보았다. 아까보다는 덜 차가운 눈빛이었다.
+r4_prove.free.neutral.mixed[0]	남자는 대꾸 없이 나를 재는 듯 내려다보았다.
+r4_prove.free.neutral.miss[0]	붉은 눈이 한층 더 차갑게 가라앉았다.
+r4_prove.free.idle.lines[0]	붉은 눈이 한층 더 차갑게 가라앉았다.
+r4_prove.free.prices[0].text	호위 하나가 코웃음을 쳤다.
+r4_prove.free.prices[1].text	남자가 손가락으로 칼자루를 두드리며 기다렸다. 해가 기운다.
+r4_prove.free.prices[2].text	설명하다 뒷걸음질쳐 모래 비탈 가장자리에 섰다.
+r4_prove.free.prices[3].text	말이 꼬여 절반만 전해졌다.
+r4_prove.free.prices[4].text	증거로 꺼낸 지도를 남자가 가져가 버렸다.
+r4_prove.free.prices[5].text	호위가 아시나의 팔을 붙들어 앞으로 끌어냈다.
+r4_prove.free.approaches[0].hint	지도와 해, 별로 길을 읽을 줄 안다고 보여 준다.
+r4_prove.free.approaches[0].label	지도와 해로 길을 읽어 보인다
+r4_prove.free.approaches[0].outcomes.hit.lines[0]	나는 지도를 펼치고 해의 위치를 짚어 크라차 쪽을 가리켰다.
+r4_prove.free.approaches[0].outcomes.hit.lines[1]	까막눈은 아니군.
+r4_prove.free.approaches[0].outcomes.hit.lines[2]	까막눈이라니…! 그래도 살았다.
+r4_prove.free.approaches[0].outcomes.mixed.lines[0]	그러니까 대략… 이쪽이요!
+r4_prove.free.approaches[0].outcomes.mixed.lines[1]	대략이라.
+r4_prove.free.approaches[0].outcomes.miss.lines[0]	크라차는 저쪽이에요!
+r4_prove.free.approaches[0].outcomes.miss.lines[1]	복면 쓴 호위가 말없이 정반대 쪽을 보았다.
+r4_prove.free.approaches[0].outcomes.miss.lines[2]	하.
+r4_prove.free.approaches[1].hint	북대륙 소식이나 흥정 솜씨처럼 말로 쓸모를 내세운다.
+r4_prove.free.approaches[1].label	말솜씨로 값을 올린다
+r4_prove.free.approaches[1].outcomes.hit.lines[0]	북대륙 소식, 시세, 소문. 필요한 건 뭐든 말해 드릴 수 있어요.
+r4_prove.free.approaches[1].outcomes.hit.lines[1]	혀는 정말 잘 돌아가는군.
+r4_prove.free.approaches[1].outcomes.mixed.lines[0]	북대륙 소식이라면 제가 훤하죠!
+r4_prove.free.approaches[1].outcomes.mixed.lines[1]	훤하다라. 그것도 기억해 두지.
+r4_prove.free.approaches[1].outcomes.miss.lines[0]	저, 저는 뭐든 할 수 있어요! 뭐든요!
+r4_prove.free.approaches[1].outcomes.miss.lines[1]	뭐든 할 줄 아는 자는 아무것도 못 하지.
+r4_prove.free.approaches[2].hint	밥값은 한다며 당돌한 태도로 남자의 흥미를 끈다.
+r4_prove.free.approaches[2].label	당돌하게 웃어 보인다
+r4_prove.free.approaches[2].outcomes.hit.lines[0]	사막 길은 심심하잖아요. 저처럼 재미있는 길동무가 또 어디 있어요?
+r4_prove.free.approaches[2].outcomes.hit.lines[1]	하. 입이 값을 하는군.
+r4_prove.free.approaches[2].outcomes.mixed.lines[0]	재미있는 길동무, 어때요?
+r4_prove.free.approaches[2].outcomes.mixed.lines[1]	남자는 웃지 않았다.
+r4_prove.free.approaches[2].outcomes.miss.lines[0]	저, 저 재미있는 사람이에요…
+r4_prove.free.approaches[2].outcomes.miss.lines[1]	내 말은 사막 바람에 그대로 흩어졌다.
+r4_walk.title	크라차까지
+r4_walk.lines[0]	값은 크라차에서 매기지.
+r4_walk.lines[1]	크라차까지다. 쓸모가 없어지면 그때 벤다.
+r4_walk.lines[2]	네, 네! 걱정 마요. 제가 얼마나 쓸모 있는 사람인데요!
+r4_walk.lines[3]	…네? 저를 데려가겠다고요?
+r4_walk.lines[4]	밧줄은 없었다. 복면을 쓴 호위 하나가 내 곁에 말없이 붙었을 뿐이다.
+r4_walk.lines[5]	…잠깐. 해가 왼쪽에 있는데, 왜 우리는 북쪽으로 걷는 거야?
+r5_claim.title	귀하신 몸
+r5_claim.lines[0]	사막에 어울리지 않는 향 냄새가 났다. 남자의 반지, 호위의 자세, 모래 위의 그림자.
+r5_claim.lines[1]	귀한 몸이 호위도 없이 사막을 헤맸다?
+r5_claim.lines[2]	칼끝은 한 치도 물러나지 않았다.
+r5_claim.lines[3]	말씨는 북쪽이군. 증명해 봐라, 여자.
+r5_claim.free.aim	귀한 신분이라는 말을 말과 몸가짐으로 믿게 만든다.
+r5_claim.free.talk_fallback[0]	쓸데없는 소리다. 묻는 말에나 답해라.
+r5_claim.free.talk_fallback[1]	하. 그 입은 쉬지를 않는군.
+r5_claim.free.talk_fallback[2]	시간을 끌 셈인가?
+r5_claim.free.press[0]	할 말은 그것뿐인가?
+r5_claim.free.press[1]	칼끝이 한 치 다가왔다. 더는 기다려 줄 눈치가 아니었다.
+r5_claim.free.nudge[0]	남자가 지루하다는 듯 고개를 기울였다.
+r5_claim.free.deflect[0]	입을 닫아라, 여자. 목숨이 아깝지 않은 모양이군.
+r5_claim.free.deflect[1]	하. 그런 소리로 살아남을 수 있다고 생각하나?
+r5_claim.free.improv.hit.lines[0]	어이가 없었는지 남자의 눈썹이 아주 조금 올라갔다.
+r5_claim.free.improv.hit.lines[1]	하. 별짓을 다 하는군.
+r5_claim.free.improv.mixed.lines[0]	무슨 속셈이지?
+r5_claim.free.improv.mixed.lines[1]	비웃음 섞인 목소리였지만, 붉은 눈은 나를 놓치지 않았다.
+r5_claim.free.improv.miss.lines[0]	호위 하나가 말없이 칼자루에 손을 얹었다.
+r5_claim.free.improv.miss.lines[1]	지루하군.
+r5_claim.free.improv_bold.hit.lines[0]	남자의 눈이 아주 잠깐 멈췄다. 비웃음은 나오지 않았다.
+r5_claim.free.improv_bold.hit.lines[1]	……미친 여자군.
+r5_claim.free.improv_bold.hit.lines[2]	붉은 눈이 나에게서 떨어지지 않았다.
+r5_claim.free.improv_bold.mixed.lines[0]	…무슨 속셈이지?
+r5_claim.free.improv_bold.mixed.lines[1]	남자의 손이 칼자루를 고쳐 쥐었다. 그러나 붉은 눈은 나에게서 떨어지지 않았다.
+r5_claim.free.improv_bold.miss.lines[0]	남자가 내 손목을 붙잡아 멈춰 세웠다. 붉은 눈이 얼음처럼 식었다.
+r5_claim.free.improv_bold.miss.lines[1]	죽기 직전인 주제에 겁이 없군.
+r5_claim.free.neutral.hit[0]	붉은 눈이 나를 한참 훑어보았다. 아까보다는 덜 차가운 눈빛이었다.
+r5_claim.free.neutral.mixed[0]	남자는 대꾸 없이 나를 재는 듯 내려다보았다.
+r5_claim.free.neutral.miss[0]	붉은 눈이 한층 더 차갑게 가라앉았다.
+r5_claim.free.idle.lines[0]	호위 하나가 말없이 칼자루에 손을 얹었다.
+r5_claim.free.idle.lines[1]	지루하군.
+r5_claim.free.prices[0].text	칼끝이 턱 밑을 눌렀다.
+r5_claim.free.prices[1].text	호위 둘이 눈을 마주치며 웃음을 참았다.
+r5_claim.free.prices[2].text	해가 지평선에 걸렸다.
+r5_claim.free.prices[3].text	집안 이름을 말하려다 입을 다물었다.
+r5_claim.free.prices[4].text	남자가 증표로 귀찌를 내놓으라며 손을 내밀었다.
+r5_claim.free.prices[5].text	호위가 어깨를 눌러 무릎을 꿇렸다.
+r5_claim.free.approaches[0].hint	칼끝 앞에서 궁정 예법을 그대로 보여 준다.
+r5_claim.free.approaches[0].label	몸에 밴 예법을 보인다
+r5_claim.free.approaches[0].outcomes.hit.lines[0]	나는 모래투성이 옷자락을 쥐고, 궁정에서 배운 그대로 고개를 숙였다.
+r5_claim.free.approaches[0].outcomes.hit.lines[1]	…흉내는 아니군.
+r5_claim.free.approaches[0].outcomes.hit.lines[2]	예법 선생님, 감사합니다…!
+r5_claim.free.approaches[0].outcomes.mixed.lines[0]	예법은 완벽했다. 후들거리는 다리만 빼면.
+r5_claim.free.approaches[0].outcomes.mixed.lines[1]	다리는 평민이군.
+r5_claim.free.approaches[0].outcomes.miss.lines[0]	고개를 숙이다 모래에 발이 빠져 앞으로 고꾸라질 뻔했다.
+r5_claim.free.approaches[0].outcomes.miss.lines[1]	그것도 예법인가?
+r5_claim.free.approaches[1].hint	귀족만 알 법한 북대륙 사정을 말한다.
+r5_claim.free.approaches[1].label	북대륙 사정을 늘어놓는다
+r5_claim.free.approaches[1].outcomes.hit.lines[0]	크롬웰 제국의 연회가 어떻게 돌아가는지 말해 드릴까요? 줄 서는 순서부터 까다롭거든요.
+r5_claim.free.approaches[1].outcomes.hit.lines[1]	남자는 말없이 끝까지 들었다.
+r5_claim.free.approaches[1].outcomes.mixed.lines[0]	제국 사정이라면 제가 잘 알아요!
+r5_claim.free.approaches[1].outcomes.mixed.lines[1]	…뭐?
+r5_claim.free.approaches[1].outcomes.mixed.lines[2]	…아차.
+r5_claim.free.approaches[1].outcomes.miss.lines[0]	그, 그러니까 제국에서는… 음…
+r5_claim.free.approaches[1].outcomes.miss.lines[1]	책으로 배웠나?
+r5_claim.free.approaches[2].hint	귀족답게 고개를 들고 호통친다.
+r5_claim.free.approaches[2].label	당당하게 호통친다
+r5_claim.free.approaches[2].outcomes.hit.lines[0]	무례하군요. 제 몸값이 그 칼보다 비쌀 텐데요.
+r5_claim.free.approaches[2].outcomes.hit.lines[1]	하. 값을 부르는 포로는 처음이군.
+r5_claim.free.approaches[2].outcomes.mixed.lines[0]	무, 무례해요!
+r5_claim.free.approaches[2].outcomes.mixed.lines[1]	호통치려던 목소리 끝이 조금 떨렸다.
+r5_claim.free.approaches[2].outcomes.miss.lines[0]	감히 누구한테…!
+r5_claim.free.approaches[2].outcomes.miss.lines[1]	호위들이 일제히 칼자루를 쥐었다. 남자가 손을 들어 그들을 멈췄다.
+r5_price.title	값을 매기다
+r5_price.lines[0]	진짜라면 쓸모가 있다. 가짜라면 그때 베면 된다.
+r5_price.lines[1]	남자가 손짓하자 호위들이 한 걸음 물러났다. 포로가 아니라 귀한 물건을 대하는 거리였다.
+r5_price.lines[2]	살았… 나? 아니, 내 입으로 내 값을 매겨 버린 거 아니야?
+r5_price.lines[3]	귀하다는 말이 진짜인지는 크라차에서 가려 보지.
+r5_price.lines[4]	호위들이 말없이 내 양옆에 섰다.
+r5_price.lines[5]	살았… 나? 대체 나를 어디로 데려가는 거야?
+e_quit.title	여기까지
+e_quit.lines[0]	이야기는 여기서 멈췄다. 아시나의 사막은 언제든 다시 이어 갈 수 있다.
+e_quit.ending.title	여기까지
+e_quit.ending.summary	플레이어가 여기서 멈추기로 했다.
+e_road.title	크라차로 가는 길
+e_road.lines[0]	물주머니를 끌어안고 걷기를 한참, 지평선 끝에 작은 불빛들이 떠올랐다.
+e_road.lines[1]	저건… 마을이야. 진짜로 건넜어!
+e_road.lines[2]	그런데도 나는 몇 번이나 뒤를 돌아보았다. 등 뒤의 시선이 도무지 사라지지 않았다.
+e_road.ending.title	크라차로 가는 길
+e_road.ending.summary	아시나는 혼자 힘으로 사막을 건넜다. 그 남자는 잡지 않았고, 물주머니 하나를 남겼다.
+e_deal.title	길잡이 계약
+e_deal.lines[0]	따져 물을 틈은 없었다. 앞서 걷는 터번 끝의 붉은 보석만이 해를 받아 번쩍였다.
+e_deal.lines[1]	일단 따라가자. 어디로 가는지는… 걸으면서 알아내면 되지.
+e_deal.ending.title	길잡이 계약
+e_deal.ending.summary	아시나는 쓸모를 팔아 목숨을 샀다. 포로도 손님도 아닌 채로 남자 일행과 함께 걷는다.
+e_value.title	값을 매긴 여자
+e_value.lines[0]	데려가라. 귀한 몸이라니, 귀하게 모셔야지.
+e_value.lines[1]	데려가라. 값은 크라차에서 매기지.
+e_value.lines[2]	묶이지는 않았다. 그게 오히려 더 무서웠다.
+e_value.ending.title	값을 매긴 여자
+e_value.ending.summary	아시나는 자기 입으로 귀한 신분을 내세웠다. 손님 대접을 받는 인질이 되어 끌려간다.
+e_spy.title	수상한 이방인
+e_spy.lines[0]	묶어라. 수상한 짓을 하면 그 자리에서 베어도 좋다.
+e_spy.lines[1]	거친 밧줄이 손목을 파고들었다. 나는 정신을 잃었다.
+e_spy.lines[2]	거친 밧줄이 손목을 파고들었다. 마법 가방까지 빼앗기는 걸 보면서, 나는 정신을 잃었다.
+e_spy.ending.title	수상한 이방인
+e_spy.ending.summary	목숨은 건졌지만 그 남자는 아시나를 굳게 경계한다. 마법 가방을 빼앗긴 채 끌려간다.
+e_curious.title	흥미로운 여자
+e_curious.lines[0]	데려가라. 깨어나면 그 입이 얼마나 더 떠드는지 들어 보지.
+e_curious.lines[1]	붉은 눈은 끝까지 나를 놓아주지 않았다. 그게 사막에서의 마지막 기억이었다.
+e_curious.ending.title	흥미로운 여자
+e_curious.ending.summary	그 남자는 아시나에게 흥미를 느꼈다. 끌려가는 신세지만, 그가 다시 찾아올지도 모른다.
+e_survivor.title	살아남은 자
+e_survivor.lines[0]	끌고 가라.
+e_survivor.lines[1]	살아남는 자와 죽는 자. 적어도 오늘, 나는 살아남는 쪽이었다.
+e_survivor.lines[2]	긴장이 풀리자 눈앞이 하얘졌다. 일주일 만에 처음으로, 나는 정신을 놓았다.
+e_survivor.ending.title	살아남은 자
+e_survivor.ending.summary	아시나는 살아남았다. 다음에 눈을 뜨는 곳은 낯선 나라 어딘가일 것이다.
+x_spy_cut.title	의심의 끝
+x_spy_cut.lines[0]	없다면, 잘 가라.
+x_spy_cut.lines[1]	칼이 움직이는 것을 보지 못했다. 모래가 얼굴에 닿는 감촉만 또렷했다.
+x_spy_cut.lines[2]	사막은 조용했다.
+x_spy_cut.ending.title	의심의 끝
+x_spy_cut.ending.summary	의심이 끝까지 쌓였다. 그 남자는 아시나를 베었다.
+x_reckless.title	칼 앞에서
+x_reckless.lines[0]	맨손은 칼날에 닿기도 전에 멈췄다. 손목을 붙잡힌 채, 나는 그 붉은 눈을 올려다보았다.
+x_reckless.lines[1]	겁은 없군. 머리는 없고.
+x_reckless.lines[2]	그다음은 기억나지 않는다. 모래 위로 쓰러지는 내 몸이 남의 것처럼 멀었다.
+x_reckless.ending.title	칼 앞에서
+x_reckless.ending.summary	경고를 듣고도 칼 앞에 몸으로 덤볐고, 그 판정이 실패했다.
+x_collapse.title	모래 위에서
+x_collapse.lines[0]	다리가 먼저 꺾였다. 모래가 뺨에 닿는데도 뜨겁다는 생각조차 들지 않았다.
+x_collapse.lines[1]	멀어지는 발소리 사이로 누군가 혀를 차는 소리가 들렸다. 그게 마지막이었다.
+x_collapse.lines[2]	하늘이 돌았다. 소리도 그림자도 없는 모래 위에서, 나는 눈을 감았다.
+x_collapse.ending.title	모래 위에서
+x_collapse.ending.summary	재촉과 힌트 뒤에도 움직이지 않아, 아시나는 사막 한가운데서 쓰러졌다.
+소지품.magic_bag	마법 가방 보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.
+소지품.earring	마법 귀찌 귓불에 달린 마법 귀찌.
+소지품.map	낡은 지도 사막 한가운데서는 별 도움이 되지 않는 지도.
+수첩.nations	크롬웰 제국 북대륙의 패자라고 불리는 크롬웰 제국. 아시나의 모국이다.
+수첩.zirda	지르다 두 대륙 사이의 죽음의 사막. 생명이 살지 않는 모래사막이고, 낮에는 태양이 살을 태울 듯 뜨겁다.
+수첩.kracha	크라차 사막 건너 남대륙의 도시. 아시나가 가려던 곳이다.
+수첩.magic	마법 마법은 드물고 귀하다. 마법이 깃든 물건은 그것만으로 눈길을 끈다.
+수첩.stars	별과 길 지도는 낡았지만 별은 그대로다. 밤하늘의 별과 지도를 맞추면 방향을 잡을 수 있다.
+수첩.asina	아시나 이름은 아시나. 크롬웰 제국 출신으로 부족함 없이 자랐다. 여행을 좋아해 대륙을 떠돈다. 스스로를 대륙에서 하나뿐인 미소녀라 부른다.
+수첩.strangers	사막의 세 사람 일주일 만에 본 사람들.
+수첩.item:magic_bag	마법 가방 보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.
+수첩.item:earring	마법 귀찌 귓불에 달린 마법 귀찌.
+수첩.item:map	낡은 지도 사막 한가운데서는 별 도움이 되지 않는 지도.
+안내.1	난 이 판을 진행하는 사막여우야.
+안내.2	넌 아시나가 돼.
+안내.3	장면이 오면 아래 입력창에 아시나가 할 말이나 행동을 적어. 뜬 단추를 골라도 돼.
+안내.4	결과가 확실하지 않은 행동이면 주사위 두 개에 능력치를 더해 굴려. 주사위 둘이 다 6이면 대성공, 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야.
+안내.5	결과에 따라 오른쪽 판의 체력·정신력이 오르내리고, 바뀐 건 이야기 창에 적혀. 행운은 실패를 메울 때 써.
+안내.6	막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.
+도움말.health	체력은 몸 상태야. 1 이하면 근력 -1, 0에서 다시 다치면 쓰러져 붙잡혀. 물과 휴식으로 회복해.
+도움말.spirit	정신력은 마음 상태야. 1 이하면 매력·재치에 흔들리는 마음 -1, 0이 되면 다음 판정에 겁에 질림 -2이고 회복 전까지 행운을 못 써. 휴식과 큰 성공으로 회복해.
+도움말.luck	행운은 판정에 실패했을 때 모자란 만큼 메우는 점수야. 쓰면 대가 있는 성공으로 바뀌어.
+도움말.check	판정은 주사위 두 개에 능력치를 더한 합으로 결과를 정하는 거야. 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야. 주사위가 둘 다 6이면 합과 무관하게 대성공이야.
+도움말.cost	대가는 해내는 대신 치르는 손해야. 체력이 줄거나 상대의 경계를 사는 식이야.
+도움말.target	목표 10은 완전히 성공하는 합이야. 7~9면 대가를 치르고 해내고, 6 이하는 실패야. 6·6 대성공은 목표 합과 무관하고 행운으로 메운 판정에는 나오지 않아.
+도움말.outcome	성공하면 아시나가 뜻한 대로 되고 상대의 의심도 덜 쌓여. 대가 있는 성공은 해내기는 하는데 체력이 줄거나 의심이 붙어. 실패하면 뜻한 게 안 되고 상황이 나빠져. 선택에 따라 이야기가 달라져. 대성공은 성공의 좋은 수치 변화를 한 칸 키우고, 좋은 변화가 없으면 정신력을 한 칸 회복해.
+도움말.suspicion	의심은 상대가 아시나를 경계하는 정도야.
+도움말.obsession	집착은 상대가 아시나에게서 눈을 떼지 못하는 정도야.
+도움말.favor	호감은 상대가 아시나에게 품은 호감이야.
+도움말.escape	탈주 준비도는 탈주에 쓸 정보, 도구, 기회를 모은 정도야.
+도움말.save	화면 위 저장 버튼을 누르고 칸을 고르면 돼. 불러오기 버튼으로 그 장면부터 다시 할 수 있어.
+도움말.screen	따로 메뉴는 없어. 화면 위에 수첩, 기록, 저장, 불러오기 단추가 있고, 아래 입력창에 아시나의 말이나 행동을 적고 말하기를 누르면 돼.
+도움말.quit	여기서 그만두면 이 데모는 끝나. 정말 끝낼 거야, 아니면 더 해 볼래?
+도움말.play	넌 아시나가 돼. 장면이 오면 아래 입력창에 아시나가 할 말이나 행동을 적어. 뜬 단추를 골라도 돼. 결과가 확실하지 않은 행동이면 주사위 두 개에 능력치를 더해 굴려. 주사위 둘이 다 6이면 대성공, 10 이상은 성공, 7~9는 대가 있는 성공, 6 이하는 실패야. 결과에 따라 오른쪽 판의 체력·정신력이 오르내리고, 바뀐 건 이야기 창에 적혀. 행운은 실패를 메울 때 써. 막히거나 궁금하면 입력창 오른쪽 내 얼굴 단추를 눌러 물어봐.
+도움말.ai	난 이 이야기를 같이 따라가는 사막여우야. 인물 대사 일부는 이 컴퓨터 안의 AI가 네 입력을 읽고 써.
+도움말.other	그건 내가 답할 게 아니야. 여기선 아시나가 할 말이나 행동을 적으면 돼. 잘되고 못되고는 주사위가 정해.
+운명.spy_cut[0]	남자의 손이 칼자루로 내려갔다. 눈은 아시나에게서 떨어지지 않았다.
+운명.collapse[0]	무릎이 한 번 허물어졌다. 모래가 발목을 잡아당겼다.
