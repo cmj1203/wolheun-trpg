@@ -58,7 +58,10 @@ export function assertState(scenario: Scenario, value: unknown): GameState {
   if (!Array.isArray(s.items) || !s.items.every((i) => typeof i === 'string')) return fail('소지품 목록');
   if (!Array.isArray(s.log)) return fail('플레이 기록');
   for (const entry of s.log) {
-    if (entry.kind === 'check' && String(entry.roll.stat) === '체력') entry.roll.stat = '근력';
+    if (!entry || typeof entry !== 'object') return fail('플레이 기록');
+    if (entry.kind !== 'check') continue;
+    if (!entry.roll || typeof entry.roll !== 'object') return fail('판정 기록');
+    if (String(entry.roll.stat) === '체력') entry.roll.stat = '근력';
   }
   if (typeof s.playMs !== 'number' || typeof s.startedAt !== 'number') return fail('플레이 시간');
   const beat = scenario.beats[s.beat];

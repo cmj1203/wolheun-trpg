@@ -59,6 +59,18 @@ describe('저장 파일', () => {
       await rm(dir, { recursive: true, force: true });
     }
   });
+
+  test.each([[null], [{ kind: 'check' }]])('깨진 플레이 기록(%p)도 SaveError 로 거른다', async (entry) => {
+    const dir = await mkdtemp(join(tmpdir(), 'wh-save-'));
+    try {
+      const engine = new Engine(scenario, new FakeGm(), fakeClock().now);
+      const { state } = engine.newGame(1, 's');
+      await writeSave(dir, 'broken', scenario, { ...state, log: [entry] } as unknown as typeof state);
+      await expect(readSave(dir, 'broken', scenario)).rejects.toBeInstanceOf(SaveError);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
 });
 
 describe('서버 동시 요청', () => {
