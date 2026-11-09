@@ -123,12 +123,10 @@ describe('엔진 진행', () => {
     const firstScene = step.events.findIndex((e) => e.type === 'scene' && e.beat === 'b01_sand');
     const opening = step.events.slice(0, firstScene).flatMap((e) => (e.type === 'line' ? [e] : []));
     expect(opening.some((l) => l.style === 'gm')).toBe(false);
-    expect([...new Set(opening.flatMap((l) => (l.cg ? [l.cg] : [])))]).toEqual(['cg_open_sun', 'cg_open_land', 'cg_open_dark', 'cg_open_blade', 'cg_cromwell', 'cg_manor', 'cg_hill', 'cg_travel_3cuts']);
+    expect([...new Set(opening.flatMap((l) => (l.cg ? [l.cg] : [])))]).toEqual(['cg_cromwell', 'cg_manor', 'cg_hill', 'cg_travel_3cuts']);
     expect(opening.some((l) => l.cg_from !== undefined)).toBe(false);
-    // 원작 c001~c003 자막 경계대로 나눈 첫 줄(글자는 예전 한 줄과 같다) 뒤에 c004 는 글 없는 한 박자다.
-    expect(opening.slice(0, 3).map((l) => l.text).join(' ')).toBe('꿈에도 몰랐다. 거대한 태양 아래, 고국이 아닌 낯선 땅에서 죽음을 맞이하게 될 줄은―');
-    expect(opening[3]).toMatchObject({ text: '', cg: 'cg_open_blade', style: 'narration' });
-    expect(opening[4]?.cg).toBe('cg_cromwell');
+    // 60차: 원작 c001~c004(죽음을 맞이하게 될 줄은― + 칼날)는 b04_blade 로 옮겼다. 여는 글은 크롬웰 회상부터다.
+    expect(opening[0]).toMatchObject({ text: '북대륙의 패자라고 불리는 크롬웰 제국.', cg: 'cg_cromwell', style: 'narration' });
     for (const needle of ['페시안', '공녀라는 게', '갈색으로']) {
       expect(opening.some((l) => l.text.includes(needle))).toBe(false);
     }
