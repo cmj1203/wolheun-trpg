@@ -56,37 +56,46 @@ backgrounds:
   desert_night: { label: 별이 뜬 사막, file: assets/ep01/gen/bg/desert_night.png, placeholder: dunes }
   blackout: { label: 암전, placeholder: blackout }
 
-sprites:
-  asina_hood: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_neutral.png, placeholder: asina }
-  asina_hood_smile: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_smile.png, placeholder: asina }
-  asina_hood_surprised: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_surprised.png, placeholder: asina }
-  asina_hood_wary: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_wary.png, placeholder: asina }
-  asina_hood_flustered: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_flustered.png, placeholder: asina }
-  asina_hood_scared: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_scared.png, placeholder: asina }
-  asina_hood_indignant: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_indignant.png, placeholder: asina }
-  asina_hood_smug: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_smug.png, placeholder: asina }
-  asina_hood_tired: { label: 아시나(후드), file: assets/ep01/gen/hood/asina_hood_tired.png, placeholder: asina }
-  asina: { label: 아시나, file: assets/ep01/gen/asina/asina_neutral.png, placeholder: asina }
-  asina_smile: { label: 아시나, file: assets/ep01/gen/asina/asina_smile.png, placeholder: asina }
-  asina_surprised: { label: 아시나, file: assets/ep01/gen/asina/asina_surprised.png, placeholder: asina }
-  asina_wary: { label: 아시나, file: assets/ep01/gen/asina/asina_wary.png, placeholder: asina }
-  asina_flustered: { label: 아시나, file: assets/ep01/gen/asina/asina_flustered.png, placeholder: asina }
-  asina_scared: { label: 아시나, file: assets/ep01/gen/asina/asina_scared.png, placeholder: asina }
-  asina_indignant: { label: 아시나, file: assets/ep01/gen/asina/asina_indignant.png, placeholder: asina }
-  asina_smug: { label: 아시나, file: assets/ep01/gen/asina/asina_smug.png, placeholder: asina }
-  asina_tired: { label: 아시나, file: assets/ep01/gen/asina/asina_tired.png, placeholder: asina }
-  man: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_neutral.png, placeholder: man }
-  man_sneer: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_sneer.png, placeholder: man }
-  man_dumbfounded: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_dumbfounded.png, placeholder: man }
-  man_menacing: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_menacing.png, placeholder: man }
-  man_intrigued: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_intrigued.png, placeholder: man }
-  gm: { label: GM 사막여우, file: assets/ep01/gen/gm/gm_neutral.png, placeholder: gm }
-  gm_smile: { label: GM 사막여우, file: assets/ep01/gen/gm/gm_smile.png, placeholder: gm }
-  gm_thinking: { label: GM 사막여우, file: assets/ep01/gen/gm/gm_thinking.png, placeholder: gm }
-  gm_surprised: { label: GM 사막여우, file: assets/ep01/gen/gm/gm_surprised.png, placeholder: gm }
-  man_smile: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_smile.png, placeholder: man }
-  man_surprised: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_surprised.png, placeholder: man }
-  man_wary: { label: 붉은 눈의 남자, file: assets/sprites/pilot/behidat_wary.png, placeholder: man }
+"sprites":
+  "asina_hood": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_neutral_r91.png","placeholder":"asina"}
+  "asina_hood_smile": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_smile_r91.png","placeholder":"asina"}
+  "asina_hood_surprised": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_surprised.png","placeholder":"asina"}
+  "asina_hood_wary": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_wary_r91.png","placeholder":"asina"}
+  "asina_hood_flustered": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_flustered_r91.png","placeholder":"asina"}
+  "asina_hood_scared": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_scared_r91.png","placeholder":"asina"}
+  "asina_hood_indignant": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_indignant_r91.png","placeholder":"asina"}
+  "asina_hood_smug": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_smug_r91.png","placeholder":"asina"}
+  "asina_hood_tired": {"label":"아시나(후드)","file":"assets/ep01/gen/hood/asina_hood_tired_r91.png","placeholder":"asina"}
+  "asina": {"label":"아시나","file":"assets/ep01/gen/asina/asina_neutral_r91.png","placeholder":"asina","alt":{"if":"!item:magic_bag","id":"asina_nobag"}}
+  "asina_smile": {"label":"아시나","file":"assets/ep01/gen/asina/asina_smile_r91.png","placeholder":"asina"}
+  "asina_surprised": {"label":"아시나","file":"assets/ep01/gen/asina/asina_surprised.png","placeholder":"asina"}
+  "asina_wary": {"label":"아시나","file":"assets/ep01/gen/asina/asina_wary_r91.png","placeholder":"asina"}
+  "asina_flustered": {"label":"아시나","file":"assets/ep01/gen/asina/asina_flustered_r91.png","placeholder":"asina"}
+  "asina_scared": {"label":"아시나","file":"assets/ep01/gen/asina/asina_scared_r91.png","placeholder":"asina"}
+  "asina_indignant": {"label":"아시나","file":"assets/ep01/gen/asina/asina_indignant_r91.png","placeholder":"asina"}
+  "asina_smug": {"label":"아시나","file":"assets/ep01/gen/asina/asina_smug_r91.png","placeholder":"asina"}
+  "asina_tired": {"label":"아시나","file":"assets/ep01/gen/asina/asina_tired_r91.png","placeholder":"asina"}
+  "man": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_neutral.png","placeholder":"man"}
+  "man_sneer": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_sneer.png","placeholder":"man"}
+  "man_dumbfounded": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_dumbfounded.png","placeholder":"man"}
+  "man_menacing": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_menacing.png","placeholder":"man"}
+  "man_intrigued": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_intrigued.png","placeholder":"man"}
+  "gm": {"label":"GM 사막여우","file":"assets/ep01/gen/gm/gm_neutral.png","placeholder":"gm"}
+  "gm_smile": {"label":"GM 사막여우","file":"assets/ep01/gen/gm/gm_smile.png","placeholder":"gm"}
+  "gm_thinking": {"label":"GM 사막여우","file":"assets/ep01/gen/gm/gm_thinking.png","placeholder":"gm"}
+  "gm_surprised": {"label":"GM 사막여우","file":"assets/ep01/gen/gm/gm_surprised.png","placeholder":"gm"}
+  "man_smile": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_smile.png","placeholder":"man"}
+  "man_surprised": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_surprised.png","placeholder":"man"}
+  "man_wary": {"label":"붉은 눈의 남자","file":"assets/sprites/pilot/behidat_wary.png","placeholder":"man"}
+  "asina_nobag": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_neutral_v7r92.png","placeholder":"asina"}
+  "asina_nobag_smile": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_smile_v5.png","placeholder":"asina"}
+  "asina_nobag_surprised": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_surprised_v5.png","placeholder":"asina"}
+  "asina_nobag_wary": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_wary_v5.png","placeholder":"asina"}
+  "asina_nobag_flustered": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_flustered_v7r92.png","placeholder":"asina"}
+  "asina_nobag_scared": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_scared_v7r92.png","placeholder":"asina"}
+  "asina_nobag_indignant": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_indignant_v7r92.png","placeholder":"asina"}
+  "asina_nobag_smug": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_smug_v7r92.png","placeholder":"asina"}
+  "asina_nobag_tired": {"label":"아시나","file":"assets/ep02/gen/no_bag/asina_tired_v7r92.png","placeholder":"asina"}
 
 cgs:
   cg_open_sun: { label: 태양, file: assets/ep01/gen/cg/cg_open_c001.png, fit: cover }
@@ -98,7 +107,7 @@ cgs:
   cg_hill: { label: 언덕, file: assets/ep01/gen/cg/cg_hill.png, fit: cover }
   cg_travel: { label: 여행, file: assets/ep01/gen/cg/cg_travel.png, fit: cover }
   cg_travel_3cuts: { label: 여행, file: assets/ep01/gen/cg/cg_travel_3cuts.png, fit: cover }
-  cg_drink: { label: 물, file: assets/ep01/gen/cg/cg_drink.png, fit: cover }
+  cg_drink: { label: 물, file: assets/ep01/gen/cg/cg_drink_r92b.png, fit: cover }
   cg_now: { label: 칼끝, file: assets/ep01/gen/cg/cg_now.png, fit: cover }
   cg_last: { label: 칼끝, file: assets/ep01/gen/cg/cg_last.png, fit: cover }
   cg_beauty: { label: 미소녀, file: assets/ep01/gen/cg/cg_beauty.png, fit: cover }

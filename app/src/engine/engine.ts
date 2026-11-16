@@ -271,7 +271,7 @@ export class Engine {
 
   resume(state: GameState): Step {
     const beat = this.beatOf(state);
-    const events: GameEvent[] = [this.sceneEvent(state, beat), ...beat.lines.filter((l) => !l.if || evalCond(l.if, this.ctx(state))).map((l) => this.lineEvent(l, 'script'))];
+    const events: GameEvent[] = [this.sceneEvent(state, beat), ...beat.lines.filter((l) => !l.if || evalCond(l.if, this.ctx(state))).map((l) => this.lineEvent(this.resolveCgLine(l, state), 'script'))];
     if (state.ending && beat.ending) events.push(this.endingEvent(beat));
     // 답을 기다리던 확인 창은 다시 띄운다. 안 띄우면 보이지 않는 창에 뒤의 "응"이 답이 된다.
     if (!state.ending && state.pendingIntent) events.push(this.intentEvent(state.pendingIntent));
@@ -1687,9 +1687,6 @@ export class Engine {
         events.push({ type: 'change', parts: gate.tracks.map((key) => ({ text: `새 수치: ${TRACK_INFO[key].label}`, tone: 'warm' })) });
       }
     }
-    for (const [cast, sprite] of Object.entries(this.spritesOf(state))) {
-      if (spritesBefore[cast] !== sprite) events.push({ type: 'sprite', cast, sprite });
-    }
     const gained = (effects.gain ?? []).filter((id) => !state.items.includes(id));
     const removed = new Set(effects.lose ?? []);
     for (const item of this.scenario.sheet.items) {
@@ -1697,6 +1694,9 @@ export class Engine {
     }
     const lost = [...removed].filter((id) => state.items.includes(id));
     state.items = state.items.filter((id) => !lost.includes(id)).concat(gained);
+    for (const [cast, sprite] of Object.entries(this.spritesOf(state))) {
+      if (spritesBefore[cast] !== sprite) events.push({ type: 'sprite', cast, sprite });
+    }
     if (changes.length) {
       events.push({ type: 'tracks', changes });
       this.record(state, { kind: 'tracks', changes });
@@ -1723,14 +1723,18 @@ export class Engine {
     if (raw.if !== undefined && !evalCond(raw.if, this.ctx(state))) return;
     const cast = this.scenario.cast[raw.speaker];
     if (by === 'gm' && cast?.style === 'speech' && cast.lore !== this.scenario.sheet.name && (state.spoken?.[raw.speaker] ?? []).some((text) => normalizeKo(text) === normalizeKo(raw.text))) return;
-    const alt = raw.cg ? this.scenario.cgs[raw.cg]?.alt : undefined;
-    const line = alt && evalCond(alt.if, this.ctx(state)) ? { ...raw, cg: alt.id } : raw;
+    const line = this.resolveCgLine(raw, state);
     events.push(this.lineEvent(line, by));
     state.recent = [...state.recent, { speaker: line.speaker, text: line.text }].slice(-RECENT_LINES);
     state.spoken = { ...state.spoken, [line.speaker]: [...(state.spoken?.[line.speaker] ?? []), line.text] };
     if (by === 'script' && this.scenario.cast[line.speaker]?.style === 'speech' && this.scenario.cast[line.speaker]?.lore === this.scenario.sheet.name) state.flags[`말함_${state.beat}`] = true;
     if (raw.sets) this.applyEffects(state, { flags: { [raw.sets]: true } }, events, true);
     if (raw.effects) this.applyEffects(state, raw.effects, events, true);
+  }
+
+  private resolveCgLine(line: Line, state: GameState): Line {
+    const alt = line.cg ? this.scenario.cgs[line.cg]?.alt : undefined;
+    return alt && evalCond(alt.if, this.ctx(state)) ? { ...line, cg: alt.id } : line;
   }
 
   private itemView(id: string, state?: GameState): ItemView {
@@ -1744,6 +1748,9 @@ export class Engine {
     const out: Record<string, string> = {};
     for (const [key, cast] of Object.entries(this.scenario.cast)) {
       if (cast.sprite_alt && evalCond(cast.sprite_alt.if, ctx)) out[key] = cast.sprite_alt.sprite;
+      const sprite = out[key] ?? cast.sprite;
+      const alt = sprite ? this.scenario.sprites[sprite]?.alt : undefined;
+      if (sprite && alt) out[key] = evalCond(alt.if, ctx) ? alt.id : sprite;
     }
     return out;
   }

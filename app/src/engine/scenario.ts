@@ -794,6 +794,11 @@ export function checkScenario(s: Scenario): string[] {
     checkCond(cg.alt.if, `cgs.${id}.alt.if`);
     if (!s.cgs[cg.alt.id]) problems.push(`cgs.${id}.alt.id: 없는 이벤트 CG "${cg.alt.id}"`);
   }
+  for (const [id, sprite] of Object.entries(s.sprites)) {
+    if (!sprite.alt) continue;
+    checkCond(sprite.alt.if, `sprites.${id}.alt.if`);
+    if (!s.sprites[sprite.alt.id]) problems.push(`sprites.${id}.alt.id: 없는 입식 "${sprite.alt.id}"`);
+  }
   for (const [key, c] of Object.entries(s.cast)) {
     for (const face of c.faces ?? []) {
       const problem = faceProblem(s, key, face);
