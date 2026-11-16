@@ -1,0 +1,14 @@
+{
+  "producer_pid": 25562,
+  "producer_pgid": 25562,
+  "producer_ppid": 1,
+  "launcher_pid": 25561,
+  "launcher_pgid": 5616,
+  "started_at": "2026-11-09T06:10:20.878259+00:00",
+  "command": [
+    "/Users/choeminju/월흔_trpg/tools/.venv/bin/python",
+    "/Users/choeminju/월흔_trpg/docs/continuation/build/ep05/art/helpers/safe-resume-producer.py"
+  ],
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep05/art/recovered-producer.log",
+  "detached": true
+}

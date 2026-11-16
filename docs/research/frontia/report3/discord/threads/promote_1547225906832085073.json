@@ -1,0 +1,36 @@
+{
+ "title": "(3) Discord | \"[Short Play Tip - for everyone in the world]\" | 프론티아",
+ "h": "프론티아",
+ "tags": [
+  "한국어",
+  "English",
+  "中文",
+  "Español",
+  "ไทย"
+ ],
+ "n": 2,
+ "msgs": [
+  {
+   "t": "2026-09-09T12:43:22.256Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "This is a gameplay tips sharing my personal opinions with all AI chat users.\nIt is a .txt file, and since it is not very long, feel free to give it a light read.\n\nThank you.",
+   "emb": "",
+   "att": 16,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-21T14:29:43.634Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "You're the best. I think I'm following you on Frontia!",
+   "emb": "",
+   "att": 0,
+   "reacts": "1",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

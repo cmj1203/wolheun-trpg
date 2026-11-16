@@ -96,16 +96,44 @@ export function forbiddenIn(text: string, term: string): boolean {
   return (/\s/u.test(t) || [...t].length >= LOOSE_MIN) && compact(text).includes(compact(t));
 }
 
+/** 이름 뒤의 조사·호칭·서술격 결합. 고유명사별 허용/예외 사전이 아니다. */
+const NOMINAL_TAIL = /^(?:(?:님|씨)|(?:에게서|한테서|께서|에게|한테|에서|께|으로|로|부터|까지|처럼|보다|조차|마저|마다|밖에|만큼|쯤|이랑|랑|은|는|이|가|을|를|의|와|과|도|만)|(?:이시다|이라고|이라는|이라면|이라도|이라서|라는|라고|이다|입니다|이에요|예요|이야|야|였다|였어|이었다|이었어|다))*$/u;
+
+/** 한국어 단어 내부의 우연한 부분문자열을 이름 지시로 보지 않는다. */
+export function properNameIn(text: string, term: string): boolean {
+  const t = term.trim();
+  if (!t) return false;
+  const loose = /\s/u.test(t) || [...t].length >= LOOSE_MIN;
+  const escaped = (loose ? [...compact(t)] : [...t]).map(char => char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join(loose ? '\\s*' : '');
+  const names = new RegExp(`(?<![\\p{L}\\p{N}_])${escaped}`, 'gu');
+  for (const found of text.matchAll(names)) {
+    const tail = text.slice(found.index + found[0].length).match(/^[\p{L}\p{N}_]*/u)?.[0] ?? '';
+    if (NOMINAL_TAIL.test(tail)) return true;
+  }
+  return false;
+}
+
 /** 등급 낱말과 겹치지만 해롭지 않은 말. 띄어쓰기를 무시하고 맞추기 전에 지운다("자, 해 보자" → 자해 아님). */
 const RATING_INNOCENT: readonly RegExp[] = [/(^|[\s,.!?…~])자[\s,.!…~]+해(?=\s*[보볼봐봅줘야라요])/gu];
 
 /** 등급(욕·선정·잔혹·자해) 낱말이 글에 들었는가. 일부러 띄어 써 피하는 일("시 발", "섹 스")이 흔해 띄어쓰기를 무시하고 맞춘다. */
 export function ratingIn(text: string, term: string): boolean {
-  return mentions(RATING_INNOCENT.reduce((t, re) => t.replace(re, '$1'), text), term);
+  const t = compact(term);
+  if (!t) return false;
+  const clean = RATING_INNOCENT.reduce((value, re) => value.replace(re, '$1'), text);
+  if (clean.includes(t)) return true;
+  const escaped = [...t].map(char => char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s*');
+  return new RegExp(`(?<![\\p{L}\\p{N}_])${escaped}`, 'u').test(clean);
 }
 
 /** 금지 묶음 이름에 맞는 비교로 낱말이 글에 들었는지 본다. */
-export function forbiddenTermIn(group: ForbiddenGroup, text: string, term: string): boolean {
+export function forbiddenTermIn(group: ForbiddenGroup, text: string, term: string, lore?: Lore): boolean {
+  // 스포일러에는 이름 외에 사건·동사구도 있다. 정본 인물·장소의 이름에만 명사 경계를 적용한다.
+  if (group === 'spoilers' && lore) {
+    const names = [...lore.places, ...Object.entries(lore.characters).flatMap(([id, person]) => [id, person.alias, ...person.names])];
+    const canonical = names.find(name => name === term || lore.misspellings[name]?.includes(term));
+    if (canonical) return properNameIn(text, term);
+  }
   return RATING_GROUPS.includes(group) ? ratingIn(text, term) : forbiddenIn(text, term);
 }
 
@@ -147,6 +175,7 @@ const TIER_OPPOSITE: Record<Tier, readonly string[]> = {
   hit: ['헛손질', '헛발질', '허공을 갈', '허공을 가르', '허공을 휘', '헛수고', '허탕', '아무 소용', '소용없', '소용이 없', '고꾸라', '엉뚱한 곳'],
   mixed: ['헛손질', '헛발질', '허공을 갈', '허공을 가르', '허공을 휘', '헛수고', '허탕', '아무 소용', '소용없', '소용이 없'],
   miss: ['성공했', '해냈다', '완벽하게'],
+  fumble: ['성공했', '해냈다', '완벽하게'],
 };
 
 const LOSS_VERB = '던지|던져|던졌|내던|내팽개|버리|버렸|떨어뜨|떨어트|빼앗|뺏|낚아채|낚아챘|앗아|찢|태워|태웠|부러|박살|망가';
@@ -198,11 +227,12 @@ function sentenceEnds(text: string): string[] {
 function registerOf(line: Line, opt: CheckOptions): { who: string; reg: Register; severity: Severity } | null {
   const cast = opt.cast[line.speaker];
   if (!cast) return null;
-  if (cast.style === 'narration') return { who: '내레이션', reg: opt.lore.narration.register, severity: 'soft' };
-  if (cast.style === 'thought') return { who: '속마음', reg: opt.lore.thought.register, severity: 'soft' };
+  // register의 forbid_*는 명시 금지다. 길이·시제·반응 변주 같은 스타일 경고와 구분한다.
+  if (cast.style === 'narration') return { who: '내레이션', reg: opt.lore.narration.register, severity: 'hard' };
+  if (cast.style === 'thought') return { who: '속마음', reg: opt.lore.thought.register, severity: 'hard' };
   const character = cast.lore ? opt.lore.characters[cast.lore] : undefined;
   if (!character) return null;
-  return { who: cast.display || line.speaker, reg: character.register, severity: cast.lore === opt.playerLore ? 'soft' : 'hard' };
+  return { who: cast.display || line.speaker, reg: character.register, severity: 'hard' };
 }
 
 function speakerPrefix(line: Line, opt: CheckOptions): string | null {
@@ -238,15 +268,7 @@ function repeatedReaction(text: string, previous: readonly string[]): string[] {
   const ending = finalEnding(text);
   const sameEnding = ending && previous.length === 2 && previous.every(t => finalEnding(t) === ending);
   if (sameEnding) changes.push(`끝맺음 "-${ending}"이 직전 대사 두 줄 "${previous.join('" / "')}"에 이어 세 번 연속 같습니다. 마지막 절의 어미·문장 꼴을 바꾸세요`);
-  const currentAddresses = addresses(text);
-  for (const old of previous) {
-    // 앞에서 실제 호칭으로 쓰인 명사는 뒤의 조사 활용("이방인의")도 같은 호칭으로 비교한다.
-    const terms = new Set([...currentAddresses, ...addresses(old)]);
-    for (const term of terms) {
-      const used = (s: string) => new RegExp(`(?:^|[\\s,.!?…])${term}(?=$|[\\s,.!?…]|(?:의|은|는|이|가|을|를|에게|아|야|여)(?:$|[\\s,.!?…]))`, 'u').test(s);
-      if (used(text) && used(old)) changes.push(`호칭 "${term}"이 직전 대사 "${old}"와 같습니다. 그 호칭을 빼거나 다른 부름으로 바꾸세요`);
-    }
-  }
+  // 같은 호칭을 썼다는 사실은 답의 반복이 아니다. 응답 전체의 재사용은 repeat_play가 검사한다.
   return [...new Set(changes)];
 }
 
@@ -305,6 +327,11 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
     if (cast?.style === 'speech') {
       const direction = STAGE_DIRECTION.exec(line.text)?.[0];
       if (direction) add('format', 'stage_direction', `${cast.display || line.speaker}의 대사에 지문("${direction}")이 섞였습니다. 행동과 표정은 나레이션 줄로 따로 쓰세요`);
+      const unquoted = line.text.normalize('NFC').replace(/“[^”]*”|‘[^’]*’|"[^"]*"|'[^']*'/gu, ' ');
+      // ㅆ 받침(종성 20)의 과거·의지 종결형을 명사처럼 인용하지 않는다.
+      const malformedQuote = [...unquoted.matchAll(/[가-힣]다라/gu)]
+        .some((match) => (match[0].charCodeAt(0) - 0xac00) % 28 === 20);
+      if (malformedQuote) add('format', 'quotation', `"${line.text}"의 종결형 뒤 인용 조사가 맞지 않습니다. 명사 인용과 완결된 서술절의 인용을 구분해, 뜻과 인물 말투를 지키며 대사와 주변 서술을 문장 전체로 다시 쓰세요`);
       const selfRefs = [cast.display, line.speaker].filter((name) => name.length > 0).flatMap((name) => [`${name}는`, `${name}가`, `${name}의`, `${name}은`, `${name}이`]);
       const selfRef = selfRefs.find((ref) => line.text.includes(ref));
       if (selfRef) add('format', 'speaker_voice', `${cast.display || line.speaker}의 대사에 자기를 가리키는 묘사("${selfRef}")가 섞였습니다. 묘사는 나레이션으로 쓰세요`, 'soft');
@@ -362,9 +389,9 @@ export function checkLines(lines: readonly Line[], opt: CheckOptions): Violation
     const kind: ViolationKind = RATING_GROUPS.includes(group) ? 'rating' : 'lore';
     for (const term of opt.lore.forbidden[group]) {
       // 플레이어가 먼저 꺼낸 이름·사실은 인물이 되받아 말해도 새로 꺼낸 것이 아니다. 등급(욕·선정·잔혹·자해)은 GM 줄에 그대로 건다.
-      if (group === 'spoilers' && inputDid(term)) continue;
+      if (group === 'spoilers' && forbiddenTermIn(group, opt.input ?? opt.playerText, term, opt.lore)) continue;
       const scope = GM_SELF_TERMS.includes(term) ? voiced : all;
-      if (forbiddenTermIn(group, scope, term)) add(kind, group, term);
+      if (forbiddenTermIn(group, scope, term, opt.lore)) add(kind, group, term);
     }
   }
   for (const [right, wrongs] of Object.entries(opt.lore.misspellings)) {

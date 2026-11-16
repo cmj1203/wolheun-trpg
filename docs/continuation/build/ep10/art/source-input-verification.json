@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-11-09T05:17:27.326Z",
+  "result": "원작 참조 입력 검증 통과",
+  "art_QA": null,
+  "native_generation_calls": 0,
+  "source_pages_checked": 18,
+  "source_windows_preserved": 78,
+  "real_input_files": 92,
+  "full_cut_inputs": 70,
+  "selected_panel_inputs": 22,
+  "total_input_bytes": 358466465,
+  "input_file_hashes_match": 92,
+  "decoded_pixel_comparisons": 92,
+  "approved_candidates_and_reveal_anchors_preserved": 92,
+  "approved_mapping_unchanged": true,
+  "approved_candidate_manifest_unchanged": true,
+  "current_yaml_unchanged": true,
+  "source_cut_partition_has_no_missing_or_duplicate_rows": true,
+  "existing_candidates_overwritten": 0,
+  "generated_art_candidate_files": 0,
+  "c070": "원본 픽셀과 침묵 앵커 보존; 화자 미확정 유지",
+  "errors": [],
+  "visual_scope": "22개 분할 입력 확인판의 패널 경계 관찰은 입력 선택 확인이며 독립 Claude 완성 그림 QA가 아님",
+  "visual_observation": {
+    "prepared_panel_preview": "docs/continuation/build/ep10/art/input-survey/prepared-panels.jpg",
+    "observed_split_inputs": 22,
+    "c070_input": "assets/ep10/gen/inputs/ep10_c070.source.png",
+    "observations": [
+      "8개 컷의 22개 입력에서 왕·다른 남성·뱀 비유·욕실, 누르→책을 든 왕, 가족 회상→현재 아시나 순서를 확인",
+      "c078은 청백 여백→아시나 옆모습→흑백 여백→눈색 공개 왕→입술 부근 손가락 반응으로 분리됨",
+      "c070 입력은 얼굴·풍선 꼬리 없이 말줄임표와 장식만 남아 화자를 특정하지 않음"
+    ],
+    "independent_art_QA": false
+  }
+}

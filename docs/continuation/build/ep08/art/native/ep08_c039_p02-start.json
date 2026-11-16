@@ -1,0 +1,25 @@
+{
+  "candidate_id": "ep08_c039_p02",
+  "pid": 26498,
+  "pgid": 26498,
+  "started_at": 1794204660.284111,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep08/gen/inputs/ep08_c039_p02.png",
+  "input_sha256": "a6790d039b2d6b045a5dae2e5c02e9afb6cf03859eab0591e0ac3ca13c461cae",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep08/gen/ep08_c039_p02.png",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep08/art/native/ep08_c039_p02.log",
+  "native_active_before_launch": [
+    {
+      "pid": 24937,
+      "pgid": 24937,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write --json -C /Users/choeminju/월흔_trpg/assets/ep06/gen -i /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c001.png -- 첨부한 실제 원작 입력을 Codex 내장 image_gen으로 정확히 한 번만 편집한다. 이 후보는 ep06_c001이다. 첫 첨부가 편집 대상이며 지정된 보조 첨부가 있다면 원문·연속성 확인용이다. 보조 그림의 인물·장면을 결과에 추가하지 않는다.\\012원작 ep06_c001의 해당 원작 컷의 단일 그림. 한 시점의 설명·심상 합성은 원작 겹침을 유지한다.만 입력으로 사용한다. 원래 얼굴·표정·복장·가림·소품·문양·인원·구도를 최대한 유지하"
+    },
+    {
+      "pid": 25208,
+      "pgid": 25208,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C /Users/choeminju/월흔_trpg/assets/ep04/gen -i /Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c011_b_disguise-selected.png -- 실행 경로 교정: 첨부된 /Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c011_b_disguise-selected.png는 실제 원작 창을 이미 추출한 유효한 입력이다. 이 첨부를 직접 내장 image_gen에 사용한다. 원본 페이지에서 같은 창을 다시 추출하거나 /private/tmp의 존재하지 않는 파일을 읽을 필요가 없다. 이 환경에는 bare `python` 명령이 없다. 별도 이미지"
+    }
+  ],
+  "native_active_before_count": 2,
+  "slot_counter": "argv 첫 실행 파일 기준",
+  "independent_qa": "대기"
+}

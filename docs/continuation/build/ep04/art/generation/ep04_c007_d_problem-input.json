@@ -1,0 +1,38 @@
+{
+  "asset_id": "ep04_c007_d_problem",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_002.png",
+  "source_page_sha256": "c9fa8949673dc458e79de6dc5989b37b235b8ddb03f0788c7eba9dde48351ae1",
+  "source_cut_window": [
+    0,
+    344,
+    2000,
+    22818
+  ],
+  "selected_window": [
+    296,
+    14895,
+    1712,
+    17910
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c007.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_d_problem-selected.png",
+  "selected_size": [
+    1416,
+    3015
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_d_problem-selected.png",
+      "role": "실제 선택 원작 전체",
+      "size": [
+        1416,
+        3015
+      ],
+      "local_y": [
+        0,
+        3015
+      ]
+    }
+  ],
+  "transform": "실제 원작 RGB 추출·긴 입력 비율 유지 축소/세부 조각만. 내용 변경 없음."
+}

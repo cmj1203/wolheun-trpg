@@ -1,0 +1,38 @@
+{
+  "asset_id": "ep04_c023_c_landing",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_006.png",
+  "source_page_sha256": "0ab9db6565b47f9dff6919f4808f2688f9963b5b4fc4687284ce518f103fd02e",
+  "source_cut_window": [
+    0,
+    175,
+    2000,
+    18358
+  ],
+  "selected_window": [
+    0,
+    16022,
+    2000,
+    18358
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c023.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c023_c_landing-selected.png",
+  "selected_size": [
+    2000,
+    2336
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c023_c_landing-selected.png",
+      "role": "실제 선택 원작 전체",
+      "size": [
+        2000,
+        2336
+      ],
+      "local_y": [
+        0,
+        2336
+      ]
+    }
+  ],
+  "transform": "실제 원작 RGB 추출·긴 입력 비율 유지 축소/세부 조각만. 내용 변경 없음."
+}

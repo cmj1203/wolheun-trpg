@@ -1,0 +1,201 @@
+{
+  "revision": 2,
+  "changed": [
+    {
+      "file": "behidat_dumbfounded.png",
+      "mode": "각 표정 자체 생성 결과 한 장을 동일 배율로 축소하여 상부 얼굴 한 마스크로 합성",
+      "eye_specific_warp": false,
+      "other_expression_pixels": false,
+      "outside_mask_max_difference": 0,
+      "alpha_identical": true,
+      "changed_pixels": 4587,
+      "bbox": [
+        467,
+        213,
+        560,
+        278
+      ],
+      "sha256": "00eada81bb8baa5570ca503d251660c5abe90cb0ee4ec5b6f5495434b0e7a111"
+    },
+    {
+      "file": "behidat_surprised.png",
+      "mode": "각 표정 자체 생성 결과 한 장을 동일 배율로 축소하여 상부 얼굴 한 마스크로 합성",
+      "eye_specific_warp": false,
+      "other_expression_pixels": false,
+      "outside_mask_max_difference": 0,
+      "alpha_identical": true,
+      "changed_pixels": 4675,
+      "bbox": [
+        467,
+        214,
+        560,
+        278
+      ],
+      "sha256": "b666a6c65e31d12026d3d97d35f0b0d478336fa26c5fb509af52132eb2195bff"
+    },
+    {
+      "file": "behidat_intrigued.png",
+      "mode": "각 표정 자체 생성 결과 한 장을 동일 배율로 축소하여 상부 얼굴 한 마스크로 합성",
+      "eye_specific_warp": false,
+      "other_expression_pixels": false,
+      "outside_mask_max_difference": 0,
+      "alpha_identical": true,
+      "changed_pixels": 4669,
+      "bbox": [
+        467,
+        213,
+        560,
+        278
+      ],
+      "sha256": "f2972d758cb207b1d0cc8a84542b6e845f789e3b71a22ecacaf4fb6e712f8910"
+    },
+    {
+      "file": "behidat_neutral.png",
+      "mode": "각 표정 자체 생성 결과 한 장을 동일 배율로 축소하여 상부 얼굴 한 마스크로 합성",
+      "eye_specific_warp": false,
+      "other_expression_pixels": false,
+      "outside_mask_max_difference": 0,
+      "alpha_identical": true,
+      "changed_pixels": 4720,
+      "bbox": [
+        467,
+        213,
+        560,
+        278
+      ],
+      "sha256": "29bb71b9792ea13d75df46887ec021fdf03ed707aecd84997e23ebb3dc6ad69e"
+    },
+    {
+      "file": "behidat_smile.png",
+      "mode": "각 표정 자체 생성 결과 한 장을 동일 배율로 축소하여 상부 얼굴 한 마스크로 합성",
+      "eye_specific_warp": false,
+      "other_expression_pixels": false,
+      "outside_mask_max_difference": 0,
+      "alpha_identical": true,
+      "changed_pixels": 4680,
+      "bbox": [
+        467,
+        213,
+        560,
+        278
+      ],
+      "sha256": "155b12a68b0b719825cffb9cff8ab646df701c0a00ec2befcb6268fdb37622b0"
+    },
+    {
+      "file": "cg_swing.png",
+      "generated_file": "generated/cg_swing_spacing.png",
+      "mode": "각 표정 자체 생성 결과 한 장을 동일 배율로 축소하여 상부 얼굴 한 마스크로 합성",
+      "eye_specific_warp": false,
+      "other_expression_pixels": false,
+      "outside_mask_max_difference": 0,
+      "alpha_identical": true,
+      "changed_pixels": 4174,
+      "bbox": [
+        998,
+        109,
+        1090,
+        187
+      ],
+      "sha256": "64955b75ed2e03627b42bb7466bd610d26e6f98ef09aabcd7b5070fff2256ffe"
+    }
+  ],
+  "unchanged_pass": [
+    {
+      "file": "behidat_menacing.png",
+      "sha256": "675a77a2dc8a4e1ad6177e9a1c4dc474a24ba67056d7a52d2cb62f61dec92bc9",
+      "r1_byte_identical": true
+    },
+    {
+      "file": "behidat_sneer.png",
+      "sha256": "47e18c7ded705c3eb6d9ca8ec4ca08ddbabca892358f16dc69fecc88ee4d0b4d",
+      "r1_byte_identical": true
+    },
+    {
+      "file": "behidat_wary.png",
+      "sha256": "58c0468eedef96fcc7c7737b6911ce1a95368639e1a6ed6a896573a98f26de3b",
+      "r1_byte_identical": true
+    }
+  ],
+  "assets_identical": 27,
+  "generation_runs": [
+    {
+      "name": "behidat_dumbfounded",
+      "pid": 97187,
+      "pgid": 97187,
+      "exit_code": 0,
+      "seconds": 97.04,
+      "saved": true,
+      "native_sources": [
+        "/Users/choeminju/.codex/generated_images/01a1bdff-0993-7cb2-9bfe-ffa25b25e525/exec-7bd30d4f-f0f8-4618-a389-fe1170234bc1.png"
+      ]
+    },
+    {
+      "name": "behidat_intrigued",
+      "pid": 279,
+      "pgid": 279,
+      "exit_code": 0,
+      "seconds": 101.27,
+      "saved": true,
+      "native_sources": [
+        "/Users/choeminju/.codex/generated_images/01a1be00-7237-7f33-aa46-989e580f7b02/exec-d7367ba0-373c-474c-a39e-3b00dd207860.png"
+      ]
+    },
+    {
+      "name": "behidat_neutral",
+      "pid": 771,
+      "pgid": 771,
+      "exit_code": 0,
+      "seconds": 93.18,
+      "saved": true,
+      "native_sources": [
+        "/Users/choeminju/.codex/generated_images/01a1be00-7da8-7b73-abf1-6a440f63390d/exec-47ac5302-78e8-42ac-891a-68da1fb56202.png"
+      ]
+    },
+    {
+      "name": "behidat_smile",
+      "pid": 1119,
+      "pgid": 1119,
+      "exit_code": 0,
+      "seconds": 92.1,
+      "saved": true,
+      "native_sources": [
+        "/Users/choeminju/.codex/generated_images/01a1be00-91d5-7221-9734-72d3254a1577/exec-1725935b-da1c-4a47-be90-94e525dc83fa.png"
+      ]
+    },
+    {
+      "name": "behidat_surprised",
+      "pid": 97188,
+      "pgid": 97188,
+      "exit_code": 0,
+      "seconds": 94.1,
+      "saved": true,
+      "native_sources": [
+        "/Users/choeminju/.codex/generated_images/01a1bdff-0ab7-7021-afce-1f458aefde25/exec-bf3f01f4-8142-45a6-a2a1-bf9515c6b327.png"
+      ]
+    },
+    {
+      "name": "cg_swing",
+      "pid": 97189,
+      "pgid": 97189,
+      "exit_code": 0,
+      "seconds": 102.21,
+      "saved": true,
+      "native_sources": [
+        "/Users/choeminju/.codex/generated_images/01a1bdff-098e-7762-87b6-ec3d08a1b8ed/exec-8944130b-17cf-468a-acf6-c1f99856173d.png"
+      ]
+    },
+    {
+      "name": "cg_swing_spacing",
+      "pid": 17245,
+      "pgid": 17245,
+      "exit_code": 0,
+      "seconds": 74.0,
+      "saved": true,
+      "native_sources": [
+        "/Users/choeminju/.codex/generated_images/01a1be0a-87dd-7540-97f5-b27fec2bcc53/exec-44ab5b3f-800e-47f5-bf08-57a651b6323f.png"
+      ]
+    }
+  ],
+  "display_sheet_is_composite": true,
+  "installed": false
+}

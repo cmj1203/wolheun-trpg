@@ -1,0 +1,38 @@
+{
+  "asset_id": "ep04_c024_a_scout",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_007.png",
+  "source_page_sha256": "1fb447746c7a222efcd0da4c71193012ffa863ea3a7aa850f03125ba489712a2",
+  "source_cut_window": [
+    0,
+    559,
+    2000,
+    8717
+  ],
+  "selected_window": [
+    0,
+    968,
+    2000,
+    3175
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c024.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c024_a_scout-selected.png",
+  "selected_size": [
+    2000,
+    2207
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c024_a_scout-selected.png",
+      "role": "실제 선택 원작 전체",
+      "size": [
+        2000,
+        2207
+      ],
+      "local_y": [
+        0,
+        2207
+      ]
+    }
+  ],
+  "transform": "실제 원작 RGB 추출·긴 입력 비율 유지 축소/세부 조각만. 내용 변경 없음."
+}

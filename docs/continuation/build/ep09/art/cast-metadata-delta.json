@@ -1,0 +1,418 @@
+{
+  "episode": 9,
+  "checked_at": "2026-11-09T05:06:30.371Z",
+  "scope": "YAML 해시와 캐스트 스냅샷만 갱신",
+  "before_yaml_sha256": "7a013ffcdaa6198d98a81418d5c7e860da59c23c860d30bba89105a3312f2141",
+  "after_yaml_sha256": "a197997efd91aa472ad5bb1a8fb4f0ee675324e8fa8d6750bdff53e0f6b4c60c",
+  "baseline_recovery": {
+    "method": "현재 YAML의 캐스트만 이전 선언으로 메모리 복원한 뒤 원래 바이트 직렬화와 저장 SHA-256을 대조",
+    "sha256_matches_saved_baseline": true,
+    "comparison": "복원본과 현재본의 모든 최상위 키를 파싱 비교"
+  },
+  "changed_top_level_keys": [
+    "cast"
+  ],
+  "changed_alias_count": 13,
+  "cg_alias_count": 15,
+  "cast_changes": [
+    {
+      "actor": "ep09_아시나",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "아시나",
+        "style": "speech",
+        "lore": "아시나",
+        "sprite": "ep09_c009",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "아시나",
+        "style": "speech",
+        "lore": "아시나",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile",
+          "surprised",
+          "wary",
+          "flustered",
+          "scared",
+          "indignant",
+          "smug",
+          "tired"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_독백",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "아시나",
+        "style": "thought",
+        "lore": "아시나",
+        "sprite": "ep09_c009",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "아시나",
+        "style": "thought",
+        "lore": "아시나",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile",
+          "surprised",
+          "wary",
+          "flustered",
+          "scared",
+          "indignant",
+          "smug",
+          "tired"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_밤아시나",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "아시나",
+        "style": "speech",
+        "lore": "아시나",
+        "sprite": "ep09_c075",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "아시나",
+        "style": "speech",
+        "lore": "아시나",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile",
+          "surprised",
+          "wary",
+          "flustered",
+          "scared",
+          "indignant",
+          "smug",
+          "tired"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_밤독백",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "아시나",
+        "style": "thought",
+        "lore": "아시나",
+        "sprite": "ep09_c075",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "아시나",
+        "style": "thought",
+        "lore": "아시나",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile",
+          "surprised",
+          "wary",
+          "flustered",
+          "scared",
+          "indignant",
+          "smug",
+          "tired"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_카림",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "카림",
+        "style": "speech",
+        "lore": "카림",
+        "sprite": "ep09_c012",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "카림",
+        "style": "speech",
+        "lore": "카림",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "wary",
+          "flustered"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_수행자",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "푸른 머리 수행원",
+        "style": "speech",
+        "lore": "나시르",
+        "sprite": "ep09_c023",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "푸른 머리 수행원",
+        "style": "speech",
+        "lore": "나시르",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_수행자독백",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "푸른 머리 수행원",
+        "style": "thought",
+        "lore": "나시르",
+        "sprite": "ep09_c023",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "푸른 머리 수행원",
+        "style": "thought",
+        "lore": "나시르",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_나시르",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "나시르",
+        "style": "speech",
+        "lore": "나시르",
+        "sprite": "ep09_c047",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "나시르",
+        "style": "speech",
+        "lore": "나시르",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_나시르독백",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "나시르",
+        "style": "thought",
+        "lore": "나시르",
+        "sprite": "ep09_c047",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "나시르",
+        "style": "thought",
+        "lore": "나시르",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_상상",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "나시르(아시나의 상상)",
+        "style": "thought",
+        "lore": "아시나",
+        "sprite": "ep09_c068",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "나시르(아시나의 상상)",
+        "style": "thought",
+        "lore": "아시나",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile",
+          "surprised",
+          "wary",
+          "flustered",
+          "scared",
+          "indignant",
+          "smug",
+          "tired"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_장발",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "장발의 남자",
+        "style": "speech",
+        "lore": "ep09_장발대족장",
+        "sprite": "ep09_c082",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "장발의 남자",
+        "style": "speech",
+        "lore": "ep09_장발대족장",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_대족장",
+      "changed_keys": [
+        "sprite",
+        "faces",
+        "presentation"
+      ],
+      "before": {
+        "display": "대족장",
+        "style": "speech",
+        "lore": "ep09_장발대족장",
+        "sprite": "ep09_c082",
+        "faces": [
+          "neutral"
+        ]
+      },
+      "after": {
+        "display": "대족장",
+        "style": "speech",
+        "lore": "ep09_장발대족장",
+        "presentation": "cg",
+        "faces": [
+          "neutral",
+          "smile"
+        ]
+      }
+    },
+    {
+      "actor": "ep09_동행",
+      "changed_keys": [
+        "presentation",
+        "faces"
+      ],
+      "before": {
+        "display": "동행한 남자",
+        "style": "speech",
+        "lore": "ep09_대족장동행"
+      },
+      "after": {
+        "display": "동행한 남자",
+        "style": "speech",
+        "lore": "ep09_대족장동행",
+        "presentation": "cg",
+        "faces": [
+          "neutral"
+        ]
+      }
+    }
+  ],
+  "current_cast_sha256": "9809b5eed29e7ec5571cf7b69c18084c9e9617417be47356ef65f05b015e95dc",
+  "checks": {
+    "cast_only": true,
+    "all_15_cg_without_sprite": true,
+    "exact_faces_by_person": true,
+    "all_132_current_anchors_match": true,
+    "candidates_77_unchanged": true,
+    "source_windows_unchanged": true,
+    "line_timing_perspective_branches_identity_unchanged": true
+  },
+  "preserved_sha256": {
+    "mapping_without_snapshot": "5b526c21a3bcc84b0fcb80b2b3fddf734e09e7b5099d58eddd477ada015595f2",
+    "manifest_without_snapshot": "327914554f570ed0f320dc1ec6b3f8c275f38fa69ade080ac54b3a6d2864eb38"
+  },
+  "source_evidence": "docs/continuation/build/ep09/all-cg-alias-fix.md",
+  "full_test_rerun": false,
+  "generation_calls": 0,
+  "note": "이전 verification.json은 당시 기준선의 검사 이력으로 보존한다. 이번 증거는 캐스트 변경에 따른 메타데이터 한정 갱신만 확인한다."
+}

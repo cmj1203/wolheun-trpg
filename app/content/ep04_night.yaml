@@ -1,0 +1,3997 @@
+# 원작 검증용 그림을 연결한 4화 독립 대본. Astra 완성 그림과 캠페인 화면 검수는 미완료.
+{
+  "id": "ep04_night",
+  "title": "밤의 궁정",
+  "episode": "4화",
+  "source": "웹툰 「월흔」 4화 63컷 및 014번 컷 사이 보충 풍선",
+  "rating": "15세 이용가",
+  "start": "ep04_c001",
+  "sheet": {
+    "name": "아시나",
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "tracks": {
+      "체력": 4,
+      "정신력": 4,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "items": [
+      {
+        "id": "magic_bag",
+        "file": "assets/ep01/gen/items/item_magic_bag.png",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.",
+        "states": [
+          {
+            "flag": "가방_끈",
+            "label": "끈 끊김",
+            "desc": "끈이 끊어져 손으로 쥐고 다닌다."
+          },
+          {
+            "flag": "짐_쏟음",
+            "label": "짐 쏟아짐",
+            "desc": "호위가 뒤집어 짐이 모래에 쏟아졌다."
+          }
+        ]
+      },
+      {
+        "id": "earring",
+        "file": "assets/ep01/gen/items/item_earring.png",
+        "name": "마법 귀찌",
+        "desc": "귓불에 달린 마법 귀찌."
+      },
+      {
+        "id": "map",
+        "file": "assets/ep01/gen/items/item_map.png",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도.",
+        "container": {
+          "item": "magic_bag",
+          "unless": "flag:지도_꺼냄 || flag:짐_쏟음"
+        },
+        "states": [
+          {
+            "flag": "지도_찢김",
+            "label": "찢김",
+            "desc": "한 귀퉁이가 찢겨 나갔다."
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "file": "assets/ep01/gen/items/item_pin.png",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀.",
+        "hidden": true
+      }
+    ],
+    "tension": 3
+  },
+  "cast": {
+    "나레이션": {
+      "display": "",
+      "style": "narration"
+    },
+    "GM": {
+      "display": "GM",
+      "style": "gm",
+      "sprite": "gm"
+    },
+    "아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "sprite": "asina_hood",
+      "sprite_alt": {
+        "if": "flag:후드_벗음",
+        "sprite": "asina"
+      },
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "속마음": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "남자": {
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "sprite": "man",
+      "lore": "베히다트",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    },
+    "ep04_asina": {
+      "display": "아시나",
+      "style": "speech",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep04_thought": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep04_man": {
+      "display": "남성",
+      "style": "speech",
+      "lore": "베히다트",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    },
+    "ep04_behidat": {
+      "display": "베히다트",
+      "style": "speech",
+      "lore": "베히다트",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    }
+  },
+  "backgrounds": {
+    "ep04_c001_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c001.png",
+      "fit": "contain"
+    },
+    "ep04_c002_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c002.png",
+      "fit": "contain"
+    },
+    "ep04_c003_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c003.png",
+      "fit": "contain"
+    },
+    "ep04_c004_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c004.png",
+      "fit": "contain"
+    },
+    "ep04_c005_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c005.png",
+      "fit": "contain"
+    },
+    "ep04_c006_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c006.png",
+      "fit": "contain"
+    },
+    "ep04_c007_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c007.png",
+      "fit": "contain"
+    },
+    "ep04_c008_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c008.png",
+      "fit": "contain"
+    },
+    "ep04_c009_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c009.png",
+      "fit": "contain"
+    },
+    "ep04_c010_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c010.png",
+      "fit": "contain"
+    },
+    "ep04_c011_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c011.png",
+      "fit": "contain"
+    },
+    "ep04_c012_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c012.png",
+      "fit": "contain"
+    },
+    "ep04_c013_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c013.png",
+      "fit": "contain"
+    },
+    "ep04_c014_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c014.png",
+      "fit": "contain"
+    },
+    "ep04_c015_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c015.png",
+      "fit": "contain"
+    },
+    "ep04_c016_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c016.png",
+      "fit": "contain"
+    },
+    "ep04_c017_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c017.png",
+      "fit": "contain"
+    },
+    "ep04_c018_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c018.png",
+      "fit": "contain"
+    },
+    "ep04_c019_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c019.png",
+      "fit": "contain"
+    },
+    "ep04_c020_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c020.png",
+      "fit": "contain"
+    },
+    "ep04_c021_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c021.png",
+      "fit": "contain"
+    },
+    "ep04_c022_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c022.png",
+      "fit": "contain"
+    },
+    "ep04_c023_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c023.png",
+      "fit": "contain"
+    },
+    "ep04_c024_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c024.png",
+      "fit": "contain"
+    },
+    "ep04_c025_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c025.png",
+      "fit": "contain"
+    },
+    "ep04_c026_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c026.png",
+      "fit": "contain"
+    },
+    "ep04_c027_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c027.png",
+      "fit": "contain"
+    },
+    "ep04_c028_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c028.png",
+      "fit": "contain"
+    },
+    "ep04_c029_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c029.png",
+      "fit": "contain"
+    },
+    "ep04_c030_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c030.png",
+      "fit": "contain"
+    },
+    "ep04_c031_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c031.png",
+      "fit": "contain"
+    },
+    "ep04_c032_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c032.png",
+      "fit": "contain"
+    },
+    "ep04_c033_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c033.png",
+      "fit": "contain"
+    },
+    "ep04_c034_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c034.png",
+      "fit": "contain"
+    },
+    "ep04_c035_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c035.png",
+      "fit": "contain"
+    },
+    "ep04_c036_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c036_r2.png",
+      "fit": "contain"
+    },
+    "ep04_c037_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c037.png",
+      "fit": "contain"
+    },
+    "ep04_c038_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c038.png",
+      "fit": "contain"
+    },
+    "ep04_c039_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c039.png",
+      "fit": "contain"
+    },
+    "ep04_c040_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c040_r2.png",
+      "fit": "contain"
+    },
+    "ep04_c041_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c041.png",
+      "fit": "contain"
+    },
+    "ep04_c042_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c042.png",
+      "fit": "contain"
+    },
+    "ep04_c043_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c043.png",
+      "fit": "contain"
+    },
+    "ep04_c044_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c044.png",
+      "fit": "contain"
+    },
+    "ep04_c045_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c045.png",
+      "fit": "contain"
+    },
+    "ep04_c046_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c046.png",
+      "fit": "contain"
+    },
+    "ep04_c047_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c047.png",
+      "fit": "contain"
+    },
+    "ep04_c048_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c048.png",
+      "fit": "contain"
+    },
+    "ep04_c049_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c049.png",
+      "fit": "contain"
+    },
+    "ep04_c050_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c050.png",
+      "fit": "contain"
+    },
+    "ep04_c051_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c051.png",
+      "fit": "contain"
+    },
+    "ep04_c052_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c052.png",
+      "fit": "contain"
+    },
+    "ep04_c053_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c053.png",
+      "fit": "contain"
+    },
+    "ep04_c054_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c054.png",
+      "fit": "contain"
+    },
+    "ep04_c055_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c055_r2.png",
+      "fit": "contain"
+    },
+    "ep04_c056_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c056.png",
+      "fit": "contain"
+    },
+    "ep04_c057_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c057.png",
+      "fit": "contain"
+    },
+    "ep04_c058_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c058.png",
+      "fit": "contain"
+    },
+    "ep04_c059_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c059.png",
+      "fit": "contain"
+    },
+    "ep04_c060_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c060.png",
+      "fit": "contain"
+    },
+    "ep04_c061_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c061.png",
+      "fit": "contain"
+    },
+    "ep04_c062_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c062.png",
+      "fit": "contain"
+    },
+    "ep04_c063_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c063.png",
+      "fit": "contain"
+    },
+    "ep04_c007_a_wedding_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c007_a_wedding_revision02.png",
+      "fit": "contain"
+    },
+    "ep04_c031_a_escape_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c031_a_escape.png",
+      "fit": "contain"
+    },
+    "ep04_c057_a_wet_stage": {
+      "label": "원작 검증용 장면",
+      "placeholder": "blackout",
+      "file": "assets/ep04/gen/ep04_c057_a_wet.png",
+      "fit": "contain"
+    }
+  },
+  "sprites": {
+    "asina_hood": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_neutral_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_smile": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_smile_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_surprised": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_surprised.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_wary": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_wary_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_flustered": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_flustered_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_scared": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_scared_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_indignant": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_indignant_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_smug": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_smug_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_tired": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_tired_r91.png",
+      "placeholder": "asina"
+    },
+    "asina": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_neutral_r91.png",
+      "placeholder": "asina",
+      "alt": {
+        "if": "!item:magic_bag",
+        "id": "asina_nobag"
+      }
+    },
+    "asina_smile": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_smile_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_surprised": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_surprised.png",
+      "placeholder": "asina"
+    },
+    "asina_wary": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_wary_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_flustered": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_flustered_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_scared": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_scared_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_indignant": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_indignant_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_smug": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_smug_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_tired": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_tired_r91.png",
+      "placeholder": "asina"
+    },
+    "man": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_neutral.png",
+      "placeholder": "man"
+    },
+    "man_sneer": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_sneer.png",
+      "placeholder": "man"
+    },
+    "man_dumbfounded": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_dumbfounded.png",
+      "placeholder": "man"
+    },
+    "man_menacing": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_menacing.png",
+      "placeholder": "man"
+    },
+    "man_intrigued": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_intrigued.png",
+      "placeholder": "man"
+    },
+    "gm": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_neutral.png",
+      "placeholder": "gm"
+    },
+    "gm_smile": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_smile.png",
+      "placeholder": "gm"
+    },
+    "gm_thinking": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_thinking.png",
+      "placeholder": "gm"
+    },
+    "gm_surprised": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_surprised.png",
+      "placeholder": "gm"
+    },
+    "man_smile": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_smile.png",
+      "placeholder": "man"
+    },
+    "man_surprised": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_surprised.png",
+      "placeholder": "man"
+    },
+    "man_wary": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_wary.png",
+      "placeholder": "man"
+    },
+    "asina_nobag": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_neutral_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_smile": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_smile_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_surprised": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_surprised_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_wary": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_wary_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_flustered": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_flustered_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_scared": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_scared_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_indignant": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_indignant_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_smug": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_smug_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_tired": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_tired_v7r92.png",
+      "placeholder": "asina"
+    }
+  },
+  "cgs": {
+    "ep04_c001_source": {
+      "label": "4화 1컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c001.png",
+      "fit": "contain"
+    },
+    "ep04_c002_source": {
+      "label": "4화 2컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c002.png",
+      "fit": "contain"
+    },
+    "ep04_c003_source": {
+      "label": "4화 3컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c003.png",
+      "fit": "contain"
+    },
+    "ep04_c004_source": {
+      "label": "4화 4컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c004.png",
+      "fit": "contain"
+    },
+    "ep04_c005_source": {
+      "label": "4화 5컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c005.png",
+      "fit": "contain"
+    },
+    "ep04_c006_source": {
+      "label": "4화 6컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c006.png",
+      "fit": "contain"
+    },
+    "ep04_c007_source": {
+      "label": "4화 7컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c007.png",
+      "fit": "contain"
+    },
+    "ep04_c008_source": {
+      "label": "4화 8컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c008.png",
+      "fit": "contain"
+    },
+    "ep04_c009_source": {
+      "label": "4화 9컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c009.png",
+      "fit": "contain"
+    },
+    "ep04_c010_source": {
+      "label": "4화 10컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c010.png",
+      "fit": "contain"
+    },
+    "ep04_c011_source": {
+      "label": "4화 11컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c011.png",
+      "fit": "contain"
+    },
+    "ep04_c012_source": {
+      "label": "4화 12컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c012.png",
+      "fit": "contain"
+    },
+    "ep04_c013_source": {
+      "label": "4화 13컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c013.png",
+      "fit": "contain"
+    },
+    "ep04_c014_source": {
+      "label": "4화 14컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c014.png",
+      "fit": "contain"
+    },
+    "ep04_c015_source": {
+      "label": "4화 15컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c015.png",
+      "fit": "contain"
+    },
+    "ep04_c016_source": {
+      "label": "4화 16컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c016.png",
+      "fit": "contain"
+    },
+    "ep04_c017_source": {
+      "label": "4화 17컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c017.png",
+      "fit": "contain"
+    },
+    "ep04_c018_source": {
+      "label": "4화 18컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c018.png",
+      "fit": "contain"
+    },
+    "ep04_c019_source": {
+      "label": "4화 19컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c019.png",
+      "fit": "contain"
+    },
+    "ep04_c020_source": {
+      "label": "4화 20컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c020.png",
+      "fit": "contain"
+    },
+    "ep04_c021_source": {
+      "label": "4화 21컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c021.png",
+      "fit": "contain"
+    },
+    "ep04_c022_source": {
+      "label": "4화 22컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c022.png",
+      "fit": "contain"
+    },
+    "ep04_c023_source": {
+      "label": "4화 23컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c023.png",
+      "fit": "contain"
+    },
+    "ep04_c024_source": {
+      "label": "4화 24컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c024.png",
+      "fit": "contain"
+    },
+    "ep04_c025_source": {
+      "label": "4화 25컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c025.png",
+      "fit": "contain"
+    },
+    "ep04_c026_source": {
+      "label": "4화 26컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c026.png",
+      "fit": "contain"
+    },
+    "ep04_c027_source": {
+      "label": "4화 27컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c027.png",
+      "fit": "contain"
+    },
+    "ep04_c028_source": {
+      "label": "4화 28컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c028.png",
+      "fit": "contain"
+    },
+    "ep04_c029_source": {
+      "label": "4화 29컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c029.png",
+      "fit": "contain"
+    },
+    "ep04_c030_source": {
+      "label": "4화 30컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c030.png",
+      "fit": "contain"
+    },
+    "ep04_c031_source": {
+      "label": "4화 31컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c031.png",
+      "fit": "contain"
+    },
+    "ep04_c032_source": {
+      "label": "4화 32컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c032.png",
+      "fit": "contain"
+    },
+    "ep04_c033_source": {
+      "label": "4화 33컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c033.png",
+      "fit": "contain"
+    },
+    "ep04_c034_source": {
+      "label": "4화 34컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c034.png",
+      "fit": "contain"
+    },
+    "ep04_c035_source": {
+      "label": "4화 35컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c035.png",
+      "fit": "contain"
+    },
+    "ep04_c036_source": {
+      "label": "4화 36컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c036.png",
+      "fit": "contain"
+    },
+    "ep04_c037_source": {
+      "label": "4화 37컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c037.png",
+      "fit": "contain"
+    },
+    "ep04_c038_source": {
+      "label": "4화 38컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c038.png",
+      "fit": "contain"
+    },
+    "ep04_c039_source": {
+      "label": "4화 39컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c039.png",
+      "fit": "contain"
+    },
+    "ep04_c040_source": {
+      "label": "4화 40컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c040.png",
+      "fit": "contain"
+    },
+    "ep04_c041_source": {
+      "label": "4화 41컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c041.png",
+      "fit": "contain"
+    },
+    "ep04_c042_source": {
+      "label": "4화 42컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c042.png",
+      "fit": "contain"
+    },
+    "ep04_c043_source": {
+      "label": "4화 43컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c043.png",
+      "fit": "contain"
+    },
+    "ep04_c044_source": {
+      "label": "4화 44컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c044.png",
+      "fit": "contain"
+    },
+    "ep04_c045_source": {
+      "label": "4화 45컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c045.png",
+      "fit": "contain"
+    },
+    "ep04_c046_source": {
+      "label": "4화 46컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c046.png",
+      "fit": "contain"
+    },
+    "ep04_c047_source": {
+      "label": "4화 47컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c047.png",
+      "fit": "contain"
+    },
+    "ep04_c048_source": {
+      "label": "4화 48컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c048.png",
+      "fit": "contain"
+    },
+    "ep04_c049_source": {
+      "label": "4화 49컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c049.png",
+      "fit": "contain"
+    },
+    "ep04_c050_source": {
+      "label": "4화 50컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c050.png",
+      "fit": "contain"
+    },
+    "ep04_c051_source": {
+      "label": "4화 51컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c051.png",
+      "fit": "contain"
+    },
+    "ep04_c052_source": {
+      "label": "4화 52컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c052.png",
+      "fit": "contain"
+    },
+    "ep04_c053_source": {
+      "label": "4화 53컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c053.png",
+      "fit": "contain"
+    },
+    "ep04_c054_source": {
+      "label": "4화 54컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c054.png",
+      "fit": "contain"
+    },
+    "ep04_c055_source": {
+      "label": "4화 55컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c055.png",
+      "fit": "contain"
+    },
+    "ep04_c056_source": {
+      "label": "4화 56컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c056.png",
+      "fit": "contain"
+    },
+    "ep04_c057_source": {
+      "label": "4화 57컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c057.png",
+      "fit": "contain"
+    },
+    "ep04_c058_source": {
+      "label": "4화 58컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c058.png",
+      "fit": "contain"
+    },
+    "ep04_c059_source": {
+      "label": "4화 59컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c059.png",
+      "fit": "contain"
+    },
+    "ep04_c060_source": {
+      "label": "4화 60컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c060.png",
+      "fit": "contain"
+    },
+    "ep04_c061_source": {
+      "label": "4화 61컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c061.png",
+      "fit": "contain"
+    },
+    "ep04_c062_source": {
+      "label": "4화 62컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c062.png",
+      "fit": "contain"
+    },
+    "ep04_c063_source": {
+      "label": "4화 63컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/cuts/full_res/clean/ep04_c063.png",
+      "fit": "contain"
+    },
+    "ep04_c007_a_wedding": {
+      "label": "4화 7컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c007_a_wedding_revision02.png",
+      "fit": "contain"
+    },
+    "ep04_c031_a_escape": {
+      "label": "4화 31컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c031_a_escape.png",
+      "fit": "contain"
+    },
+    "ep04_c031_b_found": {
+      "label": "4화 31컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c031_b_found_r3.png",
+      "fit": "contain"
+    },
+    "ep04_c032": {
+      "label": "4화 32컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c032.png",
+      "fit": "contain"
+    },
+    "ep04_c033": {
+      "label": "4화 33컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c033.png",
+      "fit": "contain"
+    },
+    "ep04_c035": {
+      "label": "4화 35컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c035.png",
+      "fit": "contain"
+    },
+    "ep04_c036": {
+      "label": "4화 36컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c036_r2.png",
+      "fit": "contain"
+    },
+    "ep04_c038": {
+      "label": "4화 38컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c038.png",
+      "fit": "contain"
+    },
+    "ep04_c039": {
+      "label": "4화 39컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c039.png",
+      "fit": "contain"
+    },
+    "ep04_c040": {
+      "label": "4화 40컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c040_r2.png",
+      "fit": "contain"
+    },
+    "ep04_c041": {
+      "label": "4화 41컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c041.png",
+      "fit": "contain"
+    },
+    "ep04_c042": {
+      "label": "4화 42컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c042.png",
+      "fit": "contain"
+    },
+    "ep04_c043": {
+      "label": "4화 43컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c043.png",
+      "fit": "contain"
+    },
+    "ep04_c044": {
+      "label": "4화 44컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c044.png",
+      "fit": "contain"
+    },
+    "ep04_c045": {
+      "label": "4화 45컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c045.png",
+      "fit": "contain"
+    },
+    "ep04_c046": {
+      "label": "4화 46컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c046.png",
+      "fit": "contain"
+    },
+    "ep04_c047": {
+      "label": "4화 47컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c047.png",
+      "fit": "contain"
+    },
+    "ep04_c048": {
+      "label": "4화 48컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c048.png",
+      "fit": "contain"
+    },
+    "ep04_c049": {
+      "label": "4화 49컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c049.png",
+      "fit": "contain"
+    },
+    "ep04_c050": {
+      "label": "4화 50컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c050.png",
+      "fit": "contain"
+    },
+    "ep04_c051": {
+      "label": "4화 51컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c051.png",
+      "fit": "contain"
+    },
+    "ep04_c052": {
+      "label": "4화 52컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c052.png",
+      "fit": "contain"
+    },
+    "ep04_c053": {
+      "label": "4화 53컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c053.png",
+      "fit": "contain"
+    },
+    "ep04_c054": {
+      "label": "4화 54컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c054.png",
+      "fit": "contain"
+    },
+    "ep04_c055": {
+      "label": "4화 55컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c055_r2.png",
+      "fit": "contain"
+    },
+    "ep04_c056": {
+      "label": "4화 56컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c056.png",
+      "fit": "contain"
+    },
+    "ep04_c057_a_wet": {
+      "label": "4화 57컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c057_a_wet.png",
+      "fit": "contain"
+    },
+    "ep04_c057_b_approach": {
+      "label": "4화 57컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c057_b_approach.png",
+      "fit": "contain"
+    },
+    "ep04_c058": {
+      "label": "4화 58컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c058.png",
+      "fit": "contain"
+    },
+    "ep04_c059": {
+      "label": "4화 59컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c059.png",
+      "fit": "contain"
+    },
+    "ep04_c060": {
+      "label": "4화 60컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c060.png",
+      "fit": "contain"
+    },
+    "ep04_c061": {
+      "label": "4화 61컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c061.png",
+      "fit": "contain"
+    },
+    "ep04_c062": {
+      "label": "4화 62컷 원작 검증용·완성 그림 미검수",
+      "file": "assets/ep04/gen/ep04_c062.png",
+      "fit": "contain"
+    }
+  },
+  "facts": [
+    {
+      "if": "flag:ep04_active && flag:ep04_earring_rest_known",
+      "text": "변색을 풀고 귀찌를 일주일 쉬게 해야 한다. 현재 남은 일주일과 별개이며 자동 충전이 아니다.",
+      "state_guard": [
+        "귀찌가 자동 충전됐다",
+        "변색을 유지한 채 쉬었다"
+      ]
+    },
+    {
+      "if": "flag:ep04_active && flag:ep04_earring_week_known",
+      "text": "현재 남은 시간은 아시나 계산으로 일주일이다. 남은 수치를 7로 초기화하지 않는다.",
+      "state_guard": [
+        "귀찌 수명이 다시 일주일로 찼다"
+      ]
+    },
+    {
+      "if": "flag:ep04_active && !flag:ep04_name_known",
+      "text": "남성의 실명은 아직 직접 듣지 못했다. 시하드라는 앞선 호칭은 실명·통치자 확인과 별개다.",
+      "state_guard": [
+        "베히다트라는 이름을 들었다"
+      ]
+    },
+    {
+      "if": "flag:ep04_active && flag:ep04_name_known",
+      "text": "남성은 시하드 젠 베히다트라고 자기소개했다. 다른 이름표의 남성과 같은 사람이다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep04_active && !flag:ep04_ruler_known",
+      "text": "통치자임은 아직 확인하지 않았다. c035 권력 주장과 c037 조건문은 확인을 대신하지 못한다.",
+      "state_guard": [
+        "왕이라는 사실을 확인했다"
+      ]
+    },
+    {
+      "if": "flag:ep04_active && flag:ep04_ruler_known",
+      "text": "베히다트는 페시안의 주인이라고 밝혔다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep04_active && flag:ep04_title_known",
+      "text": "아시나는 라 쿤·살아있는 신이라는 칭호를 연결했다. 초능력 입증이 아니다.",
+      "state_guard": [
+        "신의 힘을 확인했다"
+      ]
+    },
+    {
+      "if": "flag:ep04_active && flag:ep04_origin_private",
+      "text": "크롬웰 출신 독백은 베히다트가 듣지 못했다. 이전 귀족 자제 추측은 공녀 정체 확인이 아니다.",
+      "state_guard": [
+        "공녀라는 사실을 알아챘다",
+        "속마음을 들었다"
+      ]
+    },
+    {
+      "if": "flag:ep04_active && flag:ep04_distance_kept",
+      "text": "손이 닿지 않는 거리를 확보했다. 눈동자 칭찬까지 거리를 유지하고 눕히기·턱받침·귓가 접근으로 되돌리지 않는다.",
+      "state_guard": [
+        "다시 얼굴을 가까이했다",
+        "귓가에 속삭였다",
+        "침대에 눕혔다",
+        "턱을 받쳤다"
+      ]
+    },
+    {
+      "if": "flag:ep04_active && flag:ep04_started",
+      "text": "갈색 변장과 귀찌는 작동 중이다. 짐·치부책은 미회수이며 이번 밤에 귀찌 휴식·탈출은 완료하지 않았다.",
+      "state_guard": [
+        "탈출에 성공했다",
+        "짐을 되찾았다",
+        "치부책을 되찾았다",
+        "은발이 드러났다"
+      ]
+    }
+  ],
+  "beats": {
+    "ep04_c001": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c001",
+      "bg": "ep04_c001_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c001_source"
+        }
+      ],
+      "next": "ep04_c002",
+      "effects": {
+        "flags": {
+          "ep04_started": true,
+          "ep04_active": true
+        },
+        "lose": [
+          "magic_bag",
+          "map"
+        ]
+      }
+    },
+    "ep04_c002": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c002",
+      "bg": "ep04_c002_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c002_source"
+        }
+      ],
+      "next": "ep04_c003"
+    },
+    "ep04_c003": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c003",
+      "bg": "ep04_c003_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "진짜 죽을 위기에 봉착한 것 같다.",
+          "cg": "ep04_c003_source"
+        }
+      ],
+      "next": "ep04_c004"
+    },
+    "ep04_c004": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c004",
+      "bg": "ep04_c004_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "난 그냥 사막을 보고 싶었을 뿐이었는데…",
+          "cg": "ep04_c004_source"
+        },
+        {
+          "ep04_thought": "억울해…!",
+          "cg": "ep04_c004_source"
+        }
+      ],
+      "next": "ep04_c005"
+    },
+    "ep04_c005": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c005",
+      "bg": "ep04_c005_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c005_source"
+        }
+      ],
+      "next": "ep04_c006"
+    },
+    "ep04_c006": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c006",
+      "bg": "ep04_c006_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "…아냐, 정신 차리자.",
+          "cg": "ep04_c006_source"
+        },
+        {
+          "ep04_thought": "이런 건 나답지 않아!",
+          "cg": "ep04_c006_source"
+        }
+      ],
+      "next": "ep04_c007"
+    },
+    "ep04_c007": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c007",
+      "bg": "ep04_c007_a_wedding_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "여기서 나가야 해.",
+          "cg": "ep04_c007_a_wedding"
+        },
+        {
+          "ep04_thought": "얼굴도 모르는 놈팽이의 아내가 될 수는 없어!",
+          "cg": "ep04_c007_a_wedding"
+        },
+        {
+          "ep04_thought": "삼엄하기로 소문난 북부 펜족의 감옥에서조차 싱글벙글 웃으며 탈출했던 나야.",
+          "cg": "ep04_c007_source"
+        },
+        {
+          "ep04_thought": "이런 뻥 뚫린 곳 따위 탈출하는 거야 식은 죽 먹기지.",
+          "cg": "ep04_c007_source"
+        },
+        {
+          "ep04_thought": "하지만 두 가지 문제가 있다.",
+          "cg": "ep04_c007_source"
+        },
+        {
+          "ep04_thought": "첫 번째는, 잃어버린 내 짐.",
+          "cg": "ep04_c007_source",
+          "sets": "ep04_luggage_needed"
+        }
+      ],
+      "next": "ep04_c008"
+    },
+    "ep04_c008": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c008",
+      "bg": "ep04_c008_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "불러오는 중… / 사망",
+          "cg": "ep04_c008_source"
+        },
+        {
+          "ep04_thought": "그거 없이는 탈출해 봤자 사막에서 조난당해 죽을 거야.",
+          "cg": "ep04_c008_source"
+        }
+      ],
+      "next": "ep04_c009"
+    },
+    "ep04_c009": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c009",
+      "bg": "ep04_c009_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "무엇보다도 치부책.",
+          "cg": "ep04_c009_source",
+          "sets": "ep04_ledger_needed"
+        }
+      ],
+      "next": "ep04_c010"
+    },
+    "ep04_c010": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c010",
+      "bg": "ep04_c010_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "치부책 레벨 999 여행의 중요한 루트에서는 언제나 부모님의 권위에 꺾이기 때문에 만든 책.",
+          "cg": "ep04_c010_source"
+        }
+      ],
+      "next": "ep04_c011"
+    },
+    "ep04_c011": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c011",
+      "bg": "ep04_c011_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "그게 없으면 서대륙은커녕 북대륙에서도 마음대로 다닐 수 없으니… 꼭 찾아야 해.",
+          "cg": "ep04_c011_source"
+        },
+        {
+          "ep04_thought": "두 번째는 귀찌.",
+          "cg": "ep04_c011_source"
+        },
+        {
+          "ep04_thought": "귀찌에 걸린 변색 마법은 무적이 아니라, 일주일은 변색을 풀고 귀찌를 쉬게 해 주어야 했다.",
+          "cg": "ep04_c011_source"
+        },
+        {
+          "ep04_thought": "안 그러면 망가지니까.",
+          "cg": "ep04_c011_source",
+          "sets": "ep04_earring_rest_known"
+        }
+      ],
+      "next": "ep04_c012"
+    },
+    "ep04_c012": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c012",
+      "bg": "ep04_c012_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "계산해 봤을 때…",
+          "cg": "ep04_c012_source"
+        },
+        {
+          "ep04_thought": "귀찌가 버틸 수 있는 시간은 일주일.",
+          "cg": "ep04_c012_source",
+          "sets": "ep04_earring_week_known"
+        }
+      ],
+      "next": "ep04_c013"
+    },
+    "ep04_c013": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c013",
+      "bg": "ep04_c013_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "일주일 안에 이곳을 탈출해야 한다!",
+          "cg": "ep04_c013_source",
+          "sets": "ep04_escape_deadline"
+        }
+      ],
+      "next": "ep04_c014"
+    },
+    "ep04_c014": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c014",
+      "bg": "ep04_c014_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "그럼 일단 내가 할 수 있는 건.",
+          "cg": "ep04_c014_source",
+          "effects": {
+            "flags": {
+              "ep03_금색신발_벗음": false,
+              "ep04_청록단화_착용": true
+            }
+          }
+        },
+        {
+          "ep04_asina": "탐색과 지리 파악 정도인가.",
+          "cg": "ep04_c014_source"
+        }
+      ],
+      "next": "ep04_c015"
+    },
+    "ep04_c015": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c015",
+      "bg": "ep04_c015_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "그럼…",
+          "cg": "ep04_c015_source"
+        },
+        {
+          "ep04_asina": "어디 한번 날뛰어 보실까?",
+          "cg": "ep04_c015_source"
+        }
+      ],
+      "next": "ep04_c016"
+    },
+    "ep04_c016": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c016",
+      "bg": "ep04_c016_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "월흔 / 그림·하나비 각색·미예 원작·윤슬",
+          "cg": "ep04_c016_source"
+        }
+      ],
+      "next": "ep04_c017"
+    },
+    "ep04_c017": {
+      "title": "밤의 궁정 방",
+      "cut": "ep04_c017",
+      "bg": "ep04_c017_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c017_source"
+        }
+      ],
+      "next": "ep04_c018"
+    },
+    "ep04_c018": {
+      "title": "궁정 외부 난간·연결 건물·정원 입구",
+      "cut": "ep04_c018",
+      "bg": "ep04_c018_stage",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c018_source"
+        }
+      ],
+      "next": "ep04_c019"
+    },
+    "ep04_c019": {
+      "title": "궁정 외부 난간·연결 건물·정원 입구",
+      "cut": "ep04_c019",
+      "bg": "ep04_c019_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "페시안의 달은 하얀색으로 빛나는구나.",
+          "cg": "ep04_c019_source"
+        },
+        {
+          "ep04_asina": "북쪽에선 달이 노란빛인데…",
+          "cg": "ep04_c019_source"
+        }
+      ],
+      "next": "ep04_c020"
+    },
+    "ep04_c020": {
+      "title": "궁정 외부 난간·연결 건물·정원 입구",
+      "cut": "ep04_c020",
+      "bg": "ep04_c020_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "…그나저나 이곳, 왜 이렇게 넓어?",
+          "cg": "ep04_c020_source"
+        }
+      ],
+      "next": "ep04_c021"
+    },
+    "ep04_c021": {
+      "title": "궁정 외부 난간·연결 건물·정원 입구",
+      "cut": "ep04_c021",
+      "bg": "ep04_c021_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "규모가 궁전급인데.",
+          "cg": "ep04_c021_source"
+        }
+      ],
+      "next": "ep04_c022"
+    },
+    "ep04_c022": {
+      "title": "궁정 외부 난간·연결 건물·정원 입구",
+      "cut": "ep04_c022",
+      "bg": "ep04_c022_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "건물의 구조가 유기적으로 연결되어 있어",
+          "cg": "ep04_c022_source"
+        },
+        {
+          "ep04_thought": "침입하기도, 탈출하기도 어려운 구조다.",
+          "cg": "ep04_c022_source"
+        },
+        {
+          "ep04_thought": "하물며 내가 있는 곳은 가장 깊숙한 구역이니…",
+          "cg": "ep04_c022_source"
+        },
+        {
+          "ep04_thought": "생각보다 쉽지 않겠어.",
+          "cg": "ep04_c022_source",
+          "sets": "ep04_layout_known"
+        }
+      ],
+      "next": "ep04_c023"
+    },
+    "ep04_c023": {
+      "title": "궁정 외부 난간·연결 건물·정원 입구",
+      "cut": "ep04_c023",
+      "bg": "ep04_c023_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "그 남자, 뭐 하는 인간이기에 이런 곳에 살고 있는 거지?",
+          "cg": "ep04_c023_source"
+        },
+        {
+          "ep04_thought": "우선, 저곳부터 뭐 하는 건물인지 파악해야겠다.",
+          "cg": "ep04_c023_source"
+        },
+        {
+          "나레이션": "슈퍼 히어로 랜딩!!",
+          "cg": "ep04_c023_source"
+        }
+      ],
+      "next": "ep04_i01_scout"
+    },
+    "ep04_c024": {
+      "title": "궁정 외부 난간·연결 건물·정원 입구",
+      "cut": "ep04_c024",
+      "bg": "ep04_c024_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "인기척은 없고…",
+          "cg": "ep04_c024_source"
+        },
+        {
+          "ep04_thought": "뭐 하는 건물인지 모르겠네.",
+          "cg": "ep04_c024_source"
+        },
+        {
+          "ep04_thought": "화려하게 꾸며놓은 게 높은 사람이 쓰는 공간인 것 같긴 한데…",
+          "cg": "ep04_c024_source"
+        },
+        {
+          "ep04_thought": "정원으로 가볼까.",
+          "cg": "ep04_c024_source"
+        }
+      ],
+      "next": "ep04_c025"
+    },
+    "ep04_c025": {
+      "title": "정원 연못과 관목",
+      "cut": "ep04_c025",
+      "bg": "ep04_c025_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c025_source"
+        }
+      ],
+      "next": "ep04_c026"
+    },
+    "ep04_c026": {
+      "title": "정원 연못과 관목",
+      "cut": "ep04_c026",
+      "bg": "ep04_c026_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c026_source"
+        }
+      ],
+      "next": "ep04_c027"
+    },
+    "ep04_c027": {
+      "title": "정원 연못과 관목",
+      "cut": "ep04_c027",
+      "bg": "ep04_c027_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "!",
+          "cg": "ep04_c027_source"
+        }
+      ],
+      "next": "ep04_c028"
+    },
+    "ep04_c028": {
+      "title": "정원 연못과 관목",
+      "cut": "ep04_c028",
+      "bg": "ep04_c028_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c028_source"
+        }
+      ],
+      "next": "ep04_c029"
+    },
+    "ep04_c029": {
+      "title": "정원 연못과 관목",
+      "cut": "ep04_c029",
+      "bg": "ep04_c029_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "누가 있어!",
+          "cg": "ep04_c029_source"
+        }
+      ],
+      "next": "ep04_c030"
+    },
+    "ep04_c030": {
+      "title": "정원 연못과 관목",
+      "cut": "ep04_c030",
+      "bg": "ep04_c030_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "이 밤에 정원에 사람이 있다니.",
+          "cg": "ep04_c030_source"
+        },
+        {
+          "ep04_thought": "누구지?",
+          "cg": "ep04_c030_source"
+        },
+        {
+          "ep04_thought": "그 남자다!",
+          "cg": "ep04_c030_source"
+        },
+        {
+          "ep04_thought": "젠장!!",
+          "cg": "ep04_c030_source"
+        },
+        {
+          "ep04_thought": "한 번도 아니고 두 번씩이나…!",
+          "cg": "ep04_c030_source"
+        },
+        {
+          "나레이션": "초당 100회의 진동",
+          "cg": "ep04_c030_source",
+          "sets": "ep04_same_man"
+        }
+      ],
+      "next": "ep04_c031"
+    },
+    "ep04_c031": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c031",
+      "bg": "ep04_c031_a_escape_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "튀자!",
+          "cg": "ep04_c031_a_escape"
+        },
+        {
+          "ep04_man": "이번엔 정말 쥐새끼군.",
+          "cg": "ep04_c031_b_found"
+        }
+      ],
+      "next": "ep04_c032"
+    },
+    "ep04_c032": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c032",
+      "bg": "ep04_c032_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "꺄악! 뭐 하는-!",
+          "cg": "ep04_c032"
+        }
+      ],
+      "next": "ep04_c033"
+    },
+    "ep04_c033": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c033",
+      "bg": "ep04_c033_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_man": "이런 곳에서 뭘 하는 거지?",
+          "cg": "ep04_c033",
+          "effects": {
+            "flags": {
+              "ep04_clothes_wet": true
+            }
+          }
+        },
+        {
+          "ep04_man": "훔쳐보는 취미라도 있는 건가? 아니면 첩자짓?",
+          "cg": "ep04_c033"
+        },
+        {
+          "ep04_asina": "누, 누가 훔쳐봤다고 그래요?",
+          "cg": "ep04_c033"
+        },
+        {
+          "ep04_asina": "그리고 첩자 아니에요!",
+          "cg": "ep04_c033"
+        }
+      ],
+      "next": "ep04_i02_accusation"
+    },
+    "ep04_c034": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c034",
+      "bg": "ep04_c033_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "그리고 당신…",
+          "cg": "ep04_c033"
+        }
+      ],
+      "next": "ep04_c035"
+    },
+    "ep04_c035": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c035",
+      "bg": "ep04_c035_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "도대체 뭐 하는 사람이에요?",
+          "cg": "ep04_c035"
+        },
+        {
+          "ep04_asina": "뭐 하는 사람이기에 길거리 한복판에서 여자를 납치해 가는데",
+          "cg": "ep04_c035"
+        },
+        {
+          "ep04_asina": "아무도 뭐라고 안 하는 게냐고요!",
+          "cg": "ep04_c035"
+        },
+        {
+          "ep04_man": "…",
+          "cg": "ep04_c035"
+        },
+        {
+          "ep04_man": "이 땅에서 내 맘대로 하지 못할 건 없다.",
+          "cg": "ep04_c035",
+          "sets": "ep04_power_claim"
+        }
+      ],
+      "next": "ep04_c036"
+    },
+    "ep04_c036": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c036",
+      "bg": "ep04_c036_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "하!",
+          "cg": "ep04_c036"
+        },
+        {
+          "ep04_asina": "당신이 뭔데? 신이라도 돼?",
+          "cg": "ep04_c036"
+        },
+        {
+          "ep04_asina": "이 나라 왕이라도 되냐?",
+          "cg": "ep04_c036"
+        }
+      ],
+      "next": "ep04_c037"
+    },
+    "ep04_c037": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c037",
+      "bg": "ep04_c036_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_man": "내가 이 나라의 왕이라면,",
+          "cg": "ep04_c036"
+        }
+      ],
+      "next": "ep04_c038"
+    },
+    "ep04_c038": {
+      "title": "정원 연못 안과 물가",
+      "cut": "ep04_c038",
+      "bg": "ep04_c038_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_man": "그땐 좀 고분고분해질 텐가?",
+          "cg": "ep04_c038"
+        }
+      ],
+      "next": "ep04_c039"
+    },
+    "ep04_c039": {
+      "title": "정원 물가의 가까운 거리",
+      "cut": "ep04_c039",
+      "bg": "ep04_c039_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "…뭐?",
+          "cg": "ep04_c039"
+        }
+      ],
+      "next": "ep04_c040"
+    },
+    "ep04_c040": {
+      "title": "정원 물가의 가까운 거리",
+      "cut": "ep04_c040",
+      "bg": "ep04_c040_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_man": "시하드 젠 베히다트.",
+          "cg": "ep04_c040",
+          "sets": "ep04_name_known"
+        }
+      ],
+      "next": "ep04_c041"
+    },
+    "ep04_c041": {
+      "title": "정원 물가의 가까운 거리",
+      "cut": "ep04_c041",
+      "bg": "ep04_c041_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "페시안의 주인이다.",
+          "cg": "ep04_c041",
+          "sets": "ep04_ruler_known"
+        }
+      ],
+      "next": "ep04_c042"
+    },
+    "ep04_c042": {
+      "title": "정원 물가의 가까운 거리",
+      "cut": "ep04_c042",
+      "bg": "ep04_c042_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "설마.",
+          "cg": "ep04_c042"
+        },
+        {
+          "ep04_asina": "…라 쿤, 페시안의 살아있는 신…",
+          "cg": "ep04_c042",
+          "sets": "ep04_title_known"
+        }
+      ],
+      "next": "ep04_c043"
+    },
+    "ep04_c043": {
+      "title": "정원 물가의 가까운 거리",
+      "cut": "ep04_c043",
+      "bg": "ep04_c043_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "다행히 '라 쿤'이 뭔지는 아는 모양이군.",
+          "cg": "ep04_c043"
+        }
+      ],
+      "next": "ep04_c044"
+    },
+    "ep04_c044": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c044",
+      "bg": "ep04_c044_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c044"
+        }
+      ],
+      "next": "ep04_c045"
+    },
+    "ep04_c045": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c045",
+      "bg": "ep04_c045_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "꺄악!",
+          "cg": "ep04_c045"
+        }
+      ],
+      "next": "ep04_c046"
+    },
+    "ep04_c046": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c046",
+      "bg": "ep04_c046_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "지, 지, 지금 뭐 하는…!",
+          "cg": "ep04_c046"
+        },
+        {
+          "ep04_asina": "이, 이거 놔! 아니, 놔요!",
+          "cg": "ep04_c046"
+        }
+      ],
+      "next": "ep04_c047"
+    },
+    "ep04_c047": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c047",
+      "bg": "ep04_c047_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "미소녀를 이렇게 대하다니!",
+          "cg": "ep04_c047"
+        },
+        {
+          "ep04_asina": "벌 받을 거라고요!",
+          "cg": "ep04_c047"
+        }
+      ],
+      "next": "ep04_c048"
+    },
+    "ep04_c048": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c048",
+      "bg": "ep04_c048_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "뭐야!",
+          "cg": "ep04_c048"
+        },
+        {
+          "ep04_thought": "어디로 데려가는 거야…!",
+          "cg": "ep04_c048"
+        }
+      ],
+      "next": "ep04_c049"
+    },
+    "ep04_c049": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c049",
+      "bg": "ep04_c049_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "으악!",
+          "cg": "ep04_c049"
+        }
+      ],
+      "next": "ep04_c050"
+    },
+    "ep04_c050": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c050",
+      "bg": "ep04_c050_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "너, 크롬웰의 첩자인가?",
+          "cg": "ep04_c050",
+          "sets": "ep04_spy_question"
+        }
+      ],
+      "next": "ep04_i03_origin"
+    },
+    "ep04_c051": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c051",
+      "bg": "ep04_c051_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "크롬웰 출신인 것만큼은 절대 들켜선 안 돼…!",
+          "cg": "ep04_c051",
+          "sets": "ep04_origin_private"
+        },
+        {
+          "ep04_asina": "북대륙 출신은 맞지만 크롬웰 출신은 아니에요.",
+          "cg": "ep04_c051",
+          "if": "!flag:ep04_origin_custom"
+        },
+        {
+          "ep04_asina": "첩자는 더더욱 아니고.",
+          "cg": "ep04_c051",
+          "if": "!flag:ep04_origin_custom"
+        }
+      ],
+      "next": "ep04_c052"
+    },
+    "ep04_c052": {
+      "title": "정원에서 복도를 거쳐 녹색 침구의 침실",
+      "cut": "ep04_c052",
+      "bg": "ep04_c052_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "그럼 왜 크라차에 가려던 거지?",
+          "cg": "ep04_c052"
+        },
+        {
+          "ep04_asina": "단순한 여행. 그 이상도 이하도 아니에요.",
+          "cg": "ep04_c052",
+          "if": "!flag:ep04_origin_custom"
+        },
+        {
+          "ep04_asina": "전 그냥 선량한 여행자라고요.",
+          "cg": "ep04_c052",
+          "if": "!flag:ep04_origin_custom"
+        },
+        {
+          "ep04_asina": "믿어주세요.",
+          "cg": "ep04_c052",
+          "if": "!flag:ep04_origin_custom"
+        }
+      ],
+      "next": "ep04_c053"
+    },
+    "ep04_c053": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c053",
+      "bg": "ep04_c053_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "……",
+          "cg": "ep04_c053"
+        }
+      ],
+      "next": "ep04_c053_balloon"
+    },
+    "ep04_c054": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c054",
+      "bg": "ep04_c054_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "그런데, 그건…",
+          "cg": "ep04_c054"
+        }
+      ],
+      "next": "ep04_c055"
+    },
+    "ep04_c055": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c055",
+      "bg": "ep04_c055_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "날 유혹하려는 건가?",
+          "cg": "ep04_c055"
+        },
+        {
+          "ep04_asina": "뭐요?",
+          "cg": "ep04_c055"
+        }
+      ],
+      "next": "ep04_i04_distance"
+    },
+    "ep04_c056": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c056",
+      "bg": "ep04_c056_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "뭐야, 저 시선은.",
+          "cg": "ep04_c056"
+        },
+        {
+          "ep04_thought": "어딜 보는 거…",
+          "cg": "ep04_c056"
+        }
+      ],
+      "next": "ep04_c057"
+    },
+    "ep04_c057": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c057",
+      "bg": "ep04_c057_a_wet_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "!",
+          "cg": "ep04_c057_a_wet"
+        },
+        {
+          "ep04_asina": "지, 지금 대체 어딜 보는…!",
+          "cg": "ep04_c057_b_approach",
+          "sets": "ep04_wet_known"
+        },
+        {
+          "ep04_behidat": "전에 내게 미소녀라고 주장했었나.",
+          "cg": "ep04_c057_b_approach",
+          "if": "flag:미인계 || flag:미소녀"
+        }
+      ],
+      "next": [
+        { "if": "flag:미인계 || flag:미소녀", "to": "ep04_c058" },
+        { "to": "ep04_c059" }
+      ]
+    },
+    "ep04_c058": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c058",
+      "bg": "ep04_c058_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "…아, 그때.",
+          "cg": "ep04_c058"
+        },
+        {
+          "ep04_thought": "하, 대체 어디가 미소녀냐면서 비웃었으면서!",
+          "cg": "ep04_c058"
+        }
+      ],
+      "next": "ep04_c059"
+    },
+    "ep04_c059": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c059",
+      "bg": "ep04_c059_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "…비켜요.",
+          "cg": "ep04_c059"
+        }
+      ],
+      "next": "ep04_c060"
+    },
+    "ep04_c060": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c060",
+      "bg": "ep04_c060_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "전에 했던 말에 한 가지 덧붙이지.",
+          "cg": "ep04_c060"
+        }
+      ],
+      "next": "ep04_c061"
+    },
+    "ep04_c061": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c061",
+      "bg": "ep04_c061_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "그대가 미소녀인 건 모르겠으나.",
+          "cg": "ep04_c061"
+        }
+      ],
+      "next": "ep04_c062"
+    },
+    "ep04_c062": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c062",
+      "bg": "ep04_c062_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep04_c062"
+        }
+      ],
+      "next": "ep04_c063"
+    },
+    "ep04_c063": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c063",
+      "bg": "ep04_c062_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "눈동자만큼은 아름답다.",
+          "cg": "ep04_c062",
+          "sets": "ep04_eye_praise"
+        }
+      ],
+      "next": "ep04_boundary"
+    },
+    "ep04_c053_balloon": {
+      "title": "일단 받아둔 대답",
+      "cut": "ep04_c053 뒤 원본 014번 2278~5767",
+      "bg": "ep04_c053_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "…뭐, 그렇다고 해두지.",
+          "cg": "ep04_c053",
+          "if": "!flag:ep04_origin_custom || flag:말함_ep04_origin_free || flag:ep04_origin_scope_kept"
+        }
+      ],
+      "next": "ep04_c054"
+    },
+    "ep04_i01_scout": {
+      "title": "살펴볼 곳",
+      "bg": "ep04_c023_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": null
+      },
+      "time": 0,
+      "lines": [],
+      "choices": [
+        {
+          "id": "guards",
+          "text": "경비의 위치를 살핀다",
+          "next": "ep04_scout_guards"
+        },
+        {
+          "id": "passage",
+          "text": "연결 통로를 살핀다",
+          "next": "ep04_scout_passage"
+        },
+        {
+          "id": "decoration",
+          "text": "건물 장식을 살핀다",
+          "next": "ep04_scout_decoration"
+        }
+      ]
+    },
+    "ep04_i02_accusation": {
+      "title": "어떻게 대꾸할까?",
+      "bg": "ep04_c033_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_man"
+      },
+      "time": 0,
+      "lines": [],
+      "next": "ep04_c034",
+      "free": {
+        "prompt": "어떻게 대꾸할까?",
+        "situation": "물에 앉은 아시나는 훔쳐보기와 첩자 의심을 부인했다. 상대는 검정 겉옷을 걸쳤다. 이름과 지위는 아직 직접 듣지 못했다.",
+        "goal": "평범한 대답·질문·침묵은 무판정이다. 명확한 설득 시도만 판정한다. 해명을 들었다는 성취를 무죄 확정으로 확대하지 않는다.",
+        "speakers": [
+          "ep04_asina",
+          "ep04_thought",
+          "ep04_man",
+          "나레이션"
+        ],
+        "must_not": [
+          "아시나를 공녀로 확정한다",
+          "귀찌를 충전하거나 변장을 해제한다",
+          "없는 짐이나 치부책을 준다",
+          "플레이어가 하지 않은 말이나 행동을 대신 정한다",
+          "출신의 속마음을 상대가 들었다고 쓴다"
+        ],
+        "state_guard": [
+          "상대가 첩자 의심을 완전히 거두었다"
+        ],
+        "echo_only": [
+          "공녀",
+          "웰든",
+          "리세아",
+          "베히다트",
+          "시하드 젠",
+          "라 쿤",
+          "페시안의 주인"
+        ],
+        "patience": 1,
+        "turns": 1,
+        "stall_idle": true,
+        "default_approach": "ep04_heard",
+        "talk_fallback": [
+          {
+            "나레이션": "상대는 아시나의 반응을 기다렸다.",
+            "cg": "ep04_c033_source"
+          }
+        ],
+        "press": [
+          {
+            "나레이션": "잠시 말이 끊겼다.",
+            "cg": "ep04_c033_source"
+          }
+        ],
+        "deflect": [
+          {
+            "ep04_man": "…무슨 소리지?",
+            "cg": "ep04_c033_source"
+          }
+        ],
+        "idle": {
+          "threat": true,
+          "lines": [
+            {
+              "나레이션": "짧은 침묵 뒤에 상대가 입을 열었다.",
+              "cg": "ep04_c033_source"
+            }
+          ]
+        },
+        "prices": [
+          {
+            "id": "ep04_i02_accusation_strain",
+            "tag": "수치",
+            "weight": "soft",
+            "text": "긴장이 남아 숨을 고르는 데 힘이 들었다.",
+            "effects": {
+              "정신력": -1
+            },
+            "if": "정신력 > 0"
+          }
+        ],
+        "goals": {
+          "ep04_heard": {
+            "text": "아시나가 말한 항의나 해명의 근거를 상대가 끝까지 듣는다. 첩자 의심이 완전히 풀린 것은 아니다.",
+            "effects": {
+              "flags": {
+                "ep04_accusation_heard": true
+              }
+            },
+            "next": "ep04_c034",
+            "price": [
+              "ep04_i02_accusation_strain"
+            ]
+          }
+        },
+        "improv": {
+          "hit": {
+            "gist": "남성은 아시나의 말을 끝까지 듣고 잠시 입을 다물었다.",
+            "lines": [
+              {
+                "나레이션": "남성은 아시나의 말을 끝까지 듣고 잠시 입을 다물었다.",
+                "cg": "ep04_c033_source"
+              }
+            ]
+          },
+          "mixed": {
+            "gist": "남성은 아시나의 말을 끝까지 들었으나 시선은 여전히 날카로웠다.",
+            "lines": [
+              {
+                "나레이션": "남성은 아시나의 말을 끝까지 들었으나 시선은 여전히 날카로웠다.",
+                "cg": "ep04_c033_source"
+              }
+            ]
+          },
+          "miss": {
+            "gist": "남성은 말을 끊고 아시나를 내려다보았다.",
+            "lines": [
+              {
+                "나레이션": "남성은 말을 끊고 아시나를 내려다보았다.",
+                "cg": "ep04_c033_source"
+              }
+            ],
+            "next": "ep04_c034"
+          }
+        },
+        "approaches": [
+          {
+            "id": "ep04_heard",
+            "goal": "ep04_heard",
+            "label": "항의의 근거를 들어 말을 끝까지 듣게 한다",
+            "stat": "매력",
+            "hint": "납치당한 쪽은 나라고 근거를 들어 항의한다",
+            "examples": [
+              "납치당한 쪽은 나라고 근거를 들어 항의한다"
+            ],
+            "keywords": [],
+            "outcomes": {
+              "hit": {
+                "gist": "남성은 아시나의 말을 끝까지 듣고 잠시 입을 다물었다.",
+                "lines": [
+                  {
+                    "나레이션": "남성은 아시나의 말을 끝까지 듣고 잠시 입을 다물었다.",
+                    "cg": "ep04_c033_source"
+                  }
+                ]
+              },
+              "mixed": {
+                "gist": "남성은 아시나의 말을 끝까지 들었으나 시선은 여전히 날카로웠다.",
+                "lines": [
+                  {
+                    "나레이션": "남성은 아시나의 말을 끝까지 들었으나 시선은 여전히 날카로웠다.",
+                    "cg": "ep04_c033_source"
+                  }
+                ]
+              },
+              "miss": {
+                "gist": "남성은 말을 끊고 아시나를 내려다보았다.",
+                "lines": [
+                  {
+                    "나레이션": "남성은 말을 끊고 아시나를 내려다보았다.",
+                    "cg": "ep04_c033_source"
+                  }
+                ],
+                "next": "ep04_c034"
+              }
+            }
+          }
+        ],
+        "next": "ep04_c034"
+      }
+    },
+    "ep04_i03_origin": {
+      "title": "출신에 대한 대답",
+      "bg": "ep04_c050_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [],
+      "choices": [
+        {
+          "id": "conceal",
+          "text": "북대륙 여행자라고 답한다",
+          "next": "ep04_c051"
+        },
+        {
+          "id": "custom",
+          "text": "직접 답한다",
+          "effects": {
+            "flags": {
+              "ep04_origin_custom": true
+            }
+          },
+          "next": "ep04_origin_free"
+        },
+        {
+          "id": "silent",
+          "text": "대답하지 않는다",
+          "effects": {
+            "flags": {
+              "ep04_origin_custom": true,
+              "ep04_origin_silent": true
+            }
+          },
+          "next": "ep04_origin_silence"
+        }
+      ]
+    },
+    "ep04_origin_free": {
+      "title": "출신을 어디까지 말할까?",
+      "bg": "ep04_c050_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [],
+      "next": "ep04_c051",
+      "free": {
+        "prompt": "출신을 어디까지 말할까?",
+        "situation": "베히다트가 크롬웰 첩자인지 물었다. 아시나는 실제 출신을 알고 있지만 상대는 북대륙 귀족일 가능성만 의심한다. 공녀 정체를 확정하지 않는다.",
+        "goal": "단순 대답·침묵·감정 반응은 판정하지 않는다. 비밀을 감추려는 구체적인 기법이 있는 시도만 판정한다. 실제 출신을 직접 밝히는 입력은 공유 정체 공개 계약을 따르고 비밀 보존 목표로 해석하지 않는다.",
+        "speakers": [
+          "ep04_asina",
+          "ep04_thought",
+          "ep04_behidat",
+          "나레이션"
+        ],
+        "must_not": [
+          "아시나를 공녀로 확정한다",
+          "귀찌를 충전하거나 변장을 해제한다",
+          "없는 짐이나 치부책을 준다",
+          "플레이어가 하지 않은 말이나 행동을 대신 정한다",
+          "출신의 속마음을 상대가 들었다고 쓴다"
+        ],
+        "state_guard": [
+          "상대가 첩자 의심을 완전히 거두었다"
+        ],
+        "echo_only": [
+          "공녀",
+          "웰든",
+          "리세아"
+        ],
+        "patience": 1,
+        "turns": 1,
+        "stall_idle": true,
+        "default_approach": "ep04_origin_scope",
+        "talk_fallback": [
+          {
+            "나레이션": "상대는 아시나의 반응을 기다렸다.",
+            "cg": "ep04_c050_source"
+          }
+        ],
+        "press": [
+          {
+            "나레이션": "잠시 말이 끊겼다.",
+            "cg": "ep04_c050_source"
+          }
+        ],
+        "deflect": [
+          {
+            "ep04_behidat": "…무슨 소리지?",
+            "cg": "ep04_c050_source"
+          }
+        ],
+        "idle": {
+          "threat": true,
+          "lines": [
+            {
+              "나레이션": "짧은 침묵 뒤에 상대가 입을 열었다.",
+              "cg": "ep04_c050_source"
+            }
+          ]
+        },
+        "prices": [
+          {
+            "id": "ep04_origin_free_strain",
+            "tag": "수치",
+            "weight": "soft",
+            "text": "긴장이 남아 숨을 고르는 데 힘이 들었다.",
+            "effects": {
+              "정신력": -1
+            },
+            "if": "정신력 > 0"
+          }
+        ],
+        "goals": {
+          "ep04_origin_scope": {
+            "text": "말할 범위를 지킨 채 설명을 마친다. 상대는 그 범위를 넘어 출신이나 공녀 정체를 알아내지 못한다.",
+            "effects": {
+              "flags": {
+                "ep04_origin_scope_kept": true
+              }
+            },
+            "next": "ep04_c051",
+            "price": [
+              "ep04_origin_free_strain"
+            ]
+          }
+        },
+        "improv": {
+          "hit": {
+            "gist": "베히다트는 아시나가 내놓은 설명을 듣고 다음 질문으로 넘어갔다.",
+            "lines": [
+              {
+                "나레이션": "베히다트는 아시나가 내놓은 설명을 듣고 다음 질문으로 넘어갔다.",
+                "cg": "ep04_c050_source"
+              }
+            ]
+          },
+          "mixed": {
+            "gist": "베히다트는 설명을 듣고 다음 질문으로 넘어갔지만, 의심 어린 눈빛은 남았다.",
+            "lines": [
+              {
+                "나레이션": "베히다트는 설명을 듣고 다음 질문으로 넘어갔지만, 의심 어린 눈빛은 남았다.",
+                "cg": "ep04_c050_source"
+              }
+            ]
+          },
+          "miss": {
+            "gist": "베히다트는 대답에서 확신을 얻지 못한 채 시선을 고정했다.",
+            "lines": [
+              {
+                "나레이션": "베히다트는 대답에서 확신을 얻지 못한 채 시선을 고정했다.",
+                "cg": "ep04_c050_source"
+              }
+            ],
+            "next": "ep04_c051"
+          }
+        },
+        "approaches": [
+          {
+            "id": "ep04_origin_scope",
+            "goal": "ep04_origin_scope",
+            "label": "말할 정보의 범위를 정해 추궁을 넘긴다",
+            "stat": "매력",
+            "hint": "출신 대신 여행 경로를 근거로 내세워 추궁을 넘긴다",
+            "examples": [
+              "출신 대신 여행 경로를 근거로 내세워 추궁을 넘긴다"
+            ],
+            "keywords": [],
+            "outcomes": {
+              "hit": {
+                "gist": "베히다트는 아시나가 내놓은 설명을 듣고 다음 질문으로 넘어갔다.",
+                "lines": [
+                  {
+                    "나레이션": "베히다트는 아시나가 내놓은 설명을 듣고 다음 질문으로 넘어갔다.",
+                    "cg": "ep04_c050_source"
+                  }
+                ]
+              },
+              "mixed": {
+                "gist": "베히다트는 설명을 듣고 다음 질문으로 넘어갔지만, 의심 어린 눈빛은 남았다.",
+                "lines": [
+                  {
+                    "나레이션": "베히다트는 설명을 듣고 다음 질문으로 넘어갔지만, 의심 어린 눈빛은 남았다.",
+                    "cg": "ep04_c050_source"
+                  }
+                ]
+              },
+              "miss": {
+                "gist": "베히다트는 대답에서 확신을 얻지 못한 채 시선을 고정했다.",
+                "lines": [
+                  {
+                    "나레이션": "베히다트는 대답에서 확신을 얻지 못한 채 시선을 고정했다.",
+                    "cg": "ep04_c050_source"
+                  }
+                ],
+                "next": "ep04_c051"
+              }
+            }
+          }
+        ],
+        "next": "ep04_c051"
+      }
+    },
+    "ep04_i04_distance": {
+      "title": "시선에 대한 반응",
+      "bg": "ep04_c055_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [],
+      "choices": [
+        {
+          "id": "retort",
+          "text": "시선을 따라 옷을 내려다본다",
+          "next": "ep04_c056"
+        },
+        {
+          "id": "distance",
+          "text": "다가오지 못하게 거리를 벌린다",
+          "next": "ep04_distance_free"
+        }
+      ]
+    },
+    "ep04_distance_free": {
+      "title": "어떻게 거리를 확보할까?",
+      "bg": "ep04_c055_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [],
+      "next": "ep04_c056",
+      "free": {
+        "prompt": "어떻게 거리를 확보할까?",
+        "situation": "녹색 침구의 침실이다. 옷은 젖었고 베히다트가 유혹하려는지 물었다. 아시나는 가까이 오려는 상대에게 거리를 요구하거나 몸을 빼려 한다.",
+        "goal": "평범한 말·침묵·독백은 판정하지 않는다. 거리를 확보하려는 실제 시도에만 판정한다. hit와 mixed는 모두 거리 확보 성공이며 비용은 별도로 부과한다. 다른 의도의 큰 행동은 local로 처리하고 거리를 얻었다고 바꾸지 않는다.",
+        "speakers": [
+          "ep04_asina",
+          "ep04_thought",
+          "ep04_behidat",
+          "나레이션"
+        ],
+        "must_not": [
+          "아시나를 공녀로 확정한다",
+          "귀찌를 충전하거나 변장을 해제한다",
+          "없는 짐이나 치부책을 준다",
+          "플레이어가 하지 않은 말이나 행동을 대신 정한다",
+          "출신의 속마음을 상대가 들었다고 쓴다"
+        ],
+        "state_guard": [
+          "상대가 첩자 의심을 완전히 거두었다"
+        ],
+        "echo_only": [
+          "공녀",
+          "웰든",
+          "리세아"
+        ],
+        "patience": 1,
+        "turns": 1,
+        "stall_idle": true,
+        "default_approach": "ep04_keep_distance",
+        "talk_fallback": [
+          {
+            "나레이션": "상대는 아시나의 반응을 기다렸다.",
+            "cg": "ep04_c055_source"
+          }
+        ],
+        "press": [
+          {
+            "나레이션": "잠시 말이 끊겼다.",
+            "cg": "ep04_c055_source"
+          }
+        ],
+        "deflect": [
+          {
+            "ep04_behidat": "…무슨 소리지?",
+            "cg": "ep04_c055_source"
+          }
+        ],
+        "idle": {
+          "threat": true,
+          "lines": [
+            {
+              "나레이션": "짧은 침묵 뒤에 상대가 입을 열었다.",
+              "cg": "ep04_c055_source"
+            }
+          ]
+        },
+        "prices": [
+          {
+            "id": "ep04_distance_free_strain",
+            "tag": "수치",
+            "weight": "soft",
+            "text": "긴장이 남아 숨을 고르는 데 힘이 들었다.",
+            "effects": {
+              "정신력": -1
+            },
+            "if": "정신력 > 0"
+          }
+        ],
+        "goals": {
+          "ep04_keep_distance": {
+            "text": "아시나와 베히다트 사이에 손이 닿지 않는 거리를 확보한다. 마지막 눈동자 칭찬까지 그 거리를 유지하며 접촉·눕히기·귓가 접근을 되풀이하지 않는다.",
+            "effects": {
+              "flags": {
+                "ep04_distance_kept": true
+              }
+            },
+            "next": "ep04_distance_c056",
+            "price": [
+              "ep04_distance_free_strain"
+            ]
+          }
+        },
+        "improv": {
+          "hit": {
+            "gist": "베히다트가 걸음을 멈췄다. 아시나와의 사이에 손이 닿지 않는 거리가 생겼다.",
+            "lines": [
+              {
+                "나레이션": "베히다트가 걸음을 멈췄다. 아시나와의 사이에 손이 닿지 않는 거리가 생겼다.",
+                "cg": "ep04_c055_source"
+              }
+            ]
+          },
+          "mixed": {
+            "gist": "베히다트가 걸음을 멈췄다. 거리를 확보했지만 아시나는 긴장을 늦추지 못했다.",
+            "lines": [
+              {
+                "나레이션": "베히다트가 걸음을 멈췄다. 거리를 확보했지만 아시나는 긴장을 늦추지 못했다.",
+                "cg": "ep04_c055_source"
+              }
+            ]
+          },
+          "miss": {
+            "gist": "베히다트는 물러서지 않았다. 아시나는 그의 시선을 따라 고개를 내렸다.",
+            "lines": [
+              {
+                "나레이션": "베히다트는 물러서지 않았다. 아시나는 그의 시선을 따라 고개를 내렸다.",
+                "cg": "ep04_c055_source"
+              }
+            ],
+            "next": "ep04_c056"
+          }
+        },
+        "approaches": [
+          {
+            "id": "ep04_keep_distance",
+            "goal": "ep04_keep_distance",
+            "label": "상대를 멈춰 세워 거리를 확보한다",
+            "stat": "매력",
+            "hint": "손을 들어 더 오지 말라고 단호하게 요구한다",
+            "examples": [
+              "손을 들어 더 오지 말라고 단호하게 요구한다"
+            ],
+            "keywords": [],
+            "outcomes": {
+              "hit": {
+                "gist": "베히다트가 걸음을 멈췄다. 아시나와의 사이에 손이 닿지 않는 거리가 생겼다.",
+                "lines": [
+                  {
+                    "나레이션": "베히다트가 걸음을 멈췄다. 아시나와의 사이에 손이 닿지 않는 거리가 생겼다.",
+                    "cg": "ep04_c055_source"
+                  }
+                ]
+              },
+              "mixed": {
+                "gist": "베히다트가 걸음을 멈췄다. 거리를 확보했지만 아시나는 긴장을 늦추지 못했다.",
+                "lines": [
+                  {
+                    "나레이션": "베히다트가 걸음을 멈췄다. 거리를 확보했지만 아시나는 긴장을 늦추지 못했다.",
+                    "cg": "ep04_c055_source"
+                  }
+                ]
+              },
+              "miss": {
+                "gist": "베히다트는 물러서지 않았다. 아시나는 그의 시선을 따라 고개를 내렸다.",
+                "lines": [
+                  {
+                    "나레이션": "베히다트는 물러서지 않았다. 아시나는 그의 시선을 따라 고개를 내렸다.",
+                    "cg": "ep04_c055_source"
+                  }
+                ],
+                "next": "ep04_c056"
+              }
+            }
+          }
+        ],
+        "next": "ep04_c056"
+      }
+    },
+    "ep04_distance_c056": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c056",
+      "bg": "ep04_c055_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "뭐야, 저 시선은.",
+          "cg": "ep04_c055"
+        },
+        {
+          "ep04_thought": "어딜 보는 거…",
+          "cg": "ep04_c055"
+        }
+      ],
+      "next": "ep04_distance_c057"
+    },
+    "ep04_distance_c057": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c057",
+      "bg": "ep04_c055_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "!",
+          "cg": "ep04_c055"
+        },
+        {
+          "ep04_asina": "지, 지금 대체 어딜 보는…!",
+          "cg": "ep04_c055",
+          "sets": "ep04_wet_known"
+        },
+        {
+          "ep04_behidat": "전에 내게 미소녀라고 주장했었나.",
+          "cg": "ep04_c055",
+          "if": "flag:미인계 || flag:미소녀"
+        }
+      ],
+      "next": [
+        { "if": "flag:미인계 || flag:미소녀", "to": "ep04_distance_c058" },
+        { "to": "ep04_distance_c059" }
+      ]
+    },
+    "ep04_distance_c058": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c058",
+      "bg": "ep04_c058_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_thought": "…아, 그때.",
+          "cg": "ep04_c058"
+        },
+        {
+          "ep04_thought": "하, 대체 어디가 미소녀냐면서 비웃었으면서!",
+          "cg": "ep04_c058"
+        }
+      ],
+      "next": "ep04_distance_c059"
+    },
+    "ep04_distance_c059": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c059",
+      "bg": "ep04_c055_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_asina": "…거기 있어요.",
+          "cg": "ep04_c055"
+        }
+      ],
+      "next": "ep04_distance_c060"
+    },
+    "ep04_distance_c060": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c060",
+      "bg": "ep04_c060_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "전에 했던 말에 한 가지 덧붙이지.",
+          "cg": "ep04_c060"
+        }
+      ],
+      "next": "ep04_distance_c061"
+    },
+    "ep04_distance_c061": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c061",
+      "bg": "ep04_c060_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "그대가 미소녀인 건 모르겠으나.",
+          "cg": "ep04_c060"
+        }
+      ],
+      "next": "ep04_distance_c062"
+    },
+    "ep04_distance_c062": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c062",
+      "bg": "ep04_c060_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "베히다트는 더 다가오지 않았다. 두 사람 사이의 거리가 그대로 남았다.",
+          "cg": "ep04_c060"
+        }
+      ],
+      "next": "ep04_distance_c063"
+    },
+    "ep04_distance_c063": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c063",
+      "bg": "ep04_c060_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "눈동자만큼은 아름답다.",
+          "cg": "ep04_c060",
+          "sets": "ep04_eye_praise"
+        }
+      ],
+      "next": "ep04_distance_boundary"
+    },
+    "ep04_boundary": {
+      "title": "눈동자에 남은 말",
+      "bg": "ep04_c062_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [],
+      "ending": {
+        "id": "ep04_boundary",
+        "title": "4화 · 눈동자",
+        "summary": "눈동자에 관한 말을 들었다. 갈색 변장과 젖은 청록 실내복은 그대로이며, 짐과 치부책은 찾지 못했다.",
+        "next_hook": "밤은 아직 끝나지 않았다."
+      }
+    },
+    "ep04_distance_boundary": {
+      "title": "유지한 거리",
+      "bg": "ep04_c060_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "베히다트는 거리를 둔 채 아시나의 눈을 바라보았다.",
+          "cg": "ep04_c060"
+        }
+      ],
+      "ending": {
+        "id": "ep04_distance_boundary",
+        "title": "4화 · 유지한 거리",
+        "summary": "손이 닿지 않는 거리를 지킨 채 눈동자에 관한 말을 들었다. 짐과 치부책은 아직 찾지 못했다.",
+        "next_hook": "확보한 거리는 그대로 유지된다."
+      }
+    },
+    "ep04_scout_guards": {
+      "title": "경비의 위치를 살핀다",
+      "bg": "ep04_c023_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "경비 두 사람의 위치를 눈에 담았다.",
+          "cg": "ep04_c023_source"
+        }
+      ],
+      "effects": {
+        "flags": {
+          "ep04_scout_guards": true
+        }
+      },
+      "next": "ep04_c024"
+    },
+    "ep04_scout_passage": {
+      "title": "연결 통로를 살핀다",
+      "bg": "ep04_c023_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "건물과 건물을 잇는 통로를 눈에 담았다.",
+          "cg": "ep04_c023_source"
+        }
+      ],
+      "effects": {
+        "flags": {
+          "ep04_scout_passage": true
+        }
+      },
+      "next": "ep04_c024"
+    },
+    "ep04_scout_decoration": {
+      "title": "건물 장식을 살핀다",
+      "bg": "ep04_c023_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "화려하게 꾸민 건물의 모습을 눈에 담았다.",
+          "cg": "ep04_c023_source"
+        }
+      ],
+      "effects": {
+        "flags": {
+          "ep04_scout_decoration": true
+        }
+      },
+      "next": "ep04_c024"
+    },
+    "ep04_origin_silence": {
+      "title": "대답 대신 침묵",
+      "bg": "ep04_c050_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "나레이션": "아시나가 대답하지 않자 베히다트는 잠시 눈을 가늘게 떴다.",
+          "cg": "ep04_c050"
+        }
+      ],
+      "next": "ep04_c051"
+    }
+  },
+  "atlas": {
+    "chapters": [
+      {
+        "id": "ep04",
+        "label": "4화",
+        "nodes": [
+          "ep04_plan",
+          "ep04_scout",
+          "ep04_garden",
+          "ep04_accusation",
+          "ep04_name",
+          "ep04_origin",
+          "ep04_origin_custom",
+          "ep04_bedroom",
+          "ep04_reaction",
+          "ep04_distance_try",
+          "ep04_close",
+          "ep04_apart",
+          "ep04_end",
+          "ep04_end_apart",
+          "ep04_scout_guards",
+          "ep04_scout_passage",
+          "ep04_scout_decoration",
+          "ep04_origin_silence"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ep04_plan",
+        "label": "잠 못 드는 밤",
+        "col": 32,
+        "row": 3,
+        "beats": [
+          "ep04_c001",
+          "ep04_c002",
+          "ep04_c003",
+          "ep04_c004",
+          "ep04_c005",
+          "ep04_c006",
+          "ep04_c007",
+          "ep04_c008",
+          "ep04_c009",
+          "ep04_c010",
+          "ep04_c011",
+          "ep04_c012",
+          "ep04_c013",
+          "ep04_c014",
+          "ep04_c015",
+          "ep04_c016",
+          "ep04_c017",
+          "ep04_c018",
+          "ep04_c019",
+          "ep04_c020",
+          "ep04_c021",
+          "ep04_c022",
+          "ep04_c023"
+        ]
+      },
+      {
+        "id": "ep04_scout",
+        "label": "건물 살피기",
+        "col": 33,
+        "row": 3,
+        "beats": [
+          "ep04_i01_scout"
+        ]
+      },
+      {
+        "id": "ep04_garden",
+        "label": "정원으로 향하다",
+        "col": 35,
+        "row": 3,
+        "beats": [
+          "ep04_c024",
+          "ep04_c025",
+          "ep04_c026",
+          "ep04_c027",
+          "ep04_c028",
+          "ep04_c029",
+          "ep04_c030",
+          "ep04_c031",
+          "ep04_c032",
+          "ep04_c033"
+        ]
+      },
+      {
+        "id": "ep04_accusation",
+        "label": "첩자 의심에 대꾸",
+        "col": 36,
+        "row": 3,
+        "beats": [
+          "ep04_i02_accusation"
+        ]
+      },
+      {
+        "id": "ep04_name",
+        "label": "납치자의 신분 묻기",
+        "col": 37,
+        "row": 3,
+        "beats": [
+          "ep04_c034",
+          "ep04_c035",
+          "ep04_c036",
+          "ep04_c037",
+          "ep04_c038",
+          "ep04_c039",
+          "ep04_c040",
+          "ep04_c041",
+          "ep04_c042",
+          "ep04_c043",
+          "ep04_c044",
+          "ep04_c045",
+          "ep04_c046",
+          "ep04_c047",
+          "ep04_c048",
+          "ep04_c049",
+          "ep04_c050"
+        ]
+      },
+      {
+        "id": "ep04_origin",
+        "label": "출신 추궁에 답하기",
+        "col": 38,
+        "row": 3,
+        "beats": [
+          "ep04_i03_origin"
+        ]
+      },
+      {
+        "id": "ep04_origin_custom",
+        "label": "출신 질문에 직접 응답",
+        "col": 39,
+        "row": 2,
+        "beats": [
+          "ep04_origin_free"
+        ]
+      },
+      {
+        "id": "ep04_bedroom",
+        "label": "출신을 둘러싼 경계",
+        "col": 40,
+        "row": 3,
+        "beats": [
+          "ep04_c051",
+          "ep04_c052",
+          "ep04_c053",
+          "ep04_c053_balloon",
+          "ep04_c054",
+          "ep04_c055"
+        ]
+      },
+      {
+        "id": "ep04_reaction",
+        "label": "유혹이라는 오해에 반응",
+        "col": 41,
+        "row": 3,
+        "beats": [
+          "ep04_i04_distance"
+        ]
+      },
+      {
+        "id": "ep04_distance_try",
+        "label": "거리 벌리기 시도",
+        "col": 42,
+        "row": 4,
+        "beats": [
+          "ep04_distance_free"
+        ]
+      },
+      {
+        "id": "ep04_close",
+        "label": "옷을 내려다보다",
+        "col": 43,
+        "row": 2,
+        "beats": [
+          "ep04_c056",
+          "ep04_c057",
+          "ep04_c058",
+          "ep04_c059",
+          "ep04_c060",
+          "ep04_c061",
+          "ep04_c062",
+          "ep04_c063"
+        ]
+      },
+      {
+        "id": "ep04_apart",
+        "label": "거리를 두고 맞서기",
+        "col": 43,
+        "row": 4,
+        "beats": [
+          "ep04_distance_c056",
+          "ep04_distance_c057",
+          "ep04_distance_c058",
+          "ep04_distance_c059",
+          "ep04_distance_c060",
+          "ep04_distance_c061",
+          "ep04_distance_c062",
+          "ep04_distance_c063"
+        ]
+      },
+      {
+        "id": "ep04_end",
+        "label": "눈동자에 남은 말",
+        "col": 44,
+        "row": 2,
+        "beats": [
+          "ep04_boundary"
+        ],
+        "ending": true
+      },
+      {
+        "id": "ep04_end_apart",
+        "label": "유지한 거리",
+        "col": 44,
+        "row": 4,
+        "beats": [
+          "ep04_distance_boundary"
+        ],
+        "ending": true
+      },
+      {
+        "id": "ep04_scout_guards",
+        "label": "경비 위치 확인",
+        "col": 34,
+        "row": 2,
+        "beats": [
+          "ep04_scout_guards"
+        ]
+      },
+      {
+        "id": "ep04_scout_passage",
+        "label": "연결 통로 확인",
+        "col": 34,
+        "row": 3,
+        "beats": [
+          "ep04_scout_passage"
+        ]
+      },
+      {
+        "id": "ep04_scout_decoration",
+        "label": "건물 장식 확인",
+        "col": 34,
+        "row": 4,
+        "beats": [
+          "ep04_scout_decoration"
+        ]
+      },
+      {
+        "id": "ep04_origin_silence",
+        "label": "출신 질문에 침묵",
+        "col": 39,
+        "row": 4,
+        "beats": [
+          "ep04_origin_silence"
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "ep04_plan",
+        "ep04_scout"
+      ],
+      [
+        "ep04_garden",
+        "ep04_accusation"
+      ],
+      [
+        "ep04_name",
+        "ep04_origin"
+      ],
+      [
+        "ep04_bedroom",
+        "ep04_reaction"
+      ],
+      [
+        "ep04_close",
+        "ep04_end"
+      ],
+      [
+        "ep04_scout",
+        "ep04_scout_guards"
+      ],
+      [
+        "ep04_scout",
+        "ep04_scout_passage"
+      ],
+      [
+        "ep04_scout",
+        "ep04_scout_decoration"
+      ],
+      [
+        "ep04_accusation",
+        "ep04_name"
+      ],
+      [
+        "ep04_origin",
+        "ep04_bedroom"
+      ],
+      [
+        "ep04_origin",
+        "ep04_origin_custom"
+      ],
+      [
+        "ep04_origin",
+        "ep04_origin_silence"
+      ],
+      [
+        "ep04_origin_custom",
+        "ep04_bedroom"
+      ],
+      [
+        "ep04_reaction",
+        "ep04_close"
+      ],
+      [
+        "ep04_reaction",
+        "ep04_distance_try"
+      ],
+      [
+        "ep04_distance_try",
+        "ep04_close"
+      ],
+      [
+        "ep04_distance_try",
+        "ep04_apart"
+      ],
+      [
+        "ep04_apart",
+        "ep04_end_apart"
+      ],
+      [
+        "ep04_scout_guards",
+        "ep04_garden"
+      ],
+      [
+        "ep04_scout_passage",
+        "ep04_garden"
+      ],
+      [
+        "ep04_scout_decoration",
+        "ep04_garden"
+      ],
+      [
+        "ep04_origin_silence",
+        "ep04_bedroom"
+      ]
+    ]
+  }
+}

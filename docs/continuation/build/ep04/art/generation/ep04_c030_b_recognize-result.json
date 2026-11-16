@@ -1,0 +1,10 @@
+{
+  "상태": "native 종료",
+  "후보": "ep04_c030_b_recognize",
+  "candidate_slot": "ep04_c030_b_recognize",
+  "pid": 47598,
+  "pgid": 47598,
+  "exit_code": 0,
+  "출력_존재": true,
+  "종료": "2026-11-09T07:24:34.256258+00:00"
+}

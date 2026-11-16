@@ -1,0 +1,3646 @@
+{
+  "episode": 9,
+  "checked_at": "2026-11-09T04:37:49.987Z",
+  "result": "통과",
+  "check_count": 546,
+  "summary": {
+    "original_pages": 18,
+    "original_source_cuts": 84,
+    "current_yaml_beats": 70,
+    "current_yaml_lines": 132,
+    "current_yaml_cg_references": 57,
+    "current_empty_silent_lines": 7,
+    "current_ellipsis_silent_lines": 3,
+    "source_no_dialogue_cuts": 25,
+    "reveal_anchors": 15,
+    "additional_silent_anchor_proposals": 2,
+    "unique_required_candidates": 77,
+    "existing_production_candidates": 0,
+    "generated_this_stage": 0,
+    "independent_claude_qa_pass": 0,
+    "gen_tree_files": 1,
+    "logs_examined": 5
+  },
+  "artifact_sha256": {
+    "docs/continuation/build/ep09/art/mapping.md": "549a5afe9609ab45729a7fb716d6520658dbe4411f6eb7145dec5a5cc286ab0e",
+    "docs/continuation/build/ep09/art/mapping.json": "89c1c94cbc70196e23852bc0834b318fc28bce65820276975322c84d7fc9903b",
+    "docs/continuation/build/ep09/art/candidate-manifest.json": "444b0a313221e017cbb8ccc890c732b5db849765b16b2c8da2e44d15b25884ba"
+  },
+  "input_snapshot": {
+    "yaml_path": "app/content/ep09_palace.yaml",
+    "yaml_sha256": "7a013ffcdaa6198d98a81418d5c7e860da59c23c860d30bba89105a3312f2141",
+    "input_sha256": {
+      "docs/continuation/ep09/script.md": "cf5dca417ca45495d44422e04ce6ed56fb29c809eadf4c62cd9fa29249ccaa68",
+      "docs/continuation/ep09/scenes.json": "314cff7513bdd1c5a26af86985e64119eb2eca28c780ddc5718cecfe6024a570",
+      "docs/continuation/ep09/continuation.md": "67d7403049d58d894518c61610a374cc38c703eaf950312135604923ba6970a2",
+      "docs/continuation/ep09/wardrobe-audit.md": "08a8a2759f144084b2e0243992493207932ff49100436080da8d3afb0f5538b4",
+      "app/content/ep09_palace.yaml": "7a013ffcdaa6198d98a81418d5c7e860da59c23c860d30bba89105a3312f2141",
+      "assets/ep09/cuts.json": "08b7a008f3f218098e39ff67e28ad9f5929e03e3cd79e2c5c441973d4bad3e45",
+      "docs/continuation/source03-10-audit.md": "23fb3373ebe4744824c7fbb53861055cbca4b984416900a5a51d88dbb92b4fe8",
+      "docs/continuation/build/lead-asset-baseline.md": "35f6bddb2fb826b9521ba9cc291f0595e88a61eba7a0cd5d808ba642d77aaf7e",
+      "work/ep09/merged/ep09_001.png": "e37b04cc6b4d328cb760c964fb9b3629153b0458d496f00f4ac811957109de52",
+      "work/ep09/merged/ep09_002.png": "f195a99d4d86f2787b9eb72dfe076a87ca288e6fdc0828fa99f238f4046ca1d4",
+      "work/ep09/merged/ep09_003.png": "816890d5a1e33d279bbdad4a2675bdc8b808c20884cbef96acafe7735cc08ce6",
+      "work/ep09/merged/ep09_004.png": "66351bb6049b7398f026c82fc0d3eb7e846e93fb8460e80ca2a7fc5e121dcb08",
+      "work/ep09/merged/ep09_005.png": "1a44133d521d0095bd45ab9a587692c3c9d4aae5b7ae1558e3433c3e721c127b",
+      "work/ep09/merged/ep09_006.png": "e3495b40fa2c42d4f2a1c47b786e72ea788ae2be153c99d5d0966c0eed103a72",
+      "work/ep09/merged/ep09_007.png": "9ef843865392a76f5e12b9219597f56b72db80768a00390f41b816434c021ebd",
+      "work/ep09/merged/ep09_008.png": "b53df9845dc454b1da9f7cc66b9b046440ba98beb4fdfc6b9503f12f4e587be4",
+      "work/ep09/merged/ep09_009.png": "3df0a63f89f0c0cc64a296206bdd112fbc6e34d295cb72a83473a319a8da5085",
+      "work/ep09/merged/ep09_010.png": "44c3dffa3a594463e132199c64d21f5442739587e5e858af3c69653d6ba94210",
+      "work/ep09/merged/ep09_011.png": "28957fd105e639c7acfda794c814cf103ed9c8194cf1b2ba2b8b18d978badc66",
+      "work/ep09/merged/ep09_012.png": "a67d20e6ec1615827826788946ffde74ebd32403dcd356aced2160eb342846b6",
+      "work/ep09/merged/ep09_013.png": "8bda04b1fa5bbf07defe61324363b74d8b1f537745fb90612b80baf23adf2b8a",
+      "work/ep09/merged/ep09_014.png": "f7508c34b5a32ab06c080a1b770beb3ef90de04f2a641b726ba82b5eedcd1137",
+      "work/ep09/merged/ep09_015.png": "08fd2a8b7317487a7360bdd529a8f60e444b90608816cd74b4c00453e4646304",
+      "work/ep09/merged/ep09_016.png": "e7d4522bf00536f962ca3d7983b86dc71db9db592135d715a89c24e0f5e027b4",
+      "work/ep09/merged/ep09_017.png": "756fab1e5eb2e3a339b4a5a76912c84ecf8ac6831175c8a485c5fe39eb19a954",
+      "work/ep09/merged/ep09_018.png": "e4e6be1aabb5b9245c26d7f2a61fa798fcb594a4175b84082057319bf77671ac",
+      "docs/continuation/ep06/transcription-audit.md": "ca45f08ec911113f213d279cc5d76d2ce9130ae9a1d76588d71662f938c92b3f"
+    },
+    "concurrent_yaml_owner": true
+  },
+  "checks": [
+    {
+      "name": "원본 컷 전수 순서",
+      "pass": true,
+      "detail": 84
+    },
+    {
+      "name": "후보 고유 출력 수",
+      "pass": true,
+      "detail": 77
+    },
+    {
+      "name": "YAML 줄 전수 대응",
+      "pass": true,
+      "detail": 132
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c001:1",
+      "pass": true,
+      "detail": "beats.ep09_c001.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c002:1",
+      "pass": true,
+      "detail": "beats.ep09_c002.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c003:1",
+      "pass": true,
+      "detail": "beats.ep09_c003.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c003:2",
+      "pass": true,
+      "detail": "beats.ep09_c003.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c004:1",
+      "pass": true,
+      "detail": "beats.ep09_c004.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c005:1",
+      "pass": true,
+      "detail": "beats.ep09_c005.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c006:1",
+      "pass": true,
+      "detail": "beats.ep09_c006.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c008:1",
+      "pass": true,
+      "detail": "beats.ep09_c008.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c009:1",
+      "pass": true,
+      "detail": "beats.ep09_c009.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c009:2",
+      "pass": true,
+      "detail": "beats.ep09_c009.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c009:3",
+      "pass": true,
+      "detail": "beats.ep09_c009.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c009:4",
+      "pass": true,
+      "detail": "beats.ep09_c009.lines[3]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c009:5",
+      "pass": true,
+      "detail": "beats.ep09_c009.lines[4]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c010:1",
+      "pass": true,
+      "detail": "beats.ep09_c010.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c011:1",
+      "pass": true,
+      "detail": "beats.ep09_c011.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c011:2",
+      "pass": true,
+      "detail": "beats.ep09_c011.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c012:1",
+      "pass": true,
+      "detail": "beats.ep09_c012.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c012:2",
+      "pass": true,
+      "detail": "beats.ep09_c012.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c013:1",
+      "pass": true,
+      "detail": "beats.ep09_c013.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c013:2",
+      "pass": true,
+      "detail": "beats.ep09_c013.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c013:3",
+      "pass": true,
+      "detail": "beats.ep09_c013.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c015:1",
+      "pass": true,
+      "detail": "beats.ep09_c015.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c016:1",
+      "pass": true,
+      "detail": "beats.ep09_c016.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c017:1",
+      "pass": true,
+      "detail": "beats.ep09_c017.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c018:1",
+      "pass": true,
+      "detail": "beats.ep09_c018.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c019:1",
+      "pass": true,
+      "detail": "beats.ep09_c019.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c019:2",
+      "pass": true,
+      "detail": "beats.ep09_c019.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c019:3",
+      "pass": true,
+      "detail": "beats.ep09_c019.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c020:1",
+      "pass": true,
+      "detail": "beats.ep09_c020.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c020:2",
+      "pass": true,
+      "detail": "beats.ep09_c020.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c020:3",
+      "pass": true,
+      "detail": "beats.ep09_c020.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c020:4",
+      "pass": true,
+      "detail": "beats.ep09_c020.lines[3]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c020:5",
+      "pass": true,
+      "detail": "beats.ep09_c020.lines[4]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c021:1",
+      "pass": true,
+      "detail": "beats.ep09_c021.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c022:1",
+      "pass": true,
+      "detail": "beats.ep09_c022.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c022:2",
+      "pass": true,
+      "detail": "beats.ep09_c022.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c023:1",
+      "pass": true,
+      "detail": "beats.ep09_c023.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c023:2",
+      "pass": true,
+      "detail": "beats.ep09_c023.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c023:3",
+      "pass": true,
+      "detail": "beats.ep09_c023.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c023:4",
+      "pass": true,
+      "detail": "beats.ep09_c023.lines[3]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c024:1",
+      "pass": true,
+      "detail": "beats.ep09_c024.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c024:2",
+      "pass": true,
+      "detail": "beats.ep09_c024.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c024:3",
+      "pass": true,
+      "detail": "beats.ep09_c024.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c027:1",
+      "pass": true,
+      "detail": "beats.ep09_c027.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c027:2",
+      "pass": true,
+      "detail": "beats.ep09_c027.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c029:1",
+      "pass": true,
+      "detail": "beats.ep09_c029.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c029:2",
+      "pass": true,
+      "detail": "beats.ep09_c029.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c030:1",
+      "pass": true,
+      "detail": "beats.ep09_c030.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c031:1",
+      "pass": true,
+      "detail": "beats.ep09_c031.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c033:1",
+      "pass": true,
+      "detail": "beats.ep09_c033.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c033:2",
+      "pass": true,
+      "detail": "beats.ep09_c033.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c034:1",
+      "pass": true,
+      "detail": "beats.ep09_c034.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c035:1",
+      "pass": true,
+      "detail": "beats.ep09_c035.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c036:1",
+      "pass": true,
+      "detail": "beats.ep09_c036.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c036:2",
+      "pass": true,
+      "detail": "beats.ep09_c036.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c036:3",
+      "pass": true,
+      "detail": "beats.ep09_c036.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c036:4",
+      "pass": true,
+      "detail": "beats.ep09_c036.lines[3]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c037:1",
+      "pass": true,
+      "detail": "beats.ep09_c037.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c038:1",
+      "pass": true,
+      "detail": "beats.ep09_c038.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c040:1",
+      "pass": true,
+      "detail": "beats.ep09_c040.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c041:1",
+      "pass": true,
+      "detail": "beats.ep09_c041.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c041:2",
+      "pass": true,
+      "detail": "beats.ep09_c041.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c042:1",
+      "pass": true,
+      "detail": "beats.ep09_c042.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c043:1",
+      "pass": true,
+      "detail": "beats.ep09_c043.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c043:2",
+      "pass": true,
+      "detail": "beats.ep09_c043.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c044:1",
+      "pass": true,
+      "detail": "beats.ep09_c044.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c045:1",
+      "pass": true,
+      "detail": "beats.ep09_c045.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c046:1",
+      "pass": true,
+      "detail": "beats.ep09_c046.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c046:2",
+      "pass": true,
+      "detail": "beats.ep09_c046.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c046:3",
+      "pass": true,
+      "detail": "beats.ep09_c046.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c047:1",
+      "pass": true,
+      "detail": "beats.ep09_c047.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c047:2",
+      "pass": true,
+      "detail": "beats.ep09_c047.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c048:1",
+      "pass": true,
+      "detail": "beats.ep09_c048.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c049:1",
+      "pass": true,
+      "detail": "beats.ep09_c049.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c050:1",
+      "pass": true,
+      "detail": "beats.ep09_c050.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c050:2",
+      "pass": true,
+      "detail": "beats.ep09_c050.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c050:3",
+      "pass": true,
+      "detail": "beats.ep09_c050.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c050:4",
+      "pass": true,
+      "detail": "beats.ep09_c050.lines[3]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c051:1",
+      "pass": true,
+      "detail": "beats.ep09_c051.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c051:2",
+      "pass": true,
+      "detail": "beats.ep09_c051.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c051:3",
+      "pass": true,
+      "detail": "beats.ep09_c051.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c052:1",
+      "pass": true,
+      "detail": "beats.ep09_c052.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:1",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:2",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:3",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:4",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[3]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:5",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[4]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:6",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[5]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:7",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[6]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c053:8",
+      "pass": true,
+      "detail": "beats.ep09_c053.lines[7]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c054:1",
+      "pass": true,
+      "detail": "beats.ep09_c054.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c055:1",
+      "pass": true,
+      "detail": "beats.ep09_c055.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c055:2",
+      "pass": true,
+      "detail": "beats.ep09_c055.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c056:1",
+      "pass": true,
+      "detail": "beats.ep09_c056.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c056:2",
+      "pass": true,
+      "detail": "beats.ep09_c056.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c056:3",
+      "pass": true,
+      "detail": "beats.ep09_c056.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c057:1",
+      "pass": true,
+      "detail": "beats.ep09_c057.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c057:2",
+      "pass": true,
+      "detail": "beats.ep09_c057.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c058:1",
+      "pass": true,
+      "detail": "beats.ep09_c058.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c058:2",
+      "pass": true,
+      "detail": "beats.ep09_c058.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c058:3",
+      "pass": true,
+      "detail": "beats.ep09_c058.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c060:1",
+      "pass": true,
+      "detail": "beats.ep09_c060.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c063:1",
+      "pass": true,
+      "detail": "beats.ep09_c063.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c066:1",
+      "pass": true,
+      "detail": "beats.ep09_c066.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c066:2",
+      "pass": true,
+      "detail": "beats.ep09_c066.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c068:1",
+      "pass": true,
+      "detail": "beats.ep09_c068.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c068:2",
+      "pass": true,
+      "detail": "beats.ep09_c068.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c073:1",
+      "pass": true,
+      "detail": "beats.ep09_c073.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c075:1",
+      "pass": true,
+      "detail": "beats.ep09_c075.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c076:1",
+      "pass": true,
+      "detail": "beats.ep09_c076.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c076:2",
+      "pass": true,
+      "detail": "beats.ep09_c076.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c076:3",
+      "pass": true,
+      "detail": "beats.ep09_c076.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c076:4",
+      "pass": true,
+      "detail": "beats.ep09_c076.lines[3]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c076:5",
+      "pass": true,
+      "detail": "beats.ep09_c076.lines[4]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c077:1",
+      "pass": true,
+      "detail": "beats.ep09_c077.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c077:2",
+      "pass": true,
+      "detail": "beats.ep09_c077.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c078:1",
+      "pass": true,
+      "detail": "beats.ep09_c078.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c079:1",
+      "pass": true,
+      "detail": "beats.ep09_c079.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c080:1",
+      "pass": true,
+      "detail": "beats.ep09_c080.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c080:2",
+      "pass": true,
+      "detail": "beats.ep09_c080.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c080:3",
+      "pass": true,
+      "detail": "beats.ep09_c080.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c081:1",
+      "pass": true,
+      "detail": "beats.ep09_c081.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c081:2",
+      "pass": true,
+      "detail": "beats.ep09_c081.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c081:3",
+      "pass": true,
+      "detail": "beats.ep09_c081.lines[2]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c082:1",
+      "pass": true,
+      "detail": "beats.ep09_c082.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c083:1",
+      "pass": true,
+      "detail": "beats.ep09_c083.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c083:2",
+      "pass": true,
+      "detail": "beats.ep09_c083.lines[1]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_c084:1",
+      "pass": true,
+      "detail": "beats.ep09_c084.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_protest:1",
+      "pass": true,
+      "detail": "beats.ep09_protest.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_silent:1",
+      "pass": true,
+      "detail": "beats.ep09_silent.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_breath:1",
+      "pass": true,
+      "detail": "beats.ep09_breath.lines[0]"
+    },
+    {
+      "name": "현재 화자·글·CG 일치 ep09_gaze:1",
+      "pass": true,
+      "detail": "beats.ep09_gaze.lines[0]"
+    },
+    {
+      "name": "공개 앵커 전수 대응",
+      "pass": true,
+      "detail": 15
+    },
+    {
+      "name": "원문 무대사 컷 전수 대응",
+      "pass": true,
+      "detail": 25
+    },
+    {
+      "name": "모든 줄·원본 패널에 후보 존재",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "후보마다 최초 앵커 존재",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "생성 및 자기 QA 미실시",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "입력 해시 유지",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c001",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c001",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c001.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c002",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c002",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c002.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c003",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c003",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c003.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c004",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c004",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c004.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c005",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c005",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c005.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c006",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c006",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c006.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c007",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c007",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c007.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c008",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26045
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c008",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c008.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c009",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25967
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c009",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c009.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c010",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25967
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c010",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c010.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c011",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25967
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c011",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c011.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c012",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25967
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c012",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c012.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c013",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29404
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c013",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c013.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c014",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29404
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c014",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c014.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c015",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29404
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c015",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c015.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c016",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29404
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c016",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c016.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c017",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29404
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c017",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c017.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c018",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29404
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c018",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c018.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c019",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25699
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c019",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c019.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c020",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25699
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c020",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c020.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c021",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25699
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c021",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c021.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c022",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 20257
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c022",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c022.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c023",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 20257
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c023",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c023.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c024",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c024",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c024.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c025",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c025",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c025.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c026",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c026",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c026.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c027",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c027",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c027.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c028",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c028",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c028.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c029",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c029",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c029.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c030",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c030",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c030.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c031",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c031",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c031.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c032",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 23651
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c032",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c032.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c033",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 28662
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c033",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c033.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c034",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 28662
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c034",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c034.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c035",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 28662
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c035",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c035.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c036",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 28662
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c036",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c036.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c037",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 28662
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c037",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c037.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c038",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 21400
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c038",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c038.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c039",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 21400
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c039",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c039.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c040",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 21400
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c040",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c040.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c041",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 21400
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c041",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c041.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c042",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 21400
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c042",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c042.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c043",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 21400
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c043",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c043.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c044",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25255
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c044",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c044.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c045",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25255
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c045",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c045.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c046",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 25255
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c046",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c046.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c047",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26611
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c047",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c047.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c048",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26611
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c048",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c048.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c049",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26611
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c049",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c049.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c050",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26611
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c050",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c050.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c051",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 20346
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c051",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c051.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c052",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 20346
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c052",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c052.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c053",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 21713
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c053",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c053.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c054",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 24972
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c054",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c054.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c055",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 24972
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c055",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c055.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c056",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 24972
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c056",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c056.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c057",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 24972
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c057",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c057.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c058",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c058",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c058.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c059",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c059",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c059.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c060",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c060",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c060.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c061",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c061",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c061.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c062",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c062",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c062.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c063",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c063",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c063.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c064",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c064",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c064.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c065",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c065",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c065.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c066",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c066",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c066.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c067",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26777
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c067",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c067.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c068",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c068",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c068.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c069",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c069",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c069.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c070",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c070",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c070.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c071",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c071",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c071.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c072",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c072",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c072.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c073",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c073",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c073.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c074",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c074",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c074.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c075",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 26510
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c075",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c075.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c076",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29769
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c076",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c076.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c077",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29769
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c077",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c077.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c078",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29769
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c078",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c078.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c079",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29769
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c079",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c079.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c080",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29532
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c080",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c080.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c081",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 29532
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c081",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c081.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c082",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 24055
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c082",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c082.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c083",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 24055
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c083",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c083.png"
+    },
+    {
+      "name": "원본 실제 크기·컷 범위 ep09_c084",
+      "pass": true,
+      "detail": {
+        "width": 2000,
+        "height": 24055
+      }
+    },
+    {
+      "name": "정제 컷 존재·해시 ep09_c084",
+      "pass": true,
+      "detail": "assets/ep09/cuts/full_res/clean/ep09_c084.png"
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c001 ep09_c001",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4860
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c001",
+      "pass": true,
+      "detail": [
+        1
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c001",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c002 ep09_c002",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        1333
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c002",
+      "pass": true,
+      "detail": [
+        2
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c002",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c003 ep09_c003",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3426
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c003",
+      "pass": true,
+      "detail": [
+        3
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c003",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c004 ep09_c004",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3321
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c004",
+      "pass": true,
+      "detail": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c004",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c006 ep09_c006",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3332
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c006",
+      "pass": true,
+      "detail": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c006",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c009_a ep09_c009",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        10000
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c009_a",
+      "pass": true,
+      "detail": [
+        9
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c009_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c009_b ep09_c009",
+      "pass": true,
+      "detail": [
+        0,
+        10000,
+        2000,
+        3182
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c009_b",
+      "pass": true,
+      "detail": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c009_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c011 ep09_c011",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3594
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c011",
+      "pass": true,
+      "detail": [
+        11
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c011",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c012 ep09_c012",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2712
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c012",
+      "pass": true,
+      "detail": [
+        12
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c012",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c013 ep09_c013",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4482
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c013",
+      "pass": true,
+      "detail": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c013",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c016 ep09_c016",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2935
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c016",
+      "pass": true,
+      "detail": [
+        16
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c016",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c017 ep09_c017",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5768
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c017",
+      "pass": true,
+      "detail": [
+        17
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c017",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c018 ep09_c018",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        7809
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c018",
+      "pass": true,
+      "detail": [
+        18
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c018",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c019_a ep09_c019",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5900
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c019_a",
+      "pass": true,
+      "detail": [
+        19
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c019_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c019_b ep09_c019",
+      "pass": true,
+      "detail": [
+        0,
+        5900,
+        2000,
+        3805
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c019_b",
+      "pass": true,
+      "detail": [
+        19
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c019_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c020_a ep09_c020",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5500
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c020_a",
+      "pass": true,
+      "detail": [
+        20
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c020_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c020_b ep09_c020",
+      "pass": true,
+      "detail": [
+        0,
+        5500,
+        2000,
+        6564
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c020_b",
+      "pass": true,
+      "detail": [
+        20
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c020_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c021 ep09_c021",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        1434
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c021",
+      "pass": true,
+      "detail": [
+        21
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c021",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c022 ep09_c022",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5612
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c022",
+      "pass": true,
+      "detail": [
+        22
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c022",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c023_a ep09_c023",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        7000
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c023_a",
+      "pass": true,
+      "detail": [
+        23
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c023_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c023_b ep09_c023",
+      "pass": true,
+      "detail": [
+        0,
+        7000,
+        2000,
+        6356
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c023_b",
+      "pass": true,
+      "detail": [
+        23
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c023_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c024_a ep09_c024",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        6500
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c024_a",
+      "pass": true,
+      "detail": [
+        24
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c024_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c024_b ep09_c024",
+      "pass": true,
+      "detail": [
+        0,
+        6500,
+        2000,
+        2123
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c024_b",
+      "pass": true,
+      "detail": [
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c024_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c027 ep09_c027",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3385
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c027",
+      "pass": true,
+      "detail": [
+        27,
+        28
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c027",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c029 ep09_c029",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4595
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c029",
+      "pass": true,
+      "detail": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c029",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c033_a ep09_c033",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4750
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c033_a",
+      "pass": true,
+      "detail": [
+        33
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c033_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c033_b ep09_c033",
+      "pass": true,
+      "detail": [
+        900,
+        4800,
+        1100,
+        1400
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c033_b",
+      "pass": true,
+      "detail": [
+        33,
+        34
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c033_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c035 ep09_c035",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3151
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c035",
+      "pass": true,
+      "detail": [
+        35
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c035",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c036 ep09_c036",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        9404
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c036",
+      "pass": true,
+      "detail": [
+        36
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c036",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c037 ep09_c037",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3225
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c037",
+      "pass": true,
+      "detail": [
+        37
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c037",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c038 ep09_c038",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2761
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c038",
+      "pass": true,
+      "detail": [
+        38,
+        39
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c038",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c040 ep09_c040",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2814
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c040",
+      "pass": true,
+      "detail": [
+        40
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c040",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c041 ep09_c041",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5560
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c041",
+      "pass": true,
+      "detail": [
+        41,
+        42
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c041",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c043 ep09_c043",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3655
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c043",
+      "pass": true,
+      "detail": [
+        43
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c043",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c044 ep09_c044",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3600
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c044",
+      "pass": true,
+      "detail": [
+        44
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c044",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c045 ep09_c045",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5579
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c045",
+      "pass": true,
+      "detail": [
+        45
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c045",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c046_a ep09_c046",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5000
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c046_a",
+      "pass": true,
+      "detail": [
+        46
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c046_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c046_b ep09_c046",
+      "pass": true,
+      "detail": [
+        0,
+        5000,
+        2000,
+        5246
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c046_b",
+      "pass": true,
+      "detail": [
+        46
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c046_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c047 ep09_c047",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3790
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c047",
+      "pass": true,
+      "detail": [
+        47
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c047",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c048 ep09_c048",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4161
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c048",
+      "pass": true,
+      "detail": [
+        48
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c048",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c049 ep09_c049",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2990
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c049",
+      "pass": true,
+      "detail": [
+        49
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c049",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c050_a ep09_c050",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5200
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c050_a",
+      "pass": true,
+      "detail": [
+        50
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c050_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c050_b ep09_c050",
+      "pass": true,
+      "detail": [
+        0,
+        5200,
+        2000,
+        2600
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c050_b",
+      "pass": true,
+      "detail": [
+        50
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c050_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c050_c ep09_c050",
+      "pass": true,
+      "detail": [
+        0,
+        7800,
+        2000,
+        3102
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c050_c",
+      "pass": true,
+      "detail": [
+        50
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c050_c",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c051_a ep09_c051",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        9500
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c051_a",
+      "pass": true,
+      "detail": [
+        51
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c051_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c051_b ep09_c051",
+      "pass": true,
+      "detail": [
+        0,
+        9500,
+        2000,
+        4728
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c051_b",
+      "pass": true,
+      "detail": [
+        51
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c051_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c052 ep09_c052",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5014
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c052",
+      "pass": true,
+      "detail": [
+        52
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c052",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c053_a ep09_c053",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2800
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c053_a",
+      "pass": true,
+      "detail": [
+        53
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c053_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c053_b ep09_c053",
+      "pass": true,
+      "detail": [
+        0,
+        2800,
+        2000,
+        4200
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c053_b",
+      "pass": true,
+      "detail": [
+        53
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c053_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c053_c ep09_c053",
+      "pass": true,
+      "detail": [
+        0,
+        7000,
+        2000,
+        10000
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c053_c",
+      "pass": true,
+      "detail": [
+        53
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c053_c",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c053_d ep09_c053",
+      "pass": true,
+      "detail": [
+        0,
+        17000,
+        2000,
+        2744
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c053_d",
+      "pass": true,
+      "detail": [
+        53
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c053_d",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c054 ep09_c054",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2171
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c054",
+      "pass": true,
+      "detail": [
+        54
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c054",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c055 ep09_c055",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        8860
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c055",
+      "pass": true,
+      "detail": [
+        55
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c055",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c056 ep09_c056",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5534
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c056",
+      "pass": true,
+      "detail": [
+        56
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c056",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c057 ep09_c057",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5049
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c057",
+      "pass": true,
+      "detail": [
+        57
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c057",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c058 ep09_c058",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        8389
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c058",
+      "pass": true,
+      "detail": [
+        58,
+        59
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c058",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c060 ep09_c060",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4074
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c060",
+      "pass": true,
+      "detail": [
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c060",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c063 ep09_c063",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4155
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c063",
+      "pass": true,
+      "detail": [
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c063",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c066 ep09_c066",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2813
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c066",
+      "pass": true,
+      "detail": [
+        66,
+        67
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c066",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c068_a ep09_c068",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2600
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c068_a",
+      "pass": true,
+      "detail": [
+        68
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c068_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c068_b ep09_c068",
+      "pass": true,
+      "detail": [
+        0,
+        2600,
+        2000,
+        2400
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c068_b",
+      "pass": true,
+      "detail": [
+        68
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c068_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c068_night ep09_c068",
+      "pass": true,
+      "detail": [
+        0,
+        6800,
+        2000,
+        1339
+      ]
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c068_night ep09_c069",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        1634
+      ]
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c068_night ep09_c070",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        643
+      ]
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c068_night ep09_c071",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        1024
+      ]
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c068_night ep09_c072",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        335
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c068_night",
+      "pass": true,
+      "detail": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c068_night",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c073 ep09_c073",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        2318
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c073",
+      "pass": true,
+      "detail": [
+        73,
+        74
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c073",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c075 ep09_c075",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        9124
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c075",
+      "pass": true,
+      "detail": [
+        75
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c075",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c076_a ep09_c076",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5800
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c076_a",
+      "pass": true,
+      "detail": [
+        76
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c076_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c076_b ep09_c076",
+      "pass": true,
+      "detail": [
+        0,
+        5800,
+        2000,
+        4379
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c076_b",
+      "pass": true,
+      "detail": [
+        76
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c076_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c077 ep09_c077",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        4166
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c077",
+      "pass": true,
+      "detail": [
+        77
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c077",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c078 ep09_c078",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        6972
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c078",
+      "pass": true,
+      "detail": [
+        78
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c078",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c079 ep09_c079",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3739
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c079",
+      "pass": true,
+      "detail": [
+        79
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c079",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c080_a ep09_c080",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        6100
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c080_a",
+      "pass": true,
+      "detail": [
+        80
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c080_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c080_b ep09_c080",
+      "pass": true,
+      "detail": [
+        0,
+        6100,
+        2000,
+        8490
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c080_b",
+      "pass": true,
+      "detail": [
+        80
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c080_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c081_a ep09_c081",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        3500
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c081_a",
+      "pass": true,
+      "detail": [
+        81
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c081_a",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c081_b ep09_c081",
+      "pass": true,
+      "detail": [
+        0,
+        3500,
+        2000,
+        7000
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c081_b",
+      "pass": true,
+      "detail": [
+        81
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c081_b",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c081_c ep09_c081",
+      "pass": true,
+      "detail": [
+        0,
+        10500,
+        2000,
+        3514
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c081_c",
+      "pass": true,
+      "detail": [
+        81
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c081_c",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c082 ep09_c082",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        5041
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c082",
+      "pass": true,
+      "detail": [
+        82
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c082",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c083 ep09_c083",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        6631
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c083",
+      "pass": true,
+      "detail": [
+        83
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c083",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "패널 크롭 범위 ep09_c084 ep09_c084",
+      "pass": true,
+      "detail": [
+        0,
+        0,
+        2000,
+        9850
+      ]
+    },
+    {
+      "name": "인접 동일 그림 재사용 ep09_c084",
+      "pass": true,
+      "detail": [
+        84
+      ]
+    },
+    {
+      "name": "예정 후보 실재 상태 ep09_c084",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "name": "생성 트리 보존",
+      "pass": true,
+      "detail": [
+        "source/c041-c043-verification.png"
+      ]
+    },
+    {
+      "name": "기존 검증 그림 해시 보존",
+      "pass": true,
+      "detail": "82621fc52801b0eb11c93b99a853d9bc3a60cf4bd3f4f757528ce3e345596e1c"
+    }
+  ],
+  "pending": [
+    "부모 명시 GO·네이티브 슬롯",
+    "후보 77개 생성과 독립 Claude 원본 나란히 QA",
+    "YAML 소유자의 앵커 조정·설치 승인"
+  ],
+  "generation_calls": 0,
+  "changed_paths": [
+    "docs/continuation/build/ep09/art/mapping.md",
+    "docs/continuation/build/ep09/art/mapping.json",
+    "docs/continuation/build/ep09/art/candidate-manifest.json"
+  ],
+  "note": "명세의 구조·현재 입력·경로·해시 검증이다. 후보 그림 QA나 실제 게임 실행을 수행한 결과가 아니다."
+}

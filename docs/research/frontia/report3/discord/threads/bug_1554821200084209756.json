@@ -1,0 +1,63 @@
+{
+ "title": "(3) Discord | \"[ ✅ แก้ไขแล้ว / Solved ][แจ้งปัญหาบั๊กเติมเงินเบิ้ล / Double Top-up Bug]\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 5,
+ "msgs": [
+  {
+   "t": "2026-09-30T11:44:21.281Z",
+   "a": "유저",
+   "bot": true,
+   "txt": " 2026-09-23 · moved from old-bug-report-global\n[แจ้งปัญหาบั๊กเติมเงินเบิ้ล / Double Top-up Bug]\nอีเมลบัญชี (Account Email): [이메일 삭제]\n,\nรายละเอียด (Issue): ซื้อดาว 5,000 ดวง แต่ระบบมีบั๊ก เติมดาวเบิ้ลให้เป็น 10,000 ดวง (ตัดเงินจริงผ่าน Google Play แค่ 1 รอบ) รบกวนทีมงานช่วยตรวจสอบหน่อยครับ\n,\nเวลาที่เกิดปัญหา (Time): 18 ก.ย. 2569 เวลา 11:29 น.\n,\nรหัสธุรกรรม (Transaction ID): [거래번호 삭제]\n,\nอุปกรณ์ (Device): Samsung Galaxy Tab S10 FE 5G (Android 16)\n,\nเวอร์ชันแอป (App Version): 1.5.0 (01a0b343)(หมายเหตุ: ได้ส่งเรื่องผ่าน Channel Talk ในแอปไปตั้งแต่วันที่ 18 ก.ย. แล้วครับ แต่ยังไม่ได้รับการตอบกลับ)\n,\nScreenshot_20260923_085155_frontia.jpg\nScreenshot_20260923_085101_frontia.jpg\nScreenshot_20260923_085220_Google_Play_Store.jpg",
+   "emb": "",
+   "att": 3,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T11:44:22.735Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "[แจ้งปัญหาบั๊กเติมเงินเบิ้ล / Double Top-up Bug]",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T11:44:23.515Z",
+   "a": "",
+   "bot": false,
+   "txt": "[  แก้ไขแล้ว / Solved ][แจ้งปัญหาบั๊กเติมเงินเบิ้ล / Double Top-up Bug]",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T11:44:27.173Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " English\n[Edited / Solved ][Report double top-up bug problem / Double Top-up Bug] -# 2026-09-23 · moved from old-bug-report-global [Report double top-up bug] * Account Email: [이메일 삭제] * Details (Issue): Purchased 5,000 stars but the system has a bug. Add double stars to 10,000 hearts (remove real money through Google Play in just 1 round). Please help the team check. * Time of problem (Time): 18 Sep. 2026 at 11:29 a.m. * Transaction ID: [거래번호 삭제] * Device (Device): Samsung Galaxy Tab S10 FE 5G (Android 16) * App Version: 1.5.0 (01a0b343) (Note: I have sent a message through Channel Talk in the app since Sept. 18, but have not received a response yet.)",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-28T01:59:06.550Z",
+   "a": "Frontia_sion",
+   "bot": false,
+   "txt": "สวัสดีค่ะ ขอบคุณมากที่แจ้งปัญหานี้เข้ามาด้วยตัวเองนะคะ  ทีมงานได้ตรวจสอบจากกรณีที่คุณแจ้งมา และแก้ไขปัญหาการเติมดาวซ้ำเรียบร้อยแล้วค่ะ\n\nส่วนดาวที่ได้รับเพิ่มมาในครั้งนั้น ทางเราจะไม่เรียกคืนนะคะ ขอให้ถือเป็นคำขอบคุณจากทีม Frontia สำหรับความซื่อสัตย์และการช่วยให้บริการของเราดีขึ้น ขอให้สนุกกับ Frontia ได้เต็มที่เลยนะคะ ",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

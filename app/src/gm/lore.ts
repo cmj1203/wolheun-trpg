@@ -76,9 +76,12 @@ export function spoilersFor(lore: Lore, state: Pick<GameState, 'tracks' | 'abili
   return [...lore.forbidden.spoilers, ...hidden];
 }
 
-/** 지금 상태에 맞춘 설정 사전. 스포일러만 바뀐다. */
+/** 질문 시점에 열린 지식만 쓴다. 명시 조건이 열린 hidden은 아시나 지식으로 보인다. */
 export function loreFor(lore: Lore, state: Pick<GameState, 'tracks' | 'abilities' | 'flags' | 'items'>): Lore {
-  return { ...lore, knowledge: lore.knowledge.filter((n) => n.if === undefined || noteOpen(n, state)), forbidden: { ...lore.forbidden, spoilers: spoilersFor(lore, state) } };
+  const knowledge = lore.knowledge
+    .filter((note) => (note.tier === 'hidden' && note.if === undefined) || noteOpen(note, state))
+    .map<NoteEntry>((note) => note.tier === 'hidden' && note.if !== undefined ? { ...note, tier: 'asina' } : note);
+  return { ...lore, knowledge, forbidden: { ...lore.forbidden, spoilers: spoilersFor(lore, state) } };
 }
 
 export class LoreError extends Error {

@@ -1,0 +1,2146 @@
+# 5화 독립 내부 구현. 원작 크롭은 검증 입력이며 Astra 완성 그림이 아니다.
+# sheet는 적재 정의일 뿐이다. 연결은 실제 저장 상태를 보존해야 한다.
+# 세 고정 선택은 내부 구조이며 임의 대사·괄호 행동 입력은 공유 패치 의존이다.
+{
+  "id": "ep05_audience",
+  "title": "궁의 아침과 문답",
+  "episode": "5화",
+  "source": "웹툰 「월흔」 5화 원본 15장·55컷·9장면. 원작 크롭은 검증 입력이며 Astra 완성 그림이 아니다.",
+  "rating": "15세 이용가",
+  "start": "ep05_entry",
+  "sheet": {
+    "name": "아시나",
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "tracks": {
+      "체력": 4,
+      "정신력": 4,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "items": [
+      {
+        "id": "magic_bag",
+        "file": "assets/ep01/gen/items/item_magic_bag.png",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.",
+        "states": [
+          {
+            "flag": "가방_끈",
+            "label": "끈 끊김",
+            "desc": "끈이 끊어져 손으로 쥐고 다닌다."
+          },
+          {
+            "flag": "짐_쏟음",
+            "label": "짐 쏟아짐",
+            "desc": "호위가 뒤집어 짐이 모래에 쏟아졌다."
+          }
+        ]
+      },
+      {
+        "id": "earring",
+        "file": "assets/ep01/gen/items/item_earring.png",
+        "name": "마법 귀찌",
+        "desc": "귓불에 달린 마법 귀찌."
+      },
+      {
+        "id": "map",
+        "file": "assets/ep01/gen/items/item_map.png",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도.",
+        "container": {
+          "item": "magic_bag",
+          "unless": "flag:지도_꺼냄 || flag:짐_쏟음"
+        },
+        "states": [
+          {
+            "flag": "지도_찢김",
+            "label": "찢김",
+            "desc": "한 귀퉁이가 찢겨 나갔다."
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "file": "assets/ep01/gen/items/item_pin.png",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀.",
+        "hidden": true
+      }
+    ],
+    "tension": 3
+  },
+  "cast": {
+    "ep05_서술": {
+      "display": "",
+      "style": "narration"
+    },
+    "ep05_아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "lore": "아시나"
+    },
+    "ep05_독백": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나"
+    },
+    "ep05_남성": {
+      "display": "은발 남성",
+      "style": "speech",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep05_라쿤": {
+      "display": "라 쿤",
+      "style": "speech",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep05_목소리": {
+      "display": "목소리",
+      "style": "speech"
+    },
+    "ep05_여성": {
+      "display": "방의 여성",
+      "style": "speech",
+      "lore": "누르"
+    },
+    "ep05_누르": {
+      "display": "누르",
+      "style": "speech",
+      "lore": "누르"
+    },
+    "ep05_청발": {
+      "display": "푸른 머리 신하",
+      "style": "speech",
+      "lore": "나시르"
+    },
+    "ep05_흑발": {
+      "display": "검은 머리 신하",
+      "style": "speech",
+      "lore": "검은 머리 신하"
+    }
+  },
+  "backgrounds": {},
+  "sprites": {},
+  "cgs": {
+    "ep05_cg_001": {
+      "label": "원작 검증 입력 ep05_c001 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c001.png",
+      "fit": "contain"
+    },
+    "ep05_cg_002": {
+      "label": "원작 검증 입력 ep05_c002 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c002.png",
+      "fit": "contain"
+    },
+    "ep05_cg_003": {
+      "label": "원작 검증 입력 ep05_c003 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c003.png",
+      "fit": "contain"
+    },
+    "ep05_cg_004": {
+      "label": "원작 검증 입력 ep05_c004 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c004.png",
+      "fit": "contain"
+    },
+    "ep05_cg_005": {
+      "label": "원작 검증 입력 ep05_c005 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c005.png",
+      "fit": "contain"
+    },
+    "ep05_cg_006": {
+      "label": "원작 검증 입력 ep05_c006 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c006.png",
+      "fit": "contain"
+    },
+    "ep05_cg_007": {
+      "label": "원작 검증 입력 ep05_c007 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c007.png",
+      "fit": "contain"
+    },
+    "ep05_cg_008": {
+      "label": "원작 검증 입력 ep05_c008 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c008.png",
+      "fit": "contain"
+    },
+    "ep05_cg_009": {
+      "label": "원작 검증 입력 ep05_c009 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c009.png",
+      "fit": "contain"
+    },
+    "ep05_cg_010": {
+      "label": "원작 검증 입력 ep05_c010 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c010.png",
+      "fit": "contain"
+    },
+    "ep05_cg_011": {
+      "label": "원작 검증 입력 ep05_c011 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c011.png",
+      "fit": "contain"
+    },
+    "ep05_cg_012": {
+      "label": "원작 검증 입력 ep05_c012 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c012.png",
+      "fit": "contain"
+    },
+    "ep05_cg_013": {
+      "label": "원작 검증 입력 ep05_c013 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c013.png",
+      "fit": "contain"
+    },
+    "ep05_cg_014": {
+      "label": "원작 검증 입력 ep05_c014 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c014.png",
+      "fit": "contain"
+    },
+    "ep05_cg_015": {
+      "label": "원작 검증 입력 ep05_c015 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c015.png",
+      "fit": "contain"
+    },
+    "ep05_cg_016": {
+      "label": "원작 검증 입력 ep05_c016 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c016.png",
+      "fit": "contain"
+    },
+    "ep05_cg_017": {
+      "label": "원작 검증 입력 ep05_c017 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c017.png",
+      "fit": "contain"
+    },
+    "ep05_cg_018": {
+      "label": "원작 검증 입력 ep05_c018 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c018.png",
+      "fit": "contain"
+    },
+    "ep05_cg_019": {
+      "label": "원작 검증 입력 ep05_c019 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c019.png",
+      "fit": "contain"
+    },
+    "ep05_cg_020": {
+      "label": "원작 검증 입력 ep05_c020 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c020.png",
+      "fit": "contain"
+    },
+    "ep05_cg_021": {
+      "label": "원작 검증 입력 ep05_c021 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c021.png",
+      "fit": "contain"
+    },
+    "ep05_cg_022": {
+      "label": "원작 검증 입력 ep05_c022 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c022.png",
+      "fit": "contain"
+    },
+    "ep05_cg_023": {
+      "label": "원작 검증 입력 ep05_c023 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c023.png",
+      "fit": "contain"
+    },
+    "ep05_cg_024": {
+      "label": "원작 검증 입력 ep05_c024 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c024.png",
+      "fit": "contain"
+    },
+    "ep05_cg_025": {
+      "label": "원작 검증 입력 ep05_c025 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c025.png",
+      "fit": "contain"
+    },
+    "ep05_cg_026": {
+      "label": "원작 검증 입력 ep05_c026 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c026.png",
+      "fit": "contain"
+    },
+    "ep05_cg_027": {
+      "label": "원작 검증 입력 ep05_c027 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c027.png",
+      "fit": "contain"
+    },
+    "ep05_cg_028": {
+      "label": "원작 검증 입력 ep05_c028 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c028.png",
+      "fit": "contain"
+    },
+    "ep05_cg_029": {
+      "label": "원작 검증 입력 ep05_c029 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c029.png",
+      "fit": "contain"
+    },
+    "ep05_cg_030": {
+      "label": "원작 검증 입력 ep05_c030 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c030.png",
+      "fit": "contain"
+    },
+    "ep05_cg_031": {
+      "label": "원작 검증 입력 ep05_c031 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c031.png",
+      "fit": "contain"
+    },
+    "ep05_cg_032": {
+      "label": "원작 검증 입력 ep05_c032 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c032.png",
+      "fit": "contain"
+    },
+    "ep05_cg_033": {
+      "label": "원작 검증 입력 ep05_c033 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c033.png",
+      "fit": "contain"
+    },
+    "ep05_cg_034": {
+      "label": "원작 검증 입력 ep05_c034 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c034.png",
+      "fit": "contain"
+    },
+    "ep05_cg_035": {
+      "label": "원작 검증 입력 ep05_c035 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c035.png",
+      "fit": "contain"
+    },
+    "ep05_cg_036": {
+      "label": "원작 검증 입력 ep05_c036 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c036.png",
+      "fit": "contain"
+    },
+    "ep05_cg_037": {
+      "label": "원작 검증 입력 ep05_c037 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c037.png",
+      "fit": "contain"
+    },
+    "ep05_cg_038": {
+      "label": "원작 검증 입력 ep05_c038 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c038.png",
+      "fit": "contain"
+    },
+    "ep05_cg_039": {
+      "label": "원작 검증 입력 ep05_c039 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c039.png",
+      "fit": "contain"
+    },
+    "ep05_cg_040": {
+      "label": "원작 검증 입력 ep05_c040 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c040.png",
+      "fit": "contain"
+    },
+    "ep05_cg_041": {
+      "label": "원작 검증 입력 ep05_c041 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c041.png",
+      "fit": "contain"
+    },
+    "ep05_cg_042": {
+      "label": "원작 검증 입력 ep05_c042 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+      "fit": "contain"
+    },
+    "ep05_cg_043": {
+      "label": "원작 검증 입력 ep05_c043 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c043.png",
+      "fit": "contain"
+    },
+    "ep05_cg_044": {
+      "label": "원작 검증 입력 ep05_c044 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c044.png",
+      "fit": "contain"
+    },
+    "ep05_cg_045": {
+      "label": "원작 검증 입력 ep05_c045 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c045.png",
+      "fit": "contain"
+    },
+    "ep05_cg_046": {
+      "label": "원작 검증 입력 ep05_c046 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c046.png",
+      "fit": "contain"
+    },
+    "ep05_cg_047": {
+      "label": "원작 검증 입력 ep05_c047 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c047.png",
+      "fit": "contain"
+    },
+    "ep05_cg_048": {
+      "label": "원작 검증 입력 ep05_c048 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c048.png",
+      "fit": "contain"
+    },
+    "ep05_cg_049": {
+      "label": "원작 검증 입력 ep05_c049 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c049.png",
+      "fit": "contain"
+    },
+    "ep05_cg_050": {
+      "label": "원작 검증 입력 ep05_c050 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c050.png",
+      "fit": "contain"
+    },
+    "ep05_cg_051": {
+      "label": "원작 검증 입력 ep05_c051 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c051.png",
+      "fit": "contain"
+    },
+    "ep05_cg_052": {
+      "label": "원작 검증 입력 ep05_c052 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c052.png",
+      "fit": "contain"
+    },
+    "ep05_cg_053": {
+      "label": "원작 검증 입력 ep05_c053 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c053.png",
+      "fit": "contain"
+    },
+    "ep05_cg_054": {
+      "label": "원작 검증 입력 ep05_c054 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c054.png",
+      "fit": "contain"
+    },
+    "ep05_cg_055": {
+      "label": "원작 검증 입력 ep05_c055 · Astra 완성 그림 아님",
+      "file": "assets/ep05/cuts/full_res/clean/ep05_c055.png",
+      "fit": "contain"
+    }
+  },
+  "facts": [
+    {
+      "if": "flag:ep04_distance_kept",
+      "text": "아시나는 베히다트에게 다가오지 말라고 요구해 손이 닿지 않는 거리를 지켰다. 그 밤의 입맞춤은 일어나지 않았으며, 두 사람의 기억에도 입맞춤이나 그것에 대한 동의는 없다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_하렘선언",
+      "text": "은발 남성이 자기 하렘에 온 것을 환영한다고 말했다. 아시나가 입실에 동의한 것은 아니다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_누르소개",
+      "text": "방의 여성이 자신을 시녀 누르라고 소개했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_아이라뜻",
+      "text": "누르는 아이라가 쿤의 여인을 이르는 말이라고 설명했다. 아시나는 지위를 수용하지 않았다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_상시동행아님",
+      "text": "누르는 상시 동행 여부를 부정하고 아시나를 도울 뿐이라고 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_시녀물림",
+      "text": "누르는 귀찮다면 물리셔도 된다고 말했다. 궁 밖 출입 허가는 아니다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_신앙회고",
+      "text": "아시나는 크롬웰의 리메아 신앙과 페시안의 신적 지배자에 관한 기존 인식을 되짚었다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_쿤위상회고",
+      "text": "아시나는 페시안의 체제가 쿤을 중심으로 돌아가며 살아있는 신으로 추앙한다는 기존 지식을 회고했다. 현재 마법 시연은 없다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_라쿤회고",
+      "text": "아시나는 어젯밤 남성을 라 쿤으로 떠올렸다. 4화에서 실제로 들은 이름과 지위를 잊거나 새로 처음 배운 것은 아니다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep05_아시나_소환전달",
+      "text": "누르가 라 쿤의 부름을 전했다. 아시나는 자이드 보고·정치적 우려·조사 의향과 호출 목적을 듣지 못했다.",
+      "state_guard": []
+    }
+  ],
+  "beats": {
+    "ep05_entry": {
+      "title": "지난밤에서 이어지는 아침",
+      "time": 0,
+      "effects": {
+        "flags": {
+          "ep04_active": false
+        }
+      },
+      "lines": [],
+      "next": [
+        {
+          "if": "flag:ep04_distance_kept",
+          "to": "ep05_c010"
+        },
+        {
+          "to": "ep05_c001"
+        }
+      ]
+    },
+    "ep05_c001": {
+      "title": "밤의 침실",
+      "cut": "ep05_c001",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "꽃과 푸른 휘장이 드리운 침대 위, 은발 남성이 아시나에게 몸을 숙여 입을 맞추고 있다.",
+          "cg": "ep05_cg_001"
+        }
+      ],
+      "next": "ep05_c002"
+    },
+    "ep05_c002": {
+      "title": "밤의 침실",
+      "cut": "ep05_c002",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_남성": "…읏.",
+          "cg": "ep05_cg_002"
+        }
+      ],
+      "next": "ep05_c003"
+    },
+    "ep05_c003": {
+      "title": "밤의 침실",
+      "cut": "ep05_c003",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "두 사람의 입술이 맞닿아 있다.",
+          "cg": "ep05_cg_003"
+        }
+      ],
+      "next": "ep05_c004"
+    },
+    "ep05_c004": {
+      "title": "밤의 침실",
+      "cut": "ep05_c004",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_목소리": "으읏…!",
+          "cg": "ep05_cg_004"
+        }
+      ],
+      "next": "ep05_c005"
+    },
+    "ep05_c005": {
+      "title": "밤의 침실",
+      "cut": "ep05_c005",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "무슨 힘이…! 이대론 위험해…!",
+          "cg": "ep05_cg_005"
+        },
+        {
+          "ep05_아시나": "읏…",
+          "cg": "ep05_cg_005"
+        },
+        {
+          "ep05_아시나": "이… 이거…",
+          "cg": "ep05_cg_005"
+        },
+        {
+          "ep05_아시나": "놔앗…!",
+          "cg": "ep05_cg_005"
+        }
+      ],
+      "next": "ep05_c006"
+    },
+    "ep05_c006": {
+      "title": "밤의 침실",
+      "cut": "ep05_c006",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "밝은 장식 무늬가 잠시 이어진다.",
+          "cg": "ep05_cg_006"
+        }
+      ],
+      "next": "ep05_c007"
+    },
+    "ep05_c007": {
+      "title": "밤의 침실",
+      "cut": "ep05_c007",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "남성이 내려다보는 가운데 아시나가 침대에 누워 그를 올려다본다.",
+          "cg": "ep05_cg_007"
+        }
+      ],
+      "next": "ep05_c008"
+    },
+    "ep05_c008": {
+      "title": "밤의 침실",
+      "cut": "ep05_c008",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "은발 남성의 입가에 미소가 걸린다.",
+          "cg": "ep05_cg_008"
+        }
+      ],
+      "next": "ep05_c009"
+    },
+    "ep05_c009": {
+      "title": "밤의 침실",
+      "cut": "ep05_c009",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_남성": "내 하렘에 온 걸 환영한다. 이방인이여.",
+          "cg": "ep05_cg_009",
+          "sets": "ep05_아시나_하렘선언"
+        }
+      ],
+      "next": "ep05_c010"
+    },
+    "ep05_c010": {
+      "title": "아침의 궁",
+      "cut": "ep05_c010",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "햇빛이 궁과 잎을 비춘다. 새가 지저귄다.",
+          "cg": "ep05_cg_010"
+        }
+      ],
+      "next": "ep05_c011"
+    },
+    "ep05_c011": {
+      "title": "아시나의 방",
+      "cut": "ep05_c011",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "차 도구 곁에서 손이 움직인다.",
+          "cg": "ep05_cg_011"
+        }
+      ],
+      "next": "ep05_c012"
+    },
+    "ep05_c012": {
+      "title": "아시나의 방",
+      "cut": "ep05_c012",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "잠든 아시나가 기척에 움찔한다.",
+          "cg": "ep05_cg_012"
+        }
+      ],
+      "next": "ep05_c013"
+    },
+    "ep05_c013": {
+      "title": "아시나의 방",
+      "cut": "ep05_c013",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "…!",
+          "cg": "ep05_cg_013"
+        },
+        {
+          "ep05_아시나": "누구…세요?",
+          "cg": "ep05_cg_013"
+        },
+        {
+          "ep05_여성": "앗, 깨셨군요!",
+          "cg": "ep05_cg_013"
+        }
+      ],
+      "next": "ep05_c014"
+    },
+    "ep05_c014": {
+      "title": "아시나의 방",
+      "cut": "ep05_c014",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_여성": "전 앞으로 아이라님을 모시게 될 시녀, 누르입니다. 잘 부탁드려요.",
+          "cg": "ep05_cg_014",
+          "sets": "ep05_아시나_누르소개"
+        }
+      ],
+      "next": "ep05_c015"
+    },
+    "ep05_c015": {
+      "title": "아시나의 방",
+      "cut": "ep05_c015",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "아… 네… 안녕하세요.",
+          "cg": "ep05_cg_015"
+        },
+        {
+          "ep05_독백": "설마 어제 몰래 돌아다닌 것 때문에 감시를 붙인 건가…?!",
+          "cg": "ep05_cg_015"
+        }
+      ],
+      "next": "ep05_c016"
+    },
+    "ep05_c016": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c016",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "어머나… 피부가 희다 들었지만 아이라님은 정말 페시안분이 아니시군요.",
+          "cg": "ep05_cg_016"
+        },
+        {
+          "ep05_아시나": "네에… 근데 아이라가 뭐길래 자꾸 절 아이라로 부르는 거죠?",
+          "cg": "ep05_cg_016"
+        }
+      ],
+      "next": "ep05_c017"
+    },
+    "ep05_c017": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c017",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "아이라는 쿤의 여인들을 이르는 말이에요.",
+          "cg": "ep05_cg_017",
+          "sets": "ep05_아시나_아이라뜻"
+        },
+        {
+          "ep05_누르": "아이라께선 시하드를 모실 수 있는 고귀한 신분이 되신 거예요. 축하드려요.",
+          "cg": "ep05_cg_017"
+        }
+      ],
+      "next": "ep05_c018"
+    },
+    "ep05_c018": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c018",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "누구 맘대로 내가 누굴 모신다는 거야?",
+          "cg": "ep05_cg_018"
+        }
+      ],
+      "next": "ep05_c019"
+    },
+    "ep05_c019": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c019",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "저어… 질문 하나 해도 돼요?",
+          "cg": "ep05_cg_019"
+        }
+      ],
+      "next": "ep05_c020"
+    },
+    "ep05_c020": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c020",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "아랫것에게 존대라니, 말을 놓아주세요.",
+          "cg": "ep05_cg_020"
+        },
+        {
+          "ep05_아시나": "아… 그래요. 아니, 그럴게.",
+          "cg": "ep05_cg_020"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep05_role_original",
+          "text": "항상 함께 있어야 하는지 묻는다",
+          "next": "ep05_c021"
+        },
+        {
+          "id": "ep05_role_rest",
+          "text": "혼자 쉬고 싶을 때도 함께 있어야 하는지 묻는다",
+          "next": "ep05_role_rest"
+        }
+      ]
+    },
+    "ep05_c021": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c021",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "그러니까… 이제 내가 뭘 하든 항상 누르와 함께해야 하는 거야…요?",
+          "cg": "ep05_cg_021",
+          "sets": "ep05_상시동행질문"
+        },
+        {
+          "ep05_독백": "탈출 계획을 세워야 하는데 24시간 시종이 붙어있으면 안된다고…!",
+          "cg": "ep05_cg_021"
+        }
+      ],
+      "next": "ep05_c022"
+    },
+    "ep05_c022": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c022",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "아니요. 전 그저 아시나님을 도와 드리는 존재일 뿐,",
+          "cg": "ep05_cg_022",
+          "sets": "ep05_아시나_상시동행아님"
+        }
+      ],
+      "next": "ep05_c023"
+    },
+    "ep05_c023": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c023",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "제가 귀찮으시다면 물리셔도 됩니다.",
+          "cg": "ep05_cg_023",
+          "sets": "ep05_아시나_시녀물림"
+        },
+        {
+          "ep05_누르": "여기, 따뜻한 차예요.",
+          "cg": "ep05_cg_023"
+        },
+        {
+          "ep05_아시나": "그렇구나…",
+          "cg": "ep05_cg_023"
+        }
+      ],
+      "next": "ep05_c024"
+    },
+    "ep05_c024": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c024",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "다행이다.",
+          "cg": "ep05_cg_024"
+        },
+        {
+          "ep05_아시나": "오",
+          "cg": "ep05_cg_024"
+        },
+        {
+          "ep05_아시나": "맛있어",
+          "cg": "ep05_cg_024"
+        }
+      ],
+      "next": "ep05_c025"
+    },
+    "ep05_c025": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c025",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "필요한 일이 있다면 불러주세요. 그럼… 편히 쉬십시오.",
+          "cg": "ep05_cg_025"
+        },
+        {
+          "ep05_아시나": "응.",
+          "cg": "ep05_cg_025"
+        }
+      ],
+      "next": "ep05_c026"
+    },
+    "ep05_c026": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c026",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "……",
+          "cg": "ep05_cg_026"
+        }
+      ],
+      "next": "ep05_c027"
+    },
+    "ep05_c027": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c027",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "아시나가 얼굴을 붉힌 채 한숨을 쉰다.",
+          "cg": "ep05_cg_027"
+        }
+      ],
+      "next": "ep05_c028"
+    },
+    "ep05_c028": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c028",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "내가 라 쿤의 여자라니…",
+          "cg": "ep05_cg_028"
+        },
+        {
+          "ep05_독백": "리메아라는 무형의 신을 믿는 크롬웰과는 달리, 페시안은 신이 직접 지배자로 군림하여 다스리는 나라였다.",
+          "cg": "ep05_cg_028",
+          "sets": "ep05_아시나_신앙회고"
+        },
+        {
+          "ep05_독백": "모래밖에 없는 사막에 물을 끌어오고 식물들이 자랄 수 있게 한 존재. 그게 바로 쿤이었다.",
+          "cg": "ep05_cg_028"
+        }
+      ],
+      "next": "ep05_c029"
+    },
+    "ep05_c029": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c029",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "페시안에서 쿤은 그냥 왕 따위가 아니다.",
+          "cg": "ep05_cg_029"
+        },
+        {
+          "ep05_독백": "정치, 경제, 문화, 사회 전반의 모든 체제가 오로지 쿤 하나를 중심으로 돌아가고, 쿤을 살아있는 신으로 여기고 추앙한다.",
+          "cg": "ep05_cg_029",
+          "sets": "ep05_아시나_쿤위상회고"
+        }
+      ],
+      "next": "ep05_c030"
+    },
+    "ep05_c030": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c030",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "아시나가 침대에 두 주먹을 짚고 상체를 앞으로 숙인다. 머리카락이 아래로 늘어진다.",
+          "cg": "ep05_cg_030"
+        }
+      ],
+      "next": "ep05_c031"
+    },
+    "ep05_c031": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c031",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "하아아아…",
+          "cg": "ep05_cg_031"
+        }
+      ],
+      "next": [
+        {
+          "if": "flag:ep04_distance_kept",
+          "to": "ep05_distance_c032"
+        },
+        {
+          "to": "ep05_c032"
+        }
+      ]
+    },
+    "ep05_distance_c032": {
+      "title": "혼자 남은 방",
+      "time": 0,
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep05_독백": "설마, 그 남자가 라 쿤이었을 줄이야.",
+          "cg": "ep05_cg_033",
+          "sets": "ep05_아시나_라쿤회고"
+        }
+      ],
+      "next": "ep05_c033"
+    },
+    "ep05_c032": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c032",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "설마, 그 남자가 라 쿤이었을 줄이야.",
+          "cg": "ep05_cg_032",
+          "sets": "ep05_아시나_라쿤회고"
+        }
+      ],
+      "next": "ep05_c033"
+    },
+    "ep05_c033": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c033",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "자기가 쿤이면 다야? 순전히 제멋대로야! 정말… 짜증 나게 하고 있어…",
+          "cg": "ep05_cg_033"
+        }
+      ],
+      "next": [
+        {
+          "if": "flag:ep04_distance_kept",
+          "to": "ep05_c037"
+        },
+        {
+          "to": "ep05_c034"
+        }
+      ]
+    },
+    "ep05_c034": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c034",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "나… 첫 키스였는데.",
+          "cg": "ep05_cg_034",
+          "sets": "ep05_독자_첫입맞춤"
+        }
+      ],
+      "next": "ep05_c035"
+    },
+    "ep05_c035": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c035",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "라 쿤이고 뭐고, 걷다가 확 자빠져서 엉덩이나 찧어라.",
+          "cg": "ep05_cg_035"
+        }
+      ],
+      "next": "ep05_c036"
+    },
+    "ep05_c036": {
+      "title": "혼자 남은 방",
+      "cut": "ep05_c036",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "이 개자식아-!!",
+          "cg": "ep05_cg_036"
+        }
+      ],
+      "next": "ep05_c037"
+    },
+    "ep05_c037": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c037",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_청발": "…그래서, 자이드의 움직임은 평소와 같았습니다.",
+          "cg": "ep05_cg_037",
+          "sets": "ep05_독자_자이드보고"
+        }
+      ],
+      "next": "ep05_c038"
+    },
+    "ep05_c038": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c038",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_청발": "이쪽에서 이리 많은 걸 알고 있다는 건 아직 모르겠죠. 어찌할까요, 라 쿤이시여.",
+          "cg": "ep05_cg_038"
+        },
+        {
+          "ep05_라쿤": "놔두지. 얼마나 까부는지 꽤 볼만하지 않을까 하는데.",
+          "cg": "ep05_cg_038",
+          "sets": "ep05_독자_방치결정"
+        }
+      ],
+      "next": "ep05_c039"
+    },
+    "ep05_c039": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c039",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_청발": "알겠습니다.",
+          "cg": "ep05_cg_039"
+        }
+      ],
+      "next": "ep05_c040"
+    },
+    "ep05_c040": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c040",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_서술": "푸른 머리 신하가 팔을 접은 채 서 있다. 검은 머리 신하가 뒤에서 기다린다.",
+          "cg": "ep05_cg_040"
+        }
+      ],
+      "next": "ep05_c041"
+    },
+    "ep05_c041": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c041",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_흑발": "여-자,",
+          "cg": "ep05_cg_041"
+        },
+        {
+          "ep05_흑발": "하렘에 들어온 여자에 대해 물어봐.",
+          "cg": "ep05_cg_041"
+        }
+      ],
+      "next": "ep05_c042"
+    },
+    "ep05_c042": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c042",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_청발": "…시하드시여.",
+          "cg": "ep05_cg_042"
+        },
+        {
+          "ep05_라쿤": "이번엔 또 뭐지.",
+          "cg": "ep05_cg_042"
+        },
+        {
+          "ep05_청발": "얼마 전 하렘에 들이신 여인 말입니다.",
+          "cg": "ep05_cg_042"
+        },
+        {
+          "ep05_청발": "소신이 생각하기에, 너무 성급한 결정이었던 것 같습니다. 한때의 유희로 끝내기엔 너무 큰 사건입니다.",
+          "cg": "ep05_cg_042"
+        },
+        {
+          "ep05_청발": "그 일이 있은 후로 하렘은 줄곧…",
+          "cg": "ep05_cg_042",
+          "sets": "ep05_독자_미공개과거언급"
+        },
+        {
+          "ep05_청발": "…!",
+          "cg": "ep05_cg_042"
+        },
+        {
+          "ep05_청발": "죄송합니다. 실언을…",
+          "cg": "ep05_cg_042"
+        },
+        {
+          "ep05_흑발": "틀린 말은 아닙니다, 시하드시여. 대재상이 가만있지 않을 겁니다.",
+          "cg": "ep05_cg_042"
+        },
+        {
+          "ep05_흑발": "항상 하렘에 제 딸들을 집어넣고 싶어 하지 않았습니까?",
+          "cg": "ep05_cg_042",
+          "sets": "ep05_독자_대재상우려"
+        }
+      ],
+      "next": "ep05_c043"
+    },
+    "ep05_c043": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c043",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_흑발": "대재상뿐만 아니라 여섯의 대족장과 마흔여덟의 족장 모두가 앞다투어 제 여식을 보내올 겁니다.",
+          "cg": "ep05_cg_043",
+          "sets": "ep05_독자_족장우려"
+        },
+        {
+          "ep05_라쿤": "……",
+          "cg": "ep05_cg_043"
+        },
+        {
+          "ep05_라쿤": "그 여자에 대해 더 알아봐야겠다.",
+          "cg": "ep05_cg_043",
+          "sets": "ep05_독자_조사의향"
+        }
+      ],
+      "next": "ep05_c044"
+    },
+    "ep05_c044": {
+      "perspective": "audience",
+      "title": "궁의 별실",
+      "cut": "ep05_c044",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_라쿤": "그 여자를 불러와라.",
+          "cg": "ep05_cg_044",
+          "sets": "ep05_독자_소환명령"
+        }
+      ],
+      "next": "ep05_c044_asina"
+    },
+    "ep05_c044_asina": {
+      "title": "식탁",
+      "cut": "ep05_c044",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "에엥?!",
+          "cg": "ep05_cg_044"
+        }
+      ],
+      "next": "ep05_c045"
+    },
+    "ep05_c045": {
+      "title": "식탁",
+      "cut": "ep05_c045",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "아이라님. 라 쿤께서 부르십니다.",
+          "cg": "ep05_cg_045",
+          "sets": "ep05_아시나_소환전달"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep05_summons_original",
+          "text": "식사 중이라고 말한다",
+          "next": "ep05_summons_original"
+        },
+        {
+          "id": "ep05_summons_accept",
+          "text": "부름에 응하겠다고 말한다",
+          "next": "ep05_summons_accept"
+        }
+      ]
+    },
+    "ep05_c046": {
+      "title": "식탁",
+      "cut": "ep05_c046",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "그래도 가셔야 합니다…",
+          "cg": "ep05_cg_046"
+        }
+      ],
+      "next": "ep05_c047"
+    },
+    "ep05_c047": {
+      "title": "회랑과 문",
+      "cut": "ep05_c047",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "안 그래도 심란한 마음 밥심으로 달래고 있었는데, 갑자기 웬 호출이야.",
+          "cg": "ep05_cg_047"
+        }
+      ],
+      "next": "ep05_c048"
+    },
+    "ep05_c048": {
+      "title": "회랑과 문",
+      "cut": "ep05_c048",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "내가 오라면 오고 가라면 가야 하나?",
+          "cg": "ep05_cg_048"
+        },
+        {
+          "ep05_아시나": "뉘예 뉘예~ 갑니다요.",
+          "cg": "ep05_cg_048"
+        }
+      ],
+      "next": "ep05_c049"
+    },
+    "ep05_c049": {
+      "title": "회랑과 문",
+      "cut": "ep05_c049",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "다 왔습니다, 아이라님.",
+          "cg": "ep05_cg_049"
+        },
+        {
+          "ep05_누르": "아이라님을 모셔왔습니다.",
+          "cg": "ep05_cg_049"
+        }
+      ],
+      "next": "ep05_c050"
+    },
+    "ep05_c050": {
+      "title": "회랑과 문",
+      "cut": "ep05_c050",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "하…",
+          "cg": "ep05_cg_050"
+        }
+      ],
+      "next": "ep05_c051"
+    },
+    "ep05_c051": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c051",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "그럼 전 이만…",
+          "cg": "ep05_cg_051"
+        },
+        {
+          "ep05_독백": "잠깐, 그냥 가는 거야? 나만 혼자 두고?",
+          "cg": "ep05_cg_051"
+        },
+        {
+          "ep05_독백": "가지마 언니!!",
+          "cg": "ep05_cg_051"
+        }
+      ],
+      "next": [
+        {
+          "if": "flag:ep04_distance_kept",
+          "to": "ep05_distance_c052"
+        },
+        {
+          "to": "ep05_c052"
+        }
+      ]
+    },
+    "ep05_distance_c052": {
+      "title": "거리를 둔 문답",
+      "time": 0,
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep05_서술": "아시나는 문 앞에 선 채 시선을 내렸다. 라 쿤은 떨어진 좌석에 앉아 있었다.",
+          "cg": "ep05_cg_050"
+        }
+      ],
+      "next": "ep05_c053"
+    },
+    "ep05_c052": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c052",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "나한테 또 뭔 짓을 할 지 모르는데…!",
+          "cg": "ep05_cg_052"
+        },
+        {
+          "ep05_독백": "으, 막상 마주치니 민망해서 못 쳐다보겠어…",
+          "cg": "ep05_cg_052"
+        }
+      ],
+      "next": "ep05_c053"
+    },
+    "ep05_c053": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c053",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_라쿤": "언제까지 내 시선을 피할 셈이지?",
+          "cg": "ep05_cg_053"
+        },
+        {
+          "ep05_라쿤": "하렘에서 하룻밤은, 잘 보냈는가?",
+          "cg": "ep05_cg_053"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep05_reply_original",
+          "text": "지난밤 안부에 답하고 되묻는다",
+          "next": "ep05_c054"
+        },
+        {
+          "id": "ep05_reply_short",
+          "text": "시선을 피한 이유만 답한다",
+          "next": "ep05_reply_short"
+        }
+      ]
+    },
+    "ep05_c054": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c054",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_독백": "하, 뻔뻔하긴. 오냐, 상대해 주마.",
+          "cg": "ep05_cg_054"
+        }
+      ],
+      "next": "ep05_c055"
+    },
+    "ep05_c055": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c055",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "피한 게 아니라, 마음의 준비를 했을 뿐이에요.",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_시선답변"
+        },
+        {
+          "ep05_아시나": "덕분에 잘 지냈다마다요.",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_지난밤답변"
+        },
+        {
+          "ep05_아시나": "라 쿤께선 지난밤 평안하셨는지요?",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_지난밤되물음"
+        }
+      ],
+      "next": "ep05_boundary"
+    },
+    "ep05_role_rest": {
+      "title": "차를 앞에 두고",
+      "cut": "ep05_c021",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "혼자 쉬고 싶을 때도 누르가 계속 곁에 있어야 해?",
+          "cg": "ep05_cg_021",
+          "sets": "ep05_혼자쉬기질문"
+        },
+        {
+          "ep05_독백": "탈출 계획을 세워야 하는데 24시간 시종이 붙어있으면 안된다고…!",
+          "cg": "ep05_cg_021"
+        }
+      ],
+      "next": "ep05_c022"
+    },
+    "ep05_summons_original": {
+      "title": "식탁",
+      "cut": "ep05_c045",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "………… ……………… ………나 지금 밥 먹고 있는데.",
+          "cg": "ep05_cg_045",
+          "sets": "ep05_식사중불만"
+        }
+      ],
+      "next": "ep05_c046"
+    },
+    "ep05_summons_accept": {
+      "title": "식탁",
+      "cut": "ep05_c045",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "알겠어. 지금 갈게.",
+          "cg": "ep05_cg_045",
+          "sets": "ep05_소환응낙"
+        }
+      ],
+      "next": "ep05_summons_escort"
+    },
+    "ep05_summons_escort": {
+      "title": "식탁",
+      "cut": "ep05_c046",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_누르": "모시겠습니다, 아이라님.",
+          "cg": "ep05_cg_046"
+        }
+      ],
+      "next": "ep05_c047"
+    },
+    "ep05_reply_short": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c055",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "피한 게 아니라, 마음의 준비를 했을 뿐이에요.",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_시선답변"
+        }
+      ],
+      "next": "ep05_boundary"
+    },
+    "ep05_boundary": {
+      "title": "알현실의 문답",
+      "time": 0,
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [],
+      "ending": {
+        "id": "ep05_boundary",
+        "title": "5화 · 알현실",
+        "summary": "누르가 물러난 알현실에 아시나와 라 쿤이 마주하고 있다.",
+        "next_hook": "알현실에서 라 쿤의 다음 말을 기다린다."
+      }
+    }
+  },
+  "atlas": {
+    "chapters": [
+      {
+        "id": "ep05",
+        "label": "5화",
+        "nodes": [
+          "ep05_entry",
+          "ep05_s01",
+          "ep05_s02",
+          "ep05_s03",
+          "ep05_s04_question",
+          "ep05_s04_original",
+          "ep05_s04_rest",
+          "ep05_s04_answer",
+          "ep05_s05",
+          "ep05_s06",
+          "ep05_s07_call",
+          "ep05_s07_original",
+          "ep05_s07_accept",
+          "ep05_s08",
+          "ep05_s09_question",
+          "ep05_s09_original",
+          "ep05_s09_short",
+          "ep05_boundary"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ep05_entry",
+        "label": "밤에서 아침으로",
+        "col": 0,
+        "row": 1,
+        "beats": [
+          "ep05_entry"
+        ]
+      },
+      {
+        "id": "ep05_s01",
+        "label": "침대 위의 입맞춤",
+        "col": 0,
+        "row": 0,
+        "beats": [
+          "ep05_c001",
+          "ep05_c002",
+          "ep05_c003",
+          "ep05_c004",
+          "ep05_c005",
+          "ep05_c006",
+          "ep05_c007",
+          "ep05_c008",
+          "ep05_c009"
+        ]
+      },
+      {
+        "id": "ep05_s02",
+        "label": "햇빛 드는 궁",
+        "col": 1,
+        "row": 0,
+        "beats": [
+          "ep05_c010"
+        ]
+      },
+      {
+        "id": "ep05_s03",
+        "label": "차 준비 소리에 깨다",
+        "col": 2,
+        "row": 0,
+        "beats": [
+          "ep05_c011",
+          "ep05_c012",
+          "ep05_c013",
+          "ep05_c014",
+          "ep05_c015"
+        ]
+      },
+      {
+        "id": "ep05_s04_question",
+        "label": "아이라의 뜻 묻기",
+        "col": 3,
+        "row": 0,
+        "beats": [
+          "ep05_c016",
+          "ep05_c017",
+          "ep05_c018",
+          "ep05_c019",
+          "ep05_c020"
+        ]
+      },
+      {
+        "id": "ep05_s04_original",
+        "label": "상시 동행 여부 묻기",
+        "col": 4,
+        "row": 0,
+        "beats": [
+          "ep05_c021"
+        ]
+      },
+      {
+        "id": "ep05_s04_rest",
+        "label": "혼자 쉬어도 되는지 묻기",
+        "col": 5,
+        "row": 1,
+        "beats": [
+          "ep05_role_rest"
+        ]
+      },
+      {
+        "id": "ep05_s04_answer",
+        "label": "누르의 시중 범위",
+        "col": 6,
+        "row": 0,
+        "beats": [
+          "ep05_c022",
+          "ep05_c023",
+          "ep05_c024",
+          "ep05_c025"
+        ]
+      },
+      {
+        "id": "ep05_s05",
+        "label": "홀로 남은 아시나",
+        "col": 7,
+        "row": 0,
+        "beats": [
+          "ep05_c026",
+          "ep05_c027",
+          "ep05_c028",
+          "ep05_c029",
+          "ep05_c030",
+          "ep05_c031",
+          "ep05_distance_c032",
+          "ep05_c032",
+          "ep05_c033",
+          "ep05_c034",
+          "ep05_c035",
+          "ep05_c036"
+        ]
+      },
+      {
+        "id": "ep05_s06",
+        "label": "자이드 동향 보고",
+        "col": 8,
+        "row": 0,
+        "beats": [
+          "ep05_c037",
+          "ep05_c038",
+          "ep05_c039",
+          "ep05_c040",
+          "ep05_c041",
+          "ep05_c042",
+          "ep05_c043"
+        ]
+      },
+      {
+        "id": "ep05_s07_call",
+        "label": "라 쿤의 호출",
+        "col": 9,
+        "row": 0,
+        "beats": [
+          "ep05_c044",
+          "ep05_c044_asina",
+          "ep05_c045"
+        ]
+      },
+      {
+        "id": "ep05_s07_original",
+        "label": "식사 중이라 항변",
+        "col": 10,
+        "row": 0,
+        "beats": [
+          "ep05_summons_original",
+          "ep05_c046"
+        ]
+      },
+      {
+        "id": "ep05_s07_accept",
+        "label": "호출에 응하다",
+        "col": 11,
+        "row": 1,
+        "beats": [
+          "ep05_summons_accept",
+          "ep05_summons_escort"
+        ]
+      },
+      {
+        "id": "ep05_s08",
+        "label": "누르를 따라 접견실로",
+        "col": 12,
+        "row": 0,
+        "beats": [
+          "ep05_c047",
+          "ep05_c048",
+          "ep05_c049",
+          "ep05_c050"
+        ]
+      },
+      {
+        "id": "ep05_s09_question",
+        "label": "누르가 물러난 자리",
+        "col": 13,
+        "row": 0,
+        "beats": [
+          "ep05_c051",
+          "ep05_distance_c052",
+          "ep05_c052",
+          "ep05_c053"
+        ]
+      },
+      {
+        "id": "ep05_s09_original",
+        "label": "맞받아칠 결심",
+        "col": 14,
+        "row": 0,
+        "beats": [
+          "ep05_c054",
+          "ep05_c055"
+        ]
+      },
+      {
+        "id": "ep05_s09_short",
+        "label": "시선 피한 이유 답하기",
+        "col": 15,
+        "row": 1,
+        "beats": [
+          "ep05_reply_short"
+        ]
+      },
+      {
+        "id": "ep05_boundary",
+        "label": "접견 답변을 마치다",
+        "col": 16,
+        "row": 0,
+        "beats": [
+          "ep05_boundary"
+        ],
+        "ending": true
+      }
+    ],
+    "edges": [
+      [
+        "ep05_entry",
+        "ep05_s01"
+      ],
+      [
+        "ep05_entry",
+        "ep05_s02"
+      ],
+      [
+        "ep05_s01",
+        "ep05_s02"
+      ],
+      [
+        "ep05_s02",
+        "ep05_s03"
+      ],
+      [
+        "ep05_s03",
+        "ep05_s04_question"
+      ],
+      [
+        "ep05_s04_question",
+        "ep05_s04_original"
+      ],
+      [
+        "ep05_s04_question",
+        "ep05_s04_rest"
+      ],
+      [
+        "ep05_s04_original",
+        "ep05_s04_answer"
+      ],
+      [
+        "ep05_s04_answer",
+        "ep05_s05"
+      ],
+      [
+        "ep05_s05",
+        "ep05_s06"
+      ],
+      [
+        "ep05_s06",
+        "ep05_s07_call"
+      ],
+      [
+        "ep05_s07_call",
+        "ep05_s07_original"
+      ],
+      [
+        "ep05_s07_call",
+        "ep05_s07_accept"
+      ],
+      [
+        "ep05_s07_original",
+        "ep05_s08"
+      ],
+      [
+        "ep05_s08",
+        "ep05_s09_question"
+      ],
+      [
+        "ep05_s09_question",
+        "ep05_s09_original"
+      ],
+      [
+        "ep05_s09_question",
+        "ep05_s09_short"
+      ],
+      [
+        "ep05_s09_original",
+        "ep05_boundary"
+      ],
+      [
+        "ep05_s04_rest",
+        "ep05_s04_answer"
+      ],
+      [
+        "ep05_s07_accept",
+        "ep05_s08"
+      ],
+      [
+        "ep05_s09_short",
+        "ep05_boundary"
+      ]
+    ]
+  }
+}

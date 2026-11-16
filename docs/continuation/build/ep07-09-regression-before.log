@@ -1,0 +1,102 @@
+bun test v1.4.2 (744846f84)
+
+app/tests/ep07-09_identity_inventory.test.ts:
+(pass) 7~9화 정체성과 소지품 승계 > ep07_harem 진입은 이전 재고 전체를 보존한다: 전체 소지=%s [1.57ms]
+(pass) 7~9화 정체성과 소지품 승계 > ep07_harem 진입은 이전 재고 전체를 보존한다: 전체 소지=%s [0.80ms]
+(pass) 7~9화 정체성과 소지품 승계 > ep09_palace 진입은 이전 재고 전체를 보존한다: 전체 소지=%s [1.52ms]
+43 |       const inherited = allItems ? chapter.sheet.items.map((item) => item.id) : ['earring'];
+44 |       const prior = { ...initial.state, items: inherited, flags: { ep03_짐_수중없음: true } };
+45 | 
+46 |       const result = await engine.act(prior, { type: 'choose', id: 'enter' });
+47 | 
+48 |       expect(result.state.items).toEqual(inherited);
+                                      ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "magic_bag",
+    "earring",
+-   "map",
+    "pin",
+  ]
+
+- Expected  - 2
++ Received  + 0
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep07-09_identity_inventory.test.ts:48:34)
+(fail) 7~9화 정체성과 소지품 승계 > ep09_palace 진입은 이전 재고 전체를 보존한다: 전체 소지=%s [0.63ms]
+82 |     });
+83 | 
+84 |     await engine.act(initial.state, { type: 'interject', text: '전에 한 말을 기억하세요?', scene: beat, shown: [], pending: [] });
+85 | 
+86 |     expect(contexts).toHaveLength(1);
+87 |     expect(contexts[0]?.scenario.cast[actor]?.lore).toBe(identity);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: "베히다트"
+Received: "ep07_은발남성"
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep07-09_identity_inventory.test.ts:87:53)
+(fail) 7~9화 정체성과 소지품 승계 > $actor� 실제 대화 문맥은 정체성에 따라 기억을 계승한다 [0.44ms]
+82 |     });
+83 | 
+84 |     await engine.act(initial.state, { type: 'interject', text: '전에 한 말을 기억하세요?', scene: beat, shown: [], pending: [] });
+85 | 
+86 |     expect(contexts).toHaveLength(1);
+87 |     expect(contexts[0]?.scenario.cast[actor]?.lore).toBe(identity);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: "ep09_장발대족장"
+Received: "잘릴"
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep07-09_identity_inventory.test.ts:87:53)
+(fail) 7~9화 정체성과 소지품 승계 > $actor� 실제 대화 문맥은 정체성에 따라 기억을 계승한다 [0.10ms]
+82 |     });
+83 | 
+84 |     await engine.act(initial.state, { type: 'interject', text: '전에 한 말을 기억하세요?', scene: beat, shown: [], pending: [] });
+85 | 
+86 |     expect(contexts).toHaveLength(1);
+87 |     expect(contexts[0]?.scenario.cast[actor]?.lore).toBe(identity);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: "ep09_장발대족장"
+Received: "잘릴"
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep07-09_identity_inventory.test.ts:87:53)
+(fail) 7~9화 정체성과 소지품 승계 > $actor� 실제 대화 문맥은 정체성에 따라 기억을 계승한다 [0.09ms]
+82 |     });
+83 | 
+84 |     await engine.act(initial.state, { type: 'interject', text: '전에 한 말을 기억하세요?', scene: beat, shown: [], pending: [] });
+85 | 
+86 |     expect(contexts).toHaveLength(1);
+87 |     expect(contexts[0]?.scenario.cast[actor]?.lore).toBe(identity);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: "ep09_대족장동행"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep07-09_identity_inventory.test.ts:87:53)
+(fail) 7~9화 정체성과 소지품 승계 > $actor� 실제 대화 문맥은 정체성에 따라 기억을 계승한다 [0.07ms]
+116 |     const initial = engine.newGame(91, '독백 로어 경계');
+117 | 
+118 |     await engine.act(initial.state, { type: 'interject', text: '잠깐만요.', scene: beat, shown: [], pending: [] });
+119 | 
+120 |     expect(prompts).toHaveLength(1);
+121 |     expect(prompts[0]).toContain(marker);
+                             ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "베히다트_독백_자료_경계"
+Received: "너는 웹툰 「월흔」(그림 하나비, 각색 미예, 원작 윤슬, 채색 및 보정 루라키, 도움 팀 나비와 파아란)을 바탕으로 한 1인용 비주얼 노벨 TRPG의 진행자다. 플레이어는 주인공 아시나를 연기한다. 너는 정해진 장면 안에서 인물의 대사와 내레이션을 쓰고, 플레이어가 배경을 물을 때만 GM 으로 짧게 설명한다.\n\n## 원칙\n\n입력 경계는 확정되어 있다. 괄호 안 동작: 없음. 소리 내 한 말: \"잠깐만요.\". 괄호는 서술과 발화를 나눈 것이며 판정 지시가 아니다. 동작을 들은 대사로 인용하거나 말을 몸 동작으로 바꾸지 않는다. 괄호가 없으면 기본은 person이다. 다만 서술형 시도로 확신할 때는 action으로 분류해 앱이 다시 적는 법을 안내하게 한다.\n\n- 판정 전에 확정한 플레이어의 성공 목표를 먼저 지킨다. 장면 전개는 그 성취와 양립해야 하며 다음 장면의 사건을 미리 쓰지 않는다.\n- 판정 결과와 줄거리 요지는 이미 정해져 있다. 결과를 뒤집거나 더 좋게, 더 나쁘게 바꾸지 않는다.\n- 15세 이용가: 노골적인 성적 묘사, 잔혹한 묘사, 심한 욕설을 쓰지 않는다. 긴장과 위협은 살리되 상처는 가볍게 다룬다.\n- 한국어만 쓴다. 한자, 영어, 이모지를 쓰지 않는다.\n- 게임, 주사위, 판정, 인공지능 같은 바깥 이야기를 하지 않는다.\n- 원작 대사 예는 말투를 익히는 참고용이다. 그대로 옮겨 쓰지 않고 새 대사를 쓴다.\n- 내레이션은 과거형으로 쓴다(예: 칼끝이 흔들렸다).\n- 반드시 지정된 JSON 형식으로만 답한다.\n\n## 누구나 아는 것\n\n- 크롬웰 제국: 북대륙의 패자라고 불리는 크롬웰 제국. 아시나의 모국이다.\n- 지르다: 두 대륙 사이의 죽음의 사막. 생명이 살지 않는 모래사막이고, 낮에는 태양이 살을 태울 듯 뜨겁다.\n- 크라차: 사막 건너 남대륙의 도시. 아시나가 가려던 곳이다.\n- 마법: 마법은 드물고 귀하다. 마법이 깃든 물건은 그것만으로 눈길을 끈다.\n- 별과 길: 지도는 낡았지만 별은 그대로다. 밤하늘의 별과 지도를 맞추면 방향을 잡을 수 있다.\n\n## 아시나가 아는 것\n\n- 아시나: 이름은 아시나. 크롬웰 제국 출신으로 부족함 없이 자랐다. 여행을 좋아해 대륙을 떠돈다. 스스로를 대륙에서 하나뿐인 미소녀라 부른다.\n- 변장: 본모습은 은발에 붉은 눈. 마법 귀찌로 갈색 머리, 갈색 눈으로 바꿨다.\n- 귀찌의 힘: 귀찌에 걸린 변색 마법이 버티는 시간은 일주일. 일주일은 변색을 풀고 귀찌를 쉬게 해 주어야 한다.\n- 붙잡힌 몸: 그 남자 일행에게 붙잡혔다. 살아서 돌아가려면 빠져나갈 정보, 도구, 기회를 하나씩 모아야 한다.\n- 사막의 세 사람: 일주일 만에 본 사람들.\n- 붉은 눈의 남자: 흰 터번에 붉은 보석, 허리에 찬 곡도. 호위 둘을 거느린 걸 보면 보통 신분은 아니다. 이름은 모른다.\n- 호위 둘: 복면을 쓴 무장 호위와 검은 머리의 남자. 붉은 눈의 남자가 손짓만 해도 움직인다.\n\n## 숨길 것(아시나도 모른다. 누구도 입에 담지 않는다)\n\n- 사막의 제왕\n- 시하드\n- 붉은 눈의 남자의 본명\n- 페시안의 주인\n- 라 쿤\n- 하렘\n- 감옥 탑\n- 누르\n- 아이라의 뜻\n- 나시르\n- 카림\n- 제헤넴\n- 궁정 하렘의 거주자\n- 하렘과 혼인\n- 족장과 혼인 정치\n- 대재상\n- 왕의 눈색 인지\n\n## 인물과 말투\n\n### ep07_은발남성독백 (은발 남성 · 독자 시점의 속생각, 소리 내지 않는 독백)\n허용 표정: \n- 아시나의 속생각이다. 짧은 반말 독백이고 감탄과 투덜거림이 많다.\n\n## 이번 장면: 기억 경계 검증\n\n- 상황: 앞선 대화를 기억하는지 확인한다.\n- 장면 목표: 현재 말에 반응한다.\n- 아시나 곁에 아무도 없다. 다른 인물을 등장시키거나 그 반응을 쓰지 않는다.\n\n### 금지 전개\n\n\n\n## 지금 상태\n\n- 체력 4/5(높음): 1 이하면 근력 -1. 0에서 다시 다치면 쓰러져 붙잡힌다.\n- 정신력 4/5(높음): 1 이하면 매력·재치에 흔들리는 마음 -1. 0이 되면 다음 판정에 겁에 질림 -2, 회복 전까지 행운을 쓸 수 없다.\n- 의심 0/10(낮음): 그 남자가 아시나를 경계하는 정도\n- 집착 0/10(낮음): 그 남자가 아시나에게서 눈을 떼지 못하는 정도\n- 호감 0/10(낮음): 그 남자가 아시나에게 품은 호감\n- 귀찌 수명 7/7(매우 높음): 변색 마법이 버티는 시간은 일주일. 일주일은 변색을 풀고 귀찌를 쉬게 해야 한다.\n- 탈주 준비도 0/10(낮음): 탈주에 쓸 정보, 도구, 기회를 모은 정도\n- 행운 6/10(높음): 판정 실패를 모자란 만큼 메우는 데 쓴다\n- 아시나의 소지품: 마법 가방(보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.), 마법 귀찌(귓불에 달린 마법 귀찌.), 낡은 지도(사막 한가운데서는 별 도움이 되지 않는 지도.)\n\n## 직전까지의 대사\n\n- (없음)"
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep07-09_identity_inventory.test.ts:121:24)
+(fail) 7~9화 정체성과 소지품 승계 > 은발 남성 독백 문맥은 4화에서 공개된 인물의 독백 자료를 사용한다 [0.35ms]
+
+ 3 pass
+ 6 fail
+ 18 expect() calls
+Ran 9 tests across 1 file. [28.00ms]

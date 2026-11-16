@@ -1,0 +1,88 @@
+bun test v1.4.2 (744846f84)
+
+app/tests/ep06_uncertain_display.test.ts:
+28 | describe('6화 미확정 화자의 플레이어 표시', () => {
+29 |   for (const fixture of fixtures) {
+30 |     test(`실제 기록 ${fixture.row}: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다`, () => {
+31 |       const matching = delivered.filter((line) => line.speaker === fixture.speaker);
+32 |       expect(matching.length).toBe(1);
+33 |       expect(matching.map((line) => line.display)).toEqual(['']);
+                                                        ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "",
++   "화자·발화 종류 미확정",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_uncertain_display.test.ts:33:52)
+(fail) 6화 미확정 화자의 플레이어 표시 > 실제 기록 1728: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다 [0.26ms]
+28 | describe('6화 미확정 화자의 플레이어 표시', () => {
+29 |   for (const fixture of fixtures) {
+30 |     test(`실제 기록 ${fixture.row}: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다`, () => {
+31 |       const matching = delivered.filter((line) => line.speaker === fixture.speaker);
+32 |       expect(matching.length).toBe(1);
+33 |       expect(matching.map((line) => line.display)).toEqual(['']);
+                                                        ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "",
++   "화자 미확정",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_uncertain_display.test.ts:33:52)
+(fail) 6화 미확정 화자의 플레이어 표시 > 실제 기록 1729: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다 [0.05ms]
+28 | describe('6화 미확정 화자의 플레이어 표시', () => {
+29 |   for (const fixture of fixtures) {
+30 |     test(`실제 기록 ${fixture.row}: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다`, () => {
+31 |       const matching = delivered.filter((line) => line.speaker === fixture.speaker);
+32 |       expect(matching.length).toBe(1);
+33 |       expect(matching.map((line) => line.display)).toEqual(['']);
+                                                        ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "",
++   "화자 미확정",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_uncertain_display.test.ts:33:52)
+(fail) 6화 미확정 화자의 플레이어 표시 > 실제 기록 1731: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다 [0.03ms]
+28 | describe('6화 미확정 화자의 플레이어 표시', () => {
+29 |   for (const fixture of fixtures) {
+30 |     test(`실제 기록 ${fixture.row}: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다`, () => {
+31 |       const matching = delivered.filter((line) => line.speaker === fixture.speaker);
+32 |       expect(matching.length).toBe(1);
+33 |       expect(matching.map((line) => line.display)).toEqual(['']);
+                                                        ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "",
++   "아시나(발화·독백 미확정)",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_uncertain_display.test.ts:33:52)
+(fail) 6화 미확정 화자의 플레이어 표시 > 실제 기록 1948: 전달 이름표에 제작 메모나 추정 이름을 넣지 않는다 [0.02ms]
+(pass) 6화 미확정 화자의 플레이어 표시 > 이름표를 숨겨도 실제 네 원문·화자·종류·CG·순서는 바뀌지 않는다 [0.02ms]
+(pass) 6화 미확정 화자의 플레이어 표시 > 알 수 없는 개인 신원과 알려진 아시나의 내부 정체성을 그대로 보존한다 [0.12ms]
+(pass) 6화 미확정 화자의 플레이어 표시 > 이미 확정된 다른 인물의 이름표를 함께 지우지 않는다 [0.02ms]
+(pass) 6화 미확정 화자의 플레이어 표시 > 표시 확인은 실제 모델이나 추가 판정 없이 독립 내부 경계까지 진행한다 [0.04ms]
+
+ 4 pass
+ 4 fail
+ 32 expect() calls
+Ran 8 tests across 1 file. [17.00ms]

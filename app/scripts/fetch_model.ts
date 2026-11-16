@@ -7,6 +7,7 @@ interface ModelEntry {
   url: string;
   bytes: number;
   license: string;
+  kind?: string;
 }
 
 const APP = join(import.meta.dir, '..');
@@ -34,6 +35,10 @@ for (const key of keys) {
   if (!m) {
     console.error(`알 수 없는 모델 키: ${key}`);
     process.exit(2);
+  }
+  if (m.kind === 'bridge') {
+    console.log(`[건너뜀] ${key}: 브리지 모델이라 받을 파일이 없습니다`);
+    continue;
   }
   const dest = join(MODELS_DIR, m.file);
   if (existsSync(dest) && statSync(dest).size === m.bytes) {

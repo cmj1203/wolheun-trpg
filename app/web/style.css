@@ -684,6 +684,7 @@ button {
 
 .dialog {
   position: absolute;
+  anchor-name: --story-dialog;
   left: 5%;
   right: 1.4cqw;
   bottom: calc(1.2% + 3.8cqw);
@@ -788,7 +789,8 @@ button {
 
 .choices {
   position: absolute;
-  bottom: 27%;
+  position-anchor: --story-dialog;
+  bottom: calc(anchor(top) + 2cqw);
   left: 50%;
   transform: translateX(-62%);
   width: 44%;
@@ -1293,7 +1295,8 @@ button {
   color: var(--mixed);
 }
 
-.dice[data-tier='miss'] .dice-tier {
+.dice[data-tier='miss'] .dice-tier,
+.dice[data-tier='fumble'] .dice-tier {
   color: var(--miss);
 }
 
@@ -1639,7 +1642,8 @@ button.primary {
   color: var(--mixed);
 }
 
-.replay .tier-miss {
+.replay .tier-miss,
+.replay .tier-fumble {
   color: var(--miss);
 }
 
@@ -1715,6 +1719,17 @@ button.primary {
   display: block;
   color: var(--ink-dim);
   font-size: 0.85cqw;
+}
+
+.model-list button[aria-current='true'] {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.model-status {
+  margin: 0 0 1cqw;
+  color: var(--ink-dim);
+  font-size: 0.95cqw;
 }
 
 .log-list {

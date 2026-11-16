@@ -1,0 +1,30 @@
+{
+ "title": "(3) Discord | \"User is Blocked???\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 2,
+ "msgs": [
+  {
+   "t": "2026-10-21T09:13:08.020Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " English\nUser is Blocked??? What did I do wrong? Why was it blocked? I'm confused. User : [이메일 삭제]",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-22T17:43:04.326Z",
+   "a": "Frontia_sion",
+   "bot": false,
+   "txt": "Hi, thank you for reaching out. Your account was restricted because our system detected unusual activity in the friend invite program that goes against our community guidelines. Since this involves your account details, we can't go into specifics here in a public thread. If you think this was a mistake, please contact us through the in-app customer support chat and we'll review your case carefully. For your privacy, we'd also recommend not sharing your email address in public channels. Thank you for understanding. (수정됨)\n2026년 10월 23일 금요일 오전 2:43",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

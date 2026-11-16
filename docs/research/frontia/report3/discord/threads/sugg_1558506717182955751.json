@@ -1,0 +1,118 @@
+{
+ "title": "(3) Discord | \"ขอให้ปรับระบบดูตัวอย่างฉากการนำเสนอของ Frontia STUDIO กลับไปเป็นแบบเก่า\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 10,
+ "msgs": [
+  {
+   "t": "2026-10-10T15:49:17.031Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "(ข้อเสนอแนะส่วนตัวของผมนะครับ)\nผมอยากเสนอแนะให้ทีมงานพิจารณานำระบบดูตัวอย่างฉากการนำเสนอ (Preview) ของ Frontia STUDIO กลับมาใช้รูปแบบเดิมครับ\n\nเนื่องจากระบบรูปแบบปัจจุบันทำให้การดูตัวอย่างฉากการนำเสนอไม่สะดวกเท่าที่ควร โดยผู้สร้างต้องย้อนกลับไปตั้งแต่ต้นบท ซึ่งอาจทำให้เสียเวลาและทำให้ขั้นตอนการตรวจสอบผลงานยุ่งยากขึ้นทุกครั้งที่ ดูตัวอย่างของตนเอง\n\nตัวอย่าง\n\n\nผมอยากจะแก้ไข ในบรรทัดที่ 58 พอแก้ไขเสร็จแล้ว กดดูตัวอย่าง มันก็กลับไปเริ่มต้นที่บทนำ ตั้งแต่ต้น แล้วผมก็ต้องมาดูต้องแต่ต้นจนกว่าจะถึงจุดที่ผมได้แก้ไขไป\n,\n\nผมจึงอยากขอให้พิจารณานำรูปแบบการดูตัวอย่างฉากการนำเสนอแบบเดิมกลับมาครับ\n\nขอบคุณทีมงานที่รับฟังข้อเสนอแนะ ของทุกๆคน โดยตลอดครับ ",
+   "emb": "",
+   "att": 3,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-10T16:01:27.215Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "เห็นด้วยครับ+1",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-10T16:05:06.830Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "+1",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-10T16:06:02.280Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "+1",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-10T16:09:08.530Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "+1",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-11T11:21:50.127Z",
+   "a": "Frontia_sion",
+   "bot": false,
+   "txt": "ขอบคุณมากนะคะสำหรับข้อเสนอแนะที่ละเอียดและชัดเจนแบบนี้ \n\nระบบดูตัวอย่างฉากการนำเสนอเพิ่งได้รับการปรับใหม่ เพื่อให้แสดงผลได้ใกล้เคียงกับการเล่นจริงมากขึ้นค่ะ แต่ก็เข้าใจเลยค่ะว่าการต้องย้อนกลับไปดูตั้งแต่ต้นทุกครั้งหลังแก้ไข อย่างในตัวอย่างที่แก้บรรทัดที่ 58 นั้นทำให้เสียเวลาและไม่สะดวกจริงๆ\n\nทางเราได้ส่งข้อเสนอแนะนี้ให้ทีมพัฒนาแล้ว ให้พิจารณาวิธีที่จะช่วยให้ดูตัวอย่างต่อจากจุดที่แก้ไขได้ทันทีค่ะ ขอบคุณที่ช่วยกันทำให้ Frontia STUDIO ดีขึ้นเสมอนะคะ ",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-11T11:43:38.078Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " English\nPlease revert Frontia STUDIO's presentation scene preview system to the old way. (My personal suggestion) I would like to suggest that the team consider bringing Frontia STUDIO's presentation scene preview system back to its original format. Due to the current system format, previewing presentation scenes is not as convenient as it should be. The creator must go back to the beginning of the chapter. This may waste time and make the verification process more difficult every time. Preview your own example - I want to edit line 58. When I'm done editing, press Preview, it goes back to starting at the introduction from the beginning, and then I have to look at the beginning until I reach the point I edited. Therefore, I would like to ask you to consider bringing back the original format for previewing presentation scenes. Thank you to the team for always listening to everyone's suggestions.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-12T10:03:32.549Z",
+   "a": "Frontia_sion",
+   "bot": false,
+   "txt": "It’s done!",
+   "emb": "",
+   "att": 0,
+   "reacts": "2",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-12T11:03:04.578Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "It’s done!",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "It’s done!",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-12T12:03:59.473Z",
+   "a": "Frontia_sion",
+   "bot": false,
+   "txt": "อีกนิดนึงนะคะ  นอกจากข้อเสนอแนะที่คุณ 유저 ให้มาแล้ว รอบนี้ทีมพัฒนายังได้แก้ไขส่วนที่ระบบดูตัวอย่างฉากการนำเสนอเคยทำงานต่างจากการเล่นจริงเล็กน้อยด้วยค่ะ เช่น จำนวนเฟรมที่ภาพสถานการณ์จะแสดงค้างอยู่บนหน้าจอ ตอนนี้ตัวอย่างที่เห็นใน STUDIO จะใกล้เคียงกับที่ผู้เล่นเห็นจริงมากขึ้น ตรวจผลงานได้แม่นยำขึ้นเยอะเลยค่ะ \n\nขอบคุณที่ช่วยให้ข้อเสนอแนะดีๆ แบบนี้นะคะ ถ้าลองใช้แล้วเจออะไรแปลกๆ บอกเราได้เสมอเลยค่ะ ",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

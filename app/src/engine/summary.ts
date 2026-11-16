@@ -73,9 +73,16 @@ export function summarize(scenario: Scenario, state: GameState): ResultSummary {
   const ending = endingBeat?.ending
     ? { id: endingBeat.ending.id, title: endingBeat.ending.title, summary: endingBeat.ending.summary, nextHook: endingBeat.ending.next_hook, bad: endingBeat.ending.bad === true }
     : null;
+  const summaryBeat = endingBeat?.id ?? state.beat;
+  const summaryNode = scenario.atlas?.nodes.find((node) => node.beats.includes(summaryBeat));
+  const chapter = scenario.atlas?.chapters?.find((entry) => summaryNode !== undefined && entry.nodes.includes(summaryNode.id));
+  const firstChapter = scenario.atlas?.chapters?.[0];
+  const episode = chapter && firstChapter && chapter.id !== firstChapter.id
+    ? chapter.label
+    : scenario.episode;
   return {
     scenarioTitle: scenario.title,
-    episode: scenario.episode,
+    episode,
     ending,
     playMs: state.playMs,
     startedAt: state.startedAt,

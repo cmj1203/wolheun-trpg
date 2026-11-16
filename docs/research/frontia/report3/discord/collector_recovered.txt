@@ -1,0 +1,52 @@
+원래 세션에서 복구한 수집 코드. 실행하지 않음.
+globalThis.readMany = async (list, {maxMsgs=150, cutoff=null, maxIter=25}={}) => {
+  const body = `
+const fs = await import("node:fs/promises");
+const list = ${JSON.stringify(list)};
+for (const [url, out] of list) {
+ try {
+  await page.goto(url, {timeout: 30000});
+  await page.waitForTimeout(3000);
+  await page.evaluate(() => { window.__col = new Map(); window.__grab = () => {
+    for (const li of document.querySelectorAll('li[id^="chat-messages-"]')) {
+      const id = li.id; if (window.__col.has(id)) continue;
+      const u = li.querySelector('[id^="message-username-"] span[class*="username"]');
+      const tm = li.querySelector('[id^="message-timestamp-"] time, time');
+      const c = li.querySelector('[id^="message-content-"]');
+      const emb = [...li.querySelectorAll('article')].map(e=>e.innerText).join(' | ');
+      const att = li.querySelectorAll('[class*="imageWrapper"], [class*="mosaicItem"]').length;
+      const reacts = [...li.querySelectorAll('[class*="reaction_"]')].map(r=>r.innerText.replace(/\\s+/g,'')).join(' ');
+      const reply = li.querySelector('[class*="repliedTextPreview"]');
+      window.__col.set(id, {t: tm?.getAttribute('datetime')||'', a: u ? u.textContent : '', bot: !!li.querySelector('[class*="botTag"]'), txt: (c?.innerText||'').slice(0,2500), emb: emb.slice(0,800), att, reacts, reply: reply?.innerText?.slice(0,100)||'', sys: (!u && !c) ? li.innerText.slice(0,150) : ''});
+    }
+    return window.__col.size; }; });
+  let prev = 0, still = 0;
+  for (let i=0;i<${maxIter};i++) {
+    const st = await page.evaluate(({cutoff}) => {
+      const n = window.__grab();
+      const ts = [...window.__col.values()].map(v=>v.t).filter(Boolean).sort();
+      const sc = document.querySelector('[data-list-id="chat-messages"]')?.closest('[class*="scroller"]');
+      if (sc) sc.scrollTop = 0;
+      return {n, done: cutoff && ts[0] && ts[0] < cutoff};
+    }, {cutoff: ${JSON.stringify(cutoff)}});
+    if (st.n >= ${maxMsgs} || st.done) break;
+    if (st.n === prev) { still++; if (still >= 3) break; } else still = 0;
+    prev = st.n;
+    await page.waitForTimeout(1300);
+  }
+  const res = await page.evaluate(() => { window.__grab(); const h = document.querySelector('h1, [class*="titleWrapper"] h2, [class*="title_"]')?.innerText||''; const tags=[...document.querySelectorAll('[class*="tags_"] [class*="pill"], [class*="forumPostTag"]')].map(e=>e.innerText).slice(0,6); return {title: document.title, h, tags, n: window.__col.size, msgs: [...window.__col.values()].sort((a,b)=>a.t<b.t?-1:1)}; });
+  await fs.writeFile(out, JSON.stringify(res, null, 1));
+  console.log('ok', out.split('/').pop(), res.n);
+ } catch (e) { console.log('ERR', out, String(e).slice(0,150)); }
+}
+`;
+  return await ego(body);
+};
+const G2 = 'https://discord.com/channels/1440954348522831986/';
+const loadF = async k => JSON.parse(await Bun.file(`/tmp/fd/f_${k}.json`).text());
+globalThis.loadF = loadF;
+await Bun.$`mkdir -p /tmp/fd/th`;
+const tips = await loadF('tips'), assets = await loadF('assets');
+const lst = [...tips.map(p=>[G2+p.id, `/tmp/fd/th/tips_${p.id}.json`]), ...assets.map(p=>[G2+p.id, `/tmp/fd/th/assets_${p.id}.json`])];
+const o = await readMany(lst);
+print(o.slice(0,2000));

@@ -1,0 +1,26 @@
+*** Begin Patch
+*** Update File: app/content/lore_wolheun.yaml
+@@
+       if: "flag:페시안_앎"
++    - id: man_title
++      kind: 사람
++      name: 시하드
++      text: 푸른 머리 수행원이 붉은 눈의 남자를 시하드라고 불렀다. 아직 그 남자의 본명이나 정확한 신분은 확인하지 못했다.
++      keys: [시하드]
++      if: "flag:시하드_호칭"
+     - id: man_true
+@@
+-      keys: [베히다트, 시하드, 라 쿤, 폐하, 국왕, 왕이다, 왕이시, 왕이야, 왕이라, 사막의 왕]
++      keys: [베히다트, 라 쿤, 폐하, 국왕, 왕이다, 왕이시, 왕이야, 왕이라, 사막의 왕]
+       if: "flag:남자_정체_앎"
+-    - id: later
++    - id: jail
+       kind: 세계
+-      name: 뒤 화의 일
+-      text: 사막 뒤에 벌어질 일.
++      name: 감옥 탑
++      text: 아시나가 갇힌 감옥은 도시 중앙의 햇볕이 잘 드는 곳에 있다. 더운 날씨로 죄수를 괴롭히는 구조다.
+       keys: [감옥]
+-      if: "flag:뒤_화"
++      if: "flag:감옥_앎"
+*** End Patch

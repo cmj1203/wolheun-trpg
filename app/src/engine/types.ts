@@ -24,11 +24,11 @@ export const TRACK_INFO: Record<Track, TrackInfo> = {
   행운: { label: '행운', max: 10, unit: '', desc: '판정 실패를 모자란 만큼 메우는 데 쓴다' },
 };
 
-export type Tier = 'crit' | 'hit' | 'mixed' | 'miss';
+export type Tier = 'crit' | 'hit' | 'mixed' | 'miss' | 'fumble';
 export const TIERS = ['hit', 'mixed', 'miss'] as const;
-/** 시나리오의 대성공 결과는 선택 사항이며 없으면 성공에서 계산한다. */
-export type Tiered<T> = Record<(typeof TIERS)[number], T> & { crit?: T };
-export const TIER_LABEL: Record<Tier, string> = { crit: '대성공', hit: '성공', mixed: '대가 있는 성공', miss: '실패' };
+/** 자연 특수 결과는 선택 사항이며 없으면 성공·실패에서 계산한다. */
+export type Tiered<T> = Record<(typeof TIERS)[number], T> & { crit?: T; fumble?: T };
+export const TIER_LABEL: Record<Tier, string> = { crit: '대성공', hit: '성공', mixed: '아슬아슬한 성공', miss: '실패', fumble: '대실패' };
 
 export type FlagValue = boolean | number | string;
 
@@ -83,7 +83,11 @@ export interface Line {
 export interface ImprovMark {
   absurd: boolean;
   bold: boolean;
+  /** 큰 행동이 상대를 해치려는 공격이다(해석 risk=attack). */
+  attack?: boolean;
   deed?: string;
+  /** 현재 비트의 성공 목표 또는 그 자리에서 완료되는 사건(local). 옛 저장에는 없다. */
+  target?: string;
 }
 
 /** GM 입력에 넣는 지금까지의 사실. 조건이 참이면 text 를 알려 주고 state_guard 표현을 막는다(예: 이미 벗은 후드를 다시 벗는 장면). */
@@ -93,7 +97,8 @@ export interface FactSpec {
   /** 엔진이 정한 상태와 어긋나는 표현. 플레이어가 먼저 한 행동이면 막지 않는다. */
   state_guard: string[];
   /** 서술이 이 상태를 바꿨는지 뜻으로 다시 묻는다. about 낱말이 글에 있을 때만 묻고, sets 는 플레이어가 직접 한 행동일 때 켜는 플래그다. */
-  state_check?: { about: string[]; ask: string; sets?: string };
+  /** subject: 상태가 바뀌는 물건의 이름(후드 등). 있으면 그 이름이 글에 나올 때만 바뀐 것으로 본다(머리카락을 만진 것은 후드를 벗은 것이 아니다). */
+  state_check?: { about: string[]; ask: string; sets?: string; subject?: string[] };
 }
 
 export interface Effects {
@@ -109,6 +114,15 @@ export interface Route {
   to: string;
 }
 export type Next = string | Route[];
+
+/** 기법과 분리된 성취. 비용을 내기 전에 effects와 next로 성공을 확정한다. */
+export interface GoalSpec {
+  text: string;
+  effects?: Effects;
+  next: Next;
+  price: string[];
+  if?: string;
+}
 
 export const PRICE_TAGS = ['수치', '소지품', '자리', '상대행동', '시간'] as const;
 export type PriceTag = (typeof PRICE_TAGS)[number];
@@ -170,6 +184,7 @@ export interface ChoiceSpec {
 /** 자유 입력 비트에서 플레이어 행동을 묶는 접근 방식. GM 이 입력을 이 중 하나로 해석하고 코드가 판정한다. */
 export interface ApproachSpec {
   id: string;
+  goal?: string;
   /** 위험을 감수하는 접근은 6 이하에서 몸·마음의 hard 피해가 두 칸이다. */
   risky?: boolean;
   label: string;
@@ -191,6 +206,7 @@ export interface ApproachSpec {
 /** 자유 입력 비트. turns 와 until 로 여러 턴에 걸친 계획(예: 감옥 탈옥)을 표현한다. */
 export interface FreeSpec {
   prompt: string;
+  goals?: Record<string, GoalSpec>;
   /** 자유 입력 칸 위에 띄우는 장면 목표(이야기 문장) */
   aim?: string;
   situation: string;
@@ -214,10 +230,16 @@ export interface FreeSpec {
   neutral?: Tiered<Line[]>;
   /** 아무것도 시도하지 않는 입력의 결과. 판정 없이 흘러간다. threat 면 바로 닥치고, 아니면 nudge 가 먼저 나온 뒤 한 번 더 그럴 때 닥친다. */
   idle?: { threat: boolean; lines: Line[]; effects?: Effects };
+  /** 머뭇이 차서 세계가 대신 정할 때 기본 접근법을 굴리지 않고 idle 결과(상대가 먼저 움직임)로 흘러간다. 플레이어가 고르지 않은 행동(달려가 길 묻기 등)을 했다고 정하지 않는다. */
+  stall_idle?: boolean;
   /** 목록에 없는 행동의 판정 결과. 능력치와 난이도는 GM 이 고른다. */
   improv: Tiered<Outcome>;
   /** 상대가 지나칠 수 없는 큰 즉흥 행동(몸에 닿기, 겨누기)의 판정 결과. 반응과 수치가 improv 보다 크다. 없으면 improv 를 쓴다. */
   improv_bold?: Tiered<Outcome>;
+  /** 상대를 해치려는 큰 즉흥 행동(찌르기, 치기)의 판정 결과. 호감이 아니라 경계가 커진다. 없으면 improv_bold 를 쓴다. */
+  improv_attack?: Tiered<Outcome>;
+  /** 공격이라는 행동 자체의 결과(대가가 아니다). 대실패가 아닌 모든 등급에서 판정 전 효과로 한 번 적용한다. */
+  improv_attack_before?: Effects;
   /** 장면별 대가 표. 7~9 는 soft 중 하나, 6- 는 hard 우선 하나를 시드 난수로 뽑는다. */
   prices?: PriceSpec[];
   turns: number;
@@ -268,6 +290,8 @@ export interface CallbackSpec {
 
 export interface AtlasNodeSpec {
   id: string;
+  /** 지도의 방문한 칸에 표시할 사건명. */
+  label?: string;
   col: number;
   row: number;
   /** 이 비트 가운데 하나를 지나면 가 본 칸이다. */
@@ -323,8 +347,15 @@ export const TENSION_MIN = 1;
 export const TENSION_MAX = 6;
 export const TENSION_START = 3;
 
+/** 선택지 대신 직접 말하거나 반응할 수 있는 비판정 자리. next는 직접 입력 뒤에만 쓴다. */
+export type ConversationSpec = Pick<FreeSpec,
+  'situation' | 'goal' | 'speakers' | 'must_not' | 'state_guard' | 'echo_only' | 'talk_fallback' | 'deflect'
+> & { cg: string; next: Next };
+
 export interface BeatSpec {
   id: string;
+  /** 관객만 보는 장면. 미선언 장면은 화면 밖 주인공 POV도 포함해 주인공 시점을 유지한다. */
+  perspective?: 'audience';
   /** 같은 위협에 속한 연속 장면은 정신력 손실을 한 번만 받는다. */
   threat?: string;
   title: string;
@@ -341,6 +372,7 @@ export interface BeatSpec {
   twist?: { altered: TwistSpec[]; interrupt: TwistSpec[] };
   lines: Line[];
   choices?: ChoiceSpec[];
+  conversation?: ConversationSpec;
   free?: FreeSpec;
   next?: Next;
   ending?: EndingSpec;
@@ -349,6 +381,8 @@ export interface BeatSpec {
 export interface CastSpec {
   display: string;
   style: LineStyle;
+  /** 입식 대신 각 대사의 유효한 CG로만 표시하는 배우. */
+  presentation?: 'cg';
   faces?: readonly Face[];
   sprite?: string;
   /** 조건이 참이면 sprite 대신 쓰는 입식 */
@@ -392,7 +426,11 @@ export interface Scenario {
   /** 큰 결단 앞에서 여우가 가진 것을 정리해 주는 장면. */
   council?: string[];
   /** 이야기 분기 맵의 칸과 잇는 선. */
-  atlas?: { nodes: AtlasNodeSpec[]; edges: [string, string][] };
+  atlas?: {
+    nodes: AtlasNodeSpec[];
+    edges: [string, string][];
+    chapters?: { id: string; label: string; nodes: string[] }[];
+  };
   /** 크게 틀어지거나 끝나는 입력. 여우가 알리고 한 번 묻는다. */
   risky?: RiskySpec[];
   refuse?: RefuseSpec[];
@@ -445,6 +483,8 @@ export interface RollResult {
   tier: Tier;
   /** 이 판정에 쓴 행운 */
   luck?: number;
+  /** 자연 대실패를 행운으로 구제했을 때만 보존하는 원래 등급. */
+  rescuedFrom?: 'fumble';
 }
 
 export interface TrackChange {
@@ -476,7 +516,7 @@ export type LogEntry =
   | (LogBase & { kind: 'beat'; beat: string; title: string })
   | (LogBase & { kind: 'choice'; beat: string; choice: string; text: string })
   | (LogBase & { kind: 'input'; beat: string; text: string; result: 'approach' | 'talk' | 'improv' | 'idle' | 'ask' | 'game' | 'bounced'; approach: string | null; item: string | null; source: 'llm' | 'rule' })
-  | (LogBase & { kind: 'check'; beat: string; roll: RollResult })
+  | (LogBase & { kind: 'check'; beat: string; roll: RollResult; improv?: ImprovMark })
   | (LogBase & { kind: 'price'; beat: string; id: string; tag: PriceTag; text: string })
   | (LogBase & { kind: 'twist'; beat: string; tension: number; roll: number; result: TwistResult; id: string | null })
   | (LogBase & { kind: 'gm'; beat: string; task: GmTask; attempts: number; violations: string[]; fallback: boolean; ms: number; model: string | null; lines?: string[] })
@@ -503,9 +543,13 @@ export interface FreeProgress {
   /** 이 장면에서 이미 낸 GM 무브(한 종류에 한 번). */
   moves?: WorldMove[];
   rolls: number;
+  /** 장면 진행 소비. 구형 저장에는 없으며 실제 판정 횟수와 분리한다. */
+  turns?: number;
   /** 이 장면에서 이미 뽑힌 대가 id(같은 대가가 연달아 나오지 않게). */
   prices?: string[];
   lastInput?: string;
+  /** 원문이 고른 행동의 일부만 했을 때 실제로 한 부분. 그 판정의 서술 범위다. */
+  scope?: string;
   /** 바로 앞에 여우가 되돌려 보낸 입력(같은 입력이 두 번 걸리뮤 예시를 덧붙인다). */
   lastBounce?: string;
 }
@@ -540,6 +584,12 @@ export interface GameState {
     stat: Ability;
     difficulty: number;
     source: 'llm' | 'rule';
+    target?: string;
+    bold?: boolean;
+    risk?: 'attack' | 'unmask' | 'identity';
+    message?: string;
+    /** 끼어들기에서 승인 뒤에만 지울 화면 대사 번호. */
+    pendingLines?: number[];
     /** 정체를 밝히는 말이 섞인 행동이다. 정체 대가는 "그래"라고 답할 때 붙인다. */
     identity?: boolean;
     /** 이 입력이 처음 세운 갈래 플래그. "다른 뜻"이면 거둔다. */
@@ -569,12 +619,12 @@ export interface ItemView {
 }
 
 export type GameEvent =
-  | { type: 'scene'; beat: string; title: string; bg: string | null; cast: { left: string | null; center: string | null; right: string | null }; sprites: Record<string, string> }
+  | { type: 'scene'; beat: string; title: string; bg: string | null; cast: { left: string | null; center: string | null; right: string | null }; sprites: Record<string, string>; frame?: string }
   | { type: 'sprite'; cast: string; sprite: string }
-  | { type: 'line'; speaker: string; display: string; style: LineStyle; text: string; fx?: string; sfx?: string; face?: string; cg?: string; cg_from?: string; by: 'script' | 'gm'; if?: string }
+  | { type: 'line'; speaker: string; display: string; style: LineStyle; text: string; fx?: string; sfx?: string; face?: string; cg?: string; cg_from?: string; by: 'script' | 'gm'; if?: string; frame?: string }
   | { type: 'echo'; text: string }
   /** 입력 해석이 끝난 뒤: 되짚기 줄 머리(말/행동)와 판정이 없을 때의 주인공 기본 표정. 판정의 hero 가 뒤에서 덮는다. */
-  | { type: 'heard'; as: 'speech' | 'action'; hero?: { speaker: string; face: string } }
+  | { type: 'heard'; as: 'speech' | 'action' | 'mixed'; hero?: { speaker: string; face: string } }
   | { type: 'revise'; drop: number[]; jump: boolean }
   | ({ type: 'roll'; tierLabel: string; /** 판정 결과에 맞춘 주인공 입식 표정. */ hero?: { speaker: string; face: string } } & RollResult)
   | { type: 'tracks'; changes: TrackChange[] }
@@ -586,7 +636,7 @@ export type GameEvent =
   /** intent: 큰 행동의 해석 확인 카드. yes/no 는 단추 글(없으면 그만두기 창 기본). */
   | { type: 'confirm'; kind: 'quit' | 'intent'; text: string; yes?: string; no?: string }
   /** 화면이 글로 내는 안내. ask: 이야기 입력칸에 적은 질문은 여우가 받지 않으니 GM 단추(질문 모드)로. */
-  | { type: 'notice'; kind: 'ask' }
+  | { type: 'notice'; kind: 'ask' | 'rewrite' }
   | { type: 'items'; gained: ItemView[]; lost: ItemView[] }
   | { type: 'note'; id: string; name: string }
   | { type: 'ending'; id: string; title: string; summary: string; nextHook: string; bad: boolean };
@@ -673,7 +723,34 @@ export type Action =
   /** 확인 창의 답. */
   | { type: 'confirm'; ok: boolean }
   /** 질문 모드(GM 단추): 여우에게 묻는다. 이야기 밖 말이라 판정·시간·참을성을 쓰지 않고, 여우 화자 줄은 여기서만 나온다. */
-  | { type: 'ask'; text: string; scene?: string | null };
+  | { type: 'ask'; text: string; scene?: string | null; frame?: string };
+
+export type ViewpointEvent = Extract<GameEvent, { type: 'scene' | 'line' }>;
+
+/** 서버 내부 관측 전용. Step이나 클라이언트 JSON에 넣지 않는다. */
+export interface ViewpointObservation {
+  readonly event: ViewpointEvent;
+  /** resume의 과거 줄 재출력은 정확한 과거 상태의 증거로 쓰지 않는다. */
+  readonly source: 'fresh' | 'resume';
+  readonly state: Readonly<Omit<GameState, 'log'>>;
+  readonly logLength: number;
+  /** 해당 시점 prefix의 복사본을 필요할 때 만든다. 권위 로그 배열은 반환하지 않는다. */
+  readonly readLog: () => readonly LogEntry[];
+}
+
+export type ViewpointObserver = (observation: ViewpointObservation) => void;
+
+/** 서버가 현재 확인 토큰을 검증한 뒤에만 엔진에 전달하는 질문 문맥. */
+export interface ConfirmedViewpoint {
+  readonly scene: string;
+  readonly state: Readonly<GameState>;
+  readonly line?: Extract<GameEvent, { type: 'line' }>;
+}
+
+export interface ViewpointOptions {
+  observer?: ViewpointObserver;
+  question?: ConfirmedViewpoint;
+}
 
 /** 끼어든 순간 화면에 아직 나오지 않은 고정 줄. i 는 화면이 들고 있는 남은 사건 목록의 자리다. */
 export interface PendingLine {

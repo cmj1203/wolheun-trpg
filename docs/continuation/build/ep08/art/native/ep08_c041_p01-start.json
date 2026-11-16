@@ -1,0 +1,25 @@
+{
+  "candidate_id": "ep08_c041_p01",
+  "pid": 38170,
+  "pgid": 38170,
+  "started_at": 1794205031.7517471,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep08/gen/inputs/ep08_c041_p01.png",
+  "input_sha256": "20403c161038271ffd1fd755455ed144ef49f377bb50dead164ff03206e2818f",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep08/gen/ep08_c041_p01.png",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep08/art/native/ep08_c041_p01.log",
+  "native_active_before_launch": [
+    {
+      "pid": 36646,
+      "pgid": 36646,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C /Users/choeminju/월흔_trpg/assets/ep05/gen -i /Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c036_p01_source.png -- 첨부한 원작 참조 창만 편집하세요. 대상은 창·진열장·도자기·거울·잎입니다. 원작 얼굴·표정·시선·자세·몸 비율·머리·복장·가림·장신구·소품·구도를 유지하세요. 말풍선·대사·독백·효과 글자만 제거하고 해당 자리를 주변 원작 그림으로 복원하세요. 16:9 가로 화면은 옆 배경만 확장하고, 원작에서 잘린 인체와 가려진 몸은 잘리고 가려진 상태로 유지하세요. 전신·새 몸·노출·인물·물건·사건·다른 패널 콜라주를 추가하지 마세요. 그림 공개 순서는 매핑의 ep05"
+    },
+    {
+      "pid": 37070,
+      "pgid": 37070,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C /Users/choeminju/월흔_trpg/assets/ep04/gen -i /Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c015-selected.png -- 첨부는 실제 원작에서 이미 준비한 입력이다. 이 파일들을 직접 내장 image_gen에 사용하고 같은 창을 다시 추출할 필요가 없다. 별도 Python 확인이 꼭 필요하면 /Users/choeminju/월흔_trpg/tools/.venv/bin/python 절대 경로만 사용한다. bare python 명령은 이 환경에 없다. 새 설치·SDK/API 대체는 하지 않는다.\\012\\0124화 승인 후보 ep04_c015 한 장만 첨부된 실제 원작으로 편집한다. 내장"
+    }
+  ],
+  "native_active_before_count": 2,
+  "slot_counter": "argv 첫 실행 파일 기준",
+  "independent_qa": "대기"
+}

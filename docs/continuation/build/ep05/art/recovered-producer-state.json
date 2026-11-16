@@ -1,0 +1,11 @@
+{
+  "updated_at": "2026-11-09T06:55:28.814546+00:00",
+  "producer_pid": 25562,
+  "producer_pgid": 25562,
+  "producer_ppid": 1,
+  "current_candidate": null,
+  "actualPNG": 56,
+  "pending": 0,
+  "service_blocker": null,
+  "phase": "completed"
+}

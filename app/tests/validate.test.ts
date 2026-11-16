@@ -40,13 +40,45 @@ const out = (...lines: [string, string][]) => JSON.stringify({ lines: lines.map(
 const rules = (raw: string, o = options()) => validateOutput(raw, o).violations.map((v) => `${v.kind}/${v.rule}`);
 const severityOf = (raw: string, rule: string) => validateOutput(raw, options()).violations.find((v) => `${v.kind}/${v.rule}` === rule)?.severity;
 
+describe('인용 종결형', () => {
+  test.each([
+    '길을 잃었다라.',
+    '몰랐다라.',
+    '혼자 떠나겠다라.',
+    '갔다라. 우습군.',
+    '몰랐다라는 말인가?',
+    '길을 잃었다라.'.normalize('NFD'),
+  ])('인용부호 없이 과거·의지형에 명사 인용 조사를 붙인 대사는 다시 쓴다: %s', (text) => {
+    const raw = out(['남자', text]);
+    expect(rules(raw)).toContain('format/quotation');
+    expect(severityOf(raw, 'format/quotation')).toBe('hard');
+  });
+
+  test.each([
+    '길을 잃었다고.',
+    '길을 잃었다고?',
+    '…그래서?',
+    '여행자라.',
+    '만다라.',
+    "'길을 잃었다'라….",
+    '“혼자 떠나겠다”라.',
+    '갔더라.',
+    '다라의 족장이라.',
+    "'갔다라!'라고 했나?",
+  ])('명사·직접 인용과 정상 단편은 보존한다: %s', (text) => {
+    expect(rules(out(['남자', text]))).not.toContain('format/quotation');
+  });
+});
+
 describe('판정 결과와 서술', () => {
   test.each([
     { previous: ['그게 한계인가?', '눈을 떠라.'], text: '겁이 난 건가?', repeat: false },
     { previous: ['그게 한계인가?'], text: '겁이 난 건가?', repeat: false },
     { previous: ['그게 한계인가?', '벌써 끝인가?'], text: '겁이 난 건가?', repeat: true },
-    { previous: ['여행자, 눈을 들어라.', '그만 떨지.'], text: '숨이 막히나, 여행자?', repeat: true },
-    { previous: ['상인, 눈을 들어라.', '그만 떨지.'], text: '상인의 고집도 대단하군.', repeat: true },
+    { previous: ['여행자, 눈을 들어라.', '그만 떨지.'], text: '숨이 막히나, 여행자?', repeat: false },
+    { previous: ['벌써 지쳤나?', '길을 잃었나?'], text: '숨이 막히나, 여행자?', repeat: true },
+    { previous: ['상인, 눈을 들어라.', '그만 떨지.'], text: '상인의 고집도 대단하군.', repeat: false },
+    { previous: ['제법 버티는군.', '아직 고집을 부리는군.'], text: '상인의 고집도 대단하군.', repeat: true },
     { previous: ['그게 한계인가?', '눈을 들어라.', '그만 떨지.'], text: '겁이 난 건가?', repeat: false },
     { previous: ['그게 한계인가?', '참 우습군.'], text: '다리는 떨리는가? 버텨라.', repeat: false },
     { previous: ['고개를 들어라.', '그만 떨지.'], text: '여행자, 아직 버티는군.', repeat: false },
@@ -62,10 +94,11 @@ describe('판정 결과와 서술', () => {
   });
 
   test('구조 반복은 다른 안전 검사를 막지 않는 soft 위반이다', () => {
-    const checked = validateOutput(out(['남자', '여행자, 아직 버티는군.']), options({
-      spoken: { 남자: ['여행자, 눈을 들어라.'] },
+    const checked = validateOutput(out(['남자', '겁이 난 건가?'], ['남자', '나는 베히다트다.']), options({
+      spoken: { 남자: ['그게 한계인가?', '벌써 끝인가?'] },
     }));
     expect(checked.violations.find(v => v.rule === 'reaction_repeat')?.severity).toBe('soft');
+    expect(checked.violations.find(v => v.kind === 'lore' && v.rule === 'spoilers')?.severity).toBe('hard');
   });
 
   test.each(['...', '…….', '… …', '?!'])('직접 반응할 인물의 말 내용 없는 줄은 hard 위반이다: %s', text => {
@@ -171,7 +204,7 @@ describe('GM 출력 검증', () => {
 
   test.each([
     ['내레이션 현재형', out(['나레이션', '칼끝이 조금 물러난다.']), 'lore/tense', 'soft'],
-    ['내레이션 3인칭', out(['나레이션', '아시나는 숨을 삼켰다.']), 'lore/register_word', 'soft'],
+    ['내레이션 3인칭', out(['나레이션', '아시나는 숨을 삼켰다.']), 'lore/register_word', 'hard'],
     ['요지 베끼기', out(['나레이션', '거짓은 아닌 듯하다고 여겨 칼끝을 살짝 물린다.']), 'beat/gist_copy', 'soft'],
     ['이미 나온 대사 반복', out(['아시나', '그것 좀 치워봐요! 난 죽이면 안 돼요.']), 'beat/repeat_earlier', 'soft'],
     ['남자의 존댓말', out(['남자', '살려 드릴게요.']), 'lore/register', 'hard'],
@@ -332,16 +365,37 @@ describe('플레이어가 먼저 한 행동(deed)과 상태 기준 스포일러'
     expect(before).toContain('감옥');
     expect(before).toContain('페시안');
     expect(before).toContain('적국');
-    const after = spoilersFor(rawLore, { ...state, flags: { ...state.flags, 남자_정체_앎: true } });
-    expect(after).not.toContain('베히다트');
-    expect(after).not.toContain('폐하');
-    expect(after).toContain('감옥');
-    expect(after).toContain('하렘');
-    expect(after).toContain('페시안');
+    expect(before).toContain('라 쿤');
+    expect(before).toContain('살아있는 신');
     const revealed = spoilersFor(rawLore, { ...state, flags: { ...state.flags, 페시안_앎: true } });
     expect(revealed).not.toContain('페시안');
     expect(revealed).not.toContain('적국');
     expect(revealed).toContain('베히다트');
+    expect(revealed).toContain('폐하');
+    expect(revealed).toContain('라 쿤');
+  });
+
+  test.each([
+    {
+      flag: 'ep04_name_known',
+      known: ['베히다트'],
+      locked: ['폐하', '국왕', '왕이다', '왕이시', '왕이야', '왕이라', '사막의 왕', '라 쿤', '살아있는 신'],
+    },
+    {
+      flag: 'ep04_ruler_known',
+      known: ['폐하', '국왕', '왕이다', '왕이시', '왕이야', '왕이라', '사막의 왕'],
+      locked: ['베히다트', '라 쿤', '살아있는 신'],
+    },
+    {
+      flag: 'ep04_title_known',
+      known: ['라 쿤', '살아있는 신'],
+      locked: ['베히다트', '폐하', '국왕', '왕이다', '왕이시', '왕이야', '왕이라', '사막의 왕'],
+    },
+  ])('본명·통치자·칭호는 독립 공개 조건으로 잠금이 풀린다: $flag', ({ flag, known, locked }) => {
+    const state = new Engine(scenario, new FakeGm()).newGame(2, 'independent-spoiler-test').state;
+    const after = spoilersFor(rawLore, { ...state, flags: { ...state.flags, [flag]: true } });
+    for (const term of known) expect(after).not.toContain(term);
+    for (const term of [...locked, '감옥', '하렘', '페시안', '적국']) expect(after).toContain(term);
   });
 });
 

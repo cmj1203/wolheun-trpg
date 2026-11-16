@@ -1,0 +1,56 @@
+bun test v1.4.2 (744846f84)
+
+tests/ep04_ep05_distance.test.ts:
+65 | 
+66 |       const result = await enterFifth(previous.state);
+67 |       const lines = result.events.filter((event) => event.type === 'line');
+68 |       const scenes = result.events.filter((event) => event.type === 'scene').map((event) => event.beat);
+69 |       expect(scenes).toContain('ep05_c010');
+70 |       expect(scenes).not.toContain('ep05_c001');
+                              ^
+error: expect(received).not.toContain(expected)
+
+Expected to not contain: "ep05_c001"
+Received: [
+  "ep05_c001", "ep05_c002", "ep05_c003", "ep05_c004", "ep05_c005", "ep05_c006", "ep05_c007", "ep05_c008",
+  "ep05_c009", "ep05_c010", "ep05_c011", "ep05_c012", "ep05_c013", "ep05_c014", "ep05_c015", "ep05_c016",
+  "ep05_c017", "ep05_c018", "ep05_c019", "ep05_c020", "ep05_c021", "ep05_c022", "ep05_c023", "ep05_c024",
+  "ep05_c025", "ep05_c026", "ep05_c027", "ep05_c028", "ep05_c029", "ep05_c030", "ep05_c031", "ep05_c032",
+  "ep05_c033", "ep05_c034", "ep05_c035", "ep05_c036", "ep05_c037", "ep05_c038", "ep05_c039", "ep05_c040",
+  "ep05_c041", "ep05_c042", "ep05_c043", "ep05_c044", "ep05_c045", "ep05_summons_original", "ep05_c046",
+  "ep05_c047", "ep05_c048", "ep05_c049", "ep05_c050", "ep05_c051", "ep05_c052", "ep05_c053", "ep05_reply_short",
+  "ep05_boundary"
+]
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep04_ep05_distance.test.ts:70:26)
+(fail) 4화에서 이룬 거리와 거절을 5화가 취소하지 않는다 > mixed 성공의 실제 대사·그림·기억·비용을 화 경계 뒤에도 보존한다 [5.50ms]
+65 | 
+66 |       const result = await enterFifth(previous.state);
+67 |       const lines = result.events.filter((event) => event.type === 'line');
+68 |       const scenes = result.events.filter((event) => event.type === 'scene').map((event) => event.beat);
+69 |       expect(scenes).toContain('ep05_c010');
+70 |       expect(scenes).not.toContain('ep05_c001');
+                              ^
+error: expect(received).not.toContain(expected)
+
+Expected to not contain: "ep05_c001"
+Received: [
+  "ep05_c001", "ep05_c002", "ep05_c003", "ep05_c004", "ep05_c005", "ep05_c006", "ep05_c007", "ep05_c008",
+  "ep05_c009", "ep05_c010", "ep05_c011", "ep05_c012", "ep05_c013", "ep05_c014", "ep05_c015", "ep05_c016",
+  "ep05_c017", "ep05_c018", "ep05_c019", "ep05_c020", "ep05_c021", "ep05_c022", "ep05_c023", "ep05_c024",
+  "ep05_c025", "ep05_c026", "ep05_c027", "ep05_c028", "ep05_c029", "ep05_c030", "ep05_c031", "ep05_c032",
+  "ep05_c033", "ep05_c034", "ep05_c035", "ep05_c036", "ep05_c037", "ep05_c038", "ep05_c039", "ep05_c040",
+  "ep05_c041", "ep05_c042", "ep05_c043", "ep05_c044", "ep05_c045", "ep05_summons_original", "ep05_c046",
+  "ep05_c047", "ep05_c048", "ep05_c049", "ep05_c050", "ep05_c051", "ep05_c052", "ep05_c053", "ep05_reply_short",
+  "ep05_boundary"
+]
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep04_ep05_distance.test.ts:70:26)
+(fail) 4화에서 이룬 거리와 거절을 5화가 취소하지 않는다 > hit 성공의 실제 대사·그림·기억·비용을 화 경계 뒤에도 보존한다 [3.74ms]
+(pass) 4화에서 이룬 거리와 거절을 5화가 취소하지 않는다 > 성취가 없는 원작 경로와 거리 확보 실패는 원문 입맞춤과 첫 입맞춤 기억을 유지한다 [3.37ms]
+(pass) 4화에서 이룬 거리와 거절을 5화가 취소하지 않는다 > 두 화의 목표·가격·장 지도·얼굴을 엄격한 시나리오 검사로 읽는다 [1.17ms]
+
+ 2 pass
+ 2 fail
+ 30 expect() calls
+Ran 4 tests across 1 file. [33.00ms]

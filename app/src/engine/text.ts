@@ -15,15 +15,48 @@ export function isPresentTense(sentence: string): boolean {
 
 export const isQuestionText = (text: string): boolean => /[?？]\s*$/u.test(text) || ASK_HINT.test(text);
 
+export type StoryInput =
+  | { readonly kind: 'valid'; readonly action: string; readonly speech: string; readonly explicit: boolean }
+  | { readonly kind: 'invalid'; readonly message: string };
+
+/** 이야기 입력의 경계는 문장 뜻이 아니라 사용자가 적은 괄호로 정한다. */
+export function parseStoryInput(text: string): StoryInput {
+  let closing = '';
+  let action = '';
+  let speech = '';
+  let part = '';
+  let explicit = false;
+  for (const char of text) {
+    if (char === '(' || char === '（') {
+      if (closing) return { kind: 'invalid', message: '괄호를 겹치지 말고 행동마다 ( ) 한 쌍으로 적어 줘.' };
+      explicit = true;
+      closing = char === '(' ? ')' : '）';
+      part = '';
+    } else if (char === ')' || char === '）') {
+      if (char !== closing) return { kind: 'invalid', message: '행동의 여는 괄호와 닫는 괄호를 맞춰 줘. 예: (주변을 둘러본다)' };
+      if (!part.trim()) return { kind: 'invalid', message: '괄호 안에 행동을 적어 줘. 예: (주변을 둘러본다)' };
+      action += `${action ? ' ' : ''}${part.trim()}`;
+      speech += ' ';
+      closing = '';
+    } else if (closing) part += char;
+    else speech += char;
+  }
+  if (closing) return { kind: 'invalid', message: '행동의 닫는 괄호를 적어 줘. 예: (주변을 둘러본다)' };
+  return { kind: 'valid', action, speech: speech.trim(), explicit };
+}
+
 /** 실제로 상대에게 긍정해 말한 절만 남긴다. 행동과 함께 적은 발화도 별도 사건이다. */
 export function assertedSpeech(text: string, spoken = false): string {
-  return text.split(/(?<=[.!?？])\s*|\n+/u).map((s) => s.trim()).filter((clause) => {
+  const input = parseStoryInput(text);
+  if (input.kind === 'invalid') return '';
+  const speech = input.explicit ? input.speech : text;
+  return speech.split(/(?<=[.!?？])\s*|\n+/u).map((s) => s.trim()).filter((clause) => {
     if (!clause || (isQuestionText(clause) && !spoken)) return false;
     // 부정의 서술어와 무발화·간접 인용은 그 안의 명사를 주장한 것이 아니다.
     if (/(아니(?:에|예|야|다|라|고|었)|지\s*않|지\s*못|(?:^|\s)안\s|(?:라|다)고\s*(?:들었|했었|생각|적혀|쓰여|말했))/u.test(clause)) return false;
     const form = readInput(clause).kind;
     const declaration = /^(난|나는|전|저는|내가|제가)\s+.+(?:이다|다|예요|에요|입니다|야)(?:\s+하고\s|[.!]*$)/u.test(clause);
-    return form === 'speech' || declaration || (spoken && !['self', 'refrain', 'noise'].includes(form) && !isActionText(clause));
+    return input.explicit || form === 'speech' || declaration || (spoken && !['self', 'refrain', 'noise'].includes(form) && !isActionText(clause));
   }).join(' ');
 }
 

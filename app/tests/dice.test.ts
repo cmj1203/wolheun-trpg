@@ -75,9 +75,27 @@ describe('2d6 + 능력치 판정 등급', () => {
     expect(a).toEqual(b);
   });
 
-  test('시드 1~300 에서 대성공을 포함한 네 등급이 모두 나온다', () => {
+  test('36개 원래 주사위 조합은 큰 보정에도 자연 특수 결과를 보존한다', () => {
+    const seeds = new Map<string, number>();
+    for (let seed = 0; seeds.size < 36 && seed < 10_000; seed++) {
+      const a = rollD6(seed), b = rollD6(a.state);
+      seeds.set(`${a.face},${b.face}`, seed);
+    }
+    expect(seeds.size).toBe(36);
+    for (const [pair, seed] of seeds) {
+      for (const modifier of [-100, 0, 100]) {
+        const { roll, rng } = roll2d6(seed, '시도', '재치', modifier, []);
+        const expected = pair === '6,6' ? 'crit' : pair === '1,1' ? 'fumble'
+          : roll.total >= 10 ? 'hit' : roll.total >= 7 ? 'mixed' : 'miss';
+        expect(roll.tier).toBe(expected);
+        expect(rng).toBe(rollD6(rollD6(seed).state).state);
+      }
+    }
+  });
+
+  test('시드 1~300 에서 대성공·대실패를 포함한 다섯 등급이 모두 나온다', () => {
     const seen = new Set<string>();
     for (let seed = 1; seed <= 300; seed++) seen.add(roll2d6(seed, '판정', '근력', 0, []).roll.tier);
-    expect([...seen].sort()).toEqual(['crit', 'hit', 'miss', 'mixed']);
+    expect([...seen].sort()).toEqual(['crit', 'fumble', 'hit', 'miss', 'mixed']);
   });
 });

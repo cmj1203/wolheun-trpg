@@ -1,0 +1,2568 @@
+# 내부 검증용. CG는 원작 입력이며 Astra 완성 그림이 아니다.
+{
+  "id": "ep08_harem",
+  "title": "궁 안의 하루",
+  "episode": "8화",
+  "source": "웹툰 「월흔」 8화 · 16장 · 62컷",
+  "rating": "15세 이용가",
+  "start": "ep08_c001",
+  "sheet": {
+    "name": "아시나",
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "tracks": {
+      "체력": 4,
+      "정신력": 4,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "items": [
+      {
+        "id": "magic_bag",
+        "file": "assets/ep01/gen/items/item_magic_bag.png",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.",
+        "states": [
+          {
+            "flag": "가방_끈",
+            "label": "끈 끊김",
+            "desc": "끈이 끊어져 손으로 쥐고 다닌다."
+          },
+          {
+            "flag": "짐_쏟음",
+            "label": "짐 쏟아짐",
+            "desc": "호위가 뒤집어 짐이 모래에 쏟아졌다."
+          }
+        ]
+      },
+      {
+        "id": "earring",
+        "file": "assets/ep01/gen/items/item_earring.png",
+        "name": "마법 귀찌",
+        "desc": "귓불에 달린 마법 귀찌."
+      },
+      {
+        "id": "map",
+        "file": "assets/ep01/gen/items/item_map.png",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도.",
+        "container": {
+          "item": "magic_bag",
+          "unless": "flag:지도_꺼냄 || flag:짐_쏟음"
+        },
+        "states": [
+          {
+            "flag": "지도_찢김",
+            "label": "찢김",
+            "desc": "한 귀퉁이가 찢겨 나갔다."
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "file": "assets/ep01/gen/items/item_pin.png",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀.",
+        "hidden": true
+      }
+    ],
+    "tension": 3
+  },
+  "cast": {
+    "ep08_서술": {
+      "display": "",
+      "style": "narration"
+    },
+    "ep08_미확정": {
+      "display": "",
+      "style": "speech"
+    },
+    "ep08_아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "lore": "아시나",
+      "faces": []
+    },
+    "ep08_아시나독백": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "faces": []
+    },
+    "ep08_쿤": {
+      "display": "쿤",
+      "style": "speech",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep08_쿤독백": {
+      "display": "쿤",
+      "style": "thought",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep08_시하드": {
+      "display": "시하드",
+      "style": "speech",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep08_시하드독백": {
+      "display": "시하드",
+      "style": "thought",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep08_누르": {
+      "display": "누르",
+      "style": "speech",
+      "lore": "누르",
+      "faces": []
+    },
+    "ep08_대재상": {
+      "display": "대재상",
+      "style": "speech",
+      "lore": "게디크",
+      "faces": []
+    },
+    "ep08_게디크": {
+      "display": "게디크",
+      "style": "speech",
+      "lore": "게디크",
+      "faces": []
+    }
+  },
+  "backgrounds": {},
+  "sprites": {},
+  "cgs": {
+    "ep08_cg_001": {
+      "label": "8화 1컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_001.png",
+      "crop": [
+        0,
+        1339,
+        2000,
+        3047
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_002": {
+      "label": "8화 2컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_001.png",
+      "crop": [
+        0,
+        4644,
+        2000,
+        19665
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_003": {
+      "label": "8화 3컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_001.png",
+      "crop": [
+        0,
+        24410,
+        2000,
+        3079
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_004": {
+      "label": "8화 4컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_002.png",
+      "crop": [
+        0,
+        417,
+        2000,
+        3986
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_005": {
+      "label": "8화 5컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_002.png",
+      "crop": [
+        0,
+        6385,
+        2000,
+        2623
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_006": {
+      "label": "8화 6컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_002.png",
+      "crop": [
+        0,
+        10352,
+        2000,
+        9261
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_007": {
+      "label": "8화 7컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_002.png",
+      "crop": [
+        0,
+        19956,
+        2000,
+        2602
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_008": {
+      "label": "8화 8컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_002.png",
+      "crop": [
+        0,
+        22558,
+        2000,
+        2227
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_009": {
+      "label": "8화 9컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_003.png",
+      "crop": [
+        0,
+        390,
+        2000,
+        3453
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_010": {
+      "label": "8화 10컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_003.png",
+      "crop": [
+        0,
+        4758,
+        2000,
+        7299
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_011": {
+      "label": "8화 11컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_003.png",
+      "crop": [
+        0,
+        12953,
+        2000,
+        3737
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_012": {
+      "label": "8화 12컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_003.png",
+      "crop": [
+        0,
+        18392,
+        2000,
+        3812
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_013": {
+      "label": "8화 13컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_003.png",
+      "crop": [
+        0,
+        22790,
+        2000,
+        1277
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_014": {
+      "label": "8화 14컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_004.png",
+      "crop": [
+        0,
+        652,
+        2000,
+        4344
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_015": {
+      "label": "8화 15컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_004.png",
+      "crop": [
+        0,
+        6106,
+        2000,
+        4305
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_016": {
+      "label": "8화 16컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_004.png",
+      "crop": [
+        0,
+        11602,
+        2000,
+        5070
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_017": {
+      "label": "8화 17컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_004.png",
+      "crop": [
+        0,
+        17476,
+        2000,
+        6287
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_018": {
+      "label": "8화 18컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_004.png",
+      "crop": [
+        0,
+        24293,
+        2000,
+        2003
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_019": {
+      "label": "8화 19컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_005.png",
+      "crop": [
+        0,
+        3151,
+        2000,
+        6016
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_020": {
+      "label": "8화 20컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_005.png",
+      "crop": [
+        0,
+        9981,
+        2000,
+        4038
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_021": {
+      "label": "8화 21컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_005.png",
+      "crop": [
+        0,
+        14509,
+        2000,
+        3233
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_022": {
+      "label": "8화 22컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_005.png",
+      "crop": [
+        0,
+        18115,
+        2000,
+        2152
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_023": {
+      "label": "8화 23컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_005.png",
+      "crop": [
+        0,
+        20496,
+        2000,
+        6157
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_024": {
+      "label": "8화 24컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_006.png",
+      "crop": [
+        0,
+        774,
+        2000,
+        1897
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_025": {
+      "label": "8화 25컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_006.png",
+      "crop": [
+        0,
+        3139,
+        2000,
+        5447
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_026": {
+      "label": "8화 26컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_006.png",
+      "crop": [
+        0,
+        9514,
+        2000,
+        8456
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_027": {
+      "label": "8화 27컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_006.png",
+      "crop": [
+        0,
+        18894,
+        2000,
+        4617
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_028": {
+      "label": "8화 28컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_007.png",
+      "crop": [
+        0,
+        670,
+        2000,
+        4377
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_029": {
+      "label": "8화 29컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_007.png",
+      "crop": [
+        0,
+        5231,
+        2000,
+        770
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_030": {
+      "label": "8화 30컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_007.png",
+      "crop": [
+        0,
+        6018,
+        2000,
+        491
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_031": {
+      "label": "8화 31컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_007.png",
+      "crop": [
+        0,
+        7567,
+        2000,
+        6196
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_032": {
+      "label": "8화 32컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_007.png",
+      "crop": [
+        0,
+        15233,
+        2000,
+        3679
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_033": {
+      "label": "8화 33컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_007.png",
+      "crop": [
+        0,
+        19413,
+        2000,
+        3785
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_034": {
+      "label": "8화 34컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_008.png",
+      "crop": [
+        0,
+        337,
+        2000,
+        1899
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_035": {
+      "label": "8화 35컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_008.png",
+      "crop": [
+        0,
+        2264,
+        2000,
+        5805
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_036": {
+      "label": "8화 36컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_008.png",
+      "crop": [
+        0,
+        8510,
+        2000,
+        18242
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_037": {
+      "label": "8화 37컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_009.png",
+      "crop": [
+        0,
+        768,
+        2000,
+        4634
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_038": {
+      "label": "8화 38컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_009.png",
+      "crop": [
+        0,
+        5790,
+        2000,
+        3410
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_039": {
+      "label": "8화 39컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_009.png",
+      "crop": [
+        0,
+        10987,
+        2000,
+        9923
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_040": {
+      "label": "8화 40컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_010.png",
+      "crop": [
+        0,
+        237,
+        2000,
+        13894
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_041": {
+      "label": "8화 41컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_010.png",
+      "crop": [
+        0,
+        15242,
+        2000,
+        5507
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_042": {
+      "label": "8화 42컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_010.png",
+      "crop": [
+        0,
+        21225,
+        2000,
+        4960
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_043": {
+      "label": "8화 43컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_011.png",
+      "crop": [
+        0,
+        650,
+        2000,
+        2827
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_044": {
+      "label": "8화 44컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_011.png",
+      "crop": [
+        0,
+        3888,
+        2000,
+        7271
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_045": {
+      "label": "8화 45컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_011.png",
+      "crop": [
+        0,
+        12235,
+        2000,
+        6280
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_046": {
+      "label": "8화 46컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_011.png",
+      "crop": [
+        0,
+        18899,
+        2000,
+        5559
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_047": {
+      "label": "8화 47컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_011.png",
+      "crop": [
+        0,
+        24798,
+        2000,
+        2833
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_048": {
+      "label": "8화 48컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_012.png",
+      "crop": [
+        0,
+        989,
+        2000,
+        1416
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_049": {
+      "label": "8화 49컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_012.png",
+      "crop": [
+        0,
+        2783,
+        2000,
+        18127
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_050": {
+      "label": "8화 50컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_013.png",
+      "crop": [
+        0,
+        74,
+        2000,
+        3242
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_051": {
+      "label": "8화 51컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_013.png",
+      "crop": [
+        0,
+        3435,
+        2000,
+        6464
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_052": {
+      "label": "8화 52컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_013.png",
+      "crop": [
+        0,
+        10734,
+        2000,
+        6207
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_053": {
+      "label": "8화 53컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_013.png",
+      "crop": [
+        0,
+        16977,
+        2000,
+        4546
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_054": {
+      "label": "8화 54컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_013.png",
+      "crop": [
+        0,
+        21856,
+        2000,
+        4348
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_055": {
+      "label": "8화 55컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_014.png",
+      "crop": [
+        0,
+        732,
+        2000,
+        9962
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_056": {
+      "label": "8화 56컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_014.png",
+      "crop": [
+        0,
+        10747,
+        2000,
+        6745
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_057": {
+      "label": "8화 57컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_015.png",
+      "crop": [
+        0,
+        400,
+        2000,
+        6713
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_058": {
+      "label": "8화 58컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_015.png",
+      "crop": [
+        0,
+        7405,
+        2000,
+        2893
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_059": {
+      "label": "8화 59컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_015.png",
+      "crop": [
+        0,
+        10773,
+        2000,
+        3561
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_060": {
+      "label": "8화 60컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_015.png",
+      "crop": [
+        0,
+        15528,
+        2000,
+        8609
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_061": {
+      "label": "8화 61컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_016.png",
+      "crop": [
+        0,
+        510,
+        2000,
+        2618
+      ],
+      "fit": "contain"
+    },
+    "ep08_cg_062": {
+      "label": "8화 62컷 · 원작 입력",
+      "file": "assets/ep08/gen/source/ep08_016.png",
+      "crop": [
+        0,
+        3394,
+        2000,
+        4860
+      ],
+      "fit": "contain"
+    },
+    "ep08_c050_p01": {
+      "label": "8화 50컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c050_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c051_p01": {
+      "label": "8화 51컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c051_p01_r2.png",
+      "fit": "contain"
+    },
+    "ep08_c052_p01": {
+      "label": "8화 52컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c052_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c053_p01": {
+      "label": "8화 53컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c053_p01_r2.png",
+      "fit": "contain"
+    },
+    "ep08_c054_p01": {
+      "label": "8화 54컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c054_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c055_p01": {
+      "label": "8화 55컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c055_p01_r3.png",
+      "fit": "contain"
+    },
+    "ep08_c055_p02": {
+      "label": "8화 55컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c055_p02_r2.png",
+      "fit": "contain"
+    },
+    "ep08_c056_p01": {
+      "label": "8화 56컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c056_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c056_p02": {
+      "label": "8화 56컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c056_p02.png",
+      "fit": "contain"
+    },
+    "ep08_c057_p01": {
+      "label": "8화 57컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c057_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c058_p01": {
+      "label": "8화 58컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c058_p01_r2.png",
+      "fit": "contain"
+    },
+    "ep08_c059_p01": {
+      "label": "8화 59컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c059_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c060_p01": {
+      "label": "8화 60컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c060_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c061_p01": {
+      "label": "8화 61컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c061_p01.png",
+      "fit": "contain"
+    },
+    "ep08_c062_p01": {
+      "label": "8화 62컷 · 원작 입력",
+      "file": "assets/ep08/gen/ep08_c062_p01.png",
+      "fit": "contain"
+    }
+  },
+  "facts": [
+    {
+      "if": "flag:ep08_r01 || !flag:ep08_r01",
+      "text": "8화 독립 내부 검증용이다. 소지품과 수치는 캠페인 진입 상태를 증명하지 않는다. 궁정 알현과 순례 서술은 아시나가 보거나 들은 일이 아니다. 베히다트와 쿤·시하드는 같은 인물이며 속마음도 다른 인물에게 전달되지 않는다.",
+      "state_guard": [
+        "아시나가 게디크와 알현",
+        "아시나가 자키야를 안다",
+        "아시나가 연회 허가를 들었다"
+      ]
+    },
+    {
+      "if": "!flag:ep08_r10",
+      "text": "아시나는 누르에게 조심할 인물에 관한 답을 아직 듣지 못했다.",
+      "state_guard": [
+        "대재상을 조심하라고 들었다"
+      ]
+    },
+    {
+      "if": "flag:ep08_r10",
+      "text": "아시나는 누르가 대재상을 권력자로 꼽은 것만 들었다. 이름 게디크, 딸 자키야, 혼인 제안과 거절, 순례의 표기 차이는 별도 시점의 정보다.",
+      "state_guard": [
+        "누르가 게디크의 이름을 말했다",
+        "누르가 자키야를 소개했다"
+      ]
+    }
+  ],
+  "beats": {
+    "ep08_c001": {
+      "title": "밤의 궁 실내",
+      "cut": "ep08_c001",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "언제까지…",
+          "cg": "ep08_cg_001"
+        }
+      ],
+      "next": "ep08_c002"
+    },
+    "ep08_c002": {
+      "title": "밤의 궁 실내",
+      "cut": "ep08_c002",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "이러고 있을 거예요?",
+          "cg": "ep08_cg_002"
+        },
+        {
+          "ep08_쿤": "……",
+          "cg": "ep08_cg_002"
+        }
+      ],
+      "next": "ep08_c002_audience"
+    },
+    "ep08_c002_audience": {
+      "title": "밤의 궁 실내",
+      "cut": "ep08_c002",
+      "perspective": "audience",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤독백": "‘내’가 불편한 건가.",
+          "cg": "ep08_cg_002"
+        },
+        {
+          "ep08_쿤독백": "아니면…",
+          "cg": "ep08_cg_002"
+        }
+      ],
+      "next": "ep08_c003"
+    },
+    "ep08_c003": {
+      "perspective": "audience",
+      "title": "밤의 궁 실내",
+      "cut": "ep08_c003",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤독백": "‘남자’인 내가 불편한 건가.",
+          "cg": "ep08_cg_003",
+          "sets": "ep08_r01"
+        }
+      ],
+      "next": "ep08_c004"
+    },
+    "ep08_c004": {
+      "perspective": "audience",
+      "title": "밤의 궁 실내",
+      "cut": "ep08_c004",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤독백": "그땐 한번 떠본 것인데.",
+          "cg": "ep08_cg_004"
+        },
+        {
+          "ep08_쿤독백": "정말 남자 손을 타지 않은 듯한 눈치군.",
+          "cg": "ep08_cg_004"
+        },
+        {
+          "ep08_쿤독백": "재미있어.",
+          "cg": "ep08_cg_004"
+        }
+      ],
+      "next": "ep08_c005"
+    },
+    "ep08_c005": {
+      "title": "밤의 궁 실내",
+      "cut": "ep08_c005",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "당신이 라 쿤인 줄 알았으면, 길 같은 거 안 물어봤을 거예요.",
+          "cg": "ep08_cg_005",
+          "sets": "ep08_r02"
+        }
+      ],
+      "next": "ep08_c006"
+    },
+    "ep08_c006": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c006",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "여자 혼자 죽음의 사막에 여행을 와서, 적국으로 가는 길을 물었다.",
+          "cg": "ep08_cg_006"
+        },
+        {
+          "ep08_쿤": "뭐, 그것도 의문이긴 하지만 내가 정말 궁금한 건 따로 있어.",
+          "cg": "ep08_cg_006"
+        }
+      ],
+      "next": "ep08_c007"
+    },
+    "ep08_c007": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c007",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "내가 궁금한 건…",
+          "cg": "ep08_cg_007"
+        }
+      ],
+      "next": "ep08_c008"
+    },
+    "ep08_c008": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c008",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "제헤넴을 어떻게 탈출했는가야.",
+          "cg": "ep08_cg_008",
+          "sets": "ep08_r03"
+        }
+      ],
+      "next": "ep08_c009"
+    },
+    "ep08_c009": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c009",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나독백": "제헤넴이라면…",
+          "cg": "ep08_cg_009"
+        },
+        {
+          "ep08_아시나독백": "그 감옥?",
+          "cg": "ep08_cg_009"
+        }
+      ],
+      "next": "ep08_c010"
+    },
+    "ep08_c010": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c010",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "제헤넴은 지금까지 탈옥한 자가 아무도 없었지.",
+          "cg": "ep08_cg_010"
+        },
+        {
+          "ep08_쿤": "네가 탈옥하기 전까진.",
+          "cg": "ep08_cg_010",
+          "sets": "ep08_r04"
+        }
+      ],
+      "next": "ep08_c011"
+    },
+    "ep08_c011": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c011",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "이것도 우연이라 할 텐가, 여행자?",
+          "cg": "ep08_cg_011"
+        }
+      ],
+      "next": "ep08_c012"
+    },
+    "ep08_c012": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c012",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_미확정": "……",
+          "cg": "ep08_cg_012"
+        },
+        {
+          "ep08_아시나독백": "…그냥 따지던데?",
+          "cg": "ep08_cg_012"
+        }
+      ],
+      "next": "ep08_c013"
+    },
+    "ep08_c013": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c013",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "그냥 문이 열렸길래 나온 것 뿐인데요?",
+          "cg": "ep08_cg_013"
+        }
+      ],
+      "next": "ep08_c014"
+    },
+    "ep08_c014": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c014",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "말도 안 되는 소리 할 거면 각오하고 내뱉는 게 좋을 텐데?",
+          "cg": "ep08_cg_014"
+        },
+        {
+          "ep08_아시나": "하하, 그렇죠?",
+          "cg": "ep08_cg_014"
+        }
+      ],
+      "next": "ep08_c015"
+    },
+    "ep08_c015": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c015",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "그럼 대체 어떻게 해야 날 풀어줄 건데요?",
+          "cg": "ep08_cg_015"
+        }
+      ],
+      "next": "ep08_c016"
+    },
+    "ep08_c016": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c016",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "증명하면.",
+          "cg": "ep08_cg_016"
+        }
+      ],
+      "next": "ep08_c017"
+    },
+    "ep08_c017": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c017",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "네가 진짜로 결백하다는 증거를 가져오면.",
+          "cg": "ep08_cg_017"
+        }
+      ],
+      "next": "ep08_c018"
+    },
+    "ep08_c018": {
+      "title": "같은 궁 실내",
+      "cut": "ep08_c018",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_쿤": "그때 풀어주지.",
+          "cg": "ep08_cg_018",
+          "sets": "ep08_r05"
+        }
+      ],
+      "next": "ep08_c019"
+    },
+    "ep08_c019": {
+      "title": "다음 날 궁 실내와 하렘 중정·회랑",
+      "cut": "ep08_c019",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나독백": "결백은 개뿔이.",
+          "cg": "ep08_cg_019"
+        },
+        {
+          "ep08_아시나독백": "내가 여기서 탈출하는 게 더 빠르지.",
+          "cg": "ep08_cg_019"
+        }
+      ],
+      "next": "ep08_c020"
+    },
+    "ep08_c020": {
+      "title": "다음 날 궁 실내와 하렘 중정·회랑",
+      "cut": "ep08_c020",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "게다가 밤새 있다가 갈 줄은…",
+          "cg": "ep08_cg_020"
+        },
+        {
+          "ep08_아시나": "덕분에 한숨도 못 잤네.",
+          "cg": "ep08_cg_020"
+        },
+        {
+          "ep08_아시나독백": "제발 가라 미친놈아…",
+          "cg": "ep08_cg_020",
+          "sets": "ep08_r06"
+        }
+      ],
+      "next": "ep08_c021"
+    },
+    "ep08_c021": {
+      "title": "다음 날 궁 실내와 하렘 중정·회랑",
+      "cut": "ep08_c021",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나독백": "설마 오늘도 오진 않겠지.",
+          "cg": "ep08_cg_021"
+        }
+      ],
+      "next": "ep08_c022"
+    },
+    "ep08_c022": {
+      "title": "다음 날 궁 실내와 하렘 중정·회랑",
+      "cut": "ep08_c022",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_cg_022"
+        }
+      ],
+      "next": "ep08_c023"
+    },
+    "ep08_c023": {
+      "title": "다음 날 궁 실내와 하렘 중정·회랑",
+      "cut": "ep08_c023",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나독백": "왕궁 하렘이라…",
+          "cg": "ep08_cg_023"
+        },
+        {
+          "ep08_아시나독백": "하렘이란 게 이렇게 넓은 곳이었나?",
+          "cg": "ep08_cg_023"
+        }
+      ],
+      "next": "ep08_c024"
+    },
+    "ep08_c024": {
+      "title": "하렘 회랑과 제도 설명 삽입",
+      "cut": "ep08_c024",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "누르.",
+          "cg": "ep08_cg_024"
+        },
+        {
+          "ep08_누르": "네?",
+          "cg": "ep08_cg_024"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep08_c024_ask",
+          "text": "넓은 하렘에 대해 묻는다",
+          "next": "ep08_c025",
+          "effects": {
+            "flags": {
+              "ep08_c024_ask": true
+            }
+          }
+        },
+        {
+          "id": "ep08_c024_home",
+          "text": "이곳에서 사는 사람들에 관해 묻는다",
+          "next": "ep08_c026",
+          "effects": {
+            "flags": {
+              "ep08_c024_home": true
+            }
+          },
+          "lines": [
+            {
+              "ep08_아시나": "여기에는 어떤 사람들이 살아?",
+              "cg": "ep08_cg_024"
+            }
+          ]
+        }
+      ]
+    },
+    "ep08_c025": {
+      "title": "하렘 회랑과 제도 설명 삽입",
+      "cut": "ep08_c025",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "하렘은 왜 이렇게 큰 걸까?",
+          "cg": "ep08_cg_025"
+        },
+        {
+          "ep08_아시나": "누르는 그 이유를 알아?",
+          "cg": "ep08_cg_025"
+        }
+      ],
+      "next": "ep08_c026"
+    },
+    "ep08_c026": {
+      "title": "하렘 회랑과 제도 설명 삽입",
+      "cut": "ep08_c026",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_누르": "보통 하렘은 집의 안주인들이 사는 곳입니다.",
+          "cg": "ep08_cg_026"
+        },
+        {
+          "ep08_누르": "다만 궁정의 하렘은 쿤의 여인들뿐만 아니라 연고 없는 어린 소녀까지 데려와 키우기도 하기 때문에 훨씬 넓은 거지요.",
+          "cg": "ep08_cg_026",
+          "sets": "ep08_r07"
+        }
+      ],
+      "next": "ep08_c027"
+    },
+    "ep08_c027": {
+      "title": "하렘 회랑과 제도 설명 삽입",
+      "cut": "ep08_c027",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "설마… 자라면 쿤이 첩 삼는 거야?",
+          "cg": "ep08_cg_027"
+        },
+        {
+          "ep08_누르": "그런 경우도 있지만…",
+          "cg": "ep08_cg_027"
+        },
+        {
+          "ep08_누르": "보통은 쿤께서 페시안 주요 인사들의 부인으로 보내십니다.",
+          "cg": "ep08_cg_027",
+          "sets": "ep08_r08"
+        }
+      ],
+      "next": "ep08_c028"
+    },
+    "ep08_c028": {
+      "title": "하렘 회랑과 제도 설명 삽입",
+      "cut": "ep08_c028",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_누르": "페시안은 여섯의 대족장과 마흔여덟의 족장이 있지요.",
+          "cg": "ep08_cg_028"
+        },
+        {
+          "ep08_누르": "대족장들끼리 혼인으로 화합하는 걸 방지하는 차원에서 그리하십니다.",
+          "cg": "ep08_cg_028",
+          "sets": "ep08_r09"
+        }
+      ],
+      "next": "ep08_c029"
+    },
+    "ep08_c029": {
+      "title": "하렘 회랑과 제도 설명 삽입",
+      "cut": "ep08_c029",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "그렇구나…",
+          "cg": "ep08_cg_029"
+        }
+      ],
+      "next": "ep08_c030"
+    },
+    "ep08_c030": {
+      "title": "하렘 회랑과 제도 설명 삽입",
+      "cut": "ep08_c030",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_cg_030"
+        }
+      ],
+      "next": "ep08_c031"
+    },
+    "ep08_c031": {
+      "title": "하렘 회랑",
+      "cut": "ep08_c031",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "그럼, 내가 궁에서 조심해야 할 사람이 있을까?",
+          "cg": "ep08_cg_031"
+        },
+        {
+          "ep08_아시나독백": "이미 제일 위험한 사람에게 찍히긴 했지만.",
+          "cg": "ep08_cg_031"
+        },
+        {
+          "ep08_아시나독백": "더 이상의 찍힘은 막고 싶으니까.",
+          "cg": "ep08_cg_031"
+        }
+      ],
+      "next": "ep08_c032"
+    },
+    "ep08_c032": {
+      "title": "하렘 회랑",
+      "cut": "ep08_c032",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_누르": "흠. 글쎄요.",
+          "cg": "ep08_cg_032"
+        }
+      ],
+      "next": "ep08_c033"
+    },
+    "ep08_c033": {
+      "title": "하렘 회랑",
+      "cut": "ep08_c033",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_누르": "궁에서 시하드 다음가는 권력자라 한다면 아마…",
+          "cg": "ep08_cg_033"
+        }
+      ],
+      "next": "ep08_c034"
+    },
+    "ep08_c034": {
+      "title": "하렘 회랑",
+      "cut": "ep08_c034",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_누르": "대재상… 아닐까요?",
+          "cg": "ep08_cg_034",
+          "sets": "ep08_r10"
+        }
+      ],
+      "next": "ep08_c035"
+    },
+    "ep08_c035": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c035",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_대재상": "시하드시여,",
+          "cg": "ep08_cg_035"
+        }
+      ],
+      "next": "ep08_c036"
+    },
+    "ep08_c036": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c036",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_대재상": "일이 바빠 이제야 찾아뵙게 된 점 송구스럽습니다.",
+          "cg": "ep08_cg_036"
+        },
+        {
+          "ep08_서술": "대재상 게디크",
+          "cg": "ep08_cg_036"
+        },
+        {
+          "ep08_시하드": "내가 없는 동안 대재상 혼자 페시안을 돌보느라 힘들었겠지.",
+          "cg": "ep08_cg_036"
+        },
+        {
+          "ep08_시하드": "이해한다.",
+          "cg": "ep08_cg_036"
+        },
+        {
+          "ep08_시하드독백": "일부러 오지 않아놓고는, 뻔뻔하긴.",
+          "cg": "ep08_cg_036"
+        },
+        {
+          "ep08_시하드독백": "능구렁이 같으니…",
+          "cg": "ep08_cg_036"
+        },
+        {
+          "ep08_게디크": "시하드께서 이리 무사귀환하셨으니 연회를 열고자 합니다.",
+          "cg": "ep08_cg_036"
+        },
+        {
+          "ep08_시하드": "연회?",
+          "cg": "ep08_cg_036",
+          "sets": "ep08_r11"
+        }
+      ],
+      "next": "ep08_c037"
+    },
+    "ep08_c037": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c037",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "굳이 열어야 하나.",
+          "cg": "ep08_cg_037"
+        },
+        {
+          "ep08_게디크": "물론입니다, 시하드시여.",
+          "cg": "ep08_cg_037"
+        }
+      ],
+      "next": "ep08_c038"
+    },
+    "ep08_c038": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c038",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_게디크": "고난뿐이라는 아슈마에 순례에서 돌아오셨습니다.",
+          "cg": "ep08_cg_038"
+        },
+        {
+          "ep08_게디크": "백성들이 무사 귀환을 바라며 금식하였는데, 당연히 열어야지요.",
+          "cg": "ep08_cg_038",
+          "sets": "ep08_r12"
+        }
+      ],
+      "next": "ep08_c039"
+    },
+    "ep08_c039": {
+      "perspective": "audience",
+      "title": "성지 순례·사막·백성의 금식과 축제 서술 삽입",
+      "cut": "ep08_c039",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "성지 이슈마에로 가는 순례.",
+          "cg": "ep08_cg_039"
+        },
+        {
+          "ep08_서술": "몇 년에 한 번씩 쿤이 자리를 비울 때면",
+          "cg": "ep08_cg_039"
+        },
+        {
+          "ep08_서술": "백성들은 쿤이 다시 돌아오길 바라는 마음으로 금식을 했다.",
+          "cg": "ep08_cg_039",
+          "sets": "ep08_r13"
+        }
+      ],
+      "next": "ep08_c040"
+    },
+    "ep08_c040": {
+      "perspective": "audience",
+      "title": "성지 순례·사막·백성의 금식과 축제 서술 삽입",
+      "cut": "ep08_c040",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "부디 사막에서 위험한 것을 만나지 않길,",
+          "cg": "ep08_cg_040"
+        },
+        {
+          "ep08_서술": "영영 떠나버리지 않길 바라며 말이다.",
+          "cg": "ep08_cg_040"
+        },
+        {
+          "ep08_서술": "후에 쿤이 무사히 돌아오면 그걸 축하하는 의미로 일주일간 축제를 열었다.",
+          "cg": "ep08_cg_040"
+        },
+        {
+          "ep08_서술": "자신들이,",
+          "cg": "ep08_cg_040"
+        },
+        {
+          "ep08_서술": "신에게 버림받지 않음을 기뻐하면서.",
+          "cg": "ep08_cg_040",
+          "sets": "ep08_r14"
+        }
+      ],
+      "next": "ep08_c041"
+    },
+    "ep08_c041": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c041",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "글쎄…",
+          "cg": "ep08_cg_041"
+        }
+      ],
+      "next": "ep08_c042"
+    },
+    "ep08_c042": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c042",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "다른 이유가 있는 건 아니고?",
+          "cg": "ep08_cg_042"
+        }
+      ],
+      "next": "ep08_c043"
+    },
+    "ep08_c043": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c043",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_게디크": "그럴 리가 있겠습니까.",
+          "cg": "ep08_cg_043"
+        }
+      ],
+      "next": "ep08_c044"
+    },
+    "ep08_c044": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c044",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "열도록 하지.",
+          "cg": "ep08_cg_044"
+        },
+        {
+          "ep08_시하드": "기대되는군.",
+          "cg": "ep08_cg_044"
+        },
+        {
+          "ep08_게디크": "감사합니다.",
+          "cg": "ep08_cg_044",
+          "sets": "ep08_r15"
+        }
+      ],
+      "next": "ep08_c045"
+    },
+    "ep08_c045": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c045",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "이제 용건은 다 끝났나?",
+          "cg": "ep08_cg_045"
+        }
+      ],
+      "next": "ep08_c046"
+    },
+    "ep08_c046": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c046",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_게디크": "시하드시여,",
+          "cg": "ep08_cg_046"
+        },
+        {
+          "ep08_게디크": "제 딸을 시하드께 바쳐도 되겠습니까?",
+          "cg": "ep08_cg_046",
+          "sets": "ep08_r16"
+        }
+      ],
+      "next": "ep08_c047"
+    },
+    "ep08_c047": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c047",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "뭐?",
+          "cg": "ep08_cg_047"
+        }
+      ],
+      "next": "ep08_c048"
+    },
+    "ep08_c048": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c048",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_게디크": "제 딸, 자키야를 기억하시겠지요.",
+          "cg": "ep08_cg_048",
+          "sets": "ep08_r17"
+        }
+      ],
+      "next": "ep08_c049"
+    },
+    "ep08_c049": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c049",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_게디크": "시하드께서 한동안은 여인에게 관심이 없으시다 하며 거절하셨는데",
+          "cg": "ep08_cg_049"
+        },
+        {
+          "ep08_게디크": "이젠 그 마음이 바뀌신듯하니 말입니다.",
+          "cg": "ep08_cg_049"
+        },
+        {
+          "ep08_시하드독백": "정보를 캤다는 걸 숨길 생각도 없어 보이는군.",
+          "cg": "ep08_cg_049"
+        },
+        {
+          "ep08_시하드": "그래, 게디크.",
+          "cg": "ep08_cg_049",
+          "sets": "ep08_r18"
+        }
+      ],
+      "next": "ep08_c050"
+    },
+    "ep08_c050": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c050",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "네 성심은 알겠다.",
+          "cg": "ep08_c050_p01"
+        }
+      ],
+      "next": "ep08_c051"
+    },
+    "ep08_c051": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c051",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_시하드": "하지만 내 하렘엔 누구도 들이지 않을 거다.",
+          "cg": "ep08_c051_p01",
+          "sets": "ep08_r19"
+        }
+      ],
+      "next": "ep08_c052"
+    },
+    "ep08_c052": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c052",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_게디크": "…! 그게 무슨…",
+          "cg": "ep08_c052_p01"
+        },
+        {
+          "ep08_시하드": "오늘은 이만 하지.",
+          "cg": "ep08_c052_p01"
+        },
+        {
+          "ep08_게디크": "시하드시여, 잠시!",
+          "cg": "ep08_c052_p01"
+        }
+      ],
+      "next": "ep08_c053"
+    },
+    "ep08_c053": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c053",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c053_p01"
+        }
+      ],
+      "next": "ep08_c054"
+    },
+    "ep08_c054": {
+      "perspective": "audience",
+      "title": "궁 알현 실내",
+      "cut": "ep08_c054",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c054_p01",
+          "sets": "ep08_r20"
+        }
+      ],
+      "next": "ep08_c055"
+    },
+    "ep08_c055": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c055",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c055_p01"
+        },
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c055_p02"
+        }
+      ],
+      "next": "ep08_c056"
+    },
+    "ep08_c056": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c056",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c056_p01"
+        },
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c056_p02"
+        }
+      ],
+      "next": "ep08_c057"
+    },
+    "ep08_c057": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c057",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나독백": "어딘가에서 시선이 자꾸 느껴져.",
+          "cg": "ep08_c057_p01"
+        },
+        {
+          "ep08_아시나독백": "일반사람이라면 눈치채지 못할 정도의 인기척…",
+          "cg": "ep08_c057_p01"
+        },
+        {
+          "ep08_아시나독백": "뭔가 있어.",
+          "cg": "ep08_c057_p01",
+          "sets": "ep08_r21"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep08_c057_quiet",
+          "text": "조용히 인기척을 확인한다",
+          "next": "ep08_c058",
+          "effects": {
+            "flags": {
+              "ep08_c057_quiet": true
+            }
+          }
+        },
+        {
+          "id": "ep08_c057_tell",
+          "text": "누르에게 인기척을 알리고 확인한다",
+          "next": "ep08_c058",
+          "effects": {
+            "flags": {
+              "ep08_c057_tell": true
+            }
+          },
+          "lines": [
+            {
+              "ep08_아시나": "누르, 저쪽에서 인기척이 느껴져.",
+              "cg": "ep08_c057_p01"
+            }
+          ]
+        }
+      ]
+    },
+    "ep08_c058": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c058",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_누르": "아, 아시나님?",
+          "cg": "ep08_c058_p01"
+        }
+      ],
+      "next": "ep08_c059"
+    },
+    "ep08_c059": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c059",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c059_p01"
+        }
+      ],
+      "next": "ep08_c060"
+    },
+    "ep08_c060": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c060",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_서술": "",
+          "cg": "ep08_c060_p01",
+          "sets": "ep08_r22"
+        }
+      ],
+      "next": "ep08_c061"
+    },
+    "ep08_c061": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c061",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "카…",
+          "cg": "ep08_c061_p01"
+        }
+      ],
+      "next": "ep08_c062"
+    },
+    "ep08_c062": {
+      "title": "낮의 하렘 중정·회랑",
+      "cut": "ep08_c062",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep08_아시나": "카림?",
+          "cg": "ep08_c062_p01"
+        },
+        {
+          "ep08_아시나": "왜 여기에…",
+          "cg": "ep08_c062_p01"
+        },
+        {
+          "ep08_아시나": "당신은 하렘 밖에 있어야 하잖아요?",
+          "cg": "ep08_c062_p01",
+          "sets": "ep08_r23"
+        }
+      ],
+      "ending": {
+        "id": "ep08_boundary",
+        "title": "8화",
+        "summary": "아시나가 기둥 옆의 카림에게 하렘 안에 있는 이유를 물었다.",
+        "next_hook": "카림의 대답은 아직 나오지 않았다."
+      }
+    }
+  },
+  "atlas": {
+    "chapters": [
+      {
+        "id": "ep08",
+        "label": "8화",
+        "nodes": [
+          "ep08_s01_0",
+          "ep08_s02_0",
+          "ep08_s03_0",
+          "ep08_s04_0",
+          "ep08_s04_1",
+          "ep08_s05_0",
+          "ep08_s06_0",
+          "ep08_s07_0",
+          "ep08_s08_0",
+          "ep08_s09_0",
+          "ep08_s10_0",
+          "ep08_s10_1",
+          "ep08_s10_2"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ep08_s01_0",
+        "label": "가까운 거리에 항의",
+        "col": 0,
+        "row": 8,
+        "beats": [
+          "ep08_c001",
+          "ep08_c002",
+          "ep08_c002_audience",
+          "ep08_c003",
+          "ep08_c004",
+          "ep08_c005"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s02_0",
+        "label": "여행 경위 추궁",
+        "col": 1,
+        "row": 8,
+        "beats": [
+          "ep08_c006",
+          "ep08_c007",
+          "ep08_c008",
+          "ep08_c009",
+          "ep08_c010",
+          "ep08_c011",
+          "ep08_c012",
+          "ep08_c013",
+          "ep08_c014",
+          "ep08_c015",
+          "ep08_c016",
+          "ep08_c017",
+          "ep08_c018"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s03_0",
+        "label": "결백 조건에 불만",
+        "col": 2,
+        "row": 8,
+        "beats": [
+          "ep08_c019",
+          "ep08_c020",
+          "ep08_c021",
+          "ep08_c022",
+          "ep08_c023"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s04_0",
+        "label": "누르에게 질문",
+        "col": 3,
+        "row": 8,
+        "beats": [
+          "ep08_c024"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s04_1",
+        "label": "넓은 하렘의 이유",
+        "col": 4,
+        "row": 8,
+        "beats": [
+          "ep08_c025",
+          "ep08_c026",
+          "ep08_c027",
+          "ep08_c028",
+          "ep08_c029",
+          "ep08_c030"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s05_0",
+        "label": "궁에서 경계할 사람",
+        "col": 5,
+        "row": 8,
+        "beats": [
+          "ep08_c031",
+          "ep08_c032",
+          "ep08_c033",
+          "ep08_c034"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s06_0",
+        "label": "대재상의 알현",
+        "col": 6,
+        "row": 8,
+        "beats": [
+          "ep08_c035",
+          "ep08_c036",
+          "ep08_c037",
+          "ep08_c038"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s07_0",
+        "label": "성지 순례",
+        "col": 7,
+        "row": 8,
+        "beats": [
+          "ep08_c039",
+          "ep08_c040"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s08_0",
+        "label": "연회 제안 재검토",
+        "col": 8,
+        "row": 8,
+        "beats": [
+          "ep08_c041",
+          "ep08_c042",
+          "ep08_c043",
+          "ep08_c044"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s09_0",
+        "label": "알현의 추가 용건",
+        "col": 9,
+        "row": 8,
+        "beats": [
+          "ep08_c045",
+          "ep08_c046",
+          "ep08_c047",
+          "ep08_c048",
+          "ep08_c049",
+          "ep08_c050",
+          "ep08_c051",
+          "ep08_c052",
+          "ep08_c053",
+          "ep08_c054"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s10_0",
+        "label": "중정 산책 재개",
+        "col": 10,
+        "row": 8,
+        "beats": [
+          "ep08_c055",
+          "ep08_c056"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s10_1",
+        "label": "숨은 인기척",
+        "col": 11,
+        "row": 8,
+        "beats": [
+          "ep08_c057"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep08_s10_2",
+        "label": "기둥 쪽으로 다가감",
+        "col": 12,
+        "row": 8,
+        "beats": [
+          "ep08_c058",
+          "ep08_c059",
+          "ep08_c060",
+          "ep08_c061",
+          "ep08_c062"
+        ],
+        "ending": false
+      }
+    ],
+    "edges": [
+      [
+        "ep08_s01_0",
+        "ep08_s02_0"
+      ],
+      [
+        "ep08_s02_0",
+        "ep08_s03_0"
+      ],
+      [
+        "ep08_s03_0",
+        "ep08_s04_0"
+      ],
+      [
+        "ep08_s04_0",
+        "ep08_s04_1"
+      ],
+      [
+        "ep08_s04_1",
+        "ep08_s05_0"
+      ],
+      [
+        "ep08_s05_0",
+        "ep08_s06_0"
+      ],
+      [
+        "ep08_s06_0",
+        "ep08_s07_0"
+      ],
+      [
+        "ep08_s07_0",
+        "ep08_s08_0"
+      ],
+      [
+        "ep08_s08_0",
+        "ep08_s09_0"
+      ],
+      [
+        "ep08_s09_0",
+        "ep08_s10_0"
+      ],
+      [
+        "ep08_s10_0",
+        "ep08_s10_1"
+      ],
+      [
+        "ep08_s10_1",
+        "ep08_s10_2"
+      ]
+    ]
+  }
+}

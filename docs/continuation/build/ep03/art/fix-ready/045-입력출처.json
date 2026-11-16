@@ -1,0 +1,77 @@
+[
+  {
+    "입력": "/Users/choeminju/월흔_trpg/assets/ep03/gen/ep03_c045.png",
+    "해상도": [
+      1672,
+      941
+    ],
+    "형식": "PNG",
+    "바이트": 2376448,
+    "sha256": "481353e7d8f704e40e1205d8406837fdf4840c71334a2275defa877045b71a67"
+  },
+  {
+    "입력": "/Users/choeminju/월흔_trpg/assets/ep03/gen/source/ep03_c045.png",
+    "해상도": [
+      2000,
+      4555
+    ],
+    "형식": "PNG",
+    "바이트": 5392643,
+    "sha256": "2d3d240e98505e15fd080123864f45a10fecedfec068ec462dbf75570c1b5ba5"
+  },
+  {
+    "입력": "/Users/choeminju/월흔_trpg/assets/ep03/gen/source/ep03_c048.png",
+    "해상도": [
+      2000,
+      11425
+    ],
+    "형식": "PNG",
+    "바이트": 9233282,
+    "sha256": "20d63ee49d77e76855e28c2b3ea0fa6d012cb4b96851ffa3a51da251c7459d75"
+  },
+  {
+    "입력": "/Users/choeminju/월흔_trpg/assets/ep03/gen/source/ep03_c040.png",
+    "해상도": [
+      2000,
+      20665
+    ],
+    "형식": "PNG",
+    "바이트": 29439158,
+    "sha256": "fbbf6567d74ae54364f4062370b848269c9105ebb371757be6c50f52248d4aa5"
+  },
+  {
+    "정리한_입력": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep03/art/fix-ready/045-입력_편집대상.png",
+    "원본": "/Users/choeminju/월흔_trpg/assets/ep03/gen/ep03_c045.png",
+    "원작_크롭_반열림": null,
+    "출력_해상도": [
+      1672,
+      941
+    ],
+    "내용_변경": "없음. RGB PNG 재저장·비율 유지 축소·지정 침대 구간 추출만 수행."
+  },
+  {
+    "정리한_입력": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep03/art/fix-ready/045-입력_실제원작.png",
+    "원본": "/Users/choeminju/월흔_trpg/assets/ep03/gen/source/ep03_c045.png",
+    "원작_크롭_반열림": null,
+    "출력_해상도": [
+      899,
+      2048
+    ],
+    "내용_변경": "없음. RGB PNG 재저장·비율 유지 축소·지정 침대 구간 추출만 수행."
+  },
+  {
+    "정리한_입력": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep03/art/fix-ready/045-입력_048원작침대.png",
+    "원본": "/Users/choeminju/월흔_trpg/assets/ep03/gen/source/ep03_c048.png",
+    "원작_크롭_반열림": [
+      0,
+      5680,
+      2000,
+      7180
+    ],
+    "출력_해상도": [
+      2000,
+      1500
+    ],
+    "내용_변경": "없음. RGB PNG 재저장·비율 유지 축소·지정 침대 구간 추출만 수행."
+  }
+]

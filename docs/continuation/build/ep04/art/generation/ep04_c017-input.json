@@ -1,0 +1,63 @@
+{
+  "asset_id": "ep04_c017",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_004.png",
+  "source_page_sha256": "c820886d4c73e2338906c0b0341a0a01cc47d5b12de9635ef5d47a9d76e58445",
+  "source_cut_window": [
+    0,
+    15662,
+    2000,
+    24532
+  ],
+  "selected_window": [
+    0,
+    17900,
+    2000,
+    23180
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c017.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c017-scene.png",
+  "selected_size": [
+    2000,
+    5280
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c017-scene-context.png",
+      "role": "실제 달·궁성 장면 전체·비율 유지 축소",
+      "size": [
+        776,
+        2048
+      ],
+      "local_y": [
+        0,
+        5280
+      ]
+    },
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c017-scene-detail1.png",
+      "role": "같은 원작 장면의 위→아래 세부 조각",
+      "size": [
+        1024,
+        2048
+      ],
+      "local_y": [
+        0,
+        4000
+      ]
+    },
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c017-scene-detail2.png",
+      "role": "같은 원작 장면의 위→아래 세부 조각",
+      "size": [
+        2000,
+        1280
+      ],
+      "local_y": [
+        4000,
+        5280
+      ]
+    }
+  ],
+  "transform": "원작 중 달·궁성 장면만 추출. 위 로고/제작자 표기와 아래 다음 장면은 제외. 비율 유지 축소와 세부 조각만.",
+  "initial_prepared_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c017-selected.png"
+}

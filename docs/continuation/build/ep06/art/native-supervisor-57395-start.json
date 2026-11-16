@@ -1,0 +1,10 @@
+{
+  "pid": 57395,
+  "pgid": 57395,
+  "parent_pid": 24935,
+  "parent_pgid": 24935,
+  "resumed_at": "2026-11-09T06:28:55.462298+00:00",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native-production-supervisor.log",
+  "log_start_offset": 119,
+  "reason": "실제 여유 감지 후 실행기 재개. 각 native 실행 전 다시 실제 점유 확인. 기존 완료 영수증은 건너뜀."
+}

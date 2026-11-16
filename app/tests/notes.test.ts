@@ -3,10 +3,23 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { startServer } from '../src/server/main.ts';
+import type { Action, Prompt } from '../src/engine/types.ts';
 import { LORE_PATH, SCENARIO_PATH } from './helpers.ts';
 
-type Prompt = { type: string; options?: { id: string }[] };
-const nextAction = (p: Prompt) => (p.type === 'free' ? { type: 'free', text: '가만히 있는다' } : p.type === 'choices' ? { type: 'choose', id: p.options?.[0]?.id } : p.type === 'luck' ? { type: 'luck', use: false } : { type: 'next' });
+const nextAction = (p: Prompt): Action => {
+  if (p.type === 'free') {
+    const approach = p.approaches.find((a) => !a.locked);
+    if (!approach) throw new Error('메모 경로에 고를 수 있는 행동이 없다');
+    return { type: 'approach', id: approach.id };
+  }
+  if (p.type === 'choices') {
+    const option = p.options[0];
+    if (!option) throw new Error('메모 경로에 고를 수 있는 선택지가 없다');
+    return { type: 'choose', id: option.id };
+  }
+  if (p.type === 'luck') return { type: 'luck', use: false };
+  throw new Error('메모 경로가 갈림길 전에 끝났다');
+};
 
 describe('메모', () => {
   let dir: string;
@@ -47,7 +60,7 @@ describe('메모', () => {
   test('저장 칸을 불러오면 그 때의 메모가 새 판으로 온다', async () => {
     const session = await newSession();
     await post('/api/notes', { session, memo: '저장할 때 글' });
-    expect((await post('/api/save', { session, slot: 'slot1', view: { scene: null } })).ok).toBe(true);
+    expect((await post('/api/save', { session, slot: 'slot1' })).ok).toBe(true);
     await post('/api/notes', { session, memo: '저장 뒤에 고친 글' });
     const loaded = await load('slot1');
     expect(loaded.view?.memo).toBe('저장할 때 글');

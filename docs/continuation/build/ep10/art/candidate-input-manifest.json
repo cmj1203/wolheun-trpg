@@ -1,0 +1,6064 @@
+{
+  "schema_version": 1,
+  "episode": 10,
+  "stage": "source-inputs-prepared",
+  "art_ready": false,
+  "native_generation_calls": 0,
+  "independent_claude_QA": null,
+  "approved_yaml_sha256": "96e4af705e4dcdae2e68c973ab5419d9f63877d7963afbae8b3a496aa042dbe7",
+  "approved_mapping_sha256": "3f6cd7819e493bbb70711af91a1c2c9d361e88bbdd74695dd63abd13abd7dc66",
+  "approved_candidate_manifest_sha256": "716c586e8958b880aa7a8c635809181533b36bc13061ea7ec560f7da827302bf",
+  "input_plan_path": "docs/continuation/build/ep10/art/source-input-plan.json",
+  "input_plan_sha256": "f2ca92833840f541c999efed10a003fd5583b522afb5e6ee15694359c064c1ee",
+  "counts": {
+    "candidates": 92,
+    "real_input_files": 92,
+    "source_windows": 78,
+    "source_pages": 18,
+    "full_cut_inputs": 70,
+    "panel_inputs": 22,
+    "created_inputs": 92,
+    "reused_existing_inputs": 0,
+    "completed_art_candidates": 0,
+    "total_input_bytes": 358466465
+  },
+  "entries": [
+    {
+      "candidate_id": "ep10_c001",
+      "candidate_filename": "assets/ep10/gen/ep10_c001.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c001.source.png",
+      "source_cut_ids": [
+        "ep10_c001"
+      ],
+      "source_page": "work/ep10/merged/ep10_001.png",
+      "source_page_sha256": "03d24b40ab3ca4658184889de3e7d42d007113b2065553c2130ff9225ab8d407",
+      "approved_cut_xyxy": [
+        0,
+        1598,
+        2000,
+        7882
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "푸른 타일 욕조와 밤하늘이 보이는 아치창을 길게 보여 준다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c001/lines/1",
+        "beat": "ep10_c001",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c001/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        6284
+      ],
+      "input_crop_xyxy": [
+        0,
+        1598,
+        2000,
+        7882
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        6284
+      ],
+      "input_file_sha256": "f8100a6315e5559450ef59544801d4cc5435f7b5513bde38238e87ae2f3d8e8a",
+      "source_region_pixel_sha256": "d2dacc8f65efc2ac548e95a76eae723f01c019555e4ae83f0dc5aa39ea811ac3",
+      "input_pixel_sha256": "d2dacc8f65efc2ac548e95a76eae723f01c019555e4ae83f0dc5aa39ea811ac3",
+      "dimensions": [
+        2000,
+        6284
+      ],
+      "mode": "RGB",
+      "bytes": 11148643,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c002",
+      "candidate_filename": "assets/ep10/gen/ep10_c002.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c002.source.png",
+      "source_cut_ids": [
+        "ep10_c002"
+      ],
+      "source_page": "work/ep10/merged/ep10_001.png",
+      "source_page_sha256": "03d24b40ab3ca4658184889de3e7d42d007113b2065553c2130ff9225ab8d407",
+      "approved_cut_xyxy": [
+        0,
+        8738,
+        2000,
+        11519
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "물소리 뒤 아시나가 한숨을 내쉰다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c002/lines/1",
+        "beat": "ep10_c002",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "후우…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c002/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        2781
+      ],
+      "input_crop_xyxy": [
+        0,
+        8738,
+        2000,
+        11519
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        2781
+      ],
+      "input_file_sha256": "edb4249b3c834f608e8b52ecd2caf1e495d1a17de279a1d16da5497efb1f1dcb",
+      "source_region_pixel_sha256": "f86ffde6280665a960ca5b36409dad300306001b6a37275759c73118f4620dd2",
+      "input_pixel_sha256": "f86ffde6280665a960ca5b36409dad300306001b6a37275759c73118f4620dd2",
+      "dimensions": [
+        2000,
+        2781
+      ],
+      "mode": "RGB",
+      "bytes": 1402784,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c003",
+      "candidate_filename": "assets/ep10/gen/ep10_c003.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c003.source.png",
+      "source_cut_ids": [
+        "ep10_c003"
+      ],
+      "source_page": "work/ep10/merged/ep10_001.png",
+      "source_page_sha256": "03d24b40ab3ca4658184889de3e7d42d007113b2065553c2130ff9225ab8d407",
+      "approved_cut_xyxy": [
+        0,
+        12511,
+        2000,
+        17606
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "욕조 가장자리의 옷·가방 아래로 목욕 중인 아시나가 보인다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c003/lines/1",
+        "beat": "ep10_c003",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "들키는 줄 알았네.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c003/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5095
+      ],
+      "input_crop_xyxy": [
+        0,
+        12511,
+        2000,
+        17606
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5095
+      ],
+      "input_file_sha256": "7539f1a87bc5d138baa1a0939bf2173937e7658accc6e271df039c366706d97a",
+      "source_region_pixel_sha256": "b6a48541c5327776c6c7073968774fbaf6551e273f3758a79970a8af90f027d5",
+      "input_pixel_sha256": "b6a48541c5327776c6c7073968774fbaf6551e273f3758a79970a8af90f027d5",
+      "dimensions": [
+        2000,
+        5095
+      ],
+      "mode": "RGB",
+      "bytes": 5802956,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c004",
+      "candidate_filename": "assets/ep10/gen/ep10_c004.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c004.source.png",
+      "source_cut_ids": [
+        "ep10_c004"
+      ],
+      "source_page": "work/ep10/merged/ep10_001.png",
+      "source_page_sha256": "03d24b40ab3ca4658184889de3e7d42d007113b2065553c2130ff9225ab8d407",
+      "approved_cut_xyxy": [
+        0,
+        18494,
+        2000,
+        21623
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나의 긴장한 옆얼굴과 독백.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c004/lines/1",
+        "beat": "ep10_c004",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "잠깐이었지만, 느낌이 좋진 않은 사람이었어.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c004/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3129
+      ],
+      "input_crop_xyxy": [
+        0,
+        18494,
+        2000,
+        21623
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3129
+      ],
+      "input_file_sha256": "39b2752c94e1e39355ac82c41a373e9f7f7642852a8cfd2357ee3591c129e1d2",
+      "source_region_pixel_sha256": "f08ed4779daffb454015058e7eb64518efadb3022351e2117484532c6f68538d",
+      "input_pixel_sha256": "f08ed4779daffb454015058e7eb64518efadb3022351e2117484532c6f68538d",
+      "dimensions": [
+        2000,
+        3129
+      ],
+      "mode": "RGB",
+      "bytes": 2697181,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c005_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c005_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c005_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c005"
+      ],
+      "source_page": "work/ep10/merged/ep10_002.png",
+      "source_page_sha256": "66e0adcdb1b01818982b0d05f4aad2d1c41fbcdac7c495614b4a172a85e86e26",
+      "approved_cut_xyxy": [
+        0,
+        544,
+        2000,
+        17774
+      ],
+      "panel_order": 1,
+      "panel_count": 4,
+      "panel_selection": "상단 붉은 예복 왕의 옆얼굴·금 머리장식",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c005/lines/1",
+        "beat": "ep10_c005",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "페시안 왕의 시선은 압도당하는 느낌이라면,",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c005/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        4300
+      ],
+      "input_crop_xyxy": [
+        0,
+        544,
+        2000,
+        4844
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4300
+      ],
+      "input_file_sha256": "24db338e73b645e35483bf4650e947089158dbe5307f651de2b9d5e0bcbb28ca",
+      "source_region_pixel_sha256": "a978804c0cd08ee1e335155140b4305416d58e01811ab9e2e9ac1a44b9298738",
+      "input_pixel_sha256": "a978804c0cd08ee1e335155140b4305416d58e01811ab9e2e9ac1a44b9298738",
+      "dimensions": [
+        2000,
+        4300
+      ],
+      "mode": "RGB",
+      "bytes": 4976168,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c005_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c005_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c005_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c005"
+      ],
+      "source_page": "work/ep10/merged/ep10_002.png",
+      "source_page_sha256": "66e0adcdb1b01818982b0d05f4aad2d1c41fbcdac7c495614b4a172a85e86e26",
+      "approved_cut_xyxy": [
+        0,
+        544,
+        2000,
+        17774
+      ],
+      "panel_order": 2,
+      "panel_count": 4,
+      "panel_selection": "중단 푸른 옷 남성의 푸른 눈·이마 금사슬",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c005/lines/2",
+        "beat": "ep10_c005",
+        "line_index_1based": 2,
+        "speaker": "ep10_아시나속마음",
+        "text": "그 사람은 뱀처럼 온몸을 옥죄는 느낌…",
+        "perspective": "character",
+        "phase": "줄 앞부분"
+      },
+      "anchor_ids": [
+        "ep10_c005/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        4300,
+        7700
+      ],
+      "input_crop_xyxy": [
+        0,
+        4844,
+        2000,
+        8244
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3400
+      ],
+      "input_file_sha256": "de455e0232ca8a7b245ba3b226e54099d9ccf140754234e5ecd1fe55234fb9d0",
+      "source_region_pixel_sha256": "583848185b537b6d5da0749f9324d0ed81f84a880454a405b2ad0f9454976ab5",
+      "input_pixel_sha256": "583848185b537b6d5da0749f9324d0ed81f84a880454a405b2ad0f9454976ab5",
+      "dimensions": [
+        2000,
+        3400
+      ],
+      "mode": "RGB",
+      "bytes": 5771958,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c005_p03",
+      "candidate_filename": "assets/ep10/gen/ep10_c005_p03.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c005_p03.source.png",
+      "source_cut_ids": [
+        "ep10_c005"
+      ],
+      "source_page": "work/ep10/merged/ep10_002.png",
+      "source_page_sha256": "66e0adcdb1b01818982b0d05f4aad2d1c41fbcdac7c495614b4a172a85e86e26",
+      "approved_cut_xyxy": [
+        0,
+        544,
+        2000,
+        17774
+      ],
+      "panel_order": 3,
+      "panel_count": 4,
+      "panel_selection": "그 아래 뱀 비유 속 아시나; 실제 공격 아님",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c005/lines/2",
+        "beat": "ep10_c005",
+        "line_index_1based": 2,
+        "speaker": "ep10_아시나속마음",
+        "text": "그 사람은 뱀처럼 온몸을 옥죄는 느낌…",
+        "perspective": "character",
+        "phase": "줄 뒷부분 이후"
+      },
+      "anchor_ids": [
+        "ep10_c005/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        7700,
+        12000
+      ],
+      "input_crop_xyxy": [
+        0,
+        8244,
+        2000,
+        12544
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4300
+      ],
+      "input_file_sha256": "ed98b062aacb31f31c452d280e6786ab9f9059ef644c4f2191a0e10dc9b5a9e2",
+      "source_region_pixel_sha256": "2c4d30aefaba697ec952071bb828bfd61adad2df111d0f9c04bc5e644f7665ba",
+      "input_pixel_sha256": "2c4d30aefaba697ec952071bb828bfd61adad2df111d0f9c04bc5e644f7665ba",
+      "dimensions": [
+        2000,
+        4300
+      ],
+      "mode": "RGB",
+      "bytes": 6234116,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c005_p04",
+      "candidate_filename": "assets/ep10/gen/ep10_c005_p04.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c005_p04.source.png",
+      "source_cut_ids": [
+        "ep10_c005"
+      ],
+      "source_page": "work/ep10/merged/ep10_002.png",
+      "source_page_sha256": "66e0adcdb1b01818982b0d05f4aad2d1c41fbcdac7c495614b4a172a85e86e26",
+      "approved_cut_xyxy": [
+        0,
+        544,
+        2000,
+        17774
+      ],
+      "panel_order": 4,
+      "panel_count": 4,
+      "panel_selection": "하단 현재 욕실의 작은 아치창·물; 인물 없음",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c005/lines/3",
+        "beat": "ep10_c005",
+        "line_index_1based": 3,
+        "speaker": "ep10_아시나속마음",
+        "text": "다시는 마주치고 싶지 않아.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c005/lines/3"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        12000,
+        17230
+      ],
+      "input_crop_xyxy": [
+        0,
+        12544,
+        2000,
+        17774
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5230
+      ],
+      "input_file_sha256": "4ccb29b2511426312ec5149e70edffd37f2af0d645a09e16e02ffb8c85b47f70",
+      "source_region_pixel_sha256": "c881d29b079474972d64ef062b74a68ba353de03af77e52ec3b55622508e08d0",
+      "input_pixel_sha256": "c881d29b079474972d64ef062b74a68ba353de03af77e52ec3b55622508e08d0",
+      "dimensions": [
+        2000,
+        5230
+      ],
+      "mode": "RGB",
+      "bytes": 2040118,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c006",
+      "candidate_filename": "assets/ep10/gen/ep10_c006.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c006.source.png",
+      "source_cut_ids": [
+        "ep10_c006"
+      ],
+      "source_page": "work/ep10/merged/ep10_002.png",
+      "source_page_sha256": "66e0adcdb1b01818982b0d05f4aad2d1c41fbcdac7c495614b4a172a85e86e26",
+      "approved_cut_xyxy": [
+        0,
+        17774,
+        2000,
+        18105
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "여백과 물방울·물소리로 현재 목욕 장면을 잇는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c006/lines/1",
+        "beat": "ep10_c006",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c006/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        331
+      ],
+      "input_crop_xyxy": [
+        0,
+        17774,
+        2000,
+        18105
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        331
+      ],
+      "input_file_sha256": "1a657bb71e980211aa6de7d20bfc7b3cbff9e548a488104cf27365ab9461c311",
+      "source_region_pixel_sha256": "3de0b0b5fc1dc3df358a4cad26bf1e6bf4331d5c59a6f9a0a11238b8bbf26751",
+      "input_pixel_sha256": "3de0b0b5fc1dc3df358a4cad26bf1e6bf4331d5c59a6f9a0a11238b8bbf26751",
+      "dimensions": [
+        2000,
+        331
+      ],
+      "mode": "RGB",
+      "bytes": 36436,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c007",
+      "candidate_filename": "assets/ep10/gen/ep10_c007.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c007.source.png",
+      "source_cut_ids": [
+        "ep10_c007"
+      ],
+      "source_page": "work/ep10/merged/ep10_002.png",
+      "source_page_sha256": "66e0adcdb1b01818982b0d05f4aad2d1c41fbcdac7c495614b4a172a85e86e26",
+      "approved_cut_xyxy": [
+        0,
+        18780,
+        2000,
+        24586
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 물속에서 숨을 내쉬는 효과 글자가 붙는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c007/lines/1",
+        "beat": "ep10_c007",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c007/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5806
+      ],
+      "input_crop_xyxy": [
+        0,
+        18780,
+        2000,
+        24586
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5806
+      ],
+      "input_file_sha256": "d55de3dac8ca3c83c560b5985109668b0dbe66778141df81219ba4ca908c0a4d",
+      "source_region_pixel_sha256": "32240c049e28e4cd254bb88345c9d7c97e6a388a0ed0eba604934690c0a74196",
+      "input_pixel_sha256": "32240c049e28e4cd254bb88345c9d7c97e6a388a0ed0eba604934690c0a74196",
+      "dimensions": [
+        2000,
+        5806
+      ],
+      "mode": "RGB",
+      "bytes": 7225580,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c008",
+      "candidate_filename": "assets/ep10/gen/ep10_c008.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c008.source.png",
+      "source_cut_ids": [
+        "ep10_c008"
+      ],
+      "source_page": "work/ep10/merged/ep10_003.png",
+      "source_page_sha256": "ed8a19d31c463e2c2b63b7998dd978388d6898779e1d6e9f60976726d916c098",
+      "approved_cut_xyxy": [
+        0,
+        335,
+        2000,
+        7910
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "귀 가까이의 빛을 보고 아시나가 놀란다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c008/lines/1",
+        "beat": "ep10_c008",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "뭐야 이거…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c008/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        7575
+      ],
+      "input_crop_xyxy": [
+        0,
+        335,
+        2000,
+        7910
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        7575
+      ],
+      "input_file_sha256": "11723ef777b236d8ff0c32756d31f63165bd295439a7811f2cd1c54061d7bdac",
+      "source_region_pixel_sha256": "ce3bb8481632f7fa20d5b043c506f69071a7ac5f29b1663f94fafc864c7d2cf7",
+      "input_pixel_sha256": "ce3bb8481632f7fa20d5b043c506f69071a7ac5f29b1663f94fafc864c7d2cf7",
+      "dimensions": [
+        2000,
+        7575
+      ],
+      "mode": "RGB",
+      "bytes": 6412622,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c009",
+      "candidate_filename": "assets/ep10/gen/ep10_c009.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c009.source.png",
+      "source_cut_ids": [
+        "ep10_c009"
+      ],
+      "source_page": "work/ep10/merged/ep10_003.png",
+      "source_page_sha256": "ed8a19d31c463e2c2b63b7998dd978388d6898779e1d6e9f60976726d916c098",
+      "approved_cut_xyxy": [
+        0,
+        8592,
+        2000,
+        11378
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 귀찌의 색 변화를 확인한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c009/lines/1",
+        "beat": "ep10_c009",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "귀찌 색이 변했어?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c009/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        2786
+      ],
+      "input_crop_xyxy": [
+        0,
+        8592,
+        2000,
+        11378
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        2786
+      ],
+      "input_file_sha256": "1f1c784a1833408a9705921bc0ce17880a85851edd20e514dc662c8da00dda28",
+      "source_region_pixel_sha256": "63e8ebbcafe06ad630fecc12487a6c120950acad00874ffba6a98722a6b440ac",
+      "input_pixel_sha256": "63e8ebbcafe06ad630fecc12487a6c120950acad00874ffba6a98722a6b440ac",
+      "dimensions": [
+        2000,
+        2786
+      ],
+      "mode": "RGB",
+      "bytes": 2146720,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c010",
+      "candidate_filename": "assets/ep10/gen/ep10_c010.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c010.source.png",
+      "source_cut_ids": [
+        "ep10_c010"
+      ],
+      "source_page": "work/ep10/merged/ep10_003.png",
+      "source_page_sha256": "ed8a19d31c463e2c2b63b7998dd978388d6898779e1d6e9f60976726d916c098",
+      "approved_cut_xyxy": [
+        0,
+        13072,
+        2000,
+        13561
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "푸른 테두리와 여백으로 다음 동작을 잇는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c010/lines/1",
+        "beat": "ep10_c010",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c010/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        489
+      ],
+      "input_crop_xyxy": [
+        0,
+        13072,
+        2000,
+        13561
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        489
+      ],
+      "input_file_sha256": "79015de54f8b636e7d27fd133298df476f62c464ebc954939b5bf52bf2066ed1",
+      "source_region_pixel_sha256": "4ee4c2b7c85674275cbbb58cfaadab4854e0b47ac0dd24fa96951e20d89b5d14",
+      "input_pixel_sha256": "4ee4c2b7c85674275cbbb58cfaadab4854e0b47ac0dd24fa96951e20d89b5d14",
+      "dimensions": [
+        2000,
+        489
+      ],
+      "mode": "RGB",
+      "bytes": 131777,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c011",
+      "candidate_filename": "assets/ep10/gen/ep10_c011.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c011.source.png",
+      "source_cut_ids": [
+        "ep10_c011"
+      ],
+      "source_page": "work/ep10/merged/ep10_003.png",
+      "source_page_sha256": "ed8a19d31c463e2c2b63b7998dd978388d6898779e1d6e9f60976726d916c098",
+      "approved_cut_xyxy": [
+        0,
+        13561,
+        2000,
+        17010
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "욕조 밖 가방에 손을 뻗으며 변색이 예상보다 빠르다고 생각한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c011/lines/1",
+        "beat": "ep10_c011",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "원래도 간당간당한 상태였지만…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c011/lines/1",
+        "ep10_c011/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3449
+      ],
+      "input_crop_xyxy": [
+        0,
+        13561,
+        2000,
+        17010
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3449
+      ],
+      "input_file_sha256": "193c077aef38746a18da9f25be1a21896bbf6dc401a4718a4bc8fa16b917c8e2",
+      "source_region_pixel_sha256": "6bceb87ecd20756b8460c099f76e0d996d9cee54b949dd63a8837f1c0420851c",
+      "input_pixel_sha256": "6bceb87ecd20756b8460c099f76e0d996d9cee54b949dd63a8837f1c0420851c",
+      "dimensions": [
+        2000,
+        3449
+      ],
+      "mode": "RGB",
+      "bytes": 2420748,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c012",
+      "candidate_filename": "assets/ep10/gen/ep10_c012.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c012.source.png",
+      "source_cut_ids": [
+        "ep10_c012"
+      ],
+      "source_page": "work/ep10/merged/ep10_003.png",
+      "source_page_sha256": "ed8a19d31c463e2c2b63b7998dd978388d6898779e1d6e9f60976726d916c098",
+      "approved_cut_xyxy": [
+        0,
+        18491,
+        2000,
+        19997
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "귀찌를 내려놓는 동작의 효과 글자와 여백.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c012/lines/1",
+        "beat": "ep10_c012",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c012/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        1506
+      ],
+      "input_crop_xyxy": [
+        0,
+        18491,
+        2000,
+        19997
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1506
+      ],
+      "input_file_sha256": "d718b27086f2154f1a75fa7db295192ff4d8e8beb678fa92ba35a8da64b498f4",
+      "source_region_pixel_sha256": "19d9f3303e74c885b9d54f19792861f968b5aeb507830384a3e38dd044bf6153",
+      "input_pixel_sha256": "19d9f3303e74c885b9d54f19792861f968b5aeb507830384a3e38dd044bf6153",
+      "dimensions": [
+        2000,
+        1506
+      ],
+      "mode": "RGB",
+      "bytes": 539450,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c013",
+      "candidate_filename": "assets/ep10/gen/ep10_c013.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c013.source.png",
+      "source_cut_ids": [
+        "ep10_c013"
+      ],
+      "source_page": "work/ep10/merged/ep10_003.png",
+      "source_page_sha256": "ed8a19d31c463e2c2b63b7998dd978388d6898779e1d6e9f60976726d916c098",
+      "approved_cut_xyxy": [
+        0,
+        21358,
+        2000,
+        24284
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "손바닥에 붉게 빛나는 귀찌 두 개가 놓인다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c013/lines/1",
+        "beat": "ep10_c013",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c013/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        2926
+      ],
+      "input_crop_xyxy": [
+        0,
+        21358,
+        2000,
+        24284
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        2926
+      ],
+      "input_file_sha256": "603be4538249fed9098c45f21aa0d81fdd2d446f14011769fbc43dfe46568f0b",
+      "source_region_pixel_sha256": "e6bb0a687b9818e6fa4896f81a0343115848429d8ea983992c019439c992fc3b",
+      "input_pixel_sha256": "e6bb0a687b9818e6fa4896f81a0343115848429d8ea983992c019439c992fc3b",
+      "dimensions": [
+        2000,
+        2926
+      ],
+      "mode": "RGB",
+      "bytes": 3586465,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c014",
+      "candidate_filename": "assets/ep10/gen/ep10_c014.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c014.source.png",
+      "source_cut_ids": [
+        "ep10_c014"
+      ],
+      "source_page": "work/ep10/merged/ep10_004.png",
+      "source_page_sha256": "c348906859fe7b19559f2eb356077f2ca7308dc429fbefe484dddfe7313928de",
+      "approved_cut_xyxy": [
+        0,
+        360,
+        2000,
+        8673
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "마법진을 띄워 임시로 마법을 푼다. 은백색 긴 머리가 보인다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c014/lines/1",
+        "beat": "ep10_c014",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "어쩔 수 없지.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c014/lines/1",
+        "ep10_c014/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        8313
+      ],
+      "input_crop_xyxy": [
+        0,
+        360,
+        2000,
+        8673
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        8313
+      ],
+      "input_file_sha256": "ba71cc9fe1d08de6d7c3b47b36d589320f6211bb747257f5cb9fb5c31b1c7943",
+      "source_region_pixel_sha256": "5e681bd12f944d29e01d231f846cee2b47d0a7d463031535e835bef37ee1f2a1",
+      "input_pixel_sha256": "5e681bd12f944d29e01d231f846cee2b47d0a7d463031535e835bef37ee1f2a1",
+      "dimensions": [
+        2000,
+        8313
+      ],
+      "mode": "RGB",
+      "bytes": 7019024,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c015",
+      "candidate_filename": "assets/ep10/gen/ep10_c015.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c015.source.png",
+      "source_cut_ids": [
+        "ep10_c015"
+      ],
+      "source_page": "work/ep10/merged/ep10_004.png",
+      "source_page_sha256": "c348906859fe7b19559f2eb356077f2ca7308dc429fbefe484dddfe7313928de",
+      "approved_cut_xyxy": [
+        0,
+        8713,
+        2000,
+        10106
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "푸른 식물 장식과 여백으로 장소 전환을 잇는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c015/lines/1",
+        "beat": "ep10_c015",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c015/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        1393
+      ],
+      "input_crop_xyxy": [
+        0,
+        8713,
+        2000,
+        10106
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1393
+      ],
+      "input_file_sha256": "5429d2d4b201bad369844e403da7a5e143bc15800a187d9244961499e7432cb7",
+      "source_region_pixel_sha256": "7fb7a52881e9d58007af654d44705776c9394d5934de1e01465999c4c5a57051",
+      "input_pixel_sha256": "7fb7a52881e9d58007af654d44705776c9394d5934de1e01465999c4c5a57051",
+      "dimensions": [
+        2000,
+        1393
+      ],
+      "mode": "RGB",
+      "bytes": 817020,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c016",
+      "candidate_filename": "assets/ep10/gen/ep10_c016.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c016.source.png",
+      "source_cut_ids": [
+        "ep10_c016"
+      ],
+      "source_page": "work/ep10/merged/ep10_004.png",
+      "source_page_sha256": "c348906859fe7b19559f2eb356077f2ca7308dc429fbefe484dddfe7313928de",
+      "approved_cut_xyxy": [
+        0,
+        10106,
+        2000,
+        11659
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아치형 출입구 너머 방을 보여 준다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c016/lines/1",
+        "beat": "ep10_c016",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c016/lines/1",
+        "ep10_c043/choices/ep10_travel_hold/lines/1",
+        "ep10_c052/choices/ep10_title_king/lines/1",
+        "ep10_c052/choices/ep10_title_king/lines/2",
+        "ep10_c058/choices/ep10_contact_refuse/lines/1",
+        "ep10_travel_question/lines/1",
+        "ep10_travel_choice/choices/ep10_travel_hold/lines/1",
+        "ep10_distance_refusal/lines/1",
+        "ep10_distance_question/lines/1",
+        "ep10_distance_question/lines/2",
+        "ep10_distance_question/lines/3",
+        "ep10_distance_success/lines/1",
+        "ep10_withdraw/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        1553
+      ],
+      "input_crop_xyxy": [
+        0,
+        10106,
+        2000,
+        11659
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1553
+      ],
+      "input_file_sha256": "32b201d99eee3fa863f785bba5836ce286231f6c1a4ca3496dd54593c1ecc613",
+      "source_region_pixel_sha256": "32cae13a8f76e30cbc9d5d7f6d388ab537f46ae733e34ad1e824193aced84825",
+      "input_pixel_sha256": "32cae13a8f76e30cbc9d5d7f6d388ab537f46ae733e34ad1e824193aced84825",
+      "dimensions": [
+        2000,
+        1553
+      ],
+      "mode": "RGB",
+      "bytes": 2250865,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c017",
+      "candidate_filename": "assets/ep10/gen/ep10_c017.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c017.source.png",
+      "source_cut_ids": [
+        "ep10_c017"
+      ],
+      "source_page": "work/ep10/merged/ep10_004.png",
+      "source_page_sha256": "c348906859fe7b19559f2eb356077f2ca7308dc429fbefe484dddfe7313928de",
+      "approved_cut_xyxy": [
+        0,
+        13942,
+        2000,
+        18466
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "누르가 거울 앞에 앉은 아시나의 긴 머리를 빗는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c017/lines/1",
+        "beat": "ep10_c017",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c017/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        4524
+      ],
+      "input_crop_xyxy": [
+        0,
+        13942,
+        2000,
+        18466
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4524
+      ],
+      "input_file_sha256": "4c3c0f4d323d09dad882c9744eb23a096fd96c76479a24006d06b727f452af58",
+      "source_region_pixel_sha256": "e6e1b4a78d02865e7bd9106d1e237486680795278bcc186db7abda42ada06735",
+      "input_pixel_sha256": "e6e1b4a78d02865e7bd9106d1e237486680795278bcc186db7abda42ada06735",
+      "dimensions": [
+        2000,
+        4524
+      ],
+      "mode": "RGB",
+      "bytes": 5732587,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c018",
+      "candidate_filename": "assets/ep10/gen/ep10_c018.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c018.source.png",
+      "source_cut_ids": [
+        "ep10_c018"
+      ],
+      "source_page": "work/ep10/merged/ep10_004.png",
+      "source_page_sha256": "c348906859fe7b19559f2eb356077f2ca7308dc429fbefe484dddfe7313928de",
+      "approved_cut_xyxy": [
+        0,
+        21135,
+        2000,
+        26114
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "붉어진 눈의 아시나와 머리를 손질하는 누르. 눈의 마법만 풀었다는 상자가 붙는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c018/lines/1",
+        "beat": "ep10_c018",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "이렇게 해 놓으면 좀 더 오래 마법을 유지할 수 있겠지?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c018/lines/1",
+        "ep10_c018/lines/2",
+        "ep10_c018/lines/3",
+        "ep10_c018/lines/4"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        4979
+      ],
+      "input_crop_xyxy": [
+        0,
+        21135,
+        2000,
+        26114
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4979
+      ],
+      "input_file_sha256": "4d04aab7f6b7b35e42aaee68ce53c1e91b5efd37c9d0db9e102e75a90a71a9fe",
+      "source_region_pixel_sha256": "cea5292adf1d7f87ceb8f0c6713a4b63adab29b6f9903e8777a26aa236474be2",
+      "input_pixel_sha256": "cea5292adf1d7f87ceb8f0c6713a4b63adab29b6f9903e8777a26aa236474be2",
+      "dimensions": [
+        2000,
+        4979
+      ],
+      "mode": "RGB",
+      "bytes": 3958825,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c019_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c019_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c019_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c019"
+      ],
+      "source_page": "work/ep10/merged/ep10_005.png",
+      "source_page_sha256": "82adf942368ec377c4354cc83640962cac1772ccd0e2ab6ccdf438a3c6b53300",
+      "approved_cut_xyxy": [
+        0,
+        140,
+        2000,
+        13685
+      ],
+      "panel_order": 1,
+      "panel_count": 2,
+      "panel_selection": "상단 누르의 옆얼굴; 아시나 응답은 화면 밖",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c019/lines/1",
+        "beat": "ep10_c019",
+        "line_index_1based": 1,
+        "speaker": "ep10_누르",
+        "text": "아 맞다. 아시나님. 말씀 못 드린 게 있는데요.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c019/lines/1",
+        "ep10_c019/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5000
+      ],
+      "input_crop_xyxy": [
+        0,
+        140,
+        2000,
+        5140
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5000
+      ],
+      "input_file_sha256": "39581ef3b605fe7805090659aadeeff568cd706efefcc238e427e36344896a88",
+      "source_region_pixel_sha256": "4b8e60c62f1e7a1f56227849d9f03488054e041ce49982ef5ceebbad7d7c457a",
+      "input_pixel_sha256": "4b8e60c62f1e7a1f56227849d9f03488054e041ce49982ef5ceebbad7d7c457a",
+      "dimensions": [
+        2000,
+        5000
+      ],
+      "mode": "RGB",
+      "bytes": 2683752,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c019_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c019_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c019_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c019"
+      ],
+      "source_page": "work/ep10/merged/ep10_005.png",
+      "source_page_sha256": "82adf942368ec377c4354cc83640962cac1772ccd0e2ab6ccdf438a3c6b53300",
+      "approved_cut_xyxy": [
+        0,
+        140,
+        2000,
+        13685
+      ],
+      "panel_order": 2,
+      "panel_count": 2,
+      "panel_selection": "하단 책을 펼쳐 든 남색 실내복 왕; 누르와 새 동석 구도 만들지 않음",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c019/lines/3",
+        "beat": "ep10_c019",
+        "line_index_1based": 3,
+        "speaker": "ep10_누르",
+        "text": "아까부터 라 쿤께서 기다리고 계십니다.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c019/lines/3"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        5000,
+        13545
+      ],
+      "input_crop_xyxy": [
+        0,
+        5140,
+        2000,
+        13685
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        8545
+      ],
+      "input_file_sha256": "092d1c784fca7dd0766bb3053b210b9283fbdb917384a375eb3acc5d3a1b923b",
+      "source_region_pixel_sha256": "b7663f9942db2cfa9fa4e3d5f761442349fdaba03e5d111544ff0a134313b360",
+      "input_pixel_sha256": "b7663f9942db2cfa9fa4e3d5f761442349fdaba03e5d111544ff0a134313b360",
+      "dimensions": [
+        2000,
+        8545
+      ],
+      "mode": "RGB",
+      "bytes": 12715683,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c020",
+      "candidate_filename": "assets/ep10/gen/ep10_c020.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c020.source.png",
+      "source_cut_ids": [
+        "ep10_c020"
+      ],
+      "source_page": "work/ep10/merged/ep10_005.png",
+      "source_page_sha256": "82adf942368ec377c4354cc83640962cac1772ccd0e2ab6ccdf438a3c6b53300",
+      "approved_cut_xyxy": [
+        0,
+        14099,
+        2000,
+        14444
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕의 등장 뒤 짧은 여백·연결부.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c020/lines/1",
+        "beat": "ep10_c020",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c020/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        345
+      ],
+      "input_crop_xyxy": [
+        0,
+        14099,
+        2000,
+        14444
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        345
+      ],
+      "input_file_sha256": "8feda45a873c972b500a9ec60e1eef65467d853f5fb96897c7bd61acc63cffd5",
+      "source_region_pixel_sha256": "eaabef33935aab1f86c5897f7fb98ba4695b29c39d7f2afdca734694e5d3f3f6",
+      "input_pixel_sha256": "eaabef33935aab1f86c5897f7fb98ba4695b29c39d7f2afdca734694e5d3f3f6",
+      "dimensions": [
+        2000,
+        345
+      ],
+      "mode": "RGB",
+      "bytes": 28345,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c021",
+      "candidate_filename": "assets/ep10/gen/ep10_c021.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c021.source.png",
+      "source_cut_ids": [
+        "ep10_c021"
+      ],
+      "source_page": "work/ep10/merged/ep10_005.png",
+      "source_page_sha256": "82adf942368ec377c4354cc83640962cac1772ccd0e2ab6ccdf438a3c6b53300",
+      "approved_cut_xyxy": [
+        0,
+        15141,
+        2000,
+        18414
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 양옆 가구에 손을 댄 채 당황한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c021/lines/1",
+        "beat": "ep10_c021",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "어버버…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c021/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3273
+      ],
+      "input_crop_xyxy": [
+        0,
+        15141,
+        2000,
+        18414
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3273
+      ],
+      "input_file_sha256": "ef239946854b7035482df9923d0b5444d85671a2eae6f92ea37b88c0e742d285",
+      "source_region_pixel_sha256": "2598946b989e8c711aa30804e6e472b27cb09d26ccc70dd1ebec20457a122cc5",
+      "input_pixel_sha256": "2598946b989e8c711aa30804e6e472b27cb09d26ccc70dd1ebec20457a122cc5",
+      "dimensions": [
+        2000,
+        3273
+      ],
+      "mode": "RGB",
+      "bytes": 4330100,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c022",
+      "candidate_filename": "assets/ep10/gen/ep10_c022.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c022.source.png",
+      "source_cut_ids": [
+        "ep10_c022"
+      ],
+      "source_page": "work/ep10/merged/ep10_005.png",
+      "source_page_sha256": "82adf942368ec377c4354cc83640962cac1772ccd0e2ab6ccdf438a3c6b53300",
+      "approved_cut_xyxy": [
+        0,
+        20177,
+        2000,
+        26004
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 잦은 방문을 따지고 왕이 애첩을 만나러 온다고 답한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c022/lines/1",
+        "beat": "ep10_c022",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "왜 이렇게 자주 와요? 꿀 발라놨어요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c022/lines/1",
+        "ep10_c022/lines/2",
+        "ep10_c022/lines/3"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5827
+      ],
+      "input_crop_xyxy": [
+        0,
+        20177,
+        2000,
+        26004
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5827
+      ],
+      "input_file_sha256": "b8bcc9c9e379762a9b18aa3ec19a7fdada26e85fbb60e28527e98e85fc769ce9",
+      "source_region_pixel_sha256": "66ceafc3bb0b1b20cfc9bad35bdb99e3765039dda6ddf6db0abe23d23e7c6b83",
+      "input_pixel_sha256": "66ceafc3bb0b1b20cfc9bad35bdb99e3765039dda6ddf6db0abe23d23e7c6b83",
+      "dimensions": [
+        2000,
+        5827
+      ],
+      "mode": "RGB",
+      "bytes": 5161821,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c023",
+      "candidate_filename": "assets/ep10/gen/ep10_c023.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c023.source.png",
+      "source_cut_ids": [
+        "ep10_c023"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        881,
+        2000,
+        4277
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "같은 방에서 아시나의 뒷모습과 왕의 상반신을 보이며 아시나의 투덜거림이 붙는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c023/lines/1",
+        "beat": "ep10_c023",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "그래요 다 맘대로 하세요",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c023/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3396
+      ],
+      "input_crop_xyxy": [
+        0,
+        881,
+        2000,
+        4277
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3396
+      ],
+      "input_file_sha256": "d959952a80b5180e1ac184303288adf07cfb3b5201a870f4ee8ae17fb39ca18c",
+      "source_region_pixel_sha256": "804fa3d250dcda1ff568bfc38e6e5a15dc5a9f75f9fa5258e5ad6edde4bbc0f3",
+      "input_pixel_sha256": "804fa3d250dcda1ff568bfc38e6e5a15dc5a9f75f9fa5258e5ad6edde4bbc0f3",
+      "dimensions": [
+        2000,
+        3396
+      ],
+      "mode": "RGB",
+      "bytes": 4573988,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c024",
+      "candidate_filename": "assets/ep10/gen/ep10_c024.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c024.source.png",
+      "source_cut_ids": [
+        "ep10_c024"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        6473,
+        2000,
+        7054
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "대화 사이 짧은 여백.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c024/lines/1",
+        "beat": "ep10_c024",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c024/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        581
+      ],
+      "input_crop_xyxy": [
+        0,
+        6473,
+        2000,
+        7054
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        581
+      ],
+      "input_file_sha256": "469c6393a5e5f0bff90994878394f5d5961b87f40edba7bdf4edfe234d716e19",
+      "source_region_pixel_sha256": "26afb7a1c55f11424add46b3e86460ab9058569a17d8852326cff666a6aba95c",
+      "input_pixel_sha256": "26afb7a1c55f11424add46b3e86460ab9058569a17d8852326cff666a6aba95c",
+      "dimensions": [
+        2000,
+        581
+      ],
+      "mode": "RGB",
+      "bytes": 225728,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c025",
+      "candidate_filename": "assets/ep10/gen/ep10_c025.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c025.source.png",
+      "source_cut_ids": [
+        "ep10_c025"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        7507,
+        2000,
+        8558
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕의 머리 길이에 대한 말풍선과 꽃 장식만 보인다. 손·머리카락은 해당 컷에 보이지 않음.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c025/lines/1",
+        "beat": "ep10_c025",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "항상 느끼는 거지만, 머리가 참 길군.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c025/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        1051
+      ],
+      "input_crop_xyxy": [
+        0,
+        7507,
+        2000,
+        8558
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1051
+      ],
+      "input_file_sha256": "1ccdd8bb8a36455b21ad2a4afbcd12326d2f9187ff64f2e68e5032c6a3bfe92e",
+      "source_region_pixel_sha256": "be4e7bbd01b84367801aa84099a31cd5f787ddb99135ecb59f48f1fe5bbdf7ca",
+      "input_pixel_sha256": "be4e7bbd01b84367801aa84099a31cd5f787ddb99135ecb59f48f1fe5bbdf7ca",
+      "dimensions": [
+        2000,
+        1051
+      ],
+      "mode": "RGB",
+      "bytes": 384664,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c026",
+      "candidate_filename": "assets/ep10/gen/ep10_c026.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c026.source.png",
+      "source_cut_ids": [
+        "ep10_c026"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        8563,
+        2000,
+        12174
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 여행할 때 머리가 불편하지 않느냐고 묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c026/lines/1",
+        "beat": "ep10_c026",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "여행 다니는데 불편하지 않나?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c026/lines/1",
+        "ep10_c026/choices/ep10_hair_hold/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3611
+      ],
+      "input_crop_xyxy": [
+        0,
+        8563,
+        2000,
+        12174
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3611
+      ],
+      "input_file_sha256": "a47bbbd7e5c9755b2f764918d619324b52e008c9c17f31a9914c5df4bd0698d7",
+      "source_region_pixel_sha256": "c78b3e905091cb827cbec404aac3dcc3d0b13249e70322346a939c15f67e4ca3",
+      "input_pixel_sha256": "c78b3e905091cb827cbec404aac3dcc3d0b13249e70322346a939c15f67e4ca3",
+      "dimensions": [
+        2000,
+        3611
+      ],
+      "mode": "RGB",
+      "bytes": 3009925,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c027_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c027_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c027_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c027"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        12174,
+        2000,
+        27395
+      ],
+      "panel_order": 1,
+      "panel_count": 3,
+      "panel_selection": "상단 머리카락을 쥔 아시나 옆모습",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c027/lines/1",
+        "beat": "ep10_c027",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "불편하죠.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c027/lines/1",
+        "ep10_c027/lines/2",
+        "ep10_c027/lines/3"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "머리 기른 이유를 말하는 ep10_hair_source 선택 경로 전용",
+      "relative_panel_y_range": [
+        0,
+        6500
+      ],
+      "input_crop_xyxy": [
+        0,
+        12174,
+        2000,
+        18674
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        6500
+      ],
+      "input_file_sha256": "7e946313981588260dab5c4b8a63d656cef0716388854edf8fed0b14fcd31a8a",
+      "source_region_pixel_sha256": "4c27ec9fd53e7ca00d2051dde9a5f0fb3a0cb98fa3bfb28280f92493ef46f5f3",
+      "input_pixel_sha256": "4c27ec9fd53e7ca00d2051dde9a5f0fb3a0cb98fa3bfb28280f92493ef46f5f3",
+      "dimensions": [
+        2000,
+        6500
+      ],
+      "mode": "RGB",
+      "bytes": 4174852,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c027_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c027_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c027_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c027"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        12174,
+        2000,
+        27395
+      ],
+      "panel_order": 2,
+      "panel_count": 3,
+      "panel_selection": "중단 원작 네 가족 인물의 회상 삽입; 현장 동석 아님",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c027/lines/4",
+        "beat": "ep10_c027",
+        "line_index_1based": 4,
+        "speaker": "ep10_아시나",
+        "text": "자르면 난리나요.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c027/lines/4",
+        "ep10_c027/lines/5"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "머리 기른 이유를 말하는 ep10_hair_source 선택 경로 전용",
+      "relative_panel_y_range": [
+        6500,
+        10400
+      ],
+      "input_crop_xyxy": [
+        0,
+        18674,
+        2000,
+        22574
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3900
+      ],
+      "input_file_sha256": "ccc57cdb723cb9459cd932725077b2e11ef29eb5c5bfa97154e1535ce1b3488c",
+      "source_region_pixel_sha256": "0746ff90330a9dc11dfb06a62bc073a9bd8bc6130e2ea03e9d96093fc0f3958a",
+      "input_pixel_sha256": "0746ff90330a9dc11dfb06a62bc073a9bd8bc6130e2ea03e9d96093fc0f3958a",
+      "dimensions": [
+        2000,
+        3900
+      ],
+      "mode": "RGB",
+      "bytes": 4608274,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c027_p03",
+      "candidate_filename": "assets/ep10/gen/ep10_c027_p03.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c027_p03.source.png",
+      "source_cut_ids": [
+        "ep10_c027"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        12174,
+        2000,
+        27395
+      ],
+      "panel_order": 3,
+      "panel_count": 3,
+      "panel_selection": "하단 한숨 쉬며 머리카락을 쥔 아시나",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c027/lines/6",
+        "beat": "ep10_c027",
+        "line_index_1based": 6,
+        "speaker": "ep10_아시나",
+        "text": "레이디의 기본이라나 뭐라나…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c027/lines/6",
+        "ep10_c027/lines/7"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "머리 기른 이유를 말하는 ep10_hair_source 선택 경로 전용",
+      "relative_panel_y_range": [
+        10400,
+        15221
+      ],
+      "input_crop_xyxy": [
+        0,
+        22574,
+        2000,
+        27395
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4821
+      ],
+      "input_file_sha256": "449114a63125d9a2aa266ec6aa36bc5d153e052e76f44e26de72c9f35f0eac40",
+      "source_region_pixel_sha256": "56527ea7c7bb9b5092384b0767f769aac6338aa574a32182b2ef1225bc296a6d",
+      "input_pixel_sha256": "56527ea7c7bb9b5092384b0767f769aac6338aa574a32182b2ef1225bc296a6d",
+      "dimensions": [
+        2000,
+        4821
+      ],
+      "mode": "RGB",
+      "bytes": 3693258,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c028",
+      "candidate_filename": "assets/ep10/gen/ep10_c028.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c028.source.png",
+      "source_cut_ids": [
+        "ep10_c028"
+      ],
+      "source_page": "work/ep10/merged/ep10_006.png",
+      "source_page_sha256": "db9106a32eefbb45481d87e2ff112735e5738eef4681fecc8bd893621c509127",
+      "approved_cut_xyxy": [
+        0,
+        27405,
+        2000,
+        27924
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "말이 끝난 뒤 짧은 여백.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c028/lines/1",
+        "beat": "ep10_c028",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c028/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        519
+      ],
+      "input_crop_xyxy": [
+        0,
+        27405,
+        2000,
+        27924
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        519
+      ],
+      "input_file_sha256": "d132b4d6e4b3eae91ccac3e9a1b6e8402e84479bc84ad72c07fe14a5ba33ccb1",
+      "source_region_pixel_sha256": "4fcff944643fc23e183ae4f21fb3a3027065eed44e087018fc65c70a6b1202b2",
+      "input_pixel_sha256": "4fcff944643fc23e183ae4f21fb3a3027065eed44e087018fc65c70a6b1202b2",
+      "dimensions": [
+        2000,
+        519
+      ],
+      "mode": "RGB",
+      "bytes": 65641,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c029",
+      "candidate_filename": "assets/ep10/gen/ep10_c029.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c029.source.png",
+      "source_cut_ids": [
+        "ep10_c029"
+      ],
+      "source_page": "work/ep10/merged/ep10_007.png",
+      "source_page_sha256": "a895a5c8abf4c225a4cda16a042d89551070e50e63c0c8a827e0e521799c4644",
+      "approved_cut_xyxy": [
+        0,
+        351,
+        2000,
+        4854
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "실내를 내려다보는 구도에 두 사람이 보인다. 왕이 형제를 묻고 아시나가 외동이며 사촌과 자랐다고 답한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c029/lines/1",
+        "beat": "ep10_c029",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "외동인가? 형제에 대한 말은 없군.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c029/lines/1",
+        "ep10_c029/choices/ep10_family_hold/lines/1",
+        "ep10_family_source/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        4503
+      ],
+      "input_crop_xyxy": [
+        0,
+        351,
+        2000,
+        4854
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4503
+      ],
+      "input_file_sha256": "50dd2b072f82d7b2fddd185f0de7c80acbff10982bab38971ce28e913dbceeb9",
+      "source_region_pixel_sha256": "41929c66958c6c5c92e3a7dc1c4619c6490aacc6732d7b6c35b8eba9ca6f8536",
+      "input_pixel_sha256": "41929c66958c6c5c92e3a7dc1c4619c6490aacc6732d7b6c35b8eba9ca6f8536",
+      "dimensions": [
+        2000,
+        4503
+      ],
+      "mode": "RGB",
+      "bytes": 4780502,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c030",
+      "candidate_filename": "assets/ep10/gen/ep10_c030.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c030.source.png",
+      "source_cut_ids": [
+        "ep10_c030"
+      ],
+      "source_page": "work/ep10/merged/ep10_007.png",
+      "source_page_sha256": "a895a5c8abf4c225a4cda16a042d89551070e50e63c0c8a827e0e521799c4644",
+      "approved_cut_xyxy": [
+        0,
+        4953,
+        2000,
+        10143
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 앉는 치맛자락과 짚은 손을 보여 준다. '푹신' 효과 글자가 있다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c030/lines/1",
+        "beat": "ep10_c030",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c030/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5190
+      ],
+      "input_crop_xyxy": [
+        0,
+        4953,
+        2000,
+        10143
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5190
+      ],
+      "input_file_sha256": "55343a6153440a7f92f95bdc5740f6c804315880d82e19f7a0e46a39a004bb25",
+      "source_region_pixel_sha256": "e15d8bbcec9cb169c3bd1b35df81e2f4a6d7b3dc30bd1ea8e640e8bd3252c635",
+      "input_pixel_sha256": "e15d8bbcec9cb169c3bd1b35df81e2f4a6d7b3dc30bd1ea8e640e8bd3252c635",
+      "dimensions": [
+        2000,
+        5190
+      ],
+      "mode": "RGB",
+      "bytes": 3049257,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c031",
+      "candidate_filename": "assets/ep10/gen/ep10_c031.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c031.source.png",
+      "source_cut_ids": [
+        "ep10_c031"
+      ],
+      "source_page": "work/ep10/merged/ep10_007.png",
+      "source_page_sha256": "a895a5c8abf4c225a4cda16a042d89551070e50e63c0c8a827e0e521799c4644",
+      "approved_cut_xyxy": [
+        0,
+        13556,
+        2000,
+        19148
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 아시나의 이름을 낮게 되뇌며 다가온다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c031/lines/1",
+        "beat": "ep10_c031",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "아시나…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c031/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5592
+      ],
+      "input_crop_xyxy": [
+        0,
+        13556,
+        2000,
+        19148
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5592
+      ],
+      "input_file_sha256": "5e34e4024a15ad4c84d32c86114a09d3d204296b3330f4d03b8848030874d044",
+      "source_region_pixel_sha256": "5b22158204fbe66a13c63a65b2c892d924e5b200caaa224f27da859d56b8cb1e",
+      "input_pixel_sha256": "5b22158204fbe66a13c63a65b2c892d924e5b200caaa224f27da859d56b8cb1e",
+      "dimensions": [
+        2000,
+        5592
+      ],
+      "mode": "RGB",
+      "bytes": 5919919,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c032",
+      "candidate_filename": "assets/ep10/gen/ep10_c032.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c032.source.png",
+      "source_cut_ids": [
+        "ep10_c032"
+      ],
+      "source_page": "work/ep10/merged/ep10_007.png",
+      "source_page_sha256": "a895a5c8abf4c225a4cda16a042d89551070e50e63c0c8a827e0e521799c4644",
+      "approved_cut_xyxy": [
+        0,
+        19691,
+        2000,
+        23146
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 이름을 되묻고 아시나가 이유를 묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c032/lines/1",
+        "beat": "ep10_c032",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "…라고 했었나, 네 이름.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c032/lines/1",
+        "ep10_c032/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3455
+      ],
+      "input_crop_xyxy": [
+        0,
+        19691,
+        2000,
+        23146
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3455
+      ],
+      "input_file_sha256": "20f947496adbd3e284ea1797495d9990684a46dcc94b2f4d86ae0016ee9bfb15",
+      "source_region_pixel_sha256": "528bd43c93b7d399cc41a792b943248061eb4f28fd468af256afafec3e05b146",
+      "input_pixel_sha256": "528bd43c93b7d399cc41a792b943248061eb4f28fd468af256afafec3e05b146",
+      "dimensions": [
+        2000,
+        3455
+      ],
+      "mode": "RGB",
+      "bytes": 2594247,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c033",
+      "candidate_filename": "assets/ep10/gen/ep10_c033.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c033.source.png",
+      "source_cut_ids": [
+        "ep10_c033"
+      ],
+      "source_page": "work/ep10/merged/ep10_007.png",
+      "source_page_sha256": "a895a5c8abf4c225a4cda16a042d89551070e50e63c0c8a827e0e521799c4644",
+      "approved_cut_xyxy": [
+        0,
+        23772,
+        2000,
+        25645
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "발걸음 효과 글자가 두 사람 사이의 접근을 잇는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c033/lines/1",
+        "beat": "ep10_c033",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c033/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        1873
+      ],
+      "input_crop_xyxy": [
+        0,
+        23772,
+        2000,
+        25645
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1873
+      ],
+      "input_file_sha256": "f17a2f95c6ce1f263f77076dec3a8456c723ffa1599cf00da722af687606ef42",
+      "source_region_pixel_sha256": "909b2027c437421dd171058d800c2aff30f4bb5496bdeb0ff1a2effb69661282",
+      "input_pixel_sha256": "909b2027c437421dd171058d800c2aff30f4bb5496bdeb0ff1a2effb69661282",
+      "dimensions": [
+        2000,
+        1873
+      ],
+      "mode": "RGB",
+      "bytes": 713954,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c034_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c034_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c034_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c034"
+      ],
+      "source_page": "work/ep10/merged/ep10_008.png",
+      "source_page_sha256": "d9bb220f706b94d0bc9387dcccef9e78f4131566e6d459ff052d0889b075062b",
+      "approved_cut_xyxy": [
+        0,
+        450,
+        2000,
+        15777
+      ],
+      "panel_order": 1,
+      "panel_count": 2,
+      "panel_selection": "상단 아시나 치맛자락·다리와 왕 옷자락·신발; 질문과 첫 두 속마음",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c034_question/lines/1",
+        "beat": "ep10_c034_question",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "그건 진짜 네 이름인가?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c034_question/lines/1",
+        "ep10_c034_audience/lines/1",
+        "ep10_c034_audience/lines/2",
+        "ep10_c034/choices/ep10_name_only/lines/1"
+      ],
+      "perspectives": [
+        "character",
+        "audience"
+      ],
+      "branch": "질문과 첫 속마음은 공통; 하단 웃는 답변 그림은 ep10_name_source/name_audience 전용",
+      "relative_panel_y_range": [
+        0,
+        5900
+      ],
+      "input_crop_xyxy": [
+        0,
+        450,
+        2000,
+        6350
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5900
+      ],
+      "input_file_sha256": "5dd17d10801229355520d1ba75ae42253b23e591c679ec9b1a95932e425fadc4",
+      "source_region_pixel_sha256": "3678fc5baa8b1d42e44d7781f31c9b33bc7ec3ea9aead61dbcd9a1344281367e",
+      "input_pixel_sha256": "3678fc5baa8b1d42e44d7781f31c9b33bc7ec3ea9aead61dbcd9a1344281367e",
+      "dimensions": [
+        2000,
+        5900
+      ],
+      "mode": "RGB",
+      "bytes": 4287572,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c034_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c034_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c034_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c034"
+      ],
+      "source_page": "work/ep10/merged/ep10_008.png",
+      "source_page_sha256": "d9bb220f706b94d0bc9387dcccef9e78f4131566e6d459ff052d0889b075062b",
+      "approved_cut_xyxy": [
+        0,
+        450,
+        2000,
+        15777
+      ],
+      "panel_order": 2,
+      "panel_count": 2,
+      "panel_selection": "하단 웃는 아시나와 왕 뒤통수; 답변 뒤 구김·그늘 판단",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_name_source/lines/1",
+        "beat": "ep10_name_source",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "진짜 내 이름 맞아요. 그런 것도 속였을까 봐요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_name_source/lines/1",
+        "ep10_name_audience/lines/1"
+      ],
+      "perspectives": [
+        "character",
+        "audience"
+      ],
+      "branch": "질문과 첫 속마음은 공통; 하단 웃는 답변 그림은 ep10_name_source/name_audience 전용",
+      "relative_panel_y_range": [
+        5900,
+        15327
+      ],
+      "input_crop_xyxy": [
+        0,
+        6350,
+        2000,
+        15777
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        9427
+      ],
+      "input_file_sha256": "388fb4ad9c9869c7f18b19b70d088da51577a3e3ad5248f283b0459c11a32f6a",
+      "source_region_pixel_sha256": "19ce53566eff07ffc647985475c4cee69d97563db1a9690d6211035adb1b657c",
+      "input_pixel_sha256": "19ce53566eff07ffc647985475c4cee69d97563db1a9690d6211035adb1b657c",
+      "dimensions": [
+        2000,
+        9427
+      ],
+      "mode": "RGB",
+      "bytes": 9236333,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c035",
+      "candidate_filename": "assets/ep10/gen/ep10_c035.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c035.source.png",
+      "source_cut_ids": [
+        "ep10_c035"
+      ],
+      "source_page": "work/ep10/merged/ep10_008.png",
+      "source_page_sha256": "d9bb220f706b94d0bc9387dcccef9e78f4131566e6d459ff052d0889b075062b",
+      "approved_cut_xyxy": [
+        0,
+        16484,
+        2000,
+        21244
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 아버지의 가족투표 이야기를 한다. 왕의 관찰이 겹친다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c035/lines/1",
+        "beat": "ep10_c035",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "우리 아빠가 무려 세 달에 걸쳐 가족투표를 하고 결정한 이름이라고요.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c035/lines/1",
+        "ep10_c035_audience/lines/1"
+      ],
+      "perspectives": [
+        "character",
+        "audience"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        4760
+      ],
+      "input_crop_xyxy": [
+        0,
+        16484,
+        2000,
+        21244
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4760
+      ],
+      "input_file_sha256": "15a0c936bf34eee543d5d2ff13032bbe3f8bb6cd02718d103ba2474c2b87e415",
+      "source_region_pixel_sha256": "151783061a3fe2f149d276f540c26a0e042d8868b45d560e39d30ed80796ddc6",
+      "input_pixel_sha256": "151783061a3fe2f149d276f540c26a0e042d8868b45d560e39d30ed80796ddc6",
+      "dimensions": [
+        2000,
+        4760
+      ],
+      "mode": "RGB",
+      "bytes": 3882629,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c036",
+      "candidate_filename": "assets/ep10/gen/ep10_c036.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c036.source.png",
+      "source_cut_ids": [
+        "ep10_c036"
+      ],
+      "source_page": "work/ep10/merged/ep10_008.png",
+      "source_page_sha256": "d9bb220f706b94d0bc9387dcccef9e78f4131566e6d459ff052d0889b075062b",
+      "approved_cut_xyxy": [
+        0,
+        21845,
+        2000,
+        23308
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 이름의 뜻을 말한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c036/lines/1",
+        "beat": "ep10_c036",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "고대 시하나어로 빛과 축복을 의미하죠.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c036/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        1463
+      ],
+      "input_crop_xyxy": [
+        0,
+        21845,
+        2000,
+        23308
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1463
+      ],
+      "input_file_sha256": "0a2065651bc75ee309a273488a2a0555097fe672a6bb144623d752ece99243ce",
+      "source_region_pixel_sha256": "0a812f7a584eae73ff493a5754c1fdc6d8937b45af243d5c24d806bbc66012b2",
+      "input_pixel_sha256": "0a812f7a584eae73ff493a5754c1fdc6d8937b45af243d5c24d806bbc66012b2",
+      "dimensions": [
+        2000,
+        1463
+      ],
+      "mode": "RGB",
+      "bytes": 509016,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c037",
+      "candidate_filename": "assets/ep10/gen/ep10_c037.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c037.source.png",
+      "source_cut_ids": [
+        "ep10_c037"
+      ],
+      "source_page": "work/ep10/merged/ep10_008.png",
+      "source_page_sha256": "d9bb220f706b94d0bc9387dcccef9e78f4131566e6d459ff052d0889b075062b",
+      "approved_cut_xyxy": [
+        0,
+        24591,
+        2000,
+        28462
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕의 시선과 손이 이어지고 내면 문장이 붙는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c037/lines/1",
+        "beat": "ep10_c037",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕속마음",
+        "text": "이렇게 보고만 있어도 알아차리고 만다.",
+        "perspective": "audience",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c037/lines/1"
+      ],
+      "perspectives": [
+        "audience"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        3871
+      ],
+      "input_crop_xyxy": [
+        0,
+        24591,
+        2000,
+        28462
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3871
+      ],
+      "input_file_sha256": "a925fa4488e1fd38929f699112e0383711b820768322567a13d51838d52e2970",
+      "source_region_pixel_sha256": "d108d0eab1739567e4fb34d5e595ea4438ffb78f474d584adfe6c839611f4622",
+      "input_pixel_sha256": "d108d0eab1739567e4fb34d5e595ea4438ffb78f474d584adfe6c839611f4622",
+      "dimensions": [
+        2000,
+        3871
+      ],
+      "mode": "RGB",
+      "bytes": 1925532,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c038",
+      "candidate_filename": "assets/ep10/gen/ep10_c038.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c038.source.png",
+      "source_cut_ids": [
+        "ep10_c038"
+      ],
+      "source_page": "work/ep10/merged/ep10_009.png",
+      "source_page_sha256": "5fc0b217de5fa6e49e87e7ee532e2bf82aca7a121a584b8c45cb64499672a99c",
+      "approved_cut_xyxy": [
+        0,
+        665,
+        2000,
+        5783
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 말을 꺼낸다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c038/lines/1",
+        "beat": "ep10_c038",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "너…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c038/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        5118
+      ],
+      "input_crop_xyxy": [
+        0,
+        665,
+        2000,
+        5783
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5118
+      ],
+      "input_file_sha256": "1287ce69b0f5b43e23fe236d58df780873dd05b54d431aa7737f0094b1fdc920",
+      "source_region_pixel_sha256": "a36a156d2cd06e4437abeb965d134a6e2b9b2cfe7f0880563095ba1f2f0e946f",
+      "input_pixel_sha256": "a36a156d2cd06e4437abeb965d134a6e2b9b2cfe7f0880563095ba1f2f0e946f",
+      "dimensions": [
+        2000,
+        5118
+      ],
+      "mode": "RGB",
+      "bytes": 3367837,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c039",
+      "candidate_filename": "assets/ep10/gen/ep10_c039.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c039.source.png",
+      "source_cut_ids": [
+        "ep10_c039"
+      ],
+      "source_page": "work/ep10/merged/ep10_009.png",
+      "source_page_sha256": "5fc0b217de5fa6e49e87e7ee532e2bf82aca7a121a584b8c45cb64499672a99c",
+      "approved_cut_xyxy": [
+        0,
+        6723,
+        2000,
+        15238
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 아시나가 사랑받고 자랐다고 말한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c039/lines/1",
+        "beat": "ep10_c039",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "사랑받고 자랐군.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c039/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        8515
+      ],
+      "input_crop_xyxy": [
+        0,
+        6723,
+        2000,
+        15238
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        8515
+      ],
+      "input_file_sha256": "d7c4c698abca122479275c7cf5abf4f8965edab1a90ca5665f24f1a30cf8c60e",
+      "source_region_pixel_sha256": "9b1675cac3a9b6c1c1e99c56a4261efcdcee0905941c8834e5cfeb3d52e584c1",
+      "input_pixel_sha256": "9b1675cac3a9b6c1c1e99c56a4261efcdcee0905941c8834e5cfeb3d52e584c1",
+      "dimensions": [
+        2000,
+        8515
+      ],
+      "mode": "RGB",
+      "bytes": 9151366,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c040",
+      "candidate_filename": "assets/ep10/gen/ep10_c040.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c040.source.png",
+      "source_cut_ids": [
+        "ep10_c040"
+      ],
+      "source_page": "work/ep10/merged/ep10_009.png",
+      "source_page_sha256": "5fc0b217de5fa6e49e87e7ee532e2bf82aca7a121a584b8c45cb64499672a99c",
+      "approved_cut_xyxy": [
+        0,
+        15763,
+        2000,
+        19697
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕의 붉은 눈과 옆얼굴을 가깝게 보여 준다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c040/lines/1",
+        "beat": "ep10_c040",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c040/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        3934
+      ],
+      "input_crop_xyxy": [
+        0,
+        15763,
+        2000,
+        19697
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3934
+      ],
+      "input_file_sha256": "46e60150aac5c344bb8f2ae93720df1148b82318718b149f36579160a61043d5",
+      "source_region_pixel_sha256": "5d0a4bf4a9ccfeca7a1d011c5b5cc3701240f506449c98360b59051d5db207df",
+      "input_pixel_sha256": "5d0a4bf4a9ccfeca7a1d011c5b5cc3701240f506449c98360b59051d5db207df",
+      "dimensions": [
+        2000,
+        3934
+      ],
+      "mode": "RGB",
+      "bytes": 3112841,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c041",
+      "candidate_filename": "assets/ep10/gen/ep10_c041.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c041.source.png",
+      "source_cut_ids": [
+        "ep10_c041"
+      ],
+      "source_page": "work/ep10/merged/ep10_009.png",
+      "source_page_sha256": "5fc0b217de5fa6e49e87e7ee532e2bf82aca7a121a584b8c45cb64499672a99c",
+      "approved_cut_xyxy": [
+        0,
+        22619,
+        2000,
+        25915
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "침상 끝에 앉은 아시나와 서서 머리 부근에 손을 대는 왕을 함께 보여 준다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c041/lines/1",
+        "beat": "ep10_c041",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c041/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        3296
+      ],
+      "input_crop_xyxy": [
+        0,
+        22619,
+        2000,
+        25915
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3296
+      ],
+      "input_file_sha256": "f1b04b9c58d62dacc2420cede88c216aff0c6fa5f060848264fe82e4233a2bb8",
+      "source_region_pixel_sha256": "2d98979723daea89e4a8ba718856c55a544bab74311c70a9f7ebd8fd5c898444",
+      "input_pixel_sha256": "2d98979723daea89e4a8ba718856c55a544bab74311c70a9f7ebd8fd5c898444",
+      "dimensions": [
+        2000,
+        3296
+      ],
+      "mode": "RGB",
+      "bytes": 2457505,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c042",
+      "candidate_filename": "assets/ep10/gen/ep10_c042.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c042.source.png",
+      "source_cut_ids": [
+        "ep10_c042"
+      ],
+      "source_page": "work/ep10/merged/ep10_010.png",
+      "source_page_sha256": "922ce2be0a0f9eaba139955ab152412d2493ea2fc211e3c6f19b94cec22e2065",
+      "approved_cut_xyxy": [
+        0,
+        443,
+        2000,
+        2110
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 더 궁금해졌다고 말한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c042/lines/1",
+        "beat": "ep10_c042",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "그래서 더 궁금해지는군.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c042/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        1667
+      ],
+      "input_crop_xyxy": [
+        0,
+        443,
+        2000,
+        2110
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1667
+      ],
+      "input_file_sha256": "5b16fd59e2dea55d99c0afa1037499270d4fe996a987a69becdb7a5416c718b6",
+      "source_region_pixel_sha256": "63d6893770eb021647a785bd7c7fd495c4482fec9246bebc72711151f4fa0bcb",
+      "input_pixel_sha256": "63d6893770eb021647a785bd7c7fd495c4482fec9246bebc72711151f4fa0bcb",
+      "dimensions": [
+        2000,
+        1667
+      ],
+      "mode": "RGB",
+      "bytes": 191242,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c043",
+      "candidate_filename": "assets/ep10/gen/ep10_c043.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c043.source.png",
+      "source_cut_ids": [
+        "ep10_c043"
+      ],
+      "source_page": "work/ep10/merged/ep10_010.png",
+      "source_page_sha256": "922ce2be0a0f9eaba139955ab152412d2493ea2fc211e3c6f19b94cec22e2065",
+      "approved_cut_xyxy": [
+        0,
+        2166,
+        2000,
+        7254
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 사랑받고 자란 아시나가 집을 떠나 고생하는 이유를 묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c043/lines/1",
+        "beat": "ep10_c043",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "예쁨 받고 자란 여자가 왜 집을 내팽겨치고 고생하며 다니는 건지.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c043/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "작명 이야기까지 밝힌 원작 경로; 이름만 확인한 경로는 travel_question을 거쳐 별도 진행",
+      "relative_panel_y_range": [
+        0,
+        5088
+      ],
+      "input_crop_xyxy": [
+        0,
+        2166,
+        2000,
+        7254
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5088
+      ],
+      "input_file_sha256": "e158ccd51ee5164981e017b0f6de9be797b2d252bf759d8c70f7f8799d4a2b45",
+      "source_region_pixel_sha256": "5fa7c3b459e3f0a8632354f163abf46a6f4936ec87d20248fb71a92f0a8bf88e",
+      "input_pixel_sha256": "5fa7c3b459e3f0a8632354f163abf46a6f4936ec87d20248fb71a92f0a8bf88e",
+      "dimensions": [
+        2000,
+        5088
+      ],
+      "mode": "RGB",
+      "bytes": 3277457,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c044",
+      "candidate_filename": "assets/ep10/gen/ep10_c044.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c044.source.png",
+      "source_cut_ids": [
+        "ep10_c044"
+      ],
+      "source_page": "work/ep10/merged/ep10_010.png",
+      "source_page_sha256": "922ce2be0a0f9eaba139955ab152412d2493ea2fc211e3c6f19b94cec22e2065",
+      "approved_cut_xyxy": [
+        0,
+        8633,
+        2000,
+        14325
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 왕은 왜 집에만 있느냐고 되묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c044/lines/1",
+        "beat": "ep10_c044",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "그럼 그쪽은 왜 집에만 박혀있는데요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c044/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5692
+      ],
+      "input_crop_xyxy": [
+        0,
+        8633,
+        2000,
+        14325
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5692
+      ],
+      "input_file_sha256": "c465e47d773e28dac28061be1ac6e5e65f89e1d0e08bfbdc4400713526e94285",
+      "source_region_pixel_sha256": "bfc6957c48cd135ffa69d609911fbf3c51e2b1c31f7557f30922738356df6b99",
+      "input_pixel_sha256": "bfc6957c48cd135ffa69d609911fbf3c51e2b1c31f7557f30922738356df6b99",
+      "dimensions": [
+        2000,
+        5692
+      ],
+      "mode": "RGB",
+      "bytes": 5245296,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c045_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c045_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c045_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c045"
+      ],
+      "source_page": "work/ep10/merged/ep10_010.png",
+      "source_page_sha256": "922ce2be0a0f9eaba139955ab152412d2493ea2fc211e3c6f19b94cec22e2065",
+      "approved_cut_xyxy": [
+        0,
+        15332,
+        2000,
+        22394
+      ],
+      "panel_order": 1,
+      "panel_count": 2,
+      "panel_selection": "상단 그쪽이라 반문하는 왕 얼굴 확대",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c045/lines/1",
+        "beat": "ep10_c045",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "그쪽?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c045/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3700
+      ],
+      "input_crop_xyxy": [
+        0,
+        15332,
+        2000,
+        19032
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3700
+      ],
+      "input_file_sha256": "a31f96f7a015fcf3d8b741a4de5fb9ee49bc01c91d8190345701c3435b206e6e",
+      "source_region_pixel_sha256": "6b8f9b76ca185d60c6fa8d78ea40c0cf254df91e331b55a984d9ec22205e40b6",
+      "input_pixel_sha256": "6b8f9b76ca185d60c6fa8d78ea40c0cf254df91e331b55a984d9ec22205e40b6",
+      "dimensions": [
+        2000,
+        3700
+      ],
+      "mode": "RGB",
+      "bytes": 3043578,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c045_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c045_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c045_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c045"
+      ],
+      "source_page": "work/ep10/merged/ep10_010.png",
+      "source_page_sha256": "922ce2be0a0f9eaba139955ab152412d2493ea2fc211e3c6f19b94cec22e2065",
+      "approved_cut_xyxy": [
+        0,
+        15332,
+        2000,
+        22394
+      ],
+      "panel_order": 2,
+      "panel_count": 2,
+      "panel_selection": "하단 움찔하는 아시나 얼굴 확대",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c045/lines/2",
+        "beat": "ep10_c045",
+        "line_index_1based": 2,
+        "speaker": "ep10_아시나속마음",
+        "text": "아차, 왕한테 너무 막말한 건가.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c045/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        3700,
+        7062
+      ],
+      "input_crop_xyxy": [
+        0,
+        19032,
+        2000,
+        22394
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3362
+      ],
+      "input_file_sha256": "aa392a0a4144dd2cd2c1483eb116c352735855fe89fea0896b1cfc1ee79bce9d",
+      "source_region_pixel_sha256": "8679ba7ccec9e6cd4ff4612711e98519bb43372a2a06b620652a4f37d92bf8fb",
+      "input_pixel_sha256": "8679ba7ccec9e6cd4ff4612711e98519bb43372a2a06b620652a4f37d92bf8fb",
+      "dimensions": [
+        2000,
+        3362
+      ],
+      "mode": "RGB",
+      "bytes": 3219207,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c046",
+      "candidate_filename": "assets/ep10/gen/ep10_c046.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c046.source.png",
+      "source_cut_ids": [
+        "ep10_c046"
+      ],
+      "source_page": "work/ep10/merged/ep10_010.png",
+      "source_page_sha256": "922ce2be0a0f9eaba139955ab152412d2493ea2fc211e3c6f19b94cec22e2065",
+      "approved_cut_xyxy": [
+        0,
+        23723,
+        2000,
+        27505
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 다른 호칭들을 제안하고 왕이 거절한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c046/lines/1",
+        "beat": "ep10_c046",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "그, 그럼 왕님? 라 쿤이시여? 그렇게 부르면 될까요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c046/lines/1",
+        "ep10_c046/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3782
+      ],
+      "input_crop_xyxy": [
+        0,
+        23723,
+        2000,
+        27505
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3782
+      ],
+      "input_file_sha256": "ff3e9078e18054162de5c254b6c60996fee69b159d461855429185dd03aa6af6",
+      "source_region_pixel_sha256": "2548af457492a375b9ca7f0a9a30eb7874d69bf061296d92ceb2f8ba3ed68f89",
+      "input_pixel_sha256": "2548af457492a375b9ca7f0a9a30eb7874d69bf061296d92ceb2f8ba3ed68f89",
+      "dimensions": [
+        2000,
+        3782
+      ],
+      "mode": "RGB",
+      "bytes": 1794503,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c047",
+      "candidate_filename": "assets/ep10/gen/ep10_c047.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c047.source.png",
+      "source_cut_ids": [
+        "ep10_c047"
+      ],
+      "source_page": "work/ep10/merged/ep10_011.png",
+      "source_page_sha256": "ee5547b41f9be76c3ea3d7edbcc5d4acd38c6ec09380bc401814f064afdcdc0d",
+      "approved_cut_xyxy": [
+        0,
+        1390,
+        2000,
+        5298
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 시하드시여라는 호칭의 뜻을 묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c047/lines/1",
+        "beat": "ep10_c047",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "그럼… 시하드시여? 이건 무슨 뜻인가요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c047/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3908
+      ],
+      "input_crop_xyxy": [
+        0,
+        1390,
+        2000,
+        5298
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3908
+      ],
+      "input_file_sha256": "c1361e29c3087f885161d7f49d8bde1515165dd641d02aeee25b463102825838",
+      "source_region_pixel_sha256": "7575b5078d22dd8cce7910241f289b4aca90c5843cf1b875840b2f3e5f5c1376",
+      "input_pixel_sha256": "7575b5078d22dd8cce7910241f289b4aca90c5843cf1b875840b2f3e5f5c1376",
+      "dimensions": [
+        2000,
+        3908
+      ],
+      "mode": "RGB",
+      "bytes": 4139860,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c048",
+      "candidate_filename": "assets/ep10/gen/ep10_c048.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c048.source.png",
+      "source_cut_ids": [
+        "ep10_c048"
+      ],
+      "source_page": "work/ep10/merged/ep10_011.png",
+      "source_page_sha256": "ee5547b41f9be76c3ea3d7edbcc5d4acd38c6ec09380bc401814f064afdcdc0d",
+      "approved_cut_xyxy": [
+        0,
+        5554,
+        2000,
+        9383
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "나시르를 떠올리는 삽입 모습과 질문이 이어진다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c048/lines/1",
+        "beat": "ep10_c048",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "나시르도 그렇게 부르던데.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c048/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3829
+      ],
+      "input_crop_xyxy": [
+        0,
+        5554,
+        2000,
+        9383
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3829
+      ],
+      "input_file_sha256": "e6f4e5eb6dd3d7d98df52ea61afc3f3018ef538e3d1e4e66f9af576208a5c426",
+      "source_region_pixel_sha256": "956867b8beb6e06bf9bc743d009bd561ab0b3636405b14abe7e00d9a7c497aef",
+      "input_pixel_sha256": "956867b8beb6e06bf9bc743d009bd561ab0b3636405b14abe7e00d9a7c497aef",
+      "dimensions": [
+        2000,
+        3829
+      ],
+      "mode": "RGB",
+      "bytes": 6572861,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c049",
+      "candidate_filename": "assets/ep10/gen/ep10_c049.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c049.source.png",
+      "source_cut_ids": [
+        "ep10_c049"
+      ],
+      "source_page": "work/ep10/merged/ep10_011.png",
+      "source_page_sha256": "ee5547b41f9be76c3ea3d7edbcc5d4acd38c6ec09380bc401814f064afdcdc0d",
+      "approved_cut_xyxy": [
+        0,
+        10178,
+        2000,
+        16617
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 시하드의 뜻을 설명한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c049/lines/1",
+        "beat": "ep10_c049",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "신의 이름이니, '나의 신이시여'라는 의미다.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c049/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        6439
+      ],
+      "input_crop_xyxy": [
+        0,
+        10178,
+        2000,
+        16617
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        6439
+      ],
+      "input_file_sha256": "73660ce1cd9968cb3e09f5dcb0983c716d57d638d87727f8358cdae545d73b98",
+      "source_region_pixel_sha256": "b001d19226e3c55a38e4cb9e0e49ec3ceb7a319f453754e9693430674ca22d02",
+      "input_pixel_sha256": "b001d19226e3c55a38e4cb9e0e49ec3ceb7a319f453754e9693430674ca22d02",
+      "dimensions": [
+        2000,
+        6439
+      ],
+      "mode": "RGB",
+      "bytes": 19861088,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c050",
+      "candidate_filename": "assets/ep10/gen/ep10_c050.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c050.source.png",
+      "source_cut_ids": [
+        "ep10_c050"
+      ],
+      "source_page": "work/ep10/merged/ep10_011.png",
+      "source_page_sha256": "ee5547b41f9be76c3ea3d7edbcc5d4acd38c6ec09380bc401814f064afdcdc0d",
+      "approved_cut_xyxy": [
+        0,
+        18041,
+        2000,
+        21908
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 결국 어떤 호칭을 써야 하는지 묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c050/lines/1",
+        "beat": "ep10_c050",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "그럼 뭐라고 부를까요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c050/lines/1",
+        "ep10_c050/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        3867
+      ],
+      "input_crop_xyxy": [
+        0,
+        18041,
+        2000,
+        21908
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3867
+      ],
+      "input_file_sha256": "01d94fac1bc047d356fa330c908ccc451c2734ef57cfef459aba1c57d27f53e1",
+      "source_region_pixel_sha256": "cf7662f4f434adadc8e119970adf2a267cefe1894110d5d1efabcb60b8f2000f",
+      "input_pixel_sha256": "cf7662f4f434adadc8e119970adf2a267cefe1894110d5d1efabcb60b8f2000f",
+      "dimensions": [
+        2000,
+        3867
+      ],
+      "mode": "RGB",
+      "bytes": 3920397,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c051",
+      "candidate_filename": "assets/ep10/gen/ep10_c051.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c051.source.png",
+      "source_cut_ids": [
+        "ep10_c051"
+      ],
+      "source_page": "work/ep10/merged/ep10_012.png",
+      "source_page_sha256": "12434bda283939c42563ab849b1ebc2ade541760b0c595a2b911e830a201b701",
+      "approved_cut_xyxy": [
+        0,
+        648,
+        2000,
+        5064
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 이름·칭호를 속으로 나누어 생각한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c051/lines/1",
+        "beat": "ep10_c051",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "시하드 젠 베히다트.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c051/lines/1",
+        "ep10_c051/lines/2",
+        "ep10_c051/lines/3",
+        "ep10_c051/lines/4"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        4416
+      ],
+      "input_crop_xyxy": [
+        0,
+        648,
+        2000,
+        5064
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4416
+      ],
+      "input_file_sha256": "8934deedd53be077a0957192a32ec40e495f9649bc5c768532ce41cbf160fcf9",
+      "source_region_pixel_sha256": "ae0e49af994ccc3462e5f1c3989c8ab4b1e86beb6f9b98f6efb002674958bcf7",
+      "input_pixel_sha256": "ae0e49af994ccc3462e5f1c3989c8ab4b1e86beb6f9b98f6efb002674958bcf7",
+      "dimensions": [
+        2000,
+        4416
+      ],
+      "mode": "RGB",
+      "bytes": 4163345,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c052_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c052_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c052_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c052"
+      ],
+      "source_page": "work/ep10/merged/ep10_012.png",
+      "source_page_sha256": "12434bda283939c42563ab849b1ebc2ade541760b0c595a2b911e830a201b701",
+      "approved_cut_xyxy": [
+        0,
+        7132,
+        2000,
+        17891
+      ],
+      "panel_order": 1,
+      "panel_count": 2,
+      "panel_selection": "상단 베히 중얼거림의 꽃·여백; 인물 없음",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_title_source/lines/1",
+        "beat": "ep10_title_source",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "베히…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_title_source/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "ep10_title_source의 호칭 제안 줄에서만 공개; 호칭 선택 메뉴에서는 c051 유지",
+      "relative_panel_y_range": [
+        0,
+        2100
+      ],
+      "input_crop_xyxy": [
+        0,
+        7132,
+        2000,
+        9232
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        2100
+      ],
+      "input_file_sha256": "e1bad7601996d6e0a361d5e9ee96c6fb3f5c84251b7ef77f3f7a08873f4aadb7",
+      "source_region_pixel_sha256": "607e5f786675de0299cf118d8342904ddb76c9d7221246011918f4b12a912de8",
+      "input_pixel_sha256": "607e5f786675de0299cf118d8342904ddb76c9d7221246011918f4b12a912de8",
+      "dimensions": [
+        2000,
+        2100
+      ],
+      "mode": "RGB",
+      "bytes": 512406,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c052_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c052_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c052_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c052"
+      ],
+      "source_page": "work/ep10/merged/ep10_012.png",
+      "source_page_sha256": "12434bda283939c42563ab849b1ebc2ade541760b0c595a2b911e830a201b701",
+      "approved_cut_xyxy": [
+        0,
+        7132,
+        2000,
+        17891
+      ],
+      "panel_order": 2,
+      "panel_count": 2,
+      "panel_selection": "중단 아시나의 호칭 제안 뒤 하단 왕 입가; 두 원작 패널을 이 순서로 유지",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_title_source/lines/2",
+        "beat": "ep10_title_source",
+        "line_index_1based": 2,
+        "speaker": "ep10_아시나",
+        "text": "…베히님. 그렇게 부르면 되나요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_title_source/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "ep10_title_source의 호칭 제안 줄에서만 공개; 호칭 선택 메뉴에서는 c051 유지",
+      "relative_panel_y_range": [
+        2100,
+        10759
+      ],
+      "input_crop_xyxy": [
+        0,
+        9232,
+        2000,
+        17891
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        8659
+      ],
+      "input_file_sha256": "024efb2929d346ecd64086386c5678cd639eb32598937be814c89d580a97dd41",
+      "source_region_pixel_sha256": "5ab2a18cb40f7184b5fc33b5211bb15693cd6c7eea6f2ca087506f3d0283b839",
+      "input_pixel_sha256": "5ab2a18cb40f7184b5fc33b5211bb15693cd6c7eea6f2ca087506f3d0283b839",
+      "dimensions": [
+        2000,
+        8659
+      ],
+      "mode": "RGB",
+      "bytes": 6110652,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c053",
+      "candidate_filename": "assets/ep10/gen/ep10_c053.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c053.source.png",
+      "source_cut_ids": [
+        "ep10_c053"
+      ],
+      "source_page": "work/ep10/merged/ep10_012.png",
+      "source_page_sha256": "12434bda283939c42563ab849b1ebc2ade541760b0c595a2b911e830a201b701",
+      "approved_cut_xyxy": [
+        0,
+        18210,
+        2000,
+        24327
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "꽃을 곁들인 연출 속에서 왕이 웃으며 호칭을 받아들인다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c053/lines/1",
+        "beat": "ep10_c053",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "듣기 좋군.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c053/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "베히님 호칭을 선택한 경로 전용",
+      "relative_panel_y_range": [
+        0,
+        6117
+      ],
+      "input_crop_xyxy": [
+        0,
+        18210,
+        2000,
+        24327
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        6117
+      ],
+      "input_file_sha256": "97104ca27590adbe94963484ac408c20d92792ba6a2932a9ebe1d498d6dd74fc",
+      "source_region_pixel_sha256": "d7f9950f9892c1ed74f1b2b4a3e678aba9a00bb183668a722cad948ceec01486",
+      "input_pixel_sha256": "d7f9950f9892c1ed74f1b2b4a3e678aba9a00bb183668a722cad948ceec01486",
+      "dimensions": [
+        2000,
+        6117
+      ],
+      "mode": "RGB",
+      "bytes": 5857233,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c054",
+      "candidate_filename": "assets/ep10/gen/ep10_c054.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c054.source.png",
+      "source_cut_ids": [
+        "ep10_c054"
+      ],
+      "source_page": "work/ep10/merged/ep10_013.png",
+      "source_page_sha256": "dd266bf88e5755516c2bb540e3776f99aa2db966085461301b2524d883d3af34",
+      "approved_cut_xyxy": [
+        0,
+        870,
+        2000,
+        6538
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕의 웃음을 보고 아시나가 얼굴을 붉힌다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c054/lines/1",
+        "beat": "ep10_c054",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "뭐야, 웃는 모습 처음 보는 것 같아…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c054/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "베히님 호칭을 선택한 경로 전용",
+      "relative_panel_y_range": [
+        0,
+        5668
+      ],
+      "input_crop_xyxy": [
+        0,
+        870,
+        2000,
+        6538
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5668
+      ],
+      "input_file_sha256": "69c47899c00a58a65841e25e58c27627599ca1610952947da3c4f619d0cc396a",
+      "source_region_pixel_sha256": "83b31a90664603ccb84fad2d26b25017c2f9a0ac5f09dde7dfcd34dd91cd4614",
+      "input_pixel_sha256": "83b31a90664603ccb84fad2d26b25017c2f9a0ac5f09dde7dfcd34dd91cd4614",
+      "dimensions": [
+        2000,
+        5668
+      ],
+      "mode": "RGB",
+      "bytes": 3502682,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c055",
+      "candidate_filename": "assets/ep10/gen/ep10_c055.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c055.source.png",
+      "source_cut_ids": [
+        "ep10_c055"
+      ],
+      "source_page": "work/ep10/merged/ep10_013.png",
+      "source_page_sha256": "dd266bf88e5755516c2bb540e3776f99aa2db966085461301b2524d883d3af34",
+      "approved_cut_xyxy": [
+        0,
+        6628,
+        2000,
+        12973
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 관심의 이유를 묻고 왕의 직무를 비꼰다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c055/lines/1",
+        "beat": "ep10_c055",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "근데 왜 이렇게 제게 관심이 많으세요, 베히님?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c055/lines/1",
+        "ep10_c055/lines/2",
+        "ep10_c055/lines/3"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        6345
+      ],
+      "input_crop_xyxy": [
+        0,
+        6628,
+        2000,
+        12973
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        6345
+      ],
+      "input_file_sha256": "bd5a791aa8a510117a2e13a90c8acdd7535dc108a59d587fe8217af16cd90bf4",
+      "source_region_pixel_sha256": "37393f51bd94fc966d33fe4a3270d0a0604a3c45de0b7fd35d9a93d17ec929f4",
+      "input_pixel_sha256": "37393f51bd94fc966d33fe4a3270d0a0604a3c45de0b7fd35d9a93d17ec929f4",
+      "dimensions": [
+        2000,
+        6345
+      ],
+      "mode": "RGB",
+      "bytes": 4605031,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c056_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c056_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c056_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c056"
+      ],
+      "source_page": "work/ep10/merged/ep10_013.png",
+      "source_page_sha256": "dd266bf88e5755516c2bb540e3776f99aa2db966085461301b2524d883d3af34",
+      "approved_cut_xyxy": [
+        0,
+        15391,
+        2000,
+        27489
+      ],
+      "panel_order": 1,
+      "panel_count": 2,
+      "panel_selection": "상단 왕의 가슴 사슬·옷깃·팔; 글쎄 부분",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c056/lines/1",
+        "beat": "ep10_c056",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "글쎄. 반해서?",
+        "perspective": "character",
+        "phase": "줄 앞부분"
+      },
+      "anchor_ids": [
+        "ep10_c056/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        5000
+      ],
+      "input_crop_xyxy": [
+        0,
+        15391,
+        2000,
+        20391
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5000
+      ],
+      "input_file_sha256": "6fcc7505a635c4655ba0257627f557756c5db538d5ebe5900cb2b3918027dd0e",
+      "source_region_pixel_sha256": "ee0c398df44c524cf1e009016807900c2692cd3c28605db30efc2ff3fe71500c",
+      "input_pixel_sha256": "ee0c398df44c524cf1e009016807900c2692cd3c28605db30efc2ff3fe71500c",
+      "dimensions": [
+        2000,
+        5000
+      ],
+      "mode": "RGB",
+      "bytes": 2714517,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c056_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c056_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c056_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c056"
+      ],
+      "source_page": "work/ep10/merged/ep10_013.png",
+      "source_page_sha256": "dd266bf88e5755516c2bb540e3776f99aa2db966085461301b2524d883d3af34",
+      "approved_cut_xyxy": [
+        0,
+        15391,
+        2000,
+        27489
+      ],
+      "panel_order": 2,
+      "panel_count": 2,
+      "panel_selection": "하단 반해서 뒤 놀란 아시나; 눈색과 원래 가림 유지",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c056/lines/1",
+        "beat": "ep10_c056",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "글쎄. 반해서?",
+        "perspective": "character",
+        "phase": "줄 뒷부분 이후"
+      },
+      "anchor_ids": [
+        "ep10_c056/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        5000,
+        12098
+      ],
+      "input_crop_xyxy": [
+        0,
+        20391,
+        2000,
+        27489
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        7098
+      ],
+      "input_file_sha256": "0f73ea6c13506e6191c77b1a241e2aae19f0c908af708591444dd7dca2bb8bb8",
+      "source_region_pixel_sha256": "d99bd4fc2f97b31a35b155e22c448bd86cce4d5debd71caf71f1b190d8a31c9f",
+      "input_pixel_sha256": "d99bd4fc2f97b31a35b155e22c448bd86cce4d5debd71caf71f1b190d8a31c9f",
+      "dimensions": [
+        2000,
+        7098
+      ],
+      "mode": "RGB",
+      "bytes": 8151530,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c057",
+      "candidate_filename": "assets/ep10/gen/ep10_c057.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c057.source.png",
+      "source_cut_ids": [
+        "ep10_c057"
+      ],
+      "source_page": "work/ep10/merged/ep10_014.png",
+      "source_page_sha256": "6c749ab64f57d4106971672ad48b4e2c827523e09f22a395f5de8646a4551803",
+      "approved_cut_xyxy": [
+        0,
+        572,
+        2000,
+        3195
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 그 말을 믿지 못하고 반박한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c057/lines/1",
+        "beat": "ep10_c057",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "그, 그런 마음에도 없는 소리하지 말고…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c057/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        2623
+      ],
+      "input_crop_xyxy": [
+        0,
+        572,
+        2000,
+        3195
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        2623
+      ],
+      "input_file_sha256": "ef3633a9a2e9665d72e5db45b8f800bb0d00ad37033d15c55276f87f14f90c74",
+      "source_region_pixel_sha256": "7adfae19cbf1b328b07062b8735219fe120d4b1b3f66b8eb5ce203296505b667",
+      "input_pixel_sha256": "7adfae19cbf1b328b07062b8735219fe120d4b1b3f66b8eb5ce203296505b667",
+      "dimensions": [
+        2000,
+        2623
+      ],
+      "mode": "RGB",
+      "bytes": 2414205,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c058",
+      "candidate_filename": "assets/ep10/gen/ep10_c058.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c058.source.png",
+      "source_cut_ids": [
+        "ep10_c058"
+      ],
+      "source_page": "work/ep10/merged/ep10_014.png",
+      "source_page_sha256": "6c749ab64f57d4106971672ad48b4e2c827523e09f22a395f5de8646a4551803",
+      "approved_cut_xyxy": [
+        0,
+        4818,
+        2000,
+        9154
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕의 손이 아시나의 손목을 잡는다. '왁' 효과 글자가 있다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c058/lines/1",
+        "beat": "ep10_c058",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c058/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "현재 YAML의 진입 간선과 줄 조건을 그대로 따름",
+      "relative_panel_y_range": [
+        0,
+        4336
+      ],
+      "input_crop_xyxy": [
+        0,
+        4818,
+        2000,
+        9154
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4336
+      ],
+      "input_file_sha256": "97fdec6322d9dea859274a82d393de8194305165b068d7a89776cf959cdad436",
+      "source_region_pixel_sha256": "daa5dd66556ad6b0df2e0b12fe0750f753c3d942f76d0584f2dfb1aaed8aca93",
+      "input_pixel_sha256": "daa5dd66556ad6b0df2e0b12fe0750f753c3d942f76d0584f2dfb1aaed8aca93",
+      "dimensions": [
+        2000,
+        4336
+      ],
+      "mode": "RGB",
+      "bytes": 2137702,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c059",
+      "candidate_filename": "assets/ep10/gen/ep10_c059.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c059.source.png",
+      "source_cut_ids": [
+        "ep10_c059"
+      ],
+      "source_page": "work/ep10/merged/ep10_014.png",
+      "source_page_sha256": "6c749ab64f57d4106971672ad48b4e2c827523e09f22a395f5de8646a4551803",
+      "approved_cut_xyxy": [
+        0,
+        10987,
+        2000,
+        20082
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "손목을 잡은 왕이 가까이 다가오며 묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c059/lines/1",
+        "beat": "ep10_c059",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "왜… 마음이 없다고 생각하지?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c059/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        9095
+      ],
+      "input_crop_xyxy": [
+        0,
+        10987,
+        2000,
+        20082
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        9095
+      ],
+      "input_file_sha256": "d8587694035369faf9b6a6e5eca2adf99ef995c31ec37d7ee1a2522dfc54715f",
+      "source_region_pixel_sha256": "7a8ce0c3c89472c7815930381913de614c944531b4eab91ebc2a6d20f021c377",
+      "input_pixel_sha256": "7a8ce0c3c89472c7815930381913de614c944531b4eab91ebc2a6d20f021c377",
+      "dimensions": [
+        2000,
+        9095
+      ],
+      "mode": "RGB",
+      "bytes": 13095705,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c060",
+      "candidate_filename": "assets/ep10/gen/ep10_c060.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c060.source.png",
+      "source_cut_ids": [
+        "ep10_c060"
+      ],
+      "source_page": "work/ep10/merged/ep10_014.png",
+      "source_page_sha256": "6c749ab64f57d4106971672ad48b4e2c827523e09f22a395f5de8646a4551803",
+      "approved_cut_xyxy": [
+        0,
+        20289,
+        2000,
+        27379
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 얼굴을 가까이 가져가며 아시나를 붙잡는 동작.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c060/lines/1",
+        "beat": "ep10_c060",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c060/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        7090
+      ],
+      "input_crop_xyxy": [
+        0,
+        20289,
+        2000,
+        27379
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        7090
+      ],
+      "input_file_sha256": "739bf706b9dc97e3ee523ed080d27fbf505aec0ada53bde3bdce1e11f42b1f99",
+      "source_region_pixel_sha256": "d1994deeec6c4be3b3a2162fd63d38e6769df39b3e106eaf0e7b235ec9b2948f",
+      "input_pixel_sha256": "d1994deeec6c4be3b3a2162fd63d38e6769df39b3e106eaf0e7b235ec9b2948f",
+      "dimensions": [
+        2000,
+        7090
+      ],
+      "mode": "RGB",
+      "bytes": 5559088,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c061",
+      "candidate_filename": "assets/ep10/gen/ep10_c061.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c061.source.png",
+      "source_cut_ids": [
+        "ep10_c061"
+      ],
+      "source_page": "work/ep10/merged/ep10_015.png",
+      "source_page_sha256": "d7c73fdec8f6a61130b6ddb9aac05ad9d19efe5e415300400b858e353b69d709",
+      "approved_cut_xyxy": [
+        0,
+        737,
+        2000,
+        2107
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "분홍빛 장식과 여백으로 입맞춤 직전을 잇는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c061/lines/1",
+        "beat": "ep10_c061",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c061/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        1370
+      ],
+      "input_crop_xyxy": [
+        0,
+        737,
+        2000,
+        2107
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1370
+      ],
+      "input_file_sha256": "3eec3b150739d2ce8e151d3ab913d027b2997c3e57ef33790457d9c67a106bca",
+      "source_region_pixel_sha256": "a65c806f395719a3b8cd07c2c1031caff92dd379378c7f8cc2b04d33eb764b8a",
+      "input_pixel_sha256": "a65c806f395719a3b8cd07c2c1031caff92dd379378c7f8cc2b04d33eb764b8a",
+      "dimensions": [
+        2000,
+        1370
+      ],
+      "mode": "RGB",
+      "bytes": 477944,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c062",
+      "candidate_filename": "assets/ep10/gen/ep10_c062.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c062.source.png",
+      "source_cut_ids": [
+        "ep10_c062"
+      ],
+      "source_page": "work/ep10/merged/ep10_015.png",
+      "source_page_sha256": "d7c73fdec8f6a61130b6ddb9aac05ad9d19efe5e415300400b858e353b69d709",
+      "approved_cut_xyxy": [
+        0,
+        3338,
+        2000,
+        7618
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 아시나에게 입을 맞춘다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c062/lines/1",
+        "beat": "ep10_c062",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c062/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        4280
+      ],
+      "input_crop_xyxy": [
+        0,
+        3338,
+        2000,
+        7618
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4280
+      ],
+      "input_file_sha256": "ee31f27c544b494fedcfbb6dbdf8ded55bfb1e01e726bce64861ab33552ac0d8",
+      "source_region_pixel_sha256": "775adb0fa3890fb2fbf69b8693ce5efa1da4a36b35551ff2df0c85fc96e82093",
+      "input_pixel_sha256": "775adb0fa3890fb2fbf69b8693ce5efa1da4a36b35551ff2df0c85fc96e82093",
+      "dimensions": [
+        2000,
+        4280
+      ],
+      "mode": "RGB",
+      "bytes": 5648845,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c063",
+      "candidate_filename": "assets/ep10/gen/ep10_c063.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c063.source.png",
+      "source_cut_ids": [
+        "ep10_c063"
+      ],
+      "source_page": "work/ep10/merged/ep10_015.png",
+      "source_page_sha256": "d7c73fdec8f6a61130b6ddb9aac05ad9d19efe5e415300400b858e353b69d709",
+      "approved_cut_xyxy": [
+        0,
+        9993,
+        2000,
+        12944
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "접촉 속 아시나의 막힌 소리가 나온다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c063/lines/1",
+        "beat": "ep10_c063",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "읏",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c063/lines/1",
+        "ep10_c063/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        2951
+      ],
+      "input_crop_xyxy": [
+        0,
+        9993,
+        2000,
+        12944
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        2951
+      ],
+      "input_file_sha256": "668e2f619dca73c556eb9b6ad4b6fe74220389d1c3a72dfb2a5b0b041b168140",
+      "source_region_pixel_sha256": "1d885dff1dc70e794a8b8cd8c0820be23fb069c53c6887d26c032f65fafcf266",
+      "input_pixel_sha256": "1d885dff1dc70e794a8b8cd8c0820be23fb069c53c6887d26c032f65fafcf266",
+      "dimensions": [
+        2000,
+        2951
+      ],
+      "mode": "RGB",
+      "bytes": 1603653,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c064",
+      "candidate_filename": "assets/ep10/gen/ep10_c064.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c064.source.png",
+      "source_cut_ids": [
+        "ep10_c064"
+      ],
+      "source_page": "work/ep10/merged/ep10_015.png",
+      "source_page_sha256": "d7c73fdec8f6a61130b6ddb9aac05ad9d19efe5e415300400b858e353b69d709",
+      "approved_cut_xyxy": [
+        0,
+        13661,
+        2000,
+        20728
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 왕의 갑작스러운 행동에 놀란다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c064/lines/1",
+        "beat": "ep10_c064",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "갑자기 무슨…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c064/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        7067
+      ],
+      "input_crop_xyxy": [
+        0,
+        13661,
+        2000,
+        20728
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        7067
+      ],
+      "input_file_sha256": "57be19f1e3bf2e836546f345cd19d14c8ca4b99877204617ebf3e899127afbe1",
+      "source_region_pixel_sha256": "49c83b0f435317ee8f2376efdba7f881302ff9008ec23f3b5408358dfb691d96",
+      "input_pixel_sha256": "49c83b0f435317ee8f2376efdba7f881302ff9008ec23f3b5408358dfb691d96",
+      "dimensions": [
+        2000,
+        7067
+      ],
+      "mode": "RGB",
+      "bytes": 5095261,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c065",
+      "candidate_filename": "assets/ep10/gen/ep10_c065.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c065.source.png",
+      "source_cut_ids": [
+        "ep10_c065"
+      ],
+      "source_page": "work/ep10/merged/ep10_015.png",
+      "source_page_sha256": "d7c73fdec8f6a61130b6ddb9aac05ad9d19efe5e415300400b858e353b69d709",
+      "approved_cut_xyxy": [
+        0,
+        21210,
+        2000,
+        25942
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "입맞춤이 이어지고 접촉 효과음이 붙는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c065/lines/1",
+        "beat": "ep10_c065",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c065/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        4732
+      ],
+      "input_crop_xyxy": [
+        0,
+        21210,
+        2000,
+        25942
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4732
+      ],
+      "input_file_sha256": "68bcaff972d0c0e76ebe46e5ea56503c172ec2898db5b9bfa16ede578a0c803c",
+      "source_region_pixel_sha256": "a46b5b6b8a49ca0da5213e99db2d7f4a8be664ed8cf5a0f3eb93fcb787758ac9",
+      "input_pixel_sha256": "a46b5b6b8a49ca0da5213e99db2d7f4a8be664ed8cf5a0f3eb93fcb787758ac9",
+      "dimensions": [
+        2000,
+        4732
+      ],
+      "mode": "RGB",
+      "bytes": 3736890,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c066",
+      "candidate_filename": "assets/ep10/gen/ep10_c066.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c066.source.png",
+      "source_cut_ids": [
+        "ep10_c066"
+      ],
+      "source_page": "work/ep10/merged/ep10_016.png",
+      "source_page_sha256": "6396b89b1508f61ad1baa57830cb12bd299d2ff468e0dc0a7b91ddac2bd98b7c",
+      "approved_cut_xyxy": [
+        0,
+        110,
+        2000,
+        3964
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 위험하다고 느끼고 벗어나야 한다고 생각한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c066/lines/1",
+        "beat": "ep10_c066",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "읏…!",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c066/lines/1",
+        "ep10_c066/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        3854
+      ],
+      "input_crop_xyxy": [
+        0,
+        110,
+        2000,
+        3964
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3854
+      ],
+      "input_file_sha256": "65c70da5bb95191767705be6511969ffcc3fa91b9c97d041cac5c42d1c25c502",
+      "source_region_pixel_sha256": "92973b98d747d2e5c3b7de083dcbedf3e51ca94a14e7e1b7b1d7899b9f0744ae",
+      "input_pixel_sha256": "92973b98d747d2e5c3b7de083dcbedf3e51ca94a14e7e1b7b1d7899b9f0744ae",
+      "dimensions": [
+        2000,
+        3854
+      ],
+      "mode": "RGB",
+      "bytes": 2144814,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c067",
+      "candidate_filename": "assets/ep10/gen/ep10_c067.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c067.source.png",
+      "source_cut_ids": [
+        "ep10_c067"
+      ],
+      "source_page": "work/ep10/merged/ep10_016.png",
+      "source_page_sha256": "6396b89b1508f61ad1baa57830cb12bd299d2ff468e0dc0a7b91ddac2bd98b7c",
+      "approved_cut_xyxy": [
+        0,
+        5565,
+        2000,
+        6630
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "급작스러운 움직임의 효과 글자와 여백.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c067/lines/1",
+        "beat": "ep10_c067",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c067/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        1065
+      ],
+      "input_crop_xyxy": [
+        0,
+        5565,
+        2000,
+        6630
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1065
+      ],
+      "input_file_sha256": "15bb87b2385c4f57e4a304cc274fbc1fc71928d966d665b01b85931fb59ddebe",
+      "source_region_pixel_sha256": "404c71c449274a9987f408a500c10e1e7ed25cfa0ff6d89f14d81f9fb215ae7c",
+      "input_pixel_sha256": "404c71c449274a9987f408a500c10e1e7ed25cfa0ff6d89f14d81f9fb215ae7c",
+      "dimensions": [
+        2000,
+        1065
+      ],
+      "mode": "RGB",
+      "bytes": 121782,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c068",
+      "candidate_filename": "assets/ep10/gen/ep10_c068.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c068.source.png",
+      "source_cut_ids": [
+        "ep10_c068"
+      ],
+      "source_page": "work/ep10/merged/ep10_016.png",
+      "source_page_sha256": "6396b89b1508f61ad1baa57830cb12bd299d2ff468e0dc0a7b91ddac2bd98b7c",
+      "approved_cut_xyxy": [
+        0,
+        8375,
+        2000,
+        13282
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "두 사람이 떨어지며 아시나가 숨을 고른다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c068/lines/1",
+        "beat": "ep10_c068",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c068/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        4907
+      ],
+      "input_crop_xyxy": [
+        0,
+        8375,
+        2000,
+        13282
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4907
+      ],
+      "input_file_sha256": "4a543d9a2ea48cfc8a2ef14e4373f10869af96129bbe6fe0ef277b8f9fee78fd",
+      "source_region_pixel_sha256": "4be3b4e0929f17cb9679b85de16276810d321a1a8c2d6f0dcd87316583f8cf4d",
+      "input_pixel_sha256": "4be3b4e0929f17cb9679b85de16276810d321a1a8c2d6f0dcd87316583f8cf4d",
+      "dimensions": [
+        2000,
+        4907
+      ],
+      "mode": "RGB",
+      "bytes": 3963943,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c069",
+      "candidate_filename": "assets/ep10/gen/ep10_c069.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c069.source.png",
+      "source_cut_ids": [
+        "ep10_c069"
+      ],
+      "source_page": "work/ep10/merged/ep10_016.png",
+      "source_page_sha256": "6396b89b1508f61ad1baa57830cb12bd299d2ff468e0dc0a7b91ddac2bd98b7c",
+      "approved_cut_xyxy": [
+        0,
+        13770,
+        2000,
+        18363
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 왕이 먼저 물러났음을 깨닫는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c069/lines/1",
+        "beat": "ep10_c069",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나속마음",
+        "text": "어…? 먼저 물러났어…?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c069/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        4593
+      ],
+      "input_crop_xyxy": [
+        0,
+        13770,
+        2000,
+        18363
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4593
+      ],
+      "input_file_sha256": "bb944f1b492e2bea7c04e6ec5df672a257b7c6c4fb9672dd8162f2865bf58532",
+      "source_region_pixel_sha256": "5f6b6b51827391900fe53a1fb3a8b758c7ad8f43c6e591ca79dccb5c47eaf3e9",
+      "input_pixel_sha256": "5f6b6b51827391900fe53a1fb3a8b758c7ad8f43c6e591ca79dccb5c47eaf3e9",
+      "dimensions": [
+        2000,
+        4593
+      ],
+      "mode": "RGB",
+      "bytes": 2660052,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c070",
+      "candidate_filename": "assets/ep10/gen/ep10_c070.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c070.source.png",
+      "source_cut_ids": [
+        "ep10_c070"
+      ],
+      "source_page": "work/ep10/merged/ep10_016.png",
+      "source_page_sha256": "6396b89b1508f61ad1baa57830cb12bd299d2ff468e0dc0a7b91ddac2bd98b7c",
+      "approved_cut_xyxy": [
+        0,
+        18849,
+        2000,
+        20089
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "말줄임표만 든 풍선과 분홍빛 여백.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c070/lines/1",
+        "beat": "ep10_c070",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "……",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c070/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        1240
+      ],
+      "input_crop_xyxy": [
+        0,
+        18849,
+        2000,
+        20089
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        1240
+      ],
+      "input_file_sha256": "fdee7383064a329bc487cc0a99ebffc63792e4c6df5ff88f84cc701d51f21507",
+      "source_region_pixel_sha256": "99da4b51dba7eee7bf19768c427250c632029dd2d4878d28f690baed062aaa34",
+      "input_pixel_sha256": "99da4b51dba7eee7bf19768c427250c632029dd2d4878d28f690baed062aaa34",
+      "dimensions": [
+        2000,
+        1240
+      ],
+      "mode": "RGB",
+      "bytes": 106678,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c071",
+      "candidate_filename": "assets/ep10/gen/ep10_c071.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c071.source.png",
+      "source_cut_ids": [
+        "ep10_c071"
+      ],
+      "source_page": "work/ep10/merged/ep10_016.png",
+      "source_page_sha256": "6396b89b1508f61ad1baa57830cb12bd299d2ff468e0dc0a7b91ddac2bd98b7c",
+      "approved_cut_xyxy": [
+        0,
+        20467,
+        2000,
+        29064
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 입가를 가리며 스스로를 돌아본다. 별도 독백 상자들이 붙는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c071/lines/1",
+        "beat": "ep10_c071",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕속마음",
+        "text": "순간적으로…",
+        "perspective": "audience",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c071/lines/1",
+        "ep10_c071/lines/2",
+        "ep10_c071/lines/3"
+      ],
+      "perspectives": [
+        "audience"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        8597
+      ],
+      "input_crop_xyxy": [
+        0,
+        20467,
+        2000,
+        29064
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        8597
+      ],
+      "input_file_sha256": "d6b1cad0a254812991669fc2682db46a8ab5a623b544992c0cb4b215da427cfb",
+      "source_region_pixel_sha256": "b484cd9207021b2e807592ef1d023a9b79af1c0ff256e074a92657a29af2009f",
+      "input_pixel_sha256": "b484cd9207021b2e807592ef1d023a9b79af1c0ff256e074a92657a29af2009f",
+      "dimensions": [
+        2000,
+        8597
+      ],
+      "mode": "RGB",
+      "bytes": 3894269,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c072",
+      "candidate_filename": "assets/ep10/gen/ep10_c072.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c072.source.png",
+      "source_cut_ids": [
+        "ep10_c072"
+      ],
+      "source_page": "work/ep10/merged/ep10_017.png",
+      "source_page_sha256": "b32a3527e17b92aba4fa387799eefcc4f431d2cc728ac167a25d9405c5525673",
+      "approved_cut_xyxy": [
+        0,
+        192,
+        2000,
+        6298
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 아시나가 남자를 모른다고 말한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c072/lines/1",
+        "beat": "ep10_c072",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "너… 남자를… 모르는군.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c072/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        6106
+      ],
+      "input_crop_xyxy": [
+        0,
+        192,
+        2000,
+        6298
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        6106
+      ],
+      "input_file_sha256": "a83d080bc6e4cf33b4c78a63f1cbb3c8c6fa4a6c9c65369aae030ecef34109ad",
+      "source_region_pixel_sha256": "870e73d4fed6e3b51ada5ee16fdc6950f6117e908b22d9df40ed2fda44c73fc4",
+      "input_pixel_sha256": "870e73d4fed6e3b51ada5ee16fdc6950f6117e908b22d9df40ed2fda44c73fc4",
+      "dimensions": [
+        2000,
+        6106
+      ],
+      "mode": "RGB",
+      "bytes": 3534853,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c073",
+      "candidate_filename": "assets/ep10/gen/ep10_c073.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c073.source.png",
+      "source_cut_ids": [
+        "ep10_c073"
+      ],
+      "source_page": "work/ep10/merged/ep10_017.png",
+      "source_page_sha256": "b32a3527e17b92aba4fa387799eefcc4f431d2cc728ac167a25d9405c5525673",
+      "approved_cut_xyxy": [
+        0,
+        7713,
+        2000,
+        12585
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 왜 알아야 하냐고 반문한다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c073/lines/1",
+        "beat": "ep10_c073",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "…제가, 그걸 왜 알아야 하는데요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c073/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        4872
+      ],
+      "input_crop_xyxy": [
+        0,
+        7713,
+        2000,
+        12585
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4872
+      ],
+      "input_file_sha256": "347f34c4fcf36c242672ac52c7830d89035a1125f021019e733cddab0d0d211f",
+      "source_region_pixel_sha256": "c3660cba5ddd63a82879b7229b53b8c7c1c9c6ac8e6348bcb3e7a901f469f56f",
+      "input_pixel_sha256": "c3660cba5ddd63a82879b7229b53b8c7c1c9c6ac8e6348bcb3e7a901f469f56f",
+      "dimensions": [
+        2000,
+        4872
+      ],
+      "mode": "RGB",
+      "bytes": 1996562,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c074",
+      "candidate_filename": "assets/ep10/gen/ep10_c074.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c074.source.png",
+      "source_cut_ids": [
+        "ep10_c074"
+      ],
+      "source_page": "work/ep10/merged/ep10_017.png",
+      "source_page_sha256": "b32a3527e17b92aba4fa387799eefcc4f431d2cc728ac167a25d9405c5525673",
+      "approved_cut_xyxy": [
+        0,
+        14167,
+        2000,
+        14915
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕의 대답 앞부분이 여백에 놓인다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c074/lines/1",
+        "beat": "ep10_c074",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "알았다면,",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c074/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        748
+      ],
+      "input_crop_xyxy": [
+        0,
+        14167,
+        2000,
+        14915
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        748
+      ],
+      "input_file_sha256": "2294ed42ed7239f128f48afccf7330b6f8b2998dd5b71075dcf62d1b3b701d08",
+      "source_region_pixel_sha256": "470a0d8aaf5c15c537056863278859adfbabc38be9d8fa1a7ff86ff4e1a11371",
+      "input_pixel_sha256": "470a0d8aaf5c15c537056863278859adfbabc38be9d8fa1a7ff86ff4e1a11371",
+      "dimensions": [
+        2000,
+        748
+      ],
+      "mode": "RGB",
+      "bytes": 105509,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c075",
+      "candidate_filename": "assets/ep10/gen/ep10_c075.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c075.source.png",
+      "source_cut_ids": [
+        "ep10_c075"
+      ],
+      "source_page": "work/ep10/merged/ep10_017.png",
+      "source_page_sha256": "b32a3527e17b92aba4fa387799eefcc4f431d2cc728ac167a25d9405c5525673",
+      "approved_cut_xyxy": [
+        0,
+        15969,
+        2000,
+        19012
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "왕이 멈추지 않았을 것이라 말하며 아시나에게 다시 가까이 있다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c075/lines/1",
+        "beat": "ep10_c075",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "여기서 멈추지 않았을 테니까.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c075/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        3043
+      ],
+      "input_crop_xyxy": [
+        0,
+        15969,
+        2000,
+        19012
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3043
+      ],
+      "input_file_sha256": "db63c27de2c4fb253939628050394e2af71b9628e83f02792105e2725faadc8a",
+      "source_region_pixel_sha256": "c27fb767c45549c55b2eacfc2bc272542d9ccc7bb91bfc430315d36366acb1b6",
+      "input_pixel_sha256": "c27fb767c45549c55b2eacfc2bc272542d9ccc7bb91bfc430315d36366acb1b6",
+      "dimensions": [
+        2000,
+        3043
+      ],
+      "mode": "RGB",
+      "bytes": 2685047,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c076",
+      "candidate_filename": "assets/ep10/gen/ep10_c076.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c076.source.png",
+      "source_cut_ids": [
+        "ep10_c076"
+      ],
+      "source_page": "work/ep10/merged/ep10_017.png",
+      "source_page_sha256": "b32a3527e17b92aba4fa387799eefcc4f431d2cc728ac167a25d9405c5525673",
+      "approved_cut_xyxy": [
+        0,
+        20683,
+        2000,
+        23450
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "얼굴을 붉힌 아시나가 아랫입술을 깨문다. '꾸욱' 효과 글자가 있다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c076/lines/1",
+        "beat": "ep10_c076",
+        "line_index_1based": 1,
+        "speaker": "나레이션",
+        "text": "",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c076/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        2767
+      ],
+      "input_crop_xyxy": [
+        0,
+        20683,
+        2000,
+        23450
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        2767
+      ],
+      "input_file_sha256": "be68235c933c4a1647c366976e19c98803106d79e61a80f809442a4680e4d672",
+      "source_region_pixel_sha256": "2ce5a953e98865968a440af50a007362f61978c5f60bde13af2f9556c87f243f",
+      "input_pixel_sha256": "2ce5a953e98865968a440af50a007362f61978c5f60bde13af2f9556c87f243f",
+      "dimensions": [
+        2000,
+        2767
+      ],
+      "mode": "RGB",
+      "bytes": 933072,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c077",
+      "candidate_filename": "assets/ep10/gen/ep10_c077.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c077.source.png",
+      "source_cut_ids": [
+        "ep10_c077"
+      ],
+      "source_page": "work/ep10/merged/ep10_017.png",
+      "source_page_sha256": "b32a3527e17b92aba4fa387799eefcc4f431d2cc728ac167a25d9405c5525673",
+      "approved_cut_xyxy": [
+        0,
+        23992,
+        2000,
+        29217
+      ],
+      "panel_order": 1,
+      "panel_count": 1,
+      "panel_selection": "아시나가 자신에게 왜 이러느냐고 묻는다.",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c077/lines/1",
+        "beat": "ep10_c077",
+        "line_index_1based": 1,
+        "speaker": "ep10_아시나",
+        "text": "나한테 도대체 왜 이래요?",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c077/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        5225
+      ],
+      "input_crop_xyxy": [
+        0,
+        23992,
+        2000,
+        29217
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5225
+      ],
+      "input_file_sha256": "5d88f5517dab59d610f30a77d909309c00b9d5228466d846785a039942e021db",
+      "source_region_pixel_sha256": "88bc7454f8cacb02740d4cc44ed02bee0f97c47b66e8e52c2282b9b62a5d1c2e",
+      "input_pixel_sha256": "88bc7454f8cacb02740d4cc44ed02bee0f97c47b66e8e52c2282b9b62a5d1c2e",
+      "dimensions": [
+        2000,
+        5225
+      ],
+      "mode": "RGB",
+      "bytes": 6830788,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c078_p01",
+      "candidate_filename": "assets/ep10/gen/ep10_c078_p01.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c078_p01.source.png",
+      "source_cut_ids": [
+        "ep10_c078"
+      ],
+      "source_page": "work/ep10/merged/ep10_018.png",
+      "source_page_sha256": "898f185790878ad1f6685bdc95bdf2e7ea7c7e2f344958f3f0b0da046118794c",
+      "approved_cut_xyxy": [
+        0,
+        467,
+        2000,
+        26493
+      ],
+      "panel_order": 1,
+      "panel_count": 5,
+      "panel_selection": "첫 말풍선의 청백색 여백; 아직 뒤 인물을 보여 주지 않음",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c078/lines/1",
+        "beat": "ep10_c078",
+        "line_index_1based": 1,
+        "speaker": "ep10_왕",
+        "text": "말했잖아, 반했다고.",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c078/lines/1"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        0,
+        5700
+      ],
+      "input_crop_xyxy": [
+        0,
+        467,
+        2000,
+        6167
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        5700
+      ],
+      "input_file_sha256": "7ecddb3d428608537436a5d0ff7fb6caba27f231b67c723687994b43aa6eb180",
+      "source_region_pixel_sha256": "9b090aefbe61c00c29cd70f90ff8d4f2e7ccd095e77433ec2f9cf34bf1bb3c43",
+      "input_pixel_sha256": "9b090aefbe61c00c29cd70f90ff8d4f2e7ccd095e77433ec2f9cf34bf1bb3c43",
+      "dimensions": [
+        2000,
+        5700
+      ],
+      "mode": "RGB",
+      "bytes": 1731803,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c078_p02",
+      "candidate_filename": "assets/ep10/gen/ep10_c078_p02.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c078_p02.source.png",
+      "source_cut_ids": [
+        "ep10_c078"
+      ],
+      "source_page": "work/ep10/merged/ep10_018.png",
+      "source_page_sha256": "898f185790878ad1f6685bdc95bdf2e7ea7c7e2f344958f3f0b0da046118794c",
+      "approved_cut_xyxy": [
+        0,
+        467,
+        2000,
+        26493
+      ],
+      "panel_order": 2,
+      "panel_count": 5,
+      "panel_selection": "반했으니까 뒤 아시나 옆모습",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c078/lines/2",
+        "beat": "ep10_c078",
+        "line_index_1based": 2,
+        "speaker": "ep10_왕",
+        "text": "반했으니까…",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c078/lines/2"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        5700,
+        9500
+      ],
+      "input_crop_xyxy": [
+        0,
+        6167,
+        2000,
+        9967
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        3800
+      ],
+      "input_file_sha256": "b3442e5ca5548aa37220355a5f2cb6c671f074302fee9e51ba04120d4abbb39c",
+      "source_region_pixel_sha256": "6a2daa5508474710cf325767a441c49eadbde9d17e847ef7f4c592664aa5f15c",
+      "input_pixel_sha256": "6a2daa5508474710cf325767a441c49eadbde9d17e847ef7f4c592664aa5f15c",
+      "dimensions": [
+        2000,
+        3800
+      ],
+      "mode": "RGB",
+      "bytes": 2362505,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c078_p03",
+      "candidate_filename": "assets/ep10/gen/ep10_c078_p03.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c078_p03.source.png",
+      "source_cut_ids": [
+        "ep10_c078"
+      ],
+      "source_page": "work/ep10/merged/ep10_018.png",
+      "source_page_sha256": "898f185790878ad1f6685bdc95bdf2e7ea7c7e2f344958f3f0b0da046118794c",
+      "approved_cut_xyxy": [
+        0,
+        467,
+        2000,
+        26493
+      ],
+      "panel_order": 3,
+      "panel_count": 5,
+      "panel_selection": "억지로 몸을 취하지도 않고 부분의 흑백 여백; 인물 없음",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c078/lines/3",
+        "beat": "ep10_c078",
+        "line_index_1based": 3,
+        "speaker": "ep10_왕",
+        "text": "억지로 몸을 취하지도 않고,",
+        "perspective": "character",
+        "phase": "줄 표시"
+      },
+      "anchor_ids": [
+        "ep10_c078/lines/3"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        9500,
+        13800
+      ],
+      "input_crop_xyxy": [
+        0,
+        9967,
+        2000,
+        14267
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4300
+      ],
+      "input_file_sha256": "0ace98861e9f6234d23db12712208c9d8e55af95eeb335600c40ff5824dda6b0",
+      "source_region_pixel_sha256": "0ef46aee33fc72d0a3e21dce966adaada18b3831662127333a9d9b8d293e5a10",
+      "input_pixel_sha256": "0ef46aee33fc72d0a3e21dce966adaada18b3831662127333a9d9b8d293e5a10",
+      "dimensions": [
+        2000,
+        4300
+      ],
+      "mode": "RGB",
+      "bytes": 1279514,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c078_p04",
+      "candidate_filename": "assets/ep10/gen/ep10_c078_p04.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c078_p04.source.png",
+      "source_cut_ids": [
+        "ep10_c078"
+      ],
+      "source_page": "work/ep10/merged/ep10_018.png",
+      "source_page_sha256": "898f185790878ad1f6685bdc95bdf2e7ea7c7e2f344958f3f0b0da046118794c",
+      "approved_cut_xyxy": [
+        0,
+        467,
+        2000,
+        26493
+      ],
+      "panel_order": 4,
+      "panel_count": 5,
+      "panel_selection": "눈색 공개 발화의 왕 얼굴과 아시나 뒤통수; 붉고 검은 원작 연출",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c078/lines/4",
+        "beat": "ep10_c078",
+        "line_index_1based": 4,
+        "speaker": "ep10_왕",
+        "text": "변한 네 눈 색도 모르는 척해주는 거 아니겠어.",
+        "perspective": "character",
+        "phase": "줄 앞부분"
+      },
+      "anchor_ids": [
+        "ep10_c078/lines/4"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        13800,
+        21650
+      ],
+      "input_crop_xyxy": [
+        0,
+        14267,
+        2000,
+        22117
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        7850
+      ],
+      "input_file_sha256": "b833c813421966fb6f6ce1e7f1ecce8c9dd741909466148a23b70efbfa214857",
+      "source_region_pixel_sha256": "1623cbc7a79db3801d8cab1b540ef0bc934a7c48db9ce69ec5990c625f47b4e4",
+      "input_pixel_sha256": "1623cbc7a79db3801d8cab1b540ef0bc934a7c48db9ce69ec5990c625f47b4e4",
+      "dimensions": [
+        2000,
+        7850
+      ],
+      "mode": "RGB",
+      "bytes": 10173682,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    },
+    {
+      "candidate_id": "ep10_c078_p05",
+      "candidate_filename": "assets/ep10/gen/ep10_c078_p05.png",
+      "input_path": "assets/ep10/gen/inputs/ep10_c078_p05.source.png",
+      "source_cut_ids": [
+        "ep10_c078"
+      ],
+      "source_page": "work/ep10/merged/ep10_018.png",
+      "source_page_sha256": "898f185790878ad1f6685bdc95bdf2e7ea7c7e2f344958f3f0b0da046118794c",
+      "approved_cut_xyxy": [
+        0,
+        467,
+        2000,
+        26493
+      ],
+      "panel_order": 5,
+      "panel_count": 5,
+      "panel_selection": "공개 발화 뒤 놀란 아시나와 입술 부근 손가락; 마지막 반응 패널",
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep10_c078/lines/4",
+        "beat": "ep10_c078",
+        "line_index_1based": 4,
+        "speaker": "ep10_왕",
+        "text": "변한 네 눈 색도 모르는 척해주는 거 아니겠어.",
+        "perspective": "character",
+        "phase": "최종 줄 소비 후 반응"
+      },
+      "anchor_ids": [
+        "ep10_c078/lines/4"
+      ],
+      "perspectives": [
+        "character"
+      ],
+      "branch": "c058에서 침묵을 골라 접촉이 이어지는 원작 경로 전용; 거리 확보 경로는 c016 실내를 유지",
+      "relative_panel_y_range": [
+        21650,
+        26026
+      ],
+      "input_crop_xyxy": [
+        0,
+        22117,
+        2000,
+        26493
+      ],
+      "operation": "원본 페이지에서 무손실 직사각형 크롭만 수행; 크기·색·알파·글자·가림 변경 없음",
+      "expected_dimensions": [
+        2000,
+        4376
+      ],
+      "input_file_sha256": "c4b96970a395528ffd464f167350aebe6a38e3d45e9eeb307f42514fe502306c",
+      "source_region_pixel_sha256": "5e35eec441faee3cb04d598843f2eb7b78c5a29420cd6a924469bcab682d80a9",
+      "input_pixel_sha256": "5e35eec441faee3cb04d598843f2eb7b78c5a29420cd6a924469bcab682d80a9",
+      "dimensions": [
+        2000,
+        4376
+      ],
+      "mode": "RGB",
+      "bytes": 4292830,
+      "reused_existing_input": false,
+      "pixel_equality": true,
+      "input_status": "prepared",
+      "art_status": "mapped",
+      "finished_image": false,
+      "independent_art_QA": null
+    }
+  ],
+  "policy": {
+    "native_generation_calls": 0,
+    "source_pixels": "원본 페이지에서 정수 좌표의 무손실 크롭만 허용. 글자·효과·색·해상도·인체 가림을 바꾸지 않음",
+    "split_partition": "승인된 각 원작 컷 범위를 순서대로 나눔. 분할 전후 합집합은 원래 컷 범위와 동일하고 누락·중복 행 없음",
+    "prior_panel_tail": "원작에서 이웃 패널이 겹쳐 이어진 곳의 이전 패널 꼬리·배경은 보존. 뒤 패널의 인물 얼굴이나 사건을 앞 입력에 추가하지 않음",
+    "c070": "말줄임표 풍선의 화자 미확정 유지. 나레이션 CG 앵커와 원본 풍선 모두 수정하지 않음",
+    "file_role": "세로 원작 참조 입력이며 완성 16:9 자산이나 독립 QA 통과 결과가 아님",
+    "generation_permission": "별도 전역 슬롯 GO 전까지 네이티브 호출 금지"
+  },
+  "next": "별도 전역 슬롯 GO 전까지 네이티브 생성 없음"
+}

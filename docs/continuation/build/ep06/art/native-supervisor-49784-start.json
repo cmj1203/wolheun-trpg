@@ -1,0 +1,16 @@
+{
+  "pid": 49784,
+  "pgid": 49784,
+  "launch_parent_pid": 24935,
+  "launch_parent_pgid": 24935,
+  "started_at": "2026-11-09T06:24:31.801773+00:00",
+  "runner": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native-production-runner.py",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native-production-supervisor.log",
+  "log_start_offset": 0,
+  "first_result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c001-result.json",
+  "local_max": 1,
+  "global_actual_max": 3,
+  "new_native_check": "각 호출 직전 argv 기반 실제 ps 점유를 실행기에서 다시 확인함",
+  "independentApproved": 0,
+  "installed": 0
+}

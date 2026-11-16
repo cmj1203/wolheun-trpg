@@ -1,0 +1,4020 @@
+{
+  "episode": 6,
+  "result": "원본 참조 입력 기술 검증 통과",
+  "input_preparation_ready": true,
+  "completed_art": false,
+  "independent_art_qa": "미실시",
+  "native_calls_started": 0,
+  "counts": {
+    "candidates": 75,
+    "main_inputs": 75,
+    "auxiliary_inputs": 7,
+    "total_inputs": 82,
+    "new_png_files": 73,
+    "reused_existing_source_crops": 4,
+    "reused_pixel_identical_clean_files": 5,
+    "original_source_cut_windows": 65,
+    "outside_cut_dialogue_windows": 2,
+    "display_anchors": 158
+  },
+  "manifest": {
+    "path": "docs/continuation/build/ep06/art/input-manifest-v1.json",
+    "sha256": "b2a3a5f60bd01b3e4688eb7502ec31846247204cbbfe48544c2c3bf733505635"
+  },
+  "checks": {
+    "source_rgb_mismatch_pixels": 0,
+    "mask_alpha_or_padding_mismatch_pixels": 0,
+    "uncovered_original_pixels": 0,
+    "overlapping_original_pixels": 0,
+    "undefined_yaml_pointers": 0,
+    "text_mismatches": 0,
+    "unique_input_paths": 82,
+    "unique_input_file_hashes": 82,
+    "source_window_coverage": "65개 원작 컷과 컷 밖 두 원문 범위의 모든 픽셀이 입력 집합에 한 번씩 포함된다. 대각 입력의 투명 패딩은 비교에서 제외하며 선택된 RGB는 원본과 전수 일치한다.",
+    "native_png_decode": "82개 실제 PNG를 로컬 네이티브 이미지 라이브러리로 판독하여 크기를 대조했다. AI 호출이 아니다.",
+    "reused_pixel_proof": "재사용 9개는 파일 선택 시 원본 RGB를 전수 대조했다. 같은 검사를 반복하지 않고 그 증거와 저장된 파일 해시 보존으로 연결했다.",
+    "generated_candidate_outputs": 0
+  },
+  "preserved_existing_files": [
+    {
+      "path": "assets/ep06/gen/source/ep06_gap025.png",
+      "sha256": "2e1692648721a16b5fcb6b06f1cad95c5703ac495095aaa0c3afe27ff27eff4b",
+      "unchanged": true
+    },
+    {
+      "path": "assets/ep06/gen/source/ep06_c025.png",
+      "sha256": "74b33db2e34a4a5a1e6891ef741c6fa7126ee56ffabb05ec35026640c84cb3fa",
+      "unchanged": true
+    },
+    {
+      "path": "assets/ep06/gen/source/ep06_c024.png",
+      "sha256": "3e34f145ecc89a5efd0a5a27f8f0af7cc451240b5a2b011eb0f3067ae91c8914",
+      "unchanged": true
+    },
+    {
+      "path": "assets/ep06/gen/source/ep06_gap014.png",
+      "sha256": "db1244f0c216ca831e6aeea39b85e398c4ae07ab3f69ca60c1898fbbf64cd959",
+      "unchanged": true
+    }
+  ],
+  "approved_art_documents": [
+    {
+      "path": "docs/continuation/build/ep06/art/mapping.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/ep06/art/mapping.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/ep06/art/candidate-manifest.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/ep06/art/pointer-validation.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/ep06/art/verification.json",
+      "unchanged": true
+    }
+  ],
+  "source_documents_and_yaml": [
+    {
+      "path": "docs/continuation/ep06/script.md",
+      "sha256": "ae3940b26b509d6efe89cfa7f1988cc4a99b8cefe91e9899855af665383354e2",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/ep06/scenes.json",
+      "sha256": "ca59bf6aede3447406682e58d27973b85bf690ba01bfee1ea9f79919e6ed92c0",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/ep06/continuation.md",
+      "sha256": "1de4f1282989a269e82aa376ddec29c2a4e2d47f48f4c5fb478be683e0546edd",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/ep06/wardrobe-audit.md",
+      "sha256": "a85b36bb11bbe05228df4616fdd9465d284086cee99e870b1584a28f6efe3c24",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/ep06/transcription-audit.md",
+      "sha256": "ca45f08ec911113f213d279cc5d76d2ce9130ae9a1d76588d71662f938c92b3f",
+      "unchanged": true
+    },
+    {
+      "path": "app/content/ep06_library.yaml",
+      "sha256": "17cc7cc5578b9981ee75339ff6fb74c707433fc2e220fef9ce886455d28bd236",
+      "unchanged": true
+    },
+    {
+      "path": "assets/ep06/cuts.json",
+      "sha256": "e51e92ea3ec9cede5930392d03679b22311f844ec6a3351158956aaac78e8c4a",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/source03-10-audit.md",
+      "sha256": "23fb3373ebe4744824c7fbb53861055cbca4b984416900a5a51d88dbb92b4fe8",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/lead-asset-baseline.md",
+      "sha256": "35f6bddb2fb826b9521ba9cc291f0595e88a61eba7a0cd5d808ba642d77aaf7e",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/ep06/audit-correction-20261109.md",
+      "sha256": "d30bcf644f1d08b3653aba88fe1bfdf78fcf09d881c9103ef1231691d4a95f94",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/ep06/audit-perspective-20261109.md",
+      "sha256": "c188cc62e94382a3534938b1b20c4998654f88117919735ed231269f5230ad3b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/continuation/build/ep06/cg-alias-fix.md",
+      "sha256": "0293284eef520296bb379b4ddbcd2ca4a1e910f3d007e44dedb9984ed88aadfe",
+      "unchanged": true
+    }
+  ],
+  "input_checks": [
+    {
+      "id": "ep06_c001",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c001.png",
+      "input_sha256": "d5842415eed2faa7f578337d98443974d19a2f313ce2987eceb263fd34742a08",
+      "exists": true,
+      "width": 2000,
+      "height": 5695,
+      "native_png_decode": true,
+      "visible_pixels": 11390000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c002",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c002.png",
+      "input_sha256": "72b77c925228bb3e3a2e1f313033e044513be6cc782ef12616af2a4bb41cc413",
+      "exists": true,
+      "width": 2000,
+      "height": 4158,
+      "native_png_decode": true,
+      "visible_pixels": 8316000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c003",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c003.png",
+      "input_sha256": "027b4bf0e25f973373443159084d6b8e536fea5405a1b516105dced809f04d67",
+      "exists": true,
+      "width": 2000,
+      "height": 3186,
+      "native_png_decode": true,
+      "visible_pixels": 6372000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c004_anchor",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c004_anchor.png",
+      "input_sha256": "fdfe1fdb71994873e2ac28be719b6956095ec3b0bb8d93041fd3a32fc8596667",
+      "exists": true,
+      "width": 2000,
+      "height": 1037,
+      "native_png_decode": true,
+      "visible_pixels": 2074000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c005",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c005.png",
+      "input_sha256": "c874b23829cc47af03128eb771f8d174abbd27d1c845dfea92131b90013be350",
+      "exists": true,
+      "width": 2000,
+      "height": 2963,
+      "native_png_decode": true,
+      "visible_pixels": 5926000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c006",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c006.png",
+      "input_sha256": "a517d0fec6353f0b5517bc00c41f59abd6247fa5b8a6c58a549fbd8b20f2933e",
+      "exists": true,
+      "width": 2000,
+      "height": 7294,
+      "native_png_decode": true,
+      "visible_pixels": 14588000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c007_hand",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c007_hand.png",
+      "input_sha256": "4d6f0804bfb1a958e58d564d184ca973e382f9a980d6e96ef38ce68b87fdb876",
+      "exists": true,
+      "width": 2000,
+      "height": 3800,
+      "native_png_decode": true,
+      "visible_pixels": 6719960,
+      "transparent_padding_pixels": 880040,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c007_eye",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c007_eye.png",
+      "input_sha256": "ddf7d009a81a223fded38952e5b25499e23e4ef946123401b09a53b68dc1bb4f",
+      "exists": true,
+      "width": 2000,
+      "height": 3577,
+      "native_png_decode": true,
+      "visible_pixels": 6274040,
+      "transparent_padding_pixels": 879960,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c007_memory",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c007_memory.png",
+      "input_sha256": "5662b27100949a2f8c9e0f8c7cf7920596baf6d30e02346482a13d4c6837e53a",
+      "exists": true,
+      "width": 2000,
+      "height": 6511,
+      "native_png_decode": true,
+      "visible_pixels": 13022000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c008_room",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c008_room.png",
+      "input_sha256": "397532ca84d391c010e48d15301e70af4384f654c113fe01a4294f8cf8642b67",
+      "exists": true,
+      "width": 2000,
+      "height": 4271,
+      "native_png_decode": true,
+      "visible_pixels": 8542000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c008_pair",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c008_pair.png",
+      "input_sha256": "66fe3df38648f05fae8599bc0bb32826e79f265084cdaf81071a711a9400e63f",
+      "exists": true,
+      "width": 2000,
+      "height": 4100,
+      "native_png_decode": true,
+      "visible_pixels": 7550000,
+      "transparent_padding_pixels": 650000,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c008_threat",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c008_threat.png",
+      "input_sha256": "70b87871c26ac38a314d92f7f7627cc8289750294388d24d09c72d68874f920d",
+      "exists": true,
+      "width": 2000,
+      "height": 7207,
+      "native_png_decode": true,
+      "visible_pixels": 13764000,
+      "transparent_padding_pixels": 650000,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c009",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c009.png",
+      "input_sha256": "a4085bf9fe0ae192e6331917aed4553c36457ecf9f1af7b4ea36e34c6c341e2e",
+      "exists": true,
+      "width": 2000,
+      "height": 5108,
+      "native_png_decode": true,
+      "visible_pixels": 10216000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c010",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c010.png",
+      "input_sha256": "8cf5bdcd5c50b4bc7b9b3fea7671f443b147c883e8a4e17f4d185f7eefad23ad",
+      "exists": true,
+      "width": 2000,
+      "height": 9775,
+      "native_png_decode": true,
+      "visible_pixels": 19550000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c011_face",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c011_face.png",
+      "input_sha256": "e58e8af9aec2275dd6fb7ab404c64033113c68898838528be8763111d4e735b3",
+      "exists": true,
+      "width": 2000,
+      "height": 3422,
+      "native_png_decode": true,
+      "visible_pixels": 6844000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c011_feet",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c011_feet.png",
+      "input_sha256": "531d6e604560441a09d73a793c6d057545e9f4c5f8a66e8fe1807a47692aa52f",
+      "exists": true,
+      "width": 2000,
+      "height": 5642,
+      "native_png_decode": true,
+      "visible_pixels": 11284000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c012",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c012.png",
+      "input_sha256": "2c20f162c6cf3d10f1c45593f10e24665195280b64fd66a3d427166870d4b737",
+      "exists": true,
+      "width": 2000,
+      "height": 7418,
+      "native_png_decode": true,
+      "visible_pixels": 14836000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c013",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c013.png",
+      "input_sha256": "28cfa637cf0cf4b04bccbd12571b6107f077688a71c730ddf77d0162b1088a54",
+      "exists": true,
+      "width": 2000,
+      "height": 4409,
+      "native_png_decode": true,
+      "visible_pixels": 8818000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_gap014",
+      "path": "assets/ep06/gen/source/ep06_gap014.png",
+      "input_sha256": "db1244f0c216ca831e6aeea39b85e398c4ae07ab3f69ca60c1898fbbf64cd959",
+      "exists": true,
+      "width": 2000,
+      "height": 2828,
+      "native_png_decode": true,
+      "visible_pixels": 5656000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c014",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c014.png",
+      "input_sha256": "d77c197e05393b4950e9619fc9cf76295e079b42b901f37168ee2bc80ff7f9ca",
+      "exists": true,
+      "width": 2000,
+      "height": 5878,
+      "native_png_decode": true,
+      "visible_pixels": 11756000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c015",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c015.png",
+      "input_sha256": "8728a90c828c1c8de5fd6f168a1b38a627ecb253e8aa629d758205204d91176a",
+      "exists": true,
+      "width": 2000,
+      "height": 3730,
+      "native_png_decode": true,
+      "visible_pixels": 7460000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c016",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c016.png",
+      "input_sha256": "021223f6423650e2a9f300e4c6f49f68bad3222ae5cb44502238785c2d25426a",
+      "exists": true,
+      "width": 2000,
+      "height": 4802,
+      "native_png_decode": true,
+      "visible_pixels": 9604000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c017_room",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c017_room.png",
+      "input_sha256": "15b21b778094e111129a5c9eef6d538549a70462c0601316576b783e17e7f8f3",
+      "exists": true,
+      "width": 2000,
+      "height": 5651,
+      "native_png_decode": true,
+      "visible_pixels": 11302000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c017_turn",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c017_turn.png",
+      "input_sha256": "c543e164bfb5e6f2f9ee7f79881a565185713d2fe2e484bbb47f61522f4045c4",
+      "exists": true,
+      "width": 2000,
+      "height": 3404,
+      "native_png_decode": true,
+      "visible_pixels": 6808000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c018",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c018.png",
+      "input_sha256": "9c71f5d64c99828354c494330221e995498fc63f783c3b61b4a96f281bb1791d",
+      "exists": true,
+      "width": 2000,
+      "height": 4619,
+      "native_png_decode": true,
+      "visible_pixels": 9238000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c019",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c019.png",
+      "input_sha256": "716736f18508d48b14c925b6eb5c3b59634d27e88042353476879084af4b3f18",
+      "exists": true,
+      "width": 2000,
+      "height": 3151,
+      "native_png_decode": true,
+      "visible_pixels": 6302000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c020",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c020.png",
+      "input_sha256": "e8325e325fe69e9f246ccdaa00c26522f59e273d8a3e95622dba97b9b3011a51",
+      "exists": true,
+      "width": 2000,
+      "height": 9477,
+      "native_png_decode": true,
+      "visible_pixels": 18954000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c021",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c021.png",
+      "input_sha256": "753c87d2c207de8e0d16c837c0a710f73c25b9f7610c53b42405af67cec0fea6",
+      "exists": true,
+      "width": 2000,
+      "height": 5496,
+      "native_png_decode": true,
+      "visible_pixels": 10992000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c022",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c022.png",
+      "input_sha256": "80937e14d01b6d29243e4161d53b622a8f7dbe03d199781e47c68c7b6054ff7d",
+      "exists": true,
+      "width": 2000,
+      "height": 5393,
+      "native_png_decode": true,
+      "visible_pixels": 10786000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c023",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c023.png",
+      "input_sha256": "7f463cd66cc6c32fc1266c89a32260ff0e054ce976e16d539093ebb65d435367",
+      "exists": true,
+      "width": 2000,
+      "height": 4367,
+      "native_png_decode": true,
+      "visible_pixels": 8734000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c024",
+      "path": "assets/ep06/gen/source/ep06_c024.png",
+      "input_sha256": "3e34f145ecc89a5efd0a5a27f8f0af7cc451240b5a2b011eb0f3067ae91c8914",
+      "exists": true,
+      "width": 2000,
+      "height": 5467,
+      "native_png_decode": true,
+      "visible_pixels": 10934000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c025",
+      "path": "assets/ep06/gen/source/ep06_c025.png",
+      "input_sha256": "74b33db2e34a4a5a1e6891ef741c6fa7126ee56ffabb05ec35026640c84cb3fa",
+      "exists": true,
+      "width": 2000,
+      "height": 4669,
+      "native_png_decode": true,
+      "visible_pixels": 9338000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_gap025",
+      "path": "assets/ep06/gen/source/ep06_gap025.png",
+      "input_sha256": "2e1692648721a16b5fcb6b06f1cad95c5703ac495095aaa0c3afe27ff27eff4b",
+      "exists": true,
+      "width": 2000,
+      "height": 1867,
+      "native_png_decode": true,
+      "visible_pixels": 3734000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c026",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c026.png",
+      "input_sha256": "463b0dbfce645ff1ecf2c591e4705d6d8cc8fd35bd5cfdcdb5491551a788bf74",
+      "exists": true,
+      "width": 2000,
+      "height": 6027,
+      "native_png_decode": true,
+      "visible_pixels": 12054000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c027",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c027.png",
+      "input_sha256": "f77512db1d678f8d6f9b1d8198b9d5acaad1f79f4730c2199a778f2c9592f67a",
+      "exists": true,
+      "width": 2000,
+      "height": 4758,
+      "native_png_decode": true,
+      "visible_pixels": 9516000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c028",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c028.png",
+      "input_sha256": "f67dd1b8aae2047644bb38d8368a317dac543c93eeee4b1d640b704d5a79bfea",
+      "exists": true,
+      "width": 2000,
+      "height": 3721,
+      "native_png_decode": true,
+      "visible_pixels": 7442000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c029_ra",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c029_ra.png",
+      "input_sha256": "d388fa734048d6eea670ac4f51fe0ea76c850707e6dd49b2f7d65dc30e5fc6c5",
+      "exists": true,
+      "width": 2000,
+      "height": 3977,
+      "native_png_decode": true,
+      "visible_pixels": 6794000,
+      "transparent_padding_pixels": 1160000,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c029_nod",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c029_nod.png",
+      "input_sha256": "73f4d73a7c37b7070ef99e77a1e0cd3960c938f370ebd4a6ba930e871b020c19",
+      "exists": true,
+      "width": 2000,
+      "height": 4363,
+      "native_png_decode": true,
+      "visible_pixels": 7566000,
+      "transparent_padding_pixels": 1160000,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c030",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c030.png",
+      "input_sha256": "311c880c90eaac2a97d8ef9fb1654885d2e618dffa4d459a384a64676f9f279b",
+      "exists": true,
+      "width": 2000,
+      "height": 1162,
+      "native_png_decode": true,
+      "visible_pixels": 2324000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c031",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c031.png",
+      "input_sha256": "2c99ecd04b767fdd5daa59c54cedc27bb447f20b1a193a847cd06697e6cb1338",
+      "exists": true,
+      "width": 2000,
+      "height": 6529,
+      "native_png_decode": true,
+      "visible_pixels": 13058000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c032_order",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c032_order.png",
+      "input_sha256": "8b1de9a6e8b3daebb7c03c831547a11c9401de6e1b09a220f77b5b4ef0baaa98",
+      "exists": true,
+      "width": 2000,
+      "height": 5866,
+      "native_png_decode": true,
+      "visible_pixels": 11732000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c032_accept",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c032_accept.png",
+      "input_sha256": "62c4b5e17bd625fc1928bca61e1f97661fdf0f2872223b8f6fb880bf381cb2a6",
+      "exists": true,
+      "width": 2000,
+      "height": 3139,
+      "native_png_decode": true,
+      "visible_pixels": 6278000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c033",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c033.png",
+      "input_sha256": "74323ce37d870139ab765b2d02d225984a4e06206ef3c8e6dd6b12062b620020",
+      "exists": true,
+      "width": 2000,
+      "height": 2177,
+      "native_png_decode": true,
+      "visible_pixels": 4354000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c034",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c034.png",
+      "input_sha256": "e68e35a3c502a315a3f3471a739c70d569b8eae7c62e4b6a5002c62217ae88ed",
+      "exists": true,
+      "width": 2000,
+      "height": 3476,
+      "native_png_decode": true,
+      "visible_pixels": 6952000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c035",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c035.png",
+      "input_sha256": "1c7f5fe8e5518f4ac8fd239703ad571ec1d30070efad25dfb96ea1f35387f635",
+      "exists": true,
+      "width": 2000,
+      "height": 3361,
+      "native_png_decode": true,
+      "visible_pixels": 6722000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c036_map",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c036_map.png",
+      "input_sha256": "c4ea3818ad7a179c97e0a8839783aa895b7235eaa6e733f43c40e69ec6ae3a69",
+      "exists": true,
+      "width": 2000,
+      "height": 3778,
+      "native_png_decode": true,
+      "visible_pixels": 7556000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c036_table",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c036_table.png",
+      "input_sha256": "2ff5263ac2f04089faad3d9c7ed63372a46e899e9b2b2ab188ef21366cedcd6f",
+      "exists": true,
+      "width": 2000,
+      "height": 2680,
+      "native_png_decode": true,
+      "visible_pixels": 5360000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c037",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c037.png",
+      "input_sha256": "ad12ab616916fad0fbd7bb58176d5ec8dc80ce13272f1fd212a2f008f40946ea",
+      "exists": true,
+      "width": 2000,
+      "height": 5904,
+      "native_png_decode": true,
+      "visible_pixels": 11808000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c038",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c038.png",
+      "input_sha256": "646b51421abf47e8455213d828cf7f76a5a6839549327a4191bf551445344d9e",
+      "exists": true,
+      "width": 2000,
+      "height": 2983,
+      "native_png_decode": true,
+      "visible_pixels": 5966000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c039",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c039.png",
+      "input_sha256": "44334709c7e56ba82b15230875de83d02ce3366fdd7d43764551838eb270fc70",
+      "exists": true,
+      "width": 2000,
+      "height": 10383,
+      "native_png_decode": true,
+      "visible_pixels": 20766000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c040_anchor",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c040.png",
+      "input_sha256": "923c86064bdbad51b633f926e72cd77c8b3360a082b94873a461ca9518582c79",
+      "exists": true,
+      "width": 2000,
+      "height": 2099,
+      "native_png_decode": true,
+      "visible_pixels": 4198000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c041",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c041.png",
+      "input_sha256": "b0bcba199a5f472965efdb054cb37f2df941d42c2e2a473e9c51ad86f6e09dbb",
+      "exists": true,
+      "width": 2000,
+      "height": 5257,
+      "native_png_decode": true,
+      "visible_pixels": 10514000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c042",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c042.png",
+      "input_sha256": "f313a023776584095d33ab45d4d76210e6c6b075598b2e3e6ea4f3d2ec99b8a2",
+      "exists": true,
+      "width": 2000,
+      "height": 1308,
+      "native_png_decode": true,
+      "visible_pixels": 2616000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c043",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c043.png",
+      "input_sha256": "d60acf49d18af8a5ca5c30f2c8bca04433dd31dc4c5b1a081c3b0e36d7dc0e42",
+      "exists": true,
+      "width": 2000,
+      "height": 3344,
+      "native_png_decode": true,
+      "visible_pixels": 6688000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c044_anchor",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c044_anchor.png",
+      "input_sha256": "6a3a05e4f10dd2d4a8b18ab6a9489ca11401edadde4f4822f288c9fdae3e539d",
+      "exists": true,
+      "width": 2000,
+      "height": 1770,
+      "native_png_decode": true,
+      "visible_pixels": 3540000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c045",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c045.png",
+      "input_sha256": "1acd8f7849e945a9c7ce011e8ac22be4481c3b442214c347172e3ae39528ab64",
+      "exists": true,
+      "width": 2000,
+      "height": 4518,
+      "native_png_decode": true,
+      "visible_pixels": 9036000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c046_question",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c046_question.png",
+      "input_sha256": "94703b4fa5c5ba01eead3d58d084385f11ec2fc2f282e7a125d432ffe331eeeb",
+      "exists": true,
+      "width": 2000,
+      "height": 5161,
+      "native_png_decode": true,
+      "visible_pixels": 10322000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c046_reaction",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c046_reaction.png",
+      "input_sha256": "9b14ecf14fa7a90e50fdc7510a350ab0b888201cfde61596d584c6fa6b111153",
+      "exists": true,
+      "width": 2000,
+      "height": 6600,
+      "native_png_decode": true,
+      "visible_pixels": 13200000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c046_hands",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c046_hands.png",
+      "input_sha256": "f358e51ecf354dfc8ff3b9a4542955e04a0ad3cae75de5f520724746e90641d1",
+      "exists": true,
+      "width": 2000,
+      "height": 2885,
+      "native_png_decode": true,
+      "visible_pixels": 5770000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c047",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c047.png",
+      "input_sha256": "589022c070e9f6f8b52ad0362ce864a4719fcbc70a7de99766bb2537aca930ed",
+      "exists": true,
+      "width": 2000,
+      "height": 5334,
+      "native_png_decode": true,
+      "visible_pixels": 10668000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c048_anchor",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c048_anchor.png",
+      "input_sha256": "602bca9c7be11ba68b0fdcdb6625be2b766e06584913938c28d82fa63e53e6cc",
+      "exists": true,
+      "width": 2000,
+      "height": 1250,
+      "native_png_decode": true,
+      "visible_pixels": 2500000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c049",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c049.png",
+      "input_sha256": "bf83e4343268cabee36e93511e46daaba77edd28c471e6868951576f6f0b9170",
+      "exists": true,
+      "width": 2000,
+      "height": 580,
+      "native_png_decode": true,
+      "visible_pixels": 1160000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c050",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c050.png",
+      "input_sha256": "282e0593a53870b01d4f932463ed887fc397e25898940e27f7b6a2bd58ca835d",
+      "exists": true,
+      "width": 2000,
+      "height": 480,
+      "native_png_decode": true,
+      "visible_pixels": 960000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": true,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c051",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c051.png",
+      "input_sha256": "89653adf63c60489d395b9fdce33f0346bb00511a464ca6df5aec5955145f701",
+      "exists": true,
+      "width": 2000,
+      "height": 4513,
+      "native_png_decode": true,
+      "visible_pixels": 9026000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c052_hood",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c052_hood.png",
+      "input_sha256": "1ec042230fc4f1add70e24b59951e2f9f86e0263056e51ac435b66a0a5c08eaf",
+      "exists": true,
+      "width": 2000,
+      "height": 3318,
+      "native_png_decode": true,
+      "visible_pixels": 6636000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c052_escape",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c052_escape.png",
+      "input_sha256": "338de09fb51607339d78b9b617b4f9579906d56f7969cefd048cac9a03e5e944",
+      "exists": true,
+      "width": 2000,
+      "height": 4240,
+      "native_png_decode": true,
+      "visible_pixels": 8480000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c053",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c053.png",
+      "input_sha256": "476a1916cc68ade0b780410329df2cacea1d1e2670ae836ea557629f1832bd7f",
+      "exists": true,
+      "width": 2000,
+      "height": 2743,
+      "native_png_decode": true,
+      "visible_pixels": 5486000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c054",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c054.png",
+      "input_sha256": "ce8d070874c4f8ad1d6084d1504520f0255e883bf492a8f5fb31ffe2089e5266",
+      "exists": true,
+      "width": 2000,
+      "height": 4304,
+      "native_png_decode": true,
+      "visible_pixels": 8608000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c055",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c055.png",
+      "input_sha256": "839c29b96fa27603709b5cc96fc0fa2a12175b1e40a2dcc73f6d0bc38c72d968",
+      "exists": true,
+      "width": 2000,
+      "height": 6663,
+      "native_png_decode": true,
+      "visible_pixels": 13326000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c056_nasir",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c056_nasir.png",
+      "input_sha256": "731d580bc5ed83d07a94ffe48abb72175d6114499d455f594041e4d7ba1ebd97",
+      "exists": true,
+      "width": 2000,
+      "height": 5888,
+      "native_png_decode": true,
+      "visible_pixels": 11776000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c056_ashina",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c056_ashina.png",
+      "input_sha256": "21a7b9f76563b71449b59954735d58de9c7b82fc1b8b4bd54f73cdd2ebaa8a2f",
+      "exists": true,
+      "width": 2000,
+      "height": 3045,
+      "native_png_decode": true,
+      "visible_pixels": 6090000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c057",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c057.png",
+      "input_sha256": "938f8d1483d51e2fcc12846c4e3ffd041afce0e2a3b0650176ac0ead5a80ea1d",
+      "exists": true,
+      "width": 2000,
+      "height": 7661,
+      "native_png_decode": true,
+      "visible_pixels": 15322000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c058",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c058.png",
+      "input_sha256": "397f4e3d3178e74beb72d2b3e5ee8fcaa7d5cd21bf3cd817db507e2f340d32a8",
+      "exists": true,
+      "width": 2000,
+      "height": 8073,
+      "native_png_decode": true,
+      "visible_pixels": 16146000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c059",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c059.png",
+      "input_sha256": "c7d6a5b16dadb8b375d697cdcd38ddf2000eed9a4a24afe380749287c05541b4",
+      "exists": true,
+      "width": 2000,
+      "height": 3169,
+      "native_png_decode": true,
+      "visible_pixels": 6338000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c060_ashina",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c060_ashina.png",
+      "input_sha256": "01283ae575c6887dad32d79a3d8a0b1dc136a2d5a8b0a9d180988ca44005df97",
+      "exists": true,
+      "width": 2000,
+      "height": 4430,
+      "native_png_decode": true,
+      "visible_pixels": 8860000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c060_nasir",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c060_nasir.png",
+      "input_sha256": "991564fd181fd7934f69efcc1036fa727e32590b7e19d67af9592ce05e20bdcf",
+      "exists": true,
+      "width": 2000,
+      "height": 5242,
+      "native_png_decode": true,
+      "visible_pixels": 10484000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c061_anchor",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c061_anchor.png",
+      "input_sha256": "511d8e6ae1bd309d1d72648fceb1bc0955dc5f0ce0ee7f1b1e420a0ba466290f",
+      "exists": true,
+      "width": 2000,
+      "height": 4612,
+      "native_png_decode": true,
+      "visible_pixels": 9224000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c062_present",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c062_present.png",
+      "input_sha256": "f67830478e8b049d06a220ea3539c8a72e399e8b0d5065b2f4c7b317747150c7",
+      "exists": true,
+      "width": 2000,
+      "height": 7765,
+      "native_png_decode": true,
+      "visible_pixels": 15530000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c062_desert",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c062_desert.png",
+      "input_sha256": "702d670ffc63e2e0663935d2e15a70cb9310d9eead19278f43d01d95c4067d2f",
+      "exists": true,
+      "width": 2000,
+      "height": 4462,
+      "native_png_decode": true,
+      "visible_pixels": 8924000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c063",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c063.png",
+      "input_sha256": "9556ade798823372bd8117b31b00e9ae51bdf79e0f625dc6be03bea7901c36b8",
+      "exists": true,
+      "width": 2000,
+      "height": 3071,
+      "native_png_decode": true,
+      "visible_pixels": 6142000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c064",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c064.png",
+      "input_sha256": "e23f27b0afaddb9b0e19c61dbc5442c3281201bb8543d5a2efceed87892ead11",
+      "exists": true,
+      "width": 2000,
+      "height": 6587,
+      "native_png_decode": true,
+      "visible_pixels": 13174000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    },
+    {
+      "id": "ep06_c065",
+      "path": "assets/ep06/gen/inputs-original-v1/ep06_c065.png",
+      "input_sha256": "edaf20c8669d4594b352a511661aca182e493695a3ecaeb1efb570ca8c247752",
+      "exists": true,
+      "width": 2000,
+      "height": 5135,
+      "native_png_decode": true,
+      "visible_pixels": 10270000,
+      "transparent_padding_pixels": 0,
+      "source_rgb_mismatches": 0,
+      "alpha_or_padding_mismatches": 0,
+      "reused_prior_original_pixel_proof": false,
+      "status": "원문 입력 기술 검증 통과"
+    }
+  ],
+  "original_window_coverage": [
+    {
+      "source_cut_id": "ep06_c001",
+      "source_window": [
+        0,
+        0,
+        2000,
+        5695
+      ],
+      "input_ids": [
+        "ep06_c001"
+      ],
+      "source_pixels": 11390000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c002",
+      "source_window": [
+        0,
+        7192,
+        2000,
+        11350
+      ],
+      "input_ids": [
+        "ep06_c002"
+      ],
+      "source_pixels": 8316000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c003",
+      "source_window": [
+        0,
+        12230,
+        2000,
+        15416
+      ],
+      "input_ids": [
+        "ep06_c003"
+      ],
+      "source_pixels": 6372000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c004",
+      "source_window": [
+        0,
+        15680,
+        2000,
+        16717
+      ],
+      "input_ids": [
+        "ep06_c004_anchor"
+      ],
+      "source_pixels": 2074000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c005",
+      "source_window": [
+        0,
+        17529,
+        2000,
+        20492
+      ],
+      "input_ids": [
+        "ep06_c005"
+      ],
+      "source_pixels": 5926000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c006",
+      "source_window": [
+        0,
+        20582,
+        2000,
+        27876
+      ],
+      "input_ids": [
+        "ep06_c006"
+      ],
+      "source_pixels": 14588000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c007",
+      "source_window": [
+        0,
+        478,
+        2000,
+        13486
+      ],
+      "input_ids": [
+        "ep06_c007_hand",
+        "ep06_c007_eye",
+        "ep06_c007_memory"
+      ],
+      "source_pixels": 26016000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c008",
+      "source_window": [
+        0,
+        13929,
+        2000,
+        28857
+      ],
+      "input_ids": [
+        "ep06_c008_room",
+        "ep06_c008_pair",
+        "ep06_c008_threat"
+      ],
+      "source_pixels": 29856000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c009",
+      "source_window": [
+        0,
+        360,
+        2000,
+        5468
+      ],
+      "input_ids": [
+        "ep06_c009"
+      ],
+      "source_pixels": 10216000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c010",
+      "source_window": [
+        0,
+        6603,
+        2000,
+        16378
+      ],
+      "input_ids": [
+        "ep06_c010"
+      ],
+      "source_pixels": 19550000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c011",
+      "source_window": [
+        0,
+        16378,
+        2000,
+        25442
+      ],
+      "input_ids": [
+        "ep06_c011_face",
+        "ep06_c011_feet"
+      ],
+      "source_pixels": 18128000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c012",
+      "source_window": [
+        0,
+        271,
+        2000,
+        7689
+      ],
+      "input_ids": [
+        "ep06_c012"
+      ],
+      "source_pixels": 14836000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c013",
+      "source_window": [
+        0,
+        7946,
+        2000,
+        12355
+      ],
+      "input_ids": [
+        "ep06_c013"
+      ],
+      "source_pixels": 8818000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_gap014",
+      "source_window": [
+        0,
+        12355,
+        2000,
+        15183
+      ],
+      "input_ids": [
+        "ep06_gap014"
+      ],
+      "source_pixels": 5656000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c014",
+      "source_window": [
+        0,
+        15183,
+        2000,
+        21061
+      ],
+      "input_ids": [
+        "ep06_c014"
+      ],
+      "source_pixels": 11756000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c015",
+      "source_window": [
+        0,
+        95,
+        2000,
+        3825
+      ],
+      "input_ids": [
+        "ep06_c015"
+      ],
+      "source_pixels": 7460000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c016",
+      "source_window": [
+        0,
+        3915,
+        2000,
+        8717
+      ],
+      "input_ids": [
+        "ep06_c016"
+      ],
+      "source_pixels": 9604000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c017",
+      "source_window": [
+        0,
+        10349,
+        2000,
+        19404
+      ],
+      "input_ids": [
+        "ep06_c017_room",
+        "ep06_c017_turn"
+      ],
+      "source_pixels": 18110000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c018",
+      "source_window": [
+        0,
+        20612,
+        2000,
+        25231
+      ],
+      "input_ids": [
+        "ep06_c018"
+      ],
+      "source_pixels": 9238000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c019",
+      "source_window": [
+        0,
+        241,
+        2000,
+        3392
+      ],
+      "input_ids": [
+        "ep06_c019"
+      ],
+      "source_pixels": 6302000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c020",
+      "source_window": [
+        0,
+        4769,
+        2000,
+        14246
+      ],
+      "input_ids": [
+        "ep06_c020"
+      ],
+      "source_pixels": 18954000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c021",
+      "source_window": [
+        0,
+        15573,
+        2000,
+        21069
+      ],
+      "input_ids": [
+        "ep06_c021"
+      ],
+      "source_pixels": 10992000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c022",
+      "source_window": [
+        0,
+        1028,
+        2000,
+        6421
+      ],
+      "input_ids": [
+        "ep06_c022"
+      ],
+      "source_pixels": 10786000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c023",
+      "source_window": [
+        0,
+        7215,
+        2000,
+        11582
+      ],
+      "input_ids": [
+        "ep06_c023"
+      ],
+      "source_pixels": 8734000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c024",
+      "source_window": [
+        0,
+        12620,
+        2000,
+        18087
+      ],
+      "input_ids": [
+        "ep06_c024"
+      ],
+      "source_pixels": 10934000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c025",
+      "source_window": [
+        0,
+        18345,
+        2000,
+        23014
+      ],
+      "input_ids": [
+        "ep06_c025"
+      ],
+      "source_pixels": 9338000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_gap025",
+      "source_window": [
+        0,
+        23014,
+        2000,
+        24881
+      ],
+      "input_ids": [
+        "ep06_gap025"
+      ],
+      "source_pixels": 3734000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c026",
+      "source_window": [
+        0,
+        209,
+        2000,
+        6236
+      ],
+      "input_ids": [
+        "ep06_c026"
+      ],
+      "source_pixels": 12054000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c027",
+      "source_window": [
+        0,
+        6975,
+        2000,
+        11733
+      ],
+      "input_ids": [
+        "ep06_c027"
+      ],
+      "source_pixels": 9516000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c028",
+      "source_window": [
+        0,
+        12905,
+        2000,
+        16626
+      ],
+      "input_ids": [
+        "ep06_c028"
+      ],
+      "source_pixels": 7442000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c029",
+      "source_window": [
+        0,
+        16743,
+        2000,
+        23923
+      ],
+      "input_ids": [
+        "ep06_c029_ra",
+        "ep06_c029_nod"
+      ],
+      "source_pixels": 14360000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c030",
+      "source_window": [
+        0,
+        24031,
+        2000,
+        25193
+      ],
+      "input_ids": [
+        "ep06_c030"
+      ],
+      "source_pixels": 2324000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c031",
+      "source_window": [
+        0,
+        542,
+        2000,
+        7071
+      ],
+      "input_ids": [
+        "ep06_c031"
+      ],
+      "source_pixels": 13058000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c032",
+      "source_window": [
+        0,
+        7784,
+        2000,
+        16789
+      ],
+      "input_ids": [
+        "ep06_c032_order",
+        "ep06_c032_accept"
+      ],
+      "source_pixels": 18010000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c033",
+      "source_window": [
+        0,
+        20852,
+        2000,
+        23029
+      ],
+      "input_ids": [
+        "ep06_c033"
+      ],
+      "source_pixels": 4354000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c034",
+      "source_window": [
+        0,
+        95,
+        2000,
+        3571
+      ],
+      "input_ids": [
+        "ep06_c034"
+      ],
+      "source_pixels": 6952000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c035",
+      "source_window": [
+        0,
+        4851,
+        2000,
+        8212
+      ],
+      "input_ids": [
+        "ep06_c035"
+      ],
+      "source_pixels": 6722000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c036",
+      "source_window": [
+        0,
+        9322,
+        2000,
+        15780
+      ],
+      "input_ids": [
+        "ep06_c036_map",
+        "ep06_c036_table"
+      ],
+      "source_pixels": 12916000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c037",
+      "source_window": [
+        0,
+        17013,
+        2000,
+        22917
+      ],
+      "input_ids": [
+        "ep06_c037"
+      ],
+      "source_pixels": 11808000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c038",
+      "source_window": [
+        0,
+        382,
+        2000,
+        3365
+      ],
+      "input_ids": [
+        "ep06_c038"
+      ],
+      "source_pixels": 5966000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c039",
+      "source_window": [
+        0,
+        4301,
+        2000,
+        14684
+      ],
+      "input_ids": [
+        "ep06_c039"
+      ],
+      "source_pixels": 20766000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c040",
+      "source_window": [
+        0,
+        14689,
+        2000,
+        16788
+      ],
+      "input_ids": [
+        "ep06_c040_anchor"
+      ],
+      "source_pixels": 4198000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c041",
+      "source_window": [
+        0,
+        16854,
+        2000,
+        22111
+      ],
+      "input_ids": [
+        "ep06_c041"
+      ],
+      "source_pixels": 10514000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c042",
+      "source_window": [
+        0,
+        22773,
+        2000,
+        24081
+      ],
+      "input_ids": [
+        "ep06_c042"
+      ],
+      "source_pixels": 2616000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c043",
+      "source_window": [
+        0,
+        1436,
+        2000,
+        4780
+      ],
+      "input_ids": [
+        "ep06_c043"
+      ],
+      "source_pixels": 6688000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c044",
+      "source_window": [
+        0,
+        4798,
+        2000,
+        6568
+      ],
+      "input_ids": [
+        "ep06_c044_anchor"
+      ],
+      "source_pixels": 3540000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c045",
+      "source_window": [
+        0,
+        6886,
+        2000,
+        11404
+      ],
+      "input_ids": [
+        "ep06_c045"
+      ],
+      "source_pixels": 9036000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c046",
+      "source_window": [
+        0,
+        11639,
+        2000,
+        26285
+      ],
+      "input_ids": [
+        "ep06_c046_question",
+        "ep06_c046_reaction",
+        "ep06_c046_hands"
+      ],
+      "source_pixels": 29292000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c047",
+      "source_window": [
+        0,
+        387,
+        2000,
+        5721
+      ],
+      "input_ids": [
+        "ep06_c047"
+      ],
+      "source_pixels": 10668000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c048",
+      "source_window": [
+        0,
+        5953,
+        2000,
+        7203
+      ],
+      "input_ids": [
+        "ep06_c048_anchor"
+      ],
+      "source_pixels": 2500000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c049",
+      "source_window": [
+        0,
+        7213,
+        2000,
+        7793
+      ],
+      "input_ids": [
+        "ep06_c049"
+      ],
+      "source_pixels": 1160000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c050",
+      "source_window": [
+        0,
+        7793,
+        2000,
+        8273
+      ],
+      "input_ids": [
+        "ep06_c050"
+      ],
+      "source_pixels": 960000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c051",
+      "source_window": [
+        0,
+        8282,
+        2000,
+        12795
+      ],
+      "input_ids": [
+        "ep06_c051"
+      ],
+      "source_pixels": 9026000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c052",
+      "source_window": [
+        0,
+        13082,
+        2000,
+        20640
+      ],
+      "input_ids": [
+        "ep06_c052_hood",
+        "ep06_c052_escape"
+      ],
+      "source_pixels": 15116000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c053",
+      "source_window": [
+        0,
+        21833,
+        2000,
+        24576
+      ],
+      "input_ids": [
+        "ep06_c053"
+      ],
+      "source_pixels": 5486000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c054",
+      "source_window": [
+        0,
+        336,
+        2000,
+        4640
+      ],
+      "input_ids": [
+        "ep06_c054"
+      ],
+      "source_pixels": 8608000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c055",
+      "source_window": [
+        0,
+        4966,
+        2000,
+        11629
+      ],
+      "input_ids": [
+        "ep06_c055"
+      ],
+      "source_pixels": 13326000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c056",
+      "source_window": [
+        0,
+        11862,
+        2000,
+        20795
+      ],
+      "input_ids": [
+        "ep06_c056_nasir",
+        "ep06_c056_ashina"
+      ],
+      "source_pixels": 17866000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c057",
+      "source_window": [
+        0,
+        20858,
+        2000,
+        28519
+      ],
+      "input_ids": [
+        "ep06_c057"
+      ],
+      "source_pixels": 15322000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c058",
+      "source_window": [
+        0,
+        11,
+        2000,
+        8084
+      ],
+      "input_ids": [
+        "ep06_c058"
+      ],
+      "source_pixels": 16146000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c059",
+      "source_window": [
+        0,
+        8096,
+        2000,
+        11265
+      ],
+      "input_ids": [
+        "ep06_c059"
+      ],
+      "source_pixels": 6338000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c060",
+      "source_window": [
+        0,
+        11270,
+        2000,
+        20942
+      ],
+      "input_ids": [
+        "ep06_c060_ashina",
+        "ep06_c060_nasir"
+      ],
+      "source_pixels": 19344000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c061",
+      "source_window": [
+        0,
+        21065,
+        2000,
+        25677
+      ],
+      "input_ids": [
+        "ep06_c061_anchor"
+      ],
+      "source_pixels": 9224000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c062",
+      "source_window": [
+        0,
+        235,
+        2000,
+        12462
+      ],
+      "input_ids": [
+        "ep06_c062_present",
+        "ep06_c062_desert"
+      ],
+      "source_pixels": 24454000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c063",
+      "source_window": [
+        0,
+        12857,
+        2000,
+        15928
+      ],
+      "input_ids": [
+        "ep06_c063"
+      ],
+      "source_pixels": 6142000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c064",
+      "source_window": [
+        0,
+        15928,
+        2000,
+        22515
+      ],
+      "input_ids": [
+        "ep06_c064"
+      ],
+      "source_pixels": 13174000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    },
+    {
+      "source_cut_id": "ep06_c065",
+      "source_window": [
+        0,
+        22517,
+        2000,
+        27652
+      ],
+      "input_ids": [
+        "ep06_c065"
+      ],
+      "source_pixels": 10270000,
+      "uncovered_pixels": 0,
+      "overlapping_pixels": 0
+    }
+  ],
+  "anchor_checks": [
+    {
+      "candidate_id": "ep06_c001",
+      "anchor_id": "ep06_c001:lines[0]",
+      "pointer": "/beats/ep06_c001/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c001",
+      "anchor_id": "ep06_c001:lines[1]",
+      "pointer": "/beats/ep06_c001/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c002",
+      "anchor_id": "ep06_c002:lines[0]",
+      "pointer": "/beats/ep06_c002/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c002",
+      "anchor_id": "ep06_c002:lines[1]",
+      "pointer": "/beats/ep06_c002/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c003",
+      "anchor_id": "ep06_c003:lines[0]",
+      "pointer": "/beats/ep06_c003/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c003",
+      "anchor_id": "ep06_c003:lines[1]",
+      "pointer": "/beats/ep06_c003/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c003",
+      "anchor_id": "ep06_decline_pause:lines[0]",
+      "pointer": "/beats/ep06_decline_pause/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c003",
+      "anchor_id": "ep06_c004:lines[0]",
+      "pointer": "/beats/ep06_c004/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c005",
+      "anchor_id": "ep06_c005:lines[0]",
+      "pointer": "/beats/ep06_c005/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c006",
+      "anchor_id": "ep06_c006:lines[0]",
+      "pointer": "/beats/ep06_c006/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c006",
+      "anchor_id": "ep06_c006:lines[1]",
+      "pointer": "/beats/ep06_c006/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c007_hand",
+      "anchor_id": "ep06_c007:lines[0]",
+      "pointer": "/beats/ep06_c007/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c007_eye",
+      "anchor_id": "ep06_c007:lines[1]",
+      "pointer": "/beats/ep06_c007/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c007_memory",
+      "anchor_id": "ep06_c007:lines[2]",
+      "pointer": "/beats/ep06_c007/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c007_memory",
+      "anchor_id": "ep06_c007:lines[3]",
+      "pointer": "/beats/ep06_c007/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c007_memory",
+      "anchor_id": "ep06_c007:lines[4]",
+      "pointer": "/beats/ep06_c007/lines/4",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c008_room",
+      "anchor_id": "ep06_c008:lines[0]",
+      "pointer": "/beats/ep06_c008/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c008_room",
+      "anchor_id": "ep06_purpose_pause:lines[0]",
+      "pointer": "/beats/ep06_purpose_pause/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c008_pair",
+      "anchor_id": "ep06_c008_reply:lines[0]",
+      "pointer": "/beats/ep06_c008_reply/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c008_pair",
+      "anchor_id": "ep06_c008_reply:lines[1]",
+      "pointer": "/beats/ep06_c008_reply/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c008_threat",
+      "anchor_id": "ep06_c008_reply:lines[2]",
+      "pointer": "/beats/ep06_c008_reply/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c008_threat",
+      "anchor_id": "ep06_c008_reply:lines[3]",
+      "pointer": "/beats/ep06_c008_reply/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c008_threat",
+      "anchor_id": "ep06_c008_reply:lines[4]",
+      "pointer": "/beats/ep06_c008_reply/lines/4",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c009",
+      "anchor_id": "ep06_c009:lines[0]",
+      "pointer": "/beats/ep06_c009/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c010",
+      "anchor_id": "ep06_c010:lines[0]",
+      "pointer": "/beats/ep06_c010/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c010",
+      "anchor_id": "ep06_c010:lines[1]",
+      "pointer": "/beats/ep06_c010/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c010",
+      "anchor_id": "ep06_c010:lines[2]",
+      "pointer": "/beats/ep06_c010/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c010",
+      "anchor_id": "ep06_c010:lines[3]",
+      "pointer": "/beats/ep06_c010/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c011_face",
+      "anchor_id": "ep06_c011:lines[0]",
+      "pointer": "/beats/ep06_c011/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c011_feet",
+      "anchor_id": "ep06_c011:lines[1]",
+      "pointer": "/beats/ep06_c011/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c011_feet",
+      "anchor_id": "ep06_c011:lines[2]",
+      "pointer": "/beats/ep06_c011/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c011_feet",
+      "anchor_id": "ep06_c011:lines[3]",
+      "pointer": "/beats/ep06_c011/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c012",
+      "anchor_id": "ep06_c012:lines[0]",
+      "pointer": "/beats/ep06_c012/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c012",
+      "anchor_id": "ep06_c012:lines[1]",
+      "pointer": "/beats/ep06_c012/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c013",
+      "anchor_id": "ep06_c013:lines[0]",
+      "pointer": "/beats/ep06_c013/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c013",
+      "anchor_id": "ep06_c013:lines[1]",
+      "pointer": "/beats/ep06_c013/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c013",
+      "anchor_id": "ep06_c014:lines[0]",
+      "pointer": "/beats/ep06_c014/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c014",
+      "anchor_id": "ep06_c014:lines[1]",
+      "pointer": "/beats/ep06_c014/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c014",
+      "anchor_id": "ep06_c014:lines[2]",
+      "pointer": "/beats/ep06_c014/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c015",
+      "anchor_id": "ep06_c015:lines[0]",
+      "pointer": "/beats/ep06_c015/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c016",
+      "anchor_id": "ep06_c016:lines[0]",
+      "pointer": "/beats/ep06_c016/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c017_room",
+      "anchor_id": "ep06_c017:lines[0]",
+      "pointer": "/beats/ep06_c017/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c017_turn",
+      "anchor_id": "ep06_c017:lines[1]",
+      "pointer": "/beats/ep06_c017/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c018",
+      "anchor_id": "ep06_c018:lines[0]",
+      "pointer": "/beats/ep06_c018/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c019",
+      "anchor_id": "ep06_c019:lines[0]",
+      "pointer": "/beats/ep06_c019/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c020",
+      "anchor_id": "ep06_c020:lines[0]",
+      "pointer": "/beats/ep06_c020/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c020",
+      "anchor_id": "ep06_c020:lines[1]",
+      "pointer": "/beats/ep06_c020/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c021",
+      "anchor_id": "ep06_c021:lines[0]",
+      "pointer": "/beats/ep06_c021/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c021",
+      "anchor_id": "ep06_c021:lines[1]",
+      "pointer": "/beats/ep06_c021/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c022",
+      "anchor_id": "ep06_c022:lines[0]",
+      "pointer": "/beats/ep06_c022/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c023",
+      "anchor_id": "ep06_c023:lines[0]",
+      "pointer": "/beats/ep06_c023/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c024",
+      "anchor_id": "ep06_c024:lines[0]",
+      "pointer": "/beats/ep06_c024/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c024",
+      "anchor_id": "ep06_c024:lines[1]",
+      "pointer": "/beats/ep06_c024/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c024",
+      "anchor_id": "ep06_c024:lines[2]",
+      "pointer": "/beats/ep06_c024/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c025",
+      "anchor_id": "ep06_c025:lines[0]",
+      "pointer": "/beats/ep06_c025/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c025",
+      "anchor_id": "ep06_c025:lines[1]",
+      "pointer": "/beats/ep06_c025/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c025",
+      "anchor_id": "ep06_c025:lines[2]",
+      "pointer": "/beats/ep06_c025/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c026",
+      "anchor_id": "ep06_c026:lines[0]",
+      "pointer": "/beats/ep06_c026/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c026",
+      "anchor_id": "ep06_c026:lines[1]",
+      "pointer": "/beats/ep06_c026/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c027",
+      "anchor_id": "ep06_c027:lines[0]",
+      "pointer": "/beats/ep06_c027/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c027",
+      "anchor_id": "ep06_c027:lines[1]",
+      "pointer": "/beats/ep06_c027/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c027",
+      "anchor_id": "ep06_c027:lines[2]",
+      "pointer": "/beats/ep06_c027/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c028",
+      "anchor_id": "ep06_c028:lines[0]",
+      "pointer": "/beats/ep06_c028/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c029_ra",
+      "anchor_id": "ep06_c029:lines[0]",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c029_nod",
+      "anchor_id": "ep06_c029:lines[0]#panel2",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c030",
+      "anchor_id": "ep06_c030:lines[0]",
+      "pointer": "/beats/ep06_c030/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c031",
+      "anchor_id": "ep06_c031:lines[0]",
+      "pointer": "/beats/ep06_c031/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c031",
+      "anchor_id": "ep06_c031:lines[1]",
+      "pointer": "/beats/ep06_c031/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c031",
+      "anchor_id": "ep06_c031:lines[2]",
+      "pointer": "/beats/ep06_c031/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c032_order",
+      "anchor_id": "ep06_c032:lines[0]",
+      "pointer": "/beats/ep06_c032/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c032_order",
+      "anchor_id": "ep06_c032:lines[1]",
+      "pointer": "/beats/ep06_c032/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c032_order",
+      "anchor_id": "ep06_c032:lines[2]",
+      "pointer": "/beats/ep06_c032/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c032_order",
+      "anchor_id": "ep06_c032:lines[3]",
+      "pointer": "/beats/ep06_c032/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c032_accept",
+      "anchor_id": "ep06_c032:lines[4]",
+      "pointer": "/beats/ep06_c032/lines/4",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c033",
+      "anchor_id": "ep06_c033:lines[0]",
+      "pointer": "/beats/ep06_c033/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c034",
+      "anchor_id": "ep06_c034:lines[0]",
+      "pointer": "/beats/ep06_c034/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c034",
+      "anchor_id": "ep06_c034:lines[1]",
+      "pointer": "/beats/ep06_c034/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c035",
+      "anchor_id": "ep06_c035:lines[0]",
+      "pointer": "/beats/ep06_c035/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c035",
+      "anchor_id": "ep06_c035:lines[1]",
+      "pointer": "/beats/ep06_c035/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c035",
+      "anchor_id": "ep06_origin_pause:lines[0]",
+      "pointer": "/beats/ep06_origin_pause/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c036_map",
+      "anchor_id": "ep06_c036:lines[0]",
+      "pointer": "/beats/ep06_c036/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c036_map",
+      "anchor_id": "ep06_c036:lines[1]",
+      "pointer": "/beats/ep06_c036/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c036_table",
+      "anchor_id": "ep06_c036:lines[2]",
+      "pointer": "/beats/ep06_c036/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c037",
+      "anchor_id": "ep06_c037:lines[0]",
+      "pointer": "/beats/ep06_c037/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c037",
+      "anchor_id": "ep06_c037:lines[1]",
+      "pointer": "/beats/ep06_c037/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c037",
+      "anchor_id": "ep06_c037:lines[2]",
+      "pointer": "/beats/ep06_c037/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c037",
+      "anchor_id": "ep06_c037:lines[3]",
+      "pointer": "/beats/ep06_c037/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c038",
+      "anchor_id": "ep06_c038:lines[0]",
+      "pointer": "/beats/ep06_c038/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c038",
+      "anchor_id": "ep06_c038:lines[1]",
+      "pointer": "/beats/ep06_c038/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c038",
+      "anchor_id": "ep06_question_pause:lines[0]",
+      "pointer": "/beats/ep06_question_pause/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "anchor_id": "ep06_c039:lines[0]",
+      "pointer": "/beats/ep06_c039/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "anchor_id": "ep06_c039:lines[1]",
+      "pointer": "/beats/ep06_c039/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "anchor_id": "ep06_c039:lines[2]",
+      "pointer": "/beats/ep06_c039/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "anchor_id": "ep06_c039:lines[3]",
+      "pointer": "/beats/ep06_c039/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "anchor_id": "ep06_c039:lines[4]",
+      "pointer": "/beats/ep06_c039/lines/4",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "anchor_id": "ep06_c039:lines[5]",
+      "pointer": "/beats/ep06_c039/lines/5",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "anchor_id": "ep06_c040:lines[0]",
+      "pointer": "/beats/ep06_c040/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c041",
+      "anchor_id": "ep06_c041:lines[0]",
+      "pointer": "/beats/ep06_c041/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c042",
+      "anchor_id": "ep06_c042:lines[0]",
+      "pointer": "/beats/ep06_c042/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c043",
+      "anchor_id": "ep06_c043:lines[0]",
+      "pointer": "/beats/ep06_c043/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c043",
+      "anchor_id": "ep06_c043:lines[1]",
+      "pointer": "/beats/ep06_c043/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c043",
+      "anchor_id": "ep06_c044:lines[0]",
+      "pointer": "/beats/ep06_c044/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c045",
+      "anchor_id": "ep06_c045:lines[0]",
+      "pointer": "/beats/ep06_c045/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c045",
+      "anchor_id": "ep06_c045_question:lines[0]",
+      "pointer": "/beats/ep06_c045_question/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c046_question",
+      "anchor_id": "ep06_c046:lines[0]",
+      "pointer": "/beats/ep06_c046/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c046_question",
+      "anchor_id": "ep06_politics_pause:lines[0]",
+      "pointer": "/beats/ep06_politics_pause/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c046_reaction",
+      "anchor_id": "ep06_c046_reply:lines[0]",
+      "pointer": "/beats/ep06_c046_reply/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c046_reaction",
+      "anchor_id": "ep06_c046_reply:lines[1]",
+      "pointer": "/beats/ep06_c046_reply/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c046_hands",
+      "anchor_id": "ep06_c046_reply:lines[2]",
+      "pointer": "/beats/ep06_c046_reply/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c046_hands",
+      "anchor_id": "ep06_c046_reply:lines[3]",
+      "pointer": "/beats/ep06_c046_reply/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c047",
+      "anchor_id": "ep06_c047:lines[0]",
+      "pointer": "/beats/ep06_c047/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c047",
+      "anchor_id": "ep06_c047:lines[1]",
+      "pointer": "/beats/ep06_c047/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c047",
+      "anchor_id": "ep06_c047:lines[2]",
+      "pointer": "/beats/ep06_c047/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c047",
+      "anchor_id": "ep06_c048:lines[0]",
+      "pointer": "/beats/ep06_c048/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c049",
+      "anchor_id": "ep06_c049:lines[0]",
+      "pointer": "/beats/ep06_c049/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c050",
+      "anchor_id": "ep06_c050:lines[0]",
+      "pointer": "/beats/ep06_c050/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c051",
+      "anchor_id": "ep06_c051:lines[0]",
+      "pointer": "/beats/ep06_c051/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c051",
+      "anchor_id": "ep06_c051:lines[1]",
+      "pointer": "/beats/ep06_c051/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c052_hood",
+      "anchor_id": "ep06_c052:lines[0]",
+      "pointer": "/beats/ep06_c052/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c052_escape",
+      "anchor_id": "ep06_c052:lines[1]",
+      "pointer": "/beats/ep06_c052/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c052_escape",
+      "anchor_id": "ep06_c052:lines[2]",
+      "pointer": "/beats/ep06_c052/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c052_escape",
+      "anchor_id": "ep06_c052:lines[3]",
+      "pointer": "/beats/ep06_c052/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c053",
+      "anchor_id": "ep06_c053:lines[0]",
+      "pointer": "/beats/ep06_c053/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c054",
+      "anchor_id": "ep06_c054:lines[0]",
+      "pointer": "/beats/ep06_c054/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c054",
+      "anchor_id": "ep06_c054:lines[1]",
+      "pointer": "/beats/ep06_c054/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c054",
+      "anchor_id": "ep06_c054:lines[2]",
+      "pointer": "/beats/ep06_c054/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c055",
+      "anchor_id": "ep06_c055:lines[0]",
+      "pointer": "/beats/ep06_c055/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c055",
+      "anchor_id": "ep06_c055:lines[1]",
+      "pointer": "/beats/ep06_c055/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c055",
+      "anchor_id": "ep06_c055:lines[2]",
+      "pointer": "/beats/ep06_c055/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c055",
+      "anchor_id": "ep06_c055:lines[3]",
+      "pointer": "/beats/ep06_c055/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c056_nasir",
+      "anchor_id": "ep06_c056:lines[0]",
+      "pointer": "/beats/ep06_c056/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c056_nasir",
+      "anchor_id": "ep06_c056:lines[1]",
+      "pointer": "/beats/ep06_c056/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c056_nasir",
+      "anchor_id": "ep06_c056_interior:lines[0]",
+      "pointer": "/beats/ep06_c056_interior/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c056_ashina",
+      "anchor_id": "ep06_c056_interior:lines[1]",
+      "pointer": "/beats/ep06_c056_interior/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c056_ashina",
+      "anchor_id": "ep06_c056_response:lines[0]",
+      "pointer": "/beats/ep06_c056_response/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c056_ashina",
+      "anchor_id": "ep06_travel_pause:lines[0]",
+      "pointer": "/beats/ep06_travel_pause/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c057",
+      "anchor_id": "ep06_c057:lines[0]",
+      "pointer": "/beats/ep06_c057/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c057",
+      "anchor_id": "ep06_c057:lines[1]",
+      "pointer": "/beats/ep06_c057/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c058",
+      "anchor_id": "ep06_c058:lines[0]",
+      "pointer": "/beats/ep06_c058/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c058",
+      "anchor_id": "ep06_c058:lines[1]",
+      "pointer": "/beats/ep06_c058/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c058",
+      "anchor_id": "ep06_c058:lines[2]",
+      "pointer": "/beats/ep06_c058/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c058",
+      "anchor_id": "ep06_c058:lines[3]",
+      "pointer": "/beats/ep06_c058/lines/3",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c059",
+      "anchor_id": "ep06_c059:lines[0]",
+      "pointer": "/beats/ep06_c059/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c060_ashina",
+      "anchor_id": "ep06_c060:lines[0]",
+      "pointer": "/beats/ep06_c060/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c060_nasir",
+      "anchor_id": "ep06_c060:lines[1]",
+      "pointer": "/beats/ep06_c060/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c060_nasir",
+      "anchor_id": "ep06_c060_interior:lines[0]",
+      "pointer": "/beats/ep06_c060_interior/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c060_nasir",
+      "anchor_id": "ep06_c061:lines[0]",
+      "pointer": "/beats/ep06_c061/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c060_nasir",
+      "anchor_id": "ep06_c061_question:lines[0]",
+      "pointer": "/beats/ep06_c061_question/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c060_nasir",
+      "anchor_id": "ep06_c061_question:lines[1]",
+      "pointer": "/beats/ep06_c061_question/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c062_present",
+      "anchor_id": "ep06_c062:lines[0]",
+      "pointer": "/beats/ep06_c062/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c062_present",
+      "anchor_id": "ep06_c062:lines[1]",
+      "pointer": "/beats/ep06_c062/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c062_desert",
+      "anchor_id": "ep06_c062:lines[2]",
+      "pointer": "/beats/ep06_c062/lines/2",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c063",
+      "anchor_id": "ep06_c063:lines[0]",
+      "pointer": "/beats/ep06_c063/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c063",
+      "anchor_id": "ep06_c063:lines[1]",
+      "pointer": "/beats/ep06_c063/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c064",
+      "anchor_id": "ep06_c064:lines[0]",
+      "pointer": "/beats/ep06_c064/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c064",
+      "anchor_id": "ep06_c064_reply:lines[0]",
+      "pointer": "/beats/ep06_c064_reply/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c064",
+      "anchor_id": "ep06_c064_reply:lines[1]",
+      "pointer": "/beats/ep06_c064_reply/lines/1",
+      "defined": true,
+      "source_text_preserved": true
+    },
+    {
+      "candidate_id": "ep06_c065",
+      "anchor_id": "ep06_c065:lines[0]",
+      "pointer": "/beats/ep06_c065/lines/0",
+      "defined": true,
+      "source_text_preserved": true
+    }
+  ],
+  "existing_reuse_source_pixel_evidence": [
+    {
+      "id": "ep06_gap014",
+      "path": "assets/ep06/gen/source/ep06_gap014.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_c024",
+      "path": "assets/ep06/gen/source/ep06_c024.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_c025",
+      "path": "assets/ep06/gen/source/ep06_c025.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_gap025",
+      "path": "assets/ep06/gen/source/ep06_gap025.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_c030",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c030.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_c033",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c033.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_c040_anchor",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c040.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_c049",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c049.png",
+      "source_pixel_equal": true
+    },
+    {
+      "id": "ep06_c050",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c050.png",
+      "source_pixel_equal": true
+    }
+  ],
+  "existing_clean_pixel_comparisons": [
+    {
+      "id": "ep06_c001",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c001.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c002",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c002.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c003",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c003.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c004_anchor",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c004.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c005",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c005.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c006",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c006.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c007_memory",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c007.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c008_room",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c008.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c009",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c009.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c010",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c010.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c011_face",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c011.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c011_feet",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c011.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c012",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c012.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c013",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c013.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c014",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c014.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c015",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c015.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c016",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c016.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c017_room",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c017.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c017_turn",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c017.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c018",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c018.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c019",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c019.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c020",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c020.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c021",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c021.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c022",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c022.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c023",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c023.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c026",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c026.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c027",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c027.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c028",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c028.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c030",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c030.png",
+      "original_pixel_equal": true
+    },
+    {
+      "id": "ep06_c031",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c031.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c032_order",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c032.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c032_accept",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c032.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c033",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c033.png",
+      "original_pixel_equal": true
+    },
+    {
+      "id": "ep06_c034",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c034.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c035",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c035.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c036_map",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c036.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c036_table",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c036.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c037",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c037.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c038",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c038.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c039",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c039.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c040_anchor",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c040.png",
+      "original_pixel_equal": true
+    },
+    {
+      "id": "ep06_c041",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c041.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c042",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c042.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c043",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c043.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c044_anchor",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c044.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c045",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c045.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c046_question",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c046.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c046_reaction",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c046.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c046_hands",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c046.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c047",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c047.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c048_anchor",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c048.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c049",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c049.png",
+      "original_pixel_equal": true
+    },
+    {
+      "id": "ep06_c050",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c050.png",
+      "original_pixel_equal": true
+    },
+    {
+      "id": "ep06_c051",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c051.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c052_hood",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c052.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c052_escape",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c052.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c053",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c053.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c054",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c054.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c055",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c055.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c056_nasir",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c056.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c056_ashina",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c056.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c057",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c057.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c058",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c058.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c059",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c059.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c060_ashina",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c060.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c060_nasir",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c060.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c061_anchor",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c061.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c062_present",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c062.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c062_desert",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c062.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c063",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c063.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c064",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c064.png",
+      "original_pixel_equal": false
+    },
+    {
+      "id": "ep06_c065",
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c065.png",
+      "original_pixel_equal": false
+    }
+  ],
+  "ls": {
+    "command": "ls -ld (82개 실제 원문 입력 경로 및 새 input-manifest-v1.json)",
+    "exit_code": 0,
+    "paths": [
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c001.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c002.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c003.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c004_anchor.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c005.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c006.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c007_hand.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c007_eye.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c007_memory.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c008_room.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c008_pair.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c008_threat.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c009.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c010.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c011_face.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c011_feet.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c012.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c013.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap014.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c014.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c015.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c016.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c017_room.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c017_turn.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c018.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c019.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c020.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c021.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c022.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c023.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c024.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c025.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap025.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c026.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c027.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c028.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c029_ra.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c029_nod.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c030.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c031.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c032_order.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c032_accept.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c033.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c034.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c035.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c036_map.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c036_table.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c037.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c038.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c039.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c040.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c041.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c042.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c043.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c044_anchor.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c045.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c046_question.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c046_reaction.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c046_hands.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c047.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c048_anchor.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c049.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c050.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c051.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c052_hood.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c052_escape.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c053.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c054.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c055.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c056_nasir.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c056_ashina.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c057.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c058.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c059.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c060_ashina.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c060_nasir.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c061_anchor.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c062_present.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c062_desert.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c063.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c064.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c065.png",
+      "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/input-manifest-v1.json"
+    ],
+    "stdout": "-rw-r--r--   1   501    20  6438400 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c001.png\n-rw-r--r--   1   501    20 17623549 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c055.png\n-rw-r--r--   1   501    20  1897735 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c061_anchor.png\n-rw-r--r--   1   501    20  4692128 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c064.png\n-rw-r--r--   1   501    20  9382334 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c026.png\n-rw-r--r--   1   501    20  4186252 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c060_nasir.png\n-rw-r--r--   1   501    20  7239567 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c027.png\n-rw-r--r--   1   501    20  9981835 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c062_present.png\n-rw-r--r--   1   501    20  6811113 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c062_desert.png\n-rw-r--r--   1   501    20   276136 Nov 09 05:17 /Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/input-manifest-v1.json\n-rw-r--r--   1   501    20   351218 Nov 09 02:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap025.png\n-rw-r--r--   1   501    20  5410779 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c060_ashina.png\n-rw-r--r--   1   501    20  3662879 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c054.png\n-rw-r--r--   1   501    20  4594452 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c063.png\n-rw-r--r--   1   501    20  2407007 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c005.png\n-rw-r--r--   1   501    20  1667275 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c053.png\n-rw-r--r--   1   501    20  6247712 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c059.png\n-rw-r--r--   1   501    20   698775 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c004_anchor.png\n-rw-r--r--   1   501    20 27493858 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c007_memory.png\n-rw-r--r--   1   501    20  4289404 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c009.png\n-rw-r--r--   1   501    20  9638436 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c012.png\n-rw-r--r--   1   501    20  5490725 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c065.png\n-rw-r--r--   1   501    20  2574036 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c007_eye.png\n-rw-r--r--   1   501    20 15573845 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c052_escape.png\n-rw-r--r--   1   501    20 11452138 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c008_threat.png\n-rw-r--r--   1   501    20 21261400 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c058.png\n-rw-r--r--   1   501    20  3398682 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c003.png\n-rw-r--r--   1   501    20  4130162 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c002.png\n-rw-r--r--   1   501    20  4216256 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c011_face.png\n-rw-r--r--   1   501    20 17453952 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c010.png\n-rw-r--r--   1   501    20  7535652 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c018.png\n-rw-r--r--   1   501    20  4086279 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c007_hand.png\n-rw-r--r--   1   501    20 12916330 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c052_hood.png\n-rw-r--r--   1   501    20  6979294 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c008_pair.png\n-rw-r--r--   1   501    20  6543919 Nov 09 02:17 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c025.png\n-rw-r--r--   1   501    20  8821176 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c057.png\n-rw-r--r--   1   501    20  4774597 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c008_room.png\n-rw-r--r--   1   501    20  4674458 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c015.png\n-rw-r--r--   1   501    20 36777785 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c039.png\n-rw-r--r--   1   501    20  5549782 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c011_feet.png\n-rw-r--r--   1   501    20  5688189 Nov 09 02:23 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c024.png\n-rw-r--r--   1   501    20 13117820 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c006.png\n-rw-r--r--   1   501    20 10172652 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c046_reaction.png\n-rw-r--r--   1   501    20 12258618 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c017_room.png\n-rw-r--r--   1   501    20  5008408 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c038.png\n-rw-r--r--   1   501    20  6772422 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c014.png\n-rw-r--r--   1   501    20  4221354 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c056_ashina.png\n-rw-r--r--   1   501    20   491536 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c042.png\n-rw-r--r--   1   501    20 14527888 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c041.png\n-rw-r--r--   1   501    20  9266253 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c023.png\n-rw-r--r--   1   501    20  6210790 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c051.png\n-rw-r--r--   1   501    20   486646 Nov 09 02:15 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap014.png\n-rw-r--r--   1   501    20  6106993 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c013.png\n-rw-r--r--   1   501    20  3572516 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c017_turn.png\n-rw-r--r--   1   501    20  6465430 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c043.png\n-rw-r--r--   1   501    20  7153477 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c037.png\n-rw-r--r--   1   501    20 10893731 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c032_accept.png\n-rw-r--r--   1   501    20 10233296 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c016.png\n-rw-r--r--   1   501    20  3475219 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c035.png\n-rw-r--r--   1   501    20    93336 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c050.png\n-rw-r--r--   1   501    20  4829950 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c034.png\n-rw-r--r--   1   501    20  4265255 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c029_ra.png\n-rw-r--r--   1   501    20 11653174 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c032_order.png\n-rw-r--r--   1   501    20  5913312 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c028.png\n-rw-r--r--   1   501    20  6245909 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c046_question.png\n-rw-r--r--   1   501    20 10741225 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c022.png\n-rw-r--r--   1   501    20  2513661 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c046_hands.png\n-rw-r--r--   1   501    20   126488 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c049.png\n-rw-r--r--   1   501    20  3099171 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c045.png\n-rw-r--r--   1   501    20 18841842 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c020.png\n-rw-r--r--   1   501    20 13082685 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c019.png\n-rw-r--r--   1   501    20  5718467 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c029_nod.png\n-rw-r--r--   1   501    20   573630 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c030.png\n-rw-r--r--   1   501    20   189793 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c048_anchor.png\n-rw-r--r--   1   501    20   206510 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c040.png\n-rw-r--r--   1   501    20  4563126 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c056_nasir.png\n-rw-r--r--   1   501    20  4174677 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c033.png\n-rw-r--r--   1   501    20  4677957 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c036_table.png\n-rw-r--r--   1   501    20 15605210 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c036_map.png\n-rw-r--r--   1   501    20  4353316 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c021.png\n-rw-r--r--   1   501    20 10319380 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c047.png\n-rw-r--r--   1   501    20 25555710 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c031.png\n-rw-r--r--   1   501    20   264225 Nov 09 05:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c044_anchor.png\n",
+    "stderr": ""
+  },
+  "scope": {
+    "new_binary_files_directory": "assets/ep06/gen/inputs-original-v1",
+    "existing_files_overwritten": 0,
+    "existing_files_deleted": 0,
+    "yaml_edited": false,
+    "tests_or_shared_files_edited": false,
+    "old_art_documents_edited": false,
+    "other_episode_assets_edited": false,
+    "unexpected_gen_files": [],
+    "native_slot_acquired": false,
+    "ai_generation_started": false,
+    "claude_or_gpt_qa_requested": false
+  },
+  "errors": []
+}

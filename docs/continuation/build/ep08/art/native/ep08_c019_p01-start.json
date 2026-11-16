@@ -1,0 +1,20 @@
+{
+  "candidate_id": "ep08_c019_p01",
+  "pid": 74694,
+  "pgid": 74694,
+  "started_at": 1794202994.8554602,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep08/gen/inputs/ep08_c019_p01.png",
+  "input_sha256": "916f7b1937efd9e3ade2b53bbeee02e2c87658593407cd50f50b3d0ff680d974",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep08/gen/ep08_c019_p01.png",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep08/art/native/ep08_c019_p01.log",
+  "native_active_before_launch": [
+    {
+      "pid": 74239,
+      "pgid": 74239,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C /Users/choeminju/월흔_trpg/assets/ep05/gen -i /Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c023_p01_source.png -- 첨부한 원작 참조 창만 편집하세요. 대상은 차를 건네는 누르와 아시나입니다. 원작 얼굴·표정·시선·자세·몸 비율·머리·복장·가림·장신구·소품·구도를 유지하세요. 말풍선·대사·독백·효과 글자만 제거하고 해당 자리를 주변 원작 그림으로 복원하세요. 16:9 가로 화면은 옆 배경만 확장하고, 원작에서 잘린 인체와 가려진 몸은 잘리고 가려진 상태로 유지하세요. 전신·새 몸·노출·인물·물건·사건·다른 패널 콜라주를 추가하지 마세요. 그림 공개 순서는 매핑의 ep05"
+    }
+  ],
+  "native_active_before_count": 1,
+  "slot_counter": "argv 첫 실행 파일 기준",
+  "independent_qa": "대기"
+}

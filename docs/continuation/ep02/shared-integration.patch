@@ -1,0 +1,57 @@
+diff --git a/app/src/engine/engine.ts b/app/src/engine/engine.ts
+--- a/app/src/engine/engine.ts
++++ b/app/src/engine/engine.ts
+@@ -460,5 +460,5 @@
+   private dueFate(state: GameState): FateSpec | undefined {
+     if (state.ending) return undefined;
+-    if (state.flags['체력_쓰러짐'] === true && this.scenario.sheet.collapseTo) {
++    if (state.flags['후속_시작'] !== true && state.flags['체력_쓰러짐'] === true && this.scenario.sheet.collapseTo) {
+       return { id: 'body_captured', when: 'flag:체력_쓰러짐', to: this.scenario.sheet.collapseTo };
+     }
+@@ -555,5 +555,5 @@
+     // 귀찌 결말 정책은 보류. 정식 결말 직전의 체력 포획·첩자 문턱만 먼저 정산한다.
+     const terminalFate = beat.ending && !beat.ending.bad && beat.ending.id !== 'quit'
+-      ? state.flags['체력_쓰러짐'] === true && this.scenario.sheet.collapseTo
++      ? state.flags['후속_시작'] !== true && state.flags['체력_쓰러짐'] === true && this.scenario.sheet.collapseTo
+         ? { to: this.scenario.sheet.collapseTo }
+         : this.scenario.fates?.find((f) => f.id === 'spy_cut' && evalCond(f.when, this.ctx(state)))
+diff --git a/app/src/server/main.ts b/app/src/server/main.ts
+--- a/app/src/server/main.ts
++++ b/app/src/server/main.ts
+@@ -3,5 +3,5 @@
+ import { join, relative, resolve, sep } from 'node:path';
+ import { seedFrom } from '../engine/dice.ts';
+ import { Engine } from '../engine/engine.ts';
+-import { loadScenario } from '../engine/scenario.ts';
++import { loadCampaignScenario, resumeCampaign } from '../engine/continuation.ts';
+ import { SaveError, listSaves, readSave, readSaveView, writeSave } from '../engine/save.ts';
+@@ -216,7 +216,7 @@
+   const shared = sharedWithUser(opts);
+   if (shared.length > 0) throw new Error(`포트 ${opts.port} 서버는 사용자 판(${USER_PORT})과 같은 파일·LLM 을 쓸 수 없습니다. 따로 주세요: ${shared.join(', ')} (LLM 이 필요 없으면 WOLHEUN_NO_LLM=1)`);
+   const lore = await loadLore(opts.lorePath);
+-  const scenario = withNotes(await loadScenario(opts.scenarioPath), lore);
++  const scenario = withNotes(await loadCampaignScenario(opts.scenarioPath), lore);
+   const registry = (await Bun.file(join(APP, 'config', 'models.json')).json()) as { models: Record<string, ModelEntry> };
+   const model = opts.modelKey ? (registry.models[opts.modelKey] ?? null) : null;
+   const llm = opts.llmUrl
+@@ -434,14 +434,16 @@
+           const slot = typeof body.slot === 'string' ? body.slot : '';
+           const loaded = await readSave(opts.savesDir, slot, scenario);
+           const id = crypto.randomUUID();
+-          const state = engine.noteSlot({ ...loaded, session: id }, 'load', slot);
+-          const view = await readSaveView(opts.savesDir, slot);
++          const resumed = await resumeCampaign(engine, engine.noteSlot({ ...loaded, session: id }, 'load', slot));
++          const { state } = resumed;
++          const savedView = await readSaveView(opts.savesDir, slot);
++          const view = resumed.continued ? undefined : savedView;
+-          const memo = (view as { memo?: unknown } | null)?.memo;
++          const memo = (savedView as { memo?: unknown } | null)?.memo;
+           const s: Session = { state, logged: 0, busy: false, memo: typeof memo === 'string' ? memo.slice(0, MAX_MEMO_CHARS) : '' };
+           sessions.set(id, s);
+           await persist(s);
+           if (s.memo) await writeMemo(id, s.memo);
+-          return json({ session: id, step: engine.resume(state), view });
++          return json({ session: id, step: resumed.step, view });
+         }),
+       },
+       '/api/atlas': { GET: handle(async () => json(buildAtlas(scenario, await readAtlas()))) },

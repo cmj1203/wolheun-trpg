@@ -1,0 +1,117 @@
+{
+  "날짜": "2026-11-09",
+  "대상": [
+    "ep06_라",
+    "ep06_라독백"
+  ],
+  "공통로어": "베히다트",
+  "승인표정": [
+    "dumbfounded",
+    "intrigued",
+    "wary",
+    "sneer",
+    "neutral",
+    "menacing"
+  ],
+  "수정전": {
+    "독립결합오류수": 32,
+    "수첩참조오류": [
+      "- knowledge.common.stars.after: 없는 비트 \"b01_sand\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"r2_bind\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"r4_walk\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"r5_price\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_spy\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_curious\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_survivor\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_value\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_deal\"",
+      "- knowledge.asina.strangers.after: 없는 비트 \"b02_people\"",
+      "- knowledge.asina.man.after: 없는 비트 \"b03_ask\"",
+      "- knowledge.asina.man.after: 없는 비트 \"r3_slip\"",
+      "- knowledge.asina.man.after: 없는 비트 \"r3_flee\"",
+      "- knowledge.asina.man.after: 없는 비트 \"r3_night\"",
+      "- knowledge.asina.guards.after: 없는 비트 \"b03_ask\"",
+      "- knowledge.asina.guards.after: 없는 비트 \"r3_night\""
+    ],
+    "반응오류": [
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)",
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: intrigued)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: intrigued)",
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)",
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: wary)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: wary)",
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: sneer)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: sneer)",
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)",
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: menacing)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: menacing)",
+      "- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)",
+      "- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)"
+    ],
+    "공유반응개수": 8,
+    "실제서로다른표정": [
+      "dumbfounded",
+      "intrigued",
+      "wary",
+      "sneer",
+      "neutral",
+      "menacing"
+    ],
+    "대상별칭": [
+      "ep06_라",
+      "ep06_라독백"
+    ],
+    "대상원작줄수": 27
+  },
+  "수정후": {
+    "시나리오오류": [],
+    "수첩참조를실제앞화비트로해소한결합": "통과",
+    "전체원래수첩유지": true,
+    "독립결합문제": [
+      "- knowledge.common.stars.after: 없는 비트 \"b01_sand\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"r2_bind\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"r4_walk\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"r5_price\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_spy\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_curious\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_survivor\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_value\"",
+      "- knowledge.asina.captive.after: 없는 비트 \"e_deal\"",
+      "- knowledge.asina.strangers.after: 없는 비트 \"b02_people\"",
+      "- knowledge.asina.man.after: 없는 비트 \"b03_ask\"",
+      "- knowledge.asina.man.after: 없는 비트 \"r3_slip\"",
+      "- knowledge.asina.man.after: 없는 비트 \"r3_flee\"",
+      "- knowledge.asina.man.after: 없는 비트 \"r3_night\"",
+      "- knowledge.asina.guards.after: 없는 비트 \"b03_ask\"",
+      "- knowledge.asina.guards.after: 없는 비트 \"r3_night\""
+    ],
+    "독립반응문제수": 0,
+    "기존수첩문제그대로": true,
+    "다른데이터변경없음": true,
+    "비트수": 79,
+    "지도노드": 21,
+    "지도간선": 27
+  },
+  "회귀": {
+    "수정전": {
+      "통과": 5,
+      "실패": 7,
+      "종료코드": 1
+    },
+    "수정후": {
+      "통과": 12,
+      "실패": 0,
+      "종료코드": 0
+    }
+  },
+  "타입검사": {
+    "도구": "TypeScript 6.0.3",
+    "엄격모드": true,
+    "설정": "docs/continuation/build/ep06/cg-alias-tsconfig.json",
+    "종료코드": 0,
+    "진단": 0
+  }
+}

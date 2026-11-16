@@ -1,0 +1,52 @@
+{
+ "title": "(3) Discord | \"연결되지 않은 이벤트가 있다고 발행이 되지 않고 있습니다.\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 4,
+ "msgs": [
+  {
+   "t": "2026-10-09T13:11:23.031Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "서브 이벤트 쪽도 확인해 보세요\n활용가능한 시점이 체크 안 된 경우도 있어요",
+   "emb": "",
+   "att": 0,
+   "reacts": "1",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-09T13:57:49.526Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " English\nIt is not being published because there are unconnected events. No matter how much I look, there are no unconnected events, but a warning appears and is not being issued.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-09T14:02:58.774Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "서브 이벤트 쪽도 확인해 보세요 활용가능한 시점이 체크 안 된 경우도 있어요",
+   "emb": "",
+   "att": 0,
+   "reacts": "2",
+   "reply": "서브 이벤트 쪽도 확인해 보세요 활용가능한 시점이 체크 안 된 경우도 있어요",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-09T14:30:42.709Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "해결됐습니다. 정말 감사해요. 서브이벤트 하나가 연결이 하나도 안됐었네요!",
+   "emb": "",
+   "att": 0,
+   "reacts": "4",
+   "reply": "해결됐습니다. 정말 감사해요. 서브이벤트 하나가 연결이 하나도 안됐었네요!",
+   "sys": ""
+  }
+ ]
+}

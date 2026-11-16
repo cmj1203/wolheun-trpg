@@ -1,0 +1,187 @@
+{
+  "status": "Astra 제작 전·원작 검증 입력만 있음",
+  "assets": [
+    {
+      "type": "입식",
+      "name": "카림의 경계·당황, 청록 앞판·흰 깃·붉은 사선 띠",
+      "source_cut": "ep09_c001",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c001.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "아시나 보라색 궁정복·장난·웃음",
+      "source_cut": "ep09_c009",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c009.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "배경",
+      "name": "낮의 궁 회랑과 정원",
+      "source_cut": "ep09_c002",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c002.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "곡도 손잡이와 허리띠 근접",
+      "source_cut": "ep09_c011",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c011.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "황제의 붉은 눈·은백발·검은 크림색 궁정복",
+      "source_cut": "ep09_c018",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c018.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "나시르 푸른 긴 옷·금 브로치·당황",
+      "source_cut": "ep09_c023",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c023.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "아시나와 카림을 바라보는 황제의 등장",
+      "source_cut": "ep09_c019",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c019.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "아시나 흥정·당황, 보라 궁정복",
+      "source_cut": "ep09_c033",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c033.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "황제의 웃음",
+      "source_cut": "ep09_c040",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c040.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "속옷 해명을 듣는 카림과 나시르",
+      "source_cut": "ep09_c038",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c038.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "배경",
+      "name": "서가·장식벽·기록 테이블",
+      "source_cut": "ep09_c047",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c047.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "대추야자 접시와 방의 테이블",
+      "source_cut": "ep09_c045",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c045.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "배경",
+      "name": "석양의 궁 외관",
+      "source_cut": "ep09_c044",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c044.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "크롬웰 문장·도시·아이들",
+      "source_cut": "ep09_c050",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c050.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "푸른 고향과 여행 차림의 아시나",
+      "source_cut": "ep09_c051",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c051.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "두 가문 문장과 황가 삽화",
+      "source_cut": "ep09_c053",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c053.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "나시르의 미소·의심",
+      "source_cut": "ep09_c057",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c057.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "아시나의 당황·분노",
+      "source_cut": "ep09_c066",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c066.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "서 있는 나시르·기록지·옆 걸이의 갈색 가방",
+      "source_cut": "ep09_c063",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c063.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "아시나 남색 밤 차림·흰 안쪽 치마·허리띠",
+      "source_cut": "ep09_c075",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c075.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "배경",
+      "name": "푸른 밤 궁 외벽과 순찰 구역",
+      "source_cut": "ep09_c076",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c076.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "높은 곳에서 이동을 준비하는 아시나",
+      "source_cut": "ep09_c075",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c075.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "어둠 속 푸른 눈",
+      "source_cut": "ep09_c078",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c078.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "배경",
+      "name": "높은 벽에서 내려다본 궁 정원·계단",
+      "source_cut": "ep09_c080",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c080.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "입식",
+      "name": "대족장 터번·은사슬·연녹색 브로치·장발",
+      "source_cut": "ep09_c082",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c082.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    },
+    {
+      "type": "CG",
+      "name": "대족장의 웃음과 검은 칼자루·날",
+      "source_cut": "ep09_c084",
+      "source": "assets/ep09/cuts/full_res/clean/ep09_c084.png",
+      "status": "기존 정제 컷을 참조하는 제작 요구. 새 입식·배경·CG 제작 완료를 뜻하지 않음"
+    }
+  ]
+}

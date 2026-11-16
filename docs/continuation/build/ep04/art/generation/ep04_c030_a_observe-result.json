@@ -1,0 +1,10 @@
+{
+  "상태": "native 종료",
+  "후보": "ep04_c030_a_observe",
+  "candidate_slot": "ep04_c030_a_observe",
+  "pid": 40843,
+  "pgid": 40843,
+  "exit_code": 0,
+  "출력_존재": true,
+  "종료": "2026-11-09T07:20:36.257591+00:00"
+}

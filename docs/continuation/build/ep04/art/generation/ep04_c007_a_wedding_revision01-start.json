@@ -1,0 +1,56 @@
+{
+  "상태": "실제 native 시작",
+  "후보": "ep04_c007_a_wedding_revision01",
+  "candidate_slot": "ep04_c007_a_wedding",
+  "pid": 70416,
+  "pgid": 70416,
+  "launcher_pid": 70414,
+  "launcher_pgid": 70414,
+  "global_active_before": [],
+  "입력": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_a_wedding_revision01-selected.png",
+  "출력": "/Users/choeminju/월흔_trpg/assets/ep04/gen/ep04_c007_a_wedding_revision01.png",
+  "로그": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep04/art/generation/ep04_c007_a_wedding_revision01-native.log",
+  "명령_인자": [
+    "/opt/homebrew/bin/codex",
+    "exec",
+    "--skip-git-repo-check",
+    "-s",
+    "workspace-write",
+    "-C",
+    "/Users/choeminju/월흔_trpg/assets/ep04/gen",
+    "-i",
+    "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_a_wedding_revision01-selected.png",
+    "--",
+    "실제 원작 입력의 혼례 상상 한 장을 프레이밍 교정해 16:9 가로 CG로 만든다. 내장 image_gen 한 번만 사용한다.\n\n첨부는 실제 원작 work/ep04/merged/ep04_002.png의 [0,344,2000,2900) 창이다. 얼굴을 가린 터번 남성과 분홍 예복·베일의 아시나가 그려져 있다. 원작 그대로의 두 얼굴·가린 얼굴·표정·머리·터번·장신구·흰 털깃·분홍 예복·베일·장식 배경·색·그림체를 유지한다.\n\n중요한 교정은 가까운 흉상 프레이밍이다. 두 사람의 머리·어깨·원작에 직접 보이는 흉상과 꽃다발 윗부분만 담는다. 화면 아래 경계가 원작 입력처럼 꽃다발 윗부분을 잘라야 한다. 꽃다발 아래·줄기·손·손가락·손목·팔 아래·허리 아래는 화면 밖이다. 넓은 화면을 만들려고 카메라를 뒤로 빼거나 인물을 작게 만들어 원작 프레임 밖 몸이 새로 보이게 하지 않는다. 두 사람을 가까이 크게 담고 원작과 같은 장식 배경만 좌우로 확장한다.\n\n원작에서 손은 확인되지 않는다. 손을 그린 뒤 새 드레스·소매·천·꽃·물체로 덮지 않는다. 기존 의복과 가려진 얼굴도 바꾸지 않는다. 새 인체·손·장신구·사건·사람·의복·덮개를 일절 만들지 않는다. 원작 말풍선·글자만 제거한다. 현재 청록복 아시나나 다른 단계는 넣지 않는다.\n\n프레이밍 변경이 허용된 실제 원작 편집이며 국소 마스크 밖이 그대로라는 주장은 하지 않는다. 요청 해상도1920×1080. 내장 도구가 만든 실제 PNG를 /Users/choeminju/월흔_trpg/assets/ep04/gen/ep04_c007_a_wedding_revision01.png에만 덮어쓰기 없이 저장한다. 실제 크기가 다르면 원본 그대로 보존하고 실제 크기를 보고한다. 기존 ep04_c007_a_wedding.png와 다른 파일은 변경하지 않는다. 로컬SD·API/SDK 대체·안전 필터 우회·추가 호출·검수·서버·모델·YAML·앱 소스 변경은 하지 않는다. 실패하면 실제 오류를 보고하고 멈춘다. 자가 PASS는 금지한다.\n"
+  ],
+  "실제_명령": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C '/Users/choeminju/월흔_trpg/assets/ep04/gen' -i '/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_a_wedding_revision01-selected.png' -- '실제 원작 입력의 혼례 상상 한 장을 프레이밍 교정해 16:9 가로 CG로 만든다. 내장 image_gen 한 번만 사용한다.\n\n첨부는 실제 원작 work/ep04/merged/ep04_002.png의 [0,344,2000,2900) 창이다. 얼굴을 가린 터번 남성과 분홍 예복·베일의 아시나가 그려져 있다. 원작 그대로의 두 얼굴·가린 얼굴·표정·머리·터번·장신구·흰 털깃·분홍 예복·베일·장식 배경·색·그림체를 유지한다.\n\n중요한 교정은 가까운 흉상 프레이밍이다. 두 사람의 머리·어깨·원작에 직접 보이는 흉상과 꽃다발 윗부분만 담는다. 화면 아래 경계가 원작 입력처럼 꽃다발 윗부분을 잘라야 한다. 꽃다발 아래·줄기·손·손가락·손목·팔 아래·허리 아래는 화면 밖이다. 넓은 화면을 만들려고 카메라를 뒤로 빼거나 인물을 작게 만들어 원작 프레임 밖 몸이 새로 보이게 하지 않는다. 두 사람을 가까이 크게 담고 원작과 같은 장식 배경만 좌우로 확장한다.\n\n원작에서 손은 확인되지 않는다. 손을 그린 뒤 새 드레스·소매·천·꽃·물체로 덮지 않는다. 기존 의복과 가려진 얼굴도 바꾸지 않는다. 새 인체·손·장신구·사건·사람·의복·덮개를 일절 만들지 않는다. 원작 말풍선·글자만 제거한다. 현재 청록복 아시나나 다른 단계는 넣지 않는다.\n\n프레이밍 변경이 허용된 실제 원작 편집이며 국소 마스크 밖이 그대로라는 주장은 하지 않는다. 요청 해상도1920×1080. 내장 도구가 만든 실제 PNG를 /Users/choeminju/월흔_trpg/assets/ep04/gen/ep04_c007_a_wedding_revision01.png에만 덮어쓰기 없이 저장한다. 실제 크기가 다르면 원본 그대로 보존하고 실제 크기를 보고한다. 기존 ep04_c007_a_wedding.png와 다른 파일은 변경하지 않는다. 로컬SD·API/SDK 대체·안전 필터 우회·추가 호출·검수·서버·모델·YAML·앱 소스 변경은 하지 않는다. 실패하면 실제 오류를 보고하고 멈춘다. 자가 PASS는 금지한다.\n'",
+  "시작": "2026-11-09T05:40:58.718166+00:00",
+  "입력목록": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_a_wedding_revision01-selected.png",
+      "role": "손·줄기 아래가 프레임 밖인 실제 원작 흉상 창",
+      "size": [
+        2000,
+        2556
+      ],
+      "local_y": [
+        0,
+        2556
+      ]
+    }
+  ],
+  "원작_페이지": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_002.png",
+  "원작_해시": "c9fa8949673dc458e79de6dc5989b37b235b8ddb03f0788c7eba9dde48351ae1",
+  "원작_컷창": [
+    0,
+    344,
+    2000,
+    22818
+  ],
+  "원작_선택창": [
+    0,
+    344,
+    2000,
+    2900
+  ]
+}

@@ -4,11 +4,11 @@ import { DEFAULT_GM_OPTIONS, LocalGm, type GmTrace } from '../src/gm/gm.ts';
 import { LlmClient, assertLoopback } from '../src/gm/llm.ts';
 import { ruleInterpret } from '../src/gm/rules.ts';
 import { typedFallbackLines } from '../src/engine/scenario.ts';
-import { actClauses, isAboutSelf, isLinkedAct, isNoAttempt, isRefusedClause } from '../src/engine/text.ts';
-import { ASK_SYSTEM, CHANGE_SYSTEM, NO_CHANGE, OWN_MOVE, SHOWN_CHANGE, YIELD_CHANGE } from '../src/gm/prompt.ts';
+import { actClauses, isAboutSelf, isLinkedAct, isNoAttempt, isRefusedClause, parseStoryInput } from '../src/engine/text.ts';
+import { ASK_SYSTEM, ATTEMPT_CHECK_SYSTEM, CHANGE_SYSTEM, GRAMMAR_SYSTEM, NO_CHANGE, OWN_MOVE, SHOWN_CHANGE, YIELD_CHANGE } from '../src/gm/prompt.ts';
 import type { Face } from '../src/engine/types.ts';
 import { validateOutput, type CheckOptions } from '../src/gm/validate.ts';
-import { FakeGm, loadDesert, loadWolheunLore } from './helpers.ts';
+import { FakeGm, loadDesert, loadWolheunLore, tokenBudgetFixture } from './helpers.ts';
 
 const scenario = await loadDesert();
 const lore = await loadWolheunLore();
@@ -17,15 +17,17 @@ interface ChatBody {
   stream?: boolean;
   max_tokens?: number;
   messages: { role: string; content: string }[];
-  response_format?: { json_schema: { schema: { properties: { lines: { prefixItems?: { anyOf?: { properties: { speaker: { enum: string[] } } }[]; properties?: { speaker: { enum: string[] } } }[] } } } } };
+  response_format?: { json_schema: { schema: { properties: { changes?: { minItems: number }; target?: { enum: string[] }; lines: { prefixItems?: { anyOf?: { properties: { speaker: { enum: string[] } } }[]; properties?: { speaker: { enum: string[] } } }[] } } } } };
 }
 
 const SERVER_ERROR = '<서버 오류로 끝남>';
 let changeReply = '{"change":"자리가 바뀜"}';
 let askReply = '{"ask":"게임에 대해 물음"}';
 
-function mockLlama(outputs: string[]) {
+function mockLlama(outputs: string[], grammarOutputs: string[] = []) {
   const requests: ChatBody[] = [];
+  const grammarRequests: ChatBody[] = [];
+  const fidelityRequests: ChatBody[] = [];
   let warmed: () => void = () => undefined;
   const warmSeen = new Promise<void>((resolve) => {
     warmed = resolve;
@@ -35,16 +37,27 @@ function mockLlama(outputs: string[]) {
     port: 0,
     async fetch(req) {
       const { pathname } = new URL(req.url);
+      const budget = await tokenBudgetFixture(req);
+      if (budget) return budget;
       if (pathname === '/health') return Response.json({ status: 'ok' });
       if (pathname === '/v1/models') return Response.json({ data: [{ id: 'mock-gm' }] });
       const body = (await req.json()) as ChatBody;
-      requests.push(body);
+      // 별도 검수는 기존 생성·분류 fixture를 소비하지 않는다.
+      const grammar = body.messages[0]?.content === GRAMMAR_SYSTEM;
+      const fidelity = body.messages[0]?.content === ATTEMPT_CHECK_SYSTEM;
+      (grammar ? grammarRequests : fidelity ? fidelityRequests : requests).push(body);
       if (!body.stream) {
         warmed();
         return Response.json({ choices: [{ message: { content: '' } }] });
       }
       const system = body.messages[0]?.content;
-      const queued = system === CHANGE_SYSTEM ? changeReply : system === ASK_SYSTEM ? askReply : (outputs.shift() ?? '{"lines":[]}');
+      const written = grammar ? JSON.parse(body.messages[1]?.content ?? '{}') as { lines: { text: string }[] } : undefined;
+      const count = body.response_format?.json_schema.schema.properties.changes?.minItems;
+      const configured: unknown = system === CHANGE_SYSTEM ? JSON.parse(changeReply) : null;
+      const changes = count !== undefined && configured !== null && typeof configured === 'object'
+        && 'change' in configured && !('changes' in configured) && typeof configured.change === 'string'
+        ? JSON.stringify({ changes: Array.from({ length: count }, () => configured.change) }) : changeReply;
+      const queued = grammar ? (grammarOutputs.shift() ?? JSON.stringify({ lines: written?.lines.map(l => ({ original: l.text, corrected: l.text })) })) : fidelity ? '{"supported":true}' : system === CHANGE_SYSTEM ? changes : system === ASK_SYSTEM ? askReply : (outputs.shift() ?? '{"lines":[]}');
       const failAtEnd = queued.startsWith(SERVER_ERROR);
       const text = failAtEnd ? queued.slice(SERVER_ERROR.length) : queued;
       const cut = Math.floor(text.length / 2);
@@ -56,7 +69,7 @@ function mockLlama(outputs: string[]) {
       return new Response(sse, { headers: { 'content-type': 'text/event-stream' } });
     },
   });
-  return { server, requests, warmSeen, url: `http://127.0.0.1:${server.port}` };
+  return { server, requests, grammarRequests, fidelityRequests, warmSeen, url: `http://127.0.0.1:${server.port}` };
 }
 
 let stop: (() => void) | null = null;
@@ -72,7 +85,7 @@ function contexts(text: string) {
   const free = beat?.free;
   const approach = free?.approaches.find((a) => a.id === 'plead');
   if (!beat || !free || !approach) throw new Error('b05_why 구성이 바뀌었습니다');
-  const ctx: GmContext = { scenario, beat, free, state, text };
+  const ctx = { scenario, beat, free, state, text } satisfies GmContext;
   const roll = { label: approach.label, stat: approach.stat, statValue: 2, mods: [], dice: [5, 5] as [number, number], total: 12, tier: 'hit' as const };
   const narrate: NarrateContext = { ...ctx, approach, roll, outcome: approach.outcomes.hit };
   return { ctx, narrate };
@@ -99,6 +112,94 @@ const lines = (...xs: ([string, string] | [string, string, string])[]) =>
   JSON.stringify({ lines: xs.map(([speaker, text, face]) => ({ speaker, text, ...(face ? { face } : FACED_SPEAKERS.has(speaker) ? { face: 'neutral' } : {}) })) });
 
 describe('로컬 GM 생성과 재생성', () => {
+  test.each(['narrate', 'talk'] as const)('교열에 완료 결과와 현재 근거를 전달하고 미판정 대화와 구분한다(%s)', async (task) => {
+    const mock = mockLlama([lines(['나레이션', '칼끝은 그대로였다.'], ['남자', '계속해라.', 'intrigued'])]);
+    stop = () => mock.server.stop(true);
+    const base = contexts('제 이야기를 먼저 들어 주세요.').narrate;
+    const ctx: NarrateContext = {
+      ...base,
+      free: { ...base.free, goal: '해명을 끝까지 듣게 한다.' },
+      state: { ...base.state, recent: [{ speaker: '남자', text: '그 말을 믿으라고?' }] },
+      displayed: { type: 'line', speaker: '남자', display: '붉은 눈의 남자', style: 'speech', text: '그 말을 믿으라고?', by: 'script' },
+      approach: { ...base.approach, label: '상대가 해명을 듣게 한다' },
+      outcome: { ...base.outcome, gist: '남자는 내 해명을 끝까지 들었다.' },
+      price: { id: 'breath', tag: '수치', weight: 'soft', text: '긴장이 남아 숨을 고르기 힘들었다.', effects: {} },
+    };
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
+    const reply = task === 'narrate' ? await gm.narrate(ctx) : await gm.talk(contexts(ctx.text).ctx);
+    expect(reply.meta.fallback).toBe(false);
+    const request = mock.grammarRequests[0]?.messages[1]?.content;
+    if (!request) throw new Error('교열 요청이 없습니다.');
+    expect(JSON.parse(request)).toMatchObject({
+      context: task === 'narrate' ? {
+        task, goal: '해명을 끝까지 듣게 한다.',
+        resolution: { action: '상대가 해명을 듣게 한다', tier: 'hit', gist: '남자는 내 해명을 끝까지 들었다.', price: '긴장이 남아 숨을 고르기 힘들었다.' },
+        evidence: { recent: [{ speaker: '남자', text: '그 말을 믿으라고?' }], displayed: { speaker: '남자', text: '그 말을 믿으라고?' } },
+      } : { task, resolution: null },
+    });
+  });
+
+  test('사동·시간 연결 교열은 문장 전체를 재생성하며 교정문을 직접 표시하지 않는다', async () => {
+    const original = '남자는 내 말을 자르지 않고 끝까지 듣게 해주었다.';
+    const corrected = '남자는 내 말을 자르지 않고 끝까지 들었다.';
+    const regenerated = '남자는 칼을 든 채 내 해명이 끝날 때까지 잠자코 들었다.';
+    const mock = mockLlama([
+      lines(['나레이션', original], ['남자', '어디 한번 해봐라.', 'intrigued']),
+      lines(['나레이션', regenerated], ['남자', '해명은 그럴듯하군.', 'intrigued']),
+    ], [JSON.stringify({ lines: [
+      { original, corrected },
+      { original: '어디 한번 해봐라.', corrected: '해명은 들었다.' },
+    ] })]);
+    stop = () => mock.server.stop(true);
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
+    const reply = await gm.narrate(contexts('제 이야기를 먼저 들어 주세요.').narrate);
+    expect(reply.meta).toMatchObject({ attempts: 2, fallback: false });
+    expect(reply.lines).toEqual([
+      { speaker: '나레이션', text: regenerated },
+      { speaker: '남자', text: '해명은 그럴듯하군.', face: 'intrigued' },
+    ]);
+    expect(reply.meta.violations.some(v => v.startsWith('format/grammar:'))).toBe(true);
+  });
+
+  // 계약(리드 결정, resume90 2차 #7): 맞춤법 수준의 작은 교정은 재생성하지 않고 바로 적용한다.
+  test.each([false, true])('문법 오류는 일반·짧은 반응 대화 모두 교정문을 바로 적용한다(reaction=%s)', async (reaction) => {
+    const bad = lines(['남자', '그렇게 우는다고 목숨이 붙어있나, 이방인.', 'sneer']);
+    const good = lines(['남자', '울어 봐야 달라질 건 없다.', 'sneer']);
+    const mock = mockLlama(
+      reaction ? [bad, '{"answer":false}', '{"answer":true}', good, '{"answer":false}', '{"answer":true}'] : [bad, good],
+      [JSON.stringify({ lines: [{ original: '그렇게 우는다고 목숨이 붙어있나, 이방인.', corrected: '그렇게 운다고 목숨이 붙어있나, 이방인.' }] })],
+    );
+    stop = () => mock.server.stop(true);
+    const traces: GmTrace[] = [];
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore, { ...DEFAULT_GM_OPTIONS, onTrace: t => traces.push(t) });
+    const reply = await gm.talk({ ...contexts('눈물이 멈추지 않는다').ctx, reaction });
+    expect(reply.meta).toMatchObject({ attempts: 1, fallback: false });
+    expect(reply.lines).toEqual([{ speaker: '남자', text: '그렇게 운다고 목숨이 붙어있나, 이방인.', face: 'sneer' }]);
+    expect(reply.meta.violations.some(v => v.startsWith('format/grammar:'))).toBe(false);
+    expect(traces[0]?.violations ?? []).not.toContainEqual(expect.objectContaining({ rule: 'grammar' }));
+    expect(mock.grammarRequests).toHaveLength(1);
+  });
+
+  test('의도적인 단편 대사는 문법 검수 뒤 그대로 내보낸다', async () => {
+    const mock = mockLlama([lines(['남자', '…그래서?', 'intrigued'])]);
+    stop = () => mock.server.stop(true);
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
+    const reply = await gm.talk(contexts('칼부터 치우고 얘기하죠.').ctx);
+    expect(reply.meta).toMatchObject({ attempts: 1, fallback: false, violations: [] });
+    expect(reply.lines).toEqual([{ speaker: '남자', text: '…그래서?', face: 'intrigued' }]);
+    expect(mock.grammarRequests).toHaveLength(1);
+  });
+
+  test.each([SERVER_ERROR, '{}'])('문법 검수가 실패하면 검수되지 않은 생성문을 내보내지 않는다(%s)', async (review) => {
+    const mock = mockLlama([lines(['남자', '검수되지 않은 말이다.'])], [review]);
+    stop = () => mock.server.stop(true);
+    const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore, { ...DEFAULT_GM_OPTIONS, retries: 0 });
+    const reply = await gm.talk(contexts('살려 줘요.').ctx);
+    expect(reply.meta).toMatchObject({ attempts: 1, fallback: true });
+    expect(reply.lines.map(l => l.text)).not.toContain('검수되지 않은 말이다.');
+    expect(reply.meta.violations.some(v => v.startsWith('format/grammar:'))).toBe(true);
+  });
+
   test('설정 위반 출력은 막고 지적을 붙여 다시 생성한다', async () => {
     const mock = mockLlama([lines(['남자', '폐하의 칼 앞에서 무슨 말이냐.']), lines(['나레이션', '칼끝이 손가락 한 마디만큼 물러났다.'], ['남자', '거짓은 아닌 모양이군.'])]);
     stop = () => mock.server.stop(true);
@@ -114,7 +215,8 @@ describe('로컬 GM 생성과 재생성', () => {
     expect(traces[0]?.llm?.completionTokens).toBe(8);
   });
 
-  test('세계 밖 행동이 끝까지 위반하면 대체 줄도 나레이션 동작 한 줄 뒤에 반응 줄이 온다(택시 재발 방지)', async () => {
+  // 계약(리드 결정, resume90 2차 #12): 세계 밖 행동은 나레이션으로 그리지 않고 상대의 받아넘기는 줄만 쓴다.
+  test('세계 밖 행동이 끝까지 위반하면 대체 줄은 나레이션 없이 상대의 반응 줄만 온다(택시 재발 방지)', async () => {
     const bad = lines(['나레이션', '택시를 불렀다.'], ['남자', '택시라니.']);
     const mock = mockLlama([bad, bad, bad]);
     stop = () => mock.server.stop(true);
@@ -122,12 +224,10 @@ describe('로컬 GM 생성과 재생성', () => {
     const { ctx } = contexts('택시를 부른다');
     const reply = await gm.talk({ ...ctx, absurd: true, deed: '허공에 손을 흔들었다' });
     expect(reply.meta.fallback).toBe(true);
-    expect(reply.lines[0]?.speaker).toBe('나레이션');
-    expect(reply.lines[0]?.text).not.toContain('택시');
-    expect(reply.lines.length).toBeGreaterThanOrEqual(2);
-    expect(reply.lines.slice(1).every((l) => l.speaker !== '나레이션' && !l.text.includes('택시'))).toBe(true);
+    expect(reply.lines.length).toBeGreaterThanOrEqual(1);
+    expect(reply.lines.every((l) => l.speaker === '남자' && !l.text.includes('택시'))).toBe(true);
     const sent = mock.requests[0] as { response_format?: { json_schema?: { schema?: { properties?: { lines?: { prefixItems?: { properties?: { speaker?: { enum?: string[] } } }[] } } } } } } | undefined;
-    expect(sent?.response_format?.json_schema?.schema?.properties?.lines?.prefixItems?.[0]?.properties?.speaker?.enum).toEqual(['나레이션']);
+    expect(sent?.response_format?.json_schema?.schema?.properties?.lines?.prefixItems?.[0]?.properties?.speaker?.enum).toEqual(['남자']);
   });
 
   test('플레이어가 한 갈래의 낱말을 쓰면 같은 갈래의 다른 낱말을 되받아도 막지 않는다', async () => {
@@ -209,7 +309,12 @@ describe('로컬 GM 생성과 재생성', () => {
 
   test('문체 위반만 남으면 한 번 더 써 보고, 그래도 문체만 어긋나면 덜 어긋난 출력을 쓴다', async () => {
     const first = lines(['나레이션', '칼끝이 조금 물러난다.'], ['남자', '거짓은 아닌 모양이군.']);
-    const second = lines(['나레이션', '아시나는 숨을 삼켰다.'], ['나레이션', '칼끝이 흔들린다.']);
+    const second = lines(['나레이션', '나는 숨을 삼킨다.'], ['나레이션', '칼끝이 흔들린다.']);
+    const firstCheck = validateOutput(first, checkFor(['나레이션', '남자']));
+    const secondCheck = validateOutput(second, checkFor(['나레이션', '남자']));
+    expect(firstCheck.violations.length).toBeGreaterThan(0);
+    expect(secondCheck.violations.length).toBeGreaterThan(firstCheck.violations.length);
+    expect([...firstCheck.violations, ...secondCheck.violations].every(v => v.severity === 'soft')).toBe(true);
     const mock = mockLlama([first, second]);
     stop = () => mock.server.stop(true);
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
@@ -256,7 +361,7 @@ describe('로컬 GM 생성과 재생성', () => {
   });
 
   test('입력 종류마다 답하는 쪽이 갈린다', async () => {
-    const reply = (kind: string, about = 'none', approach = 'none', odd = false) => JSON.stringify({ reason: '근거', kind, about, approach, item: '', odd, absurd: false, stat: '재치', difficulty: '보통' });
+    const reply = (kind: string, about = 'none', approach = 'none', odd = false) => JSON.stringify({ reason: '근거', label: '틈 조사', question: '', kind, about, approach, item: '', odd, absurd: false, stat: '재치', difficulty: '보통', target: kind === 'action' ? approach === 'none' ? 'local' : approach : 'none', scope: kind === 'action' ? 'ready' : 'none', deed: kind === 'action' ? '바위 틈에 숨은 흔적을 조사한다' : '' });
     const cases = [
       { out: reply('how'), want: { kind: 'ask', play: true } },
       { out: reply('lore', 'asina'), want: { kind: 'ask', about: 'asina' } },
@@ -315,11 +420,12 @@ describe('로컬 GM 생성과 재생성', () => {
       expect(await gm.interpret(contexts(text).ctx)).toMatchObject({ kind: 'idle', source: 'llm' });
     });
 
-    test('모델과 대본 낱말이 같은 접근법을 고르면 분류가 몸에서 끝난다고 해도 그 접근법이다', async () => {
-      const charm = JSON.stringify({ reason: '근거', kind: 'action', about: 'none', approach: 'beauty', item: '', odd: false, absurd: false, stat: '재치', difficulty: '보통', risk: 'none' });
+    test('낱말이 고정 접근과 같아도 변화 없는 몸짓은 판정을 만들지 않는다', async () => {
+      const charm = JSON.stringify({ reason: '근거', label: '미소', question: '', kind: 'action', about: 'none', approach: 'beauty', target: 'beauty', scope: 'ready', deed: '상대에게 미모를 납득시킨다', item: '', odd: false, absurd: false, stat: '매력', difficulty: '보통', risk: 'none' });
       const gm = gmWith([charm, charm, charm]);
       changeReply = JSON.stringify({ change: NO_CHANGE });
-      expect(await gm.interpret(contexts('생긋 웃는다').ctx)).toMatchObject({ kind: 'approach', approach: 'beauty', source: 'llm' });
+      const text = '(생긋 웃는다)';
+      expect(await gm.interpret({ ...contexts(text).ctx, input: parseStoryInput(text) })).toMatchObject({ kind: 'idle', source: 'llm' });
     });
 
     test('하지 않는다고 적은 문장은 낱말이 겹쳐도 시도가 아니다', async () => {
@@ -330,7 +436,8 @@ describe('로컬 GM 생성과 재생성', () => {
     });
 
     test('이어진 문장에 달라지는 동작이 하나라도 있으면 시도다', async () => {
-      const gm = gmWith([action, action, action]);
+      const attempt = JSON.stringify({ reason: '상대의 감시에서 벗어나려 한다', label: '거리 벌리기', question: '', kind: 'action', about: 'none', approach: 'none', target: 'resist', scope: 'ready', deed: '상대의 감시를 피해 옆으로 달아난다', item: '', odd: false, absurd: false, stat: '재치', difficulty: '보통', risk: 'none' });
+      const gm = gmWith([attempt, attempt, attempt]);
       changeReply = JSON.stringify({ changes: [NO_CHANGE, '자리가 바뀜'] });
       expect(await gm.interpret(contexts('고개를 숙이고 옆으로 달려간다').ctx)).toMatchObject({ kind: 'improv', source: 'llm' });
     });
@@ -359,27 +466,69 @@ describe('로컬 GM 생성과 재생성', () => {
     });
 
     test('물음표 끝 게임 질문은 행동으로 읽혀도 판정으로 가지 않는다', async () => {
-      const gm = gmWith([action, action, game, game]);
-      expect(await gm.interpret(contexts('불러오기 하면 지금까지 한 거 사라져?').ctx)).toMatchObject({ kind: 'ask', source: 'llm' });
+      const gm = gmWith([action, game]);
+      changeReply = JSON.stringify({ change: NO_CHANGE });
+      const text = '불러오기 하면 지금까지 한 거 사라져?';
+      expect(await gm.interpret({ ...contexts(text).ctx, input: parseStoryInput(text) })).toMatchObject({ kind: 'ask', source: 'llm' });
     });
 
     test('물음표로 끝나도 스스로 할 일을 정하는 말이면 시도다', async () => {
-      const gm = gmWith([action, action, action]);
+      const attempt = JSON.stringify({ reason: '세 사람에게 접근하려 한다', label: '길 묻기', question: '', kind: 'action', about: 'none', approach: 'none', target: 'run', scope: 'ready', deed: '세 사람에게 다가가 길을 묻는다', item: '', odd: false, absurd: false, stat: '재치', difficulty: '보통', risk: 'none' });
+      const gm = gmWith([attempt, attempt, attempt]);
       askReply = JSON.stringify({ ask: OWN_MOVE });
-      expect(await gm.interpret(contexts('저 사람들한테 가 볼까?').ctx)).toMatchObject({ kind: 'improv', source: 'llm' });
+      const beat = scenario.beats.b02_people;
+      if (!beat?.free) throw new Error('세 사람 접근 장면 없음');
+      expect(await gm.interpret({ ...contexts('저 사람들한테 가 볼까?').ctx, beat, free: beat.free })).toMatchObject({ kind: 'improv', source: 'llm', target: 'run' });
     });
   });
 
   test('문장 꼴이 물음이나 건넨 말이면 모델이 혼잣말이나 행동으로 읽어도 바로잡는다', async () => {
     const reply = (kind: string, about = 'none') => JSON.stringify({ reason: '근거', kind, about, approach: 'none', item: '', odd: false, absurd: false, stat: '재치', difficulty: '보통' });
-    const mock = mockLlama([reply('self'), reply('lore', 'asina'), reply('action'), reply('how'), reply('action'), reply('self'), reply('self')]);
-    stop = () => mock.server.stop(true);
+    const mock = mockLlama([reply('self'), reply('lore', 'asina'), reply('action'), reply('how'), reply('action'), reply('person'), reply('self'), reply('self')]);
+    stop = () => { changeReply = '{"change":"자리가 바뀜"}'; mock.server.stop(true); };
+    changeReply = JSON.stringify({ change: NO_CHANGE });
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
-    expect(await gm.interpret(contexts('그걸 왜 하고 있어?').ctx)).toMatchObject({ kind: 'ask', about: 'asina' });
-    expect(await gm.interpret(contexts('지금 할 수 있는 게 뭐야?').ctx)).toMatchObject({ kind: 'ask', play: true });
-    expect(await gm.interpret(contexts('좀 떨어져요').ctx)).toMatchObject({ kind: 'talk', to: 'person' });
-    expect(await gm.interpret(contexts('아 죽겠네').ctx)).toMatchObject({ kind: 'talk', to: 'self' });
-    expect(mock.requests.filter((r) => r.stream)).toHaveLength(7);
+    expect(await gm.interpret(contexts('그걸 왜 하고 있어?').ctx)).toMatchObject({ kind: 'ask', about: 'asina', source: 'llm', meta: { fallback: false } });
+    expect(await gm.interpret({ ...contexts('지금 할 수 있는 게 뭐야?').ctx, input: parseStoryInput('지금 할 수 있는 게 뭐야?') })).toMatchObject({ kind: 'ask', play: true, source: 'llm', meta: { fallback: false } });
+    expect(await gm.interpret({ ...contexts('좀 떨어져요').ctx, input: parseStoryInput('좀 떨어져요') })).toMatchObject({ kind: 'talk', to: 'person', source: 'llm', meta: { fallback: false } });
+    expect(await gm.interpret(contexts('아 죽겠네').ctx)).toMatchObject({ kind: 'talk', to: 'self', source: 'llm', meta: { fallback: false } });
+    expect(mock.requests.filter((r) => r.stream)).toHaveLength(10);
+    expect(mock.requests.filter(r => r.messages[0]?.content === CHANGE_SYSTEM)).toHaveLength(2);
+    expect(mock.requests.filter(r => Object.hasOwn(r.response_format?.json_schema.schema.properties ?? {}, 'answerable'))).toHaveLength(0);
+  });
+
+  test.each([
+    { text: '기록을 불러온 뒤 무엇이 남는지 설명해 주세요.', kind: 'game', want: { kind: 'ask', game: 'outcome' } },
+    { text: '문 앞에서 본 일이 무엇인지 들려주시겠어요?', kind: 'person', want: { kind: 'talk', to: 'person' } },
+    { text: '내가 생각을 좀 정리해야겠네.', kind: 'self', want: { kind: 'talk', to: 'self' } },
+  ])('무시도 발화의 수신자는 문장 꼴 대신 목표 없는 독립 문맥에서 고른다: $kind', async ({ text, kind, want }) => {
+    const candidate = JSON.stringify({ kind: 'action', approach: 'beauty', target: 'beauty', scope: 'ready', deed: '아름다움으로 흥미를 끈다' });
+    const mock = mockLlama([candidate, JSON.stringify({ kind, about: kind === 'game' ? 'outcome' : 'none', approach: 'none' })]);
+    stop = () => { changeReply = '{"change":"자리가 바뀜"}'; mock.server.stop(true); };
+    changeReply = JSON.stringify({ change: NO_CHANGE });
+    const ctx = contexts(text).ctx;
+    const result = await new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore)
+      .interpret({ ...ctx, input: parseStoryInput(text) });
+    expect(result).toMatchObject({ ...want, source: 'llm', meta: { fallback: false } });
+    const address = mock.requests.at(-1), goal = ctx.free.goals?.beauty;
+    if (!address || !goal) throw new Error('수신자 분류나 원래 목표가 없습니다.');
+    expect(address.messages[0]?.content).not.toContain(goal.text);
+    expect(address.messages[1]?.content).not.toContain(goal.text);
+    expect(address.response_format?.json_schema.schema.properties.target?.enum).toEqual(['local', 'none']);
+    expect(mock.fidelityRequests).toHaveLength(0);
+  });
+
+  test('실제 증거로 결정을 바꾸려는 질문형 설득은 무시도 수신자 분류로 보내지 않는다', async () => {
+    const candidate = JSON.stringify({ kind: 'action', approach: 'plead', target: 'plead', scope: 'ready', deed: '결백의 근거를 끝까지 전달해 잠깐의 여유를 얻었다' });
+    const mock = mockLlama([candidate]);
+    stop = () => { changeReply = '{"change":"자리가 바뀜"}'; mock.server.stop(true); };
+    changeReply = JSON.stringify({ change: '말로 새로운 성취를 시도함' });
+    const text = '이 모순이 제가 범인이 아니라는 증거예요. 제 설명을 끝까지 듣고 판단해 주시겠어요?';
+    const result = await new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore)
+      .interpret({ ...contexts(text).ctx, input: parseStoryInput(text) });
+    expect(result).toMatchObject({ kind: 'approach', approach: 'plead', spoken: true, source: 'llm', meta: { fallback: false } });
+    expect(mock.fidelityRequests).toHaveLength(1);
+    expect(mock.requests.filter(r => r.messages[0]?.content !== CHANGE_SYSTEM)).toHaveLength(1);
   });
 
   test('물음 꼴이어도 다시 가려 혼잣말이면 혼잣말로 받고, 물음이면 물음으로 받는다', async () => {
@@ -416,6 +565,7 @@ describe('로컬 GM 생성과 재생성', () => {
   test('큰 신체 행동은 같은 목적의 말 접근법에 가리지 않고 실제 시도를 남긴다', async () => {
     const reply = (kind: string, bold: boolean) => JSON.stringify({
       reason: '상대와 접촉하려 함', kind, about: 'none', approach: 'beauty', item: '',
+      label: '입맞춤', question: '', target: kind === 'action' ? 'local' : 'none', scope: kind === 'action' ? 'ready' : 'none',
       odd: false, absurd: false, bold, deed: '남자의 입에 입을 맞추려 했다', stat: '매력', difficulty: '어려움', risk: 'none',
     });
     const mock = mockLlama([reply('action', true), reply('person', false)]);
@@ -466,7 +616,7 @@ describe('로컬 GM 생성과 재생성', () => {
   });
 
   test('사람을 묻는 질문에 모른다고 답하면 다른 답으로 막지 않는다', async () => {
-    const mock = mockLlama([JSON.stringify({ lines: [{ speaker: 'GM', text: '그건 아직 몰라.' }] })]);
+    const mock = mockLlama([JSON.stringify({ subject: '남자', relation: '미래의 추적 기간', answerType: '기간', answerable: false, evidence: [] })]);
     stop = () => mock.server.stop(true);
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
     const reply = await gm.explain({ ...contexts('이 사람 언제까지 쫓아올까?').ctx, about: 'man' });
@@ -474,27 +624,33 @@ describe('로컬 GM 생성과 재생성', () => {
     expect(reply.meta.fallback).toBe(false);
   });
 
-  test('답이 없는 질문과 아직 안 열린 항목은 모델 없이 모른다고 답한다', async () => {
-    const mock = mockLlama([]);
+  test('답할 공개 관계 근거가 없으면 생성 없이 모른다고 답한다', async () => {
+    const mock = mockLlama([JSON.stringify({ subject: '남자', relation: '추적하지 않는 이유', answerType: '이유', answerable: false, evidence: [] })]);
     stop = () => mock.server.stop(true);
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
     const reply = await gm.explain({ ...contexts('저 남자는 왜 안 쫓아와?').ctx, about: 'none' });
     expect(reply.lines).toEqual([{ speaker: 'GM', text: '그건 아직 몰라.' }]);
-    expect(mock.requests.filter((r) => r.stream)).toHaveLength(0);
+    expect(mock.requests.filter((r) => r.stream)).toHaveLength(1);
   });
 
-  test('지도를 꺼내는 입력은 호소가 섞여도 LLM 을 거치지 않고 가방 행동으로 읽는다', async () => {
-    const mock = mockLlama(['{"reason":"억울함을 호소","approach":"plead","item":""}']);
-    stop = () => mock.server.stop(true);
+  test('지도와 호소의 혼합 입력은 몸짓·말을 함께 해석하고 지도 접근과 소지품을 보존한다', async () => {
+    const reading = JSON.stringify({ reason: '지도를 꺼내 길을 잃었음을 보인다', label: '지도 제시', question: '', kind: 'action', about: 'none', approach: 'bag', item: 'magic_bag', target: 'bag', scope: 'ready', deed: '낡은 지도를 꺼내 길을 잃었음을 보인다', stat: '재치', difficulty: '보통', odd: false, absurd: false, bold: false, risk: 'none' });
+    const mock = mockLlama([reading, reading]);
+    const previousChange = changeReply;
+    changeReply = JSON.stringify({ change: '물건을 잡거나 씀', changes: ['물건을 잡거나 씀', '물건을 잡거나 씀'] });
+    stop = () => { changeReply = previousChange; mock.server.stop(true); };
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore);
-    for (const text of ['지도를 꺼낸다', '가방에서 낡은 지도를 꺼내 보여 주며 길을 잃었을 뿐이라고 말한다.']) {
-      expect(await gm.interpret(contexts(text).ctx)).toMatchObject({ kind: 'approach', approach: 'bag', item: 'magic_bag', source: 'rule' });
+    const inputs = ['(지도를 꺼낸다)', '(가방에서 낡은 지도를 꺼내 보여 준다) 길을 잃었을 뿐이에요.'];
+    for (const text of inputs) {
+      expect(await gm.interpret({ ...contexts(text).ctx, input: parseStoryInput(text) })).toMatchObject({ kind: 'approach', approach: 'bag', item: 'magic_bag', source: 'llm' });
     }
-    expect(mock.requests.filter((r) => r.stream)).toHaveLength(0);
+    const interpretations = mock.requests.filter((r) => r.stream && r.messages[0]?.content !== CHANGE_SYSTEM);
+    expect(interpretations).toHaveLength(2);
+    for (const [index, input] of inputs.entries()) expect(interpretations[index]?.messages[1]?.content).toContain(input);
   });
 
   test('게임 질문과 위험 여부를 해석이 내고, 자기 물음은 앞사람이 있어도 물음 종류로 다시 고른다', async () => {
-    const reply = (kind: string, about = 'none', risk = 'none', approach = 'none') => JSON.stringify({ reason: '근거', kind, about, risk, approach, item: '', odd: false, absurd: false, stat: '재치', difficulty: '보통' });
+    const reply = (kind: string, about = 'none', risk = 'none', approach = 'none') => JSON.stringify({ reason: '근거', label: '박치기', question: '', kind, about, risk, approach, target: kind === 'action' ? 'local' : 'none', scope: kind === 'action' ? 'ready' : 'none', deed: kind === 'action' ? '머리로 남자를 밀친다' : '', item: '', odd: false, absurd: false, stat: '재치', difficulty: '보통' });
     const mock = mockLlama([
       reply('game', 'luck'),
       reply('game', 'none'),
@@ -597,10 +753,13 @@ describe('규칙 해석과 주소 제한', () => {
 
   test('GM 설명은 스포일러를 막고 다시 쓰며, 공개된 아시나의 배경만 말한다', async () => {
     const ok = '게임 마스터로서 말하면, 아시나는 크롬웰 제국 출신이야.';
-    const mock = mockLlama([lines(['GM', '저 남자는 베히다트, 페시안의 왕이다.']), lines(['GM', '여긴 페시안이야.']), lines(['GM', ok], ['GM', '칼끝은 여전히 목에 닿아 있어.'])]);
+    const mock = mockLlama([lines(['GM', '저 남자는 베히다트, 페시안의 왕이다.']), lines(['GM', '여긴 페시안이야.']), lines(['GM', ok], ['GM', '칼끝은 여전히 목에 닿아 있어.']), '{"answer":true}']);
     stop = () => mock.server.stop(true);
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore, { ...DEFAULT_GM_OPTIONS, budgetMs: 60_000 });
-    const reply = await gm.explain(contexts('아시나는 누구야?').ctx);
+    const ctx = contexts('아시나는 누구야?').ctx;
+    const note = lore.knowledge.find(entry => entry.name === '아시나');
+    if (!note) throw new Error('주인공 공개 정본 없음');
+    const reply = await gm.explain({ ...ctx, inquiry: { question: ctx.text, subject: '아시나', relation: '공개된 배경', answerType: '인물 소개', evidence: [{ source: `note:${note.id}`, quote: note.text }] } });
     expect(reply.meta.attempts).toBe(3);
     expect(reply.meta.fallback).toBe(false);
     expect(reply.meta.violations.some((v) => v.includes('베히다트'))).toBe(true);
@@ -615,13 +774,13 @@ describe('규칙 해석과 주소 제한', () => {
     expect(out.violations.some((v) => v.rule === 'meta')).toBe(true);
   });
 
-  test('LLM 이 없으면 아시나가 아는 범위로만 답하고, 아직 못 본 사람은 모른다고 한다', async () => {
+  test('LLM 없이 관계를 검수하지 못하면 공개 note도 무검증 답변으로 내지 않는다', async () => {
     const gm = new LocalGm(null, lore);
     const ask = async (q: string) => (await gm.explain(contexts(q).ctx)).lines.map((l) => l.text).join(' ');
-    expect(await ask('크롬웰이 뭐야?')).toContain('아시나의 모국');
+    expect(await ask('크롬웰이 뭐야?')).toBe('그건 아직 몰라.');
     expect(await ask('크롬웰이 뭐야?')).not.toMatch(/페시안|적국/);
     expect(await ask('저 남자 누구야?')).toBe('그건 아직 몰라.');
-    expect(await ask('베히다트가 누구야?')).toBe('그건 아시나도 몰라.');
+    expect(await ask('베히다트가 누구야?')).toBe('그건 아직 몰라.');
   });
 
   test('왜 묻는 말은 설정을 물을 때만 여우에게 간다', () => {
@@ -661,7 +820,10 @@ describe('규칙 해석과 주소 제한', () => {
   });
 
   test('LLM 이 말이라고 읽어도 행동을 적은 입력은 판정으로 받는다', async () => {
-    const mock = mockLlama([JSON.stringify({ reason: '말', kind: 'person', about: 'none', approach: 'none', item: '', stat: '재치', difficulty: '보통', absurd: false })]);
+    const mock = mockLlama([
+      JSON.stringify({ reason: '말', kind: 'person', about: 'none', approach: 'none', item: '', stat: '재치', difficulty: '보통', absurd: false }),
+      JSON.stringify({ reason: '모래를 쌓는 시도', label: '모래성 쌓기', question: '', kind: 'action', about: 'none', approach: 'none', target: 'local', scope: 'ready', deed: '모래를 쌓아 작은 성을 만든다', item: '', stat: '손재주', difficulty: '보통', odd: false, absurd: false }),
+    ]);
     stop = () => mock.server.stop(true);
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore, { ...DEFAULT_GM_OPTIONS, budgetMs: 60_000 });
     expect((await gm.interpret(contexts('모래성을 쌓는다').ctx)).kind).toBe('improv');
@@ -733,14 +895,25 @@ describe('이번 판 되풀이와 엔진 상태', () => {
   const withSpoken = (ctx: NarrateContext, spoken: Record<string, string[]>): NarrateContext => ({ ...ctx, state: { ...ctx.state, spoken } });
   const neutral = (ctx: NarrateContext, gist = '칼끝이 조금 물러난다.'): NarrateContext => ({ ...ctx, outcome: { ...ctx.outcome, gist } });
 
-  test('입력 해석과 줄 쓰기의 시스템 프롬프트가 같아 LLM 캐시를 이어 쓴다', async () => {
-    const mock = mockLlama([JSON.stringify({ kind: 'person', about: 'none', risk: 'none', approach: 'none', item: '' }), REPLY]);
-    stop = () => mock.server.stop(true);
+  test('입력 해석과 줄 쓰기를 분리하고 독립 시도 검수에 후보 목표를 되먹이지 않는다', async () => {
+    const candidate = JSON.stringify({ kind: 'action', about: 'none', risk: 'none', approach: 'beauty', target: 'beauty', scope: 'ready', deed: '아름다움으로 상대의 흥미를 끈다', item: '' });
+    const mock = mockLlama([JSON.stringify({ kind: 'person', about: 'none', risk: 'none', approach: 'none', item: '' }), REPLY, candidate]);
+    stop = () => { changeReply = '{"change":"자리가 바뀜"}'; mock.server.stop(true); };
     const gm = gmOn(mock.url);
     const { ctx, narrate } = contexts('억울해요!');
     await gm.interpret(ctx);
     await gm.narrate(neutral(narrate));
-    expect(mock.requests[1]?.messages[0]?.content).toBe(mock.requests[0]?.messages[0]?.content as string);
+    expect(mock.requests[1]?.messages[0]?.content).not.toBe(mock.requests[0]?.messages[0]?.content);
+    expect(Object.hasOwn(mock.requests[0]?.response_format?.json_schema.schema.properties ?? {}, 'kind')).toBe(true);
+    expect(Object.hasOwn(mock.requests[0]?.response_format?.json_schema.schema.properties ?? {}, 'lines')).toBe(false);
+    expect(Object.hasOwn(mock.requests[1]?.response_format?.json_schema.schema.properties ?? {}, 'lines')).toBe(true);
+    changeReply = JSON.stringify({ change: '눈앞의 상황을 확인함' });
+    const text = '(상대를 바라본다) 기분 안 좋으세요?';
+    expect(await gm.interpret({ ...contexts(text).ctx, input: parseStoryInput(text) })).toMatchObject({ kind: 'talk', to: 'person' });
+    const probe = mock.requests.findLast(r => r.messages[0]?.content === CHANGE_SYSTEM);
+    const goal = ctx.free.goals?.beauty;
+    if (!probe || !goal) throw new Error('독립 검수 요청이나 후보 목표가 없습니다.');
+    expect(probe.messages[1]?.content).not.toContain(goal.text);
   });
 
   test('이번 판에 이미 한 말을 처음 프롬프트부터 알린다', async () => {
@@ -770,8 +943,6 @@ describe('이번 판 되풀이와 엔진 상태', () => {
 
   test.each([
     { previous: ['그게 전부인가?', '그게 한계인가?'], draft: '벌써 지친 건가?', reason: '끝맺음' },
-    { previous: ['나그네, 고개를 들어라.', '눈을 피하지 마라.'], draft: '나그네, 아직 버티는군.', reason: '호칭' },
-    { previous: ['상인, 대답해라.', '그게 한계인가?'], draft: '상인, 겁이 난 건가?', reason: '호칭' },
   ])('직전 두 줄과 같은 $reason 반응은 다시 쓰고 다른 구조를 표시한다', async ({ previous, draft, reason }) => {
     const mock = mockLlama([lines(['남자', draft]), NO, YES, lines(['남자', '이 떨리는 소리부터 멈춰.']), NO, YES]);
     stop = () => mock.server.stop(true);
@@ -784,19 +955,33 @@ describe('이번 판 되풀이와 엔진 상태', () => {
     expect(mock.requests.some(req => req.messages[1]?.content.includes('직전 대사') && req.messages[1]?.content.includes(reason))).toBe(true);
   });
 
+  test.each([
+    { previous: ['나그네, 고개를 들어라.', '눈을 피하지 마라.'], draft: '나그네, 아직 버티는군.' },
+    { previous: ['상인, 대답해라.', '그게 한계인가?'], draft: '상인, 겁이 난 건가?' },
+  ])('같은 호칭으로 서로 다른 반응을 하면 불필요하게 재생성하지 않는다($draft)', async ({ previous, draft }) => {
+    const mock = mockLlama([lines(['남자', draft]), NO, YES]);
+    stop = () => mock.server.stop(true);
+    const base = contexts('이가 덜덜 떨려 말이 안 나온다').ctx;
+    const reply = await gmOn(mock.url).talk({ ...base, reaction: true, state: { ...base.state, spoken: { 남자: [...previous] } } });
+    expect(reply.meta.fallback).toBe(false);
+    expect(reply.meta.attempts).toBe(1);
+    expect(reply.lines.find((line) => line.speaker === '남자')?.text).toBe(draft);
+    expect(reply.meta.violations.filter((violation) => violation.startsWith('beat/reaction_repeat'))).toEqual([]);
+  });
+
   test('재시도 예산 소진 뒤 반복만 남은 초안은 침묵 대신 채택한다', async () => {
-    const mock = mockLlama([lines(['남자', '나그네, 이가 요란하게 부딪히는군.']), NO, YES]);
+    const mock = mockLlama([lines(['남자', '벌써 이가 부딪히는 건가?']), NO, YES]);
     stop = () => mock.server.stop(true);
     const gm = new LocalGm(new LlmClient({ baseUrl: mock.url, timeoutMs: 5000 }), lore, {
       ...DEFAULT_GM_OPTIONS, retries: 0, softRetries: 0,
     });
     const base = contexts('이가 덜덜 떨려 말이 안 나온다').ctx;
     const reply = await gm.talk({ ...base, reaction: true, state: { ...base.state, spoken: {
-      남자: ['나그네, 고개를 들어라.', '눈을 피하지 마라.'],
+      남자: ['그게 전부인가?', '그게 한계인가?'],
     } } });
     expect(reply.meta.fallback).toBe(false);
     expect(reply.meta.attempts).toBe(1);
-    expect(reply.lines.find(l => l.speaker === '남자')?.text).toBe('나그네, 이가 요란하게 부딪히는군.');
+    expect(reply.lines.find(l => l.speaker === '남자')?.text).toBe('벌써 이가 부딪히는 건가?');
     expect(reply.meta.violations.every(v => v.startsWith('beat/reaction_repeat'))).toBe(true);
     expect(reply.meta.violations.length).toBeGreaterThan(0);
   });

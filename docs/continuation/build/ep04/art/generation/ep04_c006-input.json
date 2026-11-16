@@ -1,0 +1,54 @@
+{
+  "asset_id": "ep04_c006",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_001.png",
+  "source_page_sha256": "a33f00098cf7bbc5800a2260b062d194d55e9de131bc1f0823344d63427c7988",
+  "source_cut_window": [
+    0,
+    17855,
+    2000,
+    22694
+  ],
+  "selected_window": [
+    0,
+    17855,
+    2000,
+    22694
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c006.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c006-selected.png",
+  "selected_size": [
+    2000,
+    4839
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c006-context.png",
+      "role": "실제 선택 원작 전체·비율 유지 축소",
+      "size": [
+        846,
+        2048
+      ],
+      "local_y": [
+        0,
+        4839
+      ]
+    },
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c006-detail-0.png",
+      "role": "실제 원작 세부 조각",
+      "local_y": [
+        0,
+        4000
+      ]
+    },
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c006-detail-4000.png",
+      "role": "실제 원작 세부 조각",
+      "local_y": [
+        4000,
+        4839
+      ]
+    }
+  ],
+  "transform": "원작 RGB 추출 및 긴 입력의 비율 유지 축소·위에서 아래 세부 조각. 내용 변경 없음."
+}

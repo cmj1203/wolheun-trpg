@@ -1,0 +1,10 @@
+{
+  "상태": "native 종료",
+  "후보": "ep04_c011_b_disguise",
+  "candidate_slot": "ep04_c011_b_disguise",
+  "pid": 19587,
+  "pgid": 19587,
+  "exit_code": 0,
+  "출력_존재": false,
+  "종료": "2026-11-09T06:07:27.086431+00:00"
+}

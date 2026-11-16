@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>월흔 TRPG 데모 · 1화 사막 조우</title>
     <link rel="stylesheet" href="/style.css" />
+    <style>.echo[data-as='mixed']::before { content: '▶ 아시나의 말·행동  '; }</style>
     <script type="module" src="/app.js"></script>
   </head>
   <body>
@@ -36,8 +37,10 @@
         <nav class="menu">
           <button id="btn-notes" type="button">수첩</button>
           <button id="btn-log" type="button">기록</button>
+          <button id="btn-map-play" type="button">분기 맵</button>
           <button id="btn-save" type="button">저장</button>
           <button id="btn-load" type="button">불러오기</button>
+          <button id="btn-model" type="button">게임 모델</button>
         </nav>
       </header>
 
@@ -52,7 +55,6 @@
         <textarea id="memo" class="memo" maxlength="2000" aria-labelledby="memo-head"></textarea>
       </aside>
 
-      <section id="choices" class="choices" hidden></section>
       <p id="intro-roll" class="intro-roll" hidden>주사위 2개 + 능력치</p>
       <button id="intro-skip" class="intro-skip" type="button" hidden>건너뛰기</button>
 
@@ -83,13 +85,14 @@
             <span class="approach-label">또는 행동 고르기</span>
             <div id="approaches" class="approaches"></div>
           </div>
-          <p id="thinking" class="thinking" hidden>GM이 장면을 쓰는 중<span class="dots"></span></p>
+          <p id="thinking" class="thinking" hidden>장면을 쓰는 중<span class="dots"></span></p>
         </div>
       </section>
 
+      <section id="choices" class="choices" hidden></section>
       <form id="say" class="say" hidden autocomplete="off">
         <span class="say-field">
-          <input id="free-input" name="free" maxlength="200" aria-label="말하거나 행동하기" placeholder="말하거나 행동하기" />
+          <input id="free-input" name="free" maxlength="200" aria-label="말하기 · (행동하기)" placeholder="말하기 · (행동하기)" />
           <button id="ask-gm" type="button" class="ask-gm" aria-pressed="false" aria-label="GM에게 묻기" title="GM에게 묻기"><img id="ask-gm-face" alt="" /></button>
         </span>
         <button id="free-send" type="submit">말하기</button>
@@ -148,7 +151,7 @@
           <div class="title-buttons">
             <button id="btn-new" type="button" class="primary">처음부터</button>
             <button id="btn-continue" type="button">이어하기</button>
-            <button id="btn-map" type="button">이야기 지도</button>
+            <button id="btn-map" type="button">분기 맵</button>
             <button id="btn-atlas-clear" type="button">기록 지우기</button>
           </div>
           <p id="title-status" class="title-status"></p>
@@ -157,7 +160,7 @@
       </section>
 
       <dialog id="atlas" class="atlas-dialog" aria-labelledby="atlas-title">
-        <h2 id="atlas-title">이야기 지도</h2>
+        <h2 id="atlas-title">분기 맵</h2>
         <div id="atlas-map" class="atlas-map"></div>
         <div id="atlas-fates" class="atlas-fates" hidden></div>
         <p id="atlas-hint" class="atlas-hint" hidden><img id="atlas-hint-img" alt="" /><span id="atlas-hint-text"></span></p>
@@ -194,7 +197,7 @@
               <div class="result-buttons">
                 <button id="btn-fork" type="button" class="primary" hidden>마지막 갈림길에서 다시</button>
                 <button id="btn-again" type="button" class="primary">다시 하기</button>
-                <button id="btn-map-result" type="button">이야기 지도</button>
+                <button id="btn-map-result" type="button">분기 맵</button>
                 <button id="btn-feedback-result" type="button">피드백</button>
                 <button id="btn-home" type="button">타이틀로</button>
               </div>
@@ -221,6 +224,13 @@
         <h2 id="log-title">대사 기록</h2>
         <ol id="log-list" class="log-list"></ol>
         <button id="log-close" type="button">닫기</button>
+      </dialog>
+
+      <dialog id="model" class="sheet" aria-labelledby="model-title">
+        <h2 id="model-title">게임 모델</h2>
+        <ul id="model-list" class="slot-list model-list"></ul>
+        <p id="model-status" class="model-status" role="status" hidden></p>
+        <button id="model-close" type="button">닫기</button>
       </dialog>
 
       <p id="toast" class="toast" hidden></p>

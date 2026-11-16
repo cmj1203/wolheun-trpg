@@ -1,0 +1,1532 @@
+{
+  "checkedAt": "2026-11-10",
+  "source": "Korean App Store RSS recent pages1-5",
+  "rules": {
+    "keywords": [
+      "스타",
+      "비싸",
+      "가격",
+      "과금",
+      "현질",
+      "충전"
+    ],
+    "case": "exact substring in title + text",
+    "multipleCount": "one per review",
+    "dedup": "id"
+  },
+  "counts": {
+    "total": 250,
+    "ratings": {
+      "1": 4,
+      "2": 3,
+      "3": 9,
+      "4": 17,
+      "5": 217
+    },
+    "price": 23,
+    "low": 16,
+    "lowPrice": 5
+  },
+  "records": [
+    {
+      "id": "14766444844",
+      "date": "2026-11-08T09:08:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14766208126",
+      "date": "2026-11-08T07:59:53-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14765894378",
+      "date": "2026-11-08T06:30:58-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14765736344",
+      "date": "2026-11-08T05:45:42-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14765388090",
+      "date": "2026-11-08T03:55:55-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14764615898",
+      "date": "2026-11-07T22:48:13-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14762538525",
+      "date": "2026-11-07T09:56:25-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14762001140",
+      "date": "2026-11-07T07:22:28-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14761743679",
+      "date": "2026-11-07T06:12:05-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14761610012",
+      "date": "2026-11-07T05:34:51-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14761608043",
+      "date": "2026-11-07T05:34:16-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14761121849",
+      "date": "2026-11-07T02:59:21-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14760932120",
+      "date": "2026-11-07T01:47:24-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14760783869",
+      "date": "2026-11-07T00:48:21-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14760196978",
+      "date": "2026-11-06T20:36:20-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14758938644",
+      "date": "2026-11-06T12:43:53-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14758228312",
+      "date": "2026-11-06T08:45:18-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14757666160",
+      "date": "2026-11-06T06:00:43-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14757264428",
+      "date": "2026-11-06T03:58:53-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14757262018",
+      "date": "2026-11-06T03:58:03-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14757144322",
+      "date": "2026-11-06T03:17:01-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14756659098",
+      "date": "2026-11-05T23:51:28-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14755955291",
+      "date": "2026-11-05T18:29:39-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14754302029",
+      "date": "2026-11-05T08:31:50-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14754218591",
+      "date": "2026-11-05T08:06:20-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14754089693",
+      "date": "2026-11-05T07:27:43-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14754046178",
+      "date": "2026-11-05T07:14:54-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14753254086",
+      "date": "2026-11-05T03:13:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14753217116",
+      "date": "2026-11-05T02:59:41-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14753170897",
+      "date": "2026-11-05T02:42:15-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14753145236",
+      "date": "2026-11-05T02:32:17-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14753020048",
+      "date": "2026-11-05T01:40:48-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14752971812",
+      "date": "2026-11-05T01:19:53-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14752516506",
+      "date": "2026-11-04T21:48:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14750181741",
+      "date": "2026-11-04T07:37:01-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14750110812",
+      "date": "2026-11-04T07:16:09-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14749925151",
+      "date": "2026-11-04T06:22:20-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14749645287",
+      "date": "2026-11-04T05:01:14-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14749402591",
+      "date": "2026-11-04T03:45:38-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14749069778",
+      "date": "2026-11-04T01:39:19-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14746632815",
+      "date": "2026-11-03T09:46:39-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14746571200",
+      "date": "2026-11-03T09:27:59-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14745890585",
+      "date": "2026-11-03T06:13:29-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14745782460",
+      "date": "2026-11-03T05:43:02-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14745174836",
+      "date": "2026-11-03T02:29:43-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14745091515",
+      "date": "2026-11-03T01:56:59-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14745031861",
+      "date": "2026-11-03T01:33:06-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14744787556",
+      "date": "2026-11-02T23:47:25-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14744096872",
+      "date": "2026-11-02T18:39:15-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14743684151",
+      "date": "2026-11-02T16:06:20-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14743613023",
+      "date": "2026-11-02T15:39:21-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14742235821",
+      "date": "2026-11-02T07:52:10-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14741922756",
+      "date": "2026-11-02T06:21:45-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741851237",
+      "date": "2026-11-02T06:01:10-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741738496",
+      "date": "2026-11-02T05:28:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741561174",
+      "date": "2026-11-02T04:35:14-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741446033",
+      "date": "2026-11-02T03:58:28-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741291193",
+      "date": "2026-11-02T03:03:58-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741284264",
+      "date": "2026-11-02T03:01:23-07:00",
+      "rating": 3,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741217760",
+      "date": "2026-11-02T02:35:59-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741057925",
+      "date": "2026-11-02T01:29:38-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14741047949",
+      "date": "2026-11-02T01:25:18-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14739393570",
+      "date": "2026-11-01T13:50:56-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14739033849",
+      "date": "2026-11-01T11:47:04-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738648007",
+      "date": "2026-11-01T09:48:44-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738608517",
+      "date": "2026-11-01T09:37:11-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738559928",
+      "date": "2026-11-01T09:23:13-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738544954",
+      "date": "2026-11-01T09:18:56-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738539934",
+      "date": "2026-11-01T09:17:29-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738494255",
+      "date": "2026-11-01T09:04:30-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738385416",
+      "date": "2026-11-01T08:33:51-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738352597",
+      "date": "2026-11-01T08:24:37-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738317485",
+      "date": "2026-11-01T08:14:49-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738214923",
+      "date": "2026-11-01T07:46:32-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738092288",
+      "date": "2026-11-01T07:12:53-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738070258",
+      "date": "2026-11-01T07:06:57-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14738045081",
+      "date": "2026-11-01T07:00:06-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737933784",
+      "date": "2026-11-01T06:29:37-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737863974",
+      "date": "2026-11-01T06:10:26-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737800848",
+      "date": "2026-11-01T05:53:04-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737698244",
+      "date": "2026-11-01T05:24:11-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737409340",
+      "date": "2026-11-01T03:56:49-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737373780",
+      "date": "2026-11-01T03:45:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737236477",
+      "date": "2026-11-01T02:57:51-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737078907",
+      "date": "2026-11-01T01:59:06-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737020324",
+      "date": "2026-11-01T01:36:29-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14737017032",
+      "date": "2026-11-01T01:35:15-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14736790564",
+      "date": "2026-11-01T01:06:22-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14736932344",
+      "date": "2026-11-01T01:02:41-07:00",
+      "rating": 2,
+      "priceKeyword": true
+    },
+    {
+      "id": "14736762760",
+      "date": "2026-11-01T00:54:58-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14736269416",
+      "date": "2026-10-31T21:19:13-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14736233292",
+      "date": "2026-10-31T21:03:52-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14735867405",
+      "date": "2026-10-31T18:38:35-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14735848930",
+      "date": "2026-10-31T18:31:20-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14735163906",
+      "date": "2026-10-31T13:52:39-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14735090409",
+      "date": "2026-10-31T13:25:47-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734898791",
+      "date": "2026-10-31T12:19:02-07:00",
+      "rating": 2,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734806221",
+      "date": "2026-10-31T11:48:44-07:00",
+      "rating": 3,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734699127",
+      "date": "2026-10-31T11:14:14-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734531466",
+      "date": "2026-10-31T10:22:17-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14734494725",
+      "date": "2026-10-31T10:11:17-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14734287972",
+      "date": "2026-10-31T09:11:02-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734224326",
+      "date": "2026-10-31T08:53:08-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734219213",
+      "date": "2026-10-31T08:51:44-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734180804",
+      "date": "2026-10-31T08:41:03-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734157437",
+      "date": "2026-10-31T08:34:37-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14734064592",
+      "date": "2026-10-31T08:09:40-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14733971333",
+      "date": "2026-10-31T07:44:30-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14733710309",
+      "date": "2026-10-31T06:34:20-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14733563257",
+      "date": "2026-10-31T05:53:31-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14733430460",
+      "date": "2026-10-31T05:14:35-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14733404338",
+      "date": "2026-10-31T05:06:33-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732976867",
+      "date": "2026-10-31T02:36:09-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732892015",
+      "date": "2026-10-31T02:03:02-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732720318",
+      "date": "2026-10-31T00:53:46-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732637154",
+      "date": "2026-10-31T00:18:25-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732630747",
+      "date": "2026-10-31T00:15:34-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732532680",
+      "date": "2026-10-30T23:32:07-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732439512",
+      "date": "2026-10-30T22:49:30-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14732046883",
+      "date": "2026-10-30T19:58:03-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14731740883",
+      "date": "2026-10-30T18:02:08-07:00",
+      "rating": 3,
+      "priceKeyword": false
+    },
+    {
+      "id": "14731404190",
+      "date": "2026-10-30T15:54:45-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14731070625",
+      "date": "2026-10-30T13:50:28-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14730590993",
+      "date": "2026-10-30T11:07:39-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14730294613",
+      "date": "2026-10-30T09:35:50-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14730274437",
+      "date": "2026-10-30T09:29:51-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14730083085",
+      "date": "2026-10-30T08:34:07-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14730056976",
+      "date": "2026-10-30T08:26:45-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14729676059",
+      "date": "2026-10-30T06:41:53-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14729654051",
+      "date": "2026-10-30T06:35:47-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14729208055",
+      "date": "2026-10-30T04:24:02-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14729171214",
+      "date": "2026-10-30T04:12:05-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14728731874",
+      "date": "2026-10-30T01:24:36-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14728636776",
+      "date": "2026-10-30T00:42:39-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14728487761",
+      "date": "2026-10-29T23:32:43-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14728025426",
+      "date": "2026-10-29T19:52:09-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14727731033",
+      "date": "2026-10-29T17:54:05-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14727031347",
+      "date": "2026-10-29T13:28:06-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14726707312",
+      "date": "2026-10-29T11:36:24-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14726513501",
+      "date": "2026-10-29T10:33:12-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14726440293",
+      "date": "2026-10-29T10:09:59-07:00",
+      "rating": 3,
+      "priceKeyword": false
+    },
+    {
+      "id": "14726274486",
+      "date": "2026-10-29T09:18:32-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14726036708",
+      "date": "2026-10-29T08:10:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14725954595",
+      "date": "2026-10-29T07:47:22-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14725841832",
+      "date": "2026-10-29T07:15:57-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14725751898",
+      "date": "2026-10-29T06:50:27-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14725292863",
+      "date": "2026-10-29T04:35:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14725102078",
+      "date": "2026-10-29T03:30:21-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14725084975",
+      "date": "2026-10-29T03:24:00-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14724959793",
+      "date": "2026-10-29T02:35:28-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14724779790",
+      "date": "2026-10-29T01:19:03-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14724609267",
+      "date": "2026-10-29T00:01:05-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14724347972",
+      "date": "2026-10-28T21:51:56-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14724319093",
+      "date": "2026-10-28T21:37:50-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14724165793",
+      "date": "2026-10-28T20:26:39-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14724077798",
+      "date": "2026-10-28T19:48:39-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14723775596",
+      "date": "2026-10-28T17:49:09-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14723461567",
+      "date": "2026-10-28T15:48:34-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14723388215",
+      "date": "2026-10-28T15:20:34-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14723360999",
+      "date": "2026-10-28T15:10:12-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14722684013",
+      "date": "2026-10-28T11:16:20-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14722640233",
+      "date": "2026-10-28T11:02:08-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14722248468",
+      "date": "2026-10-28T09:01:29-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14722243097",
+      "date": "2026-10-28T08:59:54-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14722124852",
+      "date": "2026-10-28T08:25:22-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14722034924",
+      "date": "2026-10-28T07:59:38-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721902873",
+      "date": "2026-10-28T07:22:04-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721736519",
+      "date": "2026-10-28T06:35:21-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721666631",
+      "date": "2026-10-28T06:15:28-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721649324",
+      "date": "2026-10-28T06:10:29-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721325965",
+      "date": "2026-10-28T04:33:52-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721201580",
+      "date": "2026-10-28T03:52:56-07:00",
+      "rating": 1,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721067471",
+      "date": "2026-10-28T03:04:36-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14721013371",
+      "date": "2026-10-28T02:43:40-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14720607437",
+      "date": "2026-10-27T23:47:10-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14720109564",
+      "date": "2026-10-27T19:52:30-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14718256636",
+      "date": "2026-10-27T09:04:21-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14718185859",
+      "date": "2026-10-27T08:43:29-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14717023143",
+      "date": "2026-10-27T02:49:44-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14716241326",
+      "date": "2026-10-26T20:53:21-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14713457009",
+      "date": "2026-10-26T05:32:29-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14713251274",
+      "date": "2026-10-26T04:28:10-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14712594921",
+      "date": "2026-10-26T00:00:52-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14712457275",
+      "date": "2026-10-25T22:53:57-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14712212254",
+      "date": "2026-10-25T20:53:43-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14709780015",
+      "date": "2026-10-25T07:23:35-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14708478684",
+      "date": "2026-10-24T23:59:43-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14708267369",
+      "date": "2026-10-24T22:27:03-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14706085011",
+      "date": "2026-10-24T09:21:24-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14705777399",
+      "date": "2026-10-24T07:59:10-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14705644335",
+      "date": "2026-10-24T07:24:15-07:00",
+      "rating": 1,
+      "priceKeyword": false
+    },
+    {
+      "id": "14704761007",
+      "date": "2026-10-24T02:54:17-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14703789209",
+      "date": "2026-10-23T20:16:56-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14700117596",
+      "date": "2026-10-22T23:45:04-07:00",
+      "rating": 4,
+      "priceKeyword": true
+    },
+    {
+      "id": "14698409320",
+      "date": "2026-10-22T12:17:54-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14697105405",
+      "date": "2026-10-22T05:50:07-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14695573431",
+      "date": "2026-10-21T19:29:04-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14694806151",
+      "date": "2026-10-21T14:27:24-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14694292839",
+      "date": "2026-10-21T11:31:58-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14693874209",
+      "date": "2026-10-21T09:24:28-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14693737337",
+      "date": "2026-10-21T08:44:26-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14693543649",
+      "date": "2026-10-21T07:50:10-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14691932029",
+      "date": "2026-10-20T21:49:27-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14689498459",
+      "date": "2026-10-20T07:12:56-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14689432521",
+      "date": "2026-10-20T06:54:01-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14689413279",
+      "date": "2026-10-20T06:48:25-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14688586242",
+      "date": "2026-10-20T02:06:15-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14688133756",
+      "date": "2026-10-19T22:34:08-07:00",
+      "rating": 1,
+      "priceKeyword": false
+    },
+    {
+      "id": "14687942001",
+      "date": "2026-10-19T21:03:27-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14685501757",
+      "date": "2026-10-19T06:33:51-07:00",
+      "rating": 2,
+      "priceKeyword": true
+    },
+    {
+      "id": "14684343289",
+      "date": "2026-10-18T22:58:07-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14682304262",
+      "date": "2026-10-18T09:49:40-07:00",
+      "rating": 4,
+      "priceKeyword": true
+    },
+    {
+      "id": "14682037108",
+      "date": "2026-10-18T08:33:33-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14682013266",
+      "date": "2026-10-18T08:26:59-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14681998001",
+      "date": "2026-10-18T08:22:43-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14681191778",
+      "date": "2026-10-18T04:23:16-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14679002053",
+      "date": "2026-10-17T13:52:32-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14675196008",
+      "date": "2026-10-16T15:55:11-07:00",
+      "rating": 3,
+      "priceKeyword": false
+    },
+    {
+      "id": "14672657785",
+      "date": "2026-10-16T01:53:54-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14672525088",
+      "date": "2026-10-16T00:54:53-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14671912814",
+      "date": "2026-10-15T20:09:56-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14670001075",
+      "date": "2026-10-15T08:42:31-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14669764894",
+      "date": "2026-10-15T07:35:07-07:00",
+      "rating": 3,
+      "priceKeyword": true
+    },
+    {
+      "id": "14668735257",
+      "date": "2026-10-15T01:59:46-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14668106417",
+      "date": "2026-10-14T21:15:19-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14667511431",
+      "date": "2026-10-14T17:14:00-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14667481959",
+      "date": "2026-10-14T17:02:21-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14667309755",
+      "date": "2026-10-14T15:51:59-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14666618054",
+      "date": "2026-10-14T11:37:39-07:00",
+      "rating": 3,
+      "priceKeyword": true
+    },
+    {
+      "id": "14665808425",
+      "date": "2026-10-14T07:30:42-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14664648597",
+      "date": "2026-10-14T00:34:56-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14664466023",
+      "date": "2026-10-13T23:07:58-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14663430602",
+      "date": "2026-10-13T15:48:09-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14662843644",
+      "date": "2026-10-13T12:10:10-07:00",
+      "rating": 3,
+      "priceKeyword": false
+    },
+    {
+      "id": "14661557646",
+      "date": "2026-10-13T05:43:51-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14660509582",
+      "date": "2026-10-12T22:35:46-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14659979977",
+      "date": "2026-10-12T18:44:54-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14659788134",
+      "date": "2026-10-12T17:29:57-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14657895304",
+      "date": "2026-10-12T06:58:51-07:00",
+      "rating": 4,
+      "priceKeyword": true
+    },
+    {
+      "id": "14655561069",
+      "date": "2026-10-11T15:33:42-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14654034479",
+      "date": "2026-10-11T07:28:48-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14653191173",
+      "date": "2026-10-11T02:57:51-07:00",
+      "rating": 4,
+      "priceKeyword": false
+    },
+    {
+      "id": "14652284061",
+      "date": "2026-10-10T20:40:51-07:00",
+      "rating": 1,
+      "priceKeyword": false
+    },
+    {
+      "id": "14649617238",
+      "date": "2026-10-10T05:42:02-07:00",
+      "rating": 3,
+      "priceKeyword": true
+    },
+    {
+      "id": "14648527350",
+      "date": "2026-10-09T22:37:35-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14646487349",
+      "date": "2026-10-09T09:31:11-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14646016694",
+      "date": "2026-10-09T07:14:09-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14645429584",
+      "date": "2026-10-09T04:15:09-07:00",
+      "rating": 5,
+      "priceKeyword": true
+    },
+    {
+      "id": "14645351922",
+      "date": "2026-10-09T03:47:18-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    },
+    {
+      "id": "14644701558",
+      "date": "2026-10-08T23:00:43-07:00",
+      "rating": 5,
+      "priceKeyword": false
+    }
+  ]
+}

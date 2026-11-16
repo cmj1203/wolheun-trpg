@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-09T05:05:55.585Z",
+  "result": "PASS",
+  "metadata_delta": {
+    "audit": "docs/continuation/build/ep10/cg-canonical-audit.md",
+    "old_yaml_sha256": "0fc0d80e292792e7ac427c30d061404f15efe59191e362ffdc6ac0634bea69b0",
+    "current_yaml_sha256": "96e4af705e4dcdae2e68c973ab5419d9f63877d7963afbae8b3a496aa042dbe7",
+    "unique_speech_keys_updated": 46,
+    "observed_current_stage_actor_references": 69,
+    "explicit_same_cg_replies": 3,
+    "explicit_same_cg_pointers": [
+      "/beats/ep10_c026/choices/1/lines/0",
+      "/beats/ep10_c029/choices/1/lines/0",
+      "/beats/ep10_c034/choices/1/lines/0"
+    ],
+    "candidate_earliest_reveal_speakers_updated": 26
+  },
+  "checks": {
+    "exact_current_yaml_line_pointers": 133,
+    "nested_anchor_copies": 133,
+    "unique_required_outputs": 92,
+    "original_cut_windows_preserved": 78,
+    "candidate_source_content_timing_preserved": true,
+    "anchor_candidate_sequences_preserved": true,
+    "yaml_unchanged_during_validation": true,
+    "generation_calls": 0
+  },
+  "errors": [],
+  "scope_note": "매핑 메타데이터만 갱신. 원작 내용·출력 파일명·크롭·공개 시점 보존. YAML·테스트·공유 코드·자산을 수정하지 않았고 네이티브 생성·앱 합성 테스트는 실행하지 않음.",
+  "written_files": [
+    "docs/continuation/build/ep10/art/mapping.md",
+    "docs/continuation/build/ep10/art/mapping.json",
+    "docs/continuation/build/ep10/art/candidate-manifest.json",
+    "docs/continuation/build/ep10/art/verification.json"
+  ],
+  "next": "별도 슬롯 GO 대기",
+  "initial_mapping_verification": {
+    "checked_at": "2026-11-09T04:35:58.671Z",
+    "result": "PASS",
+    "checks": {
+      "source_pages": 18,
+      "source_cuts_ordered": 78,
+      "scene_cut_coverage": 78,
+      "current_yaml_beats": 92,
+      "current_cg_definitions": 78,
+      "exact_yaml_line_objects": 133,
+      "source_and_clean_path_hashes": 96,
+      "input_snapshot_hashes": 12,
+      "control_anchors": 19,
+      "unique_candidate_outputs": 92,
+      "output_files_existing": 0,
+      "unmapped_line_anchors": 0,
+      "unmapped_candidates": 0,
+      "generation_calls": 0
+    },
+    "input_drift": [],
+    "errors": [],
+    "scope_note": "매핑 구조·출처·실제 입력 파일 검사다. 이미지 생성·독립 Claude QA·브라우저·모델 실행·앱 테스트를 수행한 기록이 아니다.",
+    "written_files": [
+      "docs/continuation/build/ep10/art/mapping.md",
+      "docs/continuation/build/ep10/art/mapping.json",
+      "docs/continuation/build/ep10/art/candidate-manifest.json"
+    ],
+    "protected_writes": "허용된 새 art 문서만 작성. YAML·원작 문서·다른 화 자산·코드는 수정하지 않음"
+  }
+}

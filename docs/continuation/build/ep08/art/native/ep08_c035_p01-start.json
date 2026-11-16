@@ -1,0 +1,20 @@
+{
+  "candidate_id": "ep08_c035_p01",
+  "pid": 13554,
+  "pgid": 13554,
+  "started_at": 1794204174.782656,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep08/gen/inputs/ep08_c035_p01.png",
+  "input_sha256": "6e8d654cbe8cdb40d441c54149760bdd35937473b750786c839380f70f5e9262",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep08/gen/ep08_c035_p01.png",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep08/art/native/ep08_c035_p01.log",
+  "native_active_before_launch": [
+    {
+      "pid": 12776,
+      "pgid": 12776,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C /Users/choeminju/월흔_trpg/assets/ep04/gen -i /Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c011_a_earring-selected.png -- 4화 승인 후보 ep04_c011_a_earring 한 장만 첨부된 실제 원작으로 편집한다. 내장 image_gen 한 번만 사용한다. 실제 원본 work/ep04/merged/ep04_003.png의 [0,6600,2000,9400) 창이다.\\012\\012원작 귀찌 단독 삽화다. 타원형 붉은/분홍 보석의 세공·각면·빛 반사, 두툼한 금색 테두리의 각진 반사, 아래로 뻗은 짧은 금속 몸체와 둥근 넓은 끝, 기울어진 각도와 원근을 그대로 유지한"
+    }
+  ],
+  "native_active_before_count": 1,
+  "slot_counter": "argv 첫 실행 파일 기준",
+  "independent_qa": "대기"
+}

@@ -1,0 +1,17 @@
+검증일: 2026-11-09
+9화 파서·checkScenario 오류: 0개
+9화 두 대상 cast 외 파싱 데이터 동일: 참
+7화 원본 문자열 동일: 참
+황제·황제독백 대상 고정 줄: 10개
+대상 고정 줄의 유효 CG 누락: 0개
+독립 withNotes 기존 오류: 28개
+독립 withNotes 수정 후 오류: 16개
+수정 후 reactions 오류 존재: 거짓
+실제 1화 비트로 참조를 충족한 withNotes: 통과
+연결된 실제 공유 로어 지식: 29개
+전용 회귀 수정 전: 0개 통과, 9개 실패
+전용 회귀 수정 후: 9개 통과, 0개 실패, 147개 단언
+타입 검사: 종료 코드 2
+소유 밖 동시 작업 오류:
+app/tests/continuation_perspective.test.ts:55:63 TS2339
+app/tests/continuation_perspective.test.ts:57:41 TS2339

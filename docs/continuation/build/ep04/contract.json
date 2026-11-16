@@ -1,0 +1,177 @@
+{
+  "episode": "ep04",
+  "scenario": "ep04_night",
+  "atlas": {
+    "columns": [32, 44],
+    "entry_node": "ep04_plan",
+    "entry_position": [32, 3],
+    "preceding_node_candidate": "ep03_s12",
+    "preceding_beat": "ep03_c061",
+    "next_available_column": 45,
+    "external_edges_applied": false
+  },
+  "entry": {
+    "beat": "ep04_c001",
+    "preceding_candidate": {
+      "beat": "ep03_c061",
+      "ending": "ep03_boundary",
+      "status": "후보만 기록하며 공유 캠페인에는 미연결"
+    },
+    "flags": {
+      "ep03_복장_청록복": true,
+      "ep03_금색신발_벗음": true,
+      "ep03_짐_수중없음": true,
+      "ep03_하렘_앎": true,
+      "ep03_유일한아이라_앎": true
+    },
+    "absent_items": [
+      "magic_bag",
+      "map"
+    ],
+    "preserve": [
+      "게임 식별자와 시드",
+      "능력치와 현재 수치",
+      "핀 보유 여부",
+      "인물 기억과 입력 기록",
+      "귀찌의 실제 남은 수명",
+      "이전에 들은 시하드 호칭"
+    ],
+    "do_not_infer": [
+      "공녀 정체 확인",
+      "통치자 확인",
+      "비공개 궁정 대화를 아시나가 들음"
+    ]
+  },
+  "revelations": [
+    {
+      "cut": "ep04_c040",
+      "flag": "ep04_name_known",
+      "speaker": "ep04_man",
+      "display": "남성",
+      "keys": [
+        "시하드 젠 베히다트",
+        "베히다트"
+      ],
+      "text": "시하드 젠 베히다트라는 실명"
+    },
+    {
+      "cut": "ep04_c041",
+      "flag": "ep04_ruler_known",
+      "speaker": "ep04_behidat",
+      "display": "베히다트",
+      "keys": [
+        "페시안의 주인",
+        "페시안의 왕",
+        "페시안 통치자"
+      ],
+      "text": "페시안의 주인이라는 신분"
+    },
+    {
+      "cut": "ep04_c042",
+      "flag": "ep04_title_known",
+      "speaker": "ep04_asina",
+      "display": "아시나",
+      "keys": [
+        "라 쿤",
+        "살아있는 신"
+      ],
+      "text": "라 쿤·살아있는 신이라는 칭호"
+    }
+  ],
+  "knowledge": {
+    "hidden": [
+      {
+        "id": "ep04_full_name",
+        "kind": "사람",
+        "name": "남성의 실명",
+        "text": "시하드 젠 베히다트라는 실명",
+        "keys": [
+          "시하드 젠 베히다트",
+          "베히다트"
+        ],
+        "if": "flag:ep04_name_known"
+      },
+      {
+        "id": "ep04_ruler",
+        "kind": "사람",
+        "name": "남성의 지위",
+        "text": "페시안의 주인이라는 신분",
+        "keys": [
+          "페시안의 주인",
+          "페시안의 왕",
+          "페시안 통치자"
+        ],
+        "if": "flag:ep04_ruler_known"
+      },
+      {
+        "id": "ep04_title",
+        "kind": "사람",
+        "name": "통치자의 칭호",
+        "text": "라 쿤·살아있는 신이라는 칭호",
+        "keys": [
+          "라 쿤",
+          "살아있는 신"
+        ],
+        "if": "flag:ep04_title_known"
+      }
+    ]
+  },
+  "exit": [
+    {
+      "beat": "ep04_boundary",
+      "last_source_beat": "ep04_c063",
+      "ending": "ep04_boundary",
+      "distance": "원작의 가까운 거리",
+      "next_episode": null
+    },
+    {
+      "beat": "ep04_distance_boundary",
+      "last_source_beat": "ep04_distance_c063",
+      "ending": "ep04_distance_boundary",
+      "distance": "손이 닿지 않는 거리 유지",
+      "required_flags": {
+        "ep04_distance_kept": true
+      },
+      "forbidden_cgs": [
+        "ep04_c057_source",
+        "ep04_c061_source",
+        "ep04_c062_source"
+      ],
+      "next_episode": null
+    }
+  ],
+  "cleanup": {
+    "ep05_entry": [
+      "ep04_active"
+    ],
+    "on_clothes_change": [
+      "ep03_복장_청록복",
+      "ep04_clothes_wet",
+      "ep04_청록단화_착용"
+    ],
+    "on_disguise_change": [
+      "ep03_귀찌_변장설명"
+    ],
+    "on_luggage_return": [
+      "ep03_짐_수중없음"
+    ],
+    "on_new_distance_action": [
+      "ep04_distance_kept"
+    ],
+    "historical_flags_keep": [
+      "ep03_하렘_앎",
+      "ep03_유일한아이라_앎",
+      "ep04_name_known",
+      "ep04_ruler_known",
+      "ep04_title_known"
+    ]
+  },
+  "art_status": "원작 clean 63파일 참조만 확인. Astra 편집과 원작 나란히 검수·캠페인 화면 검증 미완료",
+  "shared_dependencies": [
+    "기존 남자_정체_앎 단일 잠금을 세 플래그로 분리",
+    "공유 하렘 정보의 정적 선공개 제거",
+    "source CG를 Astra 원작 편집 완료본으로 교체",
+    "5화 시작은 실제 담당 결과 확인 후 두 종료의 거리를 각각 보존하여 연결",
+    "현재 목표 실행 엔진과 캠페인 브리지 통합 및 실제 모델·브라우저 QA"
+  ]
+}

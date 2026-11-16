@@ -1,0 +1,63 @@
+{
+ "title": "(3) Discord | \"Suggestion: Add More AI Model Options, such as DeepSeek / GLM\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 5,
+ "msgs": [
+  {
+   "t": "2026-09-30T11:43:01.624Z",
+   "a": "유저",
+   "bot": true,
+   "txt": " 2026-08-10 · moved from old-suggestions-global\nCurrently, the number of AI models available in the app feels a bit limited. It would be great if more model options could be added in the future, such as DeepSeek or the GLM series.\n\nDifferent AI models have their own strengths when it comes to novel writing, character development, long-context understanding, writing style, and Chinese-language generation. Giving users more models to choose from based on their needs would make the app much more flexible.\n\nDeepSeek and GLM, in particular, perform quite well with Chinese content, so I think they would be great additions to the current model selection.\n\nHope the development team can consider it. Thanks!",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T11:43:03.092Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "Hello, this is Sion from the Frontia team:)\n\nThank you so much for taking the time to write out such a thoughtful and\ndetailed suggestion.\n\nIt's exactly as you say — each model has its own strengths when it comes to\nstorytelling, character portrayal, long-context understanding, and writing\nstyle, and the language being written in makes a difference too. And on that\nnote, we have some good news to share: DeepSeek and the GLM series are in fact\nbeing tested right now with a view to bringing them to Frontia. We can't promise\na date just yet, but it's actively in progress, so please do look forward to it.\n\nSuggestions like yours are a genuine help in making Frontia better, and we're\ntruly grateful you shared it with us. We'll keep listening closely to the voices\nof our users and keep building Frontia together with you.\n\nThank you.\nSion, Frontia team",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T11:43:03.823Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "Great!!",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T11:43:04.526Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "TYSM. Looking forward to hearing some good news soon!",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T11:43:05.215Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "Can't wait",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

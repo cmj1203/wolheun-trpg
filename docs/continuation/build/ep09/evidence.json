@@ -1,0 +1,30 @@
+{
+  "검증": {
+    "id": "ep09_palace",
+    "standalone": true,
+    "sharedSheetEqual": true,
+    "sourceCuts": 84,
+    "mappedCuts": 84,
+    "dialogueOrderMismatches": [],
+    "runtimeAssetCount": 61,
+    "missingAssets": [],
+    "runtimePathsUnderAssets": true,
+    "checkScenario": [],
+    "mutationChecks": {
+      "bagReturnViolationDetected": true,
+      "privateSpeechViolationDetected": true
+    }
+  },
+  "명령": "cd app && bun test ./tests/ep09_palace.test.ts --timeout 30000",
+  "결과": "종료 코드 0 · 6 통과 · 0 실패 · 30ms",
+  "미검증": [
+    "캠페인 연결",
+    "브라우저·실제 모델 QA",
+    "Astra 완성 그림"
+  ],
+  "미확정": [
+    "8→9 진입 세이브와 직전 비트",
+    "c042 발화 방식",
+    "9→10 욕실 이동 경위와 칼 사용 여부"
+  ]
+}

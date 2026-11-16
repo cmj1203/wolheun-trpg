@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-09",
+  "status": "매핑 구조 검사 통과·생성/미술 승인 아님",
+  "source_cut_coverage": "63/63",
+  "yaml_beats": "84/84",
+  "line_anchors": "133/133",
+  "non_line_anchors": "7/7",
+  "unique_output_proposals": 65,
+  "whole_cut_reuse_proposals": 10,
+  "split_cuts": 7,
+  "reveals": "15/15",
+  "source_text_supplements": "2/2",
+  "missing_cut_ids": [],
+  "unmapped_anchors": [],
+  "orphan_assets": [],
+  "future_source_cut_bindings": [],
+  "distance_route_contact_assets": [],
+  "current_input_hashes_unchanged": true,
+  "existing_candidates": [],
+  "native_generation_calls": 0,
+  "parent_mapping_confirmed": false,
+  "generation_go_received": false,
+  "note": "원작·YAML 파싱과 계획 연결의 검사다. 앱·렌더·생성물·Claude 미술 검수는 하지 않았다."
+}
+

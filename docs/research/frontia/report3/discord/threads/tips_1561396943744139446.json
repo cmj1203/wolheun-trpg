@@ -1,0 +1,30 @@
+{
+ "title": "(3) Discord | \"[Tools] MP3 편집기(MP3 Editor)\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 2,
+ "msgs": [
+  {
+   "t": "2026-10-18T15:14:00.741Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "[ MP3 편집기]\n,\n안녕하세요, 유저(유저)입니다.\n\n개인적으로 쓰려고 만든 MP3 편집기입니다(by. Claude).\n\n볼륨조절, 자르기, 피치 조절, 속도 조절, 음질 수정이 가능합니다.\n\n언어는 한국어, 중국어(번체), 태국어, 인도네시아어 만 지원합니다.\n\n접속으로 곧바로 사용 가능합니다.\n\n추가 질문, 개선 제안, 버그 제보 등은 본 게시글 댓글로 부탁드립니다.\n\nhttps://mp3.knotmoon.com/\n\n\n▼ 다른 도구 살펴보기\nhttps://knotmoon.com/tools/\n\n---\n\n\n[ MP3 Editor]\n,\nHello, this is 유저.\n\nThis is an MP3 editor I made for personal use (by. Claude).\n\nIt supports volume control, trimming, pitch shifting, speed adjustment, and audio quality modification.\n\nIt is available worldwide, but currently only supports Korean, Traditional Chinese, Thai, and Indonesian.\n\nYou can use it right away in your browser without any downloads.\n\nPlease leave a comment on this post for any questions, suggestions for improvement, or bug reports.\n\nhttps://mp3.knotmoon.com/\n\n\n▼ Check out other tools\nhttps://knotmoon.com/tools/",
+   "emb": "MP3 편집기\n볼륨, 자르기, 페이드, 피치를 브라우저에서 바로. 여러 파일을 한 번에 처리하며 파일은 서버로 올라가지 않음. | 유저 아카이브\nTools · 유저 아카이브\n프론티아 제작 도구 모음.",
+   "att": 3,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-18T15:18:32.784Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " English\n[Tools] MP3 Editor ## [ MP3 Editor] Hello, this is 유저. This is an MP3 editor created for personal use (by. Claude). You can adjust volume, cut, adjust pitch, adjust speed, and modify sound quality. Only Korean, Chinese (Traditional), Thai, and Indonesian are supported. You can use it immediately after connecting. If you have additional questions, suggestions for improvement, or report bugs, please leave a comment on this post. -# ▼ Explore other tools --- ## [ MP3 Editor] Hello, this is 유저. This is an MP3 editor I made for personal use (by. Claude). It supports volume control, trimming, pitch shifting, speed adjustment, and audio quality modification. It is available worldwide, but currently only supports Korean, Traditional Chinese, Thai, and Indonesian. You can use it right away in your browser without any downloads. Please leave a comment on this post for any questions, suggestions for improvement, or bug reports. -# ▼ Check out other tools",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+  "pid": 63044,
+  "pgid": 63044,
+  "parent_pid": 24935,
+  "parent_pgid": 24935,
+  "started_at": "2026-11-09T06:32:09.425885+00:00",
+  "runner": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native-production-runner.py",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native-production-supervisor.log",
+  "capacity_wait": "분리된 감시 실행기 내부에서만 대기. 모든 실제 native 시작 직전 재확인.",
+  "local_max": 1,
+  "global_actual_max": 3
+}

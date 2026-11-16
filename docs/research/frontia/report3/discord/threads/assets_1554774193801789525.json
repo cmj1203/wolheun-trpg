@@ -1,0 +1,76 @@
+{
+ "title": "(3) Discord | \"🎛️ Make your own BGM and SFX — prompt sheets for Suno, Stable Audio, ElevenLabs\" | 프론티아",
+ "h": "프론티아",
+ "tags": [
+  "Prompt sheet"
+ ],
+ "n": 6,
+ "msgs": [
+  {
+   "t": "2026-09-30T08:37:34.110Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": "Can't find the sound you need? These are the prompts we use, written out so you can paste them into a music or sound generator and get something usable on the first try.\n\nBGM prompts — 10 moods, each with instrumentation, tempo and length already specified\nSFX prompts — 7 categories, with the wording that actually produces a clean short clip instead of a music loop\n\nWorks with Suno, Stable Audio, ElevenLabs and most others. The full sheets are in the replies below — copy straight from there, no download.\n\nTwo things that matter more than the prompt itself:\n1 · Always turn on Instrumental (no lyrics). Vocals fight the text on screen.\n2 · Save with the suggested file name. Frontia's AI matches a sound to a situation by its asset name, so tension_chase gets picked up and track_03 does not.\n\nMade something good with these? Post it here — that's what this channel is for.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T08:37:35.134Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " BGM prompt sheet\n,\nMood - Daily (calm everyday life, morning, cafe)\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| daily_morning_light | calm acoustic morning music, soft piano and acoustic guitar, warm and cozy, gentle daily life BGM, loopable, no vocals |\n| daily_cafe | relaxed cafe jazz, soft piano trio, light brushed drums, cozy afternoon, background music, loopable, no vocals |\n| daily_stroll | light cheerful whistling melody with ukulele and glockenspiel, sunny stroll, peaceful slice of life, loopable, no vocals |\n\n\nMood - Romance (first meeting, dates, confession)\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| romance_first_meeting | sweet romantic piano melody, fluttering strings, heartbeat of first love, warm and tender, anime romance BGM, loopable, no vocals |\n| romance_date | bright bossa nova, nylon guitar and soft percussion, playful date mood, lighthearted romance, loopable, no vocals |\n| romance_confession | emotional romantic orchestra, gentle piano with swelling strings, confession scene, heartfelt and warm, no vocals |\n\n\nMood - Tension (chase, crisis, standoff)\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| tension_chase | intense chase music, fast percussion, driving staccato strings, urgent and relentless, action thriller BGM, no vocals |\n| tension_stealth | suspenseful stealth music, low pulsing bass, ticking percussion, quiet tension, spy infiltration mood, loopable, no vocals |\n| tension_standoff | tense standoff music, sustained low strings, ominous drones, rising dread, confrontation scene, no vocals |",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T08:37:36.483Z",
+   "a": "",
+   "bot": false,
+   "txt": "Mood - Sorrow (farewell, loss, memories)\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| sorrow_farewell | sad emotional piano ballad, slow and mournful, gentle string accompaniment, farewell scene, tearful, no vocals |\n| sorrow_memories | nostalgic music box melody, wistful and bittersweet, distant memories, soft reverb, melancholy, loopable, no vocals |\n| sorrow_loss | somber solo cello with sparse piano, grief and loss, quiet sorrow, rainy day mood, no vocals |\n\n\nMood - Battle (combat, showdown, action)\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| battle_showdown | epic orchestral battle music, powerful brass, pounding war drums, heroic climax, intense fantasy combat, no vocals |\n| battle_action | fast-paced hybrid orchestral action, electric guitar riffs with orchestra, adrenaline rush, fight scene, no vocals |\n| battle_boss | dark epic boss battle theme, aggressive strings, heavy percussion, menacing brass, final showdown, no vocals |\n\n\nMood - Mystery (riddles, investigation, something's off)\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| mystery_investigation | mysterious investigation music, jazzy noir undertones, muted trumpet, walking bass, detective mood, loopable, no vocals |\n| mystery_uncanny | eerie curious music, celesta and pizzicato strings, something is off, uncanny but not scary, loopable, no vocals |\n| mystery_truth | dark mystery theme, slow building tension, piano motif with ambient pads, uncovering secrets, no vocals |",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T08:37:37.878Z",
+   "a": "",
+   "bot": false,
+   "txt": "Mood - Horror\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| horror_ghost_story | horror ambient drone, dissonant strings, creaking textures, dreadful atmosphere, ghost story, no melody, no vocals |\n| horror_chase | frantic horror chase, screeching strings, pounding industrial percussion, panic and terror, no vocals |\n| horror_haunted_house | unsettling haunted house ambience music, detuned music box, whispers of wind, cold dread, loopable, no vocals |\n\n\nMood - Epic (royal courts, coronations, grand vistas)\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| epic_royal_court | majestic royal court orchestra, noble brass fanfare, elegant strings, palace grandeur, ceremonial, no vocals |\n| epic_landscape | sweeping cinematic landscape theme, soaring strings and horns, vast open world, awe and wonder, no vocals |\n| epic_coronation | triumphant coronation march, full orchestra, timpani rolls, glorious and stately, no vocals |\n\n\nMood - Comedy\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| comedy_mischief | quirky comedic chase, pizzicato strings, silly tuba and xylophone, cartoon mischief, playful chaos, loopable, no vocals |\n| comedy_sitcom | goofy lighthearted comedy BGM, bouncy clarinet melody, kazoo accents, sitcom feel, loopable, no vocals |\n| comedy_awkward | confused comedic moment, wonky detuned trombone, hesitant plucked strings, awkward silence feel, short loop, no vocals |",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T08:37:39.245Z",
+   "a": "",
+   "bot": false,
+   "txt": "Era & genre specials\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| eastern_wuxia | chinese wuxia instrumental, guzheng and dizi flute, flowing martial arts atmosphere, ancient east asia, loopable, no vocals |\n| eastern_historical | traditional korean court music inspired BGM, gayageum and daegeum, historical drama mood, elegant, loopable, no vocals |\n| western_court | baroque chamber music, harpsichord and string quartet, aristocratic ballroom, period drama elegance, loopable, no vocals |\n| fantasy_adventure | adventurous fantasy overworld theme, celtic flute and strings, journey begins, hopeful exploration, loopable, no vocals |\n| scifi_neon_city | futuristic synthwave ambient, neon city night, analog synth pads, cyberpunk calm, loopable, no vocals |\n| scifi_space | vast space ambient, deep synth drones, twinkling arpeggios, floating in the void, serene sci-fi, loopable, no vocals |",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-09-30T08:37:40.554Z",
+   "a": "",
+   "bot": false,
+   "txt": " SFX prompt sheet\n,\nAction & Combat\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| sword_swing | sharp sword swing whoosh through air |\n| sword_clash | metallic sword clash, two blades striking |\n| sword_unsheathe | sword being unsheathed, metallic ring |\n| punch_impact | heavy punch impact hit |\n| body_fall | body falling to the ground with a thud |\n| arrow_shot | bow string release and arrow whoosh |\n| arrow_hit | arrow hitting a wooden target with a thunk |\n| explosion_large | large explosion with debris |\n| explosion_distant | distant explosion rumble |\n| glass_shatter | glass shattering |\n| door_break | wooden door being smashed open |\n| armor_clank | metal armor clanking footsteps |\n\n\nFantasy & Magic\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| magic_cast | magical spell casting shimmer, arcane energy charging |\n| magic_burst | magic burst impact, fantasy energy explosion |\n| magic_heal | gentle healing magic chime, warm sparkle |\n| magic_circle | magic circle activating, deep resonant hum with sparkles |\n| teleport | teleportation warp whoosh |\n| potion_drink | drinking potion, gulp and glass clink |\n| dragon_roar | dragon roar, deep and menacing |\n| mystic_bell | mystical bell resonance, otherworldly |\n| curse_activate | dark curse magic, sinister whispering energy |\n\n\nRomance & Emotional Beats\n,\n| Suggested file name | Prompt |\n| --- | --- |\n| heartbeat_single | single deep heartbeat thump, slow and heavy |\n| heartbeat_fast | rapid nervous heartbeat |\n| sparkle_soft | soft magical sparkle chime, romantic twinkle |\n| time_freeze | time freezing effect, reverse cymbal into silence |\n| shock_sting | dramatic shock sting, sudden realization |",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

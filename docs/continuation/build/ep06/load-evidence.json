@@ -1,0 +1,15 @@
+{
+  "날짜": "2026-11-09",
+  "독립ID": "ep06_library",
+  "비트수": 73,
+  "적재검사": [],
+  "자산수": 65,
+  "누락자산": [],
+  "단독지식": "수첩 검증 실패:\n- knowledge.common.stars.after: 없는 비트 \"b01_sand\"\n- knowledge.asina.captive.after: 없는 비트 \"r2_bind\"\n- knowledge.asina.captive.after: 없는 비트 \"r4_walk\"\n- knowledge.asina.captive.after: 없는 비트 \"r5_price\"\n- knowledge.asina.captive.after: 없는 비트 \"e_spy\"\n- knowledge.asina.captive.after: 없는 비트 \"e_curious\"\n- knowledge.asina.captive.after: 없는 비트 \"e_survivor\"\n- knowledge.asina.captive.after: 없는 비트 \"e_value\"\n- knowledge.asina.captive.after: 없는 비트 \"e_deal\"\n- knowledge.asina.strangers.after: 없는 비트 \"b02_people\"\n- knowledge.asina.man.after: 없는 비트 \"b03_ask\"\n- knowledge.asina.man.after: 없는 비트 \"r3_slip\"\n- knowledge.asina.man.after: 없는 비트 \"r3_flee\"\n- knowledge.asina.man.after: 없는 비트 \"r3_night\"\n- knowledge.asina.guards.after: 없는 비트 \"b03_ask\"\n- knowledge.asina.guards.after: 없는 비트 \"r3_night\"\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: intrigued)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: intrigued)\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: wary)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: wary)\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: sneer)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: sneer)\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: menacing)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: menacing)\n- characters.베히다트.reactions: \"ep06_라\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)\n- characters.베히다트.reactions: \"ep06_라독백\"의 표정은  중에서 골라야 합니다 (받은 값: neutral)",
+  "현재캠페인": {
+    "id": "ep01_desert",
+    "검사": [],
+    "육화포함": false
+  },
+  "캠페인지식": "통과"
+}

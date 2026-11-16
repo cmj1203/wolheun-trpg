@@ -1,0 +1,124 @@
+bun test v1.4.2 (744846f84)
+
+app/tests/ep06_cg_alias.test.ts:
+189 |         const problem = faceProblem(scenario, speaker, line.face);
+190 |         if (problem) problems.push(`characters.${name}.reactions: ${problem}`);
+191 |       }
+192 |     }
+193 |   }
+194 |   if (problems.length) throw new LoreError(`수첩 검증 실패:\n- ${problems.join('\n- ')}`);
+                                                                                        ^
+LoreError: 수첩 검증 실패:
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: intrigued)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: intrigued)
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: dumbfounded)
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: wary)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: wary)
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: sneer)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: sneer)
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: neutral)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: neutral)
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: menacing)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: menacing)
+- characters.베히다트.reactions: "ep06_라"의 표정은  중에서 골라야 합니다 (받은 값: neutral)
+- characters.베히다트.reactions: "ep06_라독백"의 표정은  중에서 골라야 합니다 (받은 값: neutral)
+      at withNotes (/Users/choeminju/월흔_trpg/app/src/gm/lore.ts:194:83)
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_cg_alias.test.ts:16:20)
+(fail) 6화 라·라독백의 동일 인물 CG 표정 계약 > 실제 공유 반응 전체를 두 별칭 모두에 적용해도 수첩 결합이 통과한다 [0.28ms]
+(pass) 6화 라·라독백의 동일 인물 CG 표정 계약 > 현재 두 CG 배우의 모든 원작 줄이 유효한 CG를 갖고 시나리오 검사를 통과한다 [0.54ms]
+32 |     if (!beat) throw new Error(`원작 비트가 없습니다: ${beatId}`);
+33 |     const line = beat.lines.find((entry) => entry.speaker === speaker);
+34 |     if (!line) throw new Error(`배우의 실제 원작 줄이 없습니다: ${speaker}`);
+35 | 
+36 |     test(`${speaker}: 입식 없이 승인된 여섯 표정만 CG에서 허용한다`, () => {
+37 |       expect(scenario.cast[speaker]?.presentation).toBe('cg');
+                                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_cg_alias.test.ts:37:52)
+(fail) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라: 입식 없이 승인된 여섯 표정만 CG에서 허용한다 [0.10ms]
+48 |         beats: {
+49 |           ...scenario.beats,
+50 |           [beatId]: { ...beat, lines: beat.lines.map((entry) => entry === line ? missing : entry) },
+51 |         },
+52 |       };
+53 |       expect(checkScenario(changed).some((problem) => problem.includes('유효한 CG가 필요합니다'))).toBe(true);
+                                                                                               ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_cg_alias.test.ts:53:91)
+(fail) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라: CG를 뺀 줄은 기존 정합성 검사에서 거부한다 [0.48ms]
+62 |             ...beat,
+63 |             lines: beat.lines.map((entry) => entry === line ? { ...entry, cg: 'ep06_missing_cg' } : entry),
+64 |           },
+65 |         },
+66 |       };
+67 |       expect(checkScenario(changed).some((problem) => problem.includes('유효한 CG가 필요합니다'))).toBe(true);
+                                                                                               ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_cg_alias.test.ts:67:91)
+(fail) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라: 등록되지 않은 CG는 기존 정합성 검사에서 거부한다 [3.24ms]
+(pass) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라: 승인하지 않은 smile 표정은 기존 정합성 검사에서 거부한다 [0.48ms]
+(pass) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라: 승인하지 않은 surprised 표정은 기존 정합성 검사에서 거부한다 [0.40ms]
+32 |     if (!beat) throw new Error(`원작 비트가 없습니다: ${beatId}`);
+33 |     const line = beat.lines.find((entry) => entry.speaker === speaker);
+34 |     if (!line) throw new Error(`배우의 실제 원작 줄이 없습니다: ${speaker}`);
+35 | 
+36 |     test(`${speaker}: 입식 없이 승인된 여섯 표정만 CG에서 허용한다`, () => {
+37 |       expect(scenario.cast[speaker]?.presentation).toBe('cg');
+                                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_cg_alias.test.ts:37:52)
+(fail) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라독백: 입식 없이 승인된 여섯 표정만 CG에서 허용한다 [0.06ms]
+48 |         beats: {
+49 |           ...scenario.beats,
+50 |           [beatId]: { ...beat, lines: beat.lines.map((entry) => entry === line ? missing : entry) },
+51 |         },
+52 |       };
+53 |       expect(checkScenario(changed).some((problem) => problem.includes('유효한 CG가 필요합니다'))).toBe(true);
+                                                                                               ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_cg_alias.test.ts:53:91)
+(fail) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라독백: CG를 뺀 줄은 기존 정합성 검사에서 거부한다 [0.43ms]
+62 |             ...beat,
+63 |             lines: beat.lines.map((entry) => entry === line ? { ...entry, cg: 'ep06_missing_cg' } : entry),
+64 |           },
+65 |         },
+66 |       };
+67 |       expect(checkScenario(changed).some((problem) => problem.includes('유효한 CG가 필요합니다'))).toBe(true);
+                                                                                               ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_cg_alias.test.ts:67:91)
+(fail) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라독백: 등록되지 않은 CG는 기존 정합성 검사에서 거부한다 [0.43ms]
+(pass) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라독백: 승인하지 않은 smile 표정은 기존 정합성 검사에서 거부한다 [0.38ms]
+(pass) 6화 라·라독백의 동일 인물 CG 표정 계약 > ep06_라독백: 승인하지 않은 surprised 표정은 기존 정합성 검사에서 거부한다 [0.37ms]
+
+ 5 pass
+ 7 fail
+ 39 expect() calls
+Ran 12 tests across 1 file. [27.00ms]

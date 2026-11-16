@@ -22,6 +22,7 @@ interface SaveFile {
   state: GameState;
   /** 화면이 보내 온 저장 순간의 모습(장면, 보이던 대사, 남은 사건, 대사 기록). 엔진은 내용을 해석하지 않는다. */
   view?: unknown;
+  viewpoint?: unknown;
 }
 
 const SLOT_RE = /^[a-z0-9_-]{1,32}$/;
@@ -69,7 +70,7 @@ export function assertState(scenario: Scenario, value: unknown): GameState {
   return { ...(s as GameState), recent: Array.isArray(s.recent) ? s.recent : [] };
 }
 
-export async function writeSave(dir: string, slot: string, scenario: Scenario, state: GameState, now = Date.now(), view?: unknown): Promise<SaveMeta> {
+export async function writeSave(dir: string, slot: string, scenario: Scenario, state: GameState, now = Date.now(), view?: unknown, viewpoint?: unknown): Promise<SaveMeta> {
   const path = slotPath(dir, slot);
   await mkdir(dir, { recursive: true });
   const meta: SaveMeta = {
@@ -82,11 +83,17 @@ export async function writeSave(dir: string, slot: string, scenario: Scenario, s
     ended: state.ending !== null,
   };
   const file: SaveFile = view === undefined ? { v: 1, meta, state } : { v: 1, meta, state, view };
+  if (viewpoint !== undefined) file.viewpoint = viewpoint;
   await Bun.write(path, JSON.stringify(file, null, 1));
   return meta;
 }
 
 export async function readSave(dir: string, slot: string, scenario: Scenario): Promise<GameState> {
+  return (await readSaveSnapshot(dir, slot, scenario)).state;
+}
+
+/** 상태·공개 화면·비공개 투영은 반드시 한 파일 읽기의 동일 저장 세대에서 가져온다. */
+export async function readSaveSnapshot(dir: string, slot: string, scenario: Scenario): Promise<{ state: GameState; view: unknown; viewpoint: unknown }> {
   const file = Bun.file(slotPath(dir, slot));
   if (!(await file.exists())) throw new SaveError(`저장 칸이 비어 있습니다: ${slot}`);
   let parsed: unknown;
@@ -97,7 +104,7 @@ export async function readSave(dir: string, slot: string, scenario: Scenario): P
   }
   const data = parsed as Partial<SaveFile>;
   if (data.v !== 1) throw new SaveError(`지원하지 않는 저장 형식입니다: ${slot}`);
-  return assertState(scenario, data.state);
+  return { state: assertState(scenario, data.state), view: data.view ?? null, viewpoint: data.viewpoint ?? null };
 }
 
 export async function readSaveView(dir: string, slot: string): Promise<unknown> {

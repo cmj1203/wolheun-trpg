@@ -1,0 +1,58 @@
+{
+ "n": 4,
+ "msgs": [
+  {
+   "t": "2026-09-30T08:34:23.729Z",
+   "a": "Frontia Manager",
+   "role": "",
+   "bot": true,
+   "color": "",
+   "txt": " Where everything is\n,\n Welcome\n,\n⁠👋｜welcome — every new member shows up here. Say hi to them, and they'll say hi to you\n⁠📜｜rules — five rules, one minute\n\n\n Information — staff post, everyone reacts\n,\n⁠📢｜announcements — official notices for everyone, in English\n⁠액세스 권한 없음 — app notices in your own language. You see only yours\n⁠💬｜cm-talk — the lighter side: works in progress, behind-the-scenes\n\n\n Studio — for people who make things\n,\n⁠🛠｜creators — the workshop. Ask anything; one question = one thread\n⁠📝｜tips — how you did it: prompts, settings, workarounds\n⁠📦｜assets — files others can reuse: backgrounds, BGM, SFX, templates\n⁠🎬｜promote — finished episodes. Post yours with a thumbnail and the play link\n\n\n Lounges\n,\n⁠🌏｜lounge-global — everyone, any language\nYour language lounge — set by the language you picked\n⁠🔞｜lounge-🚹 · ⁠🔞｜lounge-🚺 — 19+. Two rooms, split by what the content is aimed at\n\n On iPhone this channel is hidden until you allow it: on desktop or web, Settings → Messaging Permissions → Allow access to age-restricted content on iOS, then restart the phone app.\n\n\n Support\n,\n⁠🐞｜bug-report · ⁠💡｜suggestions — any language, we tag the progress\nAccount, payment, refunds, missing Stars → in the app: MY → 1:1 inquiry. Those need your account, so we can't look them up from Discord. (수정됨)\n2026년 10월 9일 금요일 오후 2:12",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "thread": "",
+   "reply": ""
+  },
+  {
+   "t": "2026-09-30T08:34:24.700Z",
+   "a": "",
+   "role": "",
+   "bot": false,
+   "color": "",
+   "txt": "Frontia Manager\n 님이 이 채널에 메시지를 고정하셨어요. 모든 고정된 메시지 보기.\n — \n26. 9. 30. 오후 5:34\n2026년 9월 30일 수요일 오후 5:34",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "thread": "",
+   "reply": ""
+  },
+  {
+   "t": "2026-09-30T11:58:53.282Z",
+   "a": "Frontia Manager",
+   "role": "",
+   "bot": true,
+   "color": "",
+   "txt": " Settings and languages\n,\n Changing your language\n,\nTap the server name → Channels & Roles → pick again. Your lounge and news channel follow your choice. That's the only setting here — every other channel is open to everyone.\n\n\n Reading other languages\n,\nWrite in your own language. Nobody here has to switch languages to be understood.\nForum posts — a non-English post gets an English translation added right under it, automatically.\nAnything else — right-click it (long-press on mobile) → Apps →  Translate. It answers in the language your Discord is set to, only you see it, and it works in every channel: lounges, welcome, news, forums.\n\nPost titles aren't translated, so a short English title helps people find your post.\n (수정됨)\n2026년 10월 9일 금요일 오후 2:12",
+   "emb": "",
+   "att": 0,
+   "reacts": "8",
+   "thread": "",
+   "reply": ""
+  },
+  {
+   "t": "2026-09-30T11:58:54.460Z",
+   "a": "",
+   "role": "",
+   "bot": false,
+   "color": "",
+   "txt": "Frontia Manager\n 님이 이 채널에 메시지를 고정하셨어요. 모든 고정된 메시지 보기.\n — \n26. 9. 30. 오후 8:58\n2026년 9월 30일 수요일 오후 8:58",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "thread": "",
+   "reply": ""
+  }
+ ],
+ "begin": ""
+}

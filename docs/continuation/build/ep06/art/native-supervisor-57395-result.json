@@ -1,0 +1,7 @@
+{
+  "supervisor_pid": 57395,
+  "exit_code": 75,
+  "native_attempt_started": false,
+  "reason": "여유 감지와 재실행 사이에 다른 정상 작업이 슬롯을 사용하여 호출 직전 다시 보류됨",
+  "fix": "분리 실행기 안에서 실제 점유가 줄 때까지 감시하고 곧바로 재확인하여 시작하도록 변경함"
+}

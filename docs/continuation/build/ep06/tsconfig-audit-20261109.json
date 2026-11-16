@@ -1,0 +1,17 @@
+{
+  "extends": "../../../../app/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "typeRoots": ["../../../../app/node_modules/@types"]
+  },
+  "include": [
+    "../../../../app/tests/ep06_library.test.ts",
+    "../../../../app/tests/ep06_audit_lines.test.ts",
+    "../../../../app/tests/ep06_audit_state.test.ts",
+    "../../../../app/tests/ep06_perspective.test.ts"
+  ]
+}

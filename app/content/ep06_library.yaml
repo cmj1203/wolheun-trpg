@@ -1,0 +1,2822 @@
+# 6화 독립 내부 구현. 원작 컷은 검증 입력이며 Astra 완성 그림이 아니다.
+# 임의 대사·행동 입력은 공유 대화 패치 통합 전까지 미구현이다.
+{
+  "id": "ep06_library",
+  "title": "아침 인사와 도서실",
+  "episode": "6화",
+  "source": "웹툰 「월흔」 6화 원본 16장·65컷 및 컷 밖 대사 두 곳",
+  "rating": "15세 이용가",
+  "start": "ep06_c001",
+  "sheet": {
+    "name": "아시나",
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "tracks": {
+      "체력": 4,
+      "정신력": 4,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "items": [
+      {
+        "id": "magic_bag",
+        "file": "assets/ep01/gen/items/item_magic_bag.png",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.",
+        "states": [
+          {
+            "flag": "가방_끈",
+            "label": "끈 끊김",
+            "desc": "끈이 끊어져 손으로 쥐고 다닌다."
+          },
+          {
+            "flag": "짐_쏟음",
+            "label": "짐 쏟아짐",
+            "desc": "호위가 뒤집어 짐이 모래에 쏟아졌다."
+          }
+        ]
+      },
+      {
+        "id": "earring",
+        "file": "assets/ep01/gen/items/item_earring.png",
+        "name": "마법 귀찌",
+        "desc": "귓불에 달린 마법 귀찌."
+      },
+      {
+        "id": "map",
+        "file": "assets/ep01/gen/items/item_map.png",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도.",
+        "container": {
+          "item": "magic_bag",
+          "unless": "flag:지도_꺼냄 || flag:짐_쏟음"
+        },
+        "states": [
+          {
+            "flag": "지도_찢김",
+            "label": "찢김",
+            "desc": "한 귀퉁이가 찢겨 나갔다."
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "file": "assets/ep01/gen/items/item_pin.png",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀.",
+        "hidden": true
+      }
+    ],
+    "tension": 3
+  },
+  "cast": {
+    "ep06_서술": {
+      "display": "",
+      "style": "narration"
+    },
+    "ep06_아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "lore": "아시나"
+    },
+    "ep06_독백": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나"
+    },
+    "ep06_라": {
+      "display": "라",
+      "style": "speech",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep06_라독백": {
+      "display": "라",
+      "style": "thought",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": ["dumbfounded", "intrigued", "wary", "sneer", "neutral", "menacing"]
+    },
+    "ep06_청발회상": {
+      "display": "푸른 머리 남자(회상)",
+      "style": "thought",
+      "lore": "나시르"
+    },
+    "ep06_나시르": {
+      "display": "나시르",
+      "style": "speech",
+      "lore": "나시르"
+    },
+    "ep06_나시르독백": {
+      "display": "나시르",
+      "style": "thought",
+      "lore": "나시르"
+    },
+    "ep06_보고자": {
+      "display": "화면 밖 목소리",
+      "style": "speech",
+      "lore": "ep06_도착보고자"
+    },
+    "ep06_청발": {
+      "display": "푸른 머리 남자",
+      "style": "speech",
+      "lore": "나시르"
+    },
+    "ep06_미확정풍선": {
+      "display": "",
+      "style": "narration"
+    },
+    "ep06_한숨미확정": {
+      "display": "",
+      "style": "speech"
+    },
+    "ep06_독백미확정": {
+      "display": "",
+      "style": "thought"
+    },
+    "ep06_아시나미확정": {
+      "display": "",
+      "style": "narration",
+      "lore": "아시나"
+    }
+  },
+  "backgrounds": {},
+  "sprites": {},
+  "cgs": {
+    "ep06_cg_001": {
+      "label": "원작 검증 입력 ep06_c001",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c001.png",
+      "fit": "contain"
+    },
+    "ep06_cg_002": {
+      "label": "원작 검증 입력 ep06_c002",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c002.png",
+      "fit": "contain"
+    },
+    "ep06_cg_003": {
+      "label": "원작 검증 입력 ep06_c003",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c003.png",
+      "fit": "contain"
+    },
+    "ep06_cg_004": {
+      "label": "원작 검증 입력 ep06_c004",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c004.png",
+      "fit": "contain"
+    },
+    "ep06_cg_005": {
+      "label": "원작 검증 입력 ep06_c005",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c005.png",
+      "fit": "contain"
+    },
+    "ep06_cg_006": {
+      "label": "원작 검증 입력 ep06_c006",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c006.png",
+      "fit": "contain"
+    },
+    "ep06_cg_007": {
+      "label": "원작 검증 입력 ep06_c007",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c007.png",
+      "fit": "contain"
+    },
+    "ep06_cg_008": {
+      "label": "원작 검증 입력 ep06_c008",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c008.png",
+      "fit": "contain"
+    },
+    "ep06_cg_009": {
+      "label": "원작 검증 입력 ep06_c009",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c009.png",
+      "fit": "contain"
+    },
+    "ep06_cg_010": {
+      "label": "원작 검증 입력 ep06_c010",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c010.png",
+      "fit": "contain"
+    },
+    "ep06_cg_011": {
+      "label": "원작 검증 입력 ep06_c011",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c011.png",
+      "fit": "contain"
+    },
+    "ep06_cg_012": {
+      "label": "원작 검증 입력 ep06_c012",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c012.png",
+      "fit": "contain"
+    },
+    "ep06_cg_013": {
+      "label": "원작 검증 입력 ep06_c013",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c013.png",
+      "fit": "contain"
+    },
+    "ep06_cg_014": {
+      "label": "원작 검증 입력 ep06_c014",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c014.png",
+      "fit": "contain"
+    },
+    "ep06_cg_015": {
+      "label": "원작 검증 입력 ep06_c015",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c015.png",
+      "fit": "contain"
+    },
+    "ep06_cg_016": {
+      "label": "원작 검증 입력 ep06_c016",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c016.png",
+      "fit": "contain"
+    },
+    "ep06_cg_017": {
+      "label": "원작 검증 입력 ep06_c017",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c017.png",
+      "fit": "contain"
+    },
+    "ep06_cg_018": {
+      "label": "원작 검증 입력 ep06_c018",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c018.png",
+      "fit": "contain"
+    },
+    "ep06_cg_019": {
+      "label": "원작 검증 입력 ep06_c019",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c019.png",
+      "fit": "contain"
+    },
+    "ep06_cg_020": {
+      "label": "원작 검증 입력 ep06_c020",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c020.png",
+      "fit": "contain"
+    },
+    "ep06_cg_021": {
+      "label": "원작 검증 입력 ep06_c021",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c021.png",
+      "fit": "contain"
+    },
+    "ep06_cg_022": {
+      "label": "원작 검증 입력 ep06_c022",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c022.png",
+      "fit": "contain"
+    },
+    "ep06_cg_023": {
+      "label": "원작 검증 입력 ep06_c023",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c023.png",
+      "fit": "contain"
+    },
+    "ep06_cg_024": {
+      "label": "원작 검증 입력 ep06_c024",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c024.png",
+      "fit": "contain"
+    },
+    "ep06_cg_025": {
+      "label": "원작 검증 입력 ep06_c025",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c025.png",
+      "fit": "contain"
+    },
+    "ep06_cg_026": {
+      "label": "원작 검증 입력 ep06_c026",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c026.png",
+      "fit": "contain"
+    },
+    "ep06_cg_027": {
+      "label": "원작 검증 입력 ep06_c027",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c027.png",
+      "fit": "contain"
+    },
+    "ep06_cg_028": {
+      "label": "원작 검증 입력 ep06_c028",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c028.png",
+      "fit": "contain"
+    },
+    "ep06_cg_029": {
+      "label": "원작 검증 입력 ep06_c029",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c029.png",
+      "fit": "contain"
+    },
+    "ep06_cg_030": {
+      "label": "원작 검증 입력 ep06_c030",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c030.png",
+      "fit": "contain"
+    },
+    "ep06_cg_031": {
+      "label": "원작 검증 입력 ep06_c031",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c031.png",
+      "fit": "contain"
+    },
+    "ep06_cg_032": {
+      "label": "원작 검증 입력 ep06_c032",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c032.png",
+      "fit": "contain"
+    },
+    "ep06_cg_033": {
+      "label": "원작 검증 입력 ep06_c033",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c033.png",
+      "fit": "contain"
+    },
+    "ep06_cg_034": {
+      "label": "원작 검증 입력 ep06_c034",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c034.png",
+      "fit": "contain"
+    },
+    "ep06_cg_035": {
+      "label": "원작 검증 입력 ep06_c035",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c035.png",
+      "fit": "contain"
+    },
+    "ep06_cg_036": {
+      "label": "원작 검증 입력 ep06_c036",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c036.png",
+      "fit": "contain"
+    },
+    "ep06_cg_037": {
+      "label": "원작 검증 입력 ep06_c037",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c037.png",
+      "fit": "contain"
+    },
+    "ep06_cg_038": {
+      "label": "원작 검증 입력 ep06_c038",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c038.png",
+      "fit": "contain"
+    },
+    "ep06_cg_039": {
+      "label": "원작 검증 입력 ep06_c039",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c039.png",
+      "fit": "contain"
+    },
+    "ep06_cg_040": {
+      "label": "원작 검증 입력 ep06_c040",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c040.png",
+      "fit": "contain"
+    },
+    "ep06_cg_041": {
+      "label": "원작 검증 입력 ep06_c041",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c041.png",
+      "fit": "contain"
+    },
+    "ep06_cg_042": {
+      "label": "원작 검증 입력 ep06_c042",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c042.png",
+      "fit": "contain"
+    },
+    "ep06_cg_043": {
+      "label": "원작 검증 입력 ep06_c043",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c043.png",
+      "fit": "contain"
+    },
+    "ep06_cg_044": {
+      "label": "원작 검증 입력 ep06_c044",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c044.png",
+      "fit": "contain"
+    },
+    "ep06_cg_045": {
+      "label": "원작 검증 입력 ep06_c045",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c045.png",
+      "fit": "contain"
+    },
+    "ep06_cg_046": {
+      "label": "원작 검증 입력 ep06_c046",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c046.png",
+      "fit": "contain"
+    },
+    "ep06_cg_047": {
+      "label": "원작 검증 입력 ep06_c047",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c047.png",
+      "fit": "contain"
+    },
+    "ep06_cg_048": {
+      "label": "원작 검증 입력 ep06_c048",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c048.png",
+      "fit": "contain"
+    },
+    "ep06_cg_049": {
+      "label": "원작 검증 입력 ep06_c049",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c049.png",
+      "fit": "contain"
+    },
+    "ep06_cg_050": {
+      "label": "원작 검증 입력 ep06_c050",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c050.png",
+      "fit": "contain"
+    },
+    "ep06_cg_051": {
+      "label": "원작 검증 입력 ep06_c051",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c051.png",
+      "fit": "contain"
+    },
+    "ep06_cg_052": {
+      "label": "원작 검증 입력 ep06_c052",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c052.png",
+      "fit": "contain"
+    },
+    "ep06_cg_053": {
+      "label": "원작 검증 입력 ep06_c053",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c053.png",
+      "fit": "contain"
+    },
+    "ep06_cg_054": {
+      "label": "원작 검증 입력 ep06_c054",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c054.png",
+      "fit": "contain"
+    },
+    "ep06_cg_055": {
+      "label": "원작 검증 입력 ep06_c055",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c055.png",
+      "fit": "contain"
+    },
+    "ep06_cg_056": {
+      "label": "원작 검증 입력 ep06_c056",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c056.png",
+      "fit": "contain"
+    },
+    "ep06_cg_057": {
+      "label": "원작 검증 입력 ep06_c057",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c057.png",
+      "fit": "contain"
+    },
+    "ep06_cg_058": {
+      "label": "원작 검증 입력 ep06_c058",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c058.png",
+      "fit": "contain"
+    },
+    "ep06_cg_059": {
+      "label": "원작 검증 입력 ep06_c059",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c059.png",
+      "fit": "contain"
+    },
+    "ep06_cg_060": {
+      "label": "원작 검증 입력 ep06_c060",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c060.png",
+      "fit": "contain"
+    },
+    "ep06_cg_061": {
+      "label": "원작 검증 입력 ep06_c061",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c061.png",
+      "fit": "contain"
+    },
+    "ep06_cg_062": {
+      "label": "원작 검증 입력 ep06_c062",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c062.png",
+      "fit": "contain"
+    },
+    "ep06_cg_063": {
+      "label": "원작 검증 입력 ep06_c063",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c063.png",
+      "fit": "contain"
+    },
+    "ep06_cg_064": {
+      "label": "원작 검증 입력 ep06_c064",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c064.png",
+      "fit": "contain"
+    },
+    "ep06_cg_065": {
+      "label": "원작 검증 입력 ep06_c065",
+      "file": "assets/ep06/cuts/full_res/clean/ep06_c065.png",
+      "fit": "contain"
+    }
+  },
+  "facts": [
+    {
+      "if": "flag:ep06_아시나_목적추궁",
+      "text": "라는 크라차 방문 목적을 묻는다. 여행이라는 답을 인정한 것은 아니다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_죽음의사막",
+      "text": "라가 죽음의 사막이라는 명칭을 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_얼굴인지",
+      "text": "아시나는 문으로 들어오는 청발 남자의 얼굴을 알아본다. 이름·직책 소개는 별개다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_나시르소개",
+      "text": "라가 청발 남자를 자신의 서기관 나시르라고 소개했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_가림천",
+      "text": "아시나는 외간 남자 앞에서 얼굴을 가리라는 말을 따라 분홍색 얼굴 가림천을 썼다. 지시자는 미확정이며 이후에도 가림천을 유지한다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_시그렌위치",
+      "text": "시그렌은 크롬웰 남동쪽 국경에 맞닿은 작은 왕국이라고 아시나가 설명했다. 지도 삽입은 실제 소지품 획득이 아니다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_경유경로",
+      "text": "아시나만 아는 속내: 크롬웰을 떠나는 길에 시그렌에 잠시 들렀다. 나시르에게는 말하지 않았다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_자르다이름",
+      "text": "나시르가 죽음의 사막의 지명을 자르다라고 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_자르다물",
+      "text": "나시르의 설명: 자르다는 비가 와도 물이 고이지 않아 물을 구하기 어렵다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_자르다바람",
+      "text": "나시르의 설명: 계속 부는 바람이 지형을 바꿔 길을 잃기 쉽다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_여행자사망",
+      "text": "나시르는 자르다에서 죽은 여행자가 많다고 설명했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_추방일족",
+      "text": "나시르는 추방된 일족들이 죽어간 땅이라 죽음의 사막이라 불리게 되었다고 설명했다. 일족 정체는 공개되지 않았다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_저주소문",
+      "text": "원혼과 저주는 소문이다. 실제 저주로 확정하지 않는다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_나시르불신",
+      "text": "나시르는 자르다의 원혼·저주 소문을 믿지 않는다고 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_현재적대",
+      "text": "나시르가 크라차와 페시안의 현재 적대 관계를 알려 주었다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_건국반대지식",
+      "text": "아시나는 크라차가 페시안 건국 반대자들이 만든 나라라는 점만 알았다고 답한다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_최근악화",
+      "text": "나시르는 최근 크라차와 페시안 사이에 마찰이 있었고 분위기가 좋지 않다고 설명했다. 기간은 특정하지 않았다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_의심회상",
+      "text": "아시나는 적국 왕에게 크라차 가는 길을 물었고 감옥에서도 탈출했음을 속으로 돌이킨다. 나시르에게 새로 자백하지 않았다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_아시나이름",
+      "text": "아시나가 두 남성에게 자기 이름을 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_미소녀자칭",
+      "text": "아시나가 자신을 미소녀라고 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_이동지시",
+      "text": "라는 아시나를 데려가라고 지시했다. 한숨과 속마음의 개인 화자는 미확정이다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_북의기록설명",
+      "text": "북의 기록이 몇 년 늦는다는 것은 아시나가 한 설명이다. 나시르가 확인한 정보 전달 체계로 확정하지 않는다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_죄인취급이해",
+      "text": "아시나는 자신을 죄인 취급했던 것도 이해가 간다고 나시르에게 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_감옥처우재평가",
+      "text": "아시나는 감옥에 넣은 것이 감사한 처사였다고 속으로 생각한다. 석방이나 무죄 판정은 없다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_우회권유",
+      "text": "나시르는 안내인들이 사막을 가로지르지 않고 우회하는 길을 권하지 않았느냐고 물었다. 사막 우회로가 존재한다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_우회거절",
+      "text": "아시나는 안내인의 우회 권유를 알고도 자신이 거절했다고 답했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_북대륙풍경",
+      "text": "아시나는 북대륙의 산이 계절마다 색을 바꾸고 들판이 푸르고 아름답다고 설명했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_모래바다대비",
+      "text": "아시나는 북대륙에 모래로 이루어진 바다는 없다고 대비했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_사막동기",
+      "text": "아시나는 모래 바다의 광경이 보고 싶어 사막에 갔다고 답했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_사막감상",
+      "text": "아시나는 사막이 상상보다 더 예뻤다고 답했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_현장_이름놀람",
+      "text": "아시나는 아름다운 곳이 죽음의 사막이라 불려 놀랐다고 말했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep06_아시나_사막감상답변",
+      "text": "나시르는 죽음의 사막을 아름답다고 하는 사람은 아시나밖에 없을 것이라고 답했다. 이는 나시르의 발언이며 무죄 판정이나 조사 해제가 아니다.",
+      "state_guard": []
+    }
+  ],
+  "beats": {
+    "ep06_c001": {
+      "title": "아침 인사",
+      "cut": "ep06_c001",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "덕분에 잘 지냈다마다요.",
+          "cg": "ep06_cg_001",
+          "if": "!flag:ep05_지난밤답변 && !flag:ep05_시선답변 || !flag:ep05_지난밤답변 && flag:ep05_지난밤되물음"
+        },
+        {
+          "ep06_아시나": "라 쿤께선 지난밤 평안하셨는지요?",
+          "cg": "ep06_cg_001",
+          "if": "!flag:ep05_지난밤되물음 && !flag:ep05_시선답변 || !flag:ep05_지난밤되물음 && flag:ep05_지난밤답변"
+        }
+      ],
+      "next": [
+        {
+          "if": "flag:ep05_시선답변 && !flag:ep05_지난밤답변 && !flag:ep05_지난밤되물음",
+          "to": "ep06_c005"
+        },
+        {
+          "to": "ep06_c002"
+        }
+      ]
+    },
+    "ep06_c002": {
+      "title": "아침 인사",
+      "cut": "ep06_c002",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "내 하렘이 그렇게 마음에 들었다면 평생을 살아도 된다고 허락하고 싶군.",
+          "cg": "ep06_cg_002"
+        },
+        {
+          "ep06_라": "어떤가?",
+          "cg": "ep06_cg_002"
+        }
+      ],
+      "next": "ep06_c003"
+    },
+    "ep06_c003": {
+      "title": "아침 인사",
+      "cut": "ep06_c003",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "이 왕 나부랭이가 지금 장난하나?",
+          "cg": "ep06_cg_003"
+        },
+        {
+          "ep06_아시나": "하…하하…",
+          "cg": "ep06_cg_003"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep06_decline_direct",
+          "text": "정중히 거절한다",
+          "next": "ep06_c004"
+        },
+        {
+          "id": "ep06_decline_pause",
+          "text": "거리를 두고 거절한다",
+          "next": "ep06_decline_pause"
+        }
+      ]
+    },
+    "ep06_decline_pause": {
+      "title": "거리를 두고 거절한다",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "아시나는 조금 물러선다.",
+          "cg": "ep06_cg_003"
+        }
+      ],
+      "next": "ep06_c004"
+    },
+    "ep06_c004": {
+      "title": "아침 인사",
+      "cut": "ep06_c004",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "고맙지만 그건 정중히 사양하겠습니다.",
+          "cg": "ep06_cg_004"
+        }
+      ],
+      "next": "ep06_c005"
+    },
+    "ep06_c005": {
+      "title": "아침 인사",
+      "cut": "ep06_c005",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "어젯밤엔 분명 길들여지지 않은 고양이였거늘,",
+          "cg": "ep06_cg_005"
+        }
+      ],
+      "next": "ep06_c006"
+    },
+    "ep06_c006": {
+      "title": "아침 인사",
+      "cut": "ep06_c006",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "오늘은 갑자기 얌전해졌군.",
+          "cg": "ep06_cg_006"
+        },
+        {
+          "ep06_라": "다른 꿍꿍이라도 있는 건가?",
+          "cg": "ep06_cg_006"
+        }
+      ],
+      "next": "ep06_c007"
+    },
+    "ep06_c007": {
+      "title": "아침 인사",
+      "cut": "ep06_c007",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라독백": "손이 부드럽군.",
+          "cg": "ep06_cg_007"
+        },
+        {
+          "ep06_라독백": "나시르의 말도 일리가 있겠어.",
+          "cg": "ep06_cg_007"
+        },
+        {
+          "ep06_청발회상": "행동이 과격하긴 하나,",
+          "cg": "ep06_cg_007"
+        },
+        {
+          "ep06_청발회상": "말투나 생김새… 그리고 풍기는 느낌이 심상치 않은게.",
+          "cg": "ep06_cg_007"
+        },
+        {
+          "ep06_청발회상": "왠지 북대륙의 귀족 자제 같습니다.",
+          "cg": "ep06_cg_007",
+          "sets": "ep06_독자_귀족추측"
+        }
+      ],
+      "next": "ep06_c008",
+      "perspective": "audience"
+    },
+    "ep06_c008": {
+      "title": "아침 인사",
+      "cut": "ep06_c008",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "크라차에 가는 목적은?",
+          "cg": "ep06_cg_008",
+          "sets": "ep06_아시나_목적추궁"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep06_purpose_direct",
+          "text": "방문 이유를 답한다",
+          "next": "ep06_c008_reply"
+        },
+        {
+          "id": "ep06_purpose_pause",
+          "text": "잠시 말을 고른 뒤 답한다",
+          "next": "ep06_purpose_pause"
+        }
+      ]
+    },
+    "ep06_purpose_pause": {
+      "title": "잠시 말을 고른 뒤 답한다",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "아시나는 잠시 말을 고른다.",
+          "cg": "ep06_cg_008"
+        }
+      ],
+      "next": "ep06_c008_reply"
+    },
+    "ep06_c008_reply": {
+      "title": "아침 인사",
+      "cut": "ep06_c008",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "말했잖아요.",
+          "cg": "ep06_cg_008"
+        },
+        {
+          "ep06_아시나": "단순한 여-",
+          "cg": "ep06_cg_008"
+        },
+        {
+          "ep06_라": "단순한 여행.",
+          "cg": "ep06_cg_008"
+        },
+        {
+          "ep06_라": "-이라고 한 번만 더 내뱉는다면,",
+          "cg": "ep06_cg_008"
+        },
+        {
+          "ep06_라": "지금 당장 그 입을 막아 주지.",
+          "cg": "ep06_cg_008"
+        }
+      ],
+      "next": "ep06_c009"
+    },
+    "ep06_c009": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c009",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "또야, 저 시선…!",
+          "cg": "ep06_cg_009"
+        }
+      ],
+      "next": "ep06_c010"
+    },
+    "ep06_c010": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c010",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "이 남자가 나를 바라볼 때면 온몸이 발가벗겨진 느낌이 든다.",
+          "cg": "ep06_cg_010"
+        },
+        {
+          "ep06_독백": "내 모든 걸 적나라하게 탐색하는 눈빛.",
+          "cg": "ep06_cg_010"
+        },
+        {
+          "ep06_독백": "한 번도 경험한 적 없는 기분이다.",
+          "cg": "ep06_cg_010"
+        },
+        {
+          "ep06_독백": "하지만 혼란스러운 와중에도 확실한 건-",
+          "cg": "ep06_cg_010"
+        }
+      ],
+      "next": "ep06_c011"
+    },
+    "ep06_c011": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c011",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "내 본능은 이 남자를 피하라고 하고 있다는 거다.",
+          "cg": "ep06_cg_011"
+        },
+        {
+          "ep06_아시나": "…그, 대추야자가 맛있다고 해서!",
+          "cg": "ep06_cg_011"
+        },
+        {
+          "ep06_아시나": "크라차산 대추야자가 유명하잖아요.",
+          "cg": "ep06_cg_011"
+        },
+        {
+          "ep06_아시나": "그래서 가려고 했던 거예요.",
+          "cg": "ep06_cg_011"
+        }
+      ],
+      "next": "ep06_c012"
+    },
+    "ep06_c012": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c012",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "사막에 있는 집이 어떤지도 보고 싶었고, 또…",
+          "cg": "ep06_cg_012"
+        },
+        {
+          "ep06_아시나": "또…",
+          "cg": "ep06_cg_012"
+        }
+      ],
+      "next": "ep06_c013"
+    },
+    "ep06_c013": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c013",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "젠장.",
+          "cg": "ep06_cg_013"
+        },
+        {
+          "ep06_독백": "분명 수많은 이유가 있었는데 생각이 안 나.",
+          "cg": "ep06_cg_013"
+        }
+      ],
+      "next": "ep06_c014"
+    },
+    "ep06_c014": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c014",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "말도 안 되는 소리.",
+          "cg": "ep06_cg_014"
+        },
+        {
+          "ep06_라": "고작 그딴 이유 때문에 죽음의 사막을 건너는 사람은",
+          "cg": "ep06_cg_014",
+          "sets": "ep06_아시나_죽음의사막"
+        },
+        {
+          "ep06_라": "세상에 없다.",
+          "cg": "ep06_cg_014"
+        }
+      ],
+      "next": "ep06_c015"
+    },
+    "ep06_c015": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c015",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "죽음의 사막이라고?",
+          "cg": "ep06_cg_015"
+        }
+      ],
+      "next": "ep06_c016"
+    },
+    "ep06_c016": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c016",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "그곳이…?",
+          "cg": "ep06_cg_016"
+        }
+      ],
+      "next": "ep06_c017"
+    },
+    "ep06_c017": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c017",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_보고자": "쿤이시여, 서기관이 도착했습니다.",
+          "cg": "ep06_cg_017"
+        },
+        {
+          "ep06_아시나": "!",
+          "cg": "ep06_cg_017"
+        }
+      ],
+      "next": "ep06_c018"
+    },
+    "ep06_c018": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c018",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "저 사람은…!",
+          "cg": "ep06_cg_018",
+          "sets": "ep06_아시나_얼굴인지"
+        }
+      ],
+      "next": "ep06_c019"
+    },
+    "ep06_c019": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c019",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "그때 봤던 사람이야…!",
+          "cg": "ep06_cg_019"
+        }
+      ],
+      "next": "ep06_c020"
+    },
+    "ep06_c020": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c020",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "구세주!!",
+          "cg": "ep06_cg_020"
+        },
+        {
+          "ep06_청발": "부르셔서 왔습니다만, 되돌아갈까요?",
+          "cg": "ep06_cg_020"
+        }
+      ],
+      "next": "ep06_c021"
+    },
+    "ep06_c021": {
+      "title": "궁정의 문답",
+      "cut": "ep06_c021",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "아니, 들어오라.",
+          "cg": "ep06_cg_021"
+        },
+        {
+          "ep06_라": "인사하지. 내 서기관, 나시르다.",
+          "cg": "ep06_cg_021",
+          "sets": "ep06_아시나_나시르소개"
+        }
+      ],
+      "next": "ep06_c022"
+    },
+    "ep06_c022": {
+      "title": "인사",
+      "cut": "ep06_c022",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "그리고 이쪽은…",
+          "cg": "ep06_cg_022"
+        }
+      ],
+      "next": "ep06_c023"
+    },
+    "ep06_c023": {
+      "title": "인사",
+      "cut": "ep06_c023",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "아…",
+          "cg": "ep06_cg_023"
+        }
+      ],
+      "next": "ep06_c024"
+    },
+    "ep06_c024": {
+      "title": "인사",
+      "cut": "ep06_c024",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "…이름이 뭐지?",
+          "cg": "ep06_cg_024"
+        },
+        {
+          "ep06_독백": "빨리도 물어본다, 나쁜 놈.",
+          "cg": "ep06_cg_024"
+        },
+        {
+          "ep06_아시나": "아시나예요.",
+          "cg": "ep06_cg_024",
+          "sets": "ep06_현장_아시나이름"
+        }
+      ],
+      "next": "ep06_c025"
+    },
+    "ep06_c025": {
+      "title": "인사",
+      "cut": "ep06_c025",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "또 뵙게 되어 반갑습니다. 아시나님.",
+          "cg": "ep06_cg_025"
+        },
+        {
+          "ep06_나시르": "옷을 갈아입으시니 몰라보겠습니다.",
+          "cg": "ep06_cg_025"
+        },
+        {
+          "ep06_나시르": "아주 어여쁘시네요. 라 쿤께서는 좋으시겠습니다.",
+          "cg": "ep06_cg_025"
+        }
+      ],
+      "next": "ep06_c026"
+    },
+    "ep06_c026": {
+      "title": "인사",
+      "cut": "ep06_c026",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "당연하죠, 전 미소녀니까.",
+          "cg": "ep06_cg_026",
+          "sets": "ep06_현장_미소녀자칭"
+        },
+        {
+          "ep06_미확정풍선": "이 상황에서도 입은 살아있군.",
+          "cg": "ep06_cg_026"
+        }
+      ],
+      "next": "ep06_c027"
+    },
+    "ep06_c027": {
+      "title": "인사",
+      "cut": "ep06_c027",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_한숨미확정": "하아…",
+          "cg": "ep06_cg_027"
+        },
+        {
+          "ep06_라": "데려가라.",
+          "cg": "ep06_cg_027",
+          "sets": "ep06_현장_이동지시"
+        },
+        {
+          "ep06_독백미확정": "왜 날 자꾸 어디론가 보내는 거야?!",
+          "cg": "ep06_cg_027"
+        }
+      ],
+      "next": "ep06_c028"
+    },
+    "ep06_c028": {
+      "title": "인사",
+      "cut": "ep06_c028",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "",
+          "cg": "ep06_cg_028"
+        }
+      ],
+      "next": "ep06_c029"
+    },
+    "ep06_c029": {
+      "title": "시선과 끄덕임",
+      "cut": "ep06_c029",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "",
+          "cg": "ep06_cg_029"
+        }
+      ],
+      "next": "ep06_c030"
+    },
+    "ep06_c030": {
+      "title": "인사",
+      "cut": "ep06_c030",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "",
+          "cg": "ep06_cg_030"
+        }
+      ],
+      "next": "ep06_c031"
+    },
+    "ep06_c031": {
+      "title": "장면 전환",
+      "cut": "ep06_c031",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "그 여자.",
+          "cg": "ep06_cg_031"
+        },
+        {
+          "ep06_라": "나에게 겁을 먹어서 그런가,",
+          "cg": "ep06_cg_031"
+        },
+        {
+          "ep06_라": "쉽게 입을 열지 않더군.",
+          "cg": "ep06_cg_031"
+        }
+      ],
+      "next": "ep06_c032",
+      "perspective": "audience"
+    },
+    "ep06_c032": {
+      "title": "장면 전환",
+      "cut": "ep06_c032",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_라": "…뭐,",
+          "cg": "ep06_cg_032"
+        },
+        {
+          "ep06_라": "애초에 겁박으로는 입을 열지 않는 위인인듯하니.",
+          "cg": "ep06_cg_032"
+        },
+        {
+          "ep06_라": "너라면 말로 구슬려 낼 수 있겠지.",
+          "cg": "ep06_cg_032"
+        },
+        {
+          "ep06_라": "그 여자 진짜 정체가 뭔지 알아내라.",
+          "cg": "ep06_cg_032",
+          "sets": "ep06_독자_조사명령"
+        },
+        {
+          "ep06_나시르": "예, 시하드시여.",
+          "cg": "ep06_cg_032",
+          "sets": "ep06_독자_시하드호칭"
+        }
+      ],
+      "next": "ep06_c033",
+      "perspective": "audience"
+    },
+    "ep06_c033": {
+      "title": "장면 전환",
+      "cut": "ep06_c033",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "",
+          "cg": "ep06_cg_033"
+        }
+      ],
+      "next": "ep06_c034"
+    },
+    "ep06_c034": {
+      "title": "도서실",
+      "cut": "ep06_c034",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "여기 앉으시면 됩니다, 아시나님.",
+          "cg": "ep06_cg_034"
+        },
+        {
+          "ep06_독백": "외간 남자와 있을 땐 얼굴을 가리라고 해서 가렸다.",
+          "cg": "ep06_cg_034",
+          "sets": "ep06_아시나_가림천"
+        }
+      ],
+      "next": "ep06_c035"
+    },
+    "ep06_c035": {
+      "title": "도서실",
+      "cut": "ep06_c035",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "크롬웰분이 아니라고 하셨죠.",
+          "cg": "ep06_cg_035"
+        },
+        {
+          "ep06_나시르": "그럼 어디서 오신 건지 여쭤봐도 됩니까?",
+          "cg": "ep06_cg_035"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep06_origin_direct",
+          "text": "온 곳만 말한다",
+          "next": "ep06_c036"
+        },
+        {
+          "id": "ep06_origin_pause",
+          "text": "나시르를 살피고 답한다",
+          "next": "ep06_origin_pause"
+        }
+      ]
+    },
+    "ep06_origin_pause": {
+      "title": "나시르를 살피고 답한다",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "아시나는 나시르의 표정을 살핀다.",
+          "cg": "ep06_cg_035"
+        }
+      ],
+      "next": "ep06_c036"
+    },
+    "ep06_c036": {
+      "title": "도서실",
+      "cut": "ep06_c036",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "시그렌에서 왔어요.",
+          "cg": "ep06_cg_036",
+          "sets": "ep06_현장_시그렌진술"
+        },
+        {
+          "ep06_아시나": "크롬웰 남동쪽 국경과 맞닿아 있는 아주 작은 왕국이죠.",
+          "cg": "ep06_cg_036",
+          "sets": "ep06_아시나_시그렌위치"
+        },
+        {
+          "ep06_나시르": "그런 곳도 있었군요.",
+          "cg": "ep06_cg_036"
+        }
+      ],
+      "next": "ep06_c037"
+    },
+    "ep06_c037": {
+      "title": "도서실",
+      "cut": "ep06_c037",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "대부분은 신경도 안 쓰는 작은 나라예요.",
+          "cg": "ep06_cg_037"
+        },
+        {
+          "ep06_독백": "정확히는 크롬웰을 떠나는 길에 시그렌을 잠시 들렀다 온 거지만.",
+          "cg": "ep06_cg_037",
+          "sets": "ep06_아시나_경유경로"
+        },
+        {
+          "ep06_독백": "거짓말을 한 건 아니지.",
+          "cg": "ep06_cg_037"
+        },
+        {
+          "ep06_독백": "어디에서 왔는지 물어본 거니까.",
+          "cg": "ep06_cg_037"
+        }
+      ],
+      "next": "ep06_c038"
+    },
+    "ep06_c038": {
+      "title": "도서실",
+      "cut": "ep06_c038",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "저어… 저도 궁금한 게 있는데 물어봐도 될까요?",
+          "cg": "ep06_cg_038"
+        },
+        {
+          "ep06_나시르": "예, 말씀하십시오.",
+          "cg": "ep06_cg_038"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep06_question_direct",
+          "text": "사막에 관해 묻는다",
+          "next": "ep06_c039"
+        },
+        {
+          "id": "ep06_question_pause",
+          "text": "조심스럽게 질문을 잇는다",
+          "next": "ep06_question_pause"
+        }
+      ]
+    },
+    "ep06_question_pause": {
+      "title": "조심스럽게 질문을 잇는다",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "아시나는 조심스럽게 입을 연다.",
+          "cg": "ep06_cg_038"
+        }
+      ],
+      "next": "ep06_c039"
+    },
+    "ep06_c039": {
+      "title": "도서실",
+      "cut": "ep06_c039",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "제가 잡혀온 그곳.",
+          "cg": "ep06_cg_039"
+        },
+        {
+          "ep06_아시나": "거기가 왜 죽음의 사막이라고 불리는 거예요?",
+          "cg": "ep06_cg_039"
+        },
+        {
+          "ep06_나시르": "죽음의 사막, 자르다를 말하시는 거군요.",
+          "cg": "ep06_cg_039",
+          "sets": "ep06_아시나_자르다이름"
+        },
+        {
+          "ep06_나시르": "그곳은 비가 와도 물이 고이지 않아 물을 구할 수 없고,",
+          "cg": "ep06_cg_039",
+          "sets": "ep06_아시나_자르다물"
+        },
+        {
+          "ep06_나시르": "계속해서 부는 바람 탓에 지형이 바뀌어 길을 잃기 쉽습니다.",
+          "cg": "ep06_cg_039",
+          "sets": "ep06_아시나_자르다바람"
+        },
+        {
+          "ep06_나시르": "며칠만 헤매도 죽기 딱 좋은 환경이죠.",
+          "cg": "ep06_cg_039"
+        }
+      ],
+      "next": "ep06_c040"
+    },
+    "ep06_c040": {
+      "title": "도서실",
+      "cut": "ep06_c040",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "실제로 그렇게 죽어간 여행자들도 많고,",
+          "cg": "ep06_cg_040",
+          "sets": "ep06_아시나_여행자사망"
+        }
+      ],
+      "next": "ep06_c041"
+    },
+    "ep06_c041": {
+      "title": "도서실",
+      "cut": "ep06_c041",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "추방당한 일족들이 죽어간 땅인지라 자연스레 죽음의 사막으로 불리게 된 것이죠.",
+          "cg": "ep06_cg_041",
+          "sets": "ep06_아시나_추방일족"
+        }
+      ],
+      "next": "ep06_c042"
+    },
+    "ep06_c042": {
+      "title": "도서실",
+      "cut": "ep06_c042",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "그렇구나… 어쩐지 지나가는 사람이 하나도 없더라.",
+          "cg": "ep06_cg_042"
+        }
+      ],
+      "next": "ep06_c043"
+    },
+    "ep06_c043": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c043",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "원혼이 서렸다느니 저주에 걸려있다느니 그런 소문도 있답니다.",
+          "cg": "ep06_cg_043",
+          "sets": "ep06_아시나_저주소문"
+        },
+        {
+          "ep06_나시르": "전 믿지 않지만요.",
+          "cg": "ep06_cg_043",
+          "sets": "ep06_아시나_나시르불신"
+        }
+      ],
+      "next": "ep06_c044"
+    },
+    "ep06_c044": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c044",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르독백": "솔직히 아직까진 이 여자가 진실을 말하는지 거짓을 말하는지 구분이 가지 않는다.",
+          "cg": "ep06_cg_044",
+          "sets": "ep06_독자_진위미확정"
+        }
+      ],
+      "next": "ep06_c045",
+      "perspective": "audience"
+    },
+    "ep06_c045": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c045",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르독백": "한번 시험해 볼까.",
+          "cg": "ep06_cg_045",
+          "sets": "ep06_독자_시험의도"
+        }
+      ],
+      "next": "ep06_c045_question",
+      "perspective": "audience"
+    },
+    "ep06_c045_question": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c045",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "그럼 아시나 님, 이것도 알고 계십니까?",
+          "cg": "ep06_cg_045"
+        }
+      ],
+      "next": "ep06_c046"
+    },
+    "ep06_c046": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c046",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "크라차와 페시안이 현재 적대 관계라는 것을요.",
+          "cg": "ep06_cg_046",
+          "sets": "ep06_아시나_현재적대"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep06_politics_direct",
+          "text": "몰랐다고 답한다",
+          "next": "ep06_c046_reply"
+        },
+        {
+          "id": "ep06_politics_pause",
+          "text": "숨을 고른 뒤 답한다",
+          "next": "ep06_politics_pause"
+        }
+      ]
+    },
+    "ep06_politics_pause": {
+      "title": "숨을 고른 뒤 답한다",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "아시나는 숨을 고른다.",
+          "cg": "ep06_cg_046"
+        }
+      ],
+      "next": "ep06_c046_reply"
+    },
+    "ep06_c046_reply": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c046",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "…!",
+          "cg": "ep06_cg_046"
+        },
+        {
+          "ep06_아시나": "아니요, 그건 몰랐는데요.",
+          "cg": "ep06_cg_046"
+        },
+        {
+          "ep06_아시나": "크라차가 페시안 건국에 반대하는 사람들이 모여서 만든 나라라는 것만 알았지…",
+          "cg": "ep06_cg_046",
+          "sets": "ep06_아시나_건국반대지식"
+        },
+        {
+          "ep06_아시나": "사이가 안 좋다는 말은 처음 듣는데…",
+          "cg": "ep06_cg_046"
+        }
+      ],
+      "next": "ep06_c047"
+    },
+    "ep06_c047": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c047",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "최근 크라차와 페시안 사이에 마찰이 있었습니다.",
+          "cg": "ep06_cg_047"
+        },
+        {
+          "ep06_나시르": "그것 때문에 분위기가 안 좋죠.",
+          "cg": "ep06_cg_047",
+          "sets": "ep06_아시나_최근악화"
+        },
+        {
+          "ep06_나시르": "아시나님은 모르셨던 모양입니다.",
+          "cg": "ep06_cg_047"
+        }
+      ],
+      "next": "ep06_c048"
+    },
+    "ep06_c048": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c048",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "…아무래도 북에 있는 기록은 몇 년 늦기 마련이니까요.",
+          "cg": "ep06_cg_048",
+          "sets": "ep06_현장_북의기록설명"
+        }
+      ],
+      "next": "ep06_c049"
+    },
+    "ep06_c049": {
+      "title": "무언 전환",
+      "cut": "ep06_c049",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "",
+          "cg": "ep06_cg_049"
+        }
+      ],
+      "next": "ep06_c050"
+    },
+    "ep06_c050": {
+      "title": "이어지는 문답",
+      "cut": "ep06_c050",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "",
+          "cg": "ep06_cg_050"
+        }
+      ],
+      "next": "ep06_c051"
+    },
+    "ep06_c051": {
+      "title": "죄인 취급",
+      "cut": "ep06_c051",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "그렇군요.",
+          "cg": "ep06_cg_051"
+        },
+        {
+          "ep06_아시나": "날 그렇게 죄인 취급했던 것도 이해가 가네요.",
+          "cg": "ep06_cg_051",
+          "sets": "ep06_현장_죄인취급이해"
+        }
+      ],
+      "next": "ep06_c052"
+    },
+    "ep06_c052": {
+      "title": "길 질문과 탈옥 회상",
+      "cut": "ep06_c052",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "하필이면 적국의 왕한테 크라차 가는 길을 물어봤다니.",
+          "cg": "ep06_cg_052"
+        },
+        {
+          "ep06_독백": "심지어 감옥에서도 탈출하고",
+          "cg": "ep06_cg_052"
+        },
+        {
+          "ep06_독백": "ㅋㅋㅋㅋㅋ",
+          "cg": "ep06_cg_052"
+        },
+        {
+          "ep06_독백": "딱 봐도 수상한 짓 했네… 내가…",
+          "cg": "ep06_cg_052",
+          "sets": "ep06_아시나_의심회상"
+        }
+      ],
+      "next": "ep06_c053"
+    },
+    "ep06_c053": {
+      "title": "여행 이야기",
+      "cut": "ep06_c053",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_독백": "감옥에 넣은 게 감사한 처사였다…",
+          "cg": "ep06_cg_053",
+          "sets": "ep06_아시나_감옥처우재평가"
+        }
+      ],
+      "next": "ep06_c054"
+    },
+    "ep06_c054": {
+      "title": "여행 이야기",
+      "cut": "ep06_c054",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "이번엔 제가 물어봐도 될까요?",
+          "cg": "ep06_cg_054"
+        },
+        {
+          "ep06_아시나": "네. 그럼요.",
+          "cg": "ep06_cg_054"
+        },
+        {
+          "ep06_나시르": "사막 이야기가 나와서 말입니다.",
+          "cg": "ep06_cg_054"
+        }
+      ],
+      "next": "ep06_c055"
+    },
+    "ep06_c055": {
+      "title": "우회 권유",
+      "cut": "ep06_c055",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "크라차로 가는 길에 안내인들이,",
+          "cg": "ep06_cg_055"
+        },
+        {
+          "ep06_나시르": "사막을 가로지르지 않고 우회해서 가는 방향을 추천하지 않았습니까?",
+          "cg": "ep06_cg_055",
+          "sets": "ep06_아시나_우회권유"
+        },
+        {
+          "ep06_나시르": "크라차로 가는 북인들은 다 그렇게 가던데",
+          "cg": "ep06_cg_055"
+        },
+        {
+          "ep06_아시나": "알아요. 그렇게 가라고 했었죠. 제가 거절했지만.",
+          "cg": "ep06_cg_055",
+          "sets": "ep06_현장_우회거절"
+        }
+      ],
+      "next": "ep06_c056"
+    },
+    "ep06_c056": {
+      "title": "사막행의 이유",
+      "cut": "ep06_c056",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "…그러면 더더욱 모르겠군요.",
+          "cg": "ep06_cg_056"
+        },
+        {
+          "ep06_나시르": "왜 죽을 위험을 감수하면서까지 사막에 가셨던 건지.",
+          "cg": "ep06_cg_056"
+        }
+      ],
+      "next": "ep06_c056_interior"
+    },
+    "ep06_c056_interior": {
+      "title": "나시르의 생각",
+      "cut": "ep06_c056",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "perspective": "audience",
+      "lines": [
+        {
+          "ep06_나시르독백": "지금까지 했던 말로는 이자가 말하는 게 진실인지 알 수 없다.",
+          "cg": "ep06_cg_056"
+        },
+        {
+          "ep06_나시르독백": "하지만 사막에 간 이유까지 거짓말하면 티가 나기 마련이지.",
+          "cg": "ep06_cg_056",
+          "sets": "ep06_독자_사막동기시험"
+        }
+      ],
+      "next": "ep06_c056_response"
+    },
+    "ep06_c056_response": {
+      "title": "사막행의 이유",
+      "cut": "ep06_c056",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "",
+          "cg": "ep06_cg_056"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep06_travel_direct",
+          "text": "사막의 광경이 보고 싶었다고 답한다",
+          "next": "ep06_c057"
+        },
+        {
+          "id": "ep06_travel_pause",
+          "text": "풍경을 떠올리며 답한다",
+          "next": "ep06_travel_pause"
+        }
+      ]
+    },
+    "ep06_travel_pause": {
+      "title": "풍경을 떠올리며 답한다",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_서술": "아시나는 사막의 광경을 떠올린다.",
+          "cg": "ep06_cg_056"
+        }
+      ],
+      "next": "ep06_c057"
+    },
+    "ep06_c057": {
+      "title": "나시르의 생각",
+      "cut": "ep06_c057",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르독백": "그러니 이제는 보여라,",
+          "cg": "ep06_cg_057"
+        },
+        {
+          "ep06_나시르독백": "그 아름다운 얼굴 뒤에 숨기고 있는 게 뭔지-",
+          "cg": "ep06_cg_057",
+          "sets": "ep06_독자_숨긴정체탐색"
+        }
+      ],
+      "next": "ep06_c058",
+      "perspective": "audience"
+    },
+    "ep06_c058": {
+      "title": "북대륙 풍경",
+      "cut": "ep06_c058",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "북대륙은 말이죠.",
+          "cg": "ep06_cg_058"
+        },
+        {
+          "ep06_아시나": "계절마다 산의 색이 달라지고,",
+          "cg": "ep06_cg_058"
+        },
+        {
+          "ep06_아시나": "들판은 푸르고 아름다워요.",
+          "cg": "ep06_cg_058",
+          "sets": "ep06_현장_북대륙풍경"
+        },
+        {
+          "ep06_아시나": "하지만,",
+          "cg": "ep06_cg_058"
+        }
+      ],
+      "next": "ep06_c059"
+    },
+    "ep06_c059": {
+      "title": "여행 이야기",
+      "cut": "ep06_c059",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "모래로 이루어진 바다는 없죠.",
+          "cg": "ep06_cg_059",
+          "sets": "ep06_현장_모래바다대비"
+        }
+      ],
+      "next": "ep06_c060"
+    },
+    "ep06_c060": {
+      "title": "여행 이야기",
+      "cut": "ep06_c060",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "그래서 그 광경이 보고 싶었어요.",
+          "cg": "ep06_cg_060",
+          "sets": "ep06_현장_사막동기"
+        },
+        {
+          "ep06_나시르": "그러셨군요…",
+          "cg": "ep06_cg_060"
+        }
+      ],
+      "next": "ep06_c060_interior"
+    },
+    "ep06_c060_interior": {
+      "title": "여행 이야기",
+      "cut": "ep06_c060",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르독백": "나 역시 이곳에서 나고 자라며 사막을 보긴 했지만,",
+          "cg": "ep06_cg_060",
+          "sets": "ep06_독자_나시르경험"
+        }
+      ],
+      "next": "ep06_c061",
+      "perspective": "audience"
+    },
+    "ep06_c061": {
+      "title": "사막 소감",
+      "cut": "ep06_c061",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르독백": "저런 기분은 한 번도 받지 못했다.",
+          "cg": "ep06_cg_061",
+          "sets": "ep06_독자_감정비교"
+        }
+      ],
+      "next": "ep06_c061_question",
+      "perspective": "audience"
+    },
+    "ep06_c061_question": {
+      "title": "사막 소감",
+      "cut": "ep06_c061",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "그래서,",
+          "cg": "ep06_cg_061"
+        },
+        {
+          "ep06_나시르": "직접 사막을 본 소감은 어떻습니까?",
+          "cg": "ep06_cg_061"
+        }
+      ],
+      "next": "ep06_c062"
+    },
+    "ep06_c062": {
+      "title": "사막 소감",
+      "cut": "ep06_c062",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "사막은…",
+          "cg": "ep06_cg_062"
+        },
+        {
+          "ep06_아시나": "상상했던 것보다 더 예뻤어요.",
+          "cg": "ep06_cg_062",
+          "sets": "ep06_현장_사막감상"
+        },
+        {
+          "ep06_아시나미확정": "타는듯한 더위에 녹아 사라져도 좋을 만큼.",
+          "cg": "ep06_cg_062"
+        }
+      ],
+      "next": "ep06_c063"
+    },
+    "ep06_c063": {
+      "title": "이름에 대한 놀람",
+      "cut": "ep06_c063",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_아시나": "그런곳이 죽음의 사막이라 불린다니…",
+          "cg": "ep06_cg_063"
+        },
+        {
+          "ep06_아시나": "좀 놀랐어요.",
+          "cg": "ep06_cg_063",
+          "sets": "ep06_현장_이름놀람"
+        }
+      ],
+      "next": "ep06_c064"
+    },
+    "ep06_c064": {
+      "title": "사막 감상에 대한 답",
+      "cut": "ep06_c064",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르독백": "이 여자는 진실을 말하고 있다.",
+          "cg": "ep06_cg_064",
+          "sets": "ep06_독자_감상진실판단"
+        }
+      ],
+      "next": "ep06_c064_reply",
+      "perspective": "audience"
+    },
+    "ep06_c064_reply": {
+      "title": "사막 감상에 대한 답",
+      "cut": "ep06_c064",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르": "네, 죽음의 사막을 아름답다고 하는 사람은",
+          "cg": "ep06_cg_064"
+        },
+        {
+          "ep06_나시르": "세상에 아시나님밖에 없을 겁니다.",
+          "cg": "ep06_cg_064",
+          "sets": "ep06_아시나_사막감상답변"
+        }
+      ],
+      "next": "ep06_c065"
+    },
+    "ep06_c065": {
+      "title": "눈빛",
+      "cut": "ep06_c065",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep06_나시르독백": "저런 눈빛을 보면 누구라도 인정할 수밖에 없겠어.",
+          "cg": "ep06_cg_065",
+          "sets": "ep06_독자_잠정이해"
+        }
+      ],
+      "ending": {
+        "id": "ep06_internal_end",
+        "title": "도서실",
+        "summary": "도서실에서 여행 이야기를 나눴다.",
+        "next_hook": "다음 장 연결은 원작 경계 대조 후 확정한다."
+      },
+      "perspective": "audience"
+    }
+  },
+  "atlas": {
+    "chapters": [
+      {
+        "id": "ep06",
+        "label": "6화",
+        "nodes": [
+          "ep06_s01_0",
+          "ep06_offer_choice",
+          "ep06_decline_reply",
+          "ep06_s01_1",
+          "ep06_s01_2",
+          "ep06_s01_3",
+          "ep06_s01_4",
+          "ep06_s02_5",
+          "ep06_s03_6",
+          "ep06_s04_7",
+          "ep06_s05_8",
+          "ep06_s05_9",
+          "ep06_s05_10",
+          "ep06_s05_11",
+          "ep06_s05_12",
+          "ep06_s06_13",
+          "ep06_s06_14",
+          "ep06_s06_15",
+          "ep06_s07_16",
+          "ep06_s07_17",
+          "ep06_s07_18"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ep06_s01_0",
+        "label": "아침 인사 잇기",
+        "col": 0,
+        "row": 2,
+        "beats": [
+          "ep06_c001"
+        ]
+      },
+      {
+        "id": "ep06_offer_choice",
+        "label": "하렘 체류 제안",
+        "col": 1,
+        "row": 2,
+        "beats": [
+          "ep06_c002",
+          "ep06_c003"
+        ]
+      },
+      {
+        "id": "ep06_decline_reply",
+        "label": "정중한 거절",
+        "col": 2,
+        "row": 2,
+        "beats": [
+          "ep06_c004"
+        ]
+      },
+      {
+        "id": "ep06_s01_1",
+        "label": "한 걸음 물러서기",
+        "col": 3,
+        "row": 2,
+        "beats": [
+          "ep06_decline_pause"
+        ]
+      },
+      {
+        "id": "ep06_s01_2",
+        "label": "다가오는 라 쿤",
+        "col": 4,
+        "row": 2,
+        "beats": [
+          "ep06_c005",
+          "ep06_c006",
+          "ep06_c007",
+          "ep06_c008"
+        ]
+      },
+      {
+        "id": "ep06_s01_3",
+        "label": "여행 목적에 말 고르기",
+        "col": 5,
+        "row": 2,
+        "beats": [
+          "ep06_purpose_pause"
+        ]
+      },
+      {
+        "id": "ep06_s01_4",
+        "label": "여행이라 답하기",
+        "col": 6,
+        "row": 2,
+        "beats": [
+          "ep06_c008_reply"
+        ]
+      },
+      {
+        "id": "ep06_s02_5",
+        "label": "추궁하는 시선",
+        "col": 7,
+        "row": 2,
+        "beats": [
+          "ep06_c009",
+          "ep06_c010",
+          "ep06_c011",
+          "ep06_c012",
+          "ep06_c013",
+          "ep06_c014",
+          "ep06_c015",
+          "ep06_c016",
+          "ep06_c017",
+          "ep06_c018",
+          "ep06_c019",
+          "ep06_c020",
+          "ep06_c021"
+        ]
+      },
+      {
+        "id": "ep06_s03_6",
+        "label": "머뭇거리는 소개",
+        "col": 8,
+        "row": 2,
+        "beats": [
+          "ep06_c022",
+          "ep06_c023",
+          "ep06_c024",
+          "ep06_c025",
+          "ep06_c026",
+          "ep06_c027",
+          "ep06_c028",
+          "ep06_c029",
+          "ep06_c030"
+        ]
+      },
+      {
+        "id": "ep06_s04_7",
+        "label": "라 쿤의 평가",
+        "col": 9,
+        "row": 2,
+        "beats": [
+          "ep06_c031",
+          "ep06_c032",
+          "ep06_c033"
+        ]
+      },
+      {
+        "id": "ep06_s05_8",
+        "label": "의자를 권하는 나시르",
+        "col": 10,
+        "row": 2,
+        "beats": [
+          "ep06_c034",
+          "ep06_c035"
+        ]
+      },
+      {
+        "id": "ep06_s05_9",
+        "label": "나시르의 표정 살피기",
+        "col": 11,
+        "row": 2,
+        "beats": [
+          "ep06_origin_pause"
+        ]
+      },
+      {
+        "id": "ep06_s05_10",
+        "label": "시그렌에서 왔다는 답",
+        "col": 12,
+        "row": 2,
+        "beats": [
+          "ep06_c036",
+          "ep06_c037",
+          "ep06_c038"
+        ]
+      },
+      {
+        "id": "ep06_s05_11",
+        "label": "조심스레 질문 꺼내기",
+        "col": 13,
+        "row": 2,
+        "beats": [
+          "ep06_question_pause"
+        ]
+      },
+      {
+        "id": "ep06_s05_12",
+        "label": "죽음의 사막을 묻다",
+        "col": 14,
+        "row": 2,
+        "beats": [
+          "ep06_c039",
+          "ep06_c040",
+          "ep06_c041",
+          "ep06_c042"
+        ]
+      },
+      {
+        "id": "ep06_s06_13",
+        "label": "사막의 저주 소문",
+        "col": 15,
+        "row": 2,
+        "beats": [
+          "ep06_c043",
+          "ep06_c044",
+          "ep06_c045",
+          "ep06_c045_question",
+          "ep06_c046"
+        ]
+      },
+      {
+        "id": "ep06_s06_14",
+        "label": "적대 소식에 숨 고르기",
+        "col": 16,
+        "row": 2,
+        "beats": [
+          "ep06_politics_pause"
+        ]
+      },
+      {
+        "id": "ep06_s06_15",
+        "label": "몰랐던 적대 관계",
+        "col": 17,
+        "row": 2,
+        "beats": [
+          "ep06_c046_reply",
+          "ep06_c047",
+          "ep06_c048",
+          "ep06_c049",
+          "ep06_c050",
+          "ep06_c051",
+          "ep06_c052"
+        ]
+      },
+      {
+        "id": "ep06_s07_16",
+        "label": "죄인 취급을 돌아보다",
+        "col": 18,
+        "row": 2,
+        "beats": [
+          "ep06_c053",
+          "ep06_c054",
+          "ep06_c055",
+          "ep06_c056",
+          "ep06_c056_interior",
+          "ep06_c056_response"
+        ]
+      },
+      {
+        "id": "ep06_s07_17",
+        "label": "사막 풍경 떠올리기",
+        "col": 19,
+        "row": 2,
+        "beats": [
+          "ep06_travel_pause"
+        ]
+      },
+      {
+        "id": "ep06_s07_18",
+        "label": "사막 여행의 이유",
+        "col": 20,
+        "row": 2,
+        "beats": [
+          "ep06_c057",
+          "ep06_c058",
+          "ep06_c059",
+          "ep06_c060",
+          "ep06_c060_interior",
+          "ep06_c061",
+          "ep06_c061_question",
+          "ep06_c062",
+          "ep06_c063",
+          "ep06_c064",
+          "ep06_c064_reply",
+          "ep06_c065"
+        ],
+        "ending": true
+      }
+    ],
+    "edges": [
+      [
+        "ep06_s01_0",
+        "ep06_s01_2"
+      ],
+      [
+        "ep06_s01_0",
+        "ep06_offer_choice"
+      ],
+      [
+        "ep06_offer_choice",
+        "ep06_decline_reply"
+      ],
+      [
+        "ep06_offer_choice",
+        "ep06_s01_1"
+      ],
+      [
+        "ep06_s01_1",
+        "ep06_decline_reply"
+      ],
+      [
+        "ep06_decline_reply",
+        "ep06_s01_2"
+      ],
+      [
+        "ep06_s01_2",
+        "ep06_s01_4"
+      ],
+      [
+        "ep06_s01_2",
+        "ep06_s01_3"
+      ],
+      [
+        "ep06_s01_3",
+        "ep06_s01_4"
+      ],
+      [
+        "ep06_s01_4",
+        "ep06_s02_5"
+      ],
+      [
+        "ep06_s02_5",
+        "ep06_s03_6"
+      ],
+      [
+        "ep06_s03_6",
+        "ep06_s04_7"
+      ],
+      [
+        "ep06_s04_7",
+        "ep06_s05_8"
+      ],
+      [
+        "ep06_s05_8",
+        "ep06_s05_10"
+      ],
+      [
+        "ep06_s05_8",
+        "ep06_s05_9"
+      ],
+      [
+        "ep06_s05_9",
+        "ep06_s05_10"
+      ],
+      [
+        "ep06_s05_10",
+        "ep06_s05_12"
+      ],
+      [
+        "ep06_s05_10",
+        "ep06_s05_11"
+      ],
+      [
+        "ep06_s05_11",
+        "ep06_s05_12"
+      ],
+      [
+        "ep06_s05_12",
+        "ep06_s06_13"
+      ],
+      [
+        "ep06_s06_13",
+        "ep06_s06_15"
+      ],
+      [
+        "ep06_s06_13",
+        "ep06_s06_14"
+      ],
+      [
+        "ep06_s06_14",
+        "ep06_s06_15"
+      ],
+      [
+        "ep06_s06_15",
+        "ep06_s07_16"
+      ],
+      [
+        "ep06_s07_16",
+        "ep06_s07_18"
+      ],
+      [
+        "ep06_s07_16",
+        "ep06_s07_17"
+      ],
+      [
+        "ep06_s07_17",
+        "ep06_s07_18"
+      ]
+    ]
+  }
+}

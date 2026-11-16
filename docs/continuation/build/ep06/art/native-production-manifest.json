@@ -1,0 +1,1912 @@
+{
+  "episode": 6,
+  "stage": "실제 native 순차 제작",
+  "generation_authorized": true,
+  "global_actual_cap": 3,
+  "local_max": 1,
+  "art_ready": false,
+  "counts": {
+    "planned": 75,
+    "actualPNG": 75,
+    "toolBlocked": 0,
+    "held": 0,
+    "running": 0,
+    "independentApproved": 0,
+    "installed": 0
+  },
+  "candidates": [
+    {
+      "candidate_id": "ep06_c001",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c001.png",
+      "source_cut_ids": [
+        "ep06_c001"
+      ],
+      "earliest_reveal_anchor": "ep06_c001:lines[0]",
+      "anchor_ids": [
+        "ep06_c001:lines[0]",
+        "ep06_c001:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c001-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c001-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c001.png",
+        "sha256": "0a3d103d98518ec8aa7f32278ec5acd2fbf548fe0115116b8a3daef11687f5dd",
+        "width": 1672,
+        "height": 941,
+        "format": "png",
+        "bytes": 1928926,
+        "png_signature": true
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c002",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c002.png",
+      "source_cut_ids": [
+        "ep06_c002"
+      ],
+      "earliest_reveal_anchor": "ep06_c002:lines[0]",
+      "anchor_ids": [
+        "ep06_c002:lines[0]",
+        "ep06_c002:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c002-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c002-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c002.png",
+        "sha256": "3523bba16a32ef138b72d496df3e2a422faf7ceee439d7747ea4582fbc9e03f8",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2172237
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c003",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c003.png",
+      "source_cut_ids": [
+        "ep06_c003",
+        "ep06_c004"
+      ],
+      "earliest_reveal_anchor": "ep06_c003:lines[0]",
+      "anchor_ids": [
+        "ep06_c003:lines[0]",
+        "ep06_c003:lines[1]",
+        "ep06_decline_pause:lines[0]",
+        "ep06_c004:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c003-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c003-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c003.png",
+        "sha256": "82296e20446dbc37d9af9ecdbb949ead5072528b9ddf8ca058c7680a0562eb4b",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2350834
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c005",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c005.png",
+      "source_cut_ids": [
+        "ep06_c005"
+      ],
+      "earliest_reveal_anchor": "ep06_c005:lines[0]",
+      "anchor_ids": [
+        "ep06_c005:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c005-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c005-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c005.png",
+        "sha256": "a46946021fa14d2398b59f8c2e74611fbf65e6cb56ec7a4553416be1e54432ec",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2147698
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c006",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c006.png",
+      "source_cut_ids": [
+        "ep06_c006"
+      ],
+      "earliest_reveal_anchor": "ep06_c006:lines[0]",
+      "anchor_ids": [
+        "ep06_c006:lines[0]",
+        "ep06_c006:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c006-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c006-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c006.png",
+        "sha256": "b6eedeabdfbf5db35111b9710e2ce29d56fa87276eb42322868aeb931c2b140e",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2749126
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c007_hand",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c007_hand.png",
+      "source_cut_ids": [
+        "ep06_c007"
+      ],
+      "earliest_reveal_anchor": "ep06_c007:lines[0]",
+      "anchor_ids": [
+        "ep06_c007:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c007_hand-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c007_hand-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c007_hand.png",
+        "sha256": "add0701c00eab7f7a375f7b4e782e721c6e589c6c369ff8cc84e4f3e706d42c9",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 1999230
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c007_eye",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c007_eye.png",
+      "source_cut_ids": [
+        "ep06_c007"
+      ],
+      "earliest_reveal_anchor": "ep06_c007:lines[1]",
+      "anchor_ids": [
+        "ep06_c007:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c007_eye-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c007_eye-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c007_eye.png",
+        "sha256": "3eea1147d9ef05450b4c390e2396b66e7dab4e7e30188572d6e5027e956c26f1",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 1828524
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c007_memory",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c007_memory.png",
+      "source_cut_ids": [
+        "ep06_c007"
+      ],
+      "earliest_reveal_anchor": "ep06_c007:lines[2]",
+      "anchor_ids": [
+        "ep06_c007:lines[2]",
+        "ep06_c007:lines[3]",
+        "ep06_c007:lines[4]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c007_memory-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c007_memory-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c007_memory.png",
+        "sha256": "a37769b55688b846747b69ed79bb47bb0c05715fd01dc7370a15f6bde93c5903",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3481000
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c008_room",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c008_room.png",
+      "source_cut_ids": [
+        "ep06_c008"
+      ],
+      "earliest_reveal_anchor": "ep06_c008:lines[0]",
+      "anchor_ids": [
+        "ep06_c008:lines[0]",
+        "ep06_purpose_pause:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c008_room-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c008_room-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c008_room.png",
+        "sha256": "dc50b6744a8d1d9ffab76ef9441ea6e9fe4dec0c7d4234bccec9ee3cc982a4cd",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3267794
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c008_pair",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c008_pair.png",
+      "source_cut_ids": [
+        "ep06_c008"
+      ],
+      "earliest_reveal_anchor": "ep06_c008_reply:lines[0]",
+      "anchor_ids": [
+        "ep06_c008_reply:lines[0]",
+        "ep06_c008_reply:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c008_pair-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c008_pair-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c008_pair.png",
+        "sha256": "d14ba304f0067b2a07c4275d3bb88c717afeb6f2a087a72f9d76b1f566526c80",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2850254
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c008_threat",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c008_threat.png",
+      "source_cut_ids": [
+        "ep06_c008"
+      ],
+      "earliest_reveal_anchor": "ep06_c008_reply:lines[2]",
+      "anchor_ids": [
+        "ep06_c008_reply:lines[2]",
+        "ep06_c008_reply:lines[3]",
+        "ep06_c008_reply:lines[4]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c008_threat-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c008_threat-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c008_threat.png",
+        "sha256": "87a99d2879dfba12c1ac14e56eff10efa4d6d8f1145e54605d18970d2baf803a",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2424274
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c009",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c009.png",
+      "source_cut_ids": [
+        "ep06_c009"
+      ],
+      "earliest_reveal_anchor": "ep06_c009:lines[0]",
+      "anchor_ids": [
+        "ep06_c009:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c009-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c009-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c009.png",
+        "sha256": "1115292d52c567709a0566662a58e7bd727762de7e42724c0f2a7936aac54784",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2106189
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c010",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c010.png",
+      "source_cut_ids": [
+        "ep06_c010"
+      ],
+      "earliest_reveal_anchor": "ep06_c010:lines[0]",
+      "anchor_ids": [
+        "ep06_c010:lines[0]",
+        "ep06_c010:lines[1]",
+        "ep06_c010:lines[2]",
+        "ep06_c010:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c010-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c010-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c010.png",
+        "sha256": "a80ff2f8aca5ba7936870f16333ce6919f5b270694191eeaa748a0a3ea25ec39",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3138853
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c011_face",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c011_face.png",
+      "source_cut_ids": [
+        "ep06_c011"
+      ],
+      "earliest_reveal_anchor": "ep06_c011:lines[0]",
+      "anchor_ids": [
+        "ep06_c011:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c011_face-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c011_face-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c011_face.png",
+        "sha256": "c11000744be9b5c71c73faca8d1d9c8a79e69a858da9026e0bc6da4cd6611eee",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2077389
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c011_feet",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c011_feet.png",
+      "source_cut_ids": [
+        "ep06_c011"
+      ],
+      "earliest_reveal_anchor": "ep06_c011:lines[1]",
+      "anchor_ids": [
+        "ep06_c011:lines[1]",
+        "ep06_c011:lines[2]",
+        "ep06_c011:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c011_feet-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c011_feet-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c011_feet.png",
+        "sha256": "40d718ce8b06b0cf8bf7ae7f3cf8338d0d0f3c7bd21e380611e86827394d4560",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2376356
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c012",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c012.png",
+      "source_cut_ids": [
+        "ep06_c012"
+      ],
+      "earliest_reveal_anchor": "ep06_c012:lines[0]",
+      "anchor_ids": [
+        "ep06_c012:lines[0]",
+        "ep06_c012:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c012-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c012-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c012.png",
+        "sha256": "6789371d8fd17a2e09a9f21a15dfa7c644152a4de978d6c96ae1e0668142d11f",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2969348
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c013",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c013.png",
+      "source_cut_ids": [
+        "ep06_c013",
+        "ep06_c014"
+      ],
+      "earliest_reveal_anchor": "ep06_c013:lines[0]",
+      "anchor_ids": [
+        "ep06_c013:lines[0]",
+        "ep06_c013:lines[1]",
+        "ep06_c014:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c013-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c013-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c013.png",
+        "sha256": "23f6c2fc8bcf85032f77a384e5d28532694476f7f0b05a9163968652bb7a3956",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2850995
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c014",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c014.png",
+      "source_cut_ids": [
+        "ep06_c014"
+      ],
+      "earliest_reveal_anchor": "ep06_c014:lines[1]",
+      "anchor_ids": [
+        "ep06_c014:lines[1]",
+        "ep06_c014:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c014-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c014-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c014.png",
+        "sha256": "af83b9059d74851c2923a1a1f02e357e283c791d37519703e0ede2da3b0352e6",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2967602
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c015",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c015.png",
+      "source_cut_ids": [
+        "ep06_c015"
+      ],
+      "earliest_reveal_anchor": "ep06_c015:lines[0]",
+      "anchor_ids": [
+        "ep06_c015:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c015-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c015-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c015.png",
+        "sha256": "1475eb023bfb18262667a18bef319d8f9a69c6434089de2515a4ebf313abeea2",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2235542
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c016",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c016.png",
+      "source_cut_ids": [
+        "ep06_c016"
+      ],
+      "earliest_reveal_anchor": "ep06_c016:lines[0]",
+      "anchor_ids": [
+        "ep06_c016:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c016-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c016-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c016.png",
+        "sha256": "5f4cc9903b5ab795d4b0719871f8e3731c3cf9fa23869a110cd970c4e4064221",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2896507
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c017_room",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c017_room.png",
+      "source_cut_ids": [
+        "ep06_c017"
+      ],
+      "earliest_reveal_anchor": "ep06_c017:lines[0]",
+      "anchor_ids": [
+        "ep06_c017:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c017_room-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c017_room-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c017_room.png",
+        "sha256": "e71c83c0ec6c5edeb15054874ba126e924dd53edc26cfe2cda4f800ba4304ecc",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3413190
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c017_turn",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c017_turn.png",
+      "source_cut_ids": [
+        "ep06_c017"
+      ],
+      "earliest_reveal_anchor": "ep06_c017:lines[1]",
+      "anchor_ids": [
+        "ep06_c017:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c017_turn-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c017_turn-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c017_turn.png",
+        "sha256": "1a003d99679e2ebe82860b36b51e5e1494071f71d92856ded8f93e7640099ca8",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2469827
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c018",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c018.png",
+      "source_cut_ids": [
+        "ep06_c018"
+      ],
+      "earliest_reveal_anchor": "ep06_c018:lines[0]",
+      "anchor_ids": [
+        "ep06_c018:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c018-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c018-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c018.png",
+        "sha256": "76fb08a39f36f85d3675befb7c2f64856189f5551c32c3f4ca7e3cf6fbd99103",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2774235
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c019",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c019.png",
+      "source_cut_ids": [
+        "ep06_c019"
+      ],
+      "earliest_reveal_anchor": "ep06_c019:lines[0]",
+      "anchor_ids": [
+        "ep06_c019:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c019-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c019-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c019.png",
+        "sha256": "f29355952ef816bf44d2eb22a0a2768ba6a8d13a8edf42941450667cc68c02be",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3555861
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c020",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c020.png",
+      "source_cut_ids": [
+        "ep06_c020"
+      ],
+      "earliest_reveal_anchor": "ep06_c020:lines[0]",
+      "anchor_ids": [
+        "ep06_c020:lines[0]",
+        "ep06_c020:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c020-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c020-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c020.png",
+        "sha256": "42f90afdfaa130d23c099950dd81f1609810cdfdc92476c08315f6d472f88159",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3031441
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c021",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c021.png",
+      "source_cut_ids": [
+        "ep06_c021"
+      ],
+      "earliest_reveal_anchor": "ep06_c021:lines[0]",
+      "anchor_ids": [
+        "ep06_c021:lines[0]",
+        "ep06_c021:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c021-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c021-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c021.png",
+        "sha256": "1fb749bee2985a0d8b71ea9bcff3f23ce91a592ac96eee12224b13ed48b17b95",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2198967
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c022",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c022.png",
+      "source_cut_ids": [
+        "ep06_c022"
+      ],
+      "earliest_reveal_anchor": "ep06_c022:lines[0]",
+      "anchor_ids": [
+        "ep06_c022:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c022-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c022-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c022.png",
+        "sha256": "c346be034223772b783d8d452226ddcf5d3ad8c2f7aa3358cc093db3c8f87b4f",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2879361
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c023",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c023.png",
+      "source_cut_ids": [
+        "ep06_c023"
+      ],
+      "earliest_reveal_anchor": "ep06_c023:lines[0]",
+      "anchor_ids": [
+        "ep06_c023:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c023-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c023-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c023.png",
+        "sha256": "5bc4b0a26985233b11c16b8f502e6d71cc738d9ca7060b1d43d2ca4518805a1c",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2898875
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c024",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c024.png",
+      "source_cut_ids": [
+        "ep06_c024"
+      ],
+      "earliest_reveal_anchor": "ep06_c024:lines[0]",
+      "anchor_ids": [
+        "ep06_c024:lines[0]",
+        "ep06_c024:lines[1]",
+        "ep06_c024:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c024-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c024-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c024.png",
+        "sha256": "59fe311fa5a73da26556d3bbd8f8d7871f7c5abb8a09a5c24572539fd9d6e6bf",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2832888
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c025",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c025.png",
+      "source_cut_ids": [
+        "ep06_c025"
+      ],
+      "earliest_reveal_anchor": "ep06_c025:lines[0]",
+      "anchor_ids": [
+        "ep06_c025:lines[0]",
+        "ep06_c025:lines[1]",
+        "ep06_c025:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c025-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c025-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c025.png",
+        "sha256": "5969f46d814035a7e7445b76ef427d285f0838aab869869eafcf60b3270601bc",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2668450
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c026",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c026.png",
+      "source_cut_ids": [
+        "ep06_c026"
+      ],
+      "earliest_reveal_anchor": "ep06_c026:lines[0]",
+      "anchor_ids": [
+        "ep06_c026:lines[0]",
+        "ep06_c026:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c026-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c026-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c026.png",
+        "sha256": "b23638a64560564d82eaa2666ecc0393db25de833e28fb1aab2231b261cd4436",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2988959
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c027",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c027.png",
+      "source_cut_ids": [
+        "ep06_c027"
+      ],
+      "earliest_reveal_anchor": "ep06_c027:lines[0]",
+      "anchor_ids": [
+        "ep06_c027:lines[0]",
+        "ep06_c027:lines[1]",
+        "ep06_c027:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c027-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c027-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c027.png",
+        "sha256": "600a020ac52c4a040fa953dd746cc68792a832adecc9da633b809995b967c78f",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3419195
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c028",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c028.png",
+      "source_cut_ids": [
+        "ep06_c028"
+      ],
+      "earliest_reveal_anchor": "ep06_c028:lines[0]",
+      "anchor_ids": [
+        "ep06_c028:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c028-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c028-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c028.png",
+        "sha256": "b0f7b6adadc3cf0a1aa1c02b365d6aa858d4c072aa7eda664dbd45619832758a",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2371187
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c029_ra",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c029_ra.png",
+      "source_cut_ids": [
+        "ep06_c029"
+      ],
+      "earliest_reveal_anchor": "ep06_c029:lines[0]",
+      "anchor_ids": [
+        "ep06_c029:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c029_ra-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c029_ra-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c029_ra.png",
+        "sha256": "e20b339a90debf8a88058e4b209a5d00bb7a219a4577bfba0755f16af7c8db7f",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2072751
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c029_nod",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c029_nod.png",
+      "source_cut_ids": [
+        "ep06_c029"
+      ],
+      "earliest_reveal_anchor": "ep06_c029:lines[0]#panel2",
+      "anchor_ids": [
+        "ep06_c029:lines[0]#panel2"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c029_nod-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c029_nod-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c029_nod.png",
+        "sha256": "5654ab45af712dfb341c74bc29a4ed9f1dc60d56d25fa3a514bf6e819c6620b9",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2613782
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c030",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c030.png",
+      "source_cut_ids": [
+        "ep06_c030"
+      ],
+      "earliest_reveal_anchor": "ep06_c030:lines[0]",
+      "anchor_ids": [
+        "ep06_c030:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c030-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c030-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c030.png",
+        "sha256": "325e067ed440c0c39951a8b0ea012202bef48a73b6e50487b91ef7a08b6b1e8a",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 1854028
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c031",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c031.png",
+      "source_cut_ids": [
+        "ep06_c031"
+      ],
+      "earliest_reveal_anchor": "ep06_c031:lines[0]",
+      "anchor_ids": [
+        "ep06_c031:lines[0]",
+        "ep06_c031:lines[1]",
+        "ep06_c031:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c031-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c031-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c031.png",
+        "sha256": "a47237348e32801f7d486cf5542078ea78570bade748fd5bc180c9509bf786ec",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2763051
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c032_order",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c032_order.png",
+      "source_cut_ids": [
+        "ep06_c032"
+      ],
+      "earliest_reveal_anchor": "ep06_c032:lines[0]",
+      "anchor_ids": [
+        "ep06_c032:lines[0]",
+        "ep06_c032:lines[1]",
+        "ep06_c032:lines[2]",
+        "ep06_c032:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c032_order-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c032_order-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c032_order.png",
+        "sha256": "98cdb97cb7ce51bf817aeed4853f66cc05fbf4fbde14ecd664cd6b20b9d684e2",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2503707
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c032_accept",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c032_accept.png",
+      "source_cut_ids": [
+        "ep06_c032"
+      ],
+      "earliest_reveal_anchor": "ep06_c032:lines[4]",
+      "anchor_ids": [
+        "ep06_c032:lines[4]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c032_accept-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c032_accept-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c032_accept.png",
+        "sha256": "eb5a128d47c24f793334165508355412e69ddcf89ed674a734e4be22789a3ce6",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3160758
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c033",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c033.png",
+      "source_cut_ids": [
+        "ep06_c033"
+      ],
+      "earliest_reveal_anchor": "ep06_c033:lines[0]",
+      "anchor_ids": [
+        "ep06_c033:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c033-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c033-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c033.png",
+        "sha256": "b7e8082e64dccce65c948e45246fbc6a35bec08fcdc4b68c1d9d187a625f30c4",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2240397
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c034",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c034.png",
+      "source_cut_ids": [
+        "ep06_c034"
+      ],
+      "earliest_reveal_anchor": "ep06_c034:lines[0]",
+      "anchor_ids": [
+        "ep06_c034:lines[0]",
+        "ep06_c034:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c034-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c034-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c034.png",
+        "sha256": "ef131ffdf7fc0e22d5306cdc215c3a3e82e1d15c02e6157aa91f5ec9f542bf5e",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2071301
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c035",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c035.png",
+      "source_cut_ids": [
+        "ep06_c035"
+      ],
+      "earliest_reveal_anchor": "ep06_c035:lines[0]",
+      "anchor_ids": [
+        "ep06_c035:lines[0]",
+        "ep06_c035:lines[1]",
+        "ep06_origin_pause:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c035-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c035-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c035.png",
+        "sha256": "bedaeaf0f93cd53083630fa6ef19000d5e4fe570fdc60f489669a3480e9817fe",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2579172
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c036_map",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c036_map.png",
+      "source_cut_ids": [
+        "ep06_c036"
+      ],
+      "earliest_reveal_anchor": "ep06_c036:lines[0]",
+      "anchor_ids": [
+        "ep06_c036:lines[0]",
+        "ep06_c036:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c036_map-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c036_map-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c036_map.png",
+        "sha256": "9d3389cad6bb4d02b1884d2a10bfcfc1cca0a4f44f0f2a09e017f0013ba0ff3c",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3852605
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c036_table",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c036_table.png",
+      "source_cut_ids": [
+        "ep06_c036"
+      ],
+      "earliest_reveal_anchor": "ep06_c036:lines[2]",
+      "anchor_ids": [
+        "ep06_c036:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c036_table-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c036_table-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c036_table.png",
+        "sha256": "1764614302e060eaeb91f0475a16b61b180065af8909f0eefcb80d14c87d7de0",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2271036
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c037",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c037.png",
+      "source_cut_ids": [
+        "ep06_c037"
+      ],
+      "earliest_reveal_anchor": "ep06_c037:lines[0]",
+      "anchor_ids": [
+        "ep06_c037:lines[0]",
+        "ep06_c037:lines[1]",
+        "ep06_c037:lines[2]",
+        "ep06_c037:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c037-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c037-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c037.png",
+        "sha256": "5bf204d85a23feaa81b6379a52d68fc910e68a291c6cf299cb7dd3a99697cea5",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2190638
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c038",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c038.png",
+      "source_cut_ids": [
+        "ep06_c038"
+      ],
+      "earliest_reveal_anchor": "ep06_c038:lines[0]",
+      "anchor_ids": [
+        "ep06_c038:lines[0]",
+        "ep06_c038:lines[1]",
+        "ep06_question_pause:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c038-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c038-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c038.png",
+        "sha256": "289f610ced3221936de26dd3e6d327ae27cfa018460b7e203e95a1135fcbd8b7",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2696398
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c039",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c039.png",
+      "source_cut_ids": [
+        "ep06_c039",
+        "ep06_c040"
+      ],
+      "earliest_reveal_anchor": "ep06_c039:lines[0]",
+      "anchor_ids": [
+        "ep06_c039:lines[0]",
+        "ep06_c039:lines[1]",
+        "ep06_c039:lines[2]",
+        "ep06_c039:lines[3]",
+        "ep06_c039:lines[4]",
+        "ep06_c039:lines[5]",
+        "ep06_c040:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c039-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c039-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c039.png",
+        "sha256": "28330f7e5bafca719af5a2f8ecc98c17bc9e7bd2bacb8bc0d98f6a882eb6239f",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2802746
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c041",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c041.png",
+      "source_cut_ids": [
+        "ep06_c041"
+      ],
+      "earliest_reveal_anchor": "ep06_c041:lines[0]",
+      "anchor_ids": [
+        "ep06_c041:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c041-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c041-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c041.png",
+        "sha256": "cb815fade1782d1df3a673643a95f6abf89784897627aa99240385beaf5d0fb2",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2732993
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c042",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c042.png",
+      "source_cut_ids": [
+        "ep06_c042"
+      ],
+      "earliest_reveal_anchor": "ep06_c042:lines[0]",
+      "anchor_ids": [
+        "ep06_c042:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c042-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c042-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c042.png",
+        "sha256": "7b9405a5fd6665b5cb9aba34b84f33031506537655bfdde25ecc924e170196ca",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 971204
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c043",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c043.png",
+      "source_cut_ids": [
+        "ep06_c043",
+        "ep06_c044"
+      ],
+      "earliest_reveal_anchor": "ep06_c043:lines[0]",
+      "anchor_ids": [
+        "ep06_c043:lines[0]",
+        "ep06_c043:lines[1]",
+        "ep06_c044:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c043-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c043-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c043.png",
+        "sha256": "7821e83e2f98874782837c1e10722511aea016e0150b623be64d0482e3efbf26",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2283337
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c045",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c045.png",
+      "source_cut_ids": [
+        "ep06_c045"
+      ],
+      "earliest_reveal_anchor": "ep06_c045:lines[0]",
+      "anchor_ids": [
+        "ep06_c045:lines[0]",
+        "ep06_c045_question:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c045-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c045-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c045.png",
+        "sha256": "e1a9a8157d4bee0c0e8220b0d960c27a0b33885ad50d07c1de2a871f5b1b0d3c",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2455035
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c046_question",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c046_question.png",
+      "source_cut_ids": [
+        "ep06_c046"
+      ],
+      "earliest_reveal_anchor": "ep06_c046:lines[0]",
+      "anchor_ids": [
+        "ep06_c046:lines[0]",
+        "ep06_politics_pause:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c046_question-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c046_question-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c046_question.png",
+        "sha256": "dcd7b28d9fcb6b7f7d20369ba742009cb50ad3955072d1d845a9c1afb19b16d8",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2928606
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c046_reaction",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c046_reaction.png",
+      "source_cut_ids": [
+        "ep06_c046"
+      ],
+      "earliest_reveal_anchor": "ep06_c046_reply:lines[0]",
+      "anchor_ids": [
+        "ep06_c046_reply:lines[0]",
+        "ep06_c046_reply:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c046_reaction-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c046_reaction-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c046_reaction.png",
+        "sha256": "eff57533f22899315d0d17f1221117f02323b79e2d8dd800b1f8f9c1bd4af446",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2256778
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c046_hands",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c046_hands.png",
+      "source_cut_ids": [
+        "ep06_c046"
+      ],
+      "earliest_reveal_anchor": "ep06_c046_reply:lines[2]",
+      "anchor_ids": [
+        "ep06_c046_reply:lines[2]",
+        "ep06_c046_reply:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c046_hands-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c046_hands-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c046_hands.png",
+        "sha256": "b618b1a770a0d6e039f33cb14a1847f3775259a3f70f51ee68aeabcf445176c2",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2145899
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c047",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c047.png",
+      "source_cut_ids": [
+        "ep06_c047",
+        "ep06_c048"
+      ],
+      "earliest_reveal_anchor": "ep06_c047:lines[0]",
+      "anchor_ids": [
+        "ep06_c047:lines[0]",
+        "ep06_c047:lines[1]",
+        "ep06_c047:lines[2]",
+        "ep06_c048:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c047-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c047-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c047.png",
+        "sha256": "7751a23f65c6d3a29bdefbae49de7809781b160dfe923d11c762d5aec92162c8",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2407265
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c049",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c049.png",
+      "source_cut_ids": [
+        "ep06_c049"
+      ],
+      "earliest_reveal_anchor": "ep06_c049:lines[0]",
+      "anchor_ids": [
+        "ep06_c049:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c049-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c049-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c049.png",
+        "sha256": "41605fc47a35e5bc49161f6673d2ae00f5c414ed8259ee72d6effc497b7eb590",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 1034315
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c050",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c050.png",
+      "source_cut_ids": [
+        "ep06_c050"
+      ],
+      "earliest_reveal_anchor": "ep06_c050:lines[0]",
+      "anchor_ids": [
+        "ep06_c050:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c050-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c050-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c050.png",
+        "sha256": "0f7bc3ebfa01575d775dae0c42d3482dcb2e5d60c3c3711e29842905e963f89e",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 903556
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c051",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c051.png",
+      "source_cut_ids": [
+        "ep06_c051"
+      ],
+      "earliest_reveal_anchor": "ep06_c051:lines[0]",
+      "anchor_ids": [
+        "ep06_c051:lines[0]",
+        "ep06_c051:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c051-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c051-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c051.png",
+        "sha256": "eb8116e59c662e7f01186f50d0be77ef19a4f6c36ba013d87d2fd75edf719987",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2305111
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c052_hood",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c052_hood.png",
+      "source_cut_ids": [
+        "ep06_c052"
+      ],
+      "earliest_reveal_anchor": "ep06_c052:lines[0]",
+      "anchor_ids": [
+        "ep06_c052:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c052_hood-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c052_hood-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c052_hood.png",
+        "sha256": "fb907bd2a7dbb43e6bce7f7c05a5b4bf84e1cf3eeecf80b3d1e7a2e0aa41d7a8",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3046773
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c052_escape",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c052_escape.png",
+      "source_cut_ids": [
+        "ep06_c052"
+      ],
+      "earliest_reveal_anchor": "ep06_c052:lines[1]",
+      "anchor_ids": [
+        "ep06_c052:lines[1]",
+        "ep06_c052:lines[2]",
+        "ep06_c052:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c052_escape-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c052_escape-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c052_escape.png",
+        "sha256": "b755667cbbcb08828e82993dca8f6c09dbcedc36b7c884489b1af9e26f286fde",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3228649
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c053",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c053.png",
+      "source_cut_ids": [
+        "ep06_c053"
+      ],
+      "earliest_reveal_anchor": "ep06_c053:lines[0]",
+      "anchor_ids": [
+        "ep06_c053:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c053-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c053-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c053.png",
+        "sha256": "d8e1a09f54a1a74cdcd09b67d9b869d1401324993e4cbe11a64e3f665848ff39",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 1741191
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c054",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c054.png",
+      "source_cut_ids": [
+        "ep06_c054"
+      ],
+      "earliest_reveal_anchor": "ep06_c054:lines[0]",
+      "anchor_ids": [
+        "ep06_c054:lines[0]",
+        "ep06_c054:lines[1]",
+        "ep06_c054:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c054-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c054-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c054.png",
+        "sha256": "38cee399f9c905dbf4b2e15f99d45de330847bbb2e49270ba21bc8a6a1326ea7",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2566329
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c055",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c055.png",
+      "source_cut_ids": [
+        "ep06_c055"
+      ],
+      "earliest_reveal_anchor": "ep06_c055:lines[0]",
+      "anchor_ids": [
+        "ep06_c055:lines[0]",
+        "ep06_c055:lines[1]",
+        "ep06_c055:lines[2]",
+        "ep06_c055:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c055-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c055-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c055.png",
+        "sha256": "3350da83abce4592cfbaad3f8426355a7ee0df8e16bfbe8020555b8d357dc6c0",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3499184
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c056_nasir",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c056_nasir.png",
+      "source_cut_ids": [
+        "ep06_c056"
+      ],
+      "earliest_reveal_anchor": "ep06_c056:lines[0]",
+      "anchor_ids": [
+        "ep06_c056:lines[0]",
+        "ep06_c056:lines[1]",
+        "ep06_c056_interior:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c056_nasir-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c056_nasir-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c056_nasir.png",
+        "sha256": "052a23500ecf2eb2c1a61dd92ea7a63641948b80a5615e707499e4e478bc5fcf",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2079398
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c056_ashina",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c056_ashina.png",
+      "source_cut_ids": [
+        "ep06_c056"
+      ],
+      "earliest_reveal_anchor": "ep06_c056_interior:lines[1]",
+      "anchor_ids": [
+        "ep06_c056_interior:lines[1]",
+        "ep06_c056_response:lines[0]",
+        "ep06_travel_pause:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c056_ashina-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c056_ashina-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c056_ashina.png",
+        "sha256": "80fd0bfc0c2c122d135e4236bd1594694032808e82667e0d2af0efc857e94e76",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2198700
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c057",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c057.png",
+      "source_cut_ids": [
+        "ep06_c057"
+      ],
+      "earliest_reveal_anchor": "ep06_c057:lines[0]",
+      "anchor_ids": [
+        "ep06_c057:lines[0]",
+        "ep06_c057:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c057-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c057-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c057.png",
+        "sha256": "d2343d1e5e1a6f7d00b548d58508cf030cb7abc86b03bb7290b126f7683dc760",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2628870
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c058",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c058.png",
+      "source_cut_ids": [
+        "ep06_c058"
+      ],
+      "earliest_reveal_anchor": "ep06_c058:lines[0]",
+      "anchor_ids": [
+        "ep06_c058:lines[0]",
+        "ep06_c058:lines[1]",
+        "ep06_c058:lines[2]",
+        "ep06_c058:lines[3]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c058-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c058-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c058.png",
+        "sha256": "0f9189b904c1852325a1969b05dd3e617c8317025a2cb07f57345a12e723b2de",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 3073212
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c059",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c059.png",
+      "source_cut_ids": [
+        "ep06_c059"
+      ],
+      "earliest_reveal_anchor": "ep06_c059:lines[0]",
+      "anchor_ids": [
+        "ep06_c059:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c059-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c059-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c059.png",
+        "sha256": "364cf99e2332e560ec9c4f7516ac4aea511cf2593628ec31df7770e184a5ac5c",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2390369
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c060_ashina",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c060_ashina.png",
+      "source_cut_ids": [
+        "ep06_c060"
+      ],
+      "earliest_reveal_anchor": "ep06_c060:lines[0]",
+      "anchor_ids": [
+        "ep06_c060:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c060_ashina-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c060_ashina-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c060_ashina.png",
+        "sha256": "f1c90bad0f3d20621c3944cf4bdf828990c5cb9d5ef0154f376fe88f26b75585",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2099988
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c060_nasir",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c060_nasir.png",
+      "source_cut_ids": [
+        "ep06_c060",
+        "ep06_c061"
+      ],
+      "earliest_reveal_anchor": "ep06_c060:lines[1]",
+      "anchor_ids": [
+        "ep06_c060:lines[1]",
+        "ep06_c060_interior:lines[0]",
+        "ep06_c061:lines[0]",
+        "ep06_c061_question:lines[0]",
+        "ep06_c061_question:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c060_nasir-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c060_nasir-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c060_nasir.png",
+        "sha256": "ca35c948f3ff09ee16ecf81973a6a0c2b531710ed6d5ed3ce738f0c004ce36eb",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 1989240
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c062_present",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c062_present.png",
+      "source_cut_ids": [
+        "ep06_c062"
+      ],
+      "earliest_reveal_anchor": "ep06_c062:lines[0]",
+      "anchor_ids": [
+        "ep06_c062:lines[0]",
+        "ep06_c062:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c062_present-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c062_present-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c062_present.png",
+        "sha256": "ba4859ade84096325a3ee67313135c080fa338af68dcd40c458c4460cd444181",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2694816
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c062_desert",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c062_desert.png",
+      "source_cut_ids": [
+        "ep06_c062"
+      ],
+      "earliest_reveal_anchor": "ep06_c062:lines[2]",
+      "anchor_ids": [
+        "ep06_c062:lines[2]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c062_desert-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c062_desert-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c062_desert.png",
+        "sha256": "bb1a116495652af0846b31985a395c1b06f704ed4761f2463eef222c26d74c11",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2103572
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c063",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c063.png",
+      "source_cut_ids": [
+        "ep06_c063"
+      ],
+      "earliest_reveal_anchor": "ep06_c063:lines[0]",
+      "anchor_ids": [
+        "ep06_c063:lines[0]",
+        "ep06_c063:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c063-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c063-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c063.png",
+        "sha256": "40ce4b5d6e28974b6d6a17dd50c90a9cdea4c482f44e68f453e66c119b36d5e2",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 1991786
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c064",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c064.png",
+      "source_cut_ids": [
+        "ep06_c064"
+      ],
+      "earliest_reveal_anchor": "ep06_c064:lines[0]",
+      "anchor_ids": [
+        "ep06_c064:lines[0]",
+        "ep06_c064_reply:lines[0]",
+        "ep06_c064_reply:lines[1]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c064-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c064-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c064.png",
+        "sha256": "5c6a41b298e912baf018a277d1725a19795cc2bb647933e05d291702b0737de5",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2503005
+      },
+      "independentApproved": false,
+      "installed": false
+    },
+    {
+      "candidate_id": "ep06_c065",
+      "target_output": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c065.png",
+      "source_cut_ids": [
+        "ep06_c065"
+      ],
+      "earliest_reveal_anchor": "ep06_c065:lines[0]",
+      "anchor_ids": [
+        "ep06_c065:lines[0]"
+      ],
+      "state": "actualPNG",
+      "start_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c065-start.json",
+      "result_receipt": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c065-result.json",
+      "output": {
+        "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c065.png",
+        "sha256": "76427d28c39de44c1a79ef4779a177a8e4bbe72a61537f681e5ad81bdafbd24f",
+        "width": 1672,
+        "height": 941,
+        "format": "PNG",
+        "bytes": 2127958
+      },
+      "independentApproved": false,
+      "installed": false
+    }
+  ],
+  "blocker": null,
+  "independent_qa": "독립 Claude 원작 대조 미실시. GPT 독립 PASS 없음.",
+  "updated_at": "2026-11-09T08:10:35.776595+00:00"
+}

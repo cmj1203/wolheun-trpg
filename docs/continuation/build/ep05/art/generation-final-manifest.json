@@ -1,0 +1,5773 @@
+{
+  "episode": 5,
+  "stage": "외부 거절로 중단·부분 결과와 잔여 목록 반환",
+  "finished_at": "2026-11-09T05:20:53.822Z",
+  "summary": {
+    "planned_positions": 74,
+    "actual_unique_generation_targets_after_text_policy": 72,
+    "actualPNG": 1,
+    "terminalBlocked": 1,
+    "uncalled": 70,
+    "textReuse": 2,
+    "independentApproved": 0,
+    "installed": 0,
+    "native_calls": 2,
+    "unresolved_actual_inventory_including_terminal": 71,
+    "unresolved_positions_including_text_reuse": 73,
+    "reference_inputs_present": 74,
+    "generation_queue_count": 0,
+    "inventory_note": "이전 종료 시점의 재고다. 71은 terminalBlocked 1개와 미호출 70개를 합친 미해결 생성 위치이며 실행 대기열이 아니다. 안전 재개 재고는 별도 매니페스트에 기록한다."
+  },
+  "blocker": {
+    "candidate_id": "ep05_c002_p01",
+    "terminal": true,
+    "retry_eligible": false,
+    "replacement_assigned": false,
+    "kind": "native image_gen output moderation",
+    "http_status": 400,
+    "code": "moderation_blocked",
+    "safety_violations": [
+      "sexual"
+    ],
+    "request_id": "d60b2b5d-e841-43cc-9513-cb8b3adf1473",
+    "cli_exit_code": 0,
+    "png_exists": false,
+    "log": "docs/continuation/build/ep05/art/native/ep05_c002_p01-attempt01.log",
+    "action": "거절된 호출 재시도·다른 도구·API·입력 변경·우회 없음. 사용자가 정한 외부 차단 종료 조건에 따라 반환한다."
+  },
+  "native_process_state": {
+    "own_pids": [
+      15765,
+      25599
+    ],
+    "live_or_zombie_rows": "",
+    "monitors": "첫 호출과 순차 배치 감시 모두 종료 이벤트 수신"
+  },
+  "first_candidate_preservation": {
+    "path": "assets/ep05/gen/ep05_c001_p01.png",
+    "sha256": "86c82a32344b1db170288c253d6c6938bcf1d26c1c5ed1931fe2a4497a1ade2c",
+    "bytes": 2421940,
+    "width": 1672,
+    "height": 941,
+    "qa": "독립 Claude 문자 오버레이 검사 대기",
+    "changed_or_regenerated": false
+  },
+  "inventory": [
+    "assets/ep05/gen/inputs/ep05_c043_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c009_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c032_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c027_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c042_p04_source.png",
+    "assets/ep05/gen/inputs/ep05_c044_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c051_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c020_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c035_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c013_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c028_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c029_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c050_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c045_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c034_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c021_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c042_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c026_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c033_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c048_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c042_p06_source.png",
+    "assets/ep05/gen/inputs/ep05_c024_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c040_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c055_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c028_p03_source.png",
+    "assets/ep05/gen/inputs/ep05_c005_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c010_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c036_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c023_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c052_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c047_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c022_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c037_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c046_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c053_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c042_p03_source.png",
+    "assets/ep05/gen/inputs/ep05_c030_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c025_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c041_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c049_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c038_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c004_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c011_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c053_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c019_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c016_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c003_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c038_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c049_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c055_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c042_p05_source.png",
+    "assets/ep05/gen/inputs/ep05_c002_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c017_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c047_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c052_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c018_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c010_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c005_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c012_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c007_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c008_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c042_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c015_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c042_p07_source.png",
+    "assets/ep05/gen/inputs/ep05_c014_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c001_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c009_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c032_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c043_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c005_p03_source.png",
+    "assets/ep05/gen/inputs/ep05_c006_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c013_p01_source.png",
+    "assets/ep05/gen/inputs/ep05_c028_p02_source.png",
+    "assets/ep05/gen/inputs/ep05_c044_p02_source.png",
+    "assets/ep05/gen/ep05_c001_p01.png"
+  ],
+  "completed_positions": [
+    "ep05_c001_p01"
+  ],
+  "unresolved_positions_not_a_queue": [
+    "ep05_c002_p01",
+    "ep05_c003_p01",
+    "ep05_c004_p01",
+    "ep05_c005_p01",
+    "ep05_c005_p02",
+    "ep05_c005_p03",
+    "ep05_c006_p01",
+    "ep05_c007_p01",
+    "ep05_c008_p01",
+    "ep05_c009_p01",
+    "ep05_c009_p02",
+    "ep05_c010_p01",
+    "ep05_c010_p02",
+    "ep05_c011_p01",
+    "ep05_c012_p01",
+    "ep05_c013_p01",
+    "ep05_c013_p02",
+    "ep05_c014_p01",
+    "ep05_c015_p01",
+    "ep05_c016_p01",
+    "ep05_c017_p01",
+    "ep05_c018_p01",
+    "ep05_c019_p01",
+    "ep05_c020_p01",
+    "ep05_c021_p01",
+    "ep05_c022_p01",
+    "ep05_c023_p01",
+    "ep05_c024_p01",
+    "ep05_c025_p01",
+    "ep05_c026_p01",
+    "ep05_c027_p01",
+    "ep05_c028_p01",
+    "ep05_c028_p02",
+    "ep05_c028_p03",
+    "ep05_c029_p01",
+    "ep05_c030_p01",
+    "ep05_c032_p01",
+    "ep05_c032_p02",
+    "ep05_c033_p01",
+    "ep05_c034_p01",
+    "ep05_c035_p01",
+    "ep05_c036_p01",
+    "ep05_c037_p01",
+    "ep05_c038_p01",
+    "ep05_c038_p02",
+    "ep05_c040_p01",
+    "ep05_c041_p01",
+    "ep05_c042_p01",
+    "ep05_c042_p02",
+    "ep05_c042_p03",
+    "ep05_c042_p04",
+    "ep05_c042_p05",
+    "ep05_c042_p06",
+    "ep05_c042_p07",
+    "ep05_c043_p01",
+    "ep05_c043_p02",
+    "ep05_c044_p01",
+    "ep05_c044_p02",
+    "ep05_c045_p01",
+    "ep05_c046_p01",
+    "ep05_c047_p01",
+    "ep05_c047_p02",
+    "ep05_c048_p01",
+    "ep05_c049_p01",
+    "ep05_c049_p02",
+    "ep05_c050_p01",
+    "ep05_c051_p01",
+    "ep05_c052_p01",
+    "ep05_c052_p02",
+    "ep05_c053_p01",
+    "ep05_c053_p02",
+    "ep05_c055_p01",
+    "ep05_c055_p02"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "ep05_c001_p01",
+      "expected_output": "assets/ep05/gen/ep05_c001_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c001_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_001.png",
+        "source_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "rect_xyxy": [
+          0,
+          290,
+          2000,
+          6300
+        ],
+        "sha256": "028f769fd8adb42462a7f64a298d6ddbd895ece9588007f6f37dbf2d524b9ca8",
+        "bytes": 10384387,
+        "width": 2000,
+        "height": 6010,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 6010
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_001.png",
+        "original_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "original_size": [
+          2000,
+          22882
+        ],
+        "psd": "5화__001.psd",
+        "index_y_range": [
+          290,
+          6300
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          290,
+          2000,
+          6300
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c001.png",
+        "clean_sha256": "05e3f9c1d5242d5a34adf2d8ac147f6665d43c5d6d3cec906c3388e170baf0a8",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c001",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c001:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c001:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c001",
+        "line": 1,
+        "file_line": 498,
+        "json_pointer": "/beats/ep05_c001/lines/0",
+        "speaker": "ep05_서술",
+        "text": "꽃과 푸른 휘장이 드리운 침대 위, 은발 남성이 아시나에게 몸을 숙여 입을 맞추고 있다.",
+        "current_cg": "ep05_cg_001",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "existing-candidate",
+      "generation_state": "PNG 실재·독립 QA 대기",
+      "actual_output": "assets/ep05/gen/ep05_c001_p01.png",
+      "reuse_target": null,
+      "receipt": {
+        "candidate_id": "ep05_c001_p01",
+        "pid": 15765,
+        "pgid": 15765,
+        "supervisor_pid": 15763,
+        "supervisor_pgid": 15763,
+        "native_groups_before": 0,
+        "processes_before": [],
+        "input": "/Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c001_p01_source.png",
+        "input_sha256": "028f769fd8adb42462a7f64a298d6ddbd895ece9588007f6f37dbf2d524b9ca8",
+        "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep05/art/native/ep05_c001_p01-attempt01.log",
+        "output": "/Users/choeminju/월흔_trpg/assets/ep05/gen/ep05_c001_p01.png",
+        "started_at": "2026-11-09T05:13:07.166066+00:00",
+        "argv": [
+          "/opt/homebrew/bin/codex",
+          "exec",
+          "--skip-git-repo-check",
+          "-s",
+          "workspace-write",
+          "-C",
+          "/Users/choeminju/월흔_trpg/assets/ep05/gen",
+          "-i",
+          "/Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c001_p01_source.png",
+          "--",
+          "첨부한 원작 참조 창만 편집하세요. 대상은 먼 침대와 꽃·휘장입니다. 원작 얼굴·표정·시선·자세·몸 비율·머리·복장·가림·장신구·소품·구도를 유지하세요. 말풍선·대사·독백·효과 글자만 제거하고 해당 자리를 주변 원작 그림으로 복원하세요. 제목·원래 크레디트가 대상인 경우 원문 그대로 보존하세요. 16:9 가로 화면은 옆 배경만 확장하고, 원작에서 잘린 인체와 가려진 몸은 잘리고 가려진 상태로 유지하세요. 전신·새 몸·노출·인물·물건·사건·다른 패널 콜라주를 추가하지 마세요. 그림 공개 순서는 매핑의 ep05_c001_p01 자리를 따르며 다른 시점이나 미래 반응을 넣지 마세요. 로컬 SD, 흐림 처리, 원작 세로띠를 완성품처럼 사용하지 마세요. 실제 native 그림 편집으로 결과 한 장을 /Users/choeminju/월흔_trpg/assets/ep05/gen/ep05_c001_p01.png 경로에 저장하고 저장 경로만 답하세요. 반드시 Codex 내장 image_gen 도구를 직접 호출하세요. 이미지 API, 외부 API, imagegen 스크립트, 로컬 SD, 코드 렌더링으로 대체하지 마세요. 내장 도구를 사용할 수 없으면 실제 오류를 남기고 종료하세요. 결과는 후보이며 독립 검수 PASS를 주장하지 마세요."
+        ],
+        "independent_qa": "미요청·미실시",
+        "exit_code": 0,
+        "finished_at": "2026-11-09T05:14:24.913976+00:00",
+        "output_exists": true,
+        "native_calls": 1,
+        "sha256": "86c82a32344b1db170288c253d6c6938bcf1d26c1c5ed1931fe2a4497a1ade2c",
+        "bytes": 2421940,
+        "width": 1672,
+        "height": 941,
+        "png_signature_ok": true,
+        "status": "existing-candidate",
+        "art_PASS": false,
+        "source_provenance": {
+          "original_path": "work/ep05/merged/ep05_001.png",
+          "original_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+          "original_size": [
+            2000,
+            22882
+          ],
+          "psd": "5화__001.psd",
+          "index_y_range": [
+            290,
+            6300
+          ],
+          "edit_input_rect_xyxy": [
+            0,
+            290,
+            2000,
+            6300
+          ],
+          "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c001.png",
+          "clean_sha256": "05e3f9c1d5242d5a34adf2d8ac147f6665d43c5d6d3cec906c3388e170baf0a8",
+          "panel_order": 1,
+          "panel_count": 1,
+          "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+          "cut_id": "ep05_c001",
+          "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+        },
+        "anchors": [
+          "ep05_c001:L1"
+        ],
+        "earliest_reveal_anchor": {
+          "anchor_id": "ep05_c001:L1",
+          "path": "app/content/ep05_audience.yaml",
+          "beat": "ep05_c001",
+          "line": 1,
+          "file_line": 498,
+          "json_pointer": "/beats/ep05_c001/lines/0",
+          "speaker": "ep05_서술",
+          "text": "꽃과 푸른 휘장이 드리운 침대 위, 은발 남성이 아시나에게 몸을 숙여 입을 맞추고 있다.",
+          "current_cg": "ep05_cg_001",
+          "sets": null,
+          "timing": "현재 줄 시작",
+          "branch": "!flag:ep04_distance_kept"
+        },
+        "source_side_by_side": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep05/art/source-side-by-side/ep05_c001_p01.png",
+        "text_overlay_inspection": "독립 Claude 검사 대기·기존 파일 보존"
+      },
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c002_p01",
+      "expected_output": "assets/ep05/gen/ep05_c002_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c002_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_001.png",
+        "source_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "rect_xyxy": [
+          0,
+          6934,
+          2000,
+          12630
+        ],
+        "sha256": "04c774b795a23be1105bfd55599b21028ea54f20c5fd016c38dea9436058ed92",
+        "bytes": 7339725,
+        "width": 2000,
+        "height": 5696,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5696
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_001.png",
+        "original_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "original_size": [
+          2000,
+          22882
+        ],
+        "psd": "5화__001.psd",
+        "index_y_range": [
+          6934,
+          12630
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          6934,
+          2000,
+          12630
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c002.png",
+        "clean_sha256": "15ef5e9e0ada93326f62669c42b09cd4bcf5d183e2a3a56f177280ccb8dd0283",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c002",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c002:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c002:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c002",
+        "line": 1,
+        "file_line": 515,
+        "json_pointer": "/beats/ep05_c002/lines/0",
+        "speaker": "ep05_남성",
+        "text": "…읏.",
+        "current_cg": "ep05_cg_002",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "terminal-blocked",
+      "retry_eligible": false,
+      "generation_state": "TERMINAL 도구 거절·PNG 없음·재시도 및 대체 장면 배정 없음",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": {
+        "candidate_id": "ep05_c002_p01",
+        "pid": 25599,
+        "pgid": 25599,
+        "supervisor_pid": 25554,
+        "supervisor_pgid": 25554,
+        "native_groups_before": 0,
+        "processes_before": [],
+        "input": "/Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c002_p01_source.png",
+        "input_sha256": "04c774b795a23be1105bfd55599b21028ea54f20c5fd016c38dea9436058ed92",
+        "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep05/art/native/ep05_c002_p01-attempt01.log",
+        "output": "/Users/choeminju/월흔_trpg/assets/ep05/gen/ep05_c002_p01.png",
+        "started_at": "2026-11-09T05:18:26.002094+00:00",
+        "argv": [
+          "/opt/homebrew/bin/codex",
+          "exec",
+          "--skip-git-repo-check",
+          "-s",
+          "workspace-write",
+          "-C",
+          "/Users/choeminju/월흔_trpg/assets/ep05/gen",
+          "-i",
+          "/Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c002_p01_source.png",
+          "--",
+          "첨부한 원작 참조 창만 편집하세요. 대상은 두 얼굴의 접촉입니다. 원작 얼굴·표정·시선·자세·몸 비율·머리·복장·가림·장신구·소품·구도를 유지하세요. 말풍선·대사·독백·효과 글자만 제거하고 해당 자리를 주변 원작 그림으로 복원하세요. 16:9 가로 화면은 옆 배경만 확장하고, 원작에서 잘린 인체와 가려진 몸은 잘리고 가려진 상태로 유지하세요. 전신·새 몸·노출·인물·물건·사건·다른 패널 콜라주를 추가하지 마세요. 그림 공개 순서는 매핑의 ep05_c002_p01 자리를 따르며 다른 시점이나 미래 반응을 넣지 마세요. 로컬 SD, 흐림 처리, 원작 세로띠를 완성품처럼 사용하지 마세요. 실제 native 그림 편집으로 결과 한 장을 /Users/choeminju/월흔_trpg/assets/ep05/gen/ep05_c002_p01.png 경로에 저장하고 저장 경로만 답하세요. 원작 로고·화수 표제·제목·출판 크레디트·워터마크는 문자 오버레이로 제거하고 다시 그리지 마세요. 그림·의복·소품은 원작대로 유지하세요. 반드시 Codex 내장 image_gen 도구를 직접 호출하세요. 이미지 API, 외부 API, imagegen 스크립트, 로컬 SD, 코드 렌더링으로 대체하지 마세요. 내장 도구를 사용할 수 없으면 실제 오류를 남기고 종료하세요. 허용된 후보 출력 외 저장소 파일은 수정하지 마세요. 독립 검수 PASS를 주장하지 마세요."
+        ],
+        "exit_code": 0,
+        "finished_at": "2026-11-09T05:19:22.588275+00:00",
+        "output_exists": false,
+        "native_calls": 1,
+        "failure_log_tail": "- `references/image-api.md`: fallback-only API/CLI parameter reference.\n- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.\n- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.\n\n2026-11-09T05:19:16.482693Z ERROR codex_core::tools::router: error=image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID d60b2b5d-e841-43cc-9513-cb8b3adf1473. safety_violations=[sexual].\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"sexual\\\"\\n      ]\\n    }\\n  }\\n}\")\ncodex\n내장 image_gen 호출이 실패해 파일을 저장하지 못했습니다.\n\n오류: `400 Bad Request — moderation_blocked`, `safety_violations=[sexual]`\n요청 ID: `d60b2b5d-e841-43cc-9513-cb8b3adf1473`\ntokens used\n11,866\n내장 image_gen 호출이 실패해 파일을 저장하지 못했습니다.\n\n오류: `400 Bad Request — moderation_blocked`, `safety_violations=[sexual]`\n요청 ID: `d60b2b5d-e841-43cc-9513-cb8b3adf1473`"
+      },
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c003_p01",
+      "expected_output": "assets/ep05/gen/ep05_c003_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c003_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_001.png",
+        "source_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "rect_xyxy": [
+          0,
+          12884,
+          2000,
+          15914
+        ],
+        "sha256": "09be61823c69ab700480fa3dec64d3bb11576d07e1cfdef596545ed9be380268",
+        "bytes": 2560050,
+        "width": 2000,
+        "height": 3030,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3030
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_001.png",
+        "original_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "original_size": [
+          2000,
+          22882
+        ],
+        "psd": "5화__001.psd",
+        "index_y_range": [
+          12884,
+          15914
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          12884,
+          2000,
+          15914
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c003.png",
+        "clean_sha256": "a8514f8090b8a7222458c2c0253167793790f52aa79b71b1fb20e4f01b08ccaf",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c003",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c003:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c003:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c003",
+        "line": 1,
+        "file_line": 532,
+        "json_pointer": "/beats/ep05_c003/lines/0",
+        "speaker": "ep05_서술",
+        "text": "두 사람의 입술이 맞닿아 있다.",
+        "current_cg": "ep05_cg_003",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c004_p01",
+      "expected_output": "assets/ep05/gen/ep05_c004_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c004_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_001.png",
+        "source_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "rect_xyxy": [
+          0,
+          16780,
+          2000,
+          22882
+        ],
+        "sha256": "ee0eed540434634e4b9869733ff7c6fbaa33e987a9c586dc99212a83c8ae777d",
+        "bytes": 9355177,
+        "width": 2000,
+        "height": 6102,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 6102
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_001.png",
+        "original_sha256": "8364498c0548f5437a04bbc8a31adb6f5ba0b7c73985cd6adbb1a8e38f61cc11",
+        "original_size": [
+          2000,
+          22882
+        ],
+        "psd": "5화__001.psd",
+        "index_y_range": [
+          16780,
+          22882
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          16780,
+          2000,
+          22882
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c004.png",
+        "clean_sha256": "a9873d76f1cc89b5c9f2a8fbd05786d42741c7b62900b6a98c313d122e178c74",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c004",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c004:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c004:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c004",
+        "line": 1,
+        "file_line": 549,
+        "json_pointer": "/beats/ep05_c004/lines/0",
+        "speaker": "ep05_목소리",
+        "text": "으읏…!",
+        "current_cg": "ep05_cg_004",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c005_p01",
+      "expected_output": "assets/ep05/gen/ep05_c005_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c005_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_002.png",
+        "source_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "rect_xyxy": [
+          0,
+          55,
+          2000,
+          3555
+        ],
+        "sha256": "1fd6a94efe6317cf652a900c3c8e63faf0eb774d0871d9962451d71e51a8cb1d",
+        "bytes": 3437418,
+        "width": 2000,
+        "height": 3500,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3500
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_002.png",
+        "original_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "original_size": [
+          2000,
+          21924
+        ],
+        "psd": "5화__002.psd",
+        "index_y_range": [
+          55,
+          13852
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          55,
+          2000,
+          3555
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c005.png",
+        "clean_sha256": "7bf1b0f5d1ea8a0d876c6530a0b9dc84fbd4a345b35e1afdb8d1171ffe3abe0e",
+        "panel_order": 1,
+        "panel_count": 3,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c005",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c005:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c005:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c005",
+        "line": 1,
+        "file_line": 566,
+        "json_pointer": "/beats/ep05_c005/lines/0",
+        "speaker": "ep05_독백",
+        "text": "무슨 힘이…! 이대론 위험해…!",
+        "current_cg": "ep05_cg_005",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c005_p02",
+      "expected_output": "assets/ep05/gen/ep05_c005_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c005_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_002.png",
+        "source_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "rect_xyxy": [
+          0,
+          3555,
+          2000,
+          10955
+        ],
+        "sha256": "55ab814ace70fc7bb49ca8d73e86c36eb2961ed86911c29e25e302b8ed07e248",
+        "bytes": 5043429,
+        "width": 2000,
+        "height": 7400,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 7400
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_002.png",
+        "original_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "original_size": [
+          2000,
+          21924
+        ],
+        "psd": "5화__002.psd",
+        "index_y_range": [
+          55,
+          13852
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          3555,
+          2000,
+          10955
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c005.png",
+        "clean_sha256": "7bf1b0f5d1ea8a0d876c6530a0b9dc84fbd4a345b35e1afdb8d1171ffe3abe0e",
+        "panel_order": 2,
+        "panel_count": 3,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c005",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c005:L2",
+        "ep05_c005:L3",
+        "ep05_c005:L4"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c005:L2",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c005",
+        "line": 2,
+        "file_line": 570,
+        "json_pointer": "/beats/ep05_c005/lines/1",
+        "speaker": "ep05_아시나",
+        "text": "읏…",
+        "current_cg": "ep05_cg_005",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c005_p03",
+      "expected_output": "assets/ep05/gen/ep05_c005_p03.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c005_p03_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_002.png",
+        "source_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "rect_xyxy": [
+          0,
+          10955,
+          2000,
+          13852
+        ],
+        "sha256": "0fcbcd7979ac60194558b68c94bf6441fe4394dab4c9e3aa8d81f39235d00e18",
+        "bytes": 2396290,
+        "width": 2000,
+        "height": 2897,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2897
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_002.png",
+        "original_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "original_size": [
+          2000,
+          21924
+        ],
+        "psd": "5화__002.psd",
+        "index_y_range": [
+          55,
+          13852
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          10955,
+          2000,
+          13852
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c005.png",
+        "clean_sha256": "7bf1b0f5d1ea8a0d876c6530a0b9dc84fbd4a345b35e1afdb8d1171ffe3abe0e",
+        "panel_order": 3,
+        "panel_count": 3,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c005",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c005:무언-접촉직후"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c005:무언-접촉직후",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c005",
+        "line": 4,
+        "file_line": 578,
+        "json_pointer": "/beats/ep05_c005/lines/3",
+        "speaker": null,
+        "text": null,
+        "silent_anchor": "놔앗 뒤 아래 입가 그림과 숨을 순서대로 공개",
+        "current_cg": "ep05_cg_005",
+        "timing": "줄 뒤, c006 전",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c006_p01",
+      "expected_output": "assets/ep05/gen/ep05_c006_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c006_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_002.png",
+        "source_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "rect_xyxy": [
+          0,
+          14442,
+          2000,
+          14773
+        ],
+        "sha256": "0e424c7fc7dfa1ac06a3f3f0ec3d047511340359a5ec7779e95bddc7a8f1bb07",
+        "bytes": 61280,
+        "width": 2000,
+        "height": 331,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 331
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_002.png",
+        "original_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "original_size": [
+          2000,
+          21924
+        ],
+        "psd": "5화__002.psd",
+        "index_y_range": [
+          14442,
+          14773
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14442,
+          2000,
+          14773
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c006.png",
+        "clean_sha256": "0aa683c8db2de5c5ed1ac159bc01bec91cc37db22147f82286e15a26f3fd6532",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c006",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c006:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c006:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c006",
+        "line": 1,
+        "file_line": 595,
+        "json_pointer": "/beats/ep05_c006/lines/0",
+        "speaker": "ep05_서술",
+        "text": "밝은 장식 무늬가 잠시 이어진다.",
+        "current_cg": "ep05_cg_006",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c007_p01",
+      "expected_output": "assets/ep05/gen/ep05_c007_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c007_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_002.png",
+        "source_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "rect_xyxy": [
+          0,
+          14865,
+          2000,
+          21640
+        ],
+        "sha256": "78a820d8e515c831a5ac8a32d7f0f1a50acef06ece17e67bd33e780f06ea6f3b",
+        "bytes": 9332758,
+        "width": 2000,
+        "height": 6775,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 6775
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_002.png",
+        "original_sha256": "c48b84775b063a85ff1fb6d88b361b6d6d20bc90ebe637a8dac842196416f443",
+        "original_size": [
+          2000,
+          21924
+        ],
+        "psd": "5화__002.psd",
+        "index_y_range": [
+          14865,
+          21640
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14865,
+          2000,
+          21640
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c007.png",
+        "clean_sha256": "1d08f4781239d3eb3c9e72475fb99b7abcd5d8da0c3ea5cfe737b5643c857565",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c007",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c007:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c007:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c007",
+        "line": 1,
+        "file_line": 612,
+        "json_pointer": "/beats/ep05_c007/lines/0",
+        "speaker": "ep05_서술",
+        "text": "남성이 내려다보는 가운데 아시나가 침대에 누워 그를 올려다본다.",
+        "current_cg": "ep05_cg_007",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c008_p01",
+      "expected_output": "assets/ep05/gen/ep05_c008_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c008_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_003.png",
+        "source_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "rect_xyxy": [
+          0,
+          474,
+          2000,
+          1615
+        ],
+        "sha256": "48a2b28f9a82e5ec9df5a580763b7643de678e0af7cb59c1e5f1428bce135e80",
+        "bytes": 1058482,
+        "width": 2000,
+        "height": 1141,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 1141
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_003.png",
+        "original_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "original_size": [
+          2000,
+          21585
+        ],
+        "psd": "5화__003.psd",
+        "index_y_range": [
+          474,
+          1615
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          474,
+          2000,
+          1615
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c008.png",
+        "clean_sha256": "41bc18fe05e1af945faafb039b01d5a9429def3e6300f4c53e6fb72c58b4cdca",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c008",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c008:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c008:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c008",
+        "line": 1,
+        "file_line": 629,
+        "json_pointer": "/beats/ep05_c008/lines/0",
+        "speaker": "ep05_서술",
+        "text": "은발 남성의 입가에 미소가 걸린다.",
+        "current_cg": "ep05_cg_008",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c009_p01",
+      "expected_output": "assets/ep05/gen/ep05_c009_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c009_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_003.png",
+        "source_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "rect_xyxy": [
+          0,
+          2063,
+          2000,
+          4563
+        ],
+        "sha256": "092942462c18469b82fdb98d86c1210ea5a5b9c6908a10c32f2bc9a31e9ae348",
+        "bytes": 2778807,
+        "width": 2000,
+        "height": 2500,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2500
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_003.png",
+        "original_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "original_size": [
+          2000,
+          21585
+        ],
+        "psd": "5화__003.psd",
+        "index_y_range": [
+          2063,
+          12007
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          2063,
+          2000,
+          4563
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c009.png",
+        "clean_sha256": "fd8a780d81290715f4b0b0300cd120e327f3ff848adf007d7ef32bf8dde295e2",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c009",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c009:무언-아시나얼굴"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c009:무언-아시나얼굴",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c009",
+        "line": 1,
+        "file_line": 646,
+        "json_pointer": "/beats/ep05_c009/lines/0",
+        "speaker": null,
+        "text": null,
+        "silent_anchor": "하렘 선언 전에 아시나 얼굴",
+        "current_cg": "ep05_cg_009",
+        "timing": "줄 전",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c009_p02",
+      "expected_output": "assets/ep05/gen/ep05_c009_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c009_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_003.png",
+        "source_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "rect_xyxy": [
+          0,
+          4563,
+          2000,
+          12007
+        ],
+        "sha256": "82c8e4453fbc16da4ecce4c7f40c531a6f8575b1f67fb461444fa6323eb11439",
+        "bytes": 7638366,
+        "width": 2000,
+        "height": 7444,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 7444
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_003.png",
+        "original_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "original_size": [
+          2000,
+          21585
+        ],
+        "psd": "5화__003.psd",
+        "index_y_range": [
+          2063,
+          12007
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          4563,
+          2000,
+          12007
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c009.png",
+        "clean_sha256": "fd8a780d81290715f4b0b0300cd120e327f3ff848adf007d7ef32bf8dde295e2",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c009",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c009:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c009:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c009",
+        "line": 1,
+        "file_line": 646,
+        "json_pointer": "/beats/ep05_c009/lines/0",
+        "speaker": "ep05_남성",
+        "text": "내 하렘에 온 걸 환영한다. 이방인이여.",
+        "current_cg": "ep05_cg_009",
+        "sets": "ep05_아시나_하렘선언",
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c010_p01",
+      "expected_output": "assets/ep05/gen/ep05_c010_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c010_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_003.png",
+        "source_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "rect_xyxy": [
+          0,
+          12693,
+          2000,
+          16793
+        ],
+        "sha256": "6bf785b76a122f1837774c0d2e855bdfc634c6e39ca0970712cccb0c3b1e08d0",
+        "bytes": 1810716,
+        "width": 2000,
+        "height": 4100,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4100
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_003.png",
+        "original_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "original_size": [
+          2000,
+          21585
+        ],
+        "psd": "5화__003.psd",
+        "index_y_range": [
+          12693,
+          20239
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          12693,
+          2000,
+          16793
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c010.png",
+        "clean_sha256": "c7fad3a82b03b3aa47758fa93e27dff1ef979f5249d62cc8e8c34034b719ada7",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c010",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c010:무언-제목"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c010:무언-제목",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c010",
+        "line": 1,
+        "file_line": 664,
+        "json_pointer": "/beats/ep05_c010/lines/0",
+        "speaker": null,
+        "text": null,
+        "silent_anchor": "월흔 제목과 원래 크레디트 뒤 아침 궁으로 전환",
+        "current_cg": "ep05_cg_010",
+        "timing": "줄 전",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "문자 위치 유지 계약·대상 후보 아직 미생성",
+      "actual_output": null,
+      "reuse_target": "ep05_c009_p02",
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c010_p02",
+      "expected_output": "assets/ep05/gen/ep05_c010_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c010_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_003.png",
+        "source_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "rect_xyxy": [
+          0,
+          16793,
+          2000,
+          20239
+        ],
+        "sha256": "9f1c53ec45c7964459d7e476fd9bc40b59a3d9973c370ff8c4d75ab9652cd334",
+        "bytes": 5572541,
+        "width": 2000,
+        "height": 3446,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3446
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_003.png",
+        "original_sha256": "50417345c43a937261332374c771a4aa935f9c52c4f7251748dd25aa23afb904",
+        "original_size": [
+          2000,
+          21585
+        ],
+        "psd": "5화__003.psd",
+        "index_y_range": [
+          12693,
+          20239
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          16793,
+          2000,
+          20239
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c010.png",
+        "clean_sha256": "c7fad3a82b03b3aa47758fa93e27dff1ef979f5249d62cc8e8c34034b719ada7",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c010",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c010:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c010:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c010",
+        "line": 1,
+        "file_line": 664,
+        "json_pointer": "/beats/ep05_c010/lines/0",
+        "speaker": "ep05_서술",
+        "text": "햇빛이 궁과 잎을 비춘다. 새가 지저귄다.",
+        "current_cg": "ep05_cg_010",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c011_p01",
+      "expected_output": "assets/ep05/gen/ep05_c011_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c011_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_004.png",
+        "source_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "rect_xyxy": [
+          0,
+          596,
+          2000,
+          2673
+        ],
+        "sha256": "2c298c93e5bb8d4d37c7d322d02caae50cf61873be3f54e6b567b2039f5fd34f",
+        "bytes": 2299967,
+        "width": 2000,
+        "height": 2077,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2077
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_004.png",
+        "original_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "original_size": [
+          2000,
+          25166
+        ],
+        "psd": "5화__004.psd",
+        "index_y_range": [
+          596,
+          2673
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          596,
+          2000,
+          2673
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c011.png",
+        "clean_sha256": "7e6e7a024d3f6ea534771f53977f0c772fbc1acbb2716203fdcf89f093ffdbfe",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c011",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c011:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c011:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c011",
+        "line": 1,
+        "file_line": 681,
+        "json_pointer": "/beats/ep05_c011/lines/0",
+        "speaker": "ep05_서술",
+        "text": "차 도구 곁에서 손이 움직인다.",
+        "current_cg": "ep05_cg_011",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c012_p01",
+      "expected_output": "assets/ep05/gen/ep05_c012_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c012_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_004.png",
+        "source_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "rect_xyxy": [
+          0,
+          3572,
+          2000,
+          6434
+        ],
+        "sha256": "fa8341b0404271ab0c3cd4486365f8d8148d6837a47ee6923f7360b32e71c27d",
+        "bytes": 2604324,
+        "width": 2000,
+        "height": 2862,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2862
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_004.png",
+        "original_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "original_size": [
+          2000,
+          25166
+        ],
+        "psd": "5화__004.psd",
+        "index_y_range": [
+          3572,
+          6434
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          3572,
+          2000,
+          6434
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c012.png",
+        "clean_sha256": "20e68d4db1ce18a59f202ab6f94b5ceddd7447be440580b1a6aca17180e20d30",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c012",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c012:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c012:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c012",
+        "line": 1,
+        "file_line": 698,
+        "json_pointer": "/beats/ep05_c012/lines/0",
+        "speaker": "ep05_서술",
+        "text": "잠든 아시나가 기척에 움찔한다.",
+        "current_cg": "ep05_cg_012",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c013_p01",
+      "expected_output": "assets/ep05/gen/ep05_c013_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c013_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_004.png",
+        "source_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "rect_xyxy": [
+          0,
+          7095,
+          2000,
+          10295
+        ],
+        "sha256": "3dc94f2f1a76aec965da0fea62ea3c5c18586e28684516c17addb8e176a79ee7",
+        "bytes": 2305994,
+        "width": 2000,
+        "height": 3200,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3200
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_004.png",
+        "original_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "original_size": [
+          2000,
+          25166
+        ],
+        "psd": "5화__004.psd",
+        "index_y_range": [
+          7095,
+          15723
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          7095,
+          2000,
+          10295
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c013.png",
+        "clean_sha256": "d4dbd387ab7f6aefc2b05f7f5f3c227907492108741699d61c589dbb15411681",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c013",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c013:L1",
+        "ep05_c013:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c013:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c013",
+        "line": 1,
+        "file_line": 715,
+        "json_pointer": "/beats/ep05_c013/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "…!",
+        "current_cg": "ep05_cg_013",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c013_p02",
+      "expected_output": "assets/ep05/gen/ep05_c013_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c013_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_004.png",
+        "source_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "rect_xyxy": [
+          0,
+          10295,
+          2000,
+          15723
+        ],
+        "sha256": "c19eb0427fe7b8bc08934246e5d57003b7f9cf7395ed0967003e8f117092a3d7",
+        "bytes": 7218262,
+        "width": 2000,
+        "height": 5428,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5428
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_004.png",
+        "original_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "original_size": [
+          2000,
+          25166
+        ],
+        "psd": "5화__004.psd",
+        "index_y_range": [
+          7095,
+          15723
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          10295,
+          2000,
+          15723
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c013.png",
+        "clean_sha256": "d4dbd387ab7f6aefc2b05f7f5f3c227907492108741699d61c589dbb15411681",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c013",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c013:L3"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c013:L3",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c013",
+        "line": 3,
+        "file_line": 723,
+        "json_pointer": "/beats/ep05_c013/lines/2",
+        "speaker": "ep05_여성",
+        "text": "앗, 깨셨군요!",
+        "current_cg": "ep05_cg_013",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c014_p01",
+      "expected_output": "assets/ep05/gen/ep05_c014_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c014_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_004.png",
+        "source_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "rect_xyxy": [
+          0,
+          16422,
+          2000,
+          20137
+        ],
+        "sha256": "fb475e8aa51e5ad645d4cf8557cf0d592ea8ffda7a094afa0ff8c48a01fb64fa",
+        "bytes": 3632067,
+        "width": 2000,
+        "height": 3715,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3715
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_004.png",
+        "original_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "original_size": [
+          2000,
+          25166
+        ],
+        "psd": "5화__004.psd",
+        "index_y_range": [
+          16422,
+          20137
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          16422,
+          2000,
+          20137
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c014.png",
+        "clean_sha256": "e7afbd6c39c0a982ca419de336b361bbee3399c3935327afb07dbe32be4b2382",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c014",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c014:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c014:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c014",
+        "line": 1,
+        "file_line": 740,
+        "json_pointer": "/beats/ep05_c014/lines/0",
+        "speaker": "ep05_여성",
+        "text": "전 앞으로 아이라님을 모시게 될 시녀, 누르입니다. 잘 부탁드려요.",
+        "current_cg": "ep05_cg_014",
+        "sets": "ep05_아시나_누르소개",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c015_p01",
+      "expected_output": "assets/ep05/gen/ep05_c015_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c015_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_004.png",
+        "source_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "rect_xyxy": [
+          0,
+          20748,
+          2000,
+          25166
+        ],
+        "sha256": "2cf01fa2c46caef21fef186165279d7722316d942c59e85203ed8b95faeac6b6",
+        "bytes": 5273118,
+        "width": 2000,
+        "height": 4418,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4418
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_004.png",
+        "original_sha256": "285fac434d93e8c7a2981292035f05b949399575b80870a61888ec271cfd497f",
+        "original_size": [
+          2000,
+          25166
+        ],
+        "psd": "5화__004.psd",
+        "index_y_range": [
+          20748,
+          25166
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          20748,
+          2000,
+          25166
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c015.png",
+        "clean_sha256": "a0cf1bce4147683a3cf04e3019a881e07f8ea237cd9a2372c2f92e8d9c6ee703",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c015",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c015:L1",
+        "ep05_c015:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c015:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c015",
+        "line": 1,
+        "file_line": 758,
+        "json_pointer": "/beats/ep05_c015/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "아… 네… 안녕하세요.",
+        "current_cg": "ep05_cg_015",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c016_p01",
+      "expected_output": "assets/ep05/gen/ep05_c016_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c016_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_005.png",
+        "source_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "rect_xyxy": [
+          0,
+          28,
+          2000,
+          3613
+        ],
+        "sha256": "20f7e17925a17f508eb8a3028842a9847fd8f074e9d332048a4a7842ae48aaad",
+        "bytes": 1901368,
+        "width": 2000,
+        "height": 3585,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3585
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_005.png",
+        "original_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "original_size": [
+          2000,
+          18805
+        ],
+        "psd": "5화__005.psd",
+        "index_y_range": [
+          28,
+          3613
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          28,
+          2000,
+          3613
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c016.png",
+        "clean_sha256": "744a136d7c7f20f6cc6f62dcce89477c4f298d17e614b39213fd5caae989a9a3",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c016",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c016:L1",
+        "ep05_c016:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c016:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c016",
+        "line": 1,
+        "file_line": 779,
+        "json_pointer": "/beats/ep05_c016/lines/0",
+        "speaker": "ep05_누르",
+        "text": "어머나… 피부가 희다 들었지만 아이라님은 정말 페시안분이 아니시군요.",
+        "current_cg": "ep05_cg_016",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c017_p01",
+      "expected_output": "assets/ep05/gen/ep05_c017_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c017_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_005.png",
+        "source_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "rect_xyxy": [
+          0,
+          3765,
+          2000,
+          9374
+        ],
+        "sha256": "7a5603c655636b141c58c7615403d5d256f6391ff676bdc7b0fd111ca7e02d92",
+        "bytes": 4757418,
+        "width": 2000,
+        "height": 5609,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5609
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_005.png",
+        "original_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "original_size": [
+          2000,
+          18805
+        ],
+        "psd": "5화__005.psd",
+        "index_y_range": [
+          3765,
+          9374
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          3765,
+          2000,
+          9374
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c017.png",
+        "clean_sha256": "edf02dac701949972b2f8f1105b0ed1fd2468e5568fbcb8b75e360cbfd5bef81",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c017",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c017:L1",
+        "ep05_c017:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c017:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c017",
+        "line": 1,
+        "file_line": 800,
+        "json_pointer": "/beats/ep05_c017/lines/0",
+        "speaker": "ep05_누르",
+        "text": "아이라는 쿤의 여인들을 이르는 말이에요.",
+        "current_cg": "ep05_cg_017",
+        "sets": "ep05_아시나_아이라뜻",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c018_p01",
+      "expected_output": "assets/ep05/gen/ep05_c018_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c018_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_005.png",
+        "source_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "rect_xyxy": [
+          0,
+          9498,
+          2000,
+          10712
+        ],
+        "sha256": "43fffa6106f91adde343b456b11f70289307e4400c6f37cd1862b72ed1135e9f",
+        "bytes": 326433,
+        "width": 2000,
+        "height": 1214,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 1214
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_005.png",
+        "original_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "original_size": [
+          2000,
+          18805
+        ],
+        "psd": "5화__005.psd",
+        "index_y_range": [
+          9498,
+          10712
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          9498,
+          2000,
+          10712
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c018.png",
+        "clean_sha256": "f651aaef39e337ee9b54dbf0b0b9ea350365d4f9deeb7b0d68fdabb9d2972cf5",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c018",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c018:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c018:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c018",
+        "line": 1,
+        "file_line": 822,
+        "json_pointer": "/beats/ep05_c018/lines/0",
+        "speaker": "ep05_독백",
+        "text": "누구 맘대로 내가 누굴 모신다는 거야?",
+        "current_cg": "ep05_cg_018",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c019_p01",
+      "expected_output": "assets/ep05/gen/ep05_c019_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c019_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_005.png",
+        "source_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "rect_xyxy": [
+          0,
+          11395,
+          2000,
+          14389
+        ],
+        "sha256": "b0a7edef387af4a050b16fe2f15532640899786804f9c9512200cfe181e83276",
+        "bytes": 2868673,
+        "width": 2000,
+        "height": 2994,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2994
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_005.png",
+        "original_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "original_size": [
+          2000,
+          18805
+        ],
+        "psd": "5화__005.psd",
+        "index_y_range": [
+          11395,
+          14389
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          11395,
+          2000,
+          14389
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c019.png",
+        "clean_sha256": "36ca9247bff606300e86b9bfca81b2caab793b27ecd046345c42379bfeeeb4d4",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c019",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c019:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c019:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c019",
+        "line": 1,
+        "file_line": 839,
+        "json_pointer": "/beats/ep05_c019/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "저어… 질문 하나 해도 돼요?",
+        "current_cg": "ep05_cg_019",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c020_p01",
+      "expected_output": "assets/ep05/gen/ep05_c020_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c020_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_005.png",
+        "source_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "rect_xyxy": [
+          0,
+          14450,
+          2000,
+          18796
+        ],
+        "sha256": "19ec827d59495093cc3e4f103486e9276b57b5c16ab51519127201e6a9078845",
+        "bytes": 6279160,
+        "width": 2000,
+        "height": 4346,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4346
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_005.png",
+        "original_sha256": "61cc77b9c5bc66e7d44838de1b1768f9b96abe54582b115697f5e1fe4b421dbc",
+        "original_size": [
+          2000,
+          18805
+        ],
+        "psd": "5화__005.psd",
+        "index_y_range": [
+          14450,
+          18796
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14450,
+          2000,
+          18796
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c020.png",
+        "clean_sha256": "c823881a9063974f3f96c3b239307ae21d5710758a7edbb095329f6cbf5ba122",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c020",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c020:L1",
+        "ep05_c020:L2",
+        "ep05_c020:선택:ep05_role_original",
+        "ep05_c020:선택:ep05_role_rest"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c020:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c020",
+        "line": 1,
+        "file_line": 856,
+        "json_pointer": "/beats/ep05_c020/lines/0",
+        "speaker": "ep05_누르",
+        "text": "아랫것에게 존대라니, 말을 놓아주세요.",
+        "current_cg": "ep05_cg_020",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c021_p01",
+      "expected_output": "assets/ep05/gen/ep05_c021_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c021_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_006.png",
+        "source_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "rect_xyxy": [
+          0,
+          1190,
+          2000,
+          5842
+        ],
+        "sha256": "1ff8a1d6a981253d126d70addd1124fa1bda41681f5ee31e7f94a11a36e7b156",
+        "bytes": 3658627,
+        "width": 2000,
+        "height": 4652,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4652
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_006.png",
+        "original_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "original_size": [
+          2000,
+          26188
+        ],
+        "psd": "5화__006.psd",
+        "index_y_range": [
+          1190,
+          5842
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          1190,
+          2000,
+          5842
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c021.png",
+        "clean_sha256": "92b79066a0aca83210df3e078537f509e73cb8e59c445e7b29285137c36188d7",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c021",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c021:L1",
+        "ep05_c021:L2",
+        "ep05_role_rest:L1",
+        "ep05_role_rest:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c021:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c021",
+        "line": 1,
+        "file_line": 888,
+        "json_pointer": "/beats/ep05_c021/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "그러니까… 이제 내가 뭘 하든 항상 누르와 함께해야 하는 거야…요?",
+        "current_cg": "ep05_cg_021",
+        "sets": "ep05_상시동행질문",
+        "timing": "현재 줄 시작",
+        "branch": "ep05_c020.choices[ep05_role_original]"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c022_p01",
+      "expected_output": "assets/ep05/gen/ep05_c022_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c022_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_006.png",
+        "source_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "rect_xyxy": [
+          0,
+          6265,
+          2000,
+          9603
+        ],
+        "sha256": "d236e26ed2d2eda8470417f2125122db05f8f333e83ae8ec5a868141e51954fa",
+        "bytes": 2444951,
+        "width": 2000,
+        "height": 3338,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3338
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_006.png",
+        "original_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "original_size": [
+          2000,
+          26188
+        ],
+        "psd": "5화__006.psd",
+        "index_y_range": [
+          6265,
+          9603
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          6265,
+          2000,
+          9603
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c022.png",
+        "clean_sha256": "3302047a907847fa37192ac167c252302fcda75c997e1782cd04d10ea9d4f60c",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c022",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c022:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c022:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c022",
+        "line": 1,
+        "file_line": 910,
+        "json_pointer": "/beats/ep05_c022/lines/0",
+        "speaker": "ep05_누르",
+        "text": "아니요. 전 그저 아시나님을 도와 드리는 존재일 뿐,",
+        "current_cg": "ep05_cg_022",
+        "sets": "ep05_아시나_상시동행아님",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c023_p01",
+      "expected_output": "assets/ep05/gen/ep05_c023_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c023_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_006.png",
+        "source_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "rect_xyxy": [
+          0,
+          10804,
+          2000,
+          15416
+        ],
+        "sha256": "68a5d5ebdce200cf642a9b4537702b7ba3d3dfc9dd5d13278e63727842606136",
+        "bytes": 4251617,
+        "width": 2000,
+        "height": 4612,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4612
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_006.png",
+        "original_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "original_size": [
+          2000,
+          26188
+        ],
+        "psd": "5화__006.psd",
+        "index_y_range": [
+          10804,
+          15416
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          10804,
+          2000,
+          15416
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c023.png",
+        "clean_sha256": "750e40143e6e29549298471c264e2c7627241f8c83be4a3c780e3f4dee644387",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c023",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c023:L1",
+        "ep05_c023:L2",
+        "ep05_c023:L3"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c023:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c023",
+        "line": 1,
+        "file_line": 928,
+        "json_pointer": "/beats/ep05_c023/lines/0",
+        "speaker": "ep05_누르",
+        "text": "제가 귀찮으시다면 물리셔도 됩니다.",
+        "current_cg": "ep05_cg_023",
+        "sets": "ep05_아시나_시녀물림",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c024_p01",
+      "expected_output": "assets/ep05/gen/ep05_c024_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c024_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_006.png",
+        "source_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "rect_xyxy": [
+          0,
+          15782,
+          2000,
+          18984
+        ],
+        "sha256": "1f6d3fe0af84d1512ea9e9ea829234ccc3836c65e7609ac0b66a19423e479672",
+        "bytes": 1807956,
+        "width": 2000,
+        "height": 3202,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3202
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_006.png",
+        "original_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "original_size": [
+          2000,
+          26188
+        ],
+        "psd": "5화__006.psd",
+        "index_y_range": [
+          15782,
+          18984
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          15782,
+          2000,
+          18984
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c024.png",
+        "clean_sha256": "bf99b4ae8495cc20a59baf11a62729106de7a53d45c1c0b6f3b28e93fbfc3a6e",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c024",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c024:L1",
+        "ep05_c024:L2",
+        "ep05_c024:L3"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c024:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c024",
+        "line": 1,
+        "file_line": 954,
+        "json_pointer": "/beats/ep05_c024/lines/0",
+        "speaker": "ep05_독백",
+        "text": "다행이다.",
+        "current_cg": "ep05_cg_024",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c025_p01",
+      "expected_output": "assets/ep05/gen/ep05_c025_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c025_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_006.png",
+        "source_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "rect_xyxy": [
+          0,
+          20705,
+          2000,
+          25074
+        ],
+        "sha256": "d7a6d1803644f7bd3c7d9682dc2544041b317dc7c18b8cac3d8ebe5a538663cd",
+        "bytes": 2654689,
+        "width": 2000,
+        "height": 4369,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4369
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_006.png",
+        "original_sha256": "825a5b115482c949aa6c8caab1260fe18980d257d07f5530f535efb06d85269f",
+        "original_size": [
+          2000,
+          26188
+        ],
+        "psd": "5화__006.psd",
+        "index_y_range": [
+          20705,
+          25074
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          20705,
+          2000,
+          25074
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c025.png",
+        "clean_sha256": "72065a866a04b635e52993a3b4abc620d531080e843adafe45e481075bb37c32",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c025",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c025:L1",
+        "ep05_c025:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c025:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c025",
+        "line": 1,
+        "file_line": 979,
+        "json_pointer": "/beats/ep05_c025/lines/0",
+        "speaker": "ep05_누르",
+        "text": "필요한 일이 있다면 불러주세요. 그럼… 편히 쉬십시오.",
+        "current_cg": "ep05_cg_025",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c026_p01",
+      "expected_output": "assets/ep05/gen/ep05_c026_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c026_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_007.png",
+        "source_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "rect_xyxy": [
+          0,
+          750,
+          2000,
+          6477
+        ],
+        "sha256": "9faf27d4a721688895b207a43ad2369c3069ba4d631e25c44b018026e202f381",
+        "bytes": 5873326,
+        "width": 2000,
+        "height": 5727,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5727
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_007.png",
+        "original_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "original_size": [
+          2000,
+          24916
+        ],
+        "psd": "5화__007.psd",
+        "index_y_range": [
+          750,
+          6477
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          750,
+          2000,
+          6477
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c026.png",
+        "clean_sha256": "e52cd17810c610d151db906787cc6a8e9da6e441a3a6369b698566adca2a8a52",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c026",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c026:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c026:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c026",
+        "line": 1,
+        "file_line": 1000,
+        "json_pointer": "/beats/ep05_c026/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "……",
+        "current_cg": "ep05_cg_026",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c027_p01",
+      "expected_output": "assets/ep05/gen/ep05_c027_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c027_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_007.png",
+        "source_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "rect_xyxy": [
+          0,
+          6508,
+          2000,
+          9523
+        ],
+        "sha256": "d2fee72d5d8e7d541606c23a9ae730575a781466534797b53039374e4a22fb42",
+        "bytes": 4546334,
+        "width": 2000,
+        "height": 3015,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3015
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_007.png",
+        "original_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "original_size": [
+          2000,
+          24916
+        ],
+        "psd": "5화__007.psd",
+        "index_y_range": [
+          6508,
+          9523
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          6508,
+          2000,
+          9523
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c027.png",
+        "clean_sha256": "0dfdc85a8ea6a5344476df44226bb89ca9cbe8bd892eb5c13d418cab6662f304",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c027",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c027:L1",
+        "ep05_c028:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c027:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c027",
+        "line": 1,
+        "file_line": 1017,
+        "json_pointer": "/beats/ep05_c027/lines/0",
+        "speaker": "ep05_서술",
+        "text": "아시나가 얼굴을 붉힌 채 한숨을 쉰다.",
+        "current_cg": "ep05_cg_027",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c028_p01",
+      "expected_output": "assets/ep05/gen/ep05_c028_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c028_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_007.png",
+        "source_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "rect_xyxy": [
+          0,
+          9734,
+          2000,
+          14734
+        ],
+        "sha256": "e71068b5d63c76fc36534bfe1f0e65509752a9302a66f31834ee5afe004dc664",
+        "bytes": 12975243,
+        "width": 2000,
+        "height": 5000,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5000
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_007.png",
+        "original_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "original_size": [
+          2000,
+          24916
+        ],
+        "psd": "5화__007.psd",
+        "index_y_range": [
+          9734,
+          24843
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          9734,
+          2000,
+          14734
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c028.png",
+        "clean_sha256": "8eeae09478d952fb8487d8d6a837f98a9d7c32bc0bab23215b23df0dcde59dba",
+        "panel_order": 1,
+        "panel_count": 3,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c028",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c028:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c028:L2",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c028",
+        "line": 2,
+        "file_line": 1038,
+        "json_pointer": "/beats/ep05_c028/lines/1",
+        "speaker": "ep05_독백",
+        "text": "리메아라는 무형의 신을 믿는 크롬웰과는 달리, 페시안은 신이 직접 지배자로 군림하여 다스리는 나라였다.",
+        "current_cg": "ep05_cg_028",
+        "sets": "ep05_아시나_신앙회고",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c028_p02",
+      "expected_output": "assets/ep05/gen/ep05_c028_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c028_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_007.png",
+        "source_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "rect_xyxy": [
+          0,
+          14734,
+          2000,
+          19734
+        ],
+        "sha256": "4209cea44f6794d2594549be49648adac4711a2f86a6794f1fdc083c7fb97f80",
+        "bytes": 13843272,
+        "width": 2000,
+        "height": 5000,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5000
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_007.png",
+        "original_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "original_size": [
+          2000,
+          24916
+        ],
+        "psd": "5화__007.psd",
+        "index_y_range": [
+          9734,
+          24843
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14734,
+          2000,
+          19734
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c028.png",
+        "clean_sha256": "8eeae09478d952fb8487d8d6a837f98a9d7c32bc0bab23215b23df0dcde59dba",
+        "panel_order": 2,
+        "panel_count": 3,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c028",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c028:L2-페시안"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c028:L2-페시안",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c028",
+        "line": 2,
+        "file_line": 1038,
+        "json_pointer": "/beats/ep05_c028/lines/1",
+        "speaker": "ep05_독백",
+        "text": "리메아라는 무형의 신을 믿는 크롬웰과는 달리, 페시안은 신이 직접 지배자로 군림하여 다스리는 나라였다.",
+        "silent_anchor": "페시안 지배자 신앙 삽화",
+        "current_cg": "ep05_cg_028",
+        "timing": "같은 줄의 크롬웰과는 달리, 뒤",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c028_p03",
+      "expected_output": "assets/ep05/gen/ep05_c028_p03.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c028_p03_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_007.png",
+        "source_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "rect_xyxy": [
+          0,
+          19734,
+          2000,
+          24843
+        ],
+        "sha256": "9317cc6375b4d14d0a963a9af37d05e9cc2287f84d5ac2d85f83ff4eb868129b",
+        "bytes": 9842633,
+        "width": 2000,
+        "height": 5109,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5109
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_007.png",
+        "original_sha256": "e8f26fc85d2a5dfefe281697b1d22829c13041842352ae0ed9070e6619adae35",
+        "original_size": [
+          2000,
+          24916
+        ],
+        "psd": "5화__007.psd",
+        "index_y_range": [
+          9734,
+          24843
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          19734,
+          2000,
+          24843
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c028.png",
+        "clean_sha256": "8eeae09478d952fb8487d8d6a837f98a9d7c32bc0bab23215b23df0dcde59dba",
+        "panel_order": 3,
+        "panel_count": 3,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c028",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c028:L3"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c028:L3",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c028",
+        "line": 3,
+        "file_line": 1043,
+        "json_pointer": "/beats/ep05_c028/lines/2",
+        "speaker": "ep05_독백",
+        "text": "모래밖에 없는 사막에 물을 끌어오고 식물들이 자랄 수 있게 한 존재. 그게 바로 쿤이었다.",
+        "current_cg": "ep05_cg_028",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c029_p01",
+      "expected_output": "assets/ep05/gen/ep05_c029_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c029_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_008.png",
+        "source_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "rect_xyxy": [
+          0,
+          189,
+          2000,
+          9525
+        ],
+        "sha256": "da84e41735e3795d3983cb08e297b0f0b1954205abf003c00f8cfe4f5e553e37",
+        "bytes": 16343323,
+        "width": 2000,
+        "height": 9336,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 9336
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_008.png",
+        "original_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "original_size": [
+          2000,
+          23588
+        ],
+        "psd": "5화__008.psd",
+        "index_y_range": [
+          189,
+          9525
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          189,
+          2000,
+          9525
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c029.png",
+        "clean_sha256": "39a7eeadd51b7afa78d62d7004313aa3c20b62db4546ee2598408fbae0397edd",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c029",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c029:L1",
+        "ep05_c029:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c029:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c029",
+        "line": 1,
+        "file_line": 1060,
+        "json_pointer": "/beats/ep05_c029/lines/0",
+        "speaker": "ep05_독백",
+        "text": "페시안에서 쿤은 그냥 왕 따위가 아니다.",
+        "current_cg": "ep05_cg_029",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c030_p01",
+      "expected_output": "assets/ep05/gen/ep05_c030_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c030_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_008.png",
+        "source_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "rect_xyxy": [
+          0,
+          10084,
+          2000,
+          13940
+        ],
+        "sha256": "d20cccc5c42a82824e0cf68e23ac6821bd15efb09f3cdd603944908424313b00",
+        "bytes": 7891966,
+        "width": 2000,
+        "height": 3856,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3856
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_008.png",
+        "original_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "original_size": [
+          2000,
+          23588
+        ],
+        "psd": "5화__008.psd",
+        "index_y_range": [
+          10084,
+          13940
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          10084,
+          2000,
+          13940
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c030.png",
+        "clean_sha256": "9a26056dfa35d52f8f5b07f67eab3b46c5cc9bac39634c9feaf79647311b925b",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c030",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c030:L1",
+        "ep05_c031:L1",
+        "ep05_distance_c032:L1",
+        "ep05_c032:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c030:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c030",
+        "line": 1,
+        "file_line": 1082,
+        "json_pointer": "/beats/ep05_c030/lines/0",
+        "speaker": "ep05_서술",
+        "text": "아시나가 침대에 두 주먹을 짚고 상체를 앞으로 숙인다. 머리카락이 아래로 늘어진다.",
+        "current_cg": "ep05_cg_030",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c032_p01",
+      "expected_output": "assets/ep05/gen/ep05_c032_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c032_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_008.png",
+        "source_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "rect_xyxy": [
+          0,
+          16405,
+          2000,
+          20205
+        ],
+        "sha256": "d86259a4063d703bca2bab7bb9d02c232dc543557a6222b5ab125008035d14e7",
+        "bytes": 10315651,
+        "width": 2000,
+        "height": 3800,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3800
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_008.png",
+        "original_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "original_size": [
+          2000,
+          23588
+        ],
+        "psd": "5화__008.psd",
+        "index_y_range": [
+          16405,
+          23315
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          16405,
+          2000,
+          20205
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c032.png",
+        "clean_sha256": "baad16b4444f4bb69ed740b9a7c5b09c49c02e37cd5a9be74f1a004e7620a54e",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c032",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c032:무언-회상"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c032:무언-회상",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c032",
+        "line": 1,
+        "file_line": 1141,
+        "json_pointer": "/beats/ep05_c032/lines/0",
+        "speaker": null,
+        "text": null,
+        "silent_anchor": "원작 c031 정체 독백 뒤 c032의 어젯밤 접촉 회상",
+        "current_cg": "ep05_cg_032",
+        "timing": "줄 뒤 첫 무언 프레임",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c032_p02",
+      "expected_output": "assets/ep05/gen/ep05_c032_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c032_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_008.png",
+        "source_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "rect_xyxy": [
+          0,
+          20205,
+          2000,
+          23315
+        ],
+        "sha256": "8fdf93ad1cea40bbfff425cb5cc09fd633425ba07245c83e1f50a9b6fd38dc81",
+        "bytes": 2548617,
+        "width": 2000,
+        "height": 3110,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3110
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_008.png",
+        "original_sha256": "ef8a30fe155688d794bce2c6d54f8e93befa6b5554d1fcd084f471cab805fc45",
+        "original_size": [
+          2000,
+          23588
+        ],
+        "psd": "5화__008.psd",
+        "index_y_range": [
+          16405,
+          23315
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          20205,
+          2000,
+          23315
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c032.png",
+        "clean_sha256": "baad16b4444f4bb69ed740b9a7c5b09c49c02e37cd5a9be74f1a004e7620a54e",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c032",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c032:무언-현재반응"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c032:무언-현재반응",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c032",
+        "line": 1,
+        "file_line": 1141,
+        "json_pointer": "/beats/ep05_c032/lines/0",
+        "speaker": null,
+        "text": null,
+        "silent_anchor": "회상 뒤 현재 아시나의 붉어진 얼굴과 …!",
+        "current_cg": "ep05_cg_032",
+        "timing": "회상 프레임 뒤, c033 전",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c033_p01",
+      "expected_output": "assets/ep05/gen/ep05_c033_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c033_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_009.png",
+        "source_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "rect_xyxy": [
+          0,
+          26,
+          2000,
+          3194
+        ],
+        "sha256": "a712af44b84cceab05151b367e75ad2aa38e486e867b5b36c12e2e9f70e27daa",
+        "bytes": 2985772,
+        "width": 2000,
+        "height": 3168,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3168
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_009.png",
+        "original_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "original_size": [
+          2000,
+          20000
+        ],
+        "psd": "5화__009.psd",
+        "index_y_range": [
+          26,
+          3194
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          26,
+          2000,
+          3194
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c033.png",
+        "clean_sha256": "2bf59f23a967bceb57cd3197e191559a6ae9f4ee6f8b02dc447add8056dd44fe",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c033",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c033:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c033:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c033",
+        "line": 1,
+        "file_line": 1159,
+        "json_pointer": "/beats/ep05_c033/lines/0",
+        "speaker": "ep05_독백",
+        "text": "자기가 쿤이면 다야? 순전히 제멋대로야! 정말… 짜증 나게 하고 있어…",
+        "current_cg": "ep05_cg_033",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c034_p01",
+      "expected_output": "assets/ep05/gen/ep05_c034_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c034_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_009.png",
+        "source_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "rect_xyxy": [
+          0,
+          3712,
+          2000,
+          9560
+        ],
+        "sha256": "98d666437b09a031a62d99d7ccfa8b0bdc72c8ac030d4a652f55590b8443e0a4",
+        "bytes": 9348225,
+        "width": 2000,
+        "height": 5848,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5848
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_009.png",
+        "original_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "original_size": [
+          2000,
+          20000
+        ],
+        "psd": "5화__009.psd",
+        "index_y_range": [
+          3712,
+          9560
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          3712,
+          2000,
+          9560
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c034.png",
+        "clean_sha256": "08c0c0582c4c078f2011b1aacc9d0919b0ad2f574d2945ca9c17e1e4dca176f6",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c034",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c034:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c034:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c034",
+        "line": 1,
+        "file_line": 1184,
+        "json_pointer": "/beats/ep05_c034/lines/0",
+        "speaker": "ep05_독백",
+        "text": "나… 첫 키스였는데.",
+        "current_cg": "ep05_cg_034",
+        "sets": "ep05_독자_첫입맞춤",
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c035_p01",
+      "expected_output": "assets/ep05/gen/ep05_c035_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c035_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_009.png",
+        "source_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "rect_xyxy": [
+          0,
+          9927,
+          2000,
+          14917
+        ],
+        "sha256": "ea7d604722a51d0dbcb72b297a004e4624165a082f9ded229c6e0a88701a7325",
+        "bytes": 2998972,
+        "width": 2000,
+        "height": 4990,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4990
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_009.png",
+        "original_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "original_size": [
+          2000,
+          20000
+        ],
+        "psd": "5화__009.psd",
+        "index_y_range": [
+          9927,
+          14917
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          9927,
+          2000,
+          14917
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c035.png",
+        "clean_sha256": "9aeb38fc2a2c5ede7dbae8c3c579ec9f882dc76dcc4a47746e64c36a3be6c453",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c035",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c035:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c035:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c035",
+        "line": 1,
+        "file_line": 1202,
+        "json_pointer": "/beats/ep05_c035/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "라 쿤이고 뭐고, 걷다가 확 자빠져서 엉덩이나 찧어라.",
+        "current_cg": "ep05_cg_035",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c036_p01",
+      "expected_output": "assets/ep05/gen/ep05_c036_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c036_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_009.png",
+        "source_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "rect_xyxy": [
+          0,
+          14991,
+          2000,
+          19962
+        ],
+        "sha256": "3a96d8245e97178692eb5bd55d69afb88a3b89cfb37284a736328258ccafe5ac",
+        "bytes": 7656131,
+        "width": 2000,
+        "height": 4971,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4971
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_009.png",
+        "original_sha256": "c75c8289396a04418b71a5bddc996262f910ee8edbaea41096e23a9e5177738f",
+        "original_size": [
+          2000,
+          20000
+        ],
+        "psd": "5화__009.psd",
+        "index_y_range": [
+          14991,
+          19962
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14991,
+          2000,
+          19962
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c036.png",
+        "clean_sha256": "0b58e5bd2b2b0d8a6ad19772a03ea43d7e2a72788e7ed5a935422ca0002812d1",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c036",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c036:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c036:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c036",
+        "line": 1,
+        "file_line": 1219,
+        "json_pointer": "/beats/ep05_c036/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "이 개자식아-!!",
+        "current_cg": "ep05_cg_036",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c037_p01",
+      "expected_output": "assets/ep05/gen/ep05_c037_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c037_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_010.png",
+        "source_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "rect_xyxy": [
+          0,
+          195,
+          2000,
+          4696
+        ],
+        "sha256": "bdc232f7d6f9c393496874cfc47336caff720ce6391a6709592f666a5631eac9",
+        "bytes": 7517072,
+        "width": 2000,
+        "height": 4501,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4501
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_010.png",
+        "original_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "original_size": [
+          2000,
+          24587
+        ],
+        "psd": "5화__010.psd",
+        "index_y_range": [
+          195,
+          4696
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          195,
+          2000,
+          4696
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c037.png",
+        "clean_sha256": "57cd8e9f5658c246699606d5f4e575a19d9e69afeff11a402a0e2637459f5219",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c037",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c037:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c037:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c037",
+        "line": 1,
+        "file_line": 1237,
+        "json_pointer": "/beats/ep05_c037/lines/0",
+        "speaker": "ep05_청발",
+        "text": "…그래서, 자이드의 움직임은 평소와 같았습니다.",
+        "current_cg": "ep05_cg_037",
+        "sets": "ep05_독자_자이드보고",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c038_p01",
+      "expected_output": "assets/ep05/gen/ep05_c038_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c038_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_010.png",
+        "source_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "rect_xyxy": [
+          0,
+          5182,
+          2000,
+          8682
+        ],
+        "sha256": "a313179050d53d56f36023a41e6157f83d821e58965300dd3f274070c70629d8",
+        "bytes": 3651987,
+        "width": 2000,
+        "height": 3500,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3500
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_010.png",
+        "original_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "original_size": [
+          2000,
+          24587
+        ],
+        "psd": "5화__010.psd",
+        "index_y_range": [
+          5182,
+          12227
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          5182,
+          2000,
+          8682
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c038.png",
+        "clean_sha256": "70ed275b9cbf3b3c7e33ce97ee4a17316153338dd1c06b34198c844ee25671f6",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c038",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c038:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c038:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c038",
+        "line": 1,
+        "file_line": 1256,
+        "json_pointer": "/beats/ep05_c038/lines/0",
+        "speaker": "ep05_청발",
+        "text": "이쪽에서 이리 많은 걸 알고 있다는 건 아직 모르겠죠. 어찌할까요, 라 쿤이시여.",
+        "current_cg": "ep05_cg_038",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c038_p02",
+      "expected_output": "assets/ep05/gen/ep05_c038_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c038_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_010.png",
+        "source_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "rect_xyxy": [
+          0,
+          8682,
+          2000,
+          12227
+        ],
+        "sha256": "1dc2af66c22f024b7ba068a9039664a14449cd00a1c8e9838d26bdc36cbf4bfd",
+        "bytes": 2602019,
+        "width": 2000,
+        "height": 3545,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3545
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_010.png",
+        "original_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "original_size": [
+          2000,
+          24587
+        ],
+        "psd": "5화__010.psd",
+        "index_y_range": [
+          5182,
+          12227
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          8682,
+          2000,
+          12227
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c038.png",
+        "clean_sha256": "70ed275b9cbf3b3c7e33ce97ee4a17316153338dd1c06b34198c844ee25671f6",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c038",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c038:L2",
+        "ep05_c039:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c038:L2",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c038",
+        "line": 2,
+        "file_line": 1260,
+        "json_pointer": "/beats/ep05_c038/lines/1",
+        "speaker": "ep05_라쿤",
+        "text": "놔두지. 얼마나 까부는지 꽤 볼만하지 않을까 하는데.",
+        "current_cg": "ep05_cg_038",
+        "sets": "ep05_독자_방치결정",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c040_p01",
+      "expected_output": "assets/ep05/gen/ep05_c040_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c040_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_010.png",
+        "source_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "rect_xyxy": [
+          0,
+          15236,
+          2000,
+          18321
+        ],
+        "sha256": "3ea4d7eea39475d5544293df9d6d4af389b46330bdd6a235b8c0a85150e91a29",
+        "bytes": 5079332,
+        "width": 2000,
+        "height": 3085,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3085
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_010.png",
+        "original_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "original_size": [
+          2000,
+          24587
+        ],
+        "psd": "5화__010.psd",
+        "index_y_range": [
+          15236,
+          18321
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          15236,
+          2000,
+          18321
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c040.png",
+        "clean_sha256": "7fd7b099fa284f05e4b1fd74af95ae6637438f95dfdf23777b7efcee47bc96db",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c040",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c040:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c040:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c040",
+        "line": 1,
+        "file_line": 1297,
+        "json_pointer": "/beats/ep05_c040/lines/0",
+        "speaker": "ep05_서술",
+        "text": "푸른 머리 신하가 팔을 접은 채 서 있다. 검은 머리 신하가 뒤에서 기다린다.",
+        "current_cg": "ep05_cg_040",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c041_p01",
+      "expected_output": "assets/ep05/gen/ep05_c041_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c041_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_010.png",
+        "source_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "rect_xyxy": [
+          0,
+          19245,
+          2000,
+          23038
+        ],
+        "sha256": "6139252c697fe0084c4833b90848c1d3d6a8ac9a16c599e91fb2ed14507e7f23",
+        "bytes": 4127318,
+        "width": 2000,
+        "height": 3793,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3793
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_010.png",
+        "original_sha256": "a126355bf395e55eefc722bbb211e5dc534e00348e8094b32ca959140b8d9ac9",
+        "original_size": [
+          2000,
+          24587
+        ],
+        "psd": "5화__010.psd",
+        "index_y_range": [
+          19245,
+          23038
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          19245,
+          2000,
+          23038
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c041.png",
+        "clean_sha256": "e3500c8ffe322a3c199182904c7b1b40e54a216694e4bdd0042c6125ae30f2a7",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c041",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c041:L1",
+        "ep05_c041:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c041:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c041",
+        "line": 1,
+        "file_line": 1315,
+        "json_pointer": "/beats/ep05_c041/lines/0",
+        "speaker": "ep05_흑발",
+        "text": "여-자,",
+        "current_cg": "ep05_cg_041",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p01",
+      "expected_output": "assets/ep05/gen/ep05_c042_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c042_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_011.png",
+        "source_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "rect_xyxy": [
+          0,
+          202,
+          2000,
+          4102
+        ],
+        "sha256": "3d63452da2df07abadc8742746f54541a319126a272180d5c875b25bf9453dec",
+        "bytes": 6041905,
+        "width": 2000,
+        "height": 3900,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3900
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_011.png",
+        "original_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "original_size": [
+          2000,
+          28058
+        ],
+        "psd": "5화__011.psd",
+        "index_y_range": [
+          202,
+          27139
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          202,
+          2000,
+          4102
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+        "clean_sha256": "b92fd3c6f4c419e8d4d87e69949e4285d74ce8f474e7bf1e18a4204a95214564",
+        "panel_order": 1,
+        "panel_count": 7,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c042",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c042:L1",
+        "ep05_c042:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c042:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c042",
+        "line": 1,
+        "file_line": 1337,
+        "json_pointer": "/beats/ep05_c042/lines/0",
+        "speaker": "ep05_청발",
+        "text": "…시하드시여.",
+        "current_cg": "ep05_cg_042",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p02",
+      "expected_output": "assets/ep05/gen/ep05_c042_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c042_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_011.png",
+        "source_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "rect_xyxy": [
+          0,
+          4102,
+          2000,
+          8602
+        ],
+        "sha256": "a6863b477651e6ddb56a1f4268b11d66547f94e8d1840b113b496e28a4f7c2e5",
+        "bytes": 2363557,
+        "width": 2000,
+        "height": 4500,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4500
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_011.png",
+        "original_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "original_size": [
+          2000,
+          28058
+        ],
+        "psd": "5화__011.psd",
+        "index_y_range": [
+          202,
+          27139
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          4102,
+          2000,
+          8602
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+        "clean_sha256": "b92fd3c6f4c419e8d4d87e69949e4285d74ce8f474e7bf1e18a4204a95214564",
+        "panel_order": 2,
+        "panel_count": 7,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c042",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c042:L3",
+        "ep05_c042:L4"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c042:L3",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c042",
+        "line": 3,
+        "file_line": 1345,
+        "json_pointer": "/beats/ep05_c042/lines/2",
+        "speaker": "ep05_청발",
+        "text": "얼마 전 하렘에 들이신 여인 말입니다.",
+        "current_cg": "ep05_cg_042",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "문자 위치 유지 계약·대상 후보 아직 미생성",
+      "actual_output": null,
+      "reuse_target": "ep05_c042_p01",
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p03",
+      "expected_output": "assets/ep05/gen/ep05_c042_p03.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c042_p03_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_011.png",
+        "source_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "rect_xyxy": [
+          0,
+          8602,
+          2000,
+          10102
+        ],
+        "sha256": "598356b38c6d53d9c2eb3d526d238d9909d87cdcbecafb41b0af0d7a2796e2f5",
+        "bytes": 2105861,
+        "width": 2000,
+        "height": 1500,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 1500
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_011.png",
+        "original_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "original_size": [
+          2000,
+          28058
+        ],
+        "psd": "5화__011.psd",
+        "index_y_range": [
+          202,
+          27139
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          8602,
+          2000,
+          10102
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+        "clean_sha256": "b92fd3c6f4c419e8d4d87e69949e4285d74ce8f474e7bf1e18a4204a95214564",
+        "panel_order": 3,
+        "panel_count": 7,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c042",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c042:L4-청발얼굴"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c042:L4-청발얼굴",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c042",
+        "line": 4,
+        "file_line": 1349,
+        "json_pointer": "/beats/ep05_c042/lines/3",
+        "speaker": "ep05_청발",
+        "text": "소신이 생각하기에, 너무 성급한 결정이었던 것 같습니다. 한때의 유희로 끝내기엔 너무 큰 사건입니다.",
+        "silent_anchor": "어두운 질감 배경 뒤 청발 신하의 얼굴",
+        "current_cg": "ep05_cg_042",
+        "timing": "같은 줄의 첫 문장 뒤, 한때의 유희로 시작하는 문장",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p04",
+      "expected_output": "assets/ep05/gen/ep05_c042_p04.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c042_p04_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_011.png",
+        "source_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "rect_xyxy": [
+          0,
+          10102,
+          2000,
+          14702
+        ],
+        "sha256": "9340bda40f3e36c784fa3bcf2e52958535778e6b45730df275c3c2b64b89e6c5",
+        "bytes": 3023133,
+        "width": 2000,
+        "height": 4600,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4600
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_011.png",
+        "original_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "original_size": [
+          2000,
+          28058
+        ],
+        "psd": "5화__011.psd",
+        "index_y_range": [
+          202,
+          27139
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          10102,
+          2000,
+          14702
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+        "clean_sha256": "b92fd3c6f4c419e8d4d87e69949e4285d74ce8f474e7bf1e18a4204a95214564",
+        "panel_order": 4,
+        "panel_count": 7,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c042",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c042:L5"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c042:L5",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c042",
+        "line": 5,
+        "file_line": 1353,
+        "json_pointer": "/beats/ep05_c042/lines/4",
+        "speaker": "ep05_청발",
+        "text": "그 일이 있은 후로 하렘은 줄곧…",
+        "current_cg": "ep05_cg_042",
+        "sets": "ep05_독자_미공개과거언급",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p05",
+      "expected_output": "assets/ep05/gen/ep05_c042_p05.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c042_p05_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_011.png",
+        "source_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "rect_xyxy": [
+          0,
+          14702,
+          2000,
+          17202
+        ],
+        "sha256": "6991e7807a3b4f9ebf2dc940e056262d5b1963612f8ce18515f73d58a7bfe6dc",
+        "bytes": 2365483,
+        "width": 2000,
+        "height": 2500,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2500
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_011.png",
+        "original_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "original_size": [
+          2000,
+          28058
+        ],
+        "psd": "5화__011.psd",
+        "index_y_range": [
+          202,
+          27139
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14702,
+          2000,
+          17202
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+        "clean_sha256": "b92fd3c6f4c419e8d4d87e69949e4285d74ce8f474e7bf1e18a4204a95214564",
+        "panel_order": 5,
+        "panel_count": 7,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c042",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c042:무언-찌릿"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c042:무언-찌릿",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c042",
+        "line": 5,
+        "file_line": 1353,
+        "json_pointer": "/beats/ep05_c042/lines/4",
+        "speaker": null,
+        "text": null,
+        "silent_anchor": "그 일 언급 뒤 날카로운 라 쿤의 눈, 반응 선공개 금지",
+        "current_cg": "ep05_cg_042",
+        "timing": "줄 뒤, L6의 …! 전",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p06",
+      "expected_output": "assets/ep05/gen/ep05_c042_p06.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c042_p06_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_011.png",
+        "source_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "rect_xyxy": [
+          0,
+          17202,
+          2000,
+          22202
+        ],
+        "sha256": "4e39a857e0019aa23bfca4a3cb2da765ecf7daec9a692b97f107abeffa61e73d",
+        "bytes": 5958841,
+        "width": 2000,
+        "height": 5000,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5000
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_011.png",
+        "original_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "original_size": [
+          2000,
+          28058
+        ],
+        "psd": "5화__011.psd",
+        "index_y_range": [
+          202,
+          27139
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          17202,
+          2000,
+          22202
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+        "clean_sha256": "b92fd3c6f4c419e8d4d87e69949e4285d74ce8f474e7bf1e18a4204a95214564",
+        "panel_order": 6,
+        "panel_count": 7,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c042",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c042:L6",
+        "ep05_c042:L7"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c042:L6",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c042",
+        "line": 6,
+        "file_line": 1358,
+        "json_pointer": "/beats/ep05_c042/lines/5",
+        "speaker": "ep05_청발",
+        "text": "…!",
+        "current_cg": "ep05_cg_042",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p07",
+      "expected_output": "assets/ep05/gen/ep05_c042_p07.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c042_p07_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_011.png",
+        "source_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "rect_xyxy": [
+          0,
+          22202,
+          2000,
+          27139
+        ],
+        "sha256": "ec70866bf20ca328cd0e58b257454d46232a87953b10cdca57ae3f971749713d",
+        "bytes": 4096326,
+        "width": 2000,
+        "height": 4937,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4937
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_011.png",
+        "original_sha256": "3121fc4f572b396016c42b6e13f7f9a90b2cad778131584b477486f3225e05c4",
+        "original_size": [
+          2000,
+          28058
+        ],
+        "psd": "5화__011.psd",
+        "index_y_range": [
+          202,
+          27139
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          22202,
+          2000,
+          27139
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c042.png",
+        "clean_sha256": "b92fd3c6f4c419e8d4d87e69949e4285d74ce8f474e7bf1e18a4204a95214564",
+        "panel_order": 7,
+        "panel_count": 7,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c042",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c042:L8",
+        "ep05_c042:L9"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c042:L8",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c042",
+        "line": 8,
+        "file_line": 1366,
+        "json_pointer": "/beats/ep05_c042/lines/7",
+        "speaker": "ep05_흑발",
+        "text": "틀린 말은 아닙니다, 시하드시여. 대재상이 가만있지 않을 겁니다.",
+        "current_cg": "ep05_cg_042",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c043_p01",
+      "expected_output": "assets/ep05/gen/ep05_c043_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c043_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_012.png",
+        "source_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "rect_xyxy": [
+          0,
+          113,
+          2000,
+          6913
+        ],
+        "sha256": "55201a543625c28f897d80ac00ac7d9060654b70387ddd7f5abc2c8605a22a2d",
+        "bytes": 2420175,
+        "width": 2000,
+        "height": 6800,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 6800
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_012.png",
+        "original_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "original_size": [
+          2000,
+          27636
+        ],
+        "psd": "5화__012.psd",
+        "index_y_range": [
+          113,
+          9724
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          113,
+          2000,
+          6913
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c043.png",
+        "clean_sha256": "961b8d426fe95c496d771d91a489afb97ba9387b94c60acc347458cbc73d6345",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c043",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c043:L1",
+        "ep05_c043:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c043:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c043",
+        "line": 1,
+        "file_line": 1389,
+        "json_pointer": "/beats/ep05_c043/lines/0",
+        "speaker": "ep05_흑발",
+        "text": "대재상뿐만 아니라 여섯의 대족장과 마흔여덟의 족장 모두가 앞다투어 제 여식을 보내올 겁니다.",
+        "current_cg": "ep05_cg_043",
+        "sets": "ep05_독자_족장우려",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c043_p02",
+      "expected_output": "assets/ep05/gen/ep05_c043_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c043_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_012.png",
+        "source_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "rect_xyxy": [
+          0,
+          6913,
+          2000,
+          9724
+        ],
+        "sha256": "5bd67aa26d327f6e868fc08267ed9d8243a09a05dc7505598ee307585bf0bbaa",
+        "bytes": 3380696,
+        "width": 2000,
+        "height": 2811,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2811
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_012.png",
+        "original_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "original_size": [
+          2000,
+          27636
+        ],
+        "psd": "5화__012.psd",
+        "index_y_range": [
+          113,
+          9724
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          6913,
+          2000,
+          9724
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c043.png",
+        "clean_sha256": "961b8d426fe95c496d771d91a489afb97ba9387b94c60acc347458cbc73d6345",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c043",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c043:L3"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c043:L3",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c043",
+        "line": 3,
+        "file_line": 1398,
+        "json_pointer": "/beats/ep05_c043/lines/2",
+        "speaker": "ep05_라쿤",
+        "text": "그 여자에 대해 더 알아봐야겠다.",
+        "current_cg": "ep05_cg_043",
+        "sets": "ep05_독자_조사의향",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c044_p01",
+      "expected_output": "assets/ep05/gen/ep05_c044_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c044_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_012.png",
+        "source_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "rect_xyxy": [
+          0,
+          9788,
+          2000,
+          14088
+        ],
+        "sha256": "e8a85a7ff877540b8d250761494d54f3a5d7c216d4662c6e94b9298b50b950bb",
+        "bytes": 5306976,
+        "width": 2000,
+        "height": 4300,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4300
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_012.png",
+        "original_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "original_size": [
+          2000,
+          27636
+        ],
+        "psd": "5화__012.psd",
+        "index_y_range": [
+          9788,
+          17579
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          9788,
+          2000,
+          14088
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c044.png",
+        "clean_sha256": "8df5525b4d320da5b643dcef6d75cdce08512b29eee40f4f7f4f05cf199a58bd",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c044",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c044:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c044:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c044",
+        "line": 1,
+        "file_line": 1417,
+        "json_pointer": "/beats/ep05_c044/lines/0",
+        "speaker": "ep05_라쿤",
+        "text": "그 여자를 불러와라.",
+        "current_cg": "ep05_cg_044",
+        "sets": "ep05_독자_소환명령",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c044_p02",
+      "expected_output": "assets/ep05/gen/ep05_c044_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c044_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_012.png",
+        "source_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "rect_xyxy": [
+          0,
+          14088,
+          2000,
+          17579
+        ],
+        "sha256": "541b75005eaefed7cfe90e823fd7b6919b86de2b142a5bcccfa457c7c87a7f48",
+        "bytes": 5645530,
+        "width": 2000,
+        "height": 3491,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3491
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_012.png",
+        "original_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "original_size": [
+          2000,
+          27636
+        ],
+        "psd": "5화__012.psd",
+        "index_y_range": [
+          9788,
+          17579
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14088,
+          2000,
+          17579
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c044.png",
+        "clean_sha256": "8df5525b4d320da5b643dcef6d75cdce08512b29eee40f4f7f4f05cf199a58bd",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c044",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c044_asina:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c044_asina:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c044_asina",
+        "line": 1,
+        "file_line": 1435,
+        "json_pointer": "/beats/ep05_c044_asina/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "에엥?!",
+        "current_cg": "ep05_cg_044",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c045_p01",
+      "expected_output": "assets/ep05/gen/ep05_c045_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c045_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_012.png",
+        "source_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "rect_xyxy": [
+          0,
+          18727,
+          2000,
+          23982
+        ],
+        "sha256": "c5e08ec615ff0f7b756541951ccc4c4ecb90a54ff96d5567dcff8e27021b8de4",
+        "bytes": 4395972,
+        "width": 2000,
+        "height": 5255,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5255
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_012.png",
+        "original_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "original_size": [
+          2000,
+          27636
+        ],
+        "psd": "5화__012.psd",
+        "index_y_range": [
+          18727,
+          23982
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          18727,
+          2000,
+          23982
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c045.png",
+        "clean_sha256": "1d582dcb02500cc3171b8aa98a29a8d5012cfdb8c365bf363eddd6ea5f5da295",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c045",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c045:L1",
+        "ep05_c045:선택:ep05_summons_original",
+        "ep05_c045:선택:ep05_summons_accept",
+        "ep05_summons_original:L1",
+        "ep05_summons_accept:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c045:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c045",
+        "line": 1,
+        "file_line": 1452,
+        "json_pointer": "/beats/ep05_c045/lines/0",
+        "speaker": "ep05_누르",
+        "text": "아이라님. 라 쿤께서 부르십니다.",
+        "current_cg": "ep05_cg_045",
+        "sets": "ep05_아시나_소환전달",
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c046_p01",
+      "expected_output": "assets/ep05/gen/ep05_c046_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c046_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_012.png",
+        "source_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "rect_xyxy": [
+          0,
+          24551,
+          2000,
+          26410
+        ],
+        "sha256": "551f1fa9a2a047b6967cba7b7bed6710b9c7b9a10754ef551e451f324fc6d5cc",
+        "bytes": 265106,
+        "width": 2000,
+        "height": 1859,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 1859
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_012.png",
+        "original_sha256": "4de7434b50165e56c4c9725a3d8d6082c4a27e0e25b4da918502f663e330e552",
+        "original_size": [
+          2000,
+          27636
+        ],
+        "psd": "5화__012.psd",
+        "index_y_range": [
+          24551,
+          26410
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          24551,
+          2000,
+          26410
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c046.png",
+        "clean_sha256": "50308b47981b3a7d798313d89c6aea536cf6033923be6c7178af4ba6843e2823",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c046",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c046:L1",
+        "ep05_summons_escort:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c046:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c046",
+        "line": 1,
+        "file_line": 1481,
+        "json_pointer": "/beats/ep05_c046/lines/0",
+        "speaker": "ep05_누르",
+        "text": "그래도 가셔야 합니다…",
+        "current_cg": "ep05_cg_046",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c047_p01",
+      "expected_output": "assets/ep05/gen/ep05_c047_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c047_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_013.png",
+        "source_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "rect_xyxy": [
+          0,
+          770,
+          2000,
+          3670
+        ],
+        "sha256": "1572868804d239697c7ed03874fae394becc872861f94d4ab7b4c8d132ec1118",
+        "bytes": 4109719,
+        "width": 2000,
+        "height": 2900,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2900
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_013.png",
+        "original_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "original_size": [
+          2000,
+          25856
+        ],
+        "psd": "5화__013.psd",
+        "index_y_range": [
+          770,
+          6003
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          770,
+          2000,
+          3670
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c047.png",
+        "clean_sha256": "0913a6aaed52ece9d6770783d1b65853ae94c9ae5a800875399413232eed3f59",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c047",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c047:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c047:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c047",
+        "line": 1,
+        "file_line": 1498,
+        "json_pointer": "/beats/ep05_c047/lines/0",
+        "speaker": "ep05_독백",
+        "text": "안 그래도 심란한 마음 밥심으로 달래고 있었는데, 갑자기 웬 호출이야.",
+        "current_cg": "ep05_cg_047",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c047_p02",
+      "expected_output": "assets/ep05/gen/ep05_c047_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c047_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_013.png",
+        "source_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "rect_xyxy": [
+          0,
+          3670,
+          2000,
+          6003
+        ],
+        "sha256": "f02a915e51d3f4132b7224acd5bcc25e86c95ec908a45c9488f433323f20da37",
+        "bytes": 3801772,
+        "width": 2000,
+        "height": 2333,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2333
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_013.png",
+        "original_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "original_size": [
+          2000,
+          25856
+        ],
+        "psd": "5화__013.psd",
+        "index_y_range": [
+          770,
+          6003
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          3670,
+          2000,
+          6003
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c047.png",
+        "clean_sha256": "0913a6aaed52ece9d6770783d1b65853ae94c9ae5a800875399413232eed3f59",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c047",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c047:L1-보행"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c047:L1-보행",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c047",
+        "line": 1,
+        "file_line": 1498,
+        "json_pointer": "/beats/ep05_c047/lines/0",
+        "speaker": "ep05_독백",
+        "text": "안 그래도 심란한 마음 밥심으로 달래고 있었는데, 갑자기 웬 호출이야.",
+        "silent_anchor": "인물 없는 회랑 뒤 누르와 아시나의 실제 보행",
+        "current_cg": "ep05_cg_047",
+        "timing": "같은 줄의 달래고 있었는데, 뒤",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c048_p01",
+      "expected_output": "assets/ep05/gen/ep05_c048_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c048_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_013.png",
+        "source_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "rect_xyxy": [
+          0,
+          6885,
+          2000,
+          9738
+        ],
+        "sha256": "bfef3bff8af94e96bb2d94a02fa2678a5923899f594c597fa18ab4c6627071e8",
+        "bytes": 2353597,
+        "width": 2000,
+        "height": 2853,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 2853
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_013.png",
+        "original_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "original_size": [
+          2000,
+          25856
+        ],
+        "psd": "5화__013.psd",
+        "index_y_range": [
+          6885,
+          9738
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          6885,
+          2000,
+          9738
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c048.png",
+        "clean_sha256": "dd60fec1da8f745c0d9cd9e66412633e71136ee93152fabbcdcb9b5492c2f77f",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c048",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c048:L1",
+        "ep05_c048:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c048:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c048",
+        "line": 1,
+        "file_line": 1515,
+        "json_pointer": "/beats/ep05_c048/lines/0",
+        "speaker": "ep05_독백",
+        "text": "내가 오라면 오고 가라면 가야 하나?",
+        "current_cg": "ep05_cg_048",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c049_p01",
+      "expected_output": "assets/ep05/gen/ep05_c049_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c049_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_013.png",
+        "source_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "rect_xyxy": [
+          0,
+          10687,
+          2000,
+          20537
+        ],
+        "sha256": "b1453c57427e5dfae765b587b63862d2fa74947002b8375e57e2c42d34e9165d",
+        "bytes": 12348793,
+        "width": 2000,
+        "height": 9850,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 9850
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_013.png",
+        "original_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "original_size": [
+          2000,
+          25856
+        ],
+        "psd": "5화__013.psd",
+        "index_y_range": [
+          10687,
+          25205
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          10687,
+          2000,
+          20537
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c049.png",
+        "clean_sha256": "631ffdc3daff68183f9af04f5b3c7bbc4b0f99b72189a6a8435cd9ba115b3bd8",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c049",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c049:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c049:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c049",
+        "line": 1,
+        "file_line": 1536,
+        "json_pointer": "/beats/ep05_c049/lines/0",
+        "speaker": "ep05_누르",
+        "text": "다 왔습니다, 아이라님.",
+        "current_cg": "ep05_cg_049",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c049_p02",
+      "expected_output": "assets/ep05/gen/ep05_c049_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c049_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_013.png",
+        "source_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "rect_xyxy": [
+          0,
+          20537,
+          2000,
+          25205
+        ],
+        "sha256": "76f800d9ab7f55fd641b762b9965c4f179206d06608fe0d40afe18b60573f96d",
+        "bytes": 7417494,
+        "width": 2000,
+        "height": 4668,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4668
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_013.png",
+        "original_sha256": "158093c44f11a905573aeb2317cbf600975b293fceb22d176404a4969025e3a2",
+        "original_size": [
+          2000,
+          25856
+        ],
+        "psd": "5화__013.psd",
+        "index_y_range": [
+          10687,
+          25205
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          20537,
+          2000,
+          25205
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c049.png",
+        "clean_sha256": "631ffdc3daff68183f9af04f5b3c7bbc4b0f99b72189a6a8435cd9ba115b3bd8",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c049",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c049:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c049:L2",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c049",
+        "line": 2,
+        "file_line": 1540,
+        "json_pointer": "/beats/ep05_c049/lines/1",
+        "speaker": "ep05_누르",
+        "text": "아이라님을 모셔왔습니다.",
+        "current_cg": "ep05_cg_049",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c050_p01",
+      "expected_output": "assets/ep05/gen/ep05_c050_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c050_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_014.png",
+        "source_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "rect_xyxy": [
+          0,
+          378,
+          2000,
+          5721
+        ],
+        "sha256": "f8a7a03511fb9dcc15be2820ba0eaef89d533ebbcc1df17454e7fe1eb319c42c",
+        "bytes": 6654423,
+        "width": 2000,
+        "height": 5343,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5343
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_014.png",
+        "original_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "original_size": [
+          2000,
+          29575
+        ],
+        "psd": "5화__014.psd",
+        "index_y_range": [
+          378,
+          5721
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          378,
+          2000,
+          5721
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c050.png",
+        "clean_sha256": "cd280648a5c6401fa028875b1a154cca667300b7100eee9b6aa2e94ecc3f086e",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c050",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c050:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c050:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c050",
+        "line": 1,
+        "file_line": 1557,
+        "json_pointer": "/beats/ep05_c050/lines/0",
+        "speaker": "ep05_독백",
+        "text": "하…",
+        "current_cg": "ep05_cg_050",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c051_p01",
+      "expected_output": "assets/ep05/gen/ep05_c051_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c051_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_014.png",
+        "source_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "rect_xyxy": [
+          0,
+          6910,
+          2000,
+          10470
+        ],
+        "sha256": "e490c059c56c82f76981aaffdfaa2b0db87e489648e33b1c7b32f817bd087ad6",
+        "bytes": 3971332,
+        "width": 2000,
+        "height": 3560,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3560
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_014.png",
+        "original_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "original_size": [
+          2000,
+          29575
+        ],
+        "psd": "5화__014.psd",
+        "index_y_range": [
+          6910,
+          10470
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          6910,
+          2000,
+          10470
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c051.png",
+        "clean_sha256": "5fe8bcb385918a10068e4c5b7d7a0a06eac7d734cc4f11a706226f4f96590838",
+        "panel_order": 1,
+        "panel_count": 1,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c051",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c051:L1",
+        "ep05_c051:L2",
+        "ep05_c051:L3"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c051:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c051",
+        "line": 1,
+        "file_line": 1574,
+        "json_pointer": "/beats/ep05_c051/lines/0",
+        "speaker": "ep05_누르",
+        "text": "그럼 전 이만…",
+        "current_cg": "ep05_cg_051",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c052_p01",
+      "expected_output": "assets/ep05/gen/ep05_c052_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c052_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_014.png",
+        "source_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "rect_xyxy": [
+          0,
+          10675,
+          2000,
+          14675
+        ],
+        "sha256": "63a6c0dbbd0fc501a4067efb6a418010b02086ddd7d105d54021036773133f80",
+        "bytes": 6152880,
+        "width": 2000,
+        "height": 4000,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4000
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_014.png",
+        "original_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "original_size": [
+          2000,
+          29575
+        ],
+        "psd": "5화__014.psd",
+        "index_y_range": [
+          10675,
+          17912
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          10675,
+          2000,
+          14675
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c052.png",
+        "clean_sha256": "71a308fc34bcc74ab196d79c32aa333aff5508e1f9975038451ebcd00bd27fbd",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c052",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c052:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c052:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c052",
+        "line": 1,
+        "file_line": 1623,
+        "json_pointer": "/beats/ep05_c052/lines/0",
+        "speaker": "ep05_독백",
+        "text": "나한테 또 뭔 짓을 할 지 모르는데…!",
+        "current_cg": "ep05_cg_052",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "!flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c052_p02",
+      "expected_output": "assets/ep05/gen/ep05_c052_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c052_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_014.png",
+        "source_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "rect_xyxy": [
+          0,
+          14675,
+          2000,
+          17912
+        ],
+        "sha256": "6cfba6348ca7b1438e3445b3346ac7a8c08c2db9cdad7f58dc585c71ff05ae5d",
+        "bytes": 4049109,
+        "width": 2000,
+        "height": 3237,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3237
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_014.png",
+        "original_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "original_size": [
+          2000,
+          29575
+        ],
+        "psd": "5화__014.psd",
+        "index_y_range": [
+          10675,
+          17912
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          14675,
+          2000,
+          17912
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c052.png",
+        "clean_sha256": "71a308fc34bcc74ab196d79c32aa333aff5508e1f9975038451ebcd00bd27fbd",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c052",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_distance_c052:L1",
+        "ep05_c052:L2"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_distance_c052:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_distance_c052",
+        "line": 1,
+        "file_line": 1606,
+        "json_pointer": "/beats/ep05_distance_c052/lines/0",
+        "speaker": "ep05_서술",
+        "text": "아시나는 문 앞에 선 채 시선을 내렸다. 라 쿤은 떨어진 좌석에 앉아 있었다.",
+        "current_cg": "ep05_cg_050",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "flag:ep04_distance_kept"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c053_p01",
+      "expected_output": "assets/ep05/gen/ep05_c053_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c053_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_014.png",
+        "source_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "rect_xyxy": [
+          0,
+          19302,
+          2000,
+          22302
+        ],
+        "sha256": "d4654a601c3cb0232771e19fec7521de798d7110b910e83d57cf5b6fb2ca47a6",
+        "bytes": 5473028,
+        "width": 2000,
+        "height": 3000,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 3000
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_014.png",
+        "original_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "original_size": [
+          2000,
+          29575
+        ],
+        "psd": "5화__014.psd",
+        "index_y_range": [
+          19302,
+          28298
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          19302,
+          2000,
+          22302
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c053.png",
+        "clean_sha256": "ab08eb9217ecd2664d66e2009a8b13b6f5845839e719f98d3d32ae5bede98671",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c053",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c053:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c053:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c053",
+        "line": 1,
+        "file_line": 1644,
+        "json_pointer": "/beats/ep05_c053/lines/0",
+        "speaker": "ep05_라쿤",
+        "text": "언제까지 내 시선을 피할 셈이지?",
+        "current_cg": "ep05_cg_053",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c053_p02",
+      "expected_output": "assets/ep05/gen/ep05_c053_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c053_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_014.png",
+        "source_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "rect_xyxy": [
+          0,
+          22302,
+          2000,
+          28298
+        ],
+        "sha256": "ad4756971bab5161b5ea0645ca38a4a0bc6fa4e3bd637c4951db541e1b7f7cf0",
+        "bytes": 9930420,
+        "width": 2000,
+        "height": 5996,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 5996
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_014.png",
+        "original_sha256": "31cadf50a77fe35a0da2abfebd487119721df51bc255a05df888ee4e049b792e",
+        "original_size": [
+          2000,
+          29575
+        ],
+        "psd": "5화__014.psd",
+        "index_y_range": [
+          19302,
+          28298
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          22302,
+          2000,
+          28298
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c053.png",
+        "clean_sha256": "ab08eb9217ecd2664d66e2009a8b13b6f5845839e719f98d3d32ae5bede98671",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c053",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c053:L2",
+        "ep05_c053:선택:ep05_reply_original",
+        "ep05_c053:선택:ep05_reply_short",
+        "ep05_c054:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c053:L2",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c053",
+        "line": 2,
+        "file_line": 1648,
+        "json_pointer": "/beats/ep05_c053/lines/1",
+        "speaker": "ep05_라쿤",
+        "text": "하렘에서 하룻밤은, 잘 보냈는가?",
+        "current_cg": "ep05_cg_053",
+        "sets": null,
+        "timing": "현재 줄 시작",
+        "branch": "공통 경로"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c055_p01",
+      "expected_output": "assets/ep05/gen/ep05_c055_p01.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c055_p01_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_015.png",
+        "source_sha256": "08a0e56637cea437edc3f66a6241dc5f11d2270e3fecdbec054f8e587fdb38e9",
+        "rect_xyxy": [
+          0,
+          2954,
+          2000,
+          6954
+        ],
+        "sha256": "15c70a926dc856cccea749a702fb50bf57986c2af2cce29272865d5206420823",
+        "bytes": 3508558,
+        "width": 2000,
+        "height": 4000,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 4000
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_015.png",
+        "original_sha256": "08a0e56637cea437edc3f66a6241dc5f11d2270e3fecdbec054f8e587fdb38e9",
+        "original_size": [
+          2000,
+          16096
+        ],
+        "psd": "5화__015.psd",
+        "index_y_range": [
+          2954,
+          15316
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          2954,
+          2000,
+          6954
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c055.png",
+        "clean_sha256": "0324840935cacd5fbc5c89ce3964f90ecfb8c6e4b45d4530ff0a712bbe5770bb",
+        "panel_order": 1,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c055",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c055:L1",
+        "ep05_reply_short:L1"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c055:L1",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c055",
+        "line": 1,
+        "file_line": 1693,
+        "json_pointer": "/beats/ep05_c055/lines/0",
+        "speaker": "ep05_아시나",
+        "text": "피한 게 아니라, 마음의 준비를 했을 뿐이에요.",
+        "current_cg": "ep05_cg_055",
+        "sets": "ep05_시선답변",
+        "timing": "현재 줄 시작",
+        "branch": "ep05_c053.choices[ep05_reply_original]"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c055_p02",
+      "expected_output": "assets/ep05/gen/ep05_c055_p02.png",
+      "input": {
+        "path": "assets/ep05/gen/inputs/ep05_c055_p02_source.png",
+        "kind": "원작 좌표 그대로의 무손실 참조 PNG, 완성 CG 아님",
+        "source_path": "work/ep05/merged/ep05_015.png",
+        "source_sha256": "08a0e56637cea437edc3f66a6241dc5f11d2270e3fecdbec054f8e587fdb38e9",
+        "rect_xyxy": [
+          0,
+          6954,
+          2000,
+          15316
+        ],
+        "sha256": "e94824b1578dd78861fdafec7bddf7d0690d94b214eeb5d56200927ffec5f498",
+        "bytes": 17313422,
+        "width": 2000,
+        "height": 8362,
+        "pixel_equivalence": "Pillow 원본 crop과 저장 PNG의 mode·size·tobytes 일치 확인",
+        "actual_width": 2000,
+        "actual_height": 8362
+      },
+      "source_provenance": {
+        "original_path": "work/ep05/merged/ep05_015.png",
+        "original_sha256": "08a0e56637cea437edc3f66a6241dc5f11d2270e3fecdbec054f8e587fdb38e9",
+        "original_size": [
+          2000,
+          16096
+        ],
+        "psd": "5화__015.psd",
+        "index_y_range": [
+          2954,
+          15316
+        ],
+        "edit_input_rect_xyxy": [
+          0,
+          6954,
+          2000,
+          15316
+        ],
+        "clean_path": "assets/ep05/cuts/full_res/clean/ep05_c055.png",
+        "clean_sha256": "0324840935cacd5fbc5c89ce3964f90ecfb8c6e4b45d4530ff0a712bbe5770bb",
+        "panel_order": 2,
+        "panel_count": 2,
+        "crop_note": "원작 전체 컷을 순서대로 좌표 분할한 편집 입력 범위. 그림 테두리만의 경계선은 아니며 여백·풍선을 포함한다.",
+        "cut_id": "ep05_c055",
+        "coordinate_convention": "원본 2000px 폭, xyxy의 오른쪽·아래 끝 제외"
+      },
+      "anchors": [
+        "ep05_c055:L2",
+        "ep05_c055:L3"
+      ],
+      "earliest_reveal_anchor": {
+        "anchor_id": "ep05_c055:L2",
+        "path": "app/content/ep05_audience.yaml",
+        "beat": "ep05_c055",
+        "line": 2,
+        "file_line": 1698,
+        "json_pointer": "/beats/ep05_c055/lines/1",
+        "speaker": "ep05_아시나",
+        "text": "덕분에 잘 지냈다마다요.",
+        "current_cg": "ep05_cg_055",
+        "sets": "ep05_지난밤답변",
+        "timing": "현재 줄 시작",
+        "branch": "ep05_c053.choices[ep05_reply_original]"
+      },
+      "status": "mapped",
+      "generation_state": "미호출",
+      "actual_output": null,
+      "reuse_target": null,
+      "receipt": null,
+      "independent_qa": "미요청·미실시",
+      "art_PASS": false
+    }
+  ]
+}
+

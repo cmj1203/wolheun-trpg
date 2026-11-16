@@ -1,0 +1,39 @@
+{
+  "asset_id": "ep04_c007_a_wedding_revision01",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_002.png",
+  "source_page_sha256": "c9fa8949673dc458e79de6dc5989b37b235b8ddb03f0788c7eba9dde48351ae1",
+  "source_cut_window": [
+    0,
+    344,
+    2000,
+    22818
+  ],
+  "selected_window": [
+    0,
+    344,
+    2000,
+    2900
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c007.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_a_wedding_revision01-selected.png",
+  "selected_size": [
+    2000,
+    2556
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c007_a_wedding_revision01-selected.png",
+      "role": "손·줄기 아래가 프레임 밖인 실제 원작 흉상 창",
+      "size": [
+        2000,
+        2556
+      ],
+      "local_y": [
+        0,
+        2556
+      ]
+    }
+  ],
+  "transform": "기존 원작 선택 창의 위쪽 2556행만 추출. 새 손·의복·가림 없음.",
+  "candidate_slot": "ep04_c007_a_wedding"
+}

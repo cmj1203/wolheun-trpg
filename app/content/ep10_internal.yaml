@@ -1,0 +1,3006 @@
+# 10화 독립 내부 대본. 앞 화·다음 화와 자동 연결하지 않는다.
+# 기존 원본 정제 컷을 참조한다. GPT 편집·확장·입식 제작과 브라우저 검수는 대기다.
+{
+  "id": "ep10_internal",
+  "title": "방 안의 대화",
+  "episode": "10화",
+  "source": "웹툰 「월흔」 10화 ep10_c001–ep10_c078 · 원문 전사와 컷별 원본 참조",
+  "rating": "15세 이용가",
+  "start": "ep10_c001",
+  "sheet": {
+    "name": "아시나",
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "tracks": {
+      "체력": 4,
+      "정신력": 4,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "items": [
+      {
+        "id": "magic_bag",
+        "file": "assets/ep01/gen/items/item_magic_bag.png",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.",
+        "states": [
+          {
+            "flag": "가방_끈",
+            "label": "끈 끊김",
+            "desc": "끈이 끊어져 손으로 쥐고 다닌다."
+          },
+          {
+            "flag": "짐_쏟음",
+            "label": "짐 쏟아짐",
+            "desc": "호위가 뒤집어 짐이 모래에 쏟아졌다."
+          }
+        ]
+      },
+      {
+        "id": "earring",
+        "file": "assets/ep01/gen/items/item_earring.png",
+        "name": "마법 귀찌",
+        "desc": "귓불에 달린 마법 귀찌."
+      },
+      {
+        "id": "map",
+        "file": "assets/ep01/gen/items/item_map.png",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도.",
+        "container": {
+          "item": "magic_bag",
+          "unless": "flag:지도_꺼냄 || flag:짐_쏟음"
+        },
+        "states": [
+          {
+            "flag": "지도_찢김",
+            "label": "찢김",
+            "desc": "한 귀퉁이가 찢겨 나갔다."
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "file": "assets/ep01/gen/items/item_pin.png",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀.",
+        "hidden": true
+      }
+    ],
+    "tension": 3
+  },
+  "cast": {
+    "나레이션": {
+      "display": "",
+      "style": "narration"
+    },
+    "ep10_아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "lore": "아시나",
+      "presentation": "cg",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep10_아시나속마음": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "presentation": "cg",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep10_왕": {
+      "display": "왕",
+      "style": "speech",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": [
+        "dumbfounded",
+        "intrigued",
+        "wary",
+        "sneer",
+        "neutral",
+        "menacing"
+      ]
+    },
+    "ep10_왕속마음": {
+      "display": "왕",
+      "style": "thought",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": [
+        "dumbfounded",
+        "intrigued",
+        "wary",
+        "sneer",
+        "neutral",
+        "menacing"
+      ]
+    },
+    "ep10_누르": {
+      "display": "누르",
+      "style": "speech",
+      "lore": "누르",
+      "presentation": "cg",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised"
+      ]
+    }
+  },
+  "backgrounds": {},
+  "sprites": {
+    "ep10_asina": {
+      "label": "아시나 · 남색 드레스 · 제작 대기",
+      "placeholder": "#242b45"
+    },
+    "ep10_king": {
+      "label": "왕 · 어두운 겉옷 · 제작 대기",
+      "placeholder": "#302a35"
+    },
+    "ep10_nur": {
+      "label": "누르 · 초록 옷 · 제작 대기",
+      "placeholder": "#305b45"
+    }
+  },
+  "cgs": {
+    "ep10_c001": {
+      "label": "원본 정제 컷 · ep10_c001 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c001.png",
+      "fit": "contain"
+    },
+    "ep10_c002": {
+      "label": "원본 정제 컷 · ep10_c002 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c002.png",
+      "fit": "contain"
+    },
+    "ep10_c003": {
+      "label": "원본 정제 컷 · ep10_c003 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c003.png",
+      "fit": "contain"
+    },
+    "ep10_c004": {
+      "label": "원본 정제 컷 · ep10_c004 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c004.png",
+      "fit": "contain"
+    },
+    "ep10_c005": {
+      "label": "원본 정제 컷 · ep10_c005 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c005.png",
+      "fit": "contain"
+    },
+    "ep10_c006": {
+      "label": "원본 정제 컷 · ep10_c006 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c006_r2.png",
+      "fit": "contain"
+    },
+    "ep10_c007": {
+      "label": "원본 정제 컷 · ep10_c007 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c007.png",
+      "fit": "contain"
+    },
+    "ep10_c008": {
+      "label": "원본 정제 컷 · ep10_c008 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c008.png",
+      "fit": "contain"
+    },
+    "ep10_c009": {
+      "label": "원본 정제 컷 · ep10_c009 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c009.png",
+      "fit": "contain"
+    },
+    "ep10_c010": {
+      "label": "원본 정제 컷 · ep10_c010 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c010.png",
+      "fit": "contain"
+    },
+    "ep10_c011": {
+      "label": "원본 정제 컷 · ep10_c011 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c011.png",
+      "fit": "contain"
+    },
+    "ep10_c012": {
+      "label": "원본 정제 컷 · ep10_c012 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c012.png",
+      "fit": "contain"
+    },
+    "ep10_c013": {
+      "label": "원본 정제 컷 · ep10_c013 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c013.png",
+      "fit": "contain"
+    },
+    "ep10_c014": {
+      "label": "원본 정제 컷 · ep10_c014 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c014.png",
+      "fit": "contain"
+    },
+    "ep10_c015": {
+      "label": "원본 정제 컷 · ep10_c015 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c015.png",
+      "fit": "contain"
+    },
+    "ep10_c016": {
+      "label": "원본 정제 컷 · ep10_c016 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c016.png",
+      "fit": "contain"
+    },
+    "ep10_c017": {
+      "label": "원본 정제 컷 · ep10_c017 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c017.png",
+      "fit": "contain"
+    },
+    "ep10_c018": {
+      "label": "원본 정제 컷 · ep10_c018 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c018_r2.png",
+      "fit": "contain"
+    },
+    "ep10_c019": {
+      "label": "원본 정제 컷 · ep10_c019 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c019.png",
+      "fit": "contain"
+    },
+    "ep10_c020": {
+      "label": "원본 정제 컷 · ep10_c020 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c020.png",
+      "fit": "contain"
+    },
+    "ep10_c021": {
+      "label": "원본 정제 컷 · ep10_c021 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c021.png",
+      "fit": "contain"
+    },
+    "ep10_c022": {
+      "label": "원본 정제 컷 · ep10_c022 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c022.png",
+      "fit": "contain"
+    },
+    "ep10_c023": {
+      "label": "원본 정제 컷 · ep10_c023 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c023.png",
+      "fit": "contain"
+    },
+    "ep10_c024": {
+      "label": "원본 정제 컷 · ep10_c024 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c024.png",
+      "fit": "contain"
+    },
+    "ep10_c025": {
+      "label": "원본 정제 컷 · ep10_c025 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c025.png",
+      "fit": "contain"
+    },
+    "ep10_c026": {
+      "label": "원본 정제 컷 · ep10_c026 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c026.png",
+      "fit": "contain"
+    },
+    "ep10_c027": {
+      "label": "원본 정제 컷 · ep10_c027 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c027.png",
+      "fit": "contain"
+    },
+    "ep10_c028": {
+      "label": "원본 정제 컷 · ep10_c028 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c028.png",
+      "fit": "contain"
+    },
+    "ep10_c029": {
+      "label": "원본 정제 컷 · ep10_c029 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c029.png",
+      "fit": "contain"
+    },
+    "ep10_c030": {
+      "label": "원본 정제 컷 · ep10_c030 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c030.png",
+      "fit": "contain"
+    },
+    "ep10_c031": {
+      "label": "원본 정제 컷 · ep10_c031 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c031.png",
+      "fit": "contain"
+    },
+    "ep10_c032": {
+      "label": "원본 정제 컷 · ep10_c032 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c032.png",
+      "fit": "contain"
+    },
+    "ep10_c033": {
+      "label": "원본 정제 컷 · ep10_c033 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c033.png",
+      "fit": "contain"
+    },
+    "ep10_c034": {
+      "label": "원본 정제 컷 · ep10_c034 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c034.png",
+      "fit": "contain"
+    },
+    "ep10_c035": {
+      "label": "원본 정제 컷 · ep10_c035 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c035.png",
+      "fit": "contain"
+    },
+    "ep10_c036": {
+      "label": "원본 정제 컷 · ep10_c036 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c036.png",
+      "fit": "contain"
+    },
+    "ep10_c037": {
+      "label": "원본 정제 컷 · ep10_c037 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c037.png",
+      "fit": "contain"
+    },
+    "ep10_c038": {
+      "label": "원본 정제 컷 · ep10_c038 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c038.png",
+      "fit": "contain"
+    },
+    "ep10_c039": {
+      "label": "원본 정제 컷 · ep10_c039 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c039.png",
+      "fit": "contain"
+    },
+    "ep10_c040": {
+      "label": "원본 정제 컷 · ep10_c040 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c040.png",
+      "fit": "contain"
+    },
+    "ep10_c041": {
+      "label": "원본 정제 컷 · ep10_c041 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c041.png",
+      "fit": "contain"
+    },
+    "ep10_c042": {
+      "label": "원본 정제 컷 · ep10_c042 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c042.png",
+      "fit": "contain"
+    },
+    "ep10_c043": {
+      "label": "원본 정제 컷 · ep10_c043 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c043.png",
+      "fit": "contain"
+    },
+    "ep10_c044": {
+      "label": "원본 정제 컷 · ep10_c044 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c044.png",
+      "fit": "contain"
+    },
+    "ep10_c045": {
+      "label": "원본 정제 컷 · ep10_c045 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c045.png",
+      "fit": "contain"
+    },
+    "ep10_c046": {
+      "label": "원본 정제 컷 · ep10_c046 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c046.png",
+      "fit": "contain"
+    },
+    "ep10_c047": {
+      "label": "원본 정제 컷 · ep10_c047 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c047.png",
+      "fit": "contain"
+    },
+    "ep10_c048": {
+      "label": "원본 정제 컷 · ep10_c048 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c048.png",
+      "fit": "contain"
+    },
+    "ep10_c049": {
+      "label": "원본 정제 컷 · ep10_c049 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c049.png",
+      "fit": "contain"
+    },
+    "ep10_c050": {
+      "label": "원본 정제 컷 · ep10_c050 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c050.png",
+      "fit": "contain"
+    },
+    "ep10_c051": {
+      "label": "원본 정제 컷 · ep10_c051 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c051.png",
+      "fit": "contain"
+    },
+    "ep10_c052": {
+      "label": "원본 정제 컷 · ep10_c052 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c052.png",
+      "fit": "contain"
+    },
+    "ep10_c053": {
+      "label": "원본 정제 컷 · ep10_c053 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c053.png",
+      "fit": "contain"
+    },
+    "ep10_c054": {
+      "label": "원본 정제 컷 · ep10_c054 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c054.png",
+      "fit": "contain"
+    },
+    "ep10_c055": {
+      "label": "원본 정제 컷 · ep10_c055 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c055.png",
+      "fit": "contain"
+    },
+    "ep10_c056": {
+      "label": "원본 정제 컷 · ep10_c056 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c056.png",
+      "fit": "contain"
+    },
+    "ep10_c057": {
+      "label": "원본 정제 컷 · ep10_c057 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c057.png",
+      "fit": "contain"
+    },
+    "ep10_c058": {
+      "label": "원본 정제 컷 · ep10_c058 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c058.png",
+      "fit": "contain"
+    },
+    "ep10_c059": {
+      "label": "원본 정제 컷 · ep10_c059 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c059.png",
+      "fit": "contain"
+    },
+    "ep10_c060": {
+      "label": "원본 정제 컷 · ep10_c060 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c060_r2.png",
+      "fit": "contain"
+    },
+    "ep10_c061": {
+      "label": "원본 정제 컷 · ep10_c061 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c061.png",
+      "fit": "contain"
+    },
+    "ep10_c062": {
+      "label": "원본 정제 컷 · ep10_c062 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c062_r3.png",
+      "fit": "contain"
+    },
+    "ep10_c063": {
+      "label": "원본 정제 컷 · ep10_c063 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c063.png",
+      "fit": "contain"
+    },
+    "ep10_c064": {
+      "label": "원본 정제 컷 · ep10_c064 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c064.png",
+      "fit": "contain"
+    },
+    "ep10_c065": {
+      "label": "원본 정제 컷 · ep10_c065 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c065.png",
+      "fit": "contain"
+    },
+    "ep10_c066": {
+      "label": "원본 정제 컷 · ep10_c066 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c066.png",
+      "fit": "contain"
+    },
+    "ep10_c067": {
+      "label": "원본 정제 컷 · ep10_c067 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c067.png",
+      "fit": "contain"
+    },
+    "ep10_c068": {
+      "label": "원본 정제 컷 · ep10_c068 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c068.png",
+      "fit": "contain"
+    },
+    "ep10_c069": {
+      "label": "원본 정제 컷 · ep10_c069 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c069.png",
+      "fit": "contain"
+    },
+    "ep10_c070": {
+      "label": "원본 정제 컷 · ep10_c070 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c070.png",
+      "fit": "contain"
+    },
+    "ep10_c071": {
+      "label": "원본 정제 컷 · ep10_c071 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c071.png",
+      "fit": "contain"
+    },
+    "ep10_c072": {
+      "label": "원본 정제 컷 · ep10_c072 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c072.png",
+      "fit": "contain"
+    },
+    "ep10_c073": {
+      "label": "원본 정제 컷 · ep10_c073 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c073.png",
+      "fit": "contain"
+    },
+    "ep10_c074": {
+      "label": "원본 정제 컷 · ep10_c074 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c074.png",
+      "fit": "contain"
+    },
+    "ep10_c075": {
+      "label": "원본 정제 컷 · ep10_c075 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c075.png",
+      "fit": "contain"
+    },
+    "ep10_c076": {
+      "label": "원본 정제 컷 · ep10_c076 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c076.png",
+      "fit": "contain"
+    },
+    "ep10_c077": {
+      "label": "원본 정제 컷 · ep10_c077 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c077.png",
+      "fit": "contain"
+    },
+    "ep10_c078": {
+      "label": "원본 정제 컷 · ep10_c078 · GPT 편집·확장 대기",
+      "file": "assets/ep10/cuts/full_res/clean/ep10_c078.png",
+      "fit": "contain"
+    },
+    "ep10_c005_p01": {
+      "label": "원본 정제 컷 · ep10_c005 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c005_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c005_p02": {
+      "label": "원본 정제 컷 · ep10_c005 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c005_p02.png",
+      "fit": "contain"
+    },
+    "ep10_c005_p03": {
+      "label": "원본 정제 컷 · ep10_c005 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c005_p03_r2.png",
+      "fit": "contain"
+    },
+    "ep10_c005_p04": {
+      "label": "원본 정제 컷 · ep10_c005 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c005_p04.png",
+      "fit": "contain"
+    },
+    "ep10_c019_p01": {
+      "label": "원본 정제 컷 · ep10_c019 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c019_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c019_p02": {
+      "label": "원본 정제 컷 · ep10_c019 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c019_p02.png",
+      "fit": "contain"
+    },
+    "ep10_c027_p01": {
+      "label": "원본 정제 컷 · ep10_c027 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c027_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c027_p02": {
+      "label": "원본 정제 컷 · ep10_c027 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c027_p02.png",
+      "fit": "contain"
+    },
+    "ep10_c027_p03": {
+      "label": "원본 정제 컷 · ep10_c027 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c027_p03.png",
+      "fit": "contain"
+    },
+    "ep10_c034_p01": {
+      "label": "원본 정제 컷 · ep10_c034 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c034_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c034_p02": {
+      "label": "원본 정제 컷 · ep10_c034 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c034_p02.png",
+      "fit": "contain"
+    },
+    "ep10_c045_p01": {
+      "label": "원본 정제 컷 · ep10_c045 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c045_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c045_p02": {
+      "label": "원본 정제 컷 · ep10_c045 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c045_p02.png",
+      "fit": "contain"
+    },
+    "ep10_c052_p01": {
+      "label": "원본 정제 컷 · ep10_c052 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c052_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c052_p02": {
+      "label": "원본 정제 컷 · ep10_c052 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c052_p02_r2.png",
+      "fit": "contain"
+    },
+    "ep10_c056_p01": {
+      "label": "원본 정제 컷 · ep10_c056 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c056_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c056_p02": {
+      "label": "원본 정제 컷 · ep10_c056 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c056_p02.png",
+      "fit": "contain"
+    },
+    "ep10_c078_p01": {
+      "label": "원본 정제 컷 · ep10_c078 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c078_p01.png",
+      "fit": "contain"
+    },
+    "ep10_c078_p02": {
+      "label": "원본 정제 컷 · ep10_c078 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c078_p02.png",
+      "fit": "contain"
+    },
+    "ep10_c078_p03": {
+      "label": "원본 정제 컷 · ep10_c078 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c078_p03.png",
+      "fit": "contain"
+    },
+    "ep10_c078_p04": {
+      "label": "원본 정제 컷 · ep10_c078 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c078_p04.png",
+      "fit": "contain"
+    },
+    "ep10_c078_p05": {
+      "label": "원본 정제 컷 · ep10_c078 · GPT 편집·확장 대기",
+      "file": "assets/ep10/gen/ep10_c078_p05.png",
+      "fit": "contain"
+    }
+  },
+  "beats": {
+    "ep10_c001": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c001",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c001"
+        }
+      ],
+      "next": "ep10_c002",
+      "effects": {
+        "flags": {
+          "ep10_시작": true
+        }
+      }
+    },
+    "ep10_c002": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c002",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나": "후우…",
+          "cg": "ep10_c002"
+        }
+      ],
+      "next": "ep10_c003"
+    },
+    "ep10_c003": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c003",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나": "들키는 줄 알았네.",
+          "cg": "ep10_c003"
+        }
+      ],
+      "next": "ep10_c004"
+    },
+    "ep10_c004": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c004",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "잠깐이었지만, 느낌이 좋진 않은 사람이었어.",
+          "cg": "ep10_c004"
+        }
+      ],
+      "next": "ep10_c005"
+    },
+    "ep10_c005": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c005",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "페시안 왕의 시선은 압도당하는 느낌이라면,",
+          "cg": "ep10_c005_p01"
+        },
+        {
+          "ep10_아시나속마음": "그 사람은 뱀처럼 온몸을 옥죄는 느낌…",
+          "cg": "ep10_c005_p02"
+        },
+        {
+          "나레이션": "",
+          "cg": "ep10_c005_p03"
+        },
+        {
+          "ep10_아시나속마음": "다시는 마주치고 싶지 않아.",
+          "cg": "ep10_c005_p04"
+        }
+      ],
+      "next": "ep10_c006"
+    },
+    "ep10_c006": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c006",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c006"
+        }
+      ],
+      "next": "ep10_c007"
+    },
+    "ep10_c007": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c007",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c007"
+        }
+      ],
+      "next": "ep10_c008"
+    },
+    "ep10_c008": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c008",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나": "뭐야 이거…",
+          "cg": "ep10_c008"
+        }
+      ],
+      "next": "ep10_c009"
+    },
+    "ep10_c009": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c009",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나": "귀찌 색이 변했어?",
+          "cg": "ep10_c009"
+        }
+      ],
+      "next": "ep10_c010",
+      "effects": {
+        "flags": {
+          "ep10_귀찌변색_앎": true
+        }
+      }
+    },
+    "ep10_c010": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c010",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c010"
+        }
+      ],
+      "next": "ep10_c011"
+    },
+    "ep10_c011": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c011",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "원래도 간당간당한 상태였지만…",
+          "cg": "ep10_c011"
+        },
+        {
+          "ep10_아시나속마음": "이렇게 빨리 변색될 줄이야.",
+          "cg": "ep10_c011"
+        }
+      ],
+      "next": "ep10_c012"
+    },
+    "ep10_c012": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c012",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c012"
+        }
+      ],
+      "next": "ep10_c013"
+    },
+    "ep10_c013": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c013",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c013"
+        }
+      ],
+      "next": "ep10_c014"
+    },
+    "ep10_c014": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c014",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "어쩔 수 없지.",
+          "cg": "ep10_c014"
+        },
+        {
+          "ep10_아시나속마음": "임시방편이지만, 살짝 마법을 풀어놔야겠어.",
+          "cg": "ep10_c014"
+        }
+      ],
+      "next": "ep10_c015",
+      "effects": {
+        "flags": {
+          "ep10_마법조정": true
+        }
+      }
+    },
+    "ep10_c015": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c015",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c015"
+        }
+      ],
+      "next": "ep10_c016"
+    },
+    "ep10_c016": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c016",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c016"
+        }
+      ],
+      "next": "ep10_c017"
+    },
+    "ep10_c017": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c017",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": "ep10_누르",
+        "right": null
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c017"
+        }
+      ],
+      "next": "ep10_c018"
+    },
+    "ep10_c018": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c018",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": "ep10_누르",
+        "right": null
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "이렇게 해 놓으면 좀 더 오래 마법을 유지할 수 있겠지?",
+          "cg": "ep10_c018"
+        },
+        {
+          "ep10_아시나속마음": "눈에 걸린 마법만 살짝 풀었다",
+          "cg": "ep10_c018"
+        },
+        {
+          "ep10_아시나속마음": "좋아. 그렇게 티나진 않아.",
+          "cg": "ep10_c018"
+        },
+        {
+          "ep10_아시나속마음": "누르도 못 알아채는 눈치고.",
+          "cg": "ep10_c018"
+        }
+      ],
+      "next": "ep10_c019",
+      "effects": {
+        "flags": {
+          "ep10_눈마법_풀림": true,
+          "ep10_갈색머리": true
+        }
+      }
+    },
+    "ep10_c019": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c019",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_누르": "아 맞다. 아시나님. 말씀 못 드린 게 있는데요.",
+          "cg": "ep10_c019_p01"
+        },
+        {
+          "ep10_아시나": "응?",
+          "cg": "ep10_c019_p01"
+        },
+        {
+          "ep10_누르": "아까부터 라 쿤께서 기다리고 계십니다.",
+          "cg": "ep10_c019_p02"
+        }
+      ],
+      "next": "ep10_c020",
+      "effects": {
+        "flags": {
+          "ep10_왕대기_앎": true
+        }
+      }
+    },
+    "ep10_c020": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c020",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c020"
+        }
+      ],
+      "next": "ep10_c021"
+    },
+    "ep10_c021": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c021",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "어버버…",
+          "cg": "ep10_c021"
+        }
+      ],
+      "next": "ep10_c022"
+    },
+    "ep10_c022": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c022",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "왜 이렇게 자주 와요? 꿀 발라놨어요?",
+          "cg": "ep10_c022"
+        },
+        {
+          "ep10_왕": "총애하는 애첩에게 오는 데 이유가 필요한가?",
+          "cg": "ep10_c022"
+        },
+        {
+          "ep10_아시나": "지금 장난쳐요?",
+          "cg": "ep10_c022"
+        }
+      ],
+      "next": "ep10_c023"
+    },
+    "ep10_c023": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c023",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "그래요 다 맘대로 하세요",
+          "cg": "ep10_c023"
+        }
+      ],
+      "next": "ep10_c024"
+    },
+    "ep10_c024": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c024",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c024"
+        }
+      ],
+      "next": "ep10_c025"
+    },
+    "ep10_c025": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c025",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "항상 느끼는 거지만, 머리가 참 길군.",
+          "cg": "ep10_c025"
+        }
+      ],
+      "next": "ep10_c026"
+    },
+    "ep10_c026": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c026",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "여행 다니는데 불편하지 않나?",
+          "cg": "ep10_c026"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep10_hair_source",
+          "text": "머리를 기른 이유를 말한다",
+          "next": "ep10_c027"
+        },
+        {
+          "id": "ep10_hair_hold",
+          "text": "머리 이야기는 넘긴다",
+          "lines": [
+            {
+              "ep10_아시나": "머리 얘기는 그만할래요.",
+              "cg": "ep10_c026"
+            }
+          ],
+          "next": "ep10_c028"
+        }
+      ]
+    },
+    "ep10_c027": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c027",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "불편하죠.",
+          "cg": "ep10_c027_p01"
+        },
+        {
+          "ep10_아시나": "원래는 여행 시작하면서 자르려고 했어요.",
+          "cg": "ep10_c027_p01"
+        },
+        {
+          "ep10_아시나": "근데…",
+          "cg": "ep10_c027_p01"
+        },
+        {
+          "ep10_아시나": "자르면 난리나요.",
+          "cg": "ep10_c027_p02"
+        },
+        {
+          "ep10_아시나": "엄마아빠는 기본, 사촌들이며 친구들이며…",
+          "cg": "ep10_c027_p02"
+        },
+        {
+          "ep10_아시나": "레이디의 기본이라나 뭐라나…",
+          "cg": "ep10_c027_p03"
+        },
+        {
+          "ep10_아시나": "그 성화를 감당할 바엔 기르는 게 낫겠다 싶어서 그냥 뒀어요.",
+          "cg": "ep10_c027_p03"
+        }
+      ],
+      "next": "ep10_c028",
+      "effects": {
+        "flags": {
+          "ep10_머리이유_말함": true
+        }
+      }
+    },
+    "ep10_c028": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c028",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c028"
+        }
+      ],
+      "next": "ep10_c029"
+    },
+    "ep10_c029": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c029",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "외동인가? 형제에 대한 말은 없군.",
+          "cg": "ep10_c029"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep10_family_tell",
+          "text": "사촌들과 자란 이야기를 한다",
+          "next": "ep10_family_source"
+        },
+        {
+          "id": "ep10_family_hold",
+          "text": "가족 이야기는 하지 않는다",
+          "lines": [
+            {
+              "ep10_아시나": "가족 얘기는 하지 않을래요.",
+              "cg": "ep10_c029"
+            }
+          ],
+          "next": "ep10_c030"
+        }
+      ]
+    },
+    "ep10_c030": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c030",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c030"
+        }
+      ],
+      "next": "ep10_c031"
+    },
+    "ep10_c031": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c031",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "아시나…",
+          "cg": "ep10_c031"
+        }
+      ],
+      "next": "ep10_c032"
+    },
+    "ep10_c032": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c032",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "…라고 했었나, 네 이름.",
+          "cg": "ep10_c032"
+        },
+        {
+          "ep10_아시나": "네. 그건 왜요?",
+          "cg": "ep10_c032"
+        }
+      ],
+      "next": "ep10_c033"
+    },
+    "ep10_c033": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c033",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c033"
+        }
+      ],
+      "next": "ep10_c034_question"
+    },
+    "ep10_c034_question": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c034",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "그건 진짜 네 이름인가?",
+          "cg": "ep10_c034_p01"
+        }
+      ],
+      "next": "ep10_c034_audience"
+    },
+    "ep10_c034_audience": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c034",
+      "perspective": "audience",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕속마음": "아직 이 여자에 대해 모르겠는 것 투성이지만,",
+          "cg": "ep10_c034_p01"
+        },
+        {
+          "ep10_왕속마음": "몇 가지는 알 수 있을 것 같다.",
+          "cg": "ep10_c034_p01"
+        }
+      ],
+      "next": "ep10_c034"
+    },
+    "ep10_c034": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c034",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [],
+      "choices": [
+        {
+          "id": "ep10_name_tell",
+          "text": "이름과 작명 이야기를 말한다",
+          "next": "ep10_name_source"
+        },
+        {
+          "id": "ep10_name_only",
+          "text": "이름만 확인해 준다",
+          "lines": [
+            {
+              "ep10_아시나": "진짜 내 이름 맞아요.",
+              "cg": "ep10_c034_p01"
+            }
+          ],
+          "effects": {
+            "flags": {
+              "ep10_진명확인_말함": true
+            }
+          },
+          "next": "ep10_travel_question"
+        }
+      ]
+    },
+    "ep10_c035": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c035",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "우리 아빠가 무려 세 달에 걸쳐 가족투표를 하고 결정한 이름이라고요.",
+          "cg": "ep10_c035"
+        }
+      ],
+      "next": "ep10_c035_audience"
+    },
+    "ep10_c035_audience": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c035",
+      "perspective": "audience",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕속마음": "부모를 언급하는 태도에서도 드러나지만…",
+          "cg": "ep10_c035"
+        }
+      ],
+      "next": "ep10_c036"
+    },
+    "ep10_c036": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c036",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "고대 시하나어로 빛과 축복을 의미하죠.",
+          "cg": "ep10_c036"
+        }
+      ],
+      "next": "ep10_c037",
+      "effects": {
+        "flags": {
+          "ep10_이름뜻_말함": true
+        }
+      }
+    },
+    "ep10_c037": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c037",
+      "perspective": "audience",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕속마음": "이렇게 보고만 있어도 알아차리고 만다.",
+          "cg": "ep10_c037"
+        }
+      ],
+      "next": "ep10_c038"
+    },
+    "ep10_c038": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c038",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "너…",
+          "cg": "ep10_c038"
+        }
+      ],
+      "next": "ep10_c039"
+    },
+    "ep10_c039": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c039",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "사랑받고 자랐군.",
+          "cg": "ep10_c039"
+        }
+      ],
+      "next": "ep10_c040"
+    },
+    "ep10_c040": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c040",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c040"
+        }
+      ],
+      "next": "ep10_c041"
+    },
+    "ep10_c041": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c041",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c041"
+        }
+      ],
+      "next": "ep10_c042"
+    },
+    "ep10_c042": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c042",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "그래서 더 궁금해지는군.",
+          "cg": "ep10_c042"
+        }
+      ],
+      "next": "ep10_c043"
+    },
+    "ep10_c043": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c043",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "예쁨 받고 자란 여자가 왜 집을 내팽겨치고 고생하며 다니는 건지.",
+          "cg": "ep10_c043"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep10_travel_retort",
+          "text": "왕은 왜 집에만 있느냐고 반문한다",
+          "next": "ep10_c044"
+        },
+        {
+          "id": "ep10_travel_hold",
+          "text": "이유는 말하지 않고 호칭을 묻는다",
+          "lines": [
+            {
+              "ep10_아시나": "그 얘기는 하지 않을래요. 그럼 뭐라고 부르면 되죠?",
+              "cg": "ep10_c016"
+            }
+          ],
+          "next": "ep10_c047"
+        }
+      ]
+    },
+    "ep10_c044": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c044",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "그럼 그쪽은 왜 집에만 박혀있는데요?",
+          "cg": "ep10_c044"
+        }
+      ],
+      "next": "ep10_c045"
+    },
+    "ep10_c045": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c045",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "그쪽?",
+          "cg": "ep10_c045_p01"
+        },
+        {
+          "ep10_아시나속마음": "아차, 왕한테 너무 막말한 건가.",
+          "cg": "ep10_c045_p02"
+        }
+      ],
+      "next": "ep10_c046"
+    },
+    "ep10_c046": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c046",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "그, 그럼 왕님? 라 쿤이시여? 그렇게 부르면 될까요?",
+          "cg": "ep10_c046"
+        },
+        {
+          "ep10_왕": "아니.",
+          "cg": "ep10_c046"
+        }
+      ],
+      "next": "ep10_c047"
+    },
+    "ep10_c047": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c047",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "그럼… 시하드시여? 이건 무슨 뜻인가요?",
+          "cg": "ep10_c047"
+        }
+      ],
+      "next": "ep10_c048"
+    },
+    "ep10_c048": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c048",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "나시르도 그렇게 부르던데.",
+          "cg": "ep10_c048"
+        }
+      ],
+      "next": "ep10_c049"
+    },
+    "ep10_c049": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c049",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "신의 이름이니, '나의 신이시여'라는 의미다.",
+          "cg": "ep10_c049",
+          "effects": {
+            "flags": {
+              "ep10_시하드뜻_앎": true
+            }
+          }
+        }
+      ],
+      "next": "ep10_c050"
+    },
+    "ep10_c050": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c050",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "그럼 뭐라고 부를까요?",
+          "cg": "ep10_c050"
+        },
+        {
+          "ep10_아시나": "그렇구나…",
+          "cg": "ep10_c050"
+        }
+      ],
+      "next": "ep10_c051"
+    },
+    "ep10_c051": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c051",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "시하드 젠 베히다트.",
+          "cg": "ep10_c051"
+        },
+        {
+          "ep10_아시나속마음": "시하드는 신의 이름",
+          "cg": "ep10_c051"
+        },
+        {
+          "ep10_아시나속마음": "라 쿤은 왕의 이름.",
+          "cg": "ep10_c051"
+        },
+        {
+          "ep10_아시나속마음": "그럼 진짜 이름은… 베히다트인가?",
+          "cg": "ep10_c051"
+        }
+      ],
+      "next": "ep10_c052"
+    },
+    "ep10_c052": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c052",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [],
+      "choices": [
+        {
+          "id": "ep10_title_behi",
+          "text": "베히님이라고 부른다",
+          "next": "ep10_title_source"
+        },
+        {
+          "id": "ep10_title_king",
+          "text": "라 쿤이라고 부른다",
+          "lines": [
+            {
+              "ep10_아시나": "라 쿤이라고 부를게요.",
+              "cg": "ep10_c016"
+            },
+            {
+              "ep10_왕": "그리 부르고 싶다면.",
+              "cg": "ep10_c016"
+            }
+          ],
+          "next": "ep10_c055"
+        }
+      ]
+    },
+    "ep10_c053": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c053",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "듣기 좋군.",
+          "cg": "ep10_c053",
+          "effects": {
+            "flags": {
+              "ep10_베히님": true
+            }
+          }
+        }
+      ],
+      "next": "ep10_c054"
+    },
+    "ep10_c054": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c054",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "뭐야, 웃는 모습 처음 보는 것 같아…",
+          "cg": "ep10_c054"
+        }
+      ],
+      "next": "ep10_c055"
+    },
+    "ep10_c055": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c055",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "근데 왜 이렇게 제게 관심이 많으세요, 베히님?",
+          "cg": "ep10_c055",
+          "if": "flag:ep10_베히님"
+        },
+        {
+          "ep10_아시나": "근데 왜 이렇게 제게 관심이 많으세요, 라 쿤?",
+          "if": "!flag:ep10_베히님",
+          "cg": "ep10_c055"
+        },
+        {
+          "ep10_아시나": "쿤이라는 게 되게 한가한가 봐요?",
+          "cg": "ep10_c055"
+        }
+      ],
+      "next": "ep10_c056"
+    },
+    "ep10_c056": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c056",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "글쎄. 반해서?",
+          "cg": "ep10_c056_p01"
+        },
+        {
+          "나레이션": "",
+          "cg": "ep10_c056_p02"
+        }
+      ],
+      "next": "ep10_c057"
+    },
+    "ep10_c057": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c057",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "그, 그런 마음에도 없는 소리하지 말고…",
+          "cg": "ep10_c057"
+        }
+      ],
+      "next": "ep10_c058"
+    },
+    "ep10_c058": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c058",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c058"
+        }
+      ],
+      "choices": [
+        {
+          "id": "ep10_contact_silent",
+          "text": "아무 말도 하지 않는다",
+          "next": "ep10_c059"
+        },
+        {
+          "id": "ep10_contact_refuse",
+          "text": "손을 놓으라고 말한다",
+          "lines": [
+            {
+              "ep10_아시나": "손 놔요.",
+              "cg": "ep10_c016"
+            }
+          ],
+          "next": "ep10_distance_refusal"
+        },
+        {
+          "id": "ep10_contact_escape",
+          "text": "손목을 빼려 한다",
+          "next": "ep10_withdraw"
+        }
+      ]
+    },
+    "ep10_c059": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c059",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "왜… 마음이 없다고 생각하지?",
+          "cg": "ep10_c059"
+        }
+      ],
+      "next": "ep10_c060"
+    },
+    "ep10_c060": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c060",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c060"
+        }
+      ],
+      "next": "ep10_c061"
+    },
+    "ep10_c061": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c061",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c061"
+        }
+      ],
+      "next": "ep10_c062"
+    },
+    "ep10_c062": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c062",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c062"
+        }
+      ],
+      "next": "ep10_c063",
+      "effects": {
+        "flags": {
+          "ep10_입맞춤_발생": true
+        }
+      }
+    },
+    "ep10_c063": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c063",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "읏",
+          "cg": "ep10_c063"
+        },
+        {
+          "ep10_아시나": "읍…!",
+          "cg": "ep10_c063"
+        }
+      ],
+      "next": "ep10_c064"
+    },
+    "ep10_c064": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c064",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "갑자기 무슨…",
+          "cg": "ep10_c064"
+        }
+      ],
+      "next": "ep10_c065"
+    },
+    "ep10_c065": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c065",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c065"
+        }
+      ],
+      "next": "ep10_c066"
+    },
+    "ep10_c066": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c066",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "읏…!",
+          "cg": "ep10_c066"
+        },
+        {
+          "ep10_아시나속마음": "이대론 위험해. 벗어나야 돼…!",
+          "cg": "ep10_c066"
+        }
+      ],
+      "next": "ep10_c067"
+    },
+    "ep10_c067": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c067",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c067"
+        }
+      ],
+      "next": "ep10_c068"
+    },
+    "ep10_c068": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c068",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c068"
+        }
+      ],
+      "next": "ep10_c069",
+      "effects": {
+        "flags": {
+          "ep10_접촉중단": true
+        }
+      }
+    },
+    "ep10_c069": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c069",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나속마음": "어…? 먼저 물러났어…?",
+          "cg": "ep10_c069"
+        }
+      ],
+      "next": "ep10_c070"
+    },
+    "ep10_c070": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c070",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "……",
+          "cg": "ep10_c070"
+        }
+      ],
+      "next": "ep10_c071"
+    },
+    "ep10_c071": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c071",
+      "perspective": "audience",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕속마음": "순간적으로…",
+          "cg": "ep10_c071"
+        },
+        {
+          "ep10_왕속마음": "자제력을 잃을 뻔했다.",
+          "cg": "ep10_c071"
+        },
+        {
+          "ep10_왕속마음": "이 여자가 뭐라고.",
+          "cg": "ep10_c071"
+        }
+      ],
+      "next": "ep10_c072"
+    },
+    "ep10_c072": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c072",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "너… 남자를… 모르는군.",
+          "cg": "ep10_c072"
+        }
+      ],
+      "next": "ep10_c073"
+    },
+    "ep10_c073": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c073",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "…제가, 그걸 왜 알아야 하는데요?",
+          "cg": "ep10_c073"
+        }
+      ],
+      "next": "ep10_c074"
+    },
+    "ep10_c074": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c074",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "알았다면,",
+          "cg": "ep10_c074"
+        }
+      ],
+      "next": "ep10_c075"
+    },
+    "ep10_c075": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c075",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "여기서 멈추지 않았을 테니까.",
+          "cg": "ep10_c075"
+        }
+      ],
+      "next": "ep10_c076"
+    },
+    "ep10_c076": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c076",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "나레이션": "",
+          "cg": "ep10_c076"
+        }
+      ],
+      "next": "ep10_c077"
+    },
+    "ep10_c077": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c077",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_아시나": "나한테 도대체 왜 이래요?",
+          "cg": "ep10_c077"
+        }
+      ],
+      "next": "ep10_c078"
+    },
+    "ep10_c078": {
+      "title": "방 안의 대화",
+      "cut": "ep10_c078",
+      "cast": {
+        "left": "ep10_아시나",
+        "center": null,
+        "right": "ep10_왕"
+      },
+      "lines": [
+        {
+          "ep10_왕": "말했잖아, 반했다고.",
+          "cg": "ep10_c078_p01"
+        },
+        {
+          "ep10_왕": "반했으니까…",
+          "cg": "ep10_c078_p02"
+        },
+        {
+          "ep10_왕": "억지로 몸을 취하지도 않고,",
+          "cg": "ep10_c078_p03"
+        },
+        {
+          "ep10_왕": "변한 네 눈 색도 모르는 척해주는 거 아니겠어.",
+          "cg": "ep10_c078_p04",
+          "effects": {
+            "flags": {
+              "ep10_눈색인지_앎": true
+            }
+          }
+        },
+        {
+          "나레이션": "",
+          "cg": "ep10_c078_p05"
+        }
+      ],
+      "next": "ep10_end"
+    },
+    "ep10_end": {
+      "title": "방 안",
+      "lines": [],
+      "ending": {
+        "id": "ep10_boundary",
+        "title": "방 안",
+        "summary": "왕과 아시나는 같은 방에 남아 있다.",
+        "next_hook": "이후 연결은 미확정이다."
+      }
+    },
+    "ep10_family_source": {
+      "title": "가족 이야기",
+      "lines": [
+        {
+          "ep10_아시나": "네, 그렇긴 한데… 사촌들이랑 형제처럼 같이 자랐어요.",
+          "cg": "ep10_c029"
+        }
+      ],
+      "effects": {
+        "flags": {
+          "ep10_사촌_말함": true
+        }
+      },
+      "next": "ep10_c030"
+    },
+    "ep10_name_source": {
+      "title": "이름 이야기",
+      "lines": [
+        {
+          "ep10_아시나": "진짜 내 이름 맞아요. 그런 것도 속였을까 봐요?",
+          "cg": "ep10_c034_p02"
+        }
+      ],
+      "effects": {
+        "flags": {
+          "ep10_진명확인_말함": true
+        }
+      },
+      "next": "ep10_name_audience"
+    },
+    "ep10_name_audience": {
+      "title": "이름 이야기",
+      "perspective": "audience",
+      "lines": [
+        {
+          "ep10_왕속마음": "이 여자는, 구김이 없고 그늘도 없다.",
+          "cg": "ep10_c034_p02"
+        }
+      ],
+      "next": "ep10_c035"
+    },
+    "ep10_travel_question": {
+      "title": "여행 이야기",
+      "lines": [
+        {
+          "ep10_왕": "그럼 왜 집을 떠나 여행을 다니는 거지?",
+          "cg": "ep10_c016"
+        }
+      ],
+      "next": "ep10_travel_choice"
+    },
+    "ep10_travel_choice": {
+      "title": "여행 이야기",
+      "lines": [],
+      "choices": [
+        {
+          "id": "ep10_travel_retort",
+          "text": "왕은 왜 집에만 있느냐고 반문한다",
+          "next": "ep10_c044"
+        },
+        {
+          "id": "ep10_travel_hold",
+          "text": "이유는 말하지 않고 호칭을 묻는다",
+          "lines": [
+            {
+              "ep10_아시나": "그 얘기는 하지 않을래요. 그럼 뭐라고 부르면 되죠?",
+              "cg": "ep10_c016"
+            }
+          ],
+          "next": "ep10_c047"
+        }
+      ]
+    },
+    "ep10_title_source": {
+      "title": "호칭",
+      "lines": [
+        {
+          "ep10_아시나": "베히…",
+          "cg": "ep10_c052_p01"
+        },
+        {
+          "ep10_아시나": "…베히님. 그렇게 부르면 되나요?",
+          "cg": "ep10_c052_p02"
+        }
+      ],
+      "next": "ep10_c053"
+    },
+    "ep10_distance_refusal": {
+      "title": "방 안의 대화",
+      "cast": {
+        "left": "ep10_아시나",
+        "right": "ep10_왕",
+        "center": null
+      },
+      "lines": [
+        {
+          "나레이션": "왕은 손을 놓았다. 두 사람 사이에 거리가 생겼다.",
+          "cg": "ep10_c016"
+        }
+      ],
+      "next": "ep10_distance_question",
+      "effects": {
+        "flags": {
+          "ep10_접촉중단": true,
+          "ep10_접촉회피": true
+        }
+      }
+    },
+    "ep10_distance_question": {
+      "title": "방 안의 대화",
+      "cast": {
+        "left": "ep10_아시나",
+        "right": "ep10_왕",
+        "center": null
+      },
+      "lines": [
+        {
+          "ep10_아시나": "나한테 도대체 왜 이래요?",
+          "cg": "ep10_c016"
+        },
+        {
+          "ep10_왕": "말했잖아, 반했다고.",
+          "cg": "ep10_c016"
+        },
+        {
+          "ep10_왕": "변한 네 눈 색도 모르는 척해주는 거 아니겠어.",
+          "cg": "ep10_c016",
+          "effects": {
+            "flags": {
+              "ep10_눈색인지_앎": true
+            }
+          }
+        }
+      ],
+      "next": "ep10_end"
+    },
+    "ep10_distance_success": {
+      "title": "방 안의 대화",
+      "cast": {
+        "left": "ep10_아시나",
+        "right": "ep10_왕",
+        "center": null
+      },
+      "lines": [
+        {
+          "나레이션": "손목이 풀렸다. 아시나는 거리를 확보했다.",
+          "cg": "ep10_c016"
+        }
+      ],
+      "next": "ep10_distance_question",
+      "effects": {
+        "flags": {
+          "ep10_접촉회피": true,
+          "ep10_접촉중단": true
+        }
+      }
+    },
+    "ep10_withdraw": {
+      "title": "잡힌 손목",
+      "cast": {
+        "left": "ep10_아시나",
+        "right": "ep10_왕",
+        "center": null
+      },
+      "lines": [
+        {
+          "나레이션": "아시나가 손목을 빼며 물러서자 왕은 손을 놓았다.",
+          "cg": "ep10_c016"
+        }
+      ],
+      "next": "ep10_distance_success"
+    }
+  },
+  "facts": [
+    {
+      "if": "flag:ep10_시작",
+      "text": "아시나는 왕의 속마음 상자를 듣지 못했다. c034·c035·c037·c071은 독자에게만 보이는 내면이다. 구김과 그늘, 부모에 대한 태도, 자제력에 관한 왕의 생각을 아시나의 기억으로 쓰지 않는다. 9화 c042의 발화·속마음 구분도 미확정이므로 새 지식으로 넣지 않는다.",
+      "state_guard": [
+        "왕이 속으로 한 판단을 아시나가 들었다고 쓰지 않는다."
+      ]
+    },
+    {
+      "if": "flag:ep10_시작 && !flag:ep10_눈색인지_앎",
+      "text": "왕이 눈색 변화를 알아챘는지 아시나는 아직 모른다. 귀찌 원리나 신분을 왕이 안다고 추정하지 않는다.",
+      "state_guard": [
+        "왕의 눈색 인지를 미리 밝히지 않는다."
+      ]
+    },
+    {
+      "if": "flag:ep10_눈색인지_앎",
+      "text": "왕은 변한 눈색을 알아챘다고 말했다. 발견 시각과 귀찌 원리·정체를 아는 범위는 미확정이다.",
+      "state_guard": [
+        "왕이 아시나의 가문과 귀찌 원리를 간파했다고 쓰지 않는다."
+      ]
+    },
+    {
+      "if": "flag:ep10_눈마법_풀림",
+      "text": "현재 아시나의 머리는 갈색이고 눈은 붉다. 은발은 c014 마법 조정 중의 모습이다. 귀찌 잔여 수치는 이 화 근거로 정하지 않는다.",
+      "state_guard": [
+        "현재 머리를 은발로 고정하지 않는다."
+      ]
+    },
+    {
+      "if": "flag:ep10_시작 && !flag:ep10_사촌_말함",
+      "text": "왕에게 외동·사촌 관계를 공개한 선택이 없다. 말하지 않은 가족 정보를 왕의 기억에 넣지 않는다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep10_접촉회피",
+      "text": "손목 접촉은 중단되었고 입맞춤은 일어나지 않았다. 입맞춤 CG와 그에 따른 원작 내면·발언을 재생하지 않는다.",
+      "state_guard": [
+        "입맞춤한 기억을 만들지 않는다."
+      ]
+    }
+  ],
+  "atlas": {
+    "chapters": [
+      {
+        "id": "ep10",
+        "label": "10화",
+        "nodes": [
+          "ep10_s01",
+          "ep10_s02",
+          "ep10_s03",
+          "ep10_s04",
+          "ep10_s05",
+          "ep10_s06",
+          "ep10_s07",
+          "ep10_s08",
+          "ep10_s09",
+          "ep10_s10",
+          "ep10_c026_decision",
+          "ep10_c029_decision",
+          "ep10_c034_decision",
+          "ep10_c043_decision",
+          "ep10_c052_decision",
+          "ep10_c058_decision",
+          "ep10_travel_choice_decision",
+          "ep10_family_source_node",
+          "ep10_name_source_node",
+          "ep10_travel_question_node",
+          "ep10_title_source_node",
+          "ep10_withdraw_node",
+          "ep10_distance_refusal_node",
+          "ep10_distance_success_node",
+          "ep10_distance_question_node",
+          "ep10_end_node"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ep10_s01",
+        "label": "목욕 중 한숨",
+        "col": 0,
+        "row": 1,
+        "beats": [
+          "ep10_c001",
+          "ep10_c002",
+          "ep10_c003",
+          "ep10_c004",
+          "ep10_c005",
+          "ep10_c006",
+          "ep10_c007"
+        ]
+      },
+      {
+        "id": "ep10_s02",
+        "label": "귀찌의 이상 징후",
+        "col": 2,
+        "row": 1,
+        "beats": [
+          "ep10_c008",
+          "ep10_c009",
+          "ep10_c010",
+          "ep10_c011",
+          "ep10_c012",
+          "ep10_c013",
+          "ep10_c014"
+        ]
+      },
+      {
+        "id": "ep10_s03",
+        "label": "거울 앞 머리 손질",
+        "col": 4,
+        "row": 1,
+        "beats": [
+          "ep10_c015",
+          "ep10_c016",
+          "ep10_c017",
+          "ep10_c018",
+          "ep10_c019",
+          "ep10_c020"
+        ]
+      },
+      {
+        "id": "ep10_s04",
+        "label": "잦은 방문에 당황",
+        "col": 6,
+        "row": 1,
+        "beats": [
+          "ep10_c021",
+          "ep10_c022",
+          "ep10_c023",
+          "ep10_c024",
+          "ep10_c025",
+          "ep10_c027",
+          "ep10_c028",
+          "ep10_c030"
+        ]
+      },
+      {
+        "id": "ep10_s05",
+        "label": "이름을 되묻는 왕",
+        "col": 8,
+        "row": 1,
+        "beats": [
+          "ep10_c031",
+          "ep10_c032",
+          "ep10_c033",
+          "ep10_c035",
+          "ep10_c035_audience",
+          "ep10_c036",
+          "ep10_c037",
+          "ep10_c038",
+          "ep10_c039",
+          "ep10_c040",
+          "ep10_c041"
+        ]
+      },
+      {
+        "id": "ep10_s06",
+        "label": "여행 이유 문답",
+        "col": 10,
+        "row": 1,
+        "beats": [
+          "ep10_c042",
+          "ep10_c044",
+          "ep10_c045",
+          "ep10_c046",
+          "ep10_c047",
+          "ep10_c048",
+          "ep10_c049",
+          "ep10_c050"
+        ]
+      },
+      {
+        "id": "ep10_s07",
+        "label": "왕의 이름과 칭호",
+        "col": 12,
+        "row": 1,
+        "beats": [
+          "ep10_c051",
+          "ep10_c053",
+          "ep10_c054"
+        ]
+      },
+      {
+        "id": "ep10_s08",
+        "label": "관심의 이유를 질문",
+        "col": 14,
+        "row": 1,
+        "beats": [
+          "ep10_c055",
+          "ep10_c056",
+          "ep10_c057",
+          "ep10_c059",
+          "ep10_c060",
+          "ep10_c061"
+        ]
+      },
+      {
+        "id": "ep10_s09",
+        "label": "갑작스러운 입맞춤",
+        "col": 16,
+        "row": 1,
+        "beats": [
+          "ep10_c062",
+          "ep10_c063",
+          "ep10_c064",
+          "ep10_c065",
+          "ep10_c066",
+          "ep10_c067",
+          "ep10_c068",
+          "ep10_c069",
+          "ep10_c070",
+          "ep10_c071"
+        ]
+      },
+      {
+        "id": "ep10_s10",
+        "label": "멈춘 뒤의 문답",
+        "col": 18,
+        "row": 1,
+        "beats": [
+          "ep10_c072",
+          "ep10_c073",
+          "ep10_c074",
+          "ep10_c075",
+          "ep10_c076",
+          "ep10_c077",
+          "ep10_c078"
+        ]
+      },
+      {
+        "id": "ep10_c026_decision",
+        "label": "긴 머리의 불편을 질문",
+        "col": 0,
+        "row": 2,
+        "beats": [
+          "ep10_c026"
+        ]
+      },
+      {
+        "id": "ep10_c029_decision",
+        "label": "형제 유무를 질문",
+        "col": 2,
+        "row": 2,
+        "beats": [
+          "ep10_c029"
+        ]
+      },
+      {
+        "id": "ep10_c034_decision",
+        "label": "진짜 이름인지 확인",
+        "col": 4,
+        "row": 2,
+        "beats": [
+          "ep10_c034_question",
+          "ep10_c034_audience",
+          "ep10_c034"
+        ]
+      },
+      {
+        "id": "ep10_c043_decision",
+        "label": "집을 떠난 이유를 질문",
+        "col": 6,
+        "row": 2,
+        "beats": [
+          "ep10_c043"
+        ]
+      },
+      {
+        "id": "ep10_c052_decision",
+        "label": "왕을 부를 호칭 선택",
+        "col": 8,
+        "row": 2,
+        "beats": [
+          "ep10_c052"
+        ]
+      },
+      {
+        "id": "ep10_c058_decision",
+        "label": "붙잡힌 손목",
+        "col": 10,
+        "row": 2,
+        "beats": [
+          "ep10_c058"
+        ]
+      },
+      {
+        "id": "ep10_travel_choice_decision",
+        "label": "여행 질문에 대응",
+        "col": 12,
+        "row": 2,
+        "beats": [
+          "ep10_travel_choice"
+        ]
+      },
+      {
+        "id": "ep10_family_source_node",
+        "label": "사촌들과 자란 이야기",
+        "col": 0,
+        "row": 3,
+        "beats": [
+          "ep10_family_source"
+        ]
+      },
+      {
+        "id": "ep10_name_source_node",
+        "label": "본명이라고 답변",
+        "col": 2,
+        "row": 3,
+        "beats": [
+          "ep10_name_source",
+          "ep10_name_audience"
+        ]
+      },
+      {
+        "id": "ep10_travel_question_node",
+        "label": "여행을 다니는 이유",
+        "col": 4,
+        "row": 3,
+        "beats": [
+          "ep10_travel_question"
+        ]
+      },
+      {
+        "id": "ep10_title_source_node",
+        "label": "베히님 호칭 제안",
+        "col": 6,
+        "row": 3,
+        "beats": [
+          "ep10_title_source"
+        ]
+      },
+      {
+        "id": "ep10_withdraw_node",
+        "label": "손목을 빼며 물러남",
+        "col": 8,
+        "row": 3,
+        "beats": [
+          "ep10_withdraw"
+        ]
+      },
+      {
+        "id": "ep10_distance_refusal_node",
+        "label": "요구에 손을 놓는 왕",
+        "col": 10,
+        "row": 3,
+        "beats": [
+          "ep10_distance_refusal"
+        ]
+      },
+      {
+        "id": "ep10_distance_success_node",
+        "label": "손목을 풀고 거리 확보",
+        "col": 12,
+        "row": 3,
+        "beats": [
+          "ep10_distance_success"
+        ]
+      },
+      {
+        "id": "ep10_distance_question_node",
+        "label": "거리를 둔 뒤 이유 추궁",
+        "col": 16,
+        "row": 3,
+        "beats": [
+          "ep10_distance_question"
+        ]
+      },
+      {
+        "id": "ep10_end_node",
+        "label": "눈색을 밝힌 뒤",
+        "col": 18,
+        "row": 3,
+        "beats": [
+          "ep10_end"
+        ],
+        "ending": true
+      }
+    ],
+    "edges": [
+      [
+        "ep10_s01",
+        "ep10_s02"
+      ],
+      [
+        "ep10_s02",
+        "ep10_s03"
+      ],
+      [
+        "ep10_s03",
+        "ep10_s04"
+      ],
+      [
+        "ep10_s04",
+        "ep10_c026_decision"
+      ],
+      [
+        "ep10_c026_decision",
+        "ep10_s04"
+      ],
+      [
+        "ep10_s04",
+        "ep10_c029_decision"
+      ],
+      [
+        "ep10_c029_decision",
+        "ep10_family_source_node"
+      ],
+      [
+        "ep10_c029_decision",
+        "ep10_s04"
+      ],
+      [
+        "ep10_s04",
+        "ep10_s05"
+      ],
+      [
+        "ep10_s05",
+        "ep10_c034_decision"
+      ],
+      [
+        "ep10_c034_decision",
+        "ep10_name_source_node"
+      ],
+      [
+        "ep10_c034_decision",
+        "ep10_travel_question_node"
+      ],
+      [
+        "ep10_s05",
+        "ep10_s06"
+      ],
+      [
+        "ep10_s06",
+        "ep10_c043_decision"
+      ],
+      [
+        "ep10_c043_decision",
+        "ep10_s06"
+      ],
+      [
+        "ep10_s06",
+        "ep10_s07"
+      ],
+      [
+        "ep10_s07",
+        "ep10_c052_decision"
+      ],
+      [
+        "ep10_c052_decision",
+        "ep10_title_source_node"
+      ],
+      [
+        "ep10_c052_decision",
+        "ep10_s08"
+      ],
+      [
+        "ep10_s07",
+        "ep10_s08"
+      ],
+      [
+        "ep10_s08",
+        "ep10_c058_decision"
+      ],
+      [
+        "ep10_c058_decision",
+        "ep10_s08"
+      ],
+      [
+        "ep10_c058_decision",
+        "ep10_distance_refusal_node"
+      ],
+      [
+        "ep10_c058_decision",
+        "ep10_withdraw_node"
+      ],
+      [
+        "ep10_s08",
+        "ep10_s09"
+      ],
+      [
+        "ep10_s09",
+        "ep10_s10"
+      ],
+      [
+        "ep10_s10",
+        "ep10_end_node"
+      ],
+      [
+        "ep10_family_source_node",
+        "ep10_s04"
+      ],
+      [
+        "ep10_name_source_node",
+        "ep10_s05"
+      ],
+      [
+        "ep10_travel_question_node",
+        "ep10_travel_choice_decision"
+      ],
+      [
+        "ep10_travel_choice_decision",
+        "ep10_s06"
+      ],
+      [
+        "ep10_title_source_node",
+        "ep10_s07"
+      ],
+      [
+        "ep10_distance_refusal_node",
+        "ep10_distance_question_node"
+      ],
+      [
+        "ep10_distance_question_node",
+        "ep10_end_node"
+      ],
+      [
+        "ep10_distance_success_node",
+        "ep10_distance_question_node"
+      ],
+      [
+        "ep10_withdraw_node",
+        "ep10_distance_success_node"
+      ]
+    ]
+  }
+}
+

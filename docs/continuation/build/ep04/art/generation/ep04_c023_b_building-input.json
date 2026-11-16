@@ -1,0 +1,62 @@
+{
+  "asset_id": "ep04_c023_b_building",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_006.png",
+  "source_page_sha256": "0ab9db6565b47f9dff6919f4808f2688f9963b5b4fc4687284ce518f103fd02e",
+  "source_cut_window": [
+    0,
+    175,
+    2000,
+    18358
+  ],
+  "selected_window": [
+    0,
+    6480,
+    2000,
+    14610
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c023.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c023_b_building-selected.png",
+  "selected_size": [
+    2000,
+    8130
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c023_b_building-building.png",
+      "role": "먼저 건물 관찰 패널",
+      "source_window": [
+        240,
+        6490,
+        2000,
+        9450
+      ],
+      "size": [
+        1760,
+        2960
+      ],
+      "local_y": [
+        10,
+        2970
+      ]
+    },
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c023_b_building-guards.png",
+      "role": "그다음 경비 두 명 패널",
+      "source_window": [
+        0,
+        12530,
+        2000,
+        14610
+      ],
+      "size": [
+        2000,
+        2080
+      ],
+      "local_y": [
+        6050,
+        8130
+      ]
+    }
+  ],
+  "transform": "실제 원작 두 패널을 원래 위→아래 순서로 각각 추출. 새 그림·합성 없음."
+}

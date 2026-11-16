@@ -1,0 +1,39 @@
+{
+  "source_session": "/Users/choeminju/.omo/agent/projects/월흔_trpg-49c6d1e7f022/senpi-task/children/st_01a1c333/sessions/st_01a1c333/2026-11-10T02-02-18.911Z_8202843c-b965-4504-bf51-9ade951bc56e.jsonl",
+  "recovery_date": "2026-11-10",
+  "fresh_browsing": false,
+  "role_observation": {
+    "groups": [],
+    "groups2": [
+      "운영진, 4명\n운영진\n — 4",
+      "운영진\n — 4",
+      "온라인, 27명\n온라인\n — 27",
+      "온라인\n — 27"
+    ],
+    "staff": [
+      "운영진 계정 1",
+      "운영진 계정 2",
+      "운영진 계정 3",
+      "운영진 계정 4"
+    ]
+  },
+  "excluded_mismatched_captures": [
+    [
+      "assets_1554774184242978847.json",
+      "🖼️ Frontia free backgrounds — 500+ images, 11 genre folders",
+      "(3) Discord | \"แดนสุขาวดี\" | 프론티아"
+    ],
+    [
+      "assets_1554774187476918303.json",
+      "🎵 Frontia free BGM — mood-based background music",
+      "(3) Discord | \"🎃 KISS ME BEFORE MIDNIGHT 🖤\" | 프론티아"
+    ]
+  ],
+  "valid_threads": 70,
+  "limitations": [
+    "메시지 DOM ID는 Map 키로만 사용되고 JSON 저장 시 소실",
+    "본문은 txt 최대 2500자, embed 최대 800자; Discord 표시 자체의 접힘·말줄임 포함",
+    "포럼 스크롤 정지와 채팅 스크롤 선택자 실패 가능성; 전체 범위 보장 불가",
+    "닉네임·이메일·거래번호는 보존본에서 마스킹; 일부 본문 속 별칭은 잔존할 수 있음"
+  ]
+}

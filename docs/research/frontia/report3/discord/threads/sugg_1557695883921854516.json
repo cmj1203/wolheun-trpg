@@ -1,0 +1,74 @@
+{
+ "title": "(3) Discord | \"이벤트 노드를 JSON을 통해 업로드하거나 다운로드받는 방식이 있다면 좋겠어요.\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 6,
+ "msgs": [
+  {
+   "t": "2026-10-08T10:07:19.317Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "{\n  \"episode\": \"테스트 에피소드\",\n  \"nodes\": [\n    { \"id\": \"P1\", \"type\": \"prologue\", \"name\": \"제빵사의 초대장\", \"scene\": {...}, \"guide\": \"...\", \"mission\": \"...\", \"next\": [\"M1\"] },\n    { \"id\": \"M1\", \"type\": \"main\", \"name\": \"D-1 자기소개\", \"trigger\": \"...\", \"scene\": {\"mode\": \"auto\", \"direction\": \"...\"}, \"guide\": \"...\", \"choices\": [], \"mission\": \"...\", \"next\": [\"M2\", \"S1\"] }\n  ],\n  \"edges\": [ {\"from\": \"P1\", \"to\": \"M1\"}, ... ]\n}\n\n\n이런 식으로 각 노드별로 프롤로근지 메인이벤트인지 서브이벤트인지 id로 알려주고 연결된건 edges에 넣는다는지 해서 말이죠.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-08T10:07:37.505Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " English\nIt would be nice if there was a way to upload or download event nodes through JSON. { \"episode\": \"test episode\", \"nodes\": [ { \"id\": \"P1\", \"type\": \"prologue\", \"name\": \"Baker's Invitation\", \"scene\": {...}, \"guide\": \"...\", \"mission\": \"...\", \"next\": [\"M1\"] }, { \"id\": \"M1\", \"type\": \"main\", \"name\": \"D-1 Self-introduction\", \"trigger\": \"...\", \"scene\": {\"mode\": \"auto\", \"direction\": \"...\"}, \"guide\": \"...\", \"choices\": [], \"mission\": \"...\", \"next\": [\"M2\", \"S1\"] } ], \"edges\": [ {\"from\": \"P1\", \"to\": \"M1\"}, ... ] } In this way, for each node It tells you by ID whether it is a prologue, main event, or sub-event, and puts connected things in edges.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-09T03:28:56.960Z",
+   "a": "Frontia_Huckleberry",
+   "bot": false,
+   "txt": "유저님 안녕하세요! \n우선 너무 좋은 아이디어 제안 주셔서 감사합니다. \n해당 기능을 제안주신 의도는 \n이벤트를 import, export 해서 AI 와 함께 이벤트 기획을 하고, \n그 기획을 그대로 붙여넣고 싶은 의도로 이해했는데 맞는지 여쭙고 싶어요. \n더 잘 구현해서 편의를 챙겨드리고 싶기에 더 질문을 여쭤봅니다.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-09T03:58:47.773Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "앗 넵. 맞습니다. 그렇게 익스포트 해온 json이 있다면 정리해둔 md파일을 토대로 내용 수정을 쉽게 할 수 있을 것 같아서요",
+   "emb": "",
+   "att": 0,
+   "reacts": "1",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-10T04:06:54.374Z",
+   "a": "Frontia_Huckleberry",
+   "bot": false,
+   "txt": "앗 넵. 맞습니다. 그렇게 익스포트 해온 json이 있다면 정리해둔 md파일을 토대로 내용 수정을 쉽게 할 수 있을 것 같아서요",
+   "emb": "",
+   "att": 0,
+   "reacts": "1",
+   "reply": "앗 넵. 맞습니다. 그렇게 익스포트 해온 json이 있다면 정리해둔 md파일을 토대로 내용 수정을 쉽게 할 수 있을 것 같아서요",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-10T04:09:16.271Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "한번 구조를 고민해보겠습니다!  니즈는 완전히 이해하였고,   이 부분이 export 뿐만 아니라 import 도 용이해야 의미있게 동작할 것 같아서  팀에 전파 후 기획해보겠습니다.   디렉터 스튜디오 제작의 불편함에 대해서 팀에서 공감하고 있고 개선을 준비하고 있습니다.  더 빠르게 좋은 서비스를 제공 드리지 못해 죄송합니다.    하지만 꼭 개선 해보겠습니다. 지금처럼 어떤 부분이 가장 불편한지 많은 의견 부탁드립니다!  정말 감사합니다. ",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "한번 구조를 고민해보겠습니다!  니즈는 완전히 이해하였고,   이 부분이 export 뿐만 아니라 import 도 용이해야 의미있게 동작할 것 같아서  팀에 전파 후 기획해보겠습니",
+   "sys": ""
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+  "candidate_id": "ep08_c002_p01",
+  "pid": 31498,
+  "pgid": 31498,
+  "started_at": 1794201695.7189069,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep08/gen/inputs/ep08_c002_p01.png",
+  "input_sha256": "ff18ec6e1b52bc4e7f13d8c89aac959792e71d1f3e5da657ba45259801128182",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep08/gen/ep08_c002_p01.png",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep08/art/native/ep08_c002_p01.log",
+  "native_active_before_launch": [],
+  "native_active_before_count": 0,
+  "slot_counter": "argv 첫 실행 파일 기준",
+  "independent_qa": "대기",
+  "finished_at": 1794201766.86146,
+  "exit_code": 0,
+  "output_exists": true,
+  "output_sha256": "0b59af3f845f72dbd55f7daa92de5d129783ae90f968c4d6bcb2d923a7929291",
+  "width": 1672,
+  "height": 941,
+  "output_bytes": 2985908
+}

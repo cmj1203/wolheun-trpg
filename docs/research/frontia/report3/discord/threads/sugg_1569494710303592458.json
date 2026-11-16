@@ -1,0 +1,30 @@
+{
+ "title": "(3) Discord | \"비밀번호 찾기 건의\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 2,
+ "msgs": [
+  {
+   "t": "2026-11-09T23:31:38.738Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "이메일로 가입했는데 로그인 화면에 비밀번호 찾기 기능도 없어서 저 깜짝 놀랐습니다\n이러면 비밀번호 잊은 사람들은 어떻게 다시 로그인하나요\n로그인 화면에 비밀번호 찾기 기능 만들어주세요\n요즘 사이트나 앱은 다 들어가 있습니다",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-11-10T02:03:38.551Z",
+   "a": "Frontia Manager",
+   "bot": true,
+   "txt": " English\nI signed up with a password recovery suggestion email, but I was surprised that there was no password recovery function on the login screen. If this is the case, how can people who have forgotten their password log in again? Please make a password recovery function on the login screen. It is included in all sites and apps these days.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

@@ -2,13 +2,13 @@ import { expect, test } from 'bun:test';
 import { Engine, noteFlag, type GmContext } from '../src/engine/engine.ts';
 import { buildSystem } from '../src/gm/prompt.ts';
 import { loreFor } from '../src/gm/lore.ts';
-import { FakeGm, approachOf, loadDesert, loadWolheunLore } from './helpers.ts';
+import { FakeGm, META, loadDesert, loadWolheunLore } from './helpers.ts';
 
 const scenario = await loadDesert();
 const lore = await loadWolheunLore();
 const question = '혹시 크라차까지 가는 길을 아시나요?';
 
-for (const path of ['run', 'watch', 'avoid']) {
+for (const path of ['run', 'watch']) {
   test(`${path}: 크라차 질문 뒤 의심이 오르고 칼이 나온다`, async () => {
     const engine = new Engine(scenario, new FakeGm());
     const fresh = engine.newGame(1, `kracha-${path}`).state;
@@ -29,24 +29,60 @@ for (const path of ['run', 'watch', 'avoid']) {
   });
 }
 
-for (const [path, text] of [['watch', '모래 언덕 뒤에서 먼저 살핀다'], ['avoid', '몰래 돌아서 피해 간다']] as const) {
-  test(`${path}: 말 없이 끌려와도 저기 다음에 크라차를 묻는다`, async () => {
-    const engine = new Engine(scenario, new FakeGm(() => approachOf(path)));
-    const { state } = engine.newGame(1, `kracha-dragged-${path}`);
-    const { step } = await engine.act(state, { type: 'free', text });
-    const lines = step.events.flatMap((e) => e.type === 'line' ? [e.text] : []);
-    const dragged = lines.findIndex((line) => line.includes('호위 하나가 내 팔을 붙잡아'));
-    expect(dragged).toBeGreaterThanOrEqual(0);
-    expect(lines.indexOf('저… 저기…')).toBeGreaterThan(dragged);
-    expect(lines.indexOf(question)).toBeGreaterThan(lines.indexOf('저… 저기…'));
-    expect(lines).not.toContain('무슨 말을 꺼내기도 전이었다.');
-  });
-}
+test.each(['hit', 'mixed'] as const)('avoid %s: 피해 가는 목표를 이루고 질문·칼 경로로 돌아가지 않는다', async (tier) => {
+  let found = false;
+  for (let seed = 1; seed <= 100 && !found; seed++) {
+    const engine = new Engine(scenario, new FakeGm());
+    const fresh = engine.newGame(seed, `kracha-avoid-${tier}`).state;
+    const { state, step } = await engine.act(fresh, { type: 'approach', id: 'avoid' });
+    const roll = step.events.find((e) => e.type === 'roll');
+    if (roll?.type !== 'roll' || roll.tier !== tier) continue;
+    found = true;
+    const scenes = step.events.flatMap((e) => e.type === 'scene' ? [e.beat] : []);
+    expect(scenes).toContain('r3_slip');
+    expect(scenes).not.toContain('b03_ask');
+    expect(scenes).not.toContain('b03_met');
+    expect(scenes).not.toContain('b04_blade');
+    expect(state.flags.도주).toBe(true);
+    expect(state.flags.다가감).toBeUndefined();
+    expect(state.flags.길_물음).toBeUndefined();
+    expect(state.tracks.탈주).toBeGreaterThan(fresh.tracks.탈주 ?? 0);
+    expect(step.events.some((e) => e.type === 'line' && e.text === question)).toBe(false);
+    expect(step.events.some((e) => e.type === 'line' && e.text === '그저 길을 물어봤을 뿐이었다.')).toBe(false);
+    if (tier === 'mixed') {
+      expect(step.events.some((e) => e.type === 'price')).toBe(true);
+      expect(state.tracks.정신력).toBeLessThan(fresh.tracks.정신력 ?? 0);
+    } else {
+      expect(step.events.some((e) => e.type === 'price')).toBe(false);
+    }
+  }
+  expect(found).toBe(true);
+});
+
+// 61차: 다가가거나 길을 묻지 않은 판은 b03_met 으로 간다. 끌려 나와도 아시나가 먼저 길을 물었다고 전제하지 않는다.
+test('머뭇거리다 상대가 먼저 다가온 판은 길을 물었다고 전제하지 않는다', async () => {
+  const engine = new Engine(scenario, new FakeGm(() => ({ kind: 'idle', source: 'llm', meta: META })));
+  let { state, step } = engine.newGame(1, 'kracha-met');
+  const events = [...step.events];
+  for (let i = 0; i < 4 && state.beat === 'b02_people'; i++) {
+    ({ state, step } = await engine.act(state, { type: 'free', text: '(가만히 서 있는다)' }));
+    events.push(...step.events);
+  }
+  const scenes = events.flatMap((e) => (e.type === 'scene' ? [e.beat] : []));
+  const lines = events.flatMap((e) => (e.type === 'line' ? [e.text] : []));
+  expect(scenes).toContain('b03_met');
+  expect(scenes).not.toContain('b03_ask');
+  expect(lines.some((line) => line.includes('호위 하나가 내 팔을 붙잡아'))).toBe(true);
+  expect(lines).not.toContain(question);
+  expect(lines).not.toContain('그저 길을 물어봤을 뿐이었다.');
+  expect(lines.some((line) => line.startsWith('크라차에 원수라도'))).toBe(false);
+  expect(lines.some((line) => line.startsWith('말 한마디 안 했는데'))).toBe(true);
+});
 
 test('인물 수첩 공개 전 질문의 의심과 이유는 노출되지 않는다', async () => {
   const engine = new Engine(scenario, new FakeGm());
   const fresh = engine.newGame(1, 'kracha-hidden').state;
-  const { step } = await engine.act(fresh, { type: 'approach', id: 'avoid' });
+  const { step } = await engine.act(fresh, { type: 'approach', id: 'run' });
   const questionIndex = step.events.findIndex((e) => e.type === 'line' && e.text === question);
   const bladeIndex = step.events.findIndex((e) => e.type === 'scene' && e.beat === 'b04_blade');
   const between = step.events.slice(questionIndex + 1, bladeIndex);

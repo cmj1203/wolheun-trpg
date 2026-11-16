@@ -1,0 +1,27 @@
+{
+  "기존_후보": "/Users/choeminju/월흔_trpg/assets/ep03/gen/ep03_c045.png",
+  "GPT_편집_원본": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep03/art/fix-ready/045-원격편집.png",
+  "새_후보": "/Users/choeminju/월흔_trpg/assets/ep03/gen/ep03_c045_readyfix1.png",
+  "원격_출력_해상도": [
+    1671,
+    941
+  ],
+  "최종_해상도": [
+    1672,
+    941
+  ],
+  "원격_패치_정렬": "GPT 출력 폭 1671을 기존 폭 1672로 정렬. 합성 허용 부위에만 적용.",
+  "변경_허용_영역": "왼쪽 x<100,170<y<670 / 오른쪽 x>1330,y<700. 각 경계 안쪽 12픽셀 연결.",
+  "변경_픽셀수": 286786,
+  "마스크_밖_변경_픽셀수": 0,
+  "아시나_확인_영역_반열림": [
+    250,
+    320,
+    1310,
+    885
+  ],
+  "아시나_영역_완전_동일": true,
+  "기존_sha256": "481353e7d8f704e40e1205d8406837fdf4840c71334a2275defa877045b71a67",
+  "GPT_출력_sha256": "c63607d3d84f7cfefaa3b13e2e9dfcaf4ad2fbcc2ded0036ffb9f28b003d8de1",
+  "새_sha256": "359fa4d53dba3b5dae7f9319d598568f63ff9d3e8db221178918526b10f6d0b8"
+}

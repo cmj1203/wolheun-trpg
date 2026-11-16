@@ -1,0 +1,2868 @@
+# 7화 독립 내부 구현. 원작 검증용 컷이며 생성 CG 완성본이 아니다.
+{
+  "id": "ep07_harem",
+  "title": "하렘의 회랑",
+  "episode": "7화",
+  "source": "웹툰 「월흔」 7화 ep07_c001~ep07_c063 · 원작 검증용 컷 참조",
+  "rating": "15세 이용가",
+  "start": "ep07_c001",
+  "sheet": {
+    "name": "아시나",
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "tracks": {
+      "체력": 4,
+      "정신력": 4,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "items": [
+      {
+        "id": "magic_bag",
+        "file": "assets/ep01/gen/items/item_magic_bag.png",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.",
+        "states": [
+          {
+            "flag": "가방_끈",
+            "label": "끈 끊김",
+            "desc": "끈이 끊어져 손으로 쥐고 다닌다."
+          },
+          {
+            "flag": "짐_쏟음",
+            "label": "짐 쏟아짐",
+            "desc": "호위가 뒤집어 짐이 모래에 쏟아졌다."
+          }
+        ]
+      },
+      {
+        "id": "earring",
+        "file": "assets/ep01/gen/items/item_earring.png",
+        "name": "마법 귀찌",
+        "desc": "귓불에 달린 마법 귀찌."
+      },
+      {
+        "id": "map",
+        "file": "assets/ep01/gen/items/item_map.png",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도.",
+        "container": {
+          "item": "magic_bag",
+          "unless": "flag:지도_꺼냄 || flag:짐_쏟음"
+        },
+        "states": [
+          {
+            "flag": "지도_찢김",
+            "label": "찢김",
+            "desc": "한 귀퉁이가 찢겨 나갔다."
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "file": "assets/ep01/gen/items/item_pin.png",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀.",
+        "hidden": true
+      }
+    ],
+    "tension": 3
+  },
+  "cast": {
+    "나레이션": {
+      "display": "",
+      "style": "narration"
+    },
+    "GM": {
+      "display": "GM",
+      "style": "gm",
+      "sprite": "gm"
+    },
+    "아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "sprite": "asina_hood",
+      "sprite_alt": {
+        "if": "flag:후드_벗음",
+        "sprite": "asina"
+      },
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "속마음": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "남자": {
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "sprite": "man",
+      "lore": "베히다트",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    },
+    "ep07_나레이션": {
+      "display": "",
+      "style": "narration"
+    },
+    "ep07_독자서술": {
+      "display": "독자 시점",
+      "style": "narration"
+    },
+    "ep07_아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep07_독백": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep07_조사관": {
+      "display": "조사관",
+      "style": "speech",
+      "lore": "나시르"
+    },
+    "ep07_나시르": {
+      "display": "나시르",
+      "style": "speech",
+      "lore": "나시르"
+    },
+    "ep07_호위": {
+      "display": "타무라",
+      "style": "speech",
+      "lore": "카림"
+    },
+    "ep07_카림": {
+      "display": "카림",
+      "style": "speech",
+      "lore": "카림"
+    },
+    "ep07_카림독백": {
+      "display": "카림 · 독자 시점",
+      "style": "thought",
+      "lore": "카림"
+    },
+    "ep07_누르": {
+      "display": "누르",
+      "style": "speech",
+      "lore": "누르"
+    },
+    "ep07_은발남성": {
+      "display": "은발 남성",
+      "style": "speech",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": [
+        "neutral",
+        "dumbfounded",
+        "intrigued",
+        "wary",
+        "sneer",
+        "menacing"
+      ]
+    },
+    "ep07_은발남성독백": {
+      "display": "은발 남성 · 독자 시점",
+      "style": "thought",
+      "lore": "베히다트",
+      "presentation": "cg",
+      "faces": [
+        "neutral",
+        "dumbfounded",
+        "intrigued",
+        "wary",
+        "sneer",
+        "menacing"
+      ]
+    }
+  },
+  "backgrounds": {},
+  "sprites": {
+    "asina_hood": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_neutral_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_smile": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_smile_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_surprised": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_surprised.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_wary": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_wary_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_flustered": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_flustered_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_scared": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_scared_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_indignant": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_indignant_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_smug": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_smug_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_tired": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_tired_r91.png",
+      "placeholder": "asina"
+    },
+    "asina": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_neutral_r91.png",
+      "placeholder": "asina",
+      "alt": {
+        "if": "!item:magic_bag",
+        "id": "asina_nobag"
+      }
+    },
+    "asina_smile": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_smile_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_surprised": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_surprised.png",
+      "placeholder": "asina"
+    },
+    "asina_wary": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_wary_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_flustered": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_flustered_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_scared": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_scared_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_indignant": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_indignant_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_smug": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_smug_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_tired": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_tired_r91.png",
+      "placeholder": "asina"
+    },
+    "man": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_neutral.png",
+      "placeholder": "man"
+    },
+    "man_sneer": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_sneer.png",
+      "placeholder": "man"
+    },
+    "man_dumbfounded": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_dumbfounded.png",
+      "placeholder": "man"
+    },
+    "man_menacing": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_menacing.png",
+      "placeholder": "man"
+    },
+    "man_intrigued": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_intrigued.png",
+      "placeholder": "man"
+    },
+    "gm": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_neutral.png",
+      "placeholder": "gm"
+    },
+    "gm_smile": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_smile.png",
+      "placeholder": "gm"
+    },
+    "gm_thinking": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_thinking.png",
+      "placeholder": "gm"
+    },
+    "gm_surprised": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_surprised.png",
+      "placeholder": "gm"
+    },
+    "man_smile": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_smile.png",
+      "placeholder": "man"
+    },
+    "man_surprised": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_surprised.png",
+      "placeholder": "man"
+    },
+    "man_wary": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_wary.png",
+      "placeholder": "man"
+    },
+    "asina_nobag": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_neutral_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_smile": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_smile_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_surprised": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_surprised_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_wary": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_wary_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_flustered": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_flustered_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_scared": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_scared_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_indignant": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_indignant_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_smug": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_smug_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_tired": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_tired_v7r92.png",
+      "placeholder": "asina"
+    }
+  },
+  "cgs": {
+    "ep07_cg_001": {
+      "label": "7화 1컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c001.png",
+      "fit": "contain"
+    },
+    "ep07_cg_002": {
+      "label": "7화 2컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c002.png",
+      "fit": "contain"
+    },
+    "ep07_cg_003": {
+      "label": "7화 3컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c003.png",
+      "fit": "contain"
+    },
+    "ep07_cg_004": {
+      "label": "7화 4컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c004.png",
+      "fit": "contain"
+    },
+    "ep07_cg_005": {
+      "label": "7화 5컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c005.png",
+      "fit": "contain"
+    },
+    "ep07_cg_006": {
+      "label": "7화 6컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c006.png",
+      "fit": "contain"
+    },
+    "ep07_cg_007": {
+      "label": "7화 7컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c007.png",
+      "fit": "contain"
+    },
+    "ep07_cg_008": {
+      "label": "7화 8컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c008.png",
+      "fit": "contain"
+    },
+    "ep07_cg_009": {
+      "label": "7화 9컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c009.png",
+      "fit": "contain"
+    },
+    "ep07_cg_010": {
+      "label": "7화 10컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c010.png",
+      "fit": "contain"
+    },
+    "ep07_cg_011": {
+      "label": "7화 11컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c011.png",
+      "fit": "contain"
+    },
+    "ep07_cg_012": {
+      "label": "7화 12컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c012.png",
+      "fit": "contain"
+    },
+    "ep07_cg_013": {
+      "label": "7화 13컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c013.png",
+      "fit": "contain"
+    },
+    "ep07_cg_014": {
+      "label": "7화 14컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c014.png",
+      "fit": "contain"
+    },
+    "ep07_cg_015": {
+      "label": "7화 15컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c015.png",
+      "fit": "contain"
+    },
+    "ep07_cg_016": {
+      "label": "7화 16컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c016.png",
+      "fit": "contain"
+    },
+    "ep07_cg_017": {
+      "label": "7화 17컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c017.png",
+      "fit": "contain"
+    },
+    "ep07_cg_018": {
+      "label": "7화 18컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c018.png",
+      "fit": "contain"
+    },
+    "ep07_cg_019": {
+      "label": "7화 19컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c019.png",
+      "fit": "contain"
+    },
+    "ep07_cg_020": {
+      "label": "7화 20컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c020.png",
+      "fit": "contain"
+    },
+    "ep07_cg_021": {
+      "label": "7화 21컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c021.png",
+      "fit": "contain"
+    },
+    "ep07_cg_022": {
+      "label": "7화 22컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c022.png",
+      "fit": "contain"
+    },
+    "ep07_cg_023": {
+      "label": "7화 23컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c023.png",
+      "fit": "contain"
+    },
+    "ep07_cg_024": {
+      "label": "7화 24컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c024.png",
+      "fit": "contain"
+    },
+    "ep07_cg_025": {
+      "label": "7화 25컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c025.png",
+      "fit": "contain"
+    },
+    "ep07_cg_026": {
+      "label": "7화 26컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c026.png",
+      "fit": "contain"
+    },
+    "ep07_cg_027": {
+      "label": "7화 27컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c027.png",
+      "fit": "contain"
+    },
+    "ep07_cg_028": {
+      "label": "7화 28컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c028.png",
+      "fit": "contain"
+    },
+    "ep07_cg_029": {
+      "label": "7화 29컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c029.png",
+      "fit": "contain"
+    },
+    "ep07_cg_030": {
+      "label": "7화 30컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c030.png",
+      "fit": "contain"
+    },
+    "ep07_cg_031": {
+      "label": "7화 31컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c031.png",
+      "fit": "contain"
+    },
+    "ep07_cg_032": {
+      "label": "7화 32컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c032.png",
+      "fit": "contain"
+    },
+    "ep07_cg_033": {
+      "label": "7화 33컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c033.png",
+      "fit": "contain"
+    },
+    "ep07_cg_034": {
+      "label": "7화 34컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c034.png",
+      "fit": "contain"
+    },
+    "ep07_cg_035": {
+      "label": "7화 35컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c035.png",
+      "fit": "contain"
+    },
+    "ep07_cg_036": {
+      "label": "7화 36컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c036.png",
+      "fit": "contain"
+    },
+    "ep07_cg_037": {
+      "label": "7화 37컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c037.png",
+      "fit": "contain"
+    },
+    "ep07_cg_038": {
+      "label": "7화 38컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c038.png",
+      "fit": "contain"
+    },
+    "ep07_cg_039": {
+      "label": "7화 39컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c039.png",
+      "fit": "contain"
+    },
+    "ep07_cg_040": {
+      "label": "7화 40컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c040.png",
+      "fit": "contain"
+    },
+    "ep07_cg_041": {
+      "label": "7화 41컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c041.png",
+      "fit": "contain"
+    },
+    "ep07_cg_042": {
+      "label": "7화 42컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c042.png",
+      "fit": "contain"
+    },
+    "ep07_cg_043": {
+      "label": "7화 43컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c043.png",
+      "fit": "contain"
+    },
+    "ep07_cg_044": {
+      "label": "7화 44컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c044.png",
+      "fit": "contain"
+    },
+    "ep07_cg_045": {
+      "label": "7화 45컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c045.png",
+      "fit": "contain"
+    },
+    "ep07_cg_046": {
+      "label": "7화 46컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c046.png",
+      "fit": "contain"
+    },
+    "ep07_cg_047": {
+      "label": "7화 47컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c047.png",
+      "fit": "contain"
+    },
+    "ep07_cg_048": {
+      "label": "7화 48컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c048.png",
+      "fit": "contain"
+    },
+    "ep07_cg_049": {
+      "label": "7화 49컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c049.png",
+      "fit": "contain"
+    },
+    "ep07_cg_050": {
+      "label": "7화 50컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c050.png",
+      "fit": "contain"
+    },
+    "ep07_cg_051": {
+      "label": "7화 51컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c051.png",
+      "fit": "contain"
+    },
+    "ep07_cg_052": {
+      "label": "7화 52컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c052.png",
+      "fit": "contain"
+    },
+    "ep07_cg_053": {
+      "label": "7화 53컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c053.png",
+      "fit": "contain"
+    },
+    "ep07_cg_054": {
+      "label": "7화 54컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c054.png",
+      "fit": "contain"
+    },
+    "ep07_cg_055": {
+      "label": "7화 55컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c055.png",
+      "fit": "contain"
+    },
+    "ep07_cg_056": {
+      "label": "7화 56컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c056.png",
+      "fit": "contain"
+    },
+    "ep07_cg_057": {
+      "label": "7화 57컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c057.png",
+      "fit": "contain"
+    },
+    "ep07_cg_058": {
+      "label": "7화 58컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c058.png",
+      "fit": "contain"
+    },
+    "ep07_cg_059": {
+      "label": "7화 59컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c059.png",
+      "fit": "contain"
+    },
+    "ep07_cg_060": {
+      "label": "7화 60컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c060.png",
+      "fit": "contain"
+    },
+    "ep07_cg_061": {
+      "label": "7화 61컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c061.png",
+      "fit": "contain"
+    },
+    "ep07_cg_062": {
+      "label": "7화 62컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c062.png",
+      "fit": "contain"
+    },
+    "ep07_cg_063": {
+      "label": "7화 63컷 원작 검증용",
+      "file": "assets/ep07/cuts/full_res/clean/ep07_c063.png",
+      "fit": "contain"
+    },
+    "ep07_c001": {
+      "label": "7화 1컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c001.png",
+      "fit": "contain"
+    },
+    "ep07_c002": {
+      "label": "7화 2컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c002.png",
+      "fit": "contain"
+    },
+    "ep07_c003": {
+      "label": "7화 3컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c003_r2.png",
+      "fit": "contain"
+    },
+    "ep07_c004": {
+      "label": "7화 4컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c004.png",
+      "fit": "contain"
+    },
+    "ep07_c005_p01": {
+      "label": "7화 5컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c005_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c005_p02": {
+      "label": "7화 5컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c005_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c005_p03": {
+      "label": "7화 5컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c005_p03.png",
+      "fit": "contain"
+    },
+    "ep07_c006": {
+      "label": "7화 6컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c006.png",
+      "fit": "contain"
+    },
+    "ep07_c007": {
+      "label": "7화 7컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c007.png",
+      "fit": "contain"
+    },
+    "ep07_c008": {
+      "label": "7화 8컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c008.png",
+      "fit": "contain"
+    },
+    "ep07_c009": {
+      "label": "7화 9컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c009.png",
+      "fit": "contain"
+    },
+    "ep07_c010": {
+      "label": "7화 10컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c010.png",
+      "fit": "contain"
+    },
+    "ep07_c011": {
+      "label": "7화 11컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c011_r2.png",
+      "fit": "contain"
+    },
+    "ep07_c012": {
+      "label": "7화 12컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c012.png",
+      "fit": "contain"
+    },
+    "ep07_c013": {
+      "label": "7화 13컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c013.png",
+      "fit": "contain"
+    },
+    "ep07_c014_p01": {
+      "label": "7화 14컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c014_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c014_p02": {
+      "label": "7화 14컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c014_p02_r3.png",
+      "fit": "contain"
+    },
+    "ep07_c015": {
+      "label": "7화 15컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c015.png",
+      "fit": "contain"
+    },
+    "ep07_c016": {
+      "label": "7화 16컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c016.png",
+      "fit": "contain"
+    },
+    "ep07_c017": {
+      "label": "7화 17컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c017_r3.png",
+      "fit": "contain"
+    },
+    "ep07_c018": {
+      "label": "7화 18컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c018_r3.png",
+      "fit": "contain"
+    },
+    "ep07_c019_p01": {
+      "label": "7화 19컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c019_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c019_p02": {
+      "label": "7화 19컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c019_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c020": {
+      "label": "7화 20컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c020.png",
+      "fit": "contain"
+    },
+    "ep07_c021": {
+      "label": "7화 21컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c021.png",
+      "fit": "contain"
+    },
+    "ep07_c022": {
+      "label": "7화 22컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c022.png",
+      "fit": "contain"
+    },
+    "ep07_c023_p01": {
+      "label": "7화 23컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c023_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c023_p02": {
+      "label": "7화 23컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c023_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c024": {
+      "label": "7화 24컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c024.png",
+      "fit": "contain"
+    },
+    "ep07_c025": {
+      "label": "7화 25컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c025.png",
+      "fit": "contain"
+    },
+    "ep07_c026_p01": {
+      "label": "7화 26컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c026_p01_r3.png",
+      "fit": "contain"
+    },
+    "ep07_c026_p02": {
+      "label": "7화 26컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c026_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c027": {
+      "label": "7화 27컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c027.png",
+      "fit": "contain"
+    },
+    "ep07_c028": {
+      "label": "7화 28컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c028.png",
+      "fit": "contain"
+    },
+    "ep07_c029": {
+      "label": "7화 29컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c029.png",
+      "fit": "contain"
+    },
+    "ep07_c030": {
+      "label": "7화 30컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c030.png",
+      "fit": "contain"
+    },
+    "ep07_c031_p01": {
+      "label": "7화 31컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c031_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c031_p02": {
+      "label": "7화 31컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c031_p02_r2.png",
+      "fit": "contain"
+    },
+    "ep07_c032_p01": {
+      "label": "7화 32컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c032_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c032_p02": {
+      "label": "7화 32컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c032_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c033": {
+      "label": "7화 33컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c033.png",
+      "fit": "contain"
+    },
+    "ep07_c034": {
+      "label": "7화 34컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c034.png",
+      "fit": "contain"
+    },
+    "ep07_c035": {
+      "label": "7화 35컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c035.png",
+      "fit": "contain"
+    },
+    "ep07_c037": {
+      "label": "7화 37컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c037.png",
+      "fit": "contain"
+    },
+    "ep07_c038": {
+      "label": "7화 38컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c038.png",
+      "fit": "contain"
+    },
+    "ep07_c039": {
+      "label": "7화 39컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c039.png",
+      "fit": "contain"
+    },
+    "ep07_c040_p01": {
+      "label": "7화 40컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c040_p01_r2.png",
+      "fit": "contain"
+    },
+    "ep07_c040_p02": {
+      "label": "7화 40컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c040_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c041": {
+      "label": "7화 41컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c041_r2.png",
+      "fit": "contain"
+    },
+    "ep07_c042": {
+      "label": "7화 42컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c042.png",
+      "fit": "contain"
+    },
+    "ep07_c043": {
+      "label": "7화 43컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c043.png",
+      "fit": "contain"
+    },
+    "ep07_c044_p01": {
+      "label": "7화 44컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c044_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c044_p02": {
+      "label": "7화 44컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c044_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c044_p03": {
+      "label": "7화 44컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c044_p03.png",
+      "fit": "contain"
+    },
+    "ep07_c045": {
+      "label": "7화 45컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c045_r4.png",
+      "fit": "contain"
+    },
+    "ep07_c046": {
+      "label": "7화 46컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c046.png",
+      "fit": "contain"
+    },
+    "ep07_c047": {
+      "label": "7화 47컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c047.png",
+      "fit": "contain"
+    },
+    "ep07_c048": {
+      "label": "7화 48컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c048.png",
+      "fit": "contain"
+    },
+    "ep07_c049": {
+      "label": "7화 49컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c049.png",
+      "fit": "contain"
+    },
+    "ep07_c053": {
+      "label": "7화 53컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c053.png",
+      "fit": "contain"
+    },
+    "ep07_c054": {
+      "label": "7화 54컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c054.png",
+      "fit": "contain"
+    },
+    "ep07_c055": {
+      "label": "7화 55컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c055.png",
+      "fit": "contain"
+    },
+    "ep07_c056": {
+      "label": "7화 56컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c056.png",
+      "fit": "contain"
+    },
+    "ep07_c057": {
+      "label": "7화 57컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c057.png",
+      "fit": "contain"
+    },
+    "ep07_c058_p01": {
+      "label": "7화 58컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c058_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c058_p02": {
+      "label": "7화 58컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c058_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c058_p03": {
+      "label": "7화 58컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c058_p03.png",
+      "fit": "contain"
+    },
+    "ep07_c059_p01": {
+      "label": "7화 59컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c059_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c059_p02": {
+      "label": "7화 59컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c059_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c060": {
+      "label": "7화 60컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c060.png",
+      "fit": "contain"
+    },
+    "ep07_c061_p01": {
+      "label": "7화 61컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c061_p01.png",
+      "fit": "contain"
+    },
+    "ep07_c061_p02": {
+      "label": "7화 61컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c061_p02.png",
+      "fit": "contain"
+    },
+    "ep07_c063": {
+      "label": "7화 63컷 원작 검증용",
+      "file": "assets/ep07/gen/ep07_c063.png",
+      "fit": "contain"
+    }
+  },
+  "facts": [
+    {
+      "if": "flag:ep07_시작",
+      "text": "독자 전용 면담과 타인 독백은 아시나의 경험이나 기억이 아니다. 카림과 은발 남성의 내심을 아시나가 안다고 말하지 않는다. 은발 남성의 신원·기존 공개 시점은 앞 화 대조 전이며 본화에서 새 본명 공개를 만들지 않는다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep07_짐_부분반환",
+      "text": "조사에서 이상 없는 짐만 일부 반환됐다. 미심쩍은 물건은 계속 조사 측이 보관한다. 반환품 상세와 치부책의 위치·열람 여부는 확인되지 않았다. c004는 보호 마법을 믿는 아시나의 독백이다.",
+      "state_guard": [
+        "짐을 전부 돌려받",
+        "치부책을 돌려받",
+        "보호 마법 때문에 읽지 못했"
+      ]
+    },
+    {
+      "if": "flag:ep07_분홍녹색복 && flag:ep07_얼굴가리개",
+      "text": "아시나는 갈색 머리이며 분홍 얼굴 가리개와 분홍·흰 상의, 녹색 끈과 치마를 착용한다. 청록 궁정복이나 사막 후드 차림이 아니다.",
+      "state_guard": [
+        "청록 궁정복을 입",
+        "사막 후드를 쓰"
+      ]
+    },
+    {
+      "if": "flag:ep07_방_복귀",
+      "text": "아시나는 방에 돌아온 뒤 얼굴 가리개 없는 분홍·흰 상의와 녹색 치마 차림이다. 갈색 머리가 유지된다. 가리개를 벗은 시점과 보관 위치는 확인하지 않았다.",
+      "state_guard": [
+        "얼굴 가리개를 걷",
+        "변장이 풀려",
+        "은발이 드러"
+      ]
+    },
+    {
+      "if": "flag:ep07_카림_이름앎",
+      "text": "아시나는 호위에게서 카림이라는 이름과 사과를 직접 들었고 이름으로 불러 달라고 부탁했다. 카림의 내적 반성이나 탈옥 정보를 얻은 경로는 듣지 못했다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep07_호위_밖대기",
+      "text": "카림은 기본적으로 하렘 밖에서 대기한다고 말했다. 방 안에 계속 붙어 있는 상태도 호위가 해제된 상태도 아니다.",
+      "state_guard": []
+    },
+    {
+      "if": "flag:ep07_단화",
+      "text": "아시나는 갈색 단화를 신고 회랑을 살피러 나왔다. 탈출로·숨은 문·경비 교대 정보는 얻지 않았다.",
+      "state_guard": [
+        "탈출로를 확보",
+        "비밀 문을 발견"
+      ]
+    },
+    {
+      "if": "flag:ep07_하렘질문_들음",
+      "text": "아시나는 하렘이 편한지 묻는 말을 들었지만 대답은 지-, 지금 무슨-에서 끊겼다. 동의·입맞춤·연애 관계를 확정하지 않는다. 나시르가 보고했으리라는 생각은 추측이다.",
+      "state_guard": []
+    }
+  ],
+  "beats": {
+    "ep07_c001": {
+      "title": "조사 종료와 짐 일부 반환",
+      "cut": "ep07_c001",
+      "cast": {
+        "left": "ep07_아시나",
+        "right": "ep07_조사관",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "cg": "ep07_c001",
+          "ep07_조사관": "아시나님, 이걸 봐주시겠습니까?"
+        }
+      ],
+      "next": "ep07_c002",
+      "situation": "궁의 서재·조사실. 책장과 책상 전경 위로 조사관이 아시나를 부른다.",
+      "effects": {
+        "flags": {
+          "후속_시작": true,
+          "ep07_시작": true,
+          "ep03_복장_청록복": false,
+          "ep07_분홍녹색복": true,
+          "ep07_얼굴가리개": true
+        }
+      }
+    },
+    "ep07_c002": {
+      "title": "조사 종료와 짐 일부 반환",
+      "cut": "ep07_c002",
+      "cast": {
+        "left": "ep07_아시나",
+        "right": "ep07_조사관",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "…!",
+          "cg": "ep07_c002"
+        },
+        {
+          "ep07_아시나": "이건, 내 짐…!",
+          "cg": "ep07_c002"
+        }
+      ],
+      "next": "ep07_c003",
+      "situation": "같은 서재. 아시나가 놀라고 조사관이 갈색 짐가방을 보여 준다."
+    },
+    "ep07_c003": {
+      "title": "조사 종료와 짐 일부 반환",
+      "cut": "ep07_c003",
+      "cast": {
+        "left": "ep07_아시나",
+        "right": "ep07_조사관",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "cg": "ep07_c003",
+          "ep07_조사관": "조사 결과 이상이 없는 건 돌려드리겠습니다."
+        },
+        {
+          "cg": "ep07_c003",
+          "ep07_조사관": "아직 미심쩍은 건 저희가 갖고 있습니다만.",
+          "effects": {
+            "flags": {
+              "ep03_짐_수중없음": false,
+              "ep07_짐_부분반환": true
+            }
+          }
+        }
+      ],
+      "next": "ep07_c004",
+      "situation": "같은 서재. 조사 후 반환 범위를 설명한다."
+    },
+    "ep07_c004": {
+      "title": "조사 종료와 짐 일부 반환",
+      "cut": "ep07_c004",
+      "cast": {
+        "left": "ep07_아시나",
+        "right": "ep07_조사관",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "그래도 괜찮을 거야.",
+          "cg": "ep07_c004"
+        },
+        {
+          "ep07_독백": "제일 중요한 치부책은 보호 마법에 걸려있으니까.",
+          "cg": "ep07_c004"
+        }
+      ],
+      "next": "ep07_c005",
+      "situation": "아시나의 내면과 붉은 금장 책 삽화."
+    },
+    "ep07_c005": {
+      "title": "조사 종료와 짐 일부 반환",
+      "cut": "ep07_c005",
+      "cast": {
+        "left": "ep07_아시나",
+        "right": "ep07_조사관",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "cg": "ep07_c005_p01",
+          "ep07_조사관": "오늘 조사는 여기까지 하죠."
+        },
+        {
+          "cg": "ep07_c005_p02",
+          "ep07_조사관": "앞으로 자주 뵐 것 같네요, 아시나님."
+        },
+        {
+          "cg": "ep07_c005_p02",
+          "ep07_조사관": "잘 부탁드립니다."
+        },
+        {
+          "ep07_아시나": "그랬으면 좋겠네요.",
+          "cg": "ep07_c005_p03"
+        }
+      ],
+      "next": "ep07_c006",
+      "situation": "같은 서재. 나시르가 조사를 끝내며 웃고 아시나가 답한다."
+    },
+    "ep07_c006": {
+      "title": "조사 종료와 짐 일부 반환",
+      "cut": "ep07_c006",
+      "cast": {
+        "left": "ep07_아시나",
+        "right": "ep07_조사관",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "전 한 군데에 오래 못 있는 성격이거든요.",
+          "cg": "ep07_c006"
+        }
+      ],
+      "next": "ep07_c007",
+      "situation": "앞 장면의 마무리. 인물 없이 꽃무늬 배경에 답이 이어진다."
+    },
+    "ep07_c007": {
+      "title": "표제",
+      "cut": "ep07_c007",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "월흔",
+          "cg": "ep07_c007"
+        },
+        {
+          "ep07_나레이션": "그림 하나비 · 각색 미예 · 원작 윤슬",
+          "cg": "ep07_c007"
+        }
+      ],
+      "next": "ep07_c008",
+      "situation": "서사 밖 작품 표제."
+    },
+    "ep07_c008": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c008",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독자서술": "",
+          "cg": "ep07_c008"
+        }
+      ],
+      "next": "ep07_c009",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 서재의 높은 천장·조명·서가 전경. 별도 면담으로 전환한다."
+    },
+    "ep07_c009": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c009",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나시르": "카림.",
+          "cg": "ep07_c009"
+        }
+      ],
+      "next": "ep07_c010",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 책상에 앉아 깃펜을 든 나시르가 앞에 선 카림을 부른다."
+    },
+    "ep07_c010": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c010",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나시르": "당분간 네가 하렘 호위 좀 해야겠다.",
+          "cg": "ep07_c010"
+        },
+        {
+          "ep07_나시르": "하렘에 안주인이 들어오셨어.",
+          "cg": "ep07_c010"
+        }
+      ],
+      "next": "ep07_c011",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 같은 서재. 카림이 서 있고 호위 임무가 내려온다."
+    },
+    "ep07_c011": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c011",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_카림": "무슨 소리지?",
+          "cg": "ep07_c011"
+        },
+        {
+          "ep07_카림": "라 쿤의 타무라인 내가?",
+          "cg": "ep07_c011"
+        }
+      ],
+      "next": "ep07_c012",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 서재. 카림이 얼굴을 찌푸리며 반문한다."
+    },
+    "ep07_c012": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c012",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "cg": "ep07_c012",
+          "ep07_독자서술": "사막의 전사들은 강하다."
+        }
+      ],
+      "next": "ep07_c013",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 사막 풍경으로 바뀌는 설명 삽화."
+    },
+    "ep07_c013": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c013",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "cg": "ep07_c013",
+          "ep07_독자서술": "척박한 땅에서 살아남기 위해선 그들도 어쩔 수 없었으리라."
+        }
+      ],
+      "next": "ep07_c014",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 피가 튄 전사와 검의 삽화."
+    },
+    "ep07_c014": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c014",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "cg": "ep07_c014_p01",
+          "ep07_독자서술": "그중에서도 사막의 부족들과 관계없이 오로지 쿤만을 위해 사는 전사들이 있는데,"
+        },
+        {
+          "cg": "ep07_c014_p01",
+          "ep07_독자서술": "그게 바로 타무라다."
+        },
+        {
+          "cg": "ep07_c014_p02",
+          "ep07_독자서술": "카림은 그중에서도 가장 뛰어난 타무라였다."
+        },
+        {
+          "ep07_카림": "설마, 그 이방인 여자를 말하는건가?",
+          "cg": "ep07_c014_p02"
+        }
+      ],
+      "next": "ep07_c015",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 타무라 설명 삽화에서 서재의 카림으로 돌아온다."
+    },
+    "ep07_c015": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c015",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나시르": "썩 마음에 들지 않는다는 눈빛이네.",
+          "cg": "ep07_c015"
+        },
+        {
+          "ep07_카림": "…어떤 여자길래 날 시키는 거지?",
+          "cg": "ep07_c015"
+        }
+      ],
+      "next": "ep07_c016",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 서재. 나시르가 서류를 든 채 반응하고 카림이 이유를 묻는다."
+    },
+    "ep07_c016": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c016",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나시르": "…수상한 게 한두 가지가 아니었지.",
+          "cg": "ep07_c016"
+        },
+        {
+          "ep07_나시르": "이곳에 있는 목적도 불분명하고, 압수한 짐도 수상한 점이 많아.",
+          "cg": "ep07_c016"
+        },
+        {
+          "ep07_나시르": "애초에 여자 혼자 여행한다는 게 말이 안 되기도 하고.",
+          "cg": "ep07_c016"
+        }
+      ],
+      "next": "ep07_c017",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 나시르의 설명에 얼굴을 가린 아시나 이미지가 겹친다."
+    },
+    "ep07_c017": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c017",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_카림": "이해가 안 되는군.",
+          "cg": "ep07_c017"
+        },
+        {
+          "ep07_카림": "수상한 자라면 그냥 죽이면 될 것을",
+          "cg": "ep07_c017"
+        }
+      ],
+      "next": "ep07_c018",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 서재. 카림이 냉정하게 다른 처리를 주장한다."
+    },
+    "ep07_c018": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c018",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나시르": "그렇지만… 첩자 같다는 생각은 안 들었어.",
+          "cg": "ep07_c018"
+        },
+        {
+          "ep07_나시르": "이상하지.",
+          "cg": "ep07_c018"
+        }
+      ],
+      "next": "ep07_c019",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 서재. 나시르가 카림의 판단에 선을 긋는다."
+    },
+    "ep07_c019": {
+      "perspective": "audience",
+      "title": "아시나가 모르는 호위 명령",
+      "cut": "ep07_c019",
+      "cast": {
+        "left": "ep07_나시르",
+        "right": "ep07_카림",
+        "center": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나시르": "이건 내 명령이기도 하지만 시하드의 명령이기도 하다.",
+          "cg": "ep07_c019_p01"
+        },
+        {
+          "ep07_나시르": "시하드께서 그 여자를 하렘에 넣은 건 다 이유가 있을 터.",
+          "cg": "ep07_c019_p01"
+        },
+        {
+          "ep07_나시르": "시하드의 명을 어길 셈인가?",
+          "cg": "ep07_c019_p01"
+        },
+        {
+          "ep07_카림": "쳇",
+          "cg": "ep07_c019_p02"
+        }
+      ],
+      "next": "ep07_c020",
+      "situation": "독자 전용 면담. 아시나는 이 자리에 없으며 이 장면을 알지 못한다. 서재. 나시르가 시하드의 명령을 들어 카림을 압박한다."
+    },
+    "ep07_c020": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c020",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "하아…",
+          "cg": "ep07_c020"
+        }
+      ],
+      "next": "ep07_c021",
+      "situation": "아시나의 하렘 방. 침대에 앉아 한숨 쉰다.",
+      "effects": {
+        "flags": {
+          "ep07_얼굴가리개": false,
+          "ep07_방_복귀": true
+        }
+      }
+    },
+    "ep07_c021": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c021",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "나시르…라고 했었나, 그 사람.",
+          "cg": "ep07_c021"
+        },
+        {
+          "ep07_독백": "사람은 좋아 보였지만 내가 정말 여행자라는 걸 믿어줄까?",
+          "cg": "ep07_c021"
+        }
+      ],
+      "next": "ep07_c022",
+      "situation": "같은 방. 조사관을 떠올린다."
+    },
+    "ep07_c022": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c022",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "내가 한 짓이 있으니…",
+          "cg": "ep07_c022"
+        },
+        {
+          "ep07_독백": "첩자라고 의심해도 할 말 없지만.",
+          "cg": "ep07_c022"
+        }
+      ],
+      "next": "ep07_c023",
+      "situation": "같은 방. 자기 행동이 의심을 살 만했음을 생각한다."
+    },
+    "ep07_c023": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c023",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "크롬웰과 크라차는 우호국인데 반해",
+          "cg": "ep07_c023_p01"
+        },
+        {
+          "ep07_독백": "두 나라 모두 페시안과는 척을 지고 있다.",
+          "cg": "ep07_c023_p02"
+        }
+      ],
+      "next": "ep07_c024",
+      "situation": "국가 문장·여성 상징상과 피 묻은 셔츠의 은발 남성 뒷모습을 배치한 설명 삽화."
+    },
+    "ep07_c024": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c024",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "그런 상황에서 크라차로 가려고 했던 내 정체가 드러난다면…",
+          "cg": "ep07_c024"
+        },
+        {
+          "ep07_독백": "내 가문은 물론,",
+          "cg": "ep07_c024"
+        },
+        {
+          "ep07_독백": "크롬웰까지 피해를 입을 수도 있어.",
+          "cg": "ep07_c024"
+        }
+      ],
+      "next": "ep07_c025",
+      "situation": "같은 방. 아시나가 고개를 숙이고 정치적 위험을 걱정한다."
+    },
+    "ep07_c025": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c025",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "물론 우리 부모님은 이런 분쟁 정도에 무너질 분이 아니라는 거 알지만.",
+          "cg": "ep07_c025"
+        }
+      ],
+      "next": "ep07_c026",
+      "situation": "같은 방. 아시나가 부모의 역량을 떠올린다."
+    },
+    "ep07_c026": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c026",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "그래도…",
+          "cg": "ep07_c026_p01"
+        },
+        {
+          "ep07_독백": "내 여행을 응원해 주는 아버지와",
+          "cg": "ep07_c026_p02"
+        },
+        {
+          "ep07_독백": "엄하긴 해도 날 사랑하는 어머니에게",
+          "cg": "ep07_c026_p02"
+        },
+        {
+          "ep07_독백": "곤란한 일을 만들어드리고 싶진 않아…",
+          "cg": "ep07_c026_p02"
+        },
+        {
+          "ep07_독백": "안 그래도 나때문에 속 썩으시는데.",
+          "cg": "ep07_c026_p02"
+        }
+      ],
+      "next": "ep07_c027",
+      "situation": "부모의 화려한 복장 회상."
+    },
+    "ep07_c027": {
+      "title": "정체와 가족을 걱정하다",
+      "cut": "ep07_c027",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "하아…",
+          "cg": "ep07_c027"
+        },
+        {
+          "ep07_아시나": "어쩐담.",
+          "cg": "ep07_c027"
+        }
+      ],
+      "next": "ep07_c028",
+      "situation": "같은 방에서 한숨."
+    },
+    "ep07_c028": {
+      "title": "타무라의 방문",
+      "cut": "ep07_c028",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "똑 똑",
+          "cg": "ep07_c028"
+        }
+      ],
+      "next": "ep07_c029",
+      "situation": "방 문. 노크."
+    },
+    "ep07_c029": {
+      "title": "타무라의 방문",
+      "cut": "ep07_c029",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_누르"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_누르": "아시나님, 들어가도 될까요?",
+          "cg": "ep07_c029"
+        },
+        {
+          "ep07_아시나": "누르, 왜?",
+          "cg": "ep07_c029"
+        }
+      ],
+      "next": "ep07_c030",
+      "situation": "방 안 침대의 아시나가 문 밖 목소리에 응답한다."
+    },
+    "ep07_c030": {
+      "title": "타무라의 방문",
+      "cut": "ep07_c030",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_누르"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_누르": "아시나님을 호위할 타무라께서 오셨어요.",
+          "cg": "ep07_c030",
+          "effects": {
+            "flags": {
+              "ep07_호위_도착": true
+            }
+          }
+        },
+        {
+          "ep07_아시나": "타무라?",
+          "cg": "ep07_c030"
+        }
+      ],
+      "next": "ep07_c031",
+      "situation": "장식 문 전경. 누르가 방문 이유를 알린다."
+    },
+    "ep07_c031": {
+      "title": "타무라의 방문",
+      "cut": "ep07_c031",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "타무라라면 분명 라 쿤을 호위하는…",
+          "cg": "ep07_c031_p01"
+        },
+        {
+          "ep07_아시나": "들어오라고 하-",
+          "cg": "ep07_c031_p01"
+        },
+        {
+          "ep07_누르": "앗, 그렇게 함부로 들어가시면!",
+          "cg": "ep07_c031_p02"
+        }
+      ],
+      "next": "ep07_c032",
+      "situation": "아시나가 떠올리는 사이 카림이 문을 열고 들어온다."
+    },
+    "ep07_c032": {
+      "title": "타무라의 방문",
+      "cut": "ep07_c032",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "네깟 게 왜 여기 있냐.",
+          "cg": "ep07_c032_p01"
+        },
+        {
+          "ep07_독백": "…라는 표정이네, 저건.",
+          "cg": "ep07_c032_p02"
+        }
+      ],
+      "next": "ep07_c033",
+      "situation": "카림이 위압적으로 내려다본다. 누르는 문가에 있다."
+    },
+    "ep07_c033": {
+      "title": "타무라의 방문",
+      "cut": "ep07_c033",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "",
+          "cg": "ep07_c033"
+        }
+      ],
+      "next": "ep07_c034",
+      "situation": "대면 사이 분홍 무늬·세로선의 전환 조각."
+    },
+    "ep07_c034": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c034",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "뭐, 이런 경계엔 익숙해.",
+          "cg": "ep07_c034"
+        },
+        {
+          "ep07_독백": "이방인을 반기는 곳은 많지 않지.",
+          "cg": "ep07_c034"
+        }
+      ],
+      "next": "ep07_c035",
+      "situation": "같은 방. 아시나가 경계를 받아들이며 대응을 고른다."
+    },
+    "ep07_c035": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c035",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "이럴 때는",
+          "cg": "ep07_c035"
+        }
+      ],
+      "next": "ep07_c036",
+      "situation": "아시나가 미소 짓는다."
+    },
+    "ep07_c036": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c036",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "만나서 반가워요.",
+          "cg": "ep07_c035"
+        }
+      ],
+      "next": "ep07_c037",
+      "situation": "인사 말풍선만 이어진다."
+    },
+    "ep07_c037": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c037",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "이렇게 예의를 차리면 돼.",
+          "cg": "ep07_c037"
+        },
+        {
+          "ep07_아시나": "미처 얼굴을 가리지 못해서 미안하군요.",
+          "cg": "ep07_c037"
+        }
+      ],
+      "next": "ep07_c038",
+      "situation": "웃는 아시나의 얼굴."
+    },
+    "ep07_c038": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c038",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "제가 아직 이곳 예법에 익숙하지 않아서요.",
+          "cg": "ep07_c038"
+        },
+        {
+          "ep07_아시나": "이해 부탁해요.",
+          "cg": "ep07_c038"
+        }
+      ],
+      "next": "ep07_c039",
+      "situation": "방의 아시나가 고개를 기울여 양해를 구한다."
+    },
+    "ep07_c039": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c039",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_호위"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_카림독백": "뭐야,",
+          "cg": "ep07_c039"
+        },
+        {
+          "ep07_카림독백": "감옥을 탈출했다기에 우락부락할 줄 알았는데…",
+          "cg": "ep07_c039"
+        },
+        {
+          "ep07_카림독백": "저런 여린 몸으로 감옥은 어떻게 탈출한 거며,",
+          "cg": "ep07_c039"
+        },
+        {
+          "ep07_카림독백": "대륙에서 여기까지는 어떻게 온 거지?",
+          "cg": "ep07_c039"
+        }
+      ],
+      "next": "ep07_c040",
+      "situation": "카림이 아시나를 살피며 생각한다."
+    },
+    "ep07_c040": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c040",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_카림"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_카림독백": "…실수했군.",
+          "cg": "ep07_c040_p01"
+        },
+        {
+          "ep07_카림독백": "어린 여자한테 적의나 내뿜다니.",
+          "cg": "ep07_c040_p01"
+        },
+        {
+          "cg": "ep07_c040_p01",
+          "ep07_호위": "실례를 범했습니다."
+        },
+        {
+          "cg": "ep07_c040_p01",
+          "effects": {
+            "flags": {
+              "ep07_카림_이름앎": true
+            }
+          },
+          "ep07_호위": "카림입니다."
+        },
+        {
+          "ep07_아시나": "아시나예요.",
+          "cg": "ep07_c040_p02"
+        },
+        {
+          "ep07_아시나": "되도록이면 아이라라는 호칭대신 이름으로 불러 주세요.",
+          "cg": "ep07_c040_p02"
+        },
+        {
+          "ep07_카림": "예.",
+          "cg": "ep07_c040_p02"
+        }
+      ],
+      "next": "ep07_c041",
+      "situation": "카림이 태도를 고쳐 사과하고 통성명한다."
+    },
+    "ep07_c041": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c041",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_카림"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "",
+          "cg": "ep07_c041"
+        }
+      ],
+      "next": "ep07_c042",
+      "situation": "방 전체 구도. 침대의 아시나 앞에 카림이 허리를 숙이고 누르가 문가에 서 있다."
+    },
+    "ep07_c042": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c042",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": "ep07_누르",
+        "right": "ep07_카림"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_카림": "기본적으로 저는 하렘 밖에 있을 겁니다.",
+          "cg": "ep07_c042",
+          "effects": {
+            "flags": {
+              "ep07_호위_밖대기": true
+            }
+          }
+        },
+        {
+          "ep07_카림": "필요한 게 있으면 불러주십시오.",
+          "cg": "ep07_c042"
+        },
+        {
+          "ep07_아시나": "그럴게요.",
+          "cg": "ep07_c042"
+        }
+      ],
+      "next": "ep07_c043",
+      "situation": "같은 방. 카림이 대기 위치와 호출 방법을 말한다."
+    },
+    "ep07_c043": {
+      "title": "인사와 통성명",
+      "cut": "ep07_c043",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "철컥",
+          "cg": "ep07_c043"
+        }
+      ],
+      "next": "ep07_c044",
+      "situation": "장식 문이 닫히며 카림이 물러난다."
+    },
+    "ep07_c044": {
+      "title": "구조를 살피러 나가다",
+      "cut": "ep07_c044",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "누르에 이어 감시자가 한 명 더 생겼네.",
+          "cg": "ep07_c044_p01"
+        },
+        {
+          "ep07_독백": "탈출하기가 더 까다로워지겠어.",
+          "cg": "ep07_c044_p01"
+        },
+        {
+          "ep07_독백": "몸도 쑤신데 산책이나 다녀와볼까.",
+          "cg": "ep07_c044_p02"
+        },
+        {
+          "ep07_독백": "가만히 있어봤자 상황이 달라지는 것도 아니고.",
+          "cg": "ep07_c044_p03"
+        },
+        {
+          "ep07_독백": "이 근처 건물은 어떤 구조인지 봐둬야겠어.",
+          "cg": "ep07_c044_p03"
+        }
+      ],
+      "next": "ep07_c045",
+      "situation": "방에서 신발을 신고 문 밖 회랑으로 나선다.",
+      "effects": {
+        "flags": {
+          "ep07_단화": true
+        }
+      }
+    },
+    "ep07_c045": {
+      "title": "구조를 살피러 나가다",
+      "cut": "ep07_c045",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "어딜 가는 거지?",
+          "cg": "ep07_c045"
+        }
+      ],
+      "next": "ep07_c046",
+      "situation": "기둥과 아치가 있는 궁 회랑. 은발 남성이 걸어가고 아시나가 기둥 옆에서 본다."
+    },
+    "ep07_c046": {
+      "title": "피하고 싶던 상대와 대면",
+      "cut": "ep07_c046",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "",
+          "cg": "ep07_c046"
+        }
+      ],
+      "next": "ep07_c047",
+      "situation": "회랑. 아시나의 눈과 은발 남성의 붉은 눈이 교차하고 두 사람이 가까이 마주 선다."
+    },
+    "ep07_c047": {
+      "title": "피하고 싶던 상대와 대면",
+      "cut": "ep07_c047",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_독백": "하필 지금 제일 마주치고 싶지 않은 사람을…",
+          "cg": "ep07_c047"
+        }
+      ],
+      "next": "ep07_c048",
+      "situation": "회랑의 두 사람. 아시나가 반갑지 않은 만남을 생각한다."
+    },
+    "ep07_c048": {
+      "title": "피하고 싶던 상대와 대면",
+      "cut": "ep07_c048",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "그만 노려봐요.",
+          "cg": "ep07_c048"
+        },
+        {
+          "ep07_아시나": "저도 이제 제가 수상하다는 점은 충분히 인지했거든요?",
+          "cg": "ep07_c048"
+        },
+        {
+          "ep07_은발남성": "그걸 이제야 알았다니 놀랍군.",
+          "cg": "ep07_c048"
+        }
+      ],
+      "next": "ep07_c049",
+      "situation": "회랑. 아시나가 노려보는 시선에 항의한다."
+    },
+    "ep07_c049": {
+      "title": "피하고 싶던 상대와 대면",
+      "cut": "ep07_c049",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "왜 왔어요?",
+          "cg": "ep07_c049"
+        },
+        {
+          "ep07_은발남성": "내가 내 하렘에 오는데 이유가 필요하던가?",
+          "cg": "ep07_c049"
+        }
+      ],
+      "next": "ep07_c050",
+      "situation": "회랑. 아시나가 방문 이유를 묻고 상대는 하렘 소유를 들어 되묻는다."
+    },
+    "ep07_c050": {
+      "title": "피하고 싶던 상대와 대면",
+      "cut": "ep07_c050",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "하… 그런 거 말고요.",
+          "cg": "ep07_c049"
+        }
+      ],
+      "next": "ep07_c051",
+      "situation": "회랑 대화의 말풍선 중심 구간."
+    },
+    "ep07_c051": {
+      "title": "피하고 싶던 상대와 대면",
+      "cut": "ep07_c051",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "진짜 목적이 뭐예요?",
+          "cg": "ep07_c049"
+        },
+        {
+          "ep07_독백": "조사에 대한 거라면 나시르가 보고를 올렸을 텐데.",
+          "cg": "ep07_c049"
+        }
+      ],
+      "next": "ep07_c052",
+      "situation": "회랑 전경에 질문과 작은 글이 이어진다."
+    },
+    "ep07_c052": {
+      "title": "뜻밖의 답과 당황",
+      "cut": "ep07_c052",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성": "흠…",
+          "cg": "ep07_c049"
+        }
+      ],
+      "next": "ep07_c053",
+      "situation": "은발 남성이 잠시 생각하며 시선을 내린다."
+    },
+    "ep07_c053": {
+      "title": "뜻밖의 답과 당황",
+      "cut": "ep07_c053",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성": "보고 싶어서?",
+          "cg": "ep07_c053"
+        }
+      ],
+      "next": "ep07_c054",
+      "situation": "웃는 은발 남성의 화려한 얼굴 강조."
+    },
+    "ep07_c054": {
+      "title": "뜻밖의 답과 당황",
+      "cut": "ep07_c054",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "",
+          "cg": "ep07_c054"
+        }
+      ],
+      "next": "ep07_c055",
+      "situation": "방사형 선·무늬가 이어지는 짧은 전환 조각."
+    },
+    "ep07_c055": {
+      "title": "뜻밖의 답과 당황",
+      "cut": "ep07_c055",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "꽝 꽝 꽝",
+          "cg": "ep07_c055"
+        }
+      ],
+      "next": "ep07_c056",
+      "situation": "아시나가 눈을 크게 뜨며 얼어붙는다. 폭발선과 효과음은 놀람의 감정 연출이며 물리적 폭발이나 피해가 아니다."
+    },
+    "ep07_c056": {
+      "title": "뜻밖의 답과 당황",
+      "cut": "ep07_c056",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_아시나": "하아.",
+          "cg": "ep07_c056"
+        },
+        {
+          "ep07_독백": "이, 이 남자, 아니 이 분이 미치셨나…!",
+          "cg": "ep07_c056"
+        },
+        {
+          "ep07_은발남성": "큭",
+          "cg": "ep07_c056"
+        }
+      ],
+      "next": "ep07_c057",
+      "situation": "아시나가 어이없어하고 은발 남성이 작게 웃는다."
+    },
+    "ep07_c057": {
+      "title": "뜻밖의 답과 당황",
+      "cut": "ep07_c057",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성독백": "정말이지 보고있으면 지루할 틈이 없군.",
+          "cg": "ep07_c057"
+        }
+      ],
+      "next": "ep07_c058",
+      "situation": "은발 남성의 붉은 눈과 미소."
+    },
+    "ep07_c058": {
+      "title": "남성의 관심과 거리 변화",
+      "cut": "ep07_c058",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성독백": "날 바라보는 사람들의 눈동자엔 단 두 가지 감정만이 담겨있었다.",
+          "cg": "ep07_c058_p01"
+        },
+        {
+          "ep07_은발남성독백": "숭배,",
+          "cg": "ep07_c058_p01"
+        },
+        {
+          "ep07_은발남성독백": "아니면 공포.",
+          "cg": "ep07_c058_p02"
+        },
+        {
+          "ep07_은발남성독백": "하지만 이 여자는…",
+          "cg": "ep07_c058_p03"
+        }
+      ],
+      "next": "ep07_c059",
+      "situation": "은발 남성을 숭배하거나 두려워하는 시선들의 삽화와 흥미로운 아시나의 반응을 대비한다."
+    },
+    "ep07_c059": {
+      "title": "남성의 관심과 거리 변화",
+      "cut": "ep07_c059",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성독백": "둘 중 어떤 것도 갖고 있지 않아.",
+          "cg": "ep07_c059_p01"
+        },
+        {
+          "ep07_은발남성독백": "눈동자에 비친 나를",
+          "cg": "ep07_c059_p02"
+        },
+        {
+          "ep07_은발남성독백": "있는 그대로 바라본다.",
+          "cg": "ep07_c059_p02"
+        }
+      ],
+      "next": "ep07_c060",
+      "situation": "아시나가 놀란 얼굴로 남성을 본다. 아시나 눈동자 안에 상대가 비친다."
+    },
+    "ep07_c060": {
+      "title": "남성의 관심과 거리 변화",
+      "cut": "ep07_c060",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성독백": "감히 겁도 없이 날 바라보는 시선이 신기하면서도,",
+          "cg": "ep07_c060"
+        }
+      ],
+      "next": "ep07_c061",
+      "situation": "회랑. 남성이 다가와 아시나의 머리카락을 손에 잡고 입가로 가져가는 연속 동작.",
+      "effects": {
+        "flags": {
+          "ep07_머리카락접촉": true
+        }
+      }
+    },
+    "ep07_c061": {
+      "title": "남성의 관심과 거리 변화",
+      "cut": "ep07_c061",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성": "하렘은 좀 편한가?",
+          "cg": "ep07_c061_p01",
+          "effects": {
+            "flags": {
+              "ep07_하렘질문_들음": true
+            }
+          }
+        },
+        {
+          "ep07_아시나": "지-",
+          "cg": "ep07_c061_p02"
+        },
+        {
+          "ep07_아시나": "지금 무슨-",
+          "cg": "ep07_c061_p02"
+        }
+      ],
+      "next": "ep07_c062",
+      "situation": "남성이 가까이에서 말을 걸고 아시나가 반응하는 사이 머리·뺨 쪽으로 손이 이동한다."
+    },
+    "ep07_c062": {
+      "title": "남성의 관심과 거리 변화",
+      "cut": "ep07_c062",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_은발남성독백": "흥미롭다고 생각한다.",
+          "cg": "ep07_c061_p02"
+        }
+      ],
+      "next": "ep07_c063",
+      "situation": "그림 없이 남성 내면의 문장이 이어진다."
+    },
+    "ep07_c063": {
+      "title": "남성의 관심과 거리 변화",
+      "cut": "ep07_c063",
+      "cast": {
+        "left": "ep07_아시나",
+        "center": null,
+        "right": "ep07_은발남성"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep07_나레이션": "",
+          "cg": "ep07_c063"
+        }
+      ],
+      "ending": {
+        "id": "ep07_internal_end",
+        "title": "회랑",
+        "summary": "은발 남성이 아시나의 머리와 뺨 옆을 감싼 채 가까이 서 있다.",
+        "next_hook": "하렘이 편한지 묻는 말에 아시나의 대답은 아직 끝나지 않았다."
+      },
+      "situation": "회랑. 남성이 아시나의 머리·뺨 옆을 손으로 감싼 가까운 두 사람의 구도로 끝난다.",
+      "effects": {
+        "flags": {
+          "ep07_근접_종료": true
+        }
+      }
+    }
+  },
+  "atlas": {
+    "chapters": [
+      {
+        "id": "ep07",
+        "label": "7화",
+        "nodes": [
+          "ep07_s01",
+          "ep07_s02",
+          "ep07_s03",
+          "ep07_s04",
+          "ep07_s05",
+          "ep07_s06",
+          "ep07_s07",
+          "ep07_s08",
+          "ep07_s09",
+          "ep07_s10"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ep07_s01",
+        "label": "조사실의 짐 확인",
+        "col": 60,
+        "row": 3,
+        "beats": [
+          "ep07_c001",
+          "ep07_c002",
+          "ep07_c003",
+          "ep07_c004",
+          "ep07_c005",
+          "ep07_c006"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s02",
+        "label": "월흔 표제",
+        "col": 61,
+        "row": 3,
+        "beats": [
+          "ep07_c007"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s03",
+        "label": "서재의 별도 면담",
+        "col": 62,
+        "row": 3,
+        "beats": [
+          "ep07_c008",
+          "ep07_c009",
+          "ep07_c010",
+          "ep07_c011",
+          "ep07_c012",
+          "ep07_c013",
+          "ep07_c014",
+          "ep07_c015",
+          "ep07_c016",
+          "ep07_c017",
+          "ep07_c018",
+          "ep07_c019"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s04",
+        "label": "조사 뒤의 한숨",
+        "col": 63,
+        "row": 3,
+        "beats": [
+          "ep07_c020",
+          "ep07_c021",
+          "ep07_c022",
+          "ep07_c023",
+          "ep07_c024",
+          "ep07_c025",
+          "ep07_c026",
+          "ep07_c027"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s05",
+        "label": "방문 앞 노크",
+        "col": 64,
+        "row": 3,
+        "beats": [
+          "ep07_c028",
+          "ep07_c029",
+          "ep07_c030",
+          "ep07_c031",
+          "ep07_c032",
+          "ep07_c033"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s06",
+        "label": "호위의 경계에 응수",
+        "col": 65,
+        "row": 3,
+        "beats": [
+          "ep07_c034",
+          "ep07_c035",
+          "ep07_c036",
+          "ep07_c037",
+          "ep07_c038",
+          "ep07_c039",
+          "ep07_c040",
+          "ep07_c041",
+          "ep07_c042",
+          "ep07_c043"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s07",
+        "label": "궁 안 산책",
+        "col": 66,
+        "row": 3,
+        "beats": [
+          "ep07_c044",
+          "ep07_c045"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s08",
+        "label": "회랑에서 마주침",
+        "col": 67,
+        "row": 3,
+        "beats": [
+          "ep07_c046",
+          "ep07_c047",
+          "ep07_c048",
+          "ep07_c049",
+          "ep07_c050",
+          "ep07_c051"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s09",
+        "label": "방문 이유의 답",
+        "col": 68,
+        "row": 3,
+        "beats": [
+          "ep07_c052",
+          "ep07_c053",
+          "ep07_c054",
+          "ep07_c055",
+          "ep07_c056",
+          "ep07_c057"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep07_s10",
+        "label": "숭배와 공포의 시선",
+        "col": 69,
+        "row": 3,
+        "beats": [
+          "ep07_c058",
+          "ep07_c059",
+          "ep07_c060",
+          "ep07_c061",
+          "ep07_c062",
+          "ep07_c063"
+        ],
+        "ending": true
+      }
+    ],
+    "edges": [
+      [
+        "ep07_s01",
+        "ep07_s02"
+      ],
+      [
+        "ep07_s02",
+        "ep07_s03"
+      ],
+      [
+        "ep07_s03",
+        "ep07_s04"
+      ],
+      [
+        "ep07_s04",
+        "ep07_s05"
+      ],
+      [
+        "ep07_s05",
+        "ep07_s06"
+      ],
+      [
+        "ep07_s06",
+        "ep07_s07"
+      ],
+      [
+        "ep07_s07",
+        "ep07_s08"
+      ],
+      [
+        "ep07_s08",
+        "ep07_s09"
+      ],
+      [
+        "ep07_s09",
+        "ep07_s10"
+      ]
+    ]
+  }
+}

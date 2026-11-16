@@ -1,0 +1,19 @@
+{
+ "title": "(3) Discord | \"The help buttons don’t work\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 1,
+ "msgs": [
+  {
+   "t": "2026-11-06T17:11:09.835Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "The question mark symbols next to the text I’m assuming is a “help” button that’s meant to describe more about the feature. I’ve seen others around and when I tap on them they don’t do anything.",
+   "emb": "",
+   "att": 3,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

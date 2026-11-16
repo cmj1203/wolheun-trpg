@@ -1,0 +1,21 @@
+{
+  "candidate_id": "ep05_c053_p02",
+  "input": "/Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c053_p02_source.png",
+  "input_sha256": "ad4756971bab5161b5ea0645ca38a4a0bc6fa4e3bd637c4951db541e1b7f7cf0",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep05/gen/ep05_c053_p02.png",
+  "argv": [
+    "/opt/homebrew/bin/codex",
+    "exec",
+    "--skip-git-repo-check",
+    "-s",
+    "workspace-write",
+    "-C",
+    "/Users/choeminju/월흔_trpg/assets/ep05/gen",
+    "-i",
+    "/Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c053_p02_source.png",
+    "--",
+    "첨부한 원작 참조 창만 편집하세요. 대상은 질문하는 라 쿤 얼굴·목 근접입니다. 원작 얼굴·표정·시선·자세·몸 비율·머리·복장·가림·장신구·소품·구도를 유지하세요. 말풍선·대사·독백·효과 글자만 제거하고 해당 자리를 주변 원작 그림으로 복원하세요. 16:9 가로 화면은 옆 배경만 확장하고, 원작에서 잘린 인체와 가려진 몸은 잘리고 가려진 상태로 유지하세요. 전신·새 몸·노출·인물·물건·사건·다른 패널 콜라주를 추가하지 마세요. 그림 공개 순서는 매핑의 ep05_c053_p02 자리를 따르며 다른 시점이나 미래 반응을 넣지 마세요. 로컬 SD, 흐림 처리, 원작 세로띠를 완성품처럼 사용하지 마세요. 실제 native 그림 편집으로 결과 한 장을 /Users/choeminju/월흔_trpg/assets/ep05/gen/ep05_c053_p02.png 경로에 저장하고 저장 경로만 답하세요. 원작 로고·화수 표제·제목·출판 크레디트·워터마크는 문자 오버레이로 제거하고 다시 그리지 마세요. 반드시 Codex 내장 image_gen을 직접 호출하고 API·외부 도구·스크립트·로컬 SD로 대체하지 마세요. 원작 그림·의복·소품·가림과 패널 순서를 유지하고 새로운 몸·인물·사건을 만들지 마세요. 허용된 출력 외 파일은 수정하지 마세요. 독립 그림 PASS를 주장하지 마세요."
+  ],
+  "created_at": "2026-11-09T06:51:47.483858+00:00",
+  "producer_pid": 25562
+}

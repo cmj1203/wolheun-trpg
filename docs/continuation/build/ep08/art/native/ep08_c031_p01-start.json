@@ -1,0 +1,20 @@
+{
+  "candidate_id": "ep08_c031_p01",
+  "pid": 5583,
+  "pgid": 5583,
+  "started_at": 1794203876.7897038,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep08/gen/inputs/ep08_c031_p01.png",
+  "input_sha256": "cbff30be8e73c144efb054e5c9a22dc7713cc591eeaefc83aee640ac70d48942",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep08/gen/ep08_c031_p01.png",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep08/art/native/ep08_c031_p01.log",
+  "native_active_before_launch": [
+    {
+      "pid": 3724,
+      "pgid": 3724,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C /Users/choeminju/월흔_trpg/assets/ep04/gen -i /Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c008-selected.png -- 4화 승인 후보 ep04_c008 한 장만 첨부된 실제 원작으로 편집한다. 내장 image_gen을 한 번 사용한다. 실제 원작 work/ep04/merged/ep04_002.png의 [0,23217,2000,25205) 창이다.\\012\\012이 그림은 게임 화면처럼 단순화한 가상 조난 상상이다. 실제 죽음·부상·새 사건이 아니다. 원작의 사막 협곡·선인장·픽셀 느낌 질감, 엎드린 단순화 아시나의 갈색 머리·베이지 천 옷·작은 흰 손·원래 보이는 형태와 위치를"
+    }
+  ],
+  "native_active_before_count": 1,
+  "slot_counter": "argv 첫 실행 파일 기준",
+  "independent_qa": "대기"
+}

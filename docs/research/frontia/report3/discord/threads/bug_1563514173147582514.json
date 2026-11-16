@@ -1,0 +1,52 @@
+{
+ "title": "(3) Discord | \"The new interface in Iphone Duo\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 4,
+ "msgs": [
+  {
+   "t": "2026-10-24T11:27:07.567Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "I cant select setting menu in new interface for iphone duo it same area with front camera",
+   "emb": "",
+   "att": 3,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-24T11:27:33.792Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "",
+   "emb": "",
+   "att": 3,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-24T16:20:17.142Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "Hi 유저, this is Sion from the Frontia team  Thank you for the report and the screenshots, they make the problem really easy to see.\n\nIt looks like the menu button (≡) in the top right of the MY tab sits right under the camera and status bar area on your device. We'd like to reproduce this exactly, so could you help us with a few details?\n\n\nYour exact device model and iOS version (Settings → General → About)\n,\nYour Frontia app version. Since the menu is blocked, you can find it on the Frontia page in the App Store (Version History)\n,\nDoes it happen both folded and unfolded, or is one of them OK?\n,\nAre any other buttons near the top edge hard to tap, for example the share button next to it, or buttons on the play screen?\n,\nWhen did it start? Right after the latest app update, or has it always been like this on this device?\n,\n\nIf you can, a short screen recording of you tapping the button would help a lot too.\n\nPlease don't post account details like your login email here. If we need them, we'll ask you to send them through in-app MY → 1:1 inquiry.\n\nThanks again for letting us know. We'll share this with the dev team and update you here.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-24T17:39:56.347Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "I already record and send it in 1:1",
+   "emb": "",
+   "att": 0,
+   "reacts": "1",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

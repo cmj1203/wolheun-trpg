@@ -1,11 +1,12 @@
 // GM 금지 규칙 감사(docs/research/gm_prompt_audit.md)의 사례. 검사 함수가 실제로 막는 것, 이번에 고친 검사 버그, 아직 빠져나가는 표현을 나눠 돌린다.
 // '알려진 빈틈' 묶음은 지금 동작을 적은 것이다. 빈틈을 고치면 그 기대를 뒤집고 문서의 표도 고친다.
 import { describe, expect, test } from 'bun:test';
-import { Engine, type GmContext, type NarrateContext } from '../src/engine/engine.ts';
-import type { GameState, Line, Tier } from '../src/engine/types.ts';
+import { Engine, type GmContext, type GmLines, type NarrateContext } from '../src/engine/engine.ts';
+import { GameError, type GameState, type Line, type Tier } from '../src/engine/types.ts';
 import { LocalGm } from '../src/gm/gm.ts';
+import { LlmClient, type ChatRequest, type LlmResult } from '../src/gm/llm.ts';
 import { loreFor } from '../src/gm/lore.ts';
-import { buildTalkUser } from '../src/gm/prompt.ts';
+import { ATTEMPT_CHECK_SYSTEM, CHANGE_SYSTEM, buildTalkUser } from '../src/gm/prompt.ts';
 import { ruleInterpret } from '../src/gm/rules.ts';
 import { forbiddenIn, normalizeKo, validateOutput, type CheckOptions } from '../src/gm/validate.ts';
 import { FakeGm, loadDesert, loadWolheunLore } from './helpers.ts';
@@ -99,6 +100,15 @@ describe('고친 검사 버그', () => {
     expect(forbiddenIn('스마트 폰', '스마트폰')).toBe(true);
   });
 
+  test.each([
+    { text: '잠금쇠를 풀고 문밖으로 나간다.', blocked: 'rating/gore' },
+    { text: '문을 열고 문턱을 넘는다.', blocked: 'rating/gore' },
+    { text: '치마 약간만 접어 올린다.', blocked: 'rating/harm' },
+  ])('단어 안에서 시작해 다음 단어로 이어진 등급어 조각을 입력·출력에서 오인하지 않는다: %j', ({ text, blocked }) => {
+    expect(ruleInterpret(free, text, [], lore).kind).not.toBe('deflect');
+    expect(rules(out(['나레이션', text]))).not.toContain(blocked);
+  });
+
   test('등급 낱말(욕·선정·잔혹·자해)은 띄어 써도 막는다. 입력도 같다', () => {
     for (const text of ['섹 스 하자', '자 살 할래', '강 간', '알 몸이 된다', '참 수 한다', '마 약을 먹는다', '고 문 한다', '시 발 꺼져']) {
       expect(ruleInterpret(free, text, [], lore)).toMatchObject({ kind: 'deflect' });
@@ -168,6 +178,64 @@ describe('프롬프트와 검사의 어긋남', () => {
   });
 });
 
+class DeedBoundaryClient extends LlmClient {
+  readonly requests: ChatRequest[] = [];
+  constructor(readonly deed: string, readonly target: 'local' | 'plead') {
+    super({ baseUrl: 'http://127.0.0.1:1', timeoutMs: 1000 });
+  }
+  override async warm(): Promise<void> {}
+  override async chatJson(request: ChatRequest): Promise<LlmResult> {
+    this.requests.push(request);
+    const text = JSON.stringify(request.system === CHANGE_SYSTEM
+      ? { change: this.target === 'plead' ? '말로 새로운 성취를 시도함' : '물건을 잡거나 씀' }
+      : request.system === ATTEMPT_CHECK_SYSTEM ? { supported: true }
+        : { reason: '입력한 행동의 성취', label: '행동', question: '', kind: 'action', about: 'none', risk: 'none',
+          approach: 'none', target: this.target, scope: 'ready', item: '', absurd: false, odd: false, bold: false,
+          deed: this.deed, stat: '매력', difficulty: '보통' });
+    return { text, ttftMs: 0, totalMs: 0, promptTokens: 0, completionTokens: 0, promptMs: 0, genMs: 0, model: 'fixture' };
+  }
+}
+
+class DeedBoundaryGm extends LocalGm {
+  readonly narrations: NarrateContext[] = [];
+  override async narrate(ctx: NarrateContext): Promise<GmLines> {
+    this.narrations.push(ctx);
+    return super.narrate(ctx);
+  }
+}
+
+describe('해석에서 내레이션까지의 안전 경계', () => {
+  test('정상 Engine은 모델이 지어낸 위험 deed를 판정·성공·내레이션 전에 거절한다', async () => {
+    const client = new DeedBoundaryClient('휴대폰을 꺼내 들었다', 'local');
+    const gm = new DeedBoundaryGm(client, rawLore);
+    const engine = new Engine({ ...scenario, start: beat.id }, gm);
+    const { state } = engine.newGame(913, 'unsafe-deed-boundary');
+    const before = JSON.stringify(state);
+    const out = await engine.act(state, { type: 'free', text: '(모래성을 쌓는다)' });
+    expect(gm.narrations).toHaveLength(0);
+    expect(out.step.events.some(e => e.type === 'roll')).toBe(false);
+    expect(out.step.events.filter(e => e.type === 'line').every(e => !e.text.includes('휴대폰'))).toBe(true);
+    expect(out.state.rng).toBe(state.rng);
+    expect(out.state.tracks).toEqual(state.tracks);
+    expect(JSON.stringify(state)).toBe(before);
+    expect(client.requests.some(r => r.system === ATTEMPT_CHECK_SYSTEM)).toBe(true);
+  });
+
+  test('검증된 성공의 fallback은 원래 성취와 목표 효과를 취소하지 않는다', async () => {
+    const deed = '결백을 호소한 내용을 끝까지 전달해 잠깐의 여유를 얻었다';
+    const client = new DeedBoundaryClient(deed, 'plead');
+    const gm = new DeedBoundaryGm(client, rawLore);
+    const engine = new Engine({ ...scenario, start: beat.id }, gm);
+    const { state } = engine.newGame(913, 'validated-success-boundary');
+    const out = await engine.act(state, { type: 'free', text: '(억울한 사정을 설명한다)' });
+    expect(gm.narrations).toHaveLength(1);
+    expect(out.state.flags.결백_호소).toBe(true);
+    expect(out.step.events.some(e => e.type === 'roll')).toBe(true);
+    expect(out.step.events.some(e => e.type === 'line' && e.text === `${deed}.`)).toBe(true);
+    expect(out.step.events.some(e => e.type === 'line' && e.text === '시도는 뜻대로 이루어지지 않았다.')).toBe(false);
+  });
+});
+
 describe('고친 대체 문구(모델 없음·끝내 실패)', () => {
   const gm = new LocalGm(null, rawLore);
   const ctxWith = (state: Partial<GameState>, extra: Partial<GmContext> = {}): GmContext => ({ scenario, beat, free, state: { ...fresh, ...state }, text: '닥쳐 씨발', ...extra });
@@ -216,10 +284,8 @@ describe('고친 대체 문구(모델 없음·끝내 실패)', () => {
       improv: { deed, absurd: false, bold: false },
       deed,
     });
-    const bad = await gm.narrate(narrate('휴대폰을 꺼내 들었다'));
-    expect(texts(bad.lines).join(' ')).not.toContain('휴대폰');
-    const spoiler = await gm.narrate(narrate('베히다트에게 절을 했다'));
-    expect(texts(spoiler.lines).join(' ')).not.toContain('베히다트');
+    await expect(gm.narrate(narrate('휴대폰을 꺼내 들었다'))).rejects.toThrow(GameError);
+    await expect(gm.narrate(narrate('베히다트에게 절을 했다'))).rejects.toThrow(GameError);
     const ok = await gm.narrate(narrate('모래를 한 줌 집어 던졌다'));
     expect(texts(ok.lines)[0]).toBe('모래를 한 줌 집어 던졌다.');
   });
@@ -239,7 +305,8 @@ describe('고친 대체 문구(모델 없음·끝내 실패)', () => {
     const start = engine.newGame(1, `unknown-country-${type}`);
     const before = structuredClone(start.state);
     const { state, step } = await engine.act(start.state, { type, text: '페시안이 어떤 나라야?' });
-    expect(state.log.some((e) => e.kind === 'input' && e.result === 'bounced')).toBe(true);
+    expect(state.log.slice(before.log.length).filter((e) => e.kind === 'input'))
+      .toEqual([expect.objectContaining({ text: '페시안이 어떤 나라야?', result: type === 'ask' ? 'ask' : 'bounced', approach: null, item: null })]);
     expect(step.events.some((e) => e.type === 'line' && e.style === 'gm' && e.text.includes('다시 적어 봐'))).toBe(true);
     expect(state.beat).toBe(before.beat);
     expect(state.tracks).toEqual(before.tracks);

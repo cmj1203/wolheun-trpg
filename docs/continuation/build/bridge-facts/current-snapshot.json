@@ -1,0 +1,936 @@
+{
+  "observedDate": "2026-11-09",
+  "snapshotWarning": "공유 파일을 순차로 읽은 비원자적 스냅샷. 6화는 st_01a1be16 수정 중인 관측본이며 최종본이 아니다.",
+  "concurrentOwners": {
+    "ep04_ep05": "st_01a1be63이 거리·거절 일관 경로를 구현 중이다. 시작·경계 변경 가능성이 있으며 부모가 최종 변경분을 대조한다.",
+    "ep06": "st_01a1be16이 29컷 전체 정정을 마무리 중이다. 이 JSON은 완료 승인이 아니다.",
+    "parentEp03Ep04": "부모가 새 Bun 프로세스로 3→4를 독립 확인했다. 오래된 파서 캐시 실패를 현재 YAML 결함으로 판단하지 않는다."
+  },
+  "rows": [
+    {
+      "boundary": "3→4",
+      "source": {
+        "file": "app/content/ep03_palace.yaml",
+        "scenarioId": "ep03_palace",
+        "start": "ep03_c001",
+        "terminals": [
+          {
+            "beat": "ep03_c061",
+            "endingId": "ep03_boundary",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep03",
+                "id": "ep03_s12",
+                "col": 31,
+                "row": 3,
+                "ending": false
+              }
+            ],
+            "beatSnapshot": {
+              "title": "문이 닫힌 뒤",
+              "cut": "ep03_c061",
+              "cast": {
+                "left": "ep03_시하드",
+                "center": null,
+                "right": null
+              },
+              "time": 0,
+              "lines": [
+                {
+                  "ep03_시하드": "어디…",
+                  "cg": "ep03_cg_061"
+                },
+                {
+                  "ep03_시하드": "얼마나 까부는지 지켜봐 주지.",
+                  "cg": "ep03_cg_061",
+                  "sets": "ep03_완료"
+                }
+              ],
+              "ending": {
+                "id": "ep03_boundary",
+                "title": "3화",
+                "summary": "아시나는 새 방에 남아 있고, 접견실의 문은 닫혔다.",
+                "next_hook": "이어지는 장면은 4화에서 계속된다."
+              }
+            }
+          }
+        ]
+      },
+      "target": {
+        "file": "app/content/ep04_night.yaml",
+        "scenarioId": "ep04_night",
+        "start": "ep04_c001",
+        "atlas": [
+          {
+            "chapter": "ep04",
+            "id": "ep04_plan",
+            "col": 32,
+            "row": 3
+          }
+        ],
+        "entryBeatSnapshot": {
+          "title": "밤의 궁정 방",
+          "cut": "ep04_c001",
+          "bg": "ep04_c001_stage",
+          "cast": {
+            "left": null,
+            "center": null,
+            "right": null
+          },
+          "time": 0,
+          "lines": [
+            {
+              "나레이션": "",
+              "cg": "ep04_c001_source"
+            }
+          ],
+          "next": "ep04_c002",
+          "effects": {
+            "flags": {
+              "ep04_started": true,
+              "ep04_active": true
+            },
+            "lose": [
+              "magic_bag",
+              "map"
+            ]
+          }
+        }
+      },
+      "proposal": {
+        "choiceId": "continue_ep04",
+        "implemented": false
+      }
+    },
+    {
+      "boundary": "4→5",
+      "source": {
+        "file": "app/content/ep04_night.yaml",
+        "scenarioId": "ep04_night",
+        "start": "ep04_c001",
+        "terminals": [
+          {
+            "beat": "ep04_boundary",
+            "endingId": "ep04_boundary",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep04",
+                "id": "ep04_end",
+                "col": 44,
+                "row": 2,
+                "ending": true
+              }
+            ],
+            "beatSnapshot": {
+              "title": "눈동자에 남은 말",
+              "bg": "ep04_c063_stage",
+              "cast": {
+                "left": "ep04_asina",
+                "right": "ep04_behidat"
+              },
+              "time": 0,
+              "lines": [],
+              "ending": {
+                "id": "ep04_boundary",
+                "title": "4화 · 눈동자",
+                "summary": "눈동자에 관한 말을 들었다. 갈색 변장과 젖은 청록 실내복은 그대로이며, 짐과 치부책은 찾지 못했다.",
+                "next_hook": "밤은 아직 끝나지 않았다."
+              }
+            }
+          },
+          {
+            "beat": "ep04_distance_boundary",
+            "endingId": "ep04_distance_boundary",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep04",
+                "id": "ep04_end_apart",
+                "col": 44,
+                "row": 4,
+                "ending": true
+              }
+            ],
+            "beatSnapshot": {
+              "title": "유지한 거리",
+              "bg": "ep04_c060_stage",
+              "cast": {
+                "left": "ep04_asina",
+                "right": "ep04_behidat"
+              },
+              "time": 0,
+              "lines": [
+                {
+                  "나레이션": "베히다트는 거리를 둔 채 아시나의 눈을 바라보았다.",
+                  "cg": "ep04_c060_source"
+                }
+              ],
+              "ending": {
+                "id": "ep04_distance_boundary",
+                "title": "4화 · 유지한 거리",
+                "summary": "손이 닿지 않는 거리를 지킨 채 눈동자에 관한 말을 들었다. 짐과 치부책은 아직 찾지 못했다.",
+                "next_hook": "확보한 거리는 그대로 유지된다."
+              }
+            }
+          }
+        ]
+      },
+      "target": {
+        "file": "app/content/ep05_audience.yaml",
+        "scenarioId": "ep05_audience",
+        "start": "ep05_c001",
+        "atlas": [
+          {
+            "chapter": "ep05",
+            "id": "ep05_s01",
+            "col": 0,
+            "row": 0
+          }
+        ],
+        "entryBeatSnapshot": {
+          "title": "밤의 침실",
+          "cut": "ep05_c001",
+          "cast": {
+            "left": null,
+            "center": null,
+            "right": null
+          },
+          "time": 0,
+          "lines": [
+            {
+              "ep05_서술": "꽃과 푸른 휘장이 드리운 침대 위, 은발 남성이 아시나에게 몸을 숙여 입을 맞추고 있다.",
+              "cg": "ep05_cg_001"
+            }
+          ],
+          "next": "ep05_c002"
+        }
+      },
+      "proposal": {
+        "choiceId": "continue_ep05",
+        "implemented": false
+      }
+    },
+    {
+      "boundary": "5→6",
+      "source": {
+        "file": "app/content/ep05_audience.yaml",
+        "scenarioId": "ep05_audience",
+        "start": "ep05_c001",
+        "terminals": [
+          {
+            "beat": "ep05_boundary",
+            "endingId": "ep05_boundary",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep05",
+                "id": "ep05_boundary",
+                "col": 16,
+                "row": 0,
+                "ending": true
+              }
+            ],
+            "beatSnapshot": {
+              "title": "알현실의 문답",
+              "time": 0,
+              "cast": {
+                "left": null,
+                "center": null,
+                "right": null
+              },
+              "lines": [],
+              "ending": {
+                "id": "ep05_boundary",
+                "title": "5화 · 알현실",
+                "summary": "누르가 물러난 알현실에 아시나와 라 쿤이 마주하고 있다.",
+                "next_hook": "알현실에서 라 쿤의 다음 말을 기다린다."
+              }
+            }
+          }
+        ]
+      },
+      "target": {
+        "file": "app/content/ep06_library.yaml",
+        "scenarioId": "ep06_library",
+        "start": "ep06_c001",
+        "atlas": [
+          {
+            "chapter": "ep06",
+            "id": "ep06_s01_0",
+            "col": 0,
+            "row": 2
+          }
+        ],
+        "entryBeatSnapshot": {
+          "title": "아침 인사",
+          "cut": "ep06_c001",
+          "cast": {
+            "left": null,
+            "center": null,
+            "right": null
+          },
+          "time": 0,
+          "lines": [
+            {
+              "ep06_아시나": "덕분에 잘 지냈다 마다요.",
+              "cg": "ep06_cg_001"
+            },
+            {
+              "ep06_아시나": "라 쿤께선 지난밤 평안 하셨는지요?",
+              "cg": "ep06_cg_001"
+            }
+          ],
+          "next": "ep06_c002"
+        }
+      },
+      "proposal": {
+        "choiceId": "continue_ep06",
+        "implemented": false
+      }
+    },
+    {
+      "boundary": "6→7",
+      "source": {
+        "file": "app/content/ep06_library.yaml",
+        "scenarioId": "ep06_library",
+        "start": "ep06_c001",
+        "terminals": [
+          {
+            "beat": "ep06_c065",
+            "endingId": "ep06_internal_end",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep06",
+                "id": "ep06_s07_18",
+                "col": 18,
+                "row": 2,
+                "ending": true
+              }
+            ],
+            "beatSnapshot": {
+              "title": "여행 이야기",
+              "cut": "ep06_c065",
+              "cast": {
+                "left": null,
+                "center": null,
+                "right": null
+              },
+              "time": 0,
+              "lines": [
+                {
+                  "ep06_나시르독백": "그런 이유로 그곳을 가려고 했던 것인가?",
+                  "cg": "ep06_cg_065",
+                  "sets": "ep06_독자_잠정이해"
+                }
+              ],
+              "ending": {
+                "id": "ep06_internal_end",
+                "title": "도서실",
+                "summary": "도서실에서 여행 이야기를 나눴다.",
+                "next_hook": "다음 장 연결은 원작 경계 대조 후 확정한다."
+              }
+            }
+          }
+        ]
+      },
+      "target": {
+        "file": "app/content/ep07_harem.yaml",
+        "scenarioId": "ep07_harem",
+        "start": "ep07_c001",
+        "atlas": [
+          {
+            "chapter": "ep07",
+            "id": "ep07_s01",
+            "col": 60,
+            "row": 3
+          }
+        ],
+        "entryBeatSnapshot": {
+          "title": "조사 종료와 짐 일부 반환",
+          "cut": "ep07_c001",
+          "cast": {
+            "left": "ep07_아시나",
+            "right": "ep07_조사관",
+            "center": null
+          },
+          "time": 0,
+          "lines": [
+            {
+              "cg": "ep07_cg_001",
+              "ep07_조사관": "아시나님, 이걸 봐주시겠습니까?"
+            }
+          ],
+          "next": "ep07_c002",
+          "situation": "궁의 서재·조사실. 책장과 책상 전경 위로 조사관이 아시나를 부른다.",
+          "effects": {
+            "flags": {
+              "후속_시작": true,
+              "ep07_시작": true,
+              "ep03_복장_청록복": false,
+              "ep07_분홍녹색복": true,
+              "ep07_얼굴가리개": true
+            }
+          }
+        }
+      },
+      "proposal": {
+        "choiceId": "continue_ep07",
+        "implemented": false
+      }
+    },
+    {
+      "boundary": "7→8",
+      "source": {
+        "file": "app/content/ep07_harem.yaml",
+        "scenarioId": "ep07_harem",
+        "start": "ep07_c001",
+        "terminals": [
+          {
+            "beat": "ep07_c063",
+            "endingId": "ep07_internal_end",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep07",
+                "id": "ep07_s10",
+                "col": 69,
+                "row": 3,
+                "ending": true
+              }
+            ],
+            "beatSnapshot": {
+              "title": "남성의 관심과 거리 변화",
+              "cut": "ep07_c063",
+              "cast": {
+                "left": "ep07_아시나",
+                "center": null,
+                "right": "ep07_은발남성"
+              },
+              "time": 0,
+              "lines": [
+                {
+                  "ep07_나레이션": "",
+                  "cg": "ep07_cg_063"
+                }
+              ],
+              "ending": {
+                "id": "ep07_internal_end",
+                "title": "회랑",
+                "summary": "은발 남성이 아시나의 머리와 뺨 옆을 감싼 채 가까이 서 있다.",
+                "next_hook": "하렘이 편한지 묻는 말에 아시나의 대답은 아직 끝나지 않았다."
+              },
+              "situation": "회랑. 남성이 아시나의 머리·뺨 옆을 손으로 감싼 가까운 두 사람의 구도로 끝난다.",
+              "effects": {
+                "flags": {
+                  "ep07_근접_종료": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "target": {
+        "file": "app/content/ep08_harem.yaml",
+        "scenarioId": "ep08_harem",
+        "start": "ep08_c001",
+        "atlas": [
+          {
+            "chapter": "ep08",
+            "id": "ep08_s01_0",
+            "col": 0,
+            "row": 8
+          }
+        ],
+        "entryBeatSnapshot": {
+          "title": "밤의 궁 실내",
+          "cut": "ep08_c001",
+          "cast": {
+            "left": null,
+            "center": null,
+            "right": null
+          },
+          "time": 0,
+          "lines": [
+            {
+              "ep08_아시나": "언제까지…",
+              "cg": "ep08_cg_001"
+            }
+          ],
+          "next": "ep08_c002"
+        }
+      },
+      "proposal": {
+        "choiceId": "continue_ep08",
+        "implemented": false
+      }
+    },
+    {
+      "boundary": "8→9",
+      "source": {
+        "file": "app/content/ep08_harem.yaml",
+        "scenarioId": "ep08_harem",
+        "start": "ep08_c001",
+        "terminals": [
+          {
+            "beat": "ep08_c062",
+            "endingId": "ep08_boundary",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep08",
+                "id": "ep08_s10_2",
+                "col": 12,
+                "row": 8,
+                "ending": false
+              }
+            ],
+            "beatSnapshot": {
+              "title": "낮의 하렘 중정·회랑",
+              "cut": "ep08_c062",
+              "cast": {
+                "left": null,
+                "center": null,
+                "right": null
+              },
+              "time": 0,
+              "lines": [
+                {
+                  "ep08_아시나": "카림?",
+                  "cg": "ep08_cg_062"
+                },
+                {
+                  "ep08_아시나": "왜 여기에…",
+                  "cg": "ep08_cg_062"
+                },
+                {
+                  "ep08_아시나": "당신은 하렘 밖에 있어야 하잖아요?",
+                  "cg": "ep08_cg_062",
+                  "sets": "ep08_r23"
+                }
+              ],
+              "ending": {
+                "id": "ep08_boundary",
+                "title": "8화",
+                "summary": "아시나가 기둥 옆의 카림에게 하렘 안에 있는 이유를 물었다.",
+                "next_hook": "카림의 대답은 아직 나오지 않았다."
+              }
+            }
+          }
+        ]
+      },
+      "target": {
+        "file": "app/content/ep09_palace.yaml",
+        "scenarioId": "ep09_palace",
+        "start": "ep09_c001",
+        "atlas": [
+          {
+            "chapter": "ep09",
+            "id": "ep09_s01_0",
+            "col": 0,
+            "row": 2
+          }
+        ],
+        "entryBeatSnapshot": {
+          "title": "카림과의 대화",
+          "cut": "ep09_c001",
+          "cast": {
+            "left": "ep09_아시나",
+            "center": null,
+            "right": "ep09_카림"
+          },
+          "time": 0,
+          "lines": [
+            {
+              "ep09_서술": "",
+              "cg": "ep09_cg_001"
+            }
+          ],
+          "next": "ep09_c002",
+          "effects": {
+            "lose": [
+              "magic_bag",
+              "map"
+            ],
+            "flags": {
+              "후속_시작": true,
+              "ep09_시작": true
+            }
+          }
+        }
+      },
+      "proposal": {
+        "choiceId": "continue_ep09",
+        "implemented": false
+      }
+    },
+    {
+      "boundary": "9→10",
+      "source": {
+        "file": "app/content/ep09_palace.yaml",
+        "scenarioId": "ep09_palace",
+        "start": "ep09_c001",
+        "terminals": [
+          {
+            "beat": "ep09_c084",
+            "endingId": "ep09_internal_end",
+            "choices": "ABSENT",
+            "next": "ABSENT",
+            "atlas": [
+              {
+                "chapter": "ep09",
+                "id": "ep09_s08_1",
+                "col": 13,
+                "row": 2,
+                "ending": "ABSENT"
+              }
+            ],
+            "beatSnapshot": {
+              "title": "시선",
+              "cut": "ep09_c084",
+              "cast": {
+                "left": "ep09_대족장",
+                "center": null,
+                "right": "ep09_동행"
+              },
+              "time": 0,
+              "lines": [
+                {
+                  "ep09_대족장": "소동물인 것 같네요.",
+                  "cg": "ep09_cg_084"
+                }
+              ],
+              "ending": {
+                "id": "ep09_internal_end",
+                "title": "밤의 궁",
+                "summary": "궁 안 높은 곳에 머문다. 짐은 아직 돌려받지 못했다.",
+                "next_hook": "이후 장면 연결은 원작 경계 확인 뒤 확정한다."
+              }
+            }
+          }
+        ]
+      },
+      "target": {
+        "file": "app/content/ep10_internal.yaml",
+        "scenarioId": "ep10_internal",
+        "start": "ep10_c001",
+        "atlas": [
+          {
+            "chapter": "ep10",
+            "id": "ep10_s01",
+            "col": 0,
+            "row": 1
+          }
+        ],
+        "entryBeatSnapshot": {
+          "title": "방 안의 대화",
+          "cut": "ep10_c001",
+          "cast": {
+            "left": null,
+            "center": null,
+            "right": null
+          },
+          "lines": [
+            {
+              "나레이션": "",
+              "cg": "ep10_c001"
+            }
+          ],
+          "next": "ep10_c002",
+          "effects": {
+            "flags": {
+              "ep10_시작": true
+            }
+          }
+        }
+      },
+      "proposal": {
+        "choiceId": "continue_ep10",
+        "implemented": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "file": "app/content/ep03_palace.yaml",
+      "sha256": "db5c24204061614bf7514a54652e43722872891d0d228a5f235149d58f02fdf5",
+      "beatCount": 63,
+      "atlasColRange": [
+        18,
+        31
+      ]
+    },
+    {
+      "file": "app/content/ep04_night.yaml",
+      "sha256": "0e673c9a6f1b7afef22e69371227d369f1195bf277a934d1bdc7dc35125f4efe",
+      "beatCount": 84,
+      "atlasColRange": [
+        32,
+        44
+      ]
+    },
+    {
+      "file": "app/content/ep05_audience.yaml",
+      "sha256": "1009cea36a1061f958232a32faa122126f947033554980050272e9732b46e080",
+      "beatCount": 61,
+      "atlasColRange": [
+        0,
+        16
+      ]
+    },
+    {
+      "file": "app/content/ep06_library.yaml",
+      "sha256": "ed2629224c1886bb9368879fc6f2b3fb3b4eae92467c92e218dc3eb7f078e097",
+      "beatCount": 73,
+      "atlasColRange": [
+        0,
+        18
+      ]
+    },
+    {
+      "file": "app/content/ep07_harem.yaml",
+      "sha256": "e550fd667e62863c516710acb6b3e8631ca66392f0ad3b81279f0ee758ba9fd1",
+      "beatCount": 63,
+      "atlasColRange": [
+        60,
+        69
+      ]
+    },
+    {
+      "file": "app/content/ep08_harem.yaml",
+      "sha256": "80e8c9444197865580a88161a3ae8cf97601f99566f0b0baef563f75d61efe1f",
+      "beatCount": 62,
+      "atlasColRange": [
+        0,
+        12
+      ]
+    },
+    {
+      "file": "app/content/ep09_palace.yaml",
+      "sha256": "c6a8d69036a27934952b90767d9f1c2b1417ac8722493cb8f62dac719997e1c7",
+      "beatCount": 70,
+      "atlasColRange": [
+        0,
+        13
+      ]
+    },
+    {
+      "file": "app/content/ep10_internal.yaml",
+      "sha256": "ec78bfd35d69dd98d7e7052adfa044197876935a600f4469c9655e4ec1bb07e1",
+      "beatCount": 88,
+      "atlasColRange": [
+        0,
+        18
+      ]
+    }
+  ],
+  "branchEvidence": {
+    "distanceGoal": {
+      "text": "아시나와 베히다트 사이에 손이 닿지 않는 거리를 확보한다. 마지막 눈동자 칭찬까지 그 거리를 유지하며 접촉·눕히기·귓가 접근을 되풀이하지 않는다.",
+      "effects": {
+        "flags": {
+          "ep04_distance_kept": true
+        }
+      },
+      "next": "ep04_distance_c056",
+      "price": [
+        "ep04_distance_free_strain"
+      ]
+    },
+    "ep04DistanceChoice": {
+      "title": "시선에 대한 반응",
+      "bg": "ep04_c055_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [],
+      "choices": [
+        {
+          "id": "retort",
+          "text": "시선을 따라 옷을 내려다본다",
+          "next": "ep04_c056"
+        },
+        {
+          "id": "distance",
+          "text": "다가오지 못하게 거리를 벌린다",
+          "next": "ep04_distance_free"
+        }
+      ]
+    },
+    "ep04CanonicalTail": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c063",
+      "bg": "ep04_c063_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "눈동자만큼은 아름답다.",
+          "cg": "ep04_c063_source",
+          "sets": "ep04_eye_praise"
+        }
+      ],
+      "next": "ep04_boundary"
+    },
+    "ep04DistanceTail": {
+      "title": "같은 침실과 침대",
+      "cut": "ep04_c063",
+      "bg": "ep04_c063_stage",
+      "cast": {
+        "left": "ep04_asina",
+        "center": null,
+        "right": "ep04_behidat"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep04_behidat": "눈동자만큼은 아름답다.",
+          "cg": "ep04_c063_source",
+          "sets": "ep04_eye_praise"
+        }
+      ],
+      "next": "ep04_distance_boundary"
+    },
+    "ep05OriginalGreeting": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c055",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "피한 게 아니라, 마음의 준비를 했을 뿐이에요.",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_시선답변"
+        },
+        {
+          "ep05_아시나": "덕분에 잘 지냈다마다요.",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_지난밤답변"
+        },
+        {
+          "ep05_아시나": "라 쿤께선 지난밤 평안하셨는지요?",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_지난밤되물음"
+        }
+      ],
+      "next": "ep05_boundary"
+    },
+    "ep05ShortGreeting": {
+      "title": "둘만 남은 자리",
+      "cut": "ep05_c055",
+      "cast": {
+        "left": null,
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep05_아시나": "피한 게 아니라, 마음의 준비를 했을 뿐이에요.",
+          "cg": "ep05_cg_055",
+          "sets": "ep05_시선답변"
+        }
+      ],
+      "next": "ep05_boundary"
+    }
+  },
+  "helper": {
+    "file": "app/src/engine/continuation.ts",
+    "sha256": "a1e2e1e925280e97a63e2d48f779d9c878ba290a84d98a67b3f53f225b8aac67",
+    "currentBoundaries": {
+      "e_survivor": {
+        "ending": "survivor",
+        "choice": "continue_chapter"
+      },
+      "e_curious": {
+        "ending": "curious",
+        "choice": "continue_chapter"
+      },
+      "ep02_court_boundary": {
+        "ending": "ep02_court_boundary",
+        "choice": "continue_ep03"
+      }
+    },
+    "maximumConnectedChapter": "ep03",
+    "modifiedByThisTask": false
+  },
+  "documents": [
+    {
+      "file": "docs/continuation/ep04/continuation.md",
+      "sha256": "094a252d100a5ae001b9089d70f68a32eb9b953ec8db7b6354dc58420eb5c010"
+    },
+    {
+      "file": "docs/continuation/ep05/continuation.md",
+      "sha256": "1260bf25d17c4127205dde988edb1dd1f354a4f2134f1fc36e30626a0106e0dc"
+    },
+    {
+      "file": "docs/continuation/build/ep05/bridge.md",
+      "sha256": "befc2b1ecd7ee1988d17d0aa7c6fdfab6065e2377363d586d75337f7ea4c2be0"
+    },
+    {
+      "file": "docs/continuation/ep06/transcription-audit.md",
+      "sha256": "ca45f08ec911113f213d279cc5d76d2ce9130ae9a1d76588d71662f938c92b3f"
+    },
+    {
+      "file": "docs/continuation/build/ep06/source-corrections.md",
+      "sha256": "70de5697f2c0645477791a0067e0df2934420ddb86e79809fb93c383744636df"
+    },
+    {
+      "file": "docs/continuation/build/ep08/continuity.md",
+      "sha256": "68092bcfbdb0e1efb9a7215208a3b16beac3ba18c9d3ddc35b20953942cd31ba"
+    },
+    {
+      "file": "docs/continuation/ep09/continuation.md",
+      "sha256": "67d7403049d58d894518c61610a374cc38c703eaf950312135604923ba6970a2"
+    },
+    {
+      "file": "docs/continuation/ep10/continuation.md",
+      "sha256": "dca08ebc4994d37d2cff8833c27c7f9476ba63c9414e7636b609d1afe93599d3"
+    },
+    {
+      "file": "docs/continuation/ep07/continuation.md",
+      "sha256": "45f00ac53191e2ecefaa9dbab4845ce47654e078ab3b94d8a4cac684a53e0405"
+    },
+    {
+      "file": "docs/continuation/ep08/continuation.md",
+      "sha256": "6de5884b9f60738b954bf118b2a0f199959d67dc7a39f9a57d9a982da9e1211e"
+    },
+    {
+      "file": "docs/continuation/ep03/continuation.md",
+      "sha256": "b41d22950f59d3a25757656ccb025ff928e055a85ae4e6011556bde72046556c"
+    },
+    {
+      "file": "docs/continuation/ep06/continuation.md",
+      "sha256": "1de4f1282989a269e82aa376ddec29c2a4e2d47f48f4c5fb478be683e0546edd"
+    },
+    {
+      "file": "docs/continuation/source03-10-audit.md",
+      "sha256": "23fb3373ebe4744824c7fbb53861055cbca4b984416900a5a51d88dbb92b4fe8"
+    }
+  ],
+  "checks": {
+    "proposedIdsAbsentInObservedYaml": true,
+    "ep06Latest29CutAuditRequired": true,
+    "testsRun": false,
+    "reason": "읽기 조사 요청으로 서버·모델·테스트를 실행하지 않았다."
+  }
+}

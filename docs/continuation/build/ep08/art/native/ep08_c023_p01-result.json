@@ -1,0 +1,27 @@
+{
+  "candidate_id": "ep08_c023_p01",
+  "pid": 84368,
+  "pgid": 84368,
+  "started_at": 1794203273.748975,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep08/gen/inputs/ep08_c023_p01.png",
+  "input_sha256": "8372ae925cce6125864d5270b75fc628f78e996b6db4a439be8d500c47d92214",
+  "output": "/Users/choeminju/월흔_trpg/assets/ep08/gen/ep08_c023_p01.png",
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep08/art/native/ep08_c023_p01.log",
+  "native_active_before_launch": [
+    {
+      "pid": 82728,
+      "pgid": 82728,
+      "command": "/opt/homebrew/bin/codex exec --skip-git-repo-check -s workspace-write -C /Users/choeminju/월흔_trpg/assets/ep05/gen -i /Users/choeminju/월흔_trpg/assets/ep05/gen/inputs/ep05_c012_p01_source.png -- 첨부한 원작 참조 창만 편집하세요. 대상은 침대 위 아시나의 기척 반응입니다. 원작 얼굴·표정·시선·자세·몸 비율·머리·복장·가림·장신구·소품·구도를 유지하세요. 말풍선·대사·독백·효과 글자만 제거하고 해당 자리를 주변 원작 그림으로 복원하세요. 16:9 가로 화면은 옆 배경만 확장하고, 원작에서 잘린 인체와 가려진 몸은 잘리고 가려진 상태로 유지하세요. 전신·새 몸·노출·인물·물건·사건·다른 패널 콜라주를 추가하지 마세요. 그림 공개 순서는 매핑의 ep0"
+    }
+  ],
+  "native_active_before_count": 1,
+  "slot_counter": "argv 첫 실행 파일 기준",
+  "independent_qa": "대기",
+  "finished_at": 1794203346.197824,
+  "exit_code": 0,
+  "output_exists": true,
+  "output_sha256": "ae1b8212d86bfadf063793f0c8a2c34246ad3e43e6067d47b5c7aae7b3bc210b",
+  "width": 1672,
+  "height": 941,
+  "output_bytes": 2482616
+}

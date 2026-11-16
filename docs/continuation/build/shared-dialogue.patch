@@ -1,0 +1,284 @@
+--- a/app/src/engine/types.ts
++++ b/app/src/engine/types.ts
+@@ -337,6 +337,11 @@
+ export const TENSION_MIN = 1;
+ export const TENSION_MAX = 6;
+ export const TENSION_START = 3;
++
++/** 선택지 대신 직접 말하거나 반응할 수 있는 비판정 자리. next는 직접 입력 뒤에만 쓴다. */
++export type ConversationSpec = Pick<FreeSpec,
++  'situation' | 'goal' | 'speakers' | 'must_not' | 'state_guard' | 'echo_only' | 'talk_fallback' | 'deflect'
++> & { cg: string; next: Next };
+ 
+ export interface BeatSpec {
+   id: string;
+@@ -356,6 +361,7 @@
+   twist?: { altered: TwistSpec[]; interrupt: TwistSpec[] };
+   lines: Line[];
+   choices?: ChoiceSpec[];
++  conversation?: ConversationSpec;
+   free?: FreeSpec;
+   next?: Next;
+   ending?: EndingSpec;
+@@ -364,6 +370,8 @@
+ export interface CastSpec {
+   display: string;
+   style: LineStyle;
++  /** 입식 대신 각 대사의 유효한 CG로만 표시하는 배우. */
++  presentation?: 'cg';
+   faces?: readonly Face[];
+   sprite?: string;
+   /** 조건이 참이면 sprite 대신 쓰는 입식 */
+--- a/app/src/engine/scenario.ts
++++ b/app/src/engine/scenario.ts
+@@ -11,6 +11,7 @@
+   type CastSlots,
+   type RefuseSpec,
+   type ChoiceSpec,
++  type ConversationSpec,
+   type Crop,
+   type Effects,
+   type EndingSpec,
+@@ -86,6 +87,7 @@
+   if ((c.style === 'speech' || c.style === 'thought') && !c.faces?.includes(face)) {
+     return `"${speaker}"의 표정은 ${(c.faces ?? []).join('·')} 중에서 골라야 합니다 (받은 값: ${face})`;
+   }
++  if (c.presentation === 'cg') return null;
+   const lore = c.lore ?? speaker;
+   const bases = Object.entries(s.cast)
+     .filter(([key, x]) => (x.lore ?? key) === lore)
+@@ -95,6 +97,13 @@
+   if (face === 'neutral') return null;
+   const missing = bases.filter((b) => !s.sprites[`${b}_${face}`]);
+   return missing.length ? `없는 입식 ${missing.map((b) => `"${b}_${face}"`).join(', ')}` : null;
++}
++
++/** CG 배우의 표정 선언과 실제 출력 매체를 함께 검사한다. */
++export function cgLineProblem(s: Pick<Scenario, 'cast' | 'sprites' | 'cgs'>, line: Line): string | null {
++  if (s.cast[line.speaker]?.presentation !== 'cg') return null;
++  if (!line.cg || !s.cgs[line.cg]?.file) return `"${line.speaker}"의 대사에는 유효한 CG가 필요합니다`;
++  return faceProblem(s, line.speaker, line.face ?? 'neutral');
+ }
+ 
+ function parseLine(v: unknown, cast: Record<string, CastSpec>, where: string): Line {
+@@ -414,6 +423,25 @@
+   return approach;
+ }
+ 
++function parseConversation(v: unknown, cast: Record<string, CastSpec>, where: string): ConversationSpec {
++  const r = rec(v, where);
++  const strings = (key: string) => list(r[key], `${where}.${key}`).map((x, i) => str(x, `${where}.${key}[${i}]`));
++  const next = parseNext(r.next, `${where}.next`);
++  if (next === undefined || (Array.isArray(next) && next.length === 0)) throw new ScenarioError(`${where}.next: 직접 입력 뒤 갈 비트가 필요합니다`);
++  return {
++    situation: str(r.situation, `${where}.situation`),
++    goal: str(r.goal, `${where}.goal`),
++    speakers: strings('speakers'),
++    must_not: strings('must_not'),
++    state_guard: strings('state_guard'),
++    echo_only: strings('echo_only'),
++    talk_fallback: parseLines(r.talk_fallback, cast, `${where}.talk_fallback`),
++    deflect: parseLines(r.deflect, cast, `${where}.deflect`),
++    cg: str(r.cg, `${where}.cg`),
++    next,
++  };
++}
++
+ function parseFree(v: unknown, cast: Record<string, CastSpec>, where: string, defaults: Raw): FreeSpec {
+   const r = { ...defaults, ...rec(v, where) };
+   const strings = (key: string) => list(r[key], `${where}.${key}`).map((x, i) => str(x, `${where}.${key}[${i}]`));
+@@ -527,6 +555,7 @@
+   if (r.twist !== undefined) beat.twist = parseTwist(r.twist, cast, `${where}.twist`);
+   if (r.choices !== undefined) beat.choices = list(r.choices, `${where}.choices`).map((c, i) => parseChoice(c, cast, `${where}.choices[${i}]`));
+   if (r.free !== undefined) beat.free = parseFree(r.free, cast, `${where}.free`, freeDefaults);
++  if (r.conversation !== undefined) beat.conversation = parseConversation(r.conversation, cast, `${where}.conversation`);
+   const next = parseNext(r.next, `${where}.next`);
+   if (next) beat.next = next;
+   if (r.ending !== undefined) {
+@@ -575,6 +604,7 @@
+   if (beat.free) {
+     out.push(...beat.free.press, ...beat.free.deflect, ...beat.free.talk_fallback);
+   }
++  if (beat.conversation) out.push(...beat.conversation.deflect, ...beat.conversation.talk_fallback);
+   for (const [, outcome] of outcomesOf(beat)) out.push(...outcome.lines);
+   return out;
+ }
+@@ -585,6 +615,7 @@
+   for (const [key, raw] of Object.entries(rec(root.cast, 'cast'))) {
+     const r = rec(raw, `cast.${key}`);
+     const spec: CastSpec = { display: typeof r.display === 'string' ? r.display : '', style: oneOf<LineStyle>(r.style, ['speech', 'thought', 'narration', 'gm'], `cast.${key}.style`) };
++    if (r.presentation !== undefined) spec.presentation = oneOf(r.presentation, ['cg'] as const, `cast.${key}.presentation`);
+      if (r.faces !== undefined) spec.faces = list(r.faces, `cast.${key}.faces`).map((f, i) => str(f, `cast.${key}.faces[${i}]`));
+     const sprite = optStr(r.sprite, `cast.${key}.sprite`);
+     if (sprite) spec.sprite = sprite;
+@@ -806,7 +837,7 @@
+ }
+ 
+ export function edgesOf(beat: BeatSpec): string[] {
+-  const edges = [...nextTargets(beat.next), ...nextTargets(beat.free?.next)];
++  const edges = [...nextTargets(beat.next), ...nextTargets(beat.free?.next), ...nextTargets(beat.conversation?.next)];
+   for (const goal of Object.values(beat.free?.goals ?? {})) edges.push(...nextTargets(goal.next));
+   for (const c of beat.choices ?? []) edges.push(...nextTargets(c.next));
+   for (const [, o] of outcomesOf(beat)) edges.push(...nextTargets(o.next));
+@@ -894,6 +925,7 @@
+     if (!s.cgs[cg.alt.id]) problems.push(`cgs.${id}.alt.id: 없는 이벤트 CG "${cg.alt.id}"`);
+   }
+   for (const [key, c] of Object.entries(s.cast)) {
++    if (c.presentation === 'cg' && (c.sprite || c.sprite_alt || (c.style !== 'speech' && c.style !== 'thought'))) problems.push(`cast.${key}.presentation: CG 배우는 입식 없는 speech/thought여야 합니다`);
+     for (const face of c.faces ?? []) {
+       const problem = faceProblem(s, key, face);
+       if (problem) problems.push(`cast.${key}.faces: ${problem}`);
+@@ -909,7 +941,9 @@
+     const where = `beats.${beat.id}`;
+     if (beat.bg && !s.backgrounds[beat.bg]) problems.push(`${where}.bg: 없는 배경 "${beat.bg}"`);
+     const twists = [...(beat.twist?.altered ?? []), ...(beat.twist?.interrupt ?? [])];
+-    for (const line of [...linesOfBeat(beat), ...twists.flatMap((t) => t.lines)]) {
++    for (const line of [...(beat.lead ?? []), ...linesOfBeat(beat), ...twists.flatMap((t) => t.lines)]) {
++      const cgProblem = cgLineProblem(s, line);
++      if (cgProblem) problems.push(`${where}: ${cgProblem}`);
+       if (line.cg && !s.cgs[line.cg]) problems.push(`${where}: 없는 이벤트 CG "${line.cg}"`);
+       if (line.cg_from && !s.cgs[line.cg_from]) problems.push(`${where}: 없는 이벤트 CG "${line.cg_from}"(cg_from)`);
+       if (line.cg_from && !line.cg) problems.push(`${where}: 대사 "${line.text}" 에 cg 없이 cg_from 만 있습니다`);
+@@ -931,6 +965,17 @@
+       problems.push(`${where}: choices, free, next, ending 중 하나가 필요합니다`);
+     }
+     if (beat.choices && beat.free) problems.push(`${where}: choices 와 free 를 한 비트에 함께 둘 수 없습니다`);
++    if (beat.conversation) {
++      const conversation = beat.conversation;
++      if (beat.free || beat.ending || !beat.choices?.some((c) => c.if === undefined && !c.check)) problems.push(`${where}.conversation: free/ending 없이 판정 없는 기본 선택지가 필요합니다`);
++      if (!s.cgs[conversation.cg]?.file) problems.push(`${where}.conversation.cg: 유효한 CG가 필요합니다`);
++      checkNext(conversation.next, `${where}.conversation.next`);
++      if (conversation.speakers.length === 0) problems.push(`${where}.conversation.speakers: 화자가 필요합니다`);
++      for (const speaker of conversation.speakers) {
++        const cast = s.cast[speaker];
++        if (!cast || cast.style === 'gm' || (cast.style === 'speech' && cast.lore === s.sheet.name) || (cast.style !== 'narration' && (!cast.lore || !Object.values(beat.cast ?? {}).some((key) => key && s.cast[key]?.lore === cast.lore)))) problems.push(`${where}.conversation.speakers: "${speaker}"는 현재 무대의 응답자 또는 나레이션이어야 합니다`);
++      }
++    }
+     for (const c of beat.choices ?? []) {
+       if (c.if) checkCond(c.if, `${where}.choices.${c.id}.if`);
+       c.check?.mods?.forEach((m, i) => checkCond(m.if, `${where}.choices.${c.id}.check.mods[${i}]`));
+--- a/app/src/engine/engine.ts
++++ b/app/src/engine/engine.ts
+@@ -1,6 +1,6 @@
+ import { evalCond, holdBefore, type CondContext } from './conditions.ts';
+ import { nextU32, roll2d6, seedFrom } from './dice.ts';
+-import { edgesOf, facesPerson, hasCharacter } from './scenario.ts';
++import { cgLineProblem, edgesOf, facesPerson, hasCharacter } from './scenario.ts';
+ import { drawPrice, hasInlineCost, onceFlag, priceCandidates } from './prices.ts';
+ import { assertedSpeech, discloses, isActionText, isNoise, isQuestionText, normalizeKo, parseStoryInput, preemptedBy, type StoryInput } from './text.ts';
+ import {
+@@ -111,7 +111,7 @@
+ export interface GmContext {
+   scenario: Scenario;
+   beat: BeatSpec;
+-  free: FreeSpec;
++  free: Pick<FreeSpec, 'situation' | 'goal' | 'speakers' | 'must_not' | 'state_guard' | 'echo_only' | 'talk_fallback' | 'deflect' | 'approaches' | 'goals' | 'neutral'>;
+   state: Readonly<GameState>;
+   text: string;
+   /** 이야기 입력의 명시적인 말·행동 경계. GM 질문과 선택지 반응에는 없다. */
+@@ -1151,6 +1151,66 @@
+     const raw = action.text.replace(/\s+/g, ' ').trim().slice(0, MAX_INPUT_CHARS);
+     if (!raw) throw new GameError('행동이나 대사를 입력해 주세요.');
+     const scene = this.sceneOf(action.scene) ?? stateBeat;
++    if (scene.conversation) {
++      if (scene.id !== stateBeat.id || state.pendingLuck || state.ending || action.pending.length > 0) throw new GameError('현재 장면의 대사를 다 읽은 뒤 입력해 주세요.');
++      const conversation = scene.conversation;
++      const input = parseStoryInput(raw);
++      // 다른 장에서 다른 사람에게 했던 말과 비공개 궁정 대화를 이 응답자의 기억으로 주지 않는다.
++      const listeners = new Set(conversation.speakers.filter((key) => this.scenario.cast[key]?.style === 'speech').map((key) => this.scenario.cast[key]?.lore));
++      const heard = state.log.flatMap((entry) => {
++        if (entry.kind !== 'input' || entry.result !== 'talk') return [];
++        const previous = this.scenario.beats[entry.beat]?.conversation;
++        if (!previous?.speakers.some((key) => this.scenario.cast[key]?.style === 'speech' && listeners.has(this.scenario.cast[key]?.lore))) return [];
++        const prior = parseStoryInput(entry.text);
++        return prior.kind === 'valid' ? [
++          ...(prior.action ? [{ text: prior.action, action: true }] : []),
++          ...(prior.speech ? [{ text: prior.speech, action: false }] : []),
++        ] : [];
++      }).slice(-SAID_KEEP);
++      const ctx: GmContext = {
++        scenario: this.scenario, beat: scene, free: { ...conversation, approaches: [] },
++        state: { ...state, heard, recent: [] }, text: raw, input, acted: input.kind === 'valid' && Boolean(input.action),
++        spoken: input.kind === 'valid' && Boolean(input.speech),
++        interject: { upcoming: [], action: input.kind === 'valid' && Boolean(input.action) },
++      };
++      events.push({ type: 'echo', text: raw });
++      if (this.confirmQuit(state, raw, events) !== null) return;
++      const read = await this.storyReading(ctx, events);
++      if (!read) return;
++      if (this.bounce(state, scene, ctx, read.source, events)) {
++        events.push({ type: 'notice', kind: 'rewrite' });
++        return;
++      }
++      // 이 자리는 인물과의 대화다. 세계 질문은 그 인물이 받고, 게임 조작 질문만 질문 모드로 보낸다.
++      if (read.kind === 'ask' && (read.game !== undefined || read.play)) {
++        events.push({ type: 'notice', kind: 'ask' });
++        return;
++      }
++      if (read.kind === 'clarify' || read.kind === 'approach' ||
++        (read.kind === 'improv' && !read.absurd && !read.odd && read.target !== 'local') ||
++        ('risk' in read && read.risk !== undefined)) {
++        this.say(state, { speaker: gmSpeakerOf(this.scenario) ?? 'GM', text: read.kind === 'clarify' ? read.message : '이 자리에서는 지속되는 결과를 확정할 수 없어. 지금 할 말이나 즉각적인 몸짓으로 범위를 다시 적어 줘.' }, 'script', events);
++        events.push({ type: 'notice', kind: 'rewrite' });
++        return;
++      }
++      const reply = await this.gm.talk({
++        ...ctx, ...(input.kind === 'valid' && !input.speech ? { shown: true } : {}),
++        tone: read.kind === 'talk' ? read.tone ?? 'plain' : 'plain',
++        ...(read.kind === 'improv' ? { absurd: read.absurd, odd: read.odd, deed: read.deed } : {}),
++      });
++      if (reply.meta.fallback || reply.lines.length === 0) throw new GameError('대화 응답을 만들지 못했습니다. 다시 입력하거나 계속을 골라 주세요.');
++      if (reply.lines.some((line) => !conversation.speakers.includes(line.speaker))) throw new GameError('현재 대화에 없는 화자의 응답입니다.');
++      this.recordGm(state, scene, 'interpret', read.meta);
++      this.record(state, { kind: 'input', beat: scene.id, text: raw, result: 'talk', approach: null, item: null, source: read.source });
++      this.heard(state, scene, read, raw, events);
++      if (input.kind === 'valid' && input.speech) this.noteSaid(state, input.speech);
++      this.noteHeard(state, scene, raw, input.kind === 'valid' && Boolean(input.action));
++      this.recordGm(state, scene, 'talk', reply.meta, reply.lines);
++      for (const line of reply.lines) this.say(state, { ...line, cg: conversation.cg }, 'gm', events);
++      events.push({ type: 'revise', drop: [], jump: true });
++      this.enter(state, this.route(state, conversation.next, scene.id), events, 0);
++      return;
++    }
+     // 화면이 서버보다 뒤에 있을 수 있다. 보이는 장면의 설정을 먼저 쓴다.
+     const free = scene.free ?? stateBeat.free ?? this.lastFree(state);
+     if (!free) throw new GameError('지금은 말할 수 없습니다.');
+@@ -1872,6 +1932,8 @@
+ 
+   private say(state: GameState, raw: Line, by: 'script' | 'gm', events: GameEvent[]): void {
+     if (raw.if !== undefined && !evalCond(raw.if, this.ctx(state))) return;
++    const cgProblem = cgLineProblem(this.scenario, raw);
++    if (cgProblem) throw new GameError(cgProblem);
+     const cast = this.scenario.cast[raw.speaker];
+     if (by === 'gm' && cast?.style === 'speech' && cast.lore !== this.scenario.sheet.name && (state.spoken?.[raw.speaker] ?? []).some((text) => normalizeKo(text) === normalizeKo(raw.text))) return;
+     const alt = raw.cg ? this.scenario.cgs[raw.cg]?.alt : undefined;
+--- a/app/src/gm/rules.ts
++++ b/app/src/gm/rules.ts
+@@ -38,7 +38,7 @@
+ /** 접근법 낱말 맞춤. 띄어 쓴 낱말만 띄어쓰기를 무시하고 맞춘다. 붙여 쓴 낱말이 어절을 넘어 맞으면 안 된다("계신 분들"의 "신분"). */
+ const keywordIn = (text: string, keyword: string): boolean => (/\s/.test(keyword.trim()) ? mentions(text, keyword) : text.includes(keyword.trim()));
+ 
+-export function ruleInterpret(free: FreeSpec, text: string, items: readonly string[], lore: Lore): RuleReading {
++export function ruleInterpret(free: Pick<FreeSpec, 'approaches'>, text: string, items: readonly string[], lore: Lore): RuleReading {
+   for (const group of RATING_GROUPS) {
+     // 등급 낱말은 띄어 써 피하는 일이 흔해 띄어쓰기를 무시하되, "자, 해 볼까" 같은 우연은 빼고 본다.
+     const hit = lore.forbidden[group].find((term) => ratingIn(text, term));
+--- a/app/src/gm/prompt.ts
++++ b/app/src/gm/prompt.ts
+@@ -163,6 +163,7 @@
+     '## 할 일: 플레이어 입력 해석',
+     `플레이어 입력: ${quote(text)}`,
+     inputRule(ctx),
++    ...(ctx.beat.conversation ? ['이 자리는 판정 없는 선택적 대화다. 말·가만히 있기·감정 반응에는 판정 목표를 붙이지 않는다. 몸짓은 즉각적인 관찰과 상대 반응까지만 local로 받는다. 탈출·물건 획득·부상·신분 공개처럼 지속 상태를 바꾸려는 시도는 scope=clarify로 두고 필요한 범위를 되묻는다. 아직 일어나지 않은 뒤 장면의 정보를 답에 쓰지 않는다.'] : []),
+     '먼저 kind 로 입력의 종류를 하나 고른다. 낱말이 아니라 누구에게 무엇을 하려는 입력인지로 고른다. 상대에게 건넨 말·인용·말하는 행위는 person 이고, 아시나가 무언가를 해내려고 시도하는 몸 동작은 action 이다. 감정이나 몸 상태 때문에 저절로 나온 반응은 idle 이다. 장면의 목표에서 거꾸로 추측해 입력에 없는 회피·설득·유인 목적을 붙이지 않는다. 상대를 평하거나 욕하거나 놀리는 문장은 그대로 입에 올리는 말이니 "~한다"로 끝나지 않아도 person 이다.',
+     free.speakers.some((k) => scenario.cast[k]?.style === 'speech' && scenario.cast[k]?.lore !== scenario.sheet.name) ? '지금 아시나 앞에 사람이 있다. "너", "넌"이라고 부르는 말은 그 사람에게 건넨 말이다.' : '지금 아시나 곁에 아무도 없다.',
+     only?.includes('self')
+@@ -521,7 +522,7 @@
+ export const INPUT_KINDS = ['how', 'game', 'lore', 'person', 'self', 'action', 'idle', 'bad'] as const;
+ export type InputKind = (typeof INPUT_KINDS)[number];
+ 
+-export function interpretSchema(free: FreeSpec, items: readonly string[], lore: Lore, help: readonly string[], kinds: readonly InputKind[] = INPUT_KINDS): object {
++export function interpretSchema(free: Pick<FreeSpec, 'approaches' | 'goals'>, items: readonly string[], lore: Lore, help: readonly string[], kinds: readonly InputKind[] = INPUT_KINDS): object {
+   return {
+     type: 'object',
+     additionalProperties: false,

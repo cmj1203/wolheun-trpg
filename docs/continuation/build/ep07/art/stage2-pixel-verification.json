@@ -1,0 +1,2052 @@
+{
+  "검증": "실제 원본 구간과 디코딩된 RGBA 픽셀 SHA-256 전수 비교",
+  "최종비교수": 136,
+  "원작전체크롭": 63,
+  "후보입력": 73,
+  "불일치": [],
+  "수정범위": "실패한 ep07_c005_p01만 새 v2 입력으로 수정하고 재검증. 이미 통과한 135개는 재실행하지 않음.",
+  "독립그림QA": "미실행; 참조 입력 픽셀 보존 검사이며 그림 PASS가 아님",
+  "네이티브생성호출": 0,
+  "결과": [
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c001",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c001_original.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        1797,
+        2000,
+        3722
+      ],
+      "원본픽셀_sha256": "366560b077088842bc6e2e26180acc29638ef6417c2d05757728331d52d238db",
+      "입력픽셀_sha256": "366560b077088842bc6e2e26180acc29638ef6417c2d05757728331d52d238db",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c002",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c002_original.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        5492,
+        2000,
+        9608
+      ],
+      "원본픽셀_sha256": "eeeb5f481f8d3fa2058558adc1aa2e80ea203491dec8ab3e84ca8fc4944bc26b",
+      "입력픽셀_sha256": "eeeb5f481f8d3fa2058558adc1aa2e80ea203491dec8ab3e84ca8fc4944bc26b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c003",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c003_original.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        10685,
+        2000,
+        14856
+      ],
+      "원본픽셀_sha256": "9dd62cc88cc72223b0fb02fa024a34b99769004c8fbc294e3b97b54b64f794c8",
+      "입력픽셀_sha256": "9dd62cc88cc72223b0fb02fa024a34b99769004c8fbc294e3b97b54b64f794c8",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c004",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c004_original.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        15964,
+        2000,
+        21934
+      ],
+      "원본픽셀_sha256": "8a6ccb64f8e5cee383d2c826da4d133d0277a7cdebb8d18c7313d9f547314ec1",
+      "입력픽셀_sha256": "8a6ccb64f8e5cee383d2c826da4d133d0277a7cdebb8d18c7313d9f547314ec1",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c001",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c001_input.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        1797,
+        2000,
+        3722
+      ],
+      "원본픽셀_sha256": "366560b077088842bc6e2e26180acc29638ef6417c2d05757728331d52d238db",
+      "입력픽셀_sha256": "366560b077088842bc6e2e26180acc29638ef6417c2d05757728331d52d238db",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c002",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c002_input.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        5492,
+        2000,
+        9608
+      ],
+      "원본픽셀_sha256": "eeeb5f481f8d3fa2058558adc1aa2e80ea203491dec8ab3e84ca8fc4944bc26b",
+      "입력픽셀_sha256": "eeeb5f481f8d3fa2058558adc1aa2e80ea203491dec8ab3e84ca8fc4944bc26b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c003",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c003_input.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        10685,
+        2000,
+        14856
+      ],
+      "원본픽셀_sha256": "9dd62cc88cc72223b0fb02fa024a34b99769004c8fbc294e3b97b54b64f794c8",
+      "입력픽셀_sha256": "9dd62cc88cc72223b0fb02fa024a34b99769004c8fbc294e3b97b54b64f794c8",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c004",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c004_input.png",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "절대원본구간": [
+        0,
+        15964,
+        2000,
+        21934
+      ],
+      "원본픽셀_sha256": "8a6ccb64f8e5cee383d2c826da4d133d0277a7cdebb8d18c7313d9f547314ec1",
+      "입력픽셀_sha256": "8a6ccb64f8e5cee383d2c826da4d133d0277a7cdebb8d18c7313d9f547314ec1",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c005",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c005_original.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        294,
+        2000,
+        10787
+      ],
+      "원본픽셀_sha256": "51f43c54e8bcd0134ccf2d8871787328f9e7407457466d0d9783137e329e01f8",
+      "입력픽셀_sha256": "51f43c54e8bcd0134ccf2d8871787328f9e7407457466d0d9783137e329e01f8",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c006",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c006_original.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        11370,
+        2000,
+        13544
+      ],
+      "원본픽셀_sha256": "d1ced30ff83c5b5b897a3028e235ebf894dd4800cd06275b172b422a5808e6b4",
+      "입력픽셀_sha256": "d1ced30ff83c5b5b897a3028e235ebf894dd4800cd06275b172b422a5808e6b4",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c007",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c007_original.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        13673,
+        2000,
+        16294
+      ],
+      "원본픽셀_sha256": "df7c33491e847f3dac74a8ae204b70dd40f4ab7531fe126a1b3992c5a75c222b",
+      "입력픽셀_sha256": "df7c33491e847f3dac74a8ae204b70dd40f4ab7531fe126a1b3992c5a75c222b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c008",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c008_original.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        16685,
+        2000,
+        18035
+      ],
+      "원본픽셀_sha256": "20d9e7b9ba7af991f457628cca4fac2a393bb34458e00e486037cff65d1d4059",
+      "입력픽셀_sha256": "20d9e7b9ba7af991f457628cca4fac2a393bb34458e00e486037cff65d1d4059",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c009",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c009_original.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        19208,
+        2000,
+        21887
+      ],
+      "원본픽셀_sha256": "8adbb4602c6eeef187d1cb6391719477ff5b305b6f7269913120b1dee3a5cc98",
+      "입력픽셀_sha256": "8adbb4602c6eeef187d1cb6391719477ff5b305b6f7269913120b1dee3a5cc98",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c005_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c005_p01_input_v2.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        294,
+        2000,
+        2994
+      ],
+      "원본픽셀_sha256": "18b481f3308cfd5d996d77f582511416b90edace1c278d0b7ae1fbcc4483a183",
+      "입력픽셀_sha256": "18b481f3308cfd5d996d77f582511416b90edace1c278d0b7ae1fbcc4483a183",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c005_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c005_p02_input.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        2994,
+        2000,
+        6574
+      ],
+      "원본픽셀_sha256": "51d41ac62df3c4ac65b4fdbd1477852a1515d862b5a582f034975ab93ab3bbe0",
+      "입력픽셀_sha256": "51d41ac62df3c4ac65b4fdbd1477852a1515d862b5a582f034975ab93ab3bbe0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c005_p03",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c005_p03_input_v2.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        6574,
+        2000,
+        10787
+      ],
+      "원본픽셀_sha256": "20cde1c8f280600fe638cda309a18c247f329973a366399b4ff0d16ef5f93d1f",
+      "입력픽셀_sha256": "20cde1c8f280600fe638cda309a18c247f329973a366399b4ff0d16ef5f93d1f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c006",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c006_input.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        11370,
+        2000,
+        13544
+      ],
+      "원본픽셀_sha256": "d1ced30ff83c5b5b897a3028e235ebf894dd4800cd06275b172b422a5808e6b4",
+      "입력픽셀_sha256": "d1ced30ff83c5b5b897a3028e235ebf894dd4800cd06275b172b422a5808e6b4",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c007",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c007_input.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        13673,
+        2000,
+        16294
+      ],
+      "원본픽셀_sha256": "df7c33491e847f3dac74a8ae204b70dd40f4ab7531fe126a1b3992c5a75c222b",
+      "입력픽셀_sha256": "df7c33491e847f3dac74a8ae204b70dd40f4ab7531fe126a1b3992c5a75c222b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c008",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c008_input.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        16685,
+        2000,
+        18035
+      ],
+      "원본픽셀_sha256": "20d9e7b9ba7af991f457628cca4fac2a393bb34458e00e486037cff65d1d4059",
+      "입력픽셀_sha256": "20d9e7b9ba7af991f457628cca4fac2a393bb34458e00e486037cff65d1d4059",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c009",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c009_input.png",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "절대원본구간": [
+        0,
+        19208,
+        2000,
+        21887
+      ],
+      "원본픽셀_sha256": "8adbb4602c6eeef187d1cb6391719477ff5b305b6f7269913120b1dee3a5cc98",
+      "입력픽셀_sha256": "8adbb4602c6eeef187d1cb6391719477ff5b305b6f7269913120b1dee3a5cc98",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c010",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c010_original.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        204,
+        2000,
+        9193
+      ],
+      "원본픽셀_sha256": "30af57e36f7c488fa92b302357e980ab6c8785893f678749d793a6529d2895e5",
+      "입력픽셀_sha256": "30af57e36f7c488fa92b302357e980ab6c8785893f678749d793a6529d2895e5",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c011",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c011_original.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        9941,
+        2000,
+        16349
+      ],
+      "원본픽셀_sha256": "62c218e27445f72f6de35e71919f640fa8d3115bc65b80a863de0c102479f687",
+      "입력픽셀_sha256": "62c218e27445f72f6de35e71919f640fa8d3115bc65b80a863de0c102479f687",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c012",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c012_original.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        16862,
+        2000,
+        19751
+      ],
+      "원본픽셀_sha256": "5676e3c86e96ef4aa04d8ed1753328a72dc738d70d2170bc21ec1c51d916e3d0",
+      "입력픽셀_sha256": "5676e3c86e96ef4aa04d8ed1753328a72dc738d70d2170bc21ec1c51d916e3d0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c013",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c013_original.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        19975,
+        2000,
+        25633
+      ],
+      "원본픽셀_sha256": "bc0b2c1650864fb78ae724ecb227be3bdc5185766bb43c9eb5ef6c5d8c7ba226",
+      "입력픽셀_sha256": "bc0b2c1650864fb78ae724ecb227be3bdc5185766bb43c9eb5ef6c5d8c7ba226",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c010",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c010_input.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        204,
+        2000,
+        9193
+      ],
+      "원본픽셀_sha256": "30af57e36f7c488fa92b302357e980ab6c8785893f678749d793a6529d2895e5",
+      "입력픽셀_sha256": "30af57e36f7c488fa92b302357e980ab6c8785893f678749d793a6529d2895e5",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c011",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c011_input.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        9941,
+        2000,
+        16349
+      ],
+      "원본픽셀_sha256": "62c218e27445f72f6de35e71919f640fa8d3115bc65b80a863de0c102479f687",
+      "입력픽셀_sha256": "62c218e27445f72f6de35e71919f640fa8d3115bc65b80a863de0c102479f687",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c012",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c012_input.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        16862,
+        2000,
+        19751
+      ],
+      "원본픽셀_sha256": "5676e3c86e96ef4aa04d8ed1753328a72dc738d70d2170bc21ec1c51d916e3d0",
+      "입력픽셀_sha256": "5676e3c86e96ef4aa04d8ed1753328a72dc738d70d2170bc21ec1c51d916e3d0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c013",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c013_input.png",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "절대원본구간": [
+        0,
+        19975,
+        2000,
+        25633
+      ],
+      "원본픽셀_sha256": "bc0b2c1650864fb78ae724ecb227be3bdc5185766bb43c9eb5ef6c5d8c7ba226",
+      "입력픽셀_sha256": "bc0b2c1650864fb78ae724ecb227be3bdc5185766bb43c9eb5ef6c5d8c7ba226",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c014",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c014_original.png",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "절대원본구간": [
+        0,
+        10,
+        2000,
+        14277
+      ],
+      "원본픽셀_sha256": "c1766ebd96a8ef3de7968e6fed0691a1477ec4c9bd25297cbdb5e27181ec9055",
+      "입력픽셀_sha256": "c1766ebd96a8ef3de7968e6fed0691a1477ec4c9bd25297cbdb5e27181ec9055",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c015",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c015_original.png",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "절대원본구간": [
+        0,
+        14409,
+        2000,
+        18246
+      ],
+      "원본픽셀_sha256": "71fc3319134123b8484ba3b9ca5c4352d1b142570099380a969bdf2bbdbd7b50",
+      "입력픽셀_sha256": "71fc3319134123b8484ba3b9ca5c4352d1b142570099380a969bdf2bbdbd7b50",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c016",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c016_original.png",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "절대원본구간": [
+        0,
+        19183,
+        2000,
+        26552
+      ],
+      "원본픽셀_sha256": "5a3b4c9f804439a5953c5f53e39287cfeb268f2369ee4556e54af5415a860405",
+      "입력픽셀_sha256": "5a3b4c9f804439a5953c5f53e39287cfeb268f2369ee4556e54af5415a860405",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c014_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c014_p01_input.png",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "절대원본구간": [
+        0,
+        10,
+        2000,
+        8210
+      ],
+      "원본픽셀_sha256": "3e33e661254aa608d6a6ecb408e7d7e9889fdf9e5533b8fc5334bed100f68c20",
+      "입력픽셀_sha256": "3e33e661254aa608d6a6ecb408e7d7e9889fdf9e5533b8fc5334bed100f68c20",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c014_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c014_p02_input.png",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "절대원본구간": [
+        0,
+        8210,
+        2000,
+        14277
+      ],
+      "원본픽셀_sha256": "2445f6403c2af854322a74f31b32e2fdc9811eea31420596642c4a6aa00aa984",
+      "입력픽셀_sha256": "2445f6403c2af854322a74f31b32e2fdc9811eea31420596642c4a6aa00aa984",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c015",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c015_input.png",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "절대원본구간": [
+        0,
+        14409,
+        2000,
+        18246
+      ],
+      "원본픽셀_sha256": "71fc3319134123b8484ba3b9ca5c4352d1b142570099380a969bdf2bbdbd7b50",
+      "입력픽셀_sha256": "71fc3319134123b8484ba3b9ca5c4352d1b142570099380a969bdf2bbdbd7b50",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c016",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c016_input.png",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "절대원본구간": [
+        0,
+        19183,
+        2000,
+        26552
+      ],
+      "원본픽셀_sha256": "5a3b4c9f804439a5953c5f53e39287cfeb268f2369ee4556e54af5415a860405",
+      "입력픽셀_sha256": "5a3b4c9f804439a5953c5f53e39287cfeb268f2369ee4556e54af5415a860405",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c017",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c017_original.png",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "절대원본구간": [
+        0,
+        739,
+        2000,
+        5607
+      ],
+      "원본픽셀_sha256": "d54ba434acccdb4c922019cc063c9a6e1b55fed4180d67fe880a6bb08ed0e7b0",
+      "입력픽셀_sha256": "d54ba434acccdb4c922019cc063c9a6e1b55fed4180d67fe880a6bb08ed0e7b0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c018",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c018_original.png",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "절대원본구간": [
+        0,
+        7434,
+        2000,
+        15090
+      ],
+      "원본픽셀_sha256": "ad630f6deb227d2cd518d87568757971219a584b1a3e970994e804282b3dea92",
+      "입력픽셀_sha256": "ad630f6deb227d2cd518d87568757971219a584b1a3e970994e804282b3dea92",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c019",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c019_original.png",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "절대원본구간": [
+        0,
+        15723,
+        2000,
+        25243
+      ],
+      "원본픽셀_sha256": "57fb30ca29d1b9f7ca6bfb8aaa5faf06476add19e5c3be228b9ca2127e9dab51",
+      "입력픽셀_sha256": "57fb30ca29d1b9f7ca6bfb8aaa5faf06476add19e5c3be228b9ca2127e9dab51",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c017",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c017_input.png",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "절대원본구간": [
+        0,
+        739,
+        2000,
+        5607
+      ],
+      "원본픽셀_sha256": "d54ba434acccdb4c922019cc063c9a6e1b55fed4180d67fe880a6bb08ed0e7b0",
+      "입력픽셀_sha256": "d54ba434acccdb4c922019cc063c9a6e1b55fed4180d67fe880a6bb08ed0e7b0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c018",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c018_input.png",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "절대원본구간": [
+        0,
+        7434,
+        2000,
+        15090
+      ],
+      "원본픽셀_sha256": "ad630f6deb227d2cd518d87568757971219a584b1a3e970994e804282b3dea92",
+      "입력픽셀_sha256": "ad630f6deb227d2cd518d87568757971219a584b1a3e970994e804282b3dea92",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c019_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c019_p01_input.png",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "절대원본구간": [
+        0,
+        15723,
+        2000,
+        20703
+      ],
+      "원본픽셀_sha256": "eb933ccdc861cf816bcb78402d03395edf3741fd933d1cfbd4f9f88767d1061d",
+      "입력픽셀_sha256": "eb933ccdc861cf816bcb78402d03395edf3741fd933d1cfbd4f9f88767d1061d",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c019_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c019_p02_input.png",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "절대원본구간": [
+        0,
+        20703,
+        2000,
+        25243
+      ],
+      "원본픽셀_sha256": "b01fb7abc17272eadb65602bafbc12ba6b325d74c3c50c87c3e2ef31408adb9b",
+      "입력픽셀_sha256": "b01fb7abc17272eadb65602bafbc12ba6b325d74c3c50c87c3e2ef31408adb9b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c020",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c020_original.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        3120,
+        2000,
+        9114
+      ],
+      "원본픽셀_sha256": "48f87eac5bc0a0cd05371e68881851bb3b5ac4062e99eb82d1b8f8055da2b19b",
+      "입력픽셀_sha256": "48f87eac5bc0a0cd05371e68881851bb3b5ac4062e99eb82d1b8f8055da2b19b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c021",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c021_original.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        9997,
+        2000,
+        14094
+      ],
+      "원본픽셀_sha256": "dc7443eb6ef707851e8951b32a258a426a1c9e2b2ee88f5e7a1a6d55ecef1255",
+      "입력픽셀_sha256": "dc7443eb6ef707851e8951b32a258a426a1c9e2b2ee88f5e7a1a6d55ecef1255",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c022",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c022_original.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        14653,
+        2000,
+        18834
+      ],
+      "원본픽셀_sha256": "421f556c2211d48c28de43de8634c3421f18f35efc73411b876bad5713c98126",
+      "입력픽셀_sha256": "421f556c2211d48c28de43de8634c3421f18f35efc73411b876bad5713c98126",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c023",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c023_original.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        19023,
+        2000,
+        29086
+      ],
+      "원본픽셀_sha256": "0fafe91917a4068f16ae713a14cf4d756f83024a6012651b21e9dd6ac984abd1",
+      "입력픽셀_sha256": "0fafe91917a4068f16ae713a14cf4d756f83024a6012651b21e9dd6ac984abd1",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c020",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c020_input.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        3120,
+        2000,
+        9114
+      ],
+      "원본픽셀_sha256": "48f87eac5bc0a0cd05371e68881851bb3b5ac4062e99eb82d1b8f8055da2b19b",
+      "입력픽셀_sha256": "48f87eac5bc0a0cd05371e68881851bb3b5ac4062e99eb82d1b8f8055da2b19b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c021",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c021_input.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        9997,
+        2000,
+        14094
+      ],
+      "원본픽셀_sha256": "dc7443eb6ef707851e8951b32a258a426a1c9e2b2ee88f5e7a1a6d55ecef1255",
+      "입력픽셀_sha256": "dc7443eb6ef707851e8951b32a258a426a1c9e2b2ee88f5e7a1a6d55ecef1255",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c022",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c022_input.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        14653,
+        2000,
+        18834
+      ],
+      "원본픽셀_sha256": "421f556c2211d48c28de43de8634c3421f18f35efc73411b876bad5713c98126",
+      "입력픽셀_sha256": "421f556c2211d48c28de43de8634c3421f18f35efc73411b876bad5713c98126",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c023_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c023_p01_input.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        19023,
+        2000,
+        23523
+      ],
+      "원본픽셀_sha256": "474aaef381688cb2cae03d95a293de09ebd7650eefeb05fc814c4f4c79d1d44f",
+      "입력픽셀_sha256": "474aaef381688cb2cae03d95a293de09ebd7650eefeb05fc814c4f4c79d1d44f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c023_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c023_p02_input.png",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "절대원본구간": [
+        0,
+        23523,
+        2000,
+        29086
+      ],
+      "원본픽셀_sha256": "d3fd9a0b3622e4bba9da74511195c09082914f89a2a35b0599476028e14f7af3",
+      "입력픽셀_sha256": "d3fd9a0b3622e4bba9da74511195c09082914f89a2a35b0599476028e14f7af3",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c024",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c024_original.png",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "절대원본구간": [
+        0,
+        464,
+        2000,
+        8427
+      ],
+      "원본픽셀_sha256": "ba382dca83e540f5e0322bfc3df5b67c2dccce2b37138eeb807d2176c61a8d52",
+      "입력픽셀_sha256": "ba382dca83e540f5e0322bfc3df5b67c2dccce2b37138eeb807d2176c61a8d52",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c025",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c025_original.png",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "절대원본구간": [
+        0,
+        9141,
+        2000,
+        12327
+      ],
+      "원본픽셀_sha256": "fb7be44069472ae38ade1cc9ad415f97937356bcd7719de2e8c6cf35290f7467",
+      "입력픽셀_sha256": "fb7be44069472ae38ade1cc9ad415f97937356bcd7719de2e8c6cf35290f7467",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c026",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c026_original.png",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "절대원본구간": [
+        0,
+        12331,
+        2000,
+        23593
+      ],
+      "원본픽셀_sha256": "f190212c23132f6b973fef8897bd2d06d210856fbf2a9b50146c2f51fd964b13",
+      "입력픽셀_sha256": "f190212c23132f6b973fef8897bd2d06d210856fbf2a9b50146c2f51fd964b13",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c024",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c024_input.png",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "절대원본구간": [
+        0,
+        464,
+        2000,
+        8427
+      ],
+      "원본픽셀_sha256": "ba382dca83e540f5e0322bfc3df5b67c2dccce2b37138eeb807d2176c61a8d52",
+      "입력픽셀_sha256": "ba382dca83e540f5e0322bfc3df5b67c2dccce2b37138eeb807d2176c61a8d52",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c025",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c025_input.png",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "절대원본구간": [
+        0,
+        9141,
+        2000,
+        12327
+      ],
+      "원본픽셀_sha256": "fb7be44069472ae38ade1cc9ad415f97937356bcd7719de2e8c6cf35290f7467",
+      "입력픽셀_sha256": "fb7be44069472ae38ade1cc9ad415f97937356bcd7719de2e8c6cf35290f7467",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c026_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c026_p01_input.png",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "절대원본구간": [
+        0,
+        12331,
+        2000,
+        15431
+      ],
+      "원본픽셀_sha256": "46e369f98bcd037b052ff8971491ed9233fcb805489cd49ef9ebfd4cd1a57643",
+      "입력픽셀_sha256": "46e369f98bcd037b052ff8971491ed9233fcb805489cd49ef9ebfd4cd1a57643",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c026_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c026_p02_input.png",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "절대원본구간": [
+        0,
+        15431,
+        2000,
+        23593
+      ],
+      "원본픽셀_sha256": "1a8d13940979474f4657f9c9fa34e84e6fd3d593d01a6c4f3e1c94058f814e27",
+      "입력픽셀_sha256": "1a8d13940979474f4657f9c9fa34e84e6fd3d593d01a6c4f3e1c94058f814e27",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c027",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c027_original.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        222,
+        2000,
+        2138
+      ],
+      "원본픽셀_sha256": "45347d33ce415ab49bda91e8d5d84b04c81071dbd8a8d0b6b700fe1d4776c9fa",
+      "입력픽셀_sha256": "45347d33ce415ab49bda91e8d5d84b04c81071dbd8a8d0b6b700fe1d4776c9fa",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c028",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c028_original.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        2962,
+        2000,
+        3736
+      ],
+      "원본픽셀_sha256": "d2c99435ed7af85ebb37196085a825a8d3244deb5a4248fc6c9a4e67c58a263e",
+      "입력픽셀_sha256": "d2c99435ed7af85ebb37196085a825a8d3244deb5a4248fc6c9a4e67c58a263e",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c029",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c029_original.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        3825,
+        2000,
+        7168
+      ],
+      "원본픽셀_sha256": "cd4d0fd008ac1702b0975ff1f8b7c12895ab2d34b5cdf83f26e6aed6d0d20383",
+      "입력픽셀_sha256": "cd4d0fd008ac1702b0975ff1f8b7c12895ab2d34b5cdf83f26e6aed6d0d20383",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c030",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c030_original.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        8398,
+        2000,
+        10689
+      ],
+      "원본픽셀_sha256": "04826b4e3dbdaf42b72e75ed97e5823ed25128cc4c9fcef10adb13bd4271122c",
+      "입력픽셀_sha256": "04826b4e3dbdaf42b72e75ed97e5823ed25128cc4c9fcef10adb13bd4271122c",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c031",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c031_original.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        11868,
+        2000,
+        25363
+      ],
+      "원본픽셀_sha256": "e27b3445e7511427a7fabf3249ca0b783de4418ae936213929d686694c578719",
+      "입력픽셀_sha256": "e27b3445e7511427a7fabf3249ca0b783de4418ae936213929d686694c578719",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c027",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c027_input.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        222,
+        2000,
+        2138
+      ],
+      "원본픽셀_sha256": "45347d33ce415ab49bda91e8d5d84b04c81071dbd8a8d0b6b700fe1d4776c9fa",
+      "입력픽셀_sha256": "45347d33ce415ab49bda91e8d5d84b04c81071dbd8a8d0b6b700fe1d4776c9fa",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c028",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c028_input.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        2962,
+        2000,
+        3736
+      ],
+      "원본픽셀_sha256": "d2c99435ed7af85ebb37196085a825a8d3244deb5a4248fc6c9a4e67c58a263e",
+      "입력픽셀_sha256": "d2c99435ed7af85ebb37196085a825a8d3244deb5a4248fc6c9a4e67c58a263e",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c029",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c029_input.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        3825,
+        2000,
+        7168
+      ],
+      "원본픽셀_sha256": "cd4d0fd008ac1702b0975ff1f8b7c12895ab2d34b5cdf83f26e6aed6d0d20383",
+      "입력픽셀_sha256": "cd4d0fd008ac1702b0975ff1f8b7c12895ab2d34b5cdf83f26e6aed6d0d20383",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c030",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c030_input.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        8398,
+        2000,
+        10689
+      ],
+      "원본픽셀_sha256": "04826b4e3dbdaf42b72e75ed97e5823ed25128cc4c9fcef10adb13bd4271122c",
+      "입력픽셀_sha256": "04826b4e3dbdaf42b72e75ed97e5823ed25128cc4c9fcef10adb13bd4271122c",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c031_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c031_p01_input.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        11868,
+        2000,
+        16068
+      ],
+      "원본픽셀_sha256": "85b747261072fa50001a1bae1b3db0e24dca551b6ff7aff60f5ccb67ad76b46e",
+      "입력픽셀_sha256": "85b747261072fa50001a1bae1b3db0e24dca551b6ff7aff60f5ccb67ad76b46e",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c031_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c031_p02_input.png",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "절대원본구간": [
+        0,
+        16068,
+        2000,
+        25363
+      ],
+      "원본픽셀_sha256": "2f7d0a9874c1fbf707635c4781b052229461dda6e075ef31ddd748641f60b98c",
+      "입력픽셀_sha256": "2f7d0a9874c1fbf707635c4781b052229461dda6e075ef31ddd748641f60b98c",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c032",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c032_original.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        1284,
+        2000,
+        15625
+      ],
+      "원본픽셀_sha256": "eeb6eac6908c6c2d0c22bab7fc476abb7a6fb5799855babab9df0f767448c225",
+      "입력픽셀_sha256": "eeb6eac6908c6c2d0c22bab7fc476abb7a6fb5799855babab9df0f767448c225",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c033",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c033_original.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        15835,
+        2000,
+        16493
+      ],
+      "원본픽셀_sha256": "ba1a531c64aeb04f95a6ee5386e7cdfbc5aeeb739a1af984c5a785e919d5ca29",
+      "입력픽셀_sha256": "ba1a531c64aeb04f95a6ee5386e7cdfbc5aeeb739a1af984c5a785e919d5ca29",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c034",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c034_original.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        17306,
+        2000,
+        22764
+      ],
+      "원본픽셀_sha256": "547514ebce5062cceb0f85bf4ad007cb6c52b45621b102c44b1f64d0d0b090f3",
+      "입력픽셀_sha256": "547514ebce5062cceb0f85bf4ad007cb6c52b45621b102c44b1f64d0d0b090f3",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c035",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c035_original.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        22958,
+        2000,
+        28057
+      ],
+      "원본픽셀_sha256": "c30430c789d1950427a0703359650be96babd9a1ca3f260d7466e8d22d02aedd",
+      "입력픽셀_sha256": "c30430c789d1950427a0703359650be96babd9a1ca3f260d7466e8d22d02aedd",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c036",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c036_original.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        28208,
+        2000,
+        29731
+      ],
+      "원본픽셀_sha256": "9a328518bbd39f9ad16cc6c922d0b6653e0f44496c7a976296f588eb3e49bd16",
+      "입력픽셀_sha256": "9a328518bbd39f9ad16cc6c922d0b6653e0f44496c7a976296f588eb3e49bd16",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c032_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c032_p01_input.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        1284,
+        2000,
+        11584
+      ],
+      "원본픽셀_sha256": "7733a08c8b60b6935ab72942bdc2347d99074deed05e02ea5d1515c1d991eb9b",
+      "입력픽셀_sha256": "7733a08c8b60b6935ab72942bdc2347d99074deed05e02ea5d1515c1d991eb9b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c032_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c032_p02_input.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        11584,
+        2000,
+        15625
+      ],
+      "원본픽셀_sha256": "fdb9313d244278f28451ac92b664f62c24e6c598079ad439b2d4b9dc58733b3b",
+      "입력픽셀_sha256": "fdb9313d244278f28451ac92b664f62c24e6c598079ad439b2d4b9dc58733b3b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c033",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c033_input.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        15835,
+        2000,
+        16493
+      ],
+      "원본픽셀_sha256": "ba1a531c64aeb04f95a6ee5386e7cdfbc5aeeb739a1af984c5a785e919d5ca29",
+      "입력픽셀_sha256": "ba1a531c64aeb04f95a6ee5386e7cdfbc5aeeb739a1af984c5a785e919d5ca29",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c034",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c034_input.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        17306,
+        2000,
+        22764
+      ],
+      "원본픽셀_sha256": "547514ebce5062cceb0f85bf4ad007cb6c52b45621b102c44b1f64d0d0b090f3",
+      "입력픽셀_sha256": "547514ebce5062cceb0f85bf4ad007cb6c52b45621b102c44b1f64d0d0b090f3",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c035",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c035_input.png",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "절대원본구간": [
+        0,
+        22958,
+        2000,
+        28057
+      ],
+      "원본픽셀_sha256": "c30430c789d1950427a0703359650be96babd9a1ca3f260d7466e8d22d02aedd",
+      "입력픽셀_sha256": "c30430c789d1950427a0703359650be96babd9a1ca3f260d7466e8d22d02aedd",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c037",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c037_original.png",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "절대원본구간": [
+        0,
+        422,
+        2000,
+        7985
+      ],
+      "원본픽셀_sha256": "8d444dc07e89fc09e380617480194a247d9040cdd7de0a6d85711794a0c7c497",
+      "입력픽셀_sha256": "8d444dc07e89fc09e380617480194a247d9040cdd7de0a6d85711794a0c7c497",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c038",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c038_original.png",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "절대원본구간": [
+        0,
+        8426,
+        2000,
+        13432
+      ],
+      "원본픽셀_sha256": "3730f359308c4e7eac3ca1dc932aa51e7afeedcf3050d535210df363cf7b72b6",
+      "입력픽셀_sha256": "3730f359308c4e7eac3ca1dc932aa51e7afeedcf3050d535210df363cf7b72b6",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c039",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c039_original.png",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "절대원본구간": [
+        0,
+        14119,
+        2000,
+        22936
+      ],
+      "원본픽셀_sha256": "4ea6ff31102b7dc8eaf9d467669118237cc99fbe6f2692e752e216cb400d060e",
+      "입력픽셀_sha256": "4ea6ff31102b7dc8eaf9d467669118237cc99fbe6f2692e752e216cb400d060e",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c037",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c037_input.png",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "절대원본구간": [
+        0,
+        422,
+        2000,
+        7985
+      ],
+      "원본픽셀_sha256": "8d444dc07e89fc09e380617480194a247d9040cdd7de0a6d85711794a0c7c497",
+      "입력픽셀_sha256": "8d444dc07e89fc09e380617480194a247d9040cdd7de0a6d85711794a0c7c497",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c038",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c038_input.png",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "절대원본구간": [
+        0,
+        8426,
+        2000,
+        13432
+      ],
+      "원본픽셀_sha256": "3730f359308c4e7eac3ca1dc932aa51e7afeedcf3050d535210df363cf7b72b6",
+      "입력픽셀_sha256": "3730f359308c4e7eac3ca1dc932aa51e7afeedcf3050d535210df363cf7b72b6",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c039",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c039_input.png",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "절대원본구간": [
+        0,
+        14119,
+        2000,
+        22936
+      ],
+      "원본픽셀_sha256": "4ea6ff31102b7dc8eaf9d467669118237cc99fbe6f2692e752e216cb400d060e",
+      "입력픽셀_sha256": "4ea6ff31102b7dc8eaf9d467669118237cc99fbe6f2692e752e216cb400d060e",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c040",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c040_original.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        222,
+        2000,
+        14816
+      ],
+      "원본픽셀_sha256": "ac158fc3f711f2b44546afe8dd139f62a32897895722672a0d6247371a2a05eb",
+      "입력픽셀_sha256": "ac158fc3f711f2b44546afe8dd139f62a32897895722672a0d6247371a2a05eb",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c041",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c041_original.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        15712,
+        2000,
+        17356
+      ],
+      "원본픽셀_sha256": "41abc20f201335c44bc4421ba5232be082357f8662047378734b5fdbc2b81471",
+      "입력픽셀_sha256": "41abc20f201335c44bc4421ba5232be082357f8662047378734b5fdbc2b81471",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c042",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c042_original.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        18270,
+        2000,
+        22465
+      ],
+      "원본픽셀_sha256": "556500971b0ef29b2bfe44671ddc67bcb594e84c747b5ef634cd0ff8cef6159c",
+      "입력픽셀_sha256": "556500971b0ef29b2bfe44671ddc67bcb594e84c747b5ef634cd0ff8cef6159c",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c043",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c043_original.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        23523,
+        2000,
+        27907
+      ],
+      "원본픽셀_sha256": "5ef69b882be9f63dd16f3375484a9502fbfa26b1cd554b038d3dc416b5a15bd0",
+      "입력픽셀_sha256": "5ef69b882be9f63dd16f3375484a9502fbfa26b1cd554b038d3dc416b5a15bd0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c040_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c040_p01_input.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        222,
+        2000,
+        10222
+      ],
+      "원본픽셀_sha256": "3919ee576fa842f558c46de62eb6b4968c6d4071da224b8cfda67dc6bbbd9fa6",
+      "입력픽셀_sha256": "3919ee576fa842f558c46de62eb6b4968c6d4071da224b8cfda67dc6bbbd9fa6",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c040_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c040_p02_input.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        10222,
+        2000,
+        14816
+      ],
+      "원본픽셀_sha256": "74c62220df5659464d1e81f35f82aeb55b57c7fb7ff43cae0d65dcd9c5449753",
+      "입력픽셀_sha256": "74c62220df5659464d1e81f35f82aeb55b57c7fb7ff43cae0d65dcd9c5449753",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c041",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c041_input.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        15712,
+        2000,
+        17356
+      ],
+      "원본픽셀_sha256": "41abc20f201335c44bc4421ba5232be082357f8662047378734b5fdbc2b81471",
+      "입력픽셀_sha256": "41abc20f201335c44bc4421ba5232be082357f8662047378734b5fdbc2b81471",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c042",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c042_input.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        18270,
+        2000,
+        22465
+      ],
+      "원본픽셀_sha256": "556500971b0ef29b2bfe44671ddc67bcb594e84c747b5ef634cd0ff8cef6159c",
+      "입력픽셀_sha256": "556500971b0ef29b2bfe44671ddc67bcb594e84c747b5ef634cd0ff8cef6159c",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c043",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c043_input.png",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "절대원본구간": [
+        0,
+        23523,
+        2000,
+        27907
+      ],
+      "원본픽셀_sha256": "5ef69b882be9f63dd16f3375484a9502fbfa26b1cd554b038d3dc416b5a15bd0",
+      "입력픽셀_sha256": "5ef69b882be9f63dd16f3375484a9502fbfa26b1cd554b038d3dc416b5a15bd0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c044",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c044_original.png",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "절대원본구간": [
+        0,
+        264,
+        2000,
+        13832
+      ],
+      "원본픽셀_sha256": "3cd956b22e1e4450ea940ac017cae0f44f3cec28ba52a7e79d96aeacc5890fcd",
+      "입력픽셀_sha256": "3cd956b22e1e4450ea940ac017cae0f44f3cec28ba52a7e79d96aeacc5890fcd",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c045",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c045_original.png",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "절대원본구간": [
+        0,
+        15403,
+        2000,
+        24457
+      ],
+      "원본픽셀_sha256": "f05994698e05248527cd36da65deb21aee78bc4b1f0ea4eff86d08a253686347",
+      "입력픽셀_sha256": "f05994698e05248527cd36da65deb21aee78bc4b1f0ea4eff86d08a253686347",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c044_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c044_p01_input.png",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "절대원본구간": [
+        0,
+        264,
+        2000,
+        5764
+      ],
+      "원본픽셀_sha256": "cbbbd1d037e063a52a34f625a2e1708b930023e91a16d8900525dabbcac7cd98",
+      "입력픽셀_sha256": "cbbbd1d037e063a52a34f625a2e1708b930023e91a16d8900525dabbcac7cd98",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c044_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c044_p02_input.png",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "절대원본구간": [
+        0,
+        5764,
+        2000,
+        10664
+      ],
+      "원본픽셀_sha256": "0d1237865fb5f3392c496532f8e2b73b5c6c67ce7d16a805946b02a4191cba2b",
+      "입력픽셀_sha256": "0d1237865fb5f3392c496532f8e2b73b5c6c67ce7d16a805946b02a4191cba2b",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c044_p03",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c044_p03_input.png",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "절대원본구간": [
+        0,
+        10664,
+        2000,
+        13832
+      ],
+      "원본픽셀_sha256": "dd094cbd4704270ebb0eb8f4b1b2778bd56213936ffbb3535b1c4243a17e7bec",
+      "입력픽셀_sha256": "dd094cbd4704270ebb0eb8f4b1b2778bd56213936ffbb3535b1c4243a17e7bec",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c045",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c045_input.png",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "절대원본구간": [
+        0,
+        15403,
+        2000,
+        24457
+      ],
+      "원본픽셀_sha256": "f05994698e05248527cd36da65deb21aee78bc4b1f0ea4eff86d08a253686347",
+      "입력픽셀_sha256": "f05994698e05248527cd36da65deb21aee78bc4b1f0ea4eff86d08a253686347",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c046",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c046_original.png",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "절대원본구간": [
+        0,
+        384,
+        2000,
+        8441
+      ],
+      "원본픽셀_sha256": "4a05249dbb262143155508615d30fb1abf2a7dba9d9231bcd217e14032df3c92",
+      "입력픽셀_sha256": "4a05249dbb262143155508615d30fb1abf2a7dba9d9231bcd217e14032df3c92",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c047",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c047_original.png",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "절대원본구간": [
+        0,
+        8461,
+        2000,
+        14499
+      ],
+      "원본픽셀_sha256": "e696e98e3367fab4ef87d080fecb9ee77a72c3673eba9c24b9980f4809aeb5a9",
+      "입력픽셀_sha256": "e696e98e3367fab4ef87d080fecb9ee77a72c3673eba9c24b9980f4809aeb5a9",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c048",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c048_original.png",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "절대원본구간": [
+        0,
+        15449,
+        2000,
+        19658
+      ],
+      "원본픽셀_sha256": "3e0a5a3c5c6f1e5184127996e269123c7a2136e414d2cd426f3e6659abb94911",
+      "입력픽셀_sha256": "3e0a5a3c5c6f1e5184127996e269123c7a2136e414d2cd426f3e6659abb94911",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c046",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c046_input.png",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "절대원본구간": [
+        0,
+        384,
+        2000,
+        8441
+      ],
+      "원본픽셀_sha256": "4a05249dbb262143155508615d30fb1abf2a7dba9d9231bcd217e14032df3c92",
+      "입력픽셀_sha256": "4a05249dbb262143155508615d30fb1abf2a7dba9d9231bcd217e14032df3c92",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c047",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c047_input.png",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "절대원본구간": [
+        0,
+        8461,
+        2000,
+        14499
+      ],
+      "원본픽셀_sha256": "e696e98e3367fab4ef87d080fecb9ee77a72c3673eba9c24b9980f4809aeb5a9",
+      "입력픽셀_sha256": "e696e98e3367fab4ef87d080fecb9ee77a72c3673eba9c24b9980f4809aeb5a9",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c048",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c048_input.png",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "절대원본구간": [
+        0,
+        15449,
+        2000,
+        19658
+      ],
+      "원본픽셀_sha256": "3e0a5a3c5c6f1e5184127996e269123c7a2136e414d2cd426f3e6659abb94911",
+      "입력픽셀_sha256": "3e0a5a3c5c6f1e5184127996e269123c7a2136e414d2cd426f3e6659abb94911",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c049",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c049_original.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        721,
+        2000,
+        5278
+      ],
+      "원본픽셀_sha256": "b79ed42af17a63407e43e5ef713cdfbdd8203807c0ee410f0ef70649277711c8",
+      "입력픽셀_sha256": "b79ed42af17a63407e43e5ef713cdfbdd8203807c0ee410f0ef70649277711c8",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c050",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c050_original.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        6671,
+        2000,
+        7886
+      ],
+      "원본픽셀_sha256": "8cf33d8bf87cc86c290fa0d9a5b56c721d7f1a812b80dcee41010459809cb9c8",
+      "입력픽셀_sha256": "8cf33d8bf87cc86c290fa0d9a5b56c721d7f1a812b80dcee41010459809cb9c8",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c051",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c051_original.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        7962,
+        2000,
+        9908
+      ],
+      "원본픽셀_sha256": "0aef43bce6929a1b148b09454b0b475b9927d90dc15558d44b78a4aaebeecfd0",
+      "입력픽셀_sha256": "0aef43bce6929a1b148b09454b0b475b9927d90dc15558d44b78a4aaebeecfd0",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c052",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c052_original.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        10176,
+        2000,
+        13254
+      ],
+      "원본픽셀_sha256": "5f43477a42ffb1ddbabdd5cf0fb36f0c4736b5d59ddac78c8de98ee3373b4c86",
+      "입력픽셀_sha256": "5f43477a42ffb1ddbabdd5cf0fb36f0c4736b5d59ddac78c8de98ee3373b4c86",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c053",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c053_original.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        13578,
+        2000,
+        19837
+      ],
+      "원본픽셀_sha256": "b97680056f5403344c8eab2f10d315e78fe3a47db410dba46f137e7087261865",
+      "입력픽셀_sha256": "b97680056f5403344c8eab2f10d315e78fe3a47db410dba46f137e7087261865",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c054",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c054_original.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        19904,
+        2000,
+        20543
+      ],
+      "원본픽셀_sha256": "1a81dde5844abdfbc898d95e701906ba1833e5dcd527cba9949f4b1191906f2f",
+      "입력픽셀_sha256": "1a81dde5844abdfbc898d95e701906ba1833e5dcd527cba9949f4b1191906f2f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c055",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c055_original.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        20643,
+        2000,
+        23490
+      ],
+      "원본픽셀_sha256": "33d6c9959c9f338cbbea5699d389669ec2be4494afd779b2101dd36f7778004f",
+      "입력픽셀_sha256": "33d6c9959c9f338cbbea5699d389669ec2be4494afd779b2101dd36f7778004f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c049",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c049_input.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        721,
+        2000,
+        5278
+      ],
+      "원본픽셀_sha256": "b79ed42af17a63407e43e5ef713cdfbdd8203807c0ee410f0ef70649277711c8",
+      "입력픽셀_sha256": "b79ed42af17a63407e43e5ef713cdfbdd8203807c0ee410f0ef70649277711c8",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c053",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c053_input.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        13578,
+        2000,
+        19837
+      ],
+      "원본픽셀_sha256": "b97680056f5403344c8eab2f10d315e78fe3a47db410dba46f137e7087261865",
+      "입력픽셀_sha256": "b97680056f5403344c8eab2f10d315e78fe3a47db410dba46f137e7087261865",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c054",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c054_input.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        19904,
+        2000,
+        20543
+      ],
+      "원본픽셀_sha256": "1a81dde5844abdfbc898d95e701906ba1833e5dcd527cba9949f4b1191906f2f",
+      "입력픽셀_sha256": "1a81dde5844abdfbc898d95e701906ba1833e5dcd527cba9949f4b1191906f2f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c055",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c055_input.png",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "절대원본구간": [
+        0,
+        20643,
+        2000,
+        23490
+      ],
+      "원본픽셀_sha256": "33d6c9959c9f338cbbea5699d389669ec2be4494afd779b2101dd36f7778004f",
+      "입력픽셀_sha256": "33d6c9959c9f338cbbea5699d389669ec2be4494afd779b2101dd36f7778004f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c056",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c056_original.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        377,
+        2000,
+        5354
+      ],
+      "원본픽셀_sha256": "b6ebeca5353565024c88b38e73b50217303b9506370751678b8942a28580b964",
+      "입력픽셀_sha256": "b6ebeca5353565024c88b38e73b50217303b9506370751678b8942a28580b964",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c057",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c057_original.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        5354,
+        2000,
+        9434
+      ],
+      "원본픽셀_sha256": "6c9e1eca5b14ccaa5cb9df4ea768626918a64e1b3591345cc3c6684cd2869189",
+      "입력픽셀_sha256": "6c9e1eca5b14ccaa5cb9df4ea768626918a64e1b3591345cc3c6684cd2869189",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c058",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c058_original.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        9500,
+        2000,
+        28855
+      ],
+      "원본픽셀_sha256": "f0e5d21a30392af997ded2c0b67f64aa922af5fe5e297da54ee425b7ee4f2628",
+      "입력픽셀_sha256": "f0e5d21a30392af997ded2c0b67f64aa922af5fe5e297da54ee425b7ee4f2628",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c056",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c056_input.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        377,
+        2000,
+        5354
+      ],
+      "원본픽셀_sha256": "b6ebeca5353565024c88b38e73b50217303b9506370751678b8942a28580b964",
+      "입력픽셀_sha256": "b6ebeca5353565024c88b38e73b50217303b9506370751678b8942a28580b964",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c057",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c057_input.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        5354,
+        2000,
+        9434
+      ],
+      "원본픽셀_sha256": "6c9e1eca5b14ccaa5cb9df4ea768626918a64e1b3591345cc3c6684cd2869189",
+      "입력픽셀_sha256": "6c9e1eca5b14ccaa5cb9df4ea768626918a64e1b3591345cc3c6684cd2869189",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c058_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c058_p01_input.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        9500,
+        2000,
+        19700
+      ],
+      "원본픽셀_sha256": "63cf8a04600badb11a628453d495dfcacb269846d71c61a2325907adf99b3f3d",
+      "입력픽셀_sha256": "63cf8a04600badb11a628453d495dfcacb269846d71c61a2325907adf99b3f3d",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c058_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c058_p02_input.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        19700,
+        2000,
+        25300
+      ],
+      "원본픽셀_sha256": "799dc0fd7ef607c810980ad73e25a506281898ed2e58c2b8aa207b5ecaad823f",
+      "입력픽셀_sha256": "799dc0fd7ef607c810980ad73e25a506281898ed2e58c2b8aa207b5ecaad823f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c058_p03",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c058_p03_input.png",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "절대원본구간": [
+        0,
+        25300,
+        2000,
+        28855
+      ],
+      "원본픽셀_sha256": "002b43b674406b956059c18941640ac15398d4c70d21bb67903fc13d5b9d7b2f",
+      "입력픽셀_sha256": "002b43b674406b956059c18941640ac15398d4c70d21bb67903fc13d5b9d7b2f",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c059",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c059_original.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        92,
+        2000,
+        9509
+      ],
+      "원본픽셀_sha256": "df5c444267d97c46f815cfd23acaf4948bbc79608c73d5c2249d1f26e49eb75a",
+      "입력픽셀_sha256": "df5c444267d97c46f815cfd23acaf4948bbc79608c73d5c2249d1f26e49eb75a",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c060",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c060_original.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        9823,
+        2000,
+        19386
+      ],
+      "원본픽셀_sha256": "f886af21733ecaa3f3b09eb8d15009c722b8dbf8f118809f1f2f553a35e68ea7",
+      "입력픽셀_sha256": "f886af21733ecaa3f3b09eb8d15009c722b8dbf8f118809f1f2f553a35e68ea7",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c061",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c061_original.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        19386,
+        2000,
+        29609
+      ],
+      "원본픽셀_sha256": "b493b161125e261932454908be89e5d541308c409006abca75bc8237f8c559ba",
+      "입력픽셀_sha256": "b493b161125e261932454908be89e5d541308c409006abca75bc8237f8c559ba",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c059_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c059_p01_input.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        92,
+        2000,
+        4892
+      ],
+      "원본픽셀_sha256": "0d5f2ee44461347441a6978c204d7e4b584e20c8bdfdcd549feb1a7afb81752a",
+      "입력픽셀_sha256": "0d5f2ee44461347441a6978c204d7e4b584e20c8bdfdcd549feb1a7afb81752a",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c059_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c059_p02_input.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        4892,
+        2000,
+        9509
+      ],
+      "원본픽셀_sha256": "22850de1bd0081310b8feea09836952f7ada9c7a874c3c265358c847e619f0ff",
+      "입력픽셀_sha256": "22850de1bd0081310b8feea09836952f7ada9c7a874c3c265358c847e619f0ff",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c060",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c060_input.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        9823,
+        2000,
+        19386
+      ],
+      "원본픽셀_sha256": "f886af21733ecaa3f3b09eb8d15009c722b8dbf8f118809f1f2f553a35e68ea7",
+      "입력픽셀_sha256": "f886af21733ecaa3f3b09eb8d15009c722b8dbf8f118809f1f2f553a35e68ea7",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c061_p01",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c061_p01_input.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        19386,
+        2000,
+        25286
+      ],
+      "원본픽셀_sha256": "6ad2182889f761b2b3eed5273acf18a44f9602f877478710a82ebc62124c57a6",
+      "입력픽셀_sha256": "6ad2182889f761b2b3eed5273acf18a44f9602f877478710a82ebc62124c57a6",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c061_p02",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c061_p02_input.png",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "절대원본구간": [
+        0,
+        25286,
+        2000,
+        29609
+      ],
+      "원본픽셀_sha256": "a356ae1c1d7c56bf903b529609b35e0213b91e7c7d53efaf5f9dccea7d470dfe",
+      "입력픽셀_sha256": "a356ae1c1d7c56bf903b529609b35e0213b91e7c7d53efaf5f9dccea7d470dfe",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c062",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c062_original.png",
+      "원본": "work/ep07/merged/ep07_017.png",
+      "절대원본구간": [
+        0,
+        1538,
+        2000,
+        2549
+      ],
+      "원본픽셀_sha256": "ba3b677118878081f669f8ee8f0332438fad26786ef02230708d25895eba6baf",
+      "입력픽셀_sha256": "ba3b677118878081f669f8ee8f0332438fad26786ef02230708d25895eba6baf",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "원작 전체 컷",
+      "id": "ep07_c063",
+      "입력": "assets/ep07/gen/inputs/stage2/source/ep07_c063_original.png",
+      "원본": "work/ep07/merged/ep07_017.png",
+      "절대원본구간": [
+        0,
+        2581,
+        2000,
+        9976
+      ],
+      "원본픽셀_sha256": "4b302a3e87b15e3d31bdb1505951268b7e17812962d7543dd24f70277a62c317",
+      "입력픽셀_sha256": "4b302a3e87b15e3d31bdb1505951268b7e17812962d7543dd24f70277a62c317",
+      "픽셀완전일치": true
+    },
+    {
+      "종류": "후보 참조 입력",
+      "id": "ep07_c063",
+      "입력": "assets/ep07/gen/inputs/stage2/candidates/ep07_c063_input.png",
+      "원본": "work/ep07/merged/ep07_017.png",
+      "절대원본구간": [
+        0,
+        2581,
+        2000,
+        9976
+      ],
+      "원본픽셀_sha256": "4b302a3e87b15e3d31bdb1505951268b7e17812962d7543dd24f70277a62c317",
+      "입력픽셀_sha256": "4b302a3e87b15e3d31bdb1505951268b7e17812962d7543dd24f70277a62c317",
+      "픽셀완전일치": true
+    }
+  ]
+}

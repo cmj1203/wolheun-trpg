@@ -165,11 +165,13 @@ test.each([
   expect(step.events.find(event => event.type === 'line')).toMatchObject({ cg });
   const before = structuredClone(state);
   const calls = [...gm.calls];
+  const observed: string[] = [];
 
-  const resumed = engine.resume(state);
+  const resumed = engine.resume(state, observation => observed.push(observation.event.type));
 
   expect(resumed.events.find(event => event.type === 'line')).toMatchObject({ cg });
   expect(resumed.events.map(event => event.type)).toEqual(['scene', 'line']);
   expect(state).toEqual(before);
   expect(gm.calls).toEqual(calls);
+  expect(observed).toEqual(['scene']);
 });

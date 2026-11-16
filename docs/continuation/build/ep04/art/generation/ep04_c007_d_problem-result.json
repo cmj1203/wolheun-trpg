@@ -1,0 +1,10 @@
+{
+  "상태": "native 종료",
+  "후보": "ep04_c007_d_problem",
+  "candidate_slot": "ep04_c007_d_problem",
+  "pid": 93484,
+  "pgid": 93484,
+  "exit_code": 0,
+  "출력_존재": true,
+  "종료": "2026-11-09T05:53:34.158486+00:00"
+}

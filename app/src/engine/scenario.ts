@@ -1,4 +1,5 @@
 import { condNames, parseCond } from './conditions.ts';
+import { hasInlineCost } from './prices.ts';
 import { type CallbackSpec, type FactSpec,
   ABILITIES,
   TIERS,
@@ -11,12 +12,14 @@ import { type CallbackSpec, type FactSpec,
   type CastSlots,
   type RefuseSpec,
   type ChoiceSpec,
+  type ConversationSpec,
   type Crop,
   type Effects,
   type EndingSpec,
   type FateSpec,
   type FlagValue,
   type FreeSpec,
+  type GoalSpec,
   type ItemSpec,
   type Line,
   type LineStyle,
@@ -85,6 +88,7 @@ export function faceProblem(s: Pick<Scenario, 'cast' | 'sprites'>, speaker: stri
   if ((c.style === 'speech' || c.style === 'thought') && !c.faces?.includes(face)) {
     return `"${speaker}"의 표정은 ${(c.faces ?? []).join('·')} 중에서 골라야 합니다 (받은 값: ${face})`;
   }
+  if (c.presentation === 'cg') return null;
   const lore = c.lore ?? speaker;
   const bases = Object.entries(s.cast)
     .filter(([key, x]) => (x.lore ?? key) === lore)
@@ -94,6 +98,13 @@ export function faceProblem(s: Pick<Scenario, 'cast' | 'sprites'>, speaker: stri
   if (face === 'neutral') return null;
   const missing = bases.filter((b) => !s.sprites[`${b}_${face}`]);
   return missing.length ? `없는 입식 ${missing.map((b) => `"${b}_${face}"`).join(', ')}` : null;
+}
+
+/** CG 배우의 표정 선언과 실제 출력 매체를 함께 검사한다. */
+export function cgLineProblem(s: Pick<Scenario, 'cast' | 'sprites' | 'cgs'>, line: Line): string | null {
+  if (s.cast[line.speaker]?.presentation !== 'cg') return null;
+  if (!line.cg || !s.cgs[line.cg]?.file) return `"${line.speaker}"의 대사에는 유효한 CG가 필요합니다`;
+  return faceProblem(s, line.speaker, line.face ?? 'neutral');
 }
 
 function parseLine(v: unknown, cast: Record<string, CastSpec>, where: string): Line {
@@ -232,6 +243,16 @@ function softPriceProblem(p: PriceSpec): string | null {
   return null;
 }
 
+function effectConflict(achievement: Effects | undefined, other: Effects | undefined): string | null {
+  for (const field of ['tracks', 'flags'] as const) {
+    const shared = Object.keys(achievement?.[field] ?? {}).find((key) => key in (other?.[field] ?? {}));
+    if (shared) return `${field}.${shared}`;
+  }
+  const items = [...(achievement?.gain ?? []), ...(achievement?.lose ?? [])];
+  const shared = [...(other?.gain ?? []), ...(other?.lose ?? [])].find((item) => items.includes(item));
+  return shared ? `item:${shared}` : null;
+}
+
 /** 대가 표 규칙: id 고유, 결과의 price 후보는 표에 있고, mixed 후보는 soft 만, soft 는 그 접근의 hit 가 세우는 플래그를 건드리지 않는다. */
 export function checkPrices(free: FreeSpec, where: string): string[] {
   const problems: string[] = [];
@@ -247,15 +268,18 @@ export function checkPrices(free: FreeSpec, where: string): string[] {
   const softIds = prices.filter((p) => p.weight === 'soft').map((p) => p.id);
   const sets: [string, Tiered<Outcome>][] = [...free.approaches.map((a) => [a.id, a.outcomes] as [string, Tiered<Outcome>]), ['improv', free.improv]];
   if (free.improv_bold) sets.push(['improv_bold', free.improv_bold]);
+  if (free.improv_attack) sets.push(['improv_attack', free.improv_attack]);
   for (const [id, outcomes] of sets) {
     const at = `${where}.${id}`;
     if (outcomes.hit.price) problems.push(`${at}.hit.price: hit 에는 대가를 두지 않습니다`);
     if (outcomes.crit?.price) problems.push(`${at}.crit.price: 대성공에는 대가를 두지 않습니다`);
-    for (const tier of ['mixed', 'miss'] as const) {
-      const listed = outcomes[tier].price;
+    for (const tier of ['mixed', 'miss', 'fumble'] as const) {
+      const listed = outcomes[tier]?.price;
       if (!listed) continue;
-      if (!prices.length) problems.push(`${at}.${tier}.price: 비트에 prices 가 없습니다`);
-      if (listed.length === 0) problems.push(`${at}.${tier}.price: 후보가 비어 있습니다`);
+      if (listed.length && !prices.length) problems.push(`${at}.${tier}.price: 비트에 prices 가 없습니다`);
+      if (tier === 'mixed' && listed.length === 0 && !hasInlineCost(outcomes.mixed.effects)) {
+        problems.push(`${at}.mixed.price: 추첨이 없으면 실제 인라인 비용이 필요합니다`);
+      }
       for (const pid of listed) {
         const p = byId.get(pid);
         if (!p) problems.push(`${at}.${tier}.price: 표에 없는 대가 "${pid}"`);
@@ -264,13 +288,60 @@ export function checkPrices(free: FreeSpec, where: string): string[] {
     }
     if (!prices.length) continue;
     const hitFlags = Object.entries(outcomes.hit.effects?.flags ?? {}).filter(([, v]) => v !== false).map(([k]) => k);
-    const mixedIds = outcomes.mixed.price ?? softIds;
-    if (mixedIds.length === 0) problems.push(`${at}.mixed: 뽑을 soft 대가가 없습니다`);
+    const approach = free.approaches.find((a) => a.id === id);
+    const goal = approach?.goal ? free.goals?.[approach.goal] : undefined;
+    const mixedIds = goal?.price ?? outcomes.mixed.price ?? softIds;
+    if (mixedIds.length === 0 && !hasInlineCost(outcomes.mixed.effects)) problems.push(`${at}.mixed: 뽑을 soft 대가가 없습니다`);
     for (const pid of mixedIds) {
       const p = byId.get(pid);
       if (!p) continue;
       const clash = Object.keys(p.effects?.flags ?? {}).find((k) => hitFlags.includes(k));
       if (clash) problems.push(`${where}.prices.${pid}: soft 대가가 ${id} 의 hit 플래그 '${clash}' 를 건드립니다`);
+    }
+  }
+  for (const [id, goal] of Object.entries(free.goals ?? {})) {
+    const at = `${where}.goals.${id}`;
+    if (!id.trim() || id === 'local' || id === 'none') problems.push(`${at}: 예약값 또는 빈 목표 id입니다`);
+    const priceIds = new Set<string>();
+    for (const pid of goal.price) {
+      if (priceIds.has(pid)) problems.push(`${at}.price: 대가 "${pid}"가 중복됩니다`);
+      priceIds.add(pid);
+      const price = byId.get(pid);
+      if (!price) problems.push(`${at}.price: 표에 없는 대가 "${pid}"`);
+      else {
+        if (price.weight !== 'soft') problems.push(`${at}.price: 성공 목표에는 soft 대가만 허용합니다`);
+        const conflict = effectConflict(goal.effects, price.effects);
+        if (conflict) problems.push(`${at}.price.${pid}: 성취 효과 "${conflict}"를 건드립니다`);
+      }
+    }
+    for (const approach of free.approaches.filter((a) => a.goal === id)) {
+      const conflict = effectConflict(goal.effects, approach.before);
+      if (conflict) problems.push(`${where}.${approach.id}.before: 성취 효과 "${conflict}"를 판정 전에 적용합니다`);
+    }
+    const owners: [string, Tiered<Outcome>][] = [
+      ...free.approaches.filter((a) => a.goal === id).map((a): [string, Tiered<Outcome>] => [a.id, a.outcomes]),
+      ['improv', free.improv],
+      ...(free.improv_bold ? [['improv_bold', free.improv_bold] as [string, Tiered<Outcome>]] : []),
+      ...(free.improv_attack ? [['improv_attack', free.improv_attack] as [string, Tiered<Outcome>]] : []),
+    ];
+    for (const [owner, outcomes] of owners) {
+      const fumbleFlags = outcomes.fumble?.effects?.flags ?? {};
+      if (Object.entries(goal.effects?.flags ?? {}).some(([key, value]) => value === true && fumbleFlags[key] === true)) {
+        problems.push(`${where}.${owner}.fumble: 목표 "${id}"의 성공 효과를 대실패에 적용할 수 없습니다`);
+      }
+      for (const tier of ['hit', 'mixed', 'crit'] as const) {
+        const outcome = outcomes[tier];
+        if (!outcome) continue;
+        if (outcome.next !== undefined) problems.push(`${where}.${owner}.${tier}.next: 성공 경로는 목표 "${id}"만 소유합니다`);
+        const conflict = effectConflict(goal.effects, outcome.effects);
+        if (conflict) problems.push(`${where}.${owner}.${tier}: 목표 "${id}"의 성취 효과 "${conflict}"가 중복되거나 충돌합니다`);
+      }
+      if (goal.price.length === 0 && !hasInlineCost(outcomes.mixed.effects)) {
+        problems.push(`${at}.${owner}.mixed: 추첨이 없으면 실제 인라인 비용이 필요합니다`);
+      }
+      if (goal.price.length > 0 && hasInlineCost(outcomes.mixed.effects)) {
+        problems.push(`${at}.${owner}.mixed: 목표 대가와 인라인 비용을 중복 적용할 수 없습니다`);
+      }
     }
   }
   return problems;
@@ -289,6 +360,7 @@ function parseOutcomes(v: unknown, cast: Record<string, CastSpec>, where: string
     out[tier] = parseOutcome(r[tier], cast, `${where}.${tier}`);
   }
   if (r.crit !== undefined) out.crit = parseOutcome(r.crit, cast, `${where}.crit`);
+  if (r.fumble !== undefined) out.fumble = parseOutcome(r.fumble, cast, `${where}.fumble`);
   return out;
 }
 
@@ -334,6 +406,8 @@ function parseApproach(v: unknown, cast: Record<string, CastSpec>, where: string
   };
   const item = optStr(r.item, `${where}.item`);
   if (item) approach.item = item;
+  const goal = optStr(r.goal, `${where}.goal`);
+  if (goal) approach.goal = goal;
   if (r.risky !== undefined) {
     if (typeof r.risky !== 'boolean') throw new ScenarioError(`${where}.risky: 참/거짓이 필요합니다`);
     approach.risky = r.risky;
@@ -348,6 +422,25 @@ function parseApproach(v: unknown, cast: Record<string, CastSpec>, where: string
     approach.said = { flag: str(s.flag, `${where}.said.flag`), words: list(s.words, `${where}.said.words`).map((x, i) => str(x, `${where}.said.words[${i}]`)) };
   }
   return approach;
+}
+
+function parseConversation(v: unknown, cast: Record<string, CastSpec>, where: string): ConversationSpec {
+  const r = rec(v, where);
+  const strings = (key: string) => list(r[key], `${where}.${key}`).map((x, i) => str(x, `${where}.${key}[${i}]`));
+  const next = parseNext(r.next, `${where}.next`);
+  if (next === undefined || (Array.isArray(next) && next.length === 0)) throw new ScenarioError(`${where}.next: 직접 입력 뒤 갈 비트가 필요합니다`);
+  return {
+    situation: str(r.situation, `${where}.situation`),
+    goal: str(r.goal, `${where}.goal`),
+    speakers: strings('speakers'),
+    must_not: strings('must_not'),
+    state_guard: strings('state_guard'),
+    echo_only: strings('echo_only'),
+    talk_fallback: parseLines(r.talk_fallback, cast, `${where}.talk_fallback`),
+    deflect: parseLines(r.deflect, cast, `${where}.deflect`),
+    cg: str(r.cg, `${where}.cg`),
+    next,
+  };
 }
 
 function parseFree(v: unknown, cast: Record<string, CastSpec>, where: string, defaults: Raw): FreeSpec {
@@ -370,12 +463,15 @@ function parseFree(v: unknown, cast: Record<string, CastSpec>, where: string, de
     deflect: parseLines(r.deflect, cast, `${where}.deflect`),
     improv: parseOutcomes(r.improv, cast, `${where}.improv`),
     ...(r.improv_bold === undefined ? {} : { improv_bold: parseOutcomes(r.improv_bold, cast, `${where}.improv_bold`) }),
+    ...(r.improv_attack === undefined ? {} : { improv_attack: parseOutcomes(r.improv_attack, cast, `${where}.improv_attack`) }),
+    ...(r.improv_attack_before === undefined ? {} : { improv_attack_before: parseEffects(r.improv_attack_before, `${where}.improv_attack_before`) }),
     ...(r.neutral === undefined
       ? {}
       : { neutral: Object.fromEntries(TIERS.map((t) => [t, parseLines(rec(r.neutral, `${where}.neutral`)[t], cast, `${where}.neutral.${t}`)])) as Tiered<Line[]> }),
     ...(r.idle === undefined ? {} : { idle: parseIdle(r.idle, cast, `${where}.idle`) }),
     ...(r.prices === undefined ? {} : { prices: list(r.prices, `${where}.prices`).map((p, i) => parsePrice(p, `${where}.prices[${i}]`)) }),
     turns: r.turns === undefined ? 1 : num(r.turns, `${where}.turns`),
+    ...(r.stall_idle === true ? { stall_idle: true } : {}),
     default_approach: str(r.default_approach, `${where}.default_approach`),
     ...(r.addressed === undefined ? {} : { addressed: str(r.addressed, `${where}.addressed`) }),
     approaches: list(r.approaches, `${where}.approaches`).map((a, i) => parseApproach(a, cast, `${where}.approaches[${i}]`)),
@@ -385,6 +481,28 @@ function parseFree(v: unknown, cast: Record<string, CastSpec>, where: string, de
   if (until) free.until = until;
   const next = parseNext(r.next, `${where}.next`);
   if (next) free.next = next;
+  if (r.goals !== undefined) {
+    const goals: Record<string, GoalSpec> = Object.create(null);
+    for (const [id, raw] of Object.entries(rec(r.goals, `${where}.goals`))) {
+      const at = `${where}.goals.${str(id, `${where}.goals.id`)}`;
+      const value = rec(raw, at);
+      const target = parseNext(value.next, `${at}.next`);
+      if (target === undefined || (Array.isArray(target) && target.length === 0)) {
+        throw new ScenarioError(`${at}.next: 성공 뒤 실제 도착지가 필요합니다`);
+      }
+      if (value.price === undefined) throw new ScenarioError(`${at}.price: 허용 비용 목록이 필요합니다`);
+      const effects = parseEffects(value.effects, `${at}.effects`);
+      const condition = optStr(value.if, `${at}.if`);
+      goals[id] = {
+        text: str(value.text, `${at}.text`),
+        next: target,
+        price: list(value.price, `${at}.price`).map((p, i) => str(p, `${at}.price[${i}]`)),
+        ...(effects ? { effects } : {}),
+        ...(condition ? { if: condition } : {}),
+      };
+    }
+    free.goals = goals;
+  }
   return free;
 }
 
@@ -425,6 +543,7 @@ function parseBeat(id: string, v: unknown, cast: Record<string, CastSpec>, freeD
   const where = `beats.${id}`;
   const r = rec(v, where);
   const beat: BeatSpec = { id, title: str(r.title, `${where}.title`), lines: parseLines(r.lines, cast, `${where}.lines`), ...(r.lead === undefined ? {} : { lead: parseLines(r.lead, cast, `${where}.lead`) }) };
+  if (r.perspective !== undefined) beat.perspective = oneOf(r.perspective, ['audience'] as const, `${where}.perspective`);
   if (r.situation !== undefined) beat.situation = str(r.situation, `${where}.situation`);
   if (r.threat !== undefined) beat.threat = str(r.threat, `${where}.threat`);
   rejectForbid(r, where);
@@ -440,6 +559,7 @@ function parseBeat(id: string, v: unknown, cast: Record<string, CastSpec>, freeD
   if (r.twist !== undefined) beat.twist = parseTwist(r.twist, cast, `${where}.twist`);
   if (r.choices !== undefined) beat.choices = list(r.choices, `${where}.choices`).map((c, i) => parseChoice(c, cast, `${where}.choices[${i}]`));
   if (r.free !== undefined) beat.free = parseFree(r.free, cast, `${where}.free`, freeDefaults);
+  if (r.conversation !== undefined) beat.conversation = parseConversation(r.conversation, cast, `${where}.conversation`);
   const next = parseNext(r.next, `${where}.next`);
   if (next) beat.next = next;
   if (r.ending !== undefined) {
@@ -488,6 +608,7 @@ export function linesOfBeat(beat: BeatSpec): Line[] {
   if (beat.free) {
     out.push(...beat.free.press, ...beat.free.deflect, ...beat.free.talk_fallback);
   }
+  if (beat.conversation) out.push(...beat.conversation.deflect, ...beat.conversation.talk_fallback);
   for (const [, outcome] of outcomesOf(beat)) out.push(...outcome.lines);
   return out;
 }
@@ -498,6 +619,7 @@ export function parseScenario(text: string): Scenario {
   for (const [key, raw] of Object.entries(rec(root.cast, 'cast'))) {
     const r = rec(raw, `cast.${key}`);
     const spec: CastSpec = { display: typeof r.display === 'string' ? r.display : '', style: oneOf<LineStyle>(r.style, ['speech', 'thought', 'narration', 'gm'], `cast.${key}.style`) };
+    if (r.presentation !== undefined) spec.presentation = oneOf(r.presentation, ['cg'] as const, `cast.${key}.presentation`);
      if (r.faces !== undefined) spec.faces = list(r.faces, `cast.${key}.faces`).map((f, i) => str(f, `cast.${key}.faces[${i}]`));
     const sprite = optStr(r.sprite, `cast.${key}.sprite`);
     if (sprite) spec.sprite = sprite;
@@ -585,12 +707,23 @@ export function parseScenario(text: string): Scenario {
             atlas: {
               nodes: list(a.nodes, 'atlas.nodes').map((v, i) => {
                 const r = rec(v, `atlas.nodes[${i}]`);
-                return { id: str(r.id, `atlas.nodes[${i}].id`), col: num(r.col, `atlas.nodes[${i}].col`), row: num(r.row, `atlas.nodes[${i}].row`), beats: list(r.beats, `atlas.nodes[${i}].beats`).map((b, k) => str(b, `atlas.nodes[${i}].beats[${k}]`)), ...(r.ending === true ? { ending: true } : {}), ...(r.hints !== undefined ? { hints: list(r.hints, `atlas.nodes[${i}].hints`).map((h, k) => str(h, `atlas.nodes[${i}].hints[${k}]`)) } : {}) };
+                return { id: str(r.id, `atlas.nodes[${i}].id`), ...(r.label !== undefined ? { label: str(r.label, `atlas.nodes[${i}].label`) } : {}), col: num(r.col, `atlas.nodes[${i}].col`), row: num(r.row, `atlas.nodes[${i}].row`), beats: list(r.beats, `atlas.nodes[${i}].beats`).map((b, k) => str(b, `atlas.nodes[${i}].beats[${k}]`)), ...(r.ending === true ? { ending: true } : {}), ...(r.hints !== undefined ? { hints: list(r.hints, `atlas.nodes[${i}].hints`).map((h, k) => str(h, `atlas.nodes[${i}].hints[${k}]`)) } : {}) };
               }),
               edges: list(a.edges, 'atlas.edges').map((v, i) => {
                 const e = list(v, `atlas.edges[${i}]`);
                 return [str(e[0], `atlas.edges[${i}][0]`), str(e[1], `atlas.edges[${i}][1]`)] as [string, string];
               }),
+              ...(a.chapters !== undefined ? {
+                chapters: list(a.chapters, 'atlas.chapters').map((v, i) => {
+                  const where = `atlas.chapters[${i}]`;
+                  const chapter = rec(v, where);
+                  return {
+                    id: str(chapter.id, `${where}.id`),
+                    label: str(chapter.label, `${where}.label`),
+                    nodes: list(chapter.nodes, `${where}.nodes`).map((node, k) => str(node, `${where}.nodes[${k}]`)),
+                  };
+                }),
+              } : {}),
             },
           };
         })()
@@ -669,7 +802,8 @@ export function parseScenario(text: string): Scenario {
       if (r.state_check !== undefined) {
         const c = rec(r.state_check, `facts[${i}].state_check`);
         const sets = optStr(c.sets, `facts[${i}].state_check.sets`);
-        fact.state_check = { about: list(c.about, `facts[${i}].state_check.about`).map((t, j) => str(t, `facts[${i}].state_check.about[${j}]`)), ask: str(c.ask, `facts[${i}].state_check.ask`), ...(sets ? { sets } : {}) };
+        const subject = c.subject === undefined ? undefined : list(c.subject, `facts[${i}].state_check.subject`).map((t, j) => str(t, `facts[${i}].state_check.subject[${j}]`));
+        fact.state_check = { about: list(c.about, `facts[${i}].state_check.about`).map((t, j) => str(t, `facts[${i}].state_check.about[${j}]`)), ask: str(c.ask, `facts[${i}].state_check.ask`), ...(subject?.length ? { subject } : {}), ...(sets ? { sets } : {}) };
       }
       return fact;
     }),
@@ -699,8 +833,9 @@ function* outcomesOf(beat: BeatSpec): Generator<[string, Outcome]> {
   for (const a of beat.free?.approaches ?? []) sets.push([`free.${a.id}`, a.outcomes]);
   if (beat.free) sets.push(['free.improv', beat.free.improv]);
   if (beat.free?.improv_bold) sets.push(['free.improv_bold', beat.free.improv_bold]);
+  if (beat.free?.improv_attack) sets.push(['free.improv_attack', beat.free.improv_attack]);
   for (const [path, outcomes] of sets) {
-    for (const tier of [...TIERS, 'crit'] as const) {
+    for (const tier of [...TIERS, 'crit', 'fumble'] as const) {
       const outcome = outcomes[tier];
       if (outcome) yield [`${path}.${tier}`, outcome];
     }
@@ -708,7 +843,8 @@ function* outcomesOf(beat: BeatSpec): Generator<[string, Outcome]> {
 }
 
 export function edgesOf(beat: BeatSpec): string[] {
-  const edges = [...nextTargets(beat.next), ...nextTargets(beat.free?.next)];
+  const edges = [...nextTargets(beat.next), ...nextTargets(beat.free?.next), ...nextTargets(beat.conversation?.next)];
+  for (const goal of Object.values(beat.free?.goals ?? {})) edges.push(...nextTargets(goal.next));
   for (const c of beat.choices ?? []) edges.push(...nextTargets(c.next));
   for (const [, o] of outcomesOf(beat)) edges.push(...nextTargets(o.next));
   return edges;
@@ -800,6 +936,7 @@ export function checkScenario(s: Scenario): string[] {
     if (!s.sprites[sprite.alt.id]) problems.push(`sprites.${id}.alt.id: 없는 입식 "${sprite.alt.id}"`);
   }
   for (const [key, c] of Object.entries(s.cast)) {
+    if (c.presentation === 'cg' && (c.sprite || c.sprite_alt || (c.style !== 'speech' && c.style !== 'thought'))) problems.push(`cast.${key}.presentation: CG 배우는 입식 없는 speech/thought여야 합니다`);
     for (const face of c.faces ?? []) {
       const problem = faceProblem(s, key, face);
       if (problem) problems.push(`cast.${key}.faces: ${problem}`);
@@ -815,7 +952,9 @@ export function checkScenario(s: Scenario): string[] {
     const where = `beats.${beat.id}`;
     if (beat.bg && !s.backgrounds[beat.bg]) problems.push(`${where}.bg: 없는 배경 "${beat.bg}"`);
     const twists = [...(beat.twist?.altered ?? []), ...(beat.twist?.interrupt ?? [])];
-    for (const line of [...linesOfBeat(beat), ...twists.flatMap((t) => t.lines)]) {
+    for (const line of [...(beat.lead ?? []), ...linesOfBeat(beat), ...twists.flatMap((t) => t.lines)]) {
+      const cgProblem = cgLineProblem(s, line);
+      if (cgProblem) problems.push(`${where}: ${cgProblem}`);
       if (line.cg && !s.cgs[line.cg]) problems.push(`${where}: 없는 이벤트 CG "${line.cg}"`);
       if (line.cg_from && !s.cgs[line.cg_from]) problems.push(`${where}: 없는 이벤트 CG "${line.cg_from}"(cg_from)`);
       if (line.cg_from && !line.cg) problems.push(`${where}: 대사 "${line.text}" 에 cg 없이 cg_from 만 있습니다`);
@@ -837,6 +976,17 @@ export function checkScenario(s: Scenario): string[] {
       problems.push(`${where}: choices, free, next, ending 중 하나가 필요합니다`);
     }
     if (beat.choices && beat.free) problems.push(`${where}: choices 와 free 를 한 비트에 함께 둘 수 없습니다`);
+    if (beat.conversation) {
+      const conversation = beat.conversation;
+      if (beat.free || beat.ending || !beat.choices?.some((c) => c.if === undefined && !c.check)) problems.push(`${where}.conversation: free/ending 없이 판정 없는 기본 선택지가 필요합니다`);
+      if (!s.cgs[conversation.cg]?.file) problems.push(`${where}.conversation.cg: 유효한 CG가 필요합니다`);
+      checkNext(conversation.next, `${where}.conversation.next`);
+      if (conversation.speakers.length === 0) problems.push(`${where}.conversation.speakers: 화자가 필요합니다`);
+      for (const speaker of conversation.speakers) {
+        const cast = s.cast[speaker];
+        if (!cast || cast.style === 'gm' || (cast.style === 'speech' && cast.lore === s.sheet.name) || (cast.style !== 'narration' && (!cast.lore || !Object.values(beat.cast ?? {}).some((key) => key && s.cast[key]?.lore === cast.lore)))) problems.push(`${where}.conversation.speakers: "${speaker}"는 현재 무대의 응답자 또는 나레이션이어야 합니다`);
+      }
+    }
     for (const c of beat.choices ?? []) {
       if (c.if) checkCond(c.if, `${where}.choices.${c.id}.if`);
       c.check?.mods?.forEach((m, i) => checkCond(m.if, `${where}.choices.${c.id}.check.mods[${i}]`));
@@ -854,6 +1004,17 @@ export function checkScenario(s: Scenario): string[] {
       if (free.addressed && !ids.has(free.addressed)) problems.push(`${where}.free.addressed: 없는 접근 "${free.addressed}"`);
       const def = free.approaches.find((a) => a.id === free.default_approach);
       if (def?.item) problems.push(`${where}.free.default_approach: 기본 접근에는 소지품 조건을 둘 수 없습니다`);
+      for (const approach of free.approaches) {
+        if (approach.goal !== undefined && !Object.hasOwn(free.goals ?? {}, approach.goal)) {
+          problems.push(`${where}.free.${approach.id}.goal: 선언하지 않은 목표 "${approach.goal}"`);
+        }
+      }
+      for (const [id, goal] of Object.entries(free.goals ?? {})) {
+        const at = `${where}.free.goals.${id}`;
+        checkNext(goal.next, `${at}.next`);
+        checkEffects(goal.effects, `${at}.effects`);
+        if (goal.if) checkCond(goal.if, `${at}.if`);
+      }
       for (const sp of free.speakers) if (!s.cast[sp]) problems.push(`${where}.free.speakers: cast 에 없는 화자 "${sp}"`);
       if (free.talk_fallback.length === 0) problems.push(`${where}.free.talk_fallback: GM 이 실패할 때 쓸 대사가 필요합니다`);
       if (free.press.length === 0) problems.push(`${where}.free.press: 재촉할 때 쓸 대사가 필요합니다`);
@@ -888,6 +1049,33 @@ export function checkScenario(s: Scenario): string[] {
     for (const a of free?.approaches ?? []) for (const t of TIERS) if (!a.outcomes[t].gist) problems.push(`${where}.free.${a.id}.${t}.gist: GM 이 연출할 요지가 필요합니다`);
     for (const t of TIERS) if (free && !free.improv[t].gist) problems.push(`${where}.free.improv.${t}.gist: GM 이 연출할 요지가 필요합니다`);
     for (const t of TIERS) if (free?.improv_bold && !free.improv_bold[t].gist) problems.push(`${where}.free.improv_bold.${t}.gist: GM 이 연출할 요지가 필요합니다`);
+    for (const t of TIERS) if (free?.improv_attack && !free.improv_attack[t].gist) problems.push(`${where}.free.improv_attack.${t}.gist: GM 이 연출할 요지가 필요합니다`);
+  }
+
+  if (s.atlas) {
+    const nodeIds = new Set<string>();
+    for (const node of s.atlas.nodes) {
+      if (nodeIds.has(node.id)) problems.push(`atlas.nodes.${node.id}: 노드 id가 중복됩니다`);
+      nodeIds.add(node.id);
+      for (const beat of node.beats) {
+        if (!s.beats[beat]) problems.push(`atlas.nodes.${node.id}: 없는 비트 "${beat}"`);
+      }
+    }
+    for (const [from, to] of s.atlas.edges) {
+      if (!nodeIds.has(from) || !nodeIds.has(to)) problems.push(`atlas.edges: 없는 노드 연결 "${from}" → "${to}"`);
+    }
+    const chapterIds = new Set<string>();
+    const assignedNodes = new Set<string>();
+    for (const chapter of s.atlas.chapters ?? []) {
+      if (chapterIds.has(chapter.id)) problems.push(`atlas.chapters.${chapter.id}: 화 id가 중복됩니다`);
+      chapterIds.add(chapter.id);
+      if (!chapter.nodes.length) problems.push(`atlas.chapters.${chapter.id}: 노드가 필요합니다`);
+      for (const node of chapter.nodes) {
+        if (!nodeIds.has(node)) problems.push(`atlas.chapters.${chapter.id}: 없는 노드 "${node}"`);
+        if (assignedNodes.has(node)) problems.push(`atlas.chapters.${chapter.id}: 노드 "${node}"가 중복 배정됩니다`);
+        assignedNodes.add(node);
+      }
+    }
   }
 
   const seen = new Set<string>();
@@ -903,6 +1091,14 @@ export function checkScenario(s: Scenario): string[] {
   for (const id of Object.keys(s.beats)) if (!seen.has(id)) problems.push(`beats.${id}: 시작에서 닿을 수 없는 비트입니다`);
   if (!Object.values(s.beats).some((b) => b.ending && seen.has(b.id))) problems.push('닿을 수 있는 결말 비트가 없습니다');
   return problems;
+}
+
+/** 복장·CG 전용 화자 키가 달라도 lore가 같으면 같은 인물이다. */
+export function hasCharacter(scenario: Pick<Scenario, 'cast'>, beat: Pick<BeatSpec, 'cast'>, speaker: string): boolean {
+  const lore = scenario.cast[speaker]?.lore ?? speaker;
+  return Object.values(beat.cast ?? {}).some((key) => (
+    key !== null && key !== undefined && (scenario.cast[key]?.lore ?? key) === lore
+  ));
 }
 
 /** 이 비트에 플레이어 앞에서 말을 받을 다른 인물이 나와 있는가. */

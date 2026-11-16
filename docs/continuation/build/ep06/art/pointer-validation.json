@@ -1,0 +1,5711 @@
+{
+  "episode": 6,
+  "result": "포인터 메타데이터 교정 및 현재 YAML 역참조 검증 통과",
+  "input_yaml": "app/content/ep06_library.yaml",
+  "input_yaml_sha256": "17cc7cc5578b9981ee75339ff6fb74c707433fc2e220fef9ce886455d28bd236",
+  "cause": "실제 beats는 비트 ID를 키로 쓰는 사전인데 배열 인덱스로 포인터를 작성했다.",
+  "correction": "json_pointer 값만 /beats/<비트 ID>/lines/<0부터 시작하는 줄 번호> 형식으로 교정했다.",
+  "total_pointers": 708,
+  "invalid_numeric_beat_pointers_before": 708,
+  "invalid_numeric_beat_pointers_after": 0,
+  "undefined_pointers": 0,
+  "anchor_mismatches": 0,
+  "files": [
+    {
+      "file": "mapping.json",
+      "total_pointers": 475,
+      "undefined_pointers": 0,
+      "anchor_mismatches": 0,
+      "non_pointer_content_identical": true,
+      "sha256_before": "9cf23cb09f38a2882532456c0731ac78f6340556a5ae09bd3ed5269d3a1f56d8",
+      "sha256_after": "6373af12daf2f7b54fadccb1c29e56e0b57c09ad81588e84b0ff3dfe661bf01b"
+    },
+    {
+      "file": "candidate-manifest.json",
+      "total_pointers": 233,
+      "undefined_pointers": 0,
+      "anchor_mismatches": 0,
+      "non_pointer_content_identical": true,
+      "sha256_before": "709432ead49d81af130416c2a48d4bcdb58dbbe45f9c66cf49b2342cb59f661c",
+      "sha256_after": "9589d5bac1cc0352d0503605c65ca90b34cad33f1dc3b74464dad379c6271abe"
+    }
+  ],
+  "preservation": {
+    "candidate_count": 75,
+    "candidate_ids_and_target_files_identical": true,
+    "all_non_pointer_bytes_identical": true,
+    "original_text_coverage_and_provenance_identical": true,
+    "yaml_unchanged": true,
+    "generation_calls": 0,
+    "art_ready": false
+  },
+  "validation_method": "두 파일을 저장 후 다시 파싱하고, 재귀 순회에서 /beats/로 시작하는 모든 문자열을 수집했다. JSON Pointer 이스케이프를 해제해 현재 YAML 사전의 own key를 단계마다 확인하고 최종 줄의 화자·원문·CG와 비트 ID·줄 번호를 대조했다. json_pointer 값만 마스킹한 수정 전후 전체 파일 바이트 비교로 나머지 데이터의 보존을 확인했다.",
+  "dereference_function": "function(doc,p){let v=doc;for(const raw of p.slice(1).split('/')){const key=raw.replaceAll('~1','/').replaceAll('~0','~');if(v===undefined||v===null||!Object.hasOwn(v,key))return undefined;v=v[key]}return v}",
+  "failures": [],
+  "checks": [
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/0/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/0/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/1/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/1/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/2/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/2/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/2/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_decline_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/3/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c004/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/4/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c005/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/5/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/5/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/6/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/6/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/6/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/6/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/6/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/7/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c008/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/7/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_purpose_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/7/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/7/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/7/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/7/anchors/5/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/7/anchors/6/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/8/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c009/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/9/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/9/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/9/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/9/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/10/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/10/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/10/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/10/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/11/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/11/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/12/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/12/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/13/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/13/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/13/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/14/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c015/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/15/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c016/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/16/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/16/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/17/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c018/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/18/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c019/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/19/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/19/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/20/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/20/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/21/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c022/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/22/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c023/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/23/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/23/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/23/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/24/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/24/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/24/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/25/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/25/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/26/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/26/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/26/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/27/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c028/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/28/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/28/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/29/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c030/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/30/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/30/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/30/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/31/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/31/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/31/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/31/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/31/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/32/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c033/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/33/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/33/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/34/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/34/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/34/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_origin_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/35/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/35/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/35/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/36/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/36/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/36/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/36/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/37/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/37/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/37/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_question_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/38/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/38/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/38/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/38/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/38/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/38/anchors/5/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/5",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/39/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c040/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/40/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c041/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/41/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c042/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/42/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/42/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/43/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c044/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/44/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c045/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/44/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c045_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/45/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c046/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/45/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_politics_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/45/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/45/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/45/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/45/anchors/5/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/46/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/46/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/46/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/47/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c048/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/48/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c049/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/49/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c050/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/50/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/50/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/51/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/51/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/51/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/51/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/52/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c053/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/53/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/53/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/53/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/54/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/54/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/54/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/54/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/55/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/55/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/55/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/55/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/55/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c056_response/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/55/anchors/5/json_pointer",
+      "pointer": "/beats/ep06_travel_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/56/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/56/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/57/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/57/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/57/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/57/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/58/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c059/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/59/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/59/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/59/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c060_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/60/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c061/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/60/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/60/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/61/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/61/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/61/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/62/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/62/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/63/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c064/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/63/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/63/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/source_entries/64/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c065/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/outside_cut_anchors/0/anchor/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/outside_cut_anchors/1/anchor/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/5/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/6/json_pointer",
+      "pointer": "/beats/ep06_decline_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/7/json_pointer",
+      "pointer": "/beats/ep06_c004/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/8/json_pointer",
+      "pointer": "/beats/ep06_c005/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/9/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/10/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/11/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/12/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/13/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/14/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/15/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/16/json_pointer",
+      "pointer": "/beats/ep06_c008/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/17/json_pointer",
+      "pointer": "/beats/ep06_purpose_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/18/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/19/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/20/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/21/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/22/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/23/json_pointer",
+      "pointer": "/beats/ep06_c009/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/24/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/25/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/26/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/27/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/28/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/29/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/30/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/31/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/32/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/33/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/34/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/35/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/36/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/37/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/38/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/39/json_pointer",
+      "pointer": "/beats/ep06_c015/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/40/json_pointer",
+      "pointer": "/beats/ep06_c016/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/41/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/42/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/43/json_pointer",
+      "pointer": "/beats/ep06_c018/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/44/json_pointer",
+      "pointer": "/beats/ep06_c019/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/45/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/46/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/47/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/48/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/49/json_pointer",
+      "pointer": "/beats/ep06_c022/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/50/json_pointer",
+      "pointer": "/beats/ep06_c023/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/51/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/52/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/53/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/54/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/55/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/56/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/57/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/58/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/59/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/60/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/61/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/62/json_pointer",
+      "pointer": "/beats/ep06_c028/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/63/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/64/json_pointer",
+      "pointer": "/beats/ep06_c030/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/65/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/66/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/67/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/68/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/69/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/70/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/71/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/72/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/73/json_pointer",
+      "pointer": "/beats/ep06_c033/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/74/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/75/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/76/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/77/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/78/json_pointer",
+      "pointer": "/beats/ep06_origin_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/79/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/80/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/81/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/82/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/83/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/84/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/85/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/86/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/87/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/88/json_pointer",
+      "pointer": "/beats/ep06_question_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/89/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/90/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/91/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/92/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/93/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/94/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/5",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/95/json_pointer",
+      "pointer": "/beats/ep06_c040/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/96/json_pointer",
+      "pointer": "/beats/ep06_c041/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/97/json_pointer",
+      "pointer": "/beats/ep06_c042/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/98/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/99/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/100/json_pointer",
+      "pointer": "/beats/ep06_c044/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/101/json_pointer",
+      "pointer": "/beats/ep06_c045/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/102/json_pointer",
+      "pointer": "/beats/ep06_c045_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/103/json_pointer",
+      "pointer": "/beats/ep06_c046/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/104/json_pointer",
+      "pointer": "/beats/ep06_politics_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/105/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/106/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/107/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/108/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/109/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/110/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/111/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/112/json_pointer",
+      "pointer": "/beats/ep06_c048/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/113/json_pointer",
+      "pointer": "/beats/ep06_c049/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/114/json_pointer",
+      "pointer": "/beats/ep06_c050/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/115/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/116/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/117/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/118/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/119/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/120/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/121/json_pointer",
+      "pointer": "/beats/ep06_c053/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/122/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/123/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/124/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/125/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/126/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/127/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/128/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/129/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/130/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/131/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/132/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/133/json_pointer",
+      "pointer": "/beats/ep06_c056_response/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/134/json_pointer",
+      "pointer": "/beats/ep06_travel_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/135/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/136/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/137/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/138/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/139/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/140/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/141/json_pointer",
+      "pointer": "/beats/ep06_c059/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/142/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/143/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/144/json_pointer",
+      "pointer": "/beats/ep06_c060_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/145/json_pointer",
+      "pointer": "/beats/ep06_c061/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/146/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/147/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/148/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/149/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/150/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/151/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/152/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/153/json_pointer",
+      "pointer": "/beats/ep06_c064/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/154/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/155/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/literal_yaml_anchors/156/json_pointer",
+      "pointer": "/beats/ep06_c065/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/5/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/6/json_pointer",
+      "pointer": "/beats/ep06_decline_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/7/json_pointer",
+      "pointer": "/beats/ep06_c004/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/8/json_pointer",
+      "pointer": "/beats/ep06_c005/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/9/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/10/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/11/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/12/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/13/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/14/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/15/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/16/json_pointer",
+      "pointer": "/beats/ep06_c008/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/17/json_pointer",
+      "pointer": "/beats/ep06_purpose_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/18/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/19/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/20/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/21/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/22/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/23/json_pointer",
+      "pointer": "/beats/ep06_c009/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/24/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/25/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/26/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/27/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/28/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/29/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/30/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/31/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/32/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/33/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/34/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/35/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/36/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/37/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/38/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/39/json_pointer",
+      "pointer": "/beats/ep06_c015/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/40/json_pointer",
+      "pointer": "/beats/ep06_c016/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/41/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/42/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/43/json_pointer",
+      "pointer": "/beats/ep06_c018/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/44/json_pointer",
+      "pointer": "/beats/ep06_c019/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/45/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/46/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/47/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/48/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/49/json_pointer",
+      "pointer": "/beats/ep06_c022/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/50/json_pointer",
+      "pointer": "/beats/ep06_c023/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/51/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/52/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/53/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/54/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/55/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/56/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/57/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/58/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/59/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/60/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/61/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/62/json_pointer",
+      "pointer": "/beats/ep06_c028/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/63/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/64/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/65/json_pointer",
+      "pointer": "/beats/ep06_c030/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/66/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/67/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/68/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/69/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/70/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/71/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/72/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/73/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/74/json_pointer",
+      "pointer": "/beats/ep06_c033/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/75/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/76/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/77/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/78/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/79/json_pointer",
+      "pointer": "/beats/ep06_origin_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/80/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/81/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/82/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/83/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/84/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/85/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/86/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/87/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/88/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/89/json_pointer",
+      "pointer": "/beats/ep06_question_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/90/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/91/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/92/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/93/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/94/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/95/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/5",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/96/json_pointer",
+      "pointer": "/beats/ep06_c040/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/97/json_pointer",
+      "pointer": "/beats/ep06_c041/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/98/json_pointer",
+      "pointer": "/beats/ep06_c042/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/99/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/100/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/101/json_pointer",
+      "pointer": "/beats/ep06_c044/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/102/json_pointer",
+      "pointer": "/beats/ep06_c045/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/103/json_pointer",
+      "pointer": "/beats/ep06_c045_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/104/json_pointer",
+      "pointer": "/beats/ep06_c046/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/105/json_pointer",
+      "pointer": "/beats/ep06_politics_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/106/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/107/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/108/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/109/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/110/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/111/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/112/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/113/json_pointer",
+      "pointer": "/beats/ep06_c048/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/114/json_pointer",
+      "pointer": "/beats/ep06_c049/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/115/json_pointer",
+      "pointer": "/beats/ep06_c050/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/116/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/117/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/118/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/119/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/120/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/121/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/122/json_pointer",
+      "pointer": "/beats/ep06_c053/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/123/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/124/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/125/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/126/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/127/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/128/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/129/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/130/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/131/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/132/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/133/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/134/json_pointer",
+      "pointer": "/beats/ep06_c056_response/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/135/json_pointer",
+      "pointer": "/beats/ep06_travel_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/136/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/137/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/138/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/139/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/140/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/141/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/142/json_pointer",
+      "pointer": "/beats/ep06_c059/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/143/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/144/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/145/json_pointer",
+      "pointer": "/beats/ep06_c060_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/146/json_pointer",
+      "pointer": "/beats/ep06_c061/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/147/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/148/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/149/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/150/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/151/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/152/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/153/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/154/json_pointer",
+      "pointer": "/beats/ep06_c064/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/155/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/156/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "mapping.json",
+      "metadata_location": "/display_anchors/157/json_pointer",
+      "pointer": "/beats/ep06_c065/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/0/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/0/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/0/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c001/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/1/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/1/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/1/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c002/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/2/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/2/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/2/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c003/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/2/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_decline_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/2/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c004/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/3/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c005/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/3/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c005/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/4/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/4/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/4/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c006/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/5/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/5/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/6/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/6/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/7/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/7/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/7/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/7/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c007/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/8/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c008/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/8/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c008/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/8/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_purpose_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/9/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/9/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/9/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/10/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/10/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/10/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/10/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c008_reply/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/11/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c009/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/11/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c009/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/12/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/12/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/12/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/12/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/12/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c010/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/13/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/13/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/14/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/14/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/14/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/14/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c011/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/15/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/15/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/15/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c012/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/16/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/16/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/16/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c013/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/16/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/17/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/17/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/17/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c014/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/18/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c015/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/18/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c015/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/19/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c016/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/19/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c016/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/20/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/20/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/21/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/21/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c017/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/22/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c018/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/22/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c018/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/23/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c019/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/23/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c019/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/24/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/24/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/24/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c020/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/25/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/25/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/25/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c021/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/26/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c022/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/26/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c022/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/27/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c023/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/27/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c023/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/28/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/28/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/28/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/28/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c024/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/29/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/29/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/29/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/29/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c025/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/30/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/30/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/30/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c026/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/31/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/31/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/31/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/31/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c027/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/32/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c028/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/32/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c028/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/33/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/33/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/34/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/34/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c029/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/35/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c030/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/35/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c030/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/36/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/36/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/36/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/36/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c031/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/37/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/37/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/37/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/37/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/37/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/38/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/38/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c032/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/39/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c033/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/39/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c033/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/40/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/40/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/40/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c034/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/41/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/41/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/41/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c035/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/41/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_origin_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/42/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/42/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/42/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/43/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/43/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c036/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/44/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/44/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/44/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/44/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/44/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c037/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/45/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/45/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/45/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c038/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/45/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_question_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/4",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/anchors/5/json_pointer",
+      "pointer": "/beats/ep06_c039/lines/5",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/46/anchors/6/json_pointer",
+      "pointer": "/beats/ep06_c040/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/47/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c041/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/47/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c041/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/48/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c042/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/48/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c042/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/49/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/49/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/49/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c043/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/49/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c044/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/50/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c045/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/50/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c045/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/50/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c045_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/51/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c046/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/51/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c046/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/51/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_politics_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/52/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/52/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/52/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/53/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/53/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/53/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c046_reply/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/54/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/54/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/54/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/54/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c047/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/54/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c048/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/55/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c049/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/55/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c049/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/56/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c050/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/56/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c050/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/57/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/57/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/57/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c051/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/58/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/58/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/59/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/59/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/59/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/59/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c052/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/60/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c053/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/60/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c053/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/61/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/61/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/61/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/61/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c054/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/62/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/62/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/62/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/62/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/62/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c055/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/63/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/63/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/63/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c056/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/63/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/64/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/64/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c056_interior/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/64/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c056_response/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/64/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_travel_pause/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/65/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/65/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/65/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c057/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/66/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/66/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/66/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/66/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/66/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c058/lines/3",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/67/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c059/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/67/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c059/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/68/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/68/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/69/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/69/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c060/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/69/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c060_interior/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/69/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c061/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/69/anchors/3/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/69/anchors/4/json_pointer",
+      "pointer": "/beats/ep06_c061_question/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/70/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/70/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/70/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/71/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/71/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c062/lines/2",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/72/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/72/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/72/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c063/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/73/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c064/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/73/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c064/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/73/anchors/1/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/73/anchors/2/json_pointer",
+      "pointer": "/beats/ep06_c064_reply/lines/1",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/74/earliest_reveal/json_pointer",
+      "pointer": "/beats/ep06_c065/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    },
+    {
+      "file": "candidate-manifest.json",
+      "metadata_location": "/candidates/74/anchors/0/json_pointer",
+      "pointer": "/beats/ep06_c065/lines/0",
+      "defined": true,
+      "anchor_matches": true,
+      "beat_and_line_match": true
+    }
+  ]
+}

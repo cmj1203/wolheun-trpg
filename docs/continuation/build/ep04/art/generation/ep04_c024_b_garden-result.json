@@ -1,0 +1,10 @@
+{
+  "상태": "native 종료",
+  "후보": "ep04_c024_b_garden",
+  "candidate_slot": "ep04_c024_b_garden",
+  "pid": 6551,
+  "pgid": 6551,
+  "exit_code": 0,
+  "출력_존재": true,
+  "종료": "2026-11-09T06:57:39.270068+00:00"
+}

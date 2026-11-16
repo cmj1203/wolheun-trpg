@@ -331,18 +331,28 @@ function checkTransition(prev: GameState, prevSnap: string, next: GameState, act
   for (let i = 0; i < prev.log.length; i++) {
     const a = prev.log[i];
     const b = next.log[i];
-    // 행운을 쓰면 묻던 판정(마지막 판정 기록)만 7, 대가 있는 성공으로 고친다(엔진 설계). 그 밖의 기록은 덧붙이기만 한다.
+    // 행운은 마지막 실패 판정만 구제한다. 자연 대실패는 원래 합계와 출처를 보존한다.
     const lastCheck = prev.log.findLastIndex((e) => e.kind === 'check');
     if (i === lastCheck && prev.pendingLuck && a?.kind === 'check' && b?.kind === 'check' && (action.type === 'luck' || action.type === 'free') && JSON.stringify(a) !== JSON.stringify(b)) {
-      const same = JSON.stringify({ ...b.roll, total: a.roll.total, tier: a.roll.tier, luck: a.roll.luck }) === JSON.stringify(a.roll);
-      if (!same || b.roll.total !== 7 || b.roll.tier !== 'mixed' || b.roll.luck !== prev.pendingLuck.need) fail('행운이 판정 기록을 잘못 고쳤다');
+      const fumble = a.roll.tier === 'fumble';
+      const rescued = {
+        ...a,
+        roll: {
+          ...a.roll,
+          total: fumble ? Math.max(7, a.roll.total) : 7,
+          tier: 'mixed',
+          luck: prev.pendingLuck.need,
+          ...(fumble ? { rescuedFrom: 'fumble' } : {}),
+        },
+      };
+      if ((a.roll.tier !== 'miss' && !fumble) || JSON.stringify(b) !== JSON.stringify(rescued)) fail('행운이 판정 기록을 잘못 고쳤다');
       continue;
     }
     if (JSON.stringify(a) !== JSON.stringify(b)) fail(`이전 기록 ${i} 가 바뀌었다(${a?.kind})`);
   }
   if (prev.ending !== null) {
-    // 끝난 판에서 받는 행동은 끼어들기뿐이고, 이야기를 움직이지 않는다.
-    if (action.type !== 'interject') fail(`끝난 판이 ${action.type} 를 받았다`);
+    // 끝난 판은 끼어들기와 GM 질문을 받되, 이야기를 움직이지 않는다.
+    if (action.type !== 'interject' && action.type !== 'ask') fail(`끝난 판이 ${action.type} 를 받았다`);
     if (next.ending !== prev.ending) fail(`끝난 판의 결말이 바뀌었다: ${prev.ending} → ${next.ending}`);
     if (next.beat !== prev.beat) fail(`끝난 판의 비트가 바뀌었다: ${prev.beat} → ${next.beat}`);
     if (JSON.stringify(next.tracks) !== JSON.stringify(prev.tracks)) fail('끝난 판의 수치가 바뀌었다');

@@ -1,6 +1,7 @@
 import { expect, test } from 'bun:test';
 import { Engine, type GmContext, type Interpretation } from '../src/engine/engine.ts';
 import type { GameState } from '../src/engine/types.ts';
+import { isNoAttempt } from '../src/engine/text.ts';
 import { LocalGm } from '../src/gm/gm.ts';
 import { FakeGm, META, loadDesert, loadWolheunLore } from './helpers.ts';
 
@@ -24,7 +25,7 @@ test('모델 없이도 주어에 저절로 생긴 복합 몸 반응은 시도로
   ]) {
     const state = structuredClone(base);
     expect((await gm.interpret({ scenario, state, beat, free: beat.free, text })).kind).toBe('idle');
-    const { step } = await engine.act(state, { type: 'free', text });
+    const { step } = await engine.act(state, { type: 'free', text: `(${text})` });
     expect(step.events.some(e => e.type === 'roll')).toBe(false);
   }
   for (const text of [
@@ -40,7 +41,7 @@ test('이전 장면에서 말했어도 b05 침묵 뒤 말 전제 대사는 없�
   const gm = new LocalGm(null, lore);
   const engine = new Engine(scenario, gm);
   const state: GameState = { ...structuredClone(base), flags: { ...base.flags, 말함: true, 말함_b02_people: true } };
-  const { state: after, step } = await engine.act(state, { type: 'free', text: '아무 말도 하지 않는다' });
+  const { state: after, step } = await engine.act(state, { type: 'free', text: '(아무 말도 하지 않는다)' });
   expect(after.beat).toBe('b06_swing');
   expect(step.events.some((e) => e.type === 'roll')).toBe(false);
   expect(linesOf(step.events)).toContain('남자: …뭐?');
@@ -81,7 +82,7 @@ for (const beat of ['b05_why', 'b06_swing']) {
     const gm = new ReadingGm(() => ({ kind: 'idle', source: 'llm', meta: META }));
     const engine = new Engine(scenario, gm);
     const state: GameState = { ...structuredClone(base), beat, free: { beat, talks: 0, rolls: 0 } };
-    const { state: after, step } = await engine.act(state, { type: 'free', text: '눈물이 쏟아져 몸이 굳는다' });
+    const { state: after, step } = await engine.act(state, { type: 'free', text: '(눈물이 쏟아져 몸이 굳는다)' });
     expect(after.beat).not.toBe(beat);
     expect(after.ending).toBeNull();
     expect(step.events.some((e) => e.type === 'roll')).toBe(false);
@@ -89,13 +90,42 @@ for (const beat of ['b05_why', 'b06_swing']) {
     expect(linesOf(step.events)).not.toContain('남자: 없다면, 잘 가라.');
   });
 
-  test(`${beat}: 대화 한 번 뒤 또 말하면 위협이 진행된다`, async () => {
-    const engine = new Engine(scenario, new ReadingGm(() => ({ kind: 'talk', to: 'person', source: 'llm', meta: META })));
+  test(`${beat}: 두 person 대화는 기록하고 명시 무시도 뒤 한 번만 위협이 진행된다`, async () => {
+    const gm = new class extends ReadingGm {
+      override async talk(ctx: GmContext) {
+        if (ctx.reaction || ctx.state.free?.talks !== 2) return super.talk(ctx);
+        const reply = scenario.beats.b06_swing?.free?.talk_fallback[1];
+        if (!reply) throw new Error('서로 다른 두 응답을 위한 기존 대사가 없다');
+        return { lines: [reply], meta: META };
+      }
+    }(ctx =>
+      ctx.input?.kind === 'valid' && ctx.input.action && !ctx.input.speech && isNoAttempt(ctx.input.action)
+        ? { kind: 'idle', source: 'llm', meta: META }
+        : { kind: 'talk', to: 'person', source: 'llm', meta: META });
+    const engine = new Engine(scenario, gm);
     const state: GameState = { ...structuredClone(base), beat, free: { beat, talks: 0, rolls: 0 } };
     const first = await engine.act(state, { type: 'free', text: '이게 지금 뭐 하는 짓이야?' });
     const second = await engine.act(first.state, { type: 'free', text: '내 질문이 안 들렸어?' });
-    expect(second.state.beat).not.toBe(beat);
+    expect(first.state.beat).toBe(beat);
+    expect(second.state.beat).toBe(beat);
+    expect(first.step.events.some((e) => e.type === 'roll')).toBe(false);
     expect(second.step.events.some((e) => e.type === 'roll')).toBe(false);
+    expect(first.state.said).toContain('이게 지금 뭐 하는 짓이야?');
+    // 부정형 질문은 주장 기억에 넣지 않고 아래의 원문 대화 로그로 검증한다.
+    expect(second.state.said).toEqual(first.state.said);
+    expect(second.state.log.filter(e => e.kind === 'input').slice(-2)).toMatchObject([
+      { result: 'talk', text: '이게 지금 뭐 하는 짓이야?' },
+      { result: 'talk', text: '내 질문이 안 들렸어?' },
+    ]);
+    expect(linesOf(first.step.events).length).toBeGreaterThan(0);
+    expect(linesOf(second.step.events).length).toBeGreaterThan(0);
+    const third = await engine.act(second.state, { type: 'free', text: '(가만히 있는다)' });
+    expect(third.state.beat).not.toBe(beat);
+    expect(third.step.events.some(e => e.type === 'roll')).toBe(false);
+    expect(third.state.log.findLast(e => e.kind === 'input')).toMatchObject({ result: 'idle', text: '(가만히 있는다)' });
+    expect(third.state.said).toEqual(second.state.said);
+    expect(linesOf([...first.step.events, ...second.step.events, ...third.step.events])
+      .filter(line => line === '남자: …뭐?')).toHaveLength(1);
   });
 }
 
@@ -104,6 +134,6 @@ test('시도하지 않음 경로에서 이미 본 고정 나레이션은 반복�
   const text = scenario.beats.b05_why?.free?.idle?.lines.find((line) => line.speaker === '나레이션')?.text;
   if (!text) throw new Error('b05 위협 나레이션이 필요합니다');
   const state = { ...structuredClone(base), spoken: { ...base.spoken, 나레이션: [text] } };
-  const { step } = await engine.act(state, { type: 'free', text: '그대로 멎어 버린다' });
+  const { step } = await engine.act(state, { type: 'free', text: '(그대로 멎어 버린다)' });
   expect(linesOf(step.events)).not.toContain(`나레이션: ${text}`);
 });

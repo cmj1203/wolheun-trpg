@@ -1,0 +1,778 @@
+{
+  "episode": 5,
+  "created_at": "2026-11-09T05:31:31.915Z",
+  "scope": "새로 승인된 별개 비성적 원작 장면만 재개",
+  "source_review": "기존 원작 참조 PNG를 표시해 직접 확인했다. 분류는 생성 허용 범위 판단이며 독립 그림 QA·PASS가 아니다.",
+  "blocked_candidate": "ep05_c002_p01",
+  "blocked_retry_eligible": false,
+  "prior_actualPNG": 1,
+  "morning_receipt_actualPNG": 1,
+  "planned_slots": 74,
+  "classification_counts": {
+    "existing-candidate": 1,
+    "terminal-blocked": 1,
+    "held": 15,
+    "text-reuse": 2,
+    "eligible": 55
+  },
+  "independentApproved": 0,
+  "installed": 0,
+  "allowed_order": [
+    "ep05_c010_p02",
+    "ep05_c014_p01",
+    "ep05_c015_p01",
+    "ep05_c016_p01",
+    "ep05_c017_p01",
+    "ep05_c018_p01",
+    "ep05_c019_p01",
+    "ep05_c020_p01",
+    "ep05_c021_p01",
+    "ep05_c022_p01",
+    "ep05_c023_p01",
+    "ep05_c024_p01",
+    "ep05_c025_p01",
+    "ep05_c011_p01",
+    "ep05_c012_p01",
+    "ep05_c013_p01",
+    "ep05_c013_p02",
+    "ep05_c026_p01",
+    "ep05_c027_p01",
+    "ep05_c028_p01",
+    "ep05_c028_p02",
+    "ep05_c028_p03",
+    "ep05_c029_p01",
+    "ep05_c033_p01",
+    "ep05_c035_p01",
+    "ep05_c036_p01",
+    "ep05_c037_p01",
+    "ep05_c038_p01",
+    "ep05_c038_p02",
+    "ep05_c040_p01",
+    "ep05_c041_p01",
+    "ep05_c042_p01",
+    "ep05_c042_p03",
+    "ep05_c042_p04",
+    "ep05_c042_p05",
+    "ep05_c042_p06",
+    "ep05_c042_p07",
+    "ep05_c043_p01",
+    "ep05_c043_p02",
+    "ep05_c044_p01",
+    "ep05_c044_p02",
+    "ep05_c045_p01",
+    "ep05_c046_p01",
+    "ep05_c047_p01",
+    "ep05_c047_p02",
+    "ep05_c048_p01",
+    "ep05_c049_p01",
+    "ep05_c049_p02",
+    "ep05_c050_p01",
+    "ep05_c051_p01",
+    "ep05_c052_p02",
+    "ep05_c053_p01",
+    "ep05_c053_p02",
+    "ep05_c055_p01",
+    "ep05_c055_p02"
+  ],
+  "terminal_ids": [
+    "ep05_c002_p01"
+  ],
+  "held_ids": [
+    "ep05_c003_p01",
+    "ep05_c004_p01",
+    "ep05_c005_p01",
+    "ep05_c005_p02",
+    "ep05_c005_p03",
+    "ep05_c006_p01",
+    "ep05_c007_p01",
+    "ep05_c008_p01",
+    "ep05_c009_p01",
+    "ep05_c009_p02",
+    "ep05_c030_p01",
+    "ep05_c032_p01",
+    "ep05_c032_p02",
+    "ep05_c034_p01",
+    "ep05_c052_p01"
+  ],
+  "text_reuse_ids": [
+    "ep05_c010_p01",
+    "ep05_c042_p02"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "ep05_c001_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c001_p01_source.png",
+      "input_sha256": "028f769fd8adb42462a7f64a298d6ddbd895ece9588007f6f37dbf2d524b9ca8",
+      "original_visual": "먼 침대와 꽃·휘장",
+      "classification": "existing-candidate",
+      "reason": "기존 첫 PNG 보존·독립 문자 오버레이 검사 대기",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c002_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c002_p01_source.png",
+      "input_sha256": "04c774b795a23be1105bfd55599b21028ea54f20c5fd016c38dea9436058ed92",
+      "original_visual": "두 얼굴의 접촉",
+      "classification": "terminal-blocked",
+      "reason": "이전 내장 도구의 영구 거절, 요청·입력·로그 불변·재시도 불가",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c003_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c003_p01_source.png",
+      "input_sha256": "09be61823c69ab700480fa3dec64d3bb11576d07e1cfdef596545ed9be380268",
+      "original_visual": "입술 확대",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c004_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c004_p01_source.png",
+      "input_sha256": "ee0eed540434634e4b9869733ff7c6fbaa33e987a9c586dc99212a83c8ae777d",
+      "original_visual": "위에서 본 침대와 두 사람",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c005_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c005_p01_source.png",
+      "input_sha256": "1fd6a94efe6317cf652a900c3c8e63faf0eb774d0871d9962451d71e51a8cb1d",
+      "original_visual": "손목을 잡힌 손",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c005_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c005_p02_source.png",
+      "input_sha256": "55ab814ace70fc7bb49ca8d73e86c36eb2961ed86911c29e25e302b8ed07e248",
+      "original_visual": "눈을 감는 아시나와 저항",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c005_p03",
+      "input": "assets/ep05/gen/inputs/ep05_c005_p03_source.png",
+      "input_sha256": "0fcbcd7979ac60194558b68c94bf6441fe4394dab4c9e3aa8d81f39235d00e18",
+      "original_visual": "접촉 뒤 입가와 숨",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c006_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c006_p01_source.png",
+      "input_sha256": "0e424c7fc7dfa1ac06a3f3f0ec3d047511340359a5ec7779e95bddc7a8f1bb07",
+      "original_visual": "밝은 장식 전환",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c007_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c007_p01_source.png",
+      "input_sha256": "78a820d8e515c831a5ac8a32d7f0f1a50acef06ece17e67bd33e780f06ea6f3b",
+      "original_visual": "누운 아시나와 내려다보는 남성",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c008_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c008_p01_source.png",
+      "input_sha256": "48a2b28f9a82e5ec9df5a580763b7643de678e0af7cb59c1e5f1428bce135e80",
+      "original_visual": "남성의 입가 미소",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c009_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c009_p01_source.png",
+      "input_sha256": "092942462c18469b82fdb98d86c1210ea5a5b9c6908a10c32f2bc9a31e9ae348",
+      "original_visual": "아시나 얼굴",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c009_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c009_p02_source.png",
+      "input_sha256": "82c8e4453fbc16da4ecce4c7f40c531a6f8575b1f67fb461444fa6323eb11439",
+      "original_visual": "하렘을 선언하는 남성",
+      "classification": "held",
+      "reason": "부모가 관련 밤·침대 친밀 구간 전체를 보류함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c010_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c010_p01_source.png",
+      "input_sha256": "6bf785b76a122f1837774c0d2e855bdfc634c6e39ca0970712cccb0c3b1e08d0",
+      "original_visual": "제목과 크레디트",
+      "classification": "text-reuse",
+      "reason": "문자 표제 위치·원작 경로의 직전 장면 유지, 거리 유지 경로는 c010_p02부터 시작",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c010_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c010_p02_source.png",
+      "input_sha256": "9f1c53ec45c7964459d7e476fd9bc40b59a3d9973c370ff8c4d75ab9652cd334",
+      "original_visual": "아침의 궁과 식물",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c011_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c011_p01_source.png",
+      "input_sha256": "2c298c93e5bb8d4d37c7d322d02caae50cf61873be3f54e6b567b2039f5fd34f",
+      "original_visual": "차 준비 자리와 침대가 함께 보이는 방",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c012_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c012_p01_source.png",
+      "input_sha256": "fa8341b0404271ab0c3cd4486365f8d8148d6837a47ee6923f7360b32e71c27d",
+      "original_visual": "침대 위 아시나의 기척 반응",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c013_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c013_p01_source.png",
+      "input_sha256": "3dc94f2f1a76aec965da0fea62ea3c5c18586e28684516c17addb8e176a79ee7",
+      "original_visual": "눈을 비비는 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c013_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c013_p02_source.png",
+      "input_sha256": "c19eb0427fe7b8bc08934246e5d57003b7f9cf7395ed0967003e8f117092a3d7",
+      "original_visual": "처음 마주하는 여성",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c014_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c014_p01_source.png",
+      "input_sha256": "fb475e8aa51e5ad645d4cf8557cf0d592ea8ffda7a094afa0ff8c48a01fb64fa",
+      "original_visual": "누르의 소개와 방 전경",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c015_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c015_p01_source.png",
+      "input_sha256": "2cf01fa2c46caef21fef186165279d7722316d942c59e85203ed8b95faeac6b6",
+      "original_visual": "인사하는 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c016_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c016_p01_source.png",
+      "input_sha256": "20f7e17925a17f508eb8a3028842a9847fd8f074e9d332048a4a7842ae48aaad",
+      "original_visual": "두 사람의 작은 반응 그림",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c017_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c017_p01_source.png",
+      "input_sha256": "7a5603c655636b141c58c7615403d5d256f6391ff676bdc7b0fd111ca7e02d92",
+      "original_visual": "손을 잡는 누르",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c018_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c018_p01_source.png",
+      "input_sha256": "43fffa6106f91adde343b456b11f70289307e4400c6f37cd1862b72ed1135e9f",
+      "original_visual": "반발하는 아시나의 작은 얼굴",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c019_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c019_p01_source.png",
+      "input_sha256": "b0a7edef387af4a050b16fe2f15532640899786804f9c9512200cfe181e83276",
+      "original_visual": "쭈뼛 든 손",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c020_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c020_p01_source.png",
+      "input_sha256": "19ec827d59495093cc3e4f103486e9276b57b5c16ab51519127201e6a9078845",
+      "original_visual": "궁 외경과 잎에 이어지는 음성",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c021_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c021_p01_source.png",
+      "input_sha256": "1ff8a1d6a981253d126d70addd1124fa1bda41681f5ee31e7f94a11a36e7b156",
+      "original_visual": "질문하는 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c022_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c022_p01_source.png",
+      "input_sha256": "d236e26ed2d2eda8470417f2125122db05f8f333e83ae8ec5a868141e51954fa",
+      "original_visual": "차를 따르는 손과 잔",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c023_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c023_p01_source.png",
+      "input_sha256": "68a5d5ebdce200cf642a9b4537702b7ba3d3dfc9dd5d13278e63727842606136",
+      "original_visual": "차를 건네는 누르와 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c024_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c024_p01_source.png",
+      "input_sha256": "1f6d3fe0af84d1512ea9e9ea829234ccc3836c65e7609ac0b66a19423e479672",
+      "original_visual": "차 맛을 보는 작은 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c025_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c025_p01_source.png",
+      "input_sha256": "d7a6d1803644f7bd3c7d9682dc2544041b317dc7c18b8cac3d8ebe5a538663cd",
+      "original_visual": "문과 실내에 이어지는 작별 음성",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c026_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c026_p01_source.png",
+      "input_sha256": "9faf27d4a721688895b207a43ad2369c3069ba4d631e25c44b018026e202f381",
+      "original_visual": "홀로 침대에 앉은 아시나와 문",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c027_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c027_p01_source.png",
+      "input_sha256": "d2fee72d5d8e7d541606c23a9ae730575a781466534797b53039374e4a22fb42",
+      "original_visual": "붉어진 얼굴의 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c028_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c028_p01_source.png",
+      "input_sha256": "e71068b5d63c76fc36534bfe1f0e65509752a9302a66f31834ee5afe004dc664",
+      "original_visual": "리메아 신앙 삽화",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c028_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c028_p02_source.png",
+      "input_sha256": "4209cea44f6794d2594549be49648adac4711a2f86a6794f1fdc083c7fb97f80",
+      "original_visual": "페시안 지배자 신앙 삽화",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c028_p03",
+      "input": "assets/ep05/gen/inputs/ep05_c028_p03_source.png",
+      "input_sha256": "9317cc6375b4d14d0a963a9af37d05e9cc2287f84d5ac2d85f83ff4eb868129b",
+      "original_visual": "사막·물·식물과 궁 삽화",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c029_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c029_p01_source.png",
+      "input_sha256": "da84e41735e3795d3983cb08e297b0f0b1954205abf003c00f8cfe4f5e553e37",
+      "original_visual": "쿤 중심 사회의 상징 삽화",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c030_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c030_p01_source.png",
+      "input_sha256": "d20cccc5c42a82824e0cf68e23ac6821bd15efb09f3cdd603944908424313b00",
+      "original_visual": "침대에 두 주먹을 짚은 아시나",
+      "classification": "held",
+      "reason": "침대 자세 또는 첫 입맞춤 회고와 연결돼 좁은 재개 범위에서 명확하지 않아 보류",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c032_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c032_p01_source.png",
+      "input_sha256": "d86259a4063d703bca2bab7bb9d02c232dc543557a6222b5ab125008035d14e7",
+      "original_visual": "어젯밤의 접촉 회상",
+      "classification": "held",
+      "reason": "거절 장면과 관련된 입맞춤 회상·직접 반응, 독립 비성적 재개 범위에서 보류",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c032_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c032_p02_source.png",
+      "input_sha256": "8fdf93ad1cea40bbfff425cb5cc09fd633425ba07245c83e1f50a9b6fd38dc81",
+      "original_visual": "얼굴을 붉힌 현재 아시나",
+      "classification": "held",
+      "reason": "거절 장면과 관련된 입맞춤 회상·직접 반응, 독립 비성적 재개 범위에서 보류",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c033_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c033_p01_source.png",
+      "input_sha256": "a712af44b84cceab05151b367e75ad2aa38e486e867b5b36c12e2e9f70e27daa",
+      "original_visual": "보라색 앞판과 쥔 주먹 근접",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c034_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c034_p01_source.png",
+      "input_sha256": "98d666437b09a031a62d99d7ccfa8b0bdc72c8ac030d4a652f55590b8443e0a4",
+      "original_visual": "입가에 손을 댄 현재 아시나",
+      "classification": "held",
+      "reason": "침대 자세 또는 첫 입맞춤 회고와 연결돼 좁은 재개 범위에서 명확하지 않아 보류",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c035_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c035_p01_source.png",
+      "input_sha256": "ea7d604722a51d0dbcb72b297a004e4624165a082f9ded229c6e0a88701a7325",
+      "original_visual": "아시나의 눈·뺨과 악담",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c036_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c036_p01_source.png",
+      "input_sha256": "3a96d8245e97178692eb5bd55d69afb88a3b89cfb37284a736328258ccafe5ac",
+      "original_visual": "창·진열장·도자기·거울·잎",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c037_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c037_p01_source.png",
+      "input_sha256": "bdc232f7d6f9c393496874cfc47336caff720ce6391a6709592f666a5631eac9",
+      "original_visual": "별실의 라 쿤과 보고자",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c038_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c038_p01_source.png",
+      "input_sha256": "a313179050d53d56f36023a41e6157f83d821e58965300dd3f274070c70629d8",
+      "original_visual": "청발 신하의 보고",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c038_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c038_p02_source.png",
+      "input_sha256": "1dc2af66c22f024b7ba068a9039664a14449cd00a1c8e9838d26bdc36cbf4bfd",
+      "original_visual": "방치 결정을 말하는 라 쿤",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c040_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c040_p01_source.png",
+      "input_sha256": "3ea4d7eea39475d5544293df9d6d4af389b46330bdd6a235b8c0a85150e91a29",
+      "original_visual": "청발 신하와 뒤의 흑발 신하",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c041_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c041_p01_source.png",
+      "input_sha256": "6139252c697fe0084c4833b90848c1d3d6a8ac9a16c599e91fb2ed14507e7f23",
+      "original_visual": "청발 신하에게 속삭이는 흑발 신하",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c042_p01_source.png",
+      "input_sha256": "3d63452da2df07abadc8742746f54541a319126a272180d5c875b25bf9453dec",
+      "original_visual": "별실의 전체 배치",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c042_p02_source.png",
+      "input_sha256": "a6863b477651e6ddb56a1f4268b11d66547f94e8d1840b113b496e28a4f7c2e5",
+      "original_visual": "어두운 질감의 발화 배경",
+      "classification": "text-reuse",
+      "reason": "문자 전용 발화 창·c042_p01 유지",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p03",
+      "input": "assets/ep05/gen/inputs/ep05_c042_p03_source.png",
+      "input_sha256": "598356b38c6d53d9c2eb3d526d238d9909d87cdcbecafb41b0af0d7a2796e2f5",
+      "original_visual": "우려를 말하는 청발 신하",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p04",
+      "input": "assets/ep05/gen/inputs/ep05_c042_p04_source.png",
+      "input_sha256": "9340bda40f3e36c784fa3bcf2e52958535778e6b45730df275c3c2b64b89e6c5",
+      "original_visual": "그 일 언급 때 라 쿤의 가려진 눈",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p05",
+      "input": "assets/ep05/gen/inputs/ep05_c042_p05_source.png",
+      "input_sha256": "6991e7807a3b4f9ebf2dc940e056262d5b1963612f8ce18515f73d58a7bfe6dc",
+      "original_visual": "날카롭게 뜬 라 쿤의 눈",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p06",
+      "input": "assets/ep05/gen/inputs/ep05_c042_p06_source.png",
+      "input_sha256": "4e39a857e0019aa23bfca4a3cb2da765ecf7daec9a692b97f107abeffa61e73d",
+      "original_visual": "놀라고 사과하는 청발 신하",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c042_p07",
+      "input": "assets/ep05/gen/inputs/ep05_c042_p07_source.png",
+      "input_sha256": "ec70866bf20ca328cd0e58b257454d46232a87953b10cdca57ae3f971749713d",
+      "original_visual": "정치적 우려를 말하는 두 신하",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c043_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c043_p01_source.png",
+      "input_sha256": "55201a543625c28f897d80ac00ac7d9060654b70387ddd7f5abc2c8605a22a2d",
+      "original_visual": "라 쿤의 얼굴과 침묵",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c043_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c043_p02_source.png",
+      "input_sha256": "5bd67aa26d327f6e868fc08267ed9d8243a09a05dc7505598ee307585bf0bbaa",
+      "original_visual": "창과 별실 전경의 조사 의향",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c044_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c044_p01_source.png",
+      "input_sha256": "e8a85a7ff877540b8d250761494d54f3a5d7c216d4662c6e94b9298b50b950bb",
+      "original_visual": "소환을 명령하는 라 쿤의 상체",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c044_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c044_p02_source.png",
+      "input_sha256": "541b75005eaefed7cfe90e823fd7b6919b86de2b142a5bcccfa457c7c87a7f48",
+      "original_visual": "식탁에서 놀란 아시나와 음료",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c045_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c045_p01_source.png",
+      "input_sha256": "c5e08ec615ff0f7b756541951ccc4c4ecb90a54ff96d5567dcff8e27021b8de4",
+      "original_visual": "문가의 누르와 식탁의 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c046_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c046_p01_source.png",
+      "input_sha256": "551f1fa9a2a047b6967cba7b7bed6710b9c7b9a10754ef551e451f324fc6d5cc",
+      "original_visual": "난처한 누르의 작은 얼굴",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c047_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c047_p01_source.png",
+      "input_sha256": "1572868804d239697c7ed03874fae394becc872861f94d4ab7b4c8d132ec1118",
+      "original_visual": "인물 없는 회랑 전경",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c047_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c047_p02_source.png",
+      "input_sha256": "f02a915e51d3f4132b7224acd5bcc25e86c95ec908a45c9488f433323f20da37",
+      "original_visual": "앞선 누르와 뒤따르는 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c048_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c048_p01_source.png",
+      "input_sha256": "bfef3bff8af94e96bb2d94a02fa2678a5923899f594c597fa18ab4c6627071e8",
+      "original_visual": "불만을 표하는 아시나의 상체",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c049_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c049_p01_source.png",
+      "input_sha256": "b1453c57427e5dfae765b587b63862d2fa74947002b8375e57e2c42d34e9165d",
+      "original_visual": "문과 긴 알현실을 보는 입장 구도",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c049_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c049_p02_source.png",
+      "input_sha256": "76f800d9ab7f55fd641b762b9965c4f179206d06608fe0d40afe18b60573f96d",
+      "original_visual": "금빛 좌석에 앉은 라 쿤",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c050_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c050_p01_source.png",
+      "input_sha256": "f8a7a03511fb9dcc15be2820ba0eaef89d533ebbcc1df17454e7fe1eb319c42c",
+      "original_visual": "닫힌 문 앞 아시나 전신",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c051_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c051_p01_source.png",
+      "input_sha256": "e490c059c56c82f76981aaffdfaa2b0db87e489648e33b1c7b32f817bd087ad6",
+      "original_visual": "물러나는 누르와 아시나의 반응",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c052_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c052_p01_source.png",
+      "input_sha256": "63a6c0dbbd0fc501a4067efb6a418010b02086ddd7d105d54021036773133f80",
+      "original_visual": "접촉을 떠올리는 회상",
+      "classification": "held",
+      "reason": "거절 장면과 관련된 입맞춤 회상·직접 반응, 독립 비성적 재개 범위에서 보류",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c052_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c052_p02_source.png",
+      "input_sha256": "6cfba6348ca7b1438e3445b3346ac7a8c08c2db9cdad7f58dc585c71ff05ae5d",
+      "original_visual": "시선을 돌린 현재 아시나와 먼 좌석",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c053_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c053_p01_source.png",
+      "input_sha256": "d4654a601c3cb0232771e19fec7521de798d7110b910e83d57cf5b6fb2ca47a6",
+      "original_visual": "알현실 무인 전경",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c053_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c053_p02_source.png",
+      "input_sha256": "ad4756971bab5161b5ea0645ca38a4a0bc6fa4e3bd637c4951db541e1b7f7cf0",
+      "original_visual": "질문하는 라 쿤 얼굴·목 근접",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c055_p01",
+      "input": "assets/ep05/gen/inputs/ep05_c055_p01_source.png",
+      "input_sha256": "15c70a926dc856cccea749a702fb50bf57986c2af2cce29272865d5206420823",
+      "original_visual": "시선을 내린 첫 답변",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    },
+    {
+      "candidate_id": "ep05_c055_p02",
+      "input": "assets/ep05/gen/inputs/ep05_c055_p02_source.png",
+      "input_sha256": "e94824b1578dd78861fdafec7bddf7d0690d94b214eeb5d56200927ffec5f498",
+      "original_visual": "미소로 지난밤을 답하고 되묻는 아시나",
+      "classification": "eligible",
+      "reason": "실제 승인 원작 입력의 별개 일상·설명·보고·이동 장면을 직접 확인함",
+      "art_PASS": false
+    }
+  ],
+  "protected_prior_evidence": [
+    "first-generation-start.md",
+    "first-generation-result.md",
+    "native/ep05_c002_p01-attempt01.log",
+    "generation-final.md",
+    "generation-final-manifest.json"
+  ],
+  "handoff_gate": "거절된 c002 앵커는 원작 이야기에서 삭제하거나 다른 장면으로 채우지 않는다. 미해결로 남아 전체 에피소드 그림 완성과 설치 승인을 차단한다."
+}
+

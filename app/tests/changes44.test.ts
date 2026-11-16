@@ -9,7 +9,8 @@ import { type GameEvent, type Tier } from '../src/engine/types.ts';
 import { FakeGm, META, loadDesert } from './helpers.ts';
 
 const scenario = await loadDesert();
-const gm = () => new FakeGm(() => ({ kind: 'improv', label: '물건 사용', stat: '손재주', difficulty: 0, absurd: false, bold: false, source: 'rule', meta: META }));
+const gm = () => new FakeGm((ctx) => ({ kind: 'improv', label: '물건 사용', stat: '손재주', difficulty: 0, absurd: false, bold: false,
+  target: 'local', deed: ctx.input?.kind === 'valid' ? ctx.input.action : ctx.text, source: 'rule', meta: META }));
 
 function ready(beat: string, seed: number, revealed = true) {
   const engine = new Engine(scenario, gm(), () => 1_000_000);
@@ -32,14 +33,35 @@ function changes(events: GameEvent[]): string[] {
 }
 
 describe('44차 변화 기록과 사용 물건 대가', () => {
-  test('지도 soft 대가는 결과별 목록보다 먼저 고르고 hard 가 없으면 기존 후보를 쓴다', () => {
+  test('물건 대가는 허용 후보 안에서 우선하고 hard 상실도 실제 변화로 남는다', async () => {
     const free = scenario.beats.b02_people!.free!;
     const move = free.approaches.find((a) => a.id === 'run')!;
     const item = scenario.sheet.items.find((i) => i.id === 'map')!;
     const ctx = { tracks: scenario.sheet.tracks, abilities: scenario.sheet.abilities, flags: {}, items: ['map'] };
-    expect(priceCandidates(free, move.outcomes.mixed, 'mixed', ctx, {}, ['map_wind'], item).map((p) => p.id)).toEqual(['map_wind']);
+    expect(priceCandidates(free, move.outcomes.mixed, 'mixed', ctx, {}, [], item).map((p) => p.id)).toEqual(['sun', 'open_sand']);
     expect(priceCandidates(free, move.outcomes.miss, 'miss', ctx, {}, [], item).map((p) => p.id)).toEqual(['foe_approach', 'sand_fall']);
     expect(priceCandidates(free, move.outcomes.hit, 'hit', ctx, {}, [], item)).toEqual([]);
+    const night = scenario.beats.r3_dusk?.free;
+    const read = night?.approaches.find(a => a.id === 'read');
+    if (!night || !read) throw new Error('현재 밤의 방향 찾기 결과가 없다');
+    expect(priceCandidates(night, read.outcomes.miss, 'miss', ctx, {}, [], item).map(p => p.id)).toEqual(['map_lost']);
+    expect(priceCandidates(night, read.outcomes.miss, 'miss', { ...ctx, items: [] }, {}, [], item).map(p => p.id)).toEqual(['cold_night']);
+    let checked = false;
+    for (let seed = 1; seed <= 100 && !checked; seed++) {
+      const { engine, state } = ready('r3_dusk', seed);
+      state.flags.밤 = true;
+      const result = await engine.act(state, { type: 'approach', id: 'read' });
+      if (!result.step.events.some(e => e.type === 'roll' && e.tier === 'miss')) continue;
+      expect(result.step.events.find(e => e.type === 'price')).toMatchObject({ id: 'map_lost' });
+      expect(result.state.items).not.toContain('map');
+      expect(result.state.items).toContain('magic_bag');
+      expect(changes(result.step.events)).toContain('낡은 지도 잃음');
+      expect(result.state.log.some(e => e.kind === 'change' && e.parts.some(p => p.text === '낡은 지도 잃음'))).toBe(true);
+      expect(result.step.events.findIndex(e => e.type === 'change' && e.parts.some(p => p.text === '낡은 지도 잃음')))
+        .toBeGreaterThan(result.step.events.findIndex(e => e.type === 'price' && e.id === 'map_lost'));
+      checked = true;
+    }
+    expect(checked).toBe(true);
   });
 
   test('핀과 귀찌는 대응 대가가 없으면 기존 표를 유지한다', () => {
@@ -56,18 +78,30 @@ describe('44차 변화 기록과 사용 물건 대가', () => {
     const found = new Set<Tier>();
     for (let seed = 1; seed <= 100 && found.size < 3; seed++) {
       const { engine, state } = ready('b02_people', seed, false);
-      const { step } = await engine.act(state, { type: 'free', text: '지도를 펼쳐 저 남자 눈앞에 들이민다' });
+      const { state: after, step } = await engine.act(state, { type: 'approach', id: 'watch' });
       const roll = step.events.find((e) => e.type === 'roll');
       if (roll?.type !== 'roll') throw new Error('판정 없음');
+      if (roll.tier === 'crit' || roll.tier === 'fumble') continue;
       found.add(roll.tier);
       const nextScene = step.events.findIndex((e) => e.type === 'scene');
       const visible = changes(nextScene < 0 ? step.events : step.events.slice(0, nextScene));
       expect(visible.some((s) => /의심|집착|호감|탈주 준비도/.test(s))).toBe(false);
       if (roll.tier === 'mixed') {
-        expect(visible).toContain('낡은 지도 찢김');
-        const index = step.events.findIndex((e) => e.type === 'change' && e.parts.some((p) => p.text === '낡은 지도 찢김'));
-        expect(index).toBeGreaterThan(step.events.findIndex((e) => e.type === 'price' && e.id === 'map_wind'));
-        expect(step.hud.notes.find((n) => n.id === 'item:map')?.text).toContain('한 귀퉁이가 찢겨 나갔다.');
+        expect(after.flags.정체_눈치).toBe(true);
+        expect(visible).toContain('정신력 -1');
+        expect(step.events.filter(e => e.type === 'price')).toMatchObject([{ id: 'mind_strain' }]);
+        const index = step.events.findIndex((e) => e.type === 'change' && e.parts.some((p) => p.text === '정신력 -1'));
+        expect(index).toBeGreaterThan(step.events.findIndex((e) => e.type === 'price' && e.id === 'mind_strain'));
+        expect(after.tracks.정신력).toBe(state.tracks.정신력 - 1);
+        expect(step.hud.tracks.find(t => t.key === '정신력')?.value).toBe(after.tracks.정신력);
+        expect(after.log.some(e => e.kind === 'change' && e.parts.some(p => p.text === '정신력 -1'))).toBe(true);
+        expect(after.items).toContain('map');
+        expect(after.flags.지도_찢김).not.toBe(true);
+      } else if (roll.tier === 'hit') {
+        expect(after.flags.정체_눈치).toBe(true);
+        expect(step.events.some(e => e.type === 'price')).toBe(false);
+      } else {
+        expect(after.flags.정체_눈치).not.toBe(true);
       }
       expect(visible.some((s) => /[+-]0$/.test(s))).toBe(false);
     }
@@ -78,7 +112,7 @@ describe('44차 변화 기록과 사용 물건 대가', () => {
     let checked = false;
     for (let seed = 1; seed <= 100 && !checked; seed++) {
       const { engine, state } = ready('b05_why', seed);
-      const result = await engine.act(state, { type: 'free', text: '가방을 방패처럼 휘두른다' });
+      const result = await engine.act(state, { type: 'free', text: '(가방을 방패처럼 휘두른다)' });
       if (!result.step.events.some((e) => e.type === 'roll' && e.tier === 'miss')) continue;
       expect(result.step.events.find((e) => e.type === 'price')?.id).toBe('bag_taken');
       expect(result.state.items).not.toContain('magic_bag');
@@ -89,7 +123,7 @@ describe('44차 변화 기록과 사용 물건 대가', () => {
       if (prompt.type !== 'free') throw new Error('자유 입력 아님');
       expect(prompt.approaches.find((a) => a.id === 'bag')?.locked).toBe(true);
       await expect(engine.act(result.state, { type: 'approach', id: 'bag' })).rejects.toThrow('소지품');
-      await expect(engine.act(result.state, { type: 'free', text: '가방을 방패처럼 휘두른다' })).rejects.toThrow('마법 가방 없음');
+      await expect(engine.act(result.state, { type: 'free', text: '(가방을 방패처럼 휘두른다)' })).rejects.toThrow('마법 가방 없음');
       checked = true;
     }
     expect(checked).toBe(true);
@@ -98,7 +132,7 @@ describe('44차 변화 기록과 사용 물건 대가', () => {
   test('변화 기록과 소지품 상태가 저장을 거쳐 유지된다', async () => {
     const { engine, state } = ready('b05_why', 1);
     state.flags['지도_찢김'] = true;
-    const result = await engine.act(state, { type: 'free', text: '핀으로 밧줄을 쑤셔 본다' });
+    const result = await engine.act(state, { type: 'free', text: '(핀으로 밧줄을 쑤셔 본다)' });
     expect(result.state.log.some((e) => e.kind === 'change')).toBe(true);
     const dir = await mkdtemp(join(tmpdir(), '변화44-'));
     try {

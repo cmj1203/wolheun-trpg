@@ -1,0 +1,23 @@
+bun test v1.4.2 (744846f84)
+
+app/tests/ep07_internal.test.ts:
+108 |       },
+109 |     };
+110 | 
+111 |     const result = await enterFromPrior(chapter);
+112 | 
+113 |     expect(result.state.flags.ep03_짐_수중없음).toBe(notReturned);
+                                                 ^
+error: expect(received).toBe(expected)
+
+Expected: false
+Received: true
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep07_internal.test.ts:113:44)
+(fail) 7화 독립 내부 시나리오 > ep07_c004 진입 직전까지 반환 전후 사실을 구분하고 청록복 사실을 종료한다 [0.73ms]
+
+ 0 pass
+ 7 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [24.00ms]

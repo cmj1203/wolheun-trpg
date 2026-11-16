@@ -1,14 +1,21 @@
-import { buildAtlas, emptyAtlas, forkBeats, nextHint, recordAtlas, type AtlasRecord } from '../engine/atlas.ts';
+import { attachAtlasView, buildAtlas, checkpointAtlas, emptyAtlas, forkBeats, nextHint, recordAtlas, restartAtlas, type AtlasRecord } from '../engine/atlas.ts';
+import {
+  atlasSceneToken, beginAtlasPlayback, confirmAtlasScene, createAtlasPlayback,
+  enqueueAtlasScene, packAtlasView, prepareAtlasDisplay, restoreAtlasPlayback,
+  type AtlasPlayback,
+} from '../engine/atlas-display.ts';
 import { appendFile, mkdir, rename } from 'node:fs/promises';
 import { join, relative, resolve, sep } from 'node:path';
 import { seedFrom } from '../engine/dice.ts';
 import { Engine } from '../engine/engine.ts';
-import { loadScenario } from '../engine/scenario.ts';
-import { SaveError, listSaves, readSave, readSaveView, writeSave } from '../engine/save.ts';
+import { loadCampaignScenario, resumeCampaign } from '../engine/continuation.ts';
+import { SaveError, listSaves, readSave, readSaveSnapshot, writeSave } from '../engine/save.ts';
+import { ViewpointPlayback, rotateViewFrames, forgetViewFrames, type SavedViewpoint } from './viewpoint.ts';
 import { summarize } from '../engine/summary.ts';
 import { GameError, type Action, type AssetSpec, type GameState, type Scenario } from '../engine/types.ts';
-import { DEFAULT_GM_OPTIONS, LocalGm } from '../gm/gm.ts';
-import { LlmClient } from '../gm/llm.ts';
+import { DEFAULT_GM_OPTIONS, LocalGm, type GmOptions } from '../gm/gm.ts';
+import { LlmClient, assertLoopback } from '../gm/llm.ts';
+import { SwitchableLlm } from '../gm/switch.ts';
 import { loadLore, withNotes } from '../gm/lore.ts';
 import { gitShortHash, handleFeedback } from './feedback.ts';
 import { rejectForeignPost } from './same_origin.ts';
@@ -22,9 +29,21 @@ export const CREDIT = '그림 하나비 / 각색 미예 / 원작 윤슬 / 채색
 
 export interface ModelEntry {
   label: string;
-  file: string;
-  license: string;
+  /** 브리지 모델은 파일·라이선스가 없다. */
+  file?: string;
+  license?: string;
   chat_template_kwargs?: Record<string, unknown>;
+  kind?: 'local' | 'bridge';
+  served_model?: string;
+  gm_budget_ms?: number;
+}
+
+export interface ModelStatus {
+  key: string;
+  label: string;
+  kind: 'local' | 'bridge';
+  available: boolean;
+  reason?: string;
 }
 
 export interface ServerOptions {
@@ -37,6 +56,8 @@ export interface ServerOptions {
   atlasFile: string;
   logsDir: string;
   llmTimeoutMs: number;
+  /** 브리지 주소. 없으면 사용자 판(18081)만 기본 브리지를 쓴다. bridgeUrlFor 참고. */
+  bridgeUrl?: string | null;
   /** 게임 속 피드백을 덧붙이는 jsonl. 없으면 app/feedback/feedback.jsonl. */
   feedbackFile?: string;
 }
@@ -52,12 +73,26 @@ export function optionsFromEnv(env: Record<string, string | undefined> = process
     atlasFile: env.WOLHEUN_ATLAS ?? join(APP, 'logs', 'atlas.json'),
     logsDir: env.WOLHEUN_LOGS ?? join(APP, 'logs'),
     llmTimeoutMs: Number(env.WOLHEUN_LLM_TIMEOUT_MS ?? 90_000),
+    bridgeUrl: env.WOLHEUN_BRIDGE_URL ?? null,
     feedbackFile: env.WOLHEUN_FEEDBACK ?? join(APP, 'feedback', 'feedback.jsonl'),
   };
 }
 
 const USER_PORT = 18081;
 const USER_LLM = 'http://127.0.0.1:18080';
+const USER_BRIDGE = 'http://127.0.0.1:18090';
+
+/**
+ * 이 서버가 쓸 브리지 주소. 다른 포트의 서버는 사용자 브리지(18090)를 함께 쓰지 않는다.
+ * 따로 WOLHEUN_BRIDGE_URL 을 주지 않았거나 18090 을 주면 서버는 뜨되 브리지 모델만 끈다(null).
+ */
+export function bridgeUrlFor(opts: ServerOptions): string | null {
+  const url = opts.bridgeUrl ?? (opts.port === USER_PORT ? USER_BRIDGE : null);
+  if (url === null) return null;
+  const parsed = assertLoopback(url);
+  if (opts.port !== USER_PORT && parsed.port === new URL(USER_BRIDGE).port) return null;
+  return url;
+}
 
 /** 사용자 판(18081)의 파일이나 LLM 을 함께 쓰게 된 옵션 이름. 다른 포트의 서버가 이 파일에 쓰면 사용자 저장이 덮인다. */
 export function sharedWithUser(opts: ServerOptions): string[] {
@@ -158,7 +193,8 @@ function parseAction(v: unknown): Action {
   if (a?.type === 'confirm') return { type: 'confirm', ok: (v as { ok?: unknown }).ok === true };
   if (a?.type === 'ask' && typeof a.text === 'string') {
     const scene = (v as { scene?: unknown }).scene;
-    return { type: 'ask', text: a.text, scene: typeof scene === 'string' ? scene : null };
+    const frame = (v as { frame?: unknown }).frame;
+    return { type: 'ask', text: a.text, scene: typeof scene === 'string' ? scene : null, ...(typeof frame === 'string' ? { frame } : {}) };
   }
   if (a?.type === 'interject' && typeof a.text === 'string') {
     const raw = v as { scene?: unknown; shown?: unknown; pending?: unknown };
@@ -216,16 +252,72 @@ export async function startServer(opts: ServerOptions) {
   const shared = sharedWithUser(opts);
   if (shared.length > 0) throw new Error(`포트 ${opts.port} 서버는 사용자 판(${USER_PORT})과 같은 파일·LLM 을 쓸 수 없습니다. 따로 주세요: ${shared.join(', ')} (LLM 이 필요 없으면 WOLHEUN_NO_LLM=1)`);
   const lore = await loadLore(opts.lorePath);
-  const scenario = withNotes(await loadScenario(opts.scenarioPath), lore);
+  const scenario = withNotes(await loadCampaignScenario(opts.scenarioPath), lore);
   const registry = (await Bun.file(join(APP, 'config', 'models.json')).json()) as { models: Record<string, ModelEntry> };
   const model = opts.modelKey ? (registry.models[opts.modelKey] ?? null) : null;
-  const llm = opts.llmUrl
-    ? new LlmClient({
-        baseUrl: opts.llmUrl,
-        timeoutMs: opts.llmTimeoutMs,
-        ...(model?.chat_template_kwargs ? { chatTemplateKwargs: model.chat_template_kwargs } : {}),
-      })
-    : null;
+  const bridgeUrl = bridgeUrlFor(opts);
+  const localClient = (llmUrl: string, entry: ModelEntry | null) =>
+    new LlmClient({
+      baseUrl: llmUrl,
+      timeoutMs: opts.llmTimeoutMs,
+      ...(entry?.chat_template_kwargs ? { chatTemplateKwargs: entry.chat_template_kwargs } : {}),
+    });
+  const startClient = opts.llmUrl ? localClient(opts.llmUrl, model) : null;
+  const budgetOf = (entry: ModelEntry | null) => (typeof entry?.gm_budget_ms === 'number' ? { budgetMs: entry.gm_budget_ms } : {});
+  // GM 은 이 하나를 쥐고, /api/model 이 판을 두고 고른 모델만 바꾼다. LLM 없이 띄운 서버는 예전처럼 null 이다.
+  const llm = startClient ? new SwitchableLlm({ key: opts.modelKey, client: startClient, ...budgetOf(model) }) : null;
+  const gmOptions: GmOptions = {
+    ...DEFAULT_GM_OPTIONS,
+    get budgetMs() {
+      return llm?.budgetMs ?? DEFAULT_GM_OPTIONS.budgetMs;
+    },
+  };
+  const clients = new Map<string, LlmClient>(opts.modelKey && startClient ? [[opts.modelKey, startClient]] : []);
+  const kindOf = (entry: ModelEntry): 'local' | 'bridge' => (entry.kind === 'bridge' ? 'bridge' : 'local');
+  const bridgeServed = async (url: string): Promise<string[] | null> => {
+    try {
+      const health = (await fetch(new URL('/health', url), { signal: AbortSignal.timeout(2000) }).then((r) => (r.ok ? r.json() : null))) as { status?: unknown } | null;
+      if (health?.status !== 'ok') return null;
+      const list = (await fetch(new URL('/v1/models', url), { signal: AbortSignal.timeout(2000) }).then((r) => (r.ok ? r.json() : null))) as { data?: { id?: unknown }[] } | null;
+      return (list?.data ?? []).flatMap((m) => (typeof m.id === 'string' ? [m.id] : []));
+    } catch {
+      return null;
+    }
+  };
+  const listModels = async (): Promise<ModelStatus[]> => {
+    const [local, served] = await Promise.all([startClient ? startClient.health() : null, bridgeUrl ? bridgeServed(bridgeUrl) : null]);
+    return Object.entries(registry.models).map(([key, entry]): ModelStatus => {
+      const kind = kindOf(entry);
+      const base = { key, label: entry.label, kind };
+      const off = (reason: string): ModelStatus => ({ ...base, available: false, reason });
+      if (!llm) return off('이 서버는 LLM 없이 실행 중입니다');
+      if (kind === 'bridge') {
+        if (!bridgeUrl) return off('이 포트는 브리지를 쓰지 않습니다 (WOLHEUN_BRIDGE_URL 필요)');
+        if (!served) return off('브리지가 꺼져 있습니다 (tools/llm-bridge 를 켜세요)');
+        if (!entry.served_model || !served.includes(entry.served_model)) return off('브리지에 이 모델이 없습니다');
+        return { ...base, available: true };
+      }
+      if (!local?.ok) return off('로컬 LLM 서버가 꺼져 있습니다');
+      if (local.model !== key) return off(`실행 중인 모델이 아닙니다 (./run.sh --model ${key})`);
+      return { ...base, available: true };
+    });
+  };
+  const clientFor = (key: string, entry: ModelEntry): LlmClient | null => {
+    const cached = clients.get(key);
+    if (cached) return cached;
+    const url = kindOf(entry) === 'bridge' ? bridgeUrl : opts.llmUrl;
+    if (!url) return null;
+    const client = kindOf(entry) === 'bridge'
+      ? new LlmClient({ baseUrl: url, timeoutMs: opts.llmTimeoutMs, ...(entry.served_model ? { servedModel: entry.served_model } : {}) })
+      : localClient(url, entry);
+    clients.set(key, client);
+    return client;
+  };
+  const currentEntry = () => {
+    const key = llm ? llm.key : opts.modelKey;
+    const entry = key ? registry.models[key] : undefined;
+    return key && entry ? { key, entry } : null;
+  };
   const readAtlas = async (): Promise<AtlasRecord> => {
     const file = Bun.file(opts.atlasFile);
     if (!(await file.exists())) return emptyAtlas();
@@ -243,7 +335,17 @@ export async function startServer(opts: ServerOptions) {
     await Bun.write(tmp, JSON.stringify(record));
     await rename(tmp, opts.atlasFile);
   };
-  const engine = new Engine(scenario, new LocalGm(llm, lore, DEFAULT_GM_OPTIONS), Date.now, true);
+  let atlasWrites: Promise<void> = Promise.resolve();
+  const updateAtlas = (change: (record: AtlasRecord) => AtlasRecord): Promise<AtlasRecord> => {
+    const operation = atlasWrites.then(async () => {
+      const record = change(await readAtlas());
+      await writeAtlas(record);
+      return record;
+    });
+    atlasWrites = operation.then(() => undefined, () => undefined);
+    return operation;
+  };
+  const engine = new Engine(scenario, new LocalGm(llm, lore, gmOptions), Date.now, true);
   const forks = forkBeats(scenario);
 
   const build = await Bun.build({ entrypoints: [join(WEB, 'main.ts')], target: 'browser', minify: true });
@@ -252,6 +354,18 @@ export async function startServer(opts: ServerOptions) {
   const appJs = await bundle.text();
   const manifest = await buildManifest(scenario);
   const sessions = new Map<string, Session>();
+  const playbacks = new Map<string, AtlasPlayback>();
+  const viewpoints = new Map<string, ViewpointPlayback>();
+  const viewpointOf = (id: string): ViewpointPlayback => {
+    const viewpoint = viewpoints.get(id);
+    if (!viewpoint) throw new BadRequest('표시할 판이 없습니다.');
+    return viewpoint;
+  };
+  const playbackOf = (id: string): AtlasPlayback => {
+    const playback = playbacks.get(id);
+    if (!playback) throw new BadRequest('표시할 판이 없습니다. 저장한 판을 다시 열어 주세요.');
+    return playback;
+  };
   await mkdir(opts.logsDir, { recursive: true });
   const feedbackFile = opts.feedbackFile ?? join(APP, 'feedback', 'feedback.jsonl');
   const version = await gitShortHash(APP);
@@ -301,15 +415,34 @@ export async function startServer(opts: ServerOptions) {
       '/': () => new Response(Bun.file(join(WEB, 'index.html')), { headers: { 'content-type': 'text/html; charset=utf-8', ...SECURITY_HEADERS } }),
       '/app.js': () => new Response(appJs, { headers: { 'content-type': 'text/javascript; charset=utf-8', 'cache-control': 'no-cache', ...SECURITY_HEADERS } }),
       '/style.css': () => staticFile(WEB, 'style.css'),
+      '/branch-map.css': () => staticFile(WEB, 'branch-map.css'),
       '/api/health': {
         GET: handle(async () => {
           const status = llm ? await llm.health() : { ok: false, model: null };
+          const current = currentEntry();
           return json({
             ok: true,
             scenario: { id: scenario.id, title: scenario.title, episode: scenario.episode },
             llm: { enabled: llm !== null, ok: status.ok, model: status.model },
-            model: model ? { key: opts.modelKey, label: model.label, license: model.license } : null,
+            model: current
+              ? { key: current.key, label: current.entry.label, kind: kindOf(current.entry), ...(current.entry.license ? { license: current.entry.license } : {}) }
+              : null,
           });
+        }),
+      },
+      '/api/model': {
+        GET: handle(async () => json({ current: currentEntry()?.key ?? null, models: await listModels() })),
+        POST: post(async (req) => {
+          const body = await readBody(req);
+          const key = typeof body.key === 'string' ? body.key : '';
+          const entry = Object.hasOwn(registry.models, key) ? registry.models[key] : undefined;
+          if (!entry) throw new BadRequest(`없는 모델입니다: ${key}`);
+          const models = await listModels();
+          const status = models.find((m) => m.key === key);
+          const client = status?.available && llm ? clientFor(key, entry) : null;
+          if (!llm || !client) return json({ error: `${entry.label}을(를) 쓸 수 없습니다: ${status?.reason ?? '연결할 주소가 없습니다'}` }, 409);
+          llm.select({ key, client, ...budgetOf(entry) });
+          return json({ current: key, models });
         }),
       },
       '/api/manifest': { GET: () => json(manifest) },
@@ -332,9 +465,13 @@ export async function startServer(opts: ServerOptions) {
           const body = await readBody(req);
           const seed = typeof body.seed === 'number' || typeof body.seed === 'string' ? seedFrom(body.seed) : seedFrom(crypto.randomUUID());
           const id = crypto.randomUUID();
-          const { state, step } = engine.newGame(seed, id);
+          const viewpoint = new ViewpointPlayback();
+          const { state, step } = engine.newGame(seed, id, viewpoint.observe);
+          viewpoints.set(id, viewpoint);
           const s: Session = { state, logged: 0, busy: false, memo: '' };
           sessions.set(id, s);
+          playbacks.set(id, createAtlasPlayback(id, step.events));
+          await updateAtlas((record) => checkpointAtlas(scenario, recordAtlas(prepareAtlasDisplay(record), state), state));
           await persist(s);
           return json({ session: id, seed, step });
         }),
@@ -345,7 +482,13 @@ export async function startServer(opts: ServerOptions) {
           const s = sessionOf(body.session);
           const action = parseAction(body.action);
           if (s.busy) return json({ error: '앞의 행동을 처리하는 중입니다' }, 409);
+          const viewpoint = viewpointOf(s.state.session);
+          const question = action.type === 'ask' ? viewpoint.question(action.frame) : undefined;
           s.busy = true;
+          const playback = playbackOf(s.state.session);
+          if (action.type !== 'ask') {
+            viewpoint.begin();
+          }
           const encoder = new TextEncoder();
           const body$ = new ReadableStream<Uint8Array>({
             async start(controller) {
@@ -358,7 +501,17 @@ export async function startServer(opts: ServerOptions) {
               };
               try {
                 const logged = s.state.log.length;
-                const { state, step } = await engine.act(s.state, action, (event) => send({ event }));
+                let replaceDisplay = action.type !== 'ask';
+                const { state, step } = await engine.act(s.state, action, (event) => {
+                  enqueueAtlasScene(playback, event);
+                  send({ event });
+                }, { observer: (observation) => {
+                  if (replaceDisplay && observation.source === 'fresh') {
+                    beginAtlasPlayback(playback);
+                    replaceDisplay = false;
+                  }
+                  viewpoint.observe(observation);
+                }, ...(question ? { question } : {}) });
                 s.state = state;
                 // 세션은 이미 나아갔다. 기록·자동 저장·지도가 실패해도 화면에는 결과를 보내 둘이 어긋나지 않게 한다.
                 try {
@@ -367,7 +520,7 @@ export async function startServer(opts: ServerOptions) {
                   if (!state.ending && forks.has(state.beat) && state.log.slice(logged).some((e) => e.kind === 'beat' && e.beat === state.beat)) {
                     await writeSave(opts.savesDir, AUTO_FORK, scenario, state, Date.now(), s.memo ? { memo: s.memo } : undefined);
                   }
-                  await writeAtlas(recordAtlas(await readAtlas(), state));
+                  await updateAtlas((record) => checkpointAtlas(scenario, recordAtlas(prepareAtlasDisplay(record), state), state));
                 } catch (err) {
                   console.error(err);
                 }
@@ -400,9 +553,12 @@ export async function startServer(opts: ServerOptions) {
           // 파일을 쓰는 동안 들어온 행동이 끝난 뒤 저장 전 상태로 덮이지 않게, 저장도 행동처럼 세션을 잡는다.
           s.busy = true;
           try {
+            const packed = typeof view === 'object' && view !== null && 'scene' in view
+              ? packAtlasView(playbackOf(s.state.session), view)
+              : view;
             const next = engine.noteSlot(s.state, 'save', slot);
-            const saved = s.memo ? { ...(view as object | undefined), memo: s.memo } : view;
-            const meta = await writeSave(opts.savesDir, slot, scenario, next, Date.now(), saved);
+            const saved = s.memo ? { ...packed, memo: s.memo } : packed;
+            const meta = await writeSave(opts.savesDir, slot, scenario, next, Date.now(), saved, viewpointOf(s.state.session).save());
             s.state = next;
             await persist(s);
             return json({ meta });
@@ -432,31 +588,131 @@ export async function startServer(opts: ServerOptions) {
         POST: post(async (req) => {
           const body = await readBody(req);
           const slot = typeof body.slot === 'string' ? body.slot : '';
-          const loaded = await readSave(opts.savesDir, slot, scenario);
+          const snapshot = await readSaveSnapshot(opts.savesDir, slot, scenario);
+          const loaded = snapshot.state;
           const id = crypto.randomUUID();
-          const state = engine.noteSlot({ ...loaded, session: id }, 'load', slot);
-          const view = await readSaveView(opts.savesDir, slot);
-          const memo = (view as { memo?: unknown } | null)?.memo;
+          const viewpoint = new ViewpointPlayback();
+          const resumed = await resumeCampaign(engine, engine.noteSlot({ ...loaded, session: id }, 'load', slot), viewpoint.observe);
+          const { state } = resumed;
+          const savedView = snapshot.view;
+          let view = resumed.continued ? undefined : savedView;
+          if (!resumed.continued) {
+            const saved = snapshot.viewpoint as SavedViewpoint | null;
+            if (saved) view = rotateViewFrames(view, viewpoint.restore(saved, id));
+            else if (view) view = forgetViewFrames(view);
+            else viewpoint.legacy(state, resumed.step.events);
+          }
+          viewpoints.set(id, viewpoint);
+          const memo = (savedView as { memo?: unknown } | null)?.memo;
           const s: Session = { state, logged: 0, busy: false, memo: typeof memo === 'string' ? memo.slice(0, MAX_MEMO_CHARS) : '' };
+          playbacks.set(id, restoreAtlasPlayback(state, resumed.step.events, view));
           sessions.set(id, s);
+          await updateAtlas((record) => checkpointAtlas(scenario, recordAtlas(prepareAtlasDisplay(record), state), state));
           await persist(s);
           if (s.memo) await writeMemo(id, s.memo);
-          return json({ session: id, step: engine.resume(state), view });
+          return json({ session: id, step: resumed.step, view });
         }),
       },
-      '/api/atlas': { GET: handle(async () => json(buildAtlas(scenario, await readAtlas()))) },
+      '/api/atlas': {
+        GET: handle(async (req) => {
+          const id = new URL(req.url).searchParams.get('session');
+          const state = id ? sessionOf(id).state : undefined;
+          return json(buildAtlas(scenario, await readAtlas(), state));
+        }),
+      },
+      '/api/viewpoint/confirm': {
+        POST: post(async (req) => {
+          const body = await readBody(req);
+          const s = sessionOf(body.session);
+          viewpointOf(s.state.session).confirm(body.frame);
+          return json({ ok: true });
+        }),
+      },
+      '/api/atlas/view': {
+        GET: handle(async (req) => {
+          const s = sessionOf(new URL(req.url).searchParams.get('session'));
+          const playback = playbackOf(s.state.session);
+          return json({ token: atlasSceneToken(playback), current: playback.path.at(-1) ?? null });
+        }),
+        POST: post(async (req) => {
+          const body = await readBody(req);
+          const s = sessionOf(body.session);
+          const { key, version, visit } = body;
+          if (typeof key !== 'string' || typeof version !== 'number' || typeof visit !== 'number' ||
+            !Number.isSafeInteger(version) || !Number.isSafeInteger(visit))
+            throw new BadRequest('장면 확인 정보가 올바르지 않습니다');
+          await updateAtlas((record) => confirmAtlasScene(
+            record, playbackOf(s.state.session), s.state.session, { key, version, visit }, body.view,
+          ));
+          return json({ ok: true });
+        }),
+      },
+      '/api/atlas/checkpoint': {
+        POST: post(async (req) => {
+          const body = await readBody(req);
+          const s = sessionOf(body.session);
+          if (s.busy) return json({ error: '앞의 행동을 처리하는 중입니다' }, 409);
+          const { key, version, visit } = body;
+          if (typeof key !== 'string' || typeof version !== 'number' || typeof visit !== 'number' || !Number.isSafeInteger(version) || !Number.isSafeInteger(visit))
+            throw new BadRequest('갈림길 정보가 올바르지 않습니다');
+          const view = body.view;
+          if (typeof view !== 'object' || view === null || JSON.stringify(view).length > MAX_VIEW_CHARS)
+            throw new BadRequest('저장할 화면 상태가 올바르지 않습니다');
+          s.busy = true;
+          try {
+            await updateAtlas((record) => {
+              const attached = attachAtlasView(record, s.state, key, version, visit, packAtlasView(playbackOf(s.state.session), view));
+              return { ...attached, checkpoints: attached.checkpoints?.map((point) =>
+                point.key === key && !('viewpoint' in point) ? { ...point, viewpoint: viewpointOf(s.state.session).save() } : point) };
+            });
+            return json({ ok: true });
+          } finally {
+            s.busy = false;
+          }
+        }),
+      },
+      '/api/atlas/restart': {
+        POST: post(async (req) => {
+          const body = await readBody(req);
+          if (typeof body.key !== 'string') throw new BadRequest('갈림길 정보가 올바르지 않습니다');
+          const id = crypto.randomUUID();
+          const record = await readAtlas();
+          const restarted = restartAtlas(scenario, record, body.key, id, Date.now());
+          const { state } = restarted;
+          let { view } = restarted;
+          const memo = typeof view === 'object' && view !== null && 'memo' in view && typeof view.memo === 'string' ? view.memo : '';
+          const s: Session = { state, logged: 0, busy: false, memo };
+          const step = engine.resume(state);
+          const viewpoint = new ViewpointPlayback();
+          const point = record.checkpoints?.find((entry) => entry.key === body.key) as { viewpoint?: SavedViewpoint } | undefined;
+          if (point?.viewpoint) view = rotateViewFrames(view, viewpoint.restore(point.viewpoint, id));
+          else if (view) view = forgetViewFrames(view);
+          else viewpoint.legacy(state, step.events);
+          viewpoints.set(id, viewpoint);
+          playbacks.set(id, restoreAtlasPlayback(state, step.events, view));
+          sessions.set(id, s);
+          await persist(s);
+          if (memo) await writeMemo(id, memo);
+          await updateAtlas((record) => recordAtlas(prepareAtlasDisplay(record), state));
+          return json({ session: id, step, view });
+        }),
+      },
       '/api/atlas/hint': {
         POST: post(async (req) => {
           const body = await readBody(req);
-          const hint = nextHint(scenario, await readAtlas(), typeof body.key === 'string' ? body.key : '');
-          if (!hint) return json({ error: '없는 칸입니다' }, 400);
-          await writeAtlas(hint.record);
-          return json({ level: hint.level, text: hint.text });
+          let hint: { level: number; text: string } | undefined;
+          await updateAtlas((record) => {
+            const next = nextHint(scenario, record, typeof body.key === 'string' ? body.key : '');
+            if (!next) return record;
+            hint = { level: next.level, text: next.text };
+            return next.record;
+          });
+          return hint ? json(hint) : json({ error: '없는 칸입니다' }, 400);
         }),
       },
       '/api/atlas/reset': {
         POST: post(async () => {
-          await writeAtlas(emptyAtlas());
+          await updateAtlas(() => emptyAtlas());
           return json({ ok: true });
         }),
       },

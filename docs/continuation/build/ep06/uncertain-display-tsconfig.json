@@ -1,0 +1,12 @@
+{
+  "extends": "../../../../app/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "typeRoots": ["../../../../app/node_modules/@types"]
+  },
+  "include": ["../../../../app/tests/ep06_uncertain_display.test.ts"]
+}

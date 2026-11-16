@@ -38,7 +38,7 @@ export function isLoreQuestion(text: string, lore: Lore): boolean {
 /** 접근법 낱말 맞춤. 띄어 쓴 낱말만 띄어쓰기를 무시하고 맞춘다. 붙여 쓴 낱말이 어절을 넘어 맞으면 안 된다("계신 분들"의 "신분"). */
 const keywordIn = (text: string, keyword: string): boolean => (/\s/.test(keyword.trim()) ? mentions(text, keyword) : text.includes(keyword.trim()));
 
-export function ruleInterpret(free: FreeSpec, text: string, items: readonly string[], lore: Lore): RuleReading {
+export function ruleInterpret(free: Pick<FreeSpec, 'approaches'>, text: string, items: readonly string[], lore: Lore): RuleReading {
   for (const group of RATING_GROUPS) {
     // 등급 낱말은 띄어 써 피하는 일이 흔해 띄어쓰기를 무시하되, "자, 해 볼까" 같은 우연은 빼고 본다.
     const hit = lore.forbidden[group].find((term) => ratingIn(text, term));

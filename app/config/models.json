@@ -51,6 +51,24 @@
       "chat_template_kwargs": {
         "enable_thinking": false
       }
+    },
+    "claude-haiku": {
+      "label": "Claude Haiku",
+      "kind": "bridge",
+      "served_model": "haiku",
+      "gm_budget_ms": 45000
+    },
+    "claude-sonnet": {
+      "label": "Claude Sonnet",
+      "kind": "bridge",
+      "served_model": "sonnet",
+      "gm_budget_ms": 45000
+    },
+    "claude-opus": {
+      "label": "Claude Opus",
+      "kind": "bridge",
+      "served_model": "opus",
+      "gm_budget_ms": 45000
     }
   }
 }

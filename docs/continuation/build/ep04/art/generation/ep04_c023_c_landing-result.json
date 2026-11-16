@@ -1,0 +1,10 @@
+{
+  "상태": "native 종료",
+  "후보": "ep04_c023_c_landing",
+  "candidate_slot": "ep04_c023_c_landing",
+  "pid": 94352,
+  "pgid": 94352,
+  "exit_code": 0,
+  "출력_존재": true,
+  "종료": "2026-11-09T06:50:40.238113+00:00"
+}

@@ -1,0 +1,642 @@
+{
+  "상태": "원작 전사와 내부 엔진 검증",
+  "원본_장수": 17,
+  "장면수": 10,
+  "컷수": 63,
+  "원문발화수": 118,
+  "누락발화": [],
+  "생성그림완성": false,
+  "브라우저검증": false,
+  "컷": [
+    {
+      "id": "ep07_c001",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "세로범위": [
+        1797,
+        3722
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c001.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c002",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "세로범위": [
+        5492,
+        9608
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c002.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c003",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "세로범위": [
+        10685,
+        14856
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c003.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c004",
+      "원본": "work/ep07/merged/ep07_001.png",
+      "세로범위": [
+        15964,
+        21934
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c004.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c005",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "세로범위": [
+        294,
+        10787
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c005.png",
+      "전사발화수": 4
+    },
+    {
+      "id": "ep07_c006",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "세로범위": [
+        11370,
+        13544
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c006.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c007",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "세로범위": [
+        13673,
+        16294
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c007.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c008",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "세로범위": [
+        16685,
+        18035
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c008.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c009",
+      "원본": "work/ep07/merged/ep07_002.png",
+      "세로범위": [
+        19208,
+        21887
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c009.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c010",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "세로범위": [
+        204,
+        9193
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c010.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c011",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "세로범위": [
+        9941,
+        16349
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c011.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c012",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "세로범위": [
+        16862,
+        19751
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c012.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c013",
+      "원본": "work/ep07/merged/ep07_003.png",
+      "세로범위": [
+        19975,
+        25633
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c013.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c014",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "세로범위": [
+        10,
+        14277
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c014.png",
+      "전사발화수": 4
+    },
+    {
+      "id": "ep07_c015",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "세로범위": [
+        14409,
+        18246
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c015.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c016",
+      "원본": "work/ep07/merged/ep07_004.png",
+      "세로범위": [
+        19183,
+        26552
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c016.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c017",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "세로범위": [
+        739,
+        5607
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c017.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c018",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "세로범위": [
+        7434,
+        15090
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c018.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c019",
+      "원본": "work/ep07/merged/ep07_005.png",
+      "세로범위": [
+        15723,
+        25243
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c019.png",
+      "전사발화수": 4
+    },
+    {
+      "id": "ep07_c020",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "세로범위": [
+        3120,
+        9114
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c020.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c021",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "세로범위": [
+        9997,
+        14094
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c021.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c022",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "세로범위": [
+        14653,
+        18834
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c022.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c023",
+      "원본": "work/ep07/merged/ep07_006.png",
+      "세로범위": [
+        19023,
+        29086
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c023.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c024",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "세로범위": [
+        464,
+        8427
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c024.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c025",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "세로범위": [
+        9141,
+        12327
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c025.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c026",
+      "원본": "work/ep07/merged/ep07_007.png",
+      "세로범위": [
+        12331,
+        23593
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c026.png",
+      "전사발화수": 5
+    },
+    {
+      "id": "ep07_c027",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "세로범위": [
+        222,
+        2138
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c027.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c028",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "세로범위": [
+        2962,
+        3736
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c028.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c029",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "세로범위": [
+        3825,
+        7168
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c029.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c030",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "세로범위": [
+        8398,
+        10689
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c030.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c031",
+      "원본": "work/ep07/merged/ep07_008.png",
+      "세로범위": [
+        11868,
+        25363
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c031.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c032",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "세로범위": [
+        1284,
+        15625
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c032.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c033",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "세로범위": [
+        15835,
+        16493
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c033.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c034",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "세로범위": [
+        17306,
+        22764
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c034.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c035",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "세로범위": [
+        22958,
+        28057
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c035.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c036",
+      "원본": "work/ep07/merged/ep07_009.png",
+      "세로범위": [
+        28208,
+        29731
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c036.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c037",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "세로범위": [
+        422,
+        7985
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c037.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c038",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "세로범위": [
+        8426,
+        13432
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c038.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c039",
+      "원본": "work/ep07/merged/ep07_010.png",
+      "세로범위": [
+        14119,
+        22936
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c039.png",
+      "전사발화수": 4
+    },
+    {
+      "id": "ep07_c040",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "세로범위": [
+        222,
+        14816
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c040.png",
+      "전사발화수": 7
+    },
+    {
+      "id": "ep07_c041",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "세로범위": [
+        15712,
+        17356
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c041.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c042",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "세로범위": [
+        18270,
+        22465
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c042.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c043",
+      "원본": "work/ep07/merged/ep07_011.png",
+      "세로범위": [
+        23523,
+        27907
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c043.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c044",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "세로범위": [
+        264,
+        13832
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c044.png",
+      "전사발화수": 5
+    },
+    {
+      "id": "ep07_c045",
+      "원본": "work/ep07/merged/ep07_012.png",
+      "세로범위": [
+        15403,
+        24457
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c045.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c046",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "세로범위": [
+        384,
+        8441
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c046.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c047",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "세로범위": [
+        8461,
+        14499
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c047.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c048",
+      "원본": "work/ep07/merged/ep07_013.png",
+      "세로범위": [
+        15449,
+        19658
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c048.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c049",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "세로범위": [
+        721,
+        5278
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c049.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c050",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "세로범위": [
+        6671,
+        7886
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c050.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c051",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "세로범위": [
+        7962,
+        9908
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c051.png",
+      "전사발화수": 2
+    },
+    {
+      "id": "ep07_c052",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "세로범위": [
+        10176,
+        13254
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c052.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c053",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "세로범위": [
+        13578,
+        19837
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c053.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c054",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "세로범위": [
+        19904,
+        20543
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c054.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c055",
+      "원본": "work/ep07/merged/ep07_014.png",
+      "세로범위": [
+        20643,
+        23490
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c055.png",
+      "전사발화수": 0
+    },
+    {
+      "id": "ep07_c056",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "세로범위": [
+        377,
+        5354
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c056.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c057",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "세로범위": [
+        5354,
+        9434
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c057.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c058",
+      "원본": "work/ep07/merged/ep07_015.png",
+      "세로범위": [
+        9500,
+        28855
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c058.png",
+      "전사발화수": 4
+    },
+    {
+      "id": "ep07_c059",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "세로범위": [
+        92,
+        9509
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c059.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c060",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "세로범위": [
+        9823,
+        19386
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c060.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c061",
+      "원본": "work/ep07/merged/ep07_016.png",
+      "세로범위": [
+        19386,
+        29609
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c061.png",
+      "전사발화수": 3
+    },
+    {
+      "id": "ep07_c062",
+      "원본": "work/ep07/merged/ep07_017.png",
+      "세로범위": [
+        1538,
+        2549
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c062.png",
+      "전사발화수": 1
+    },
+    {
+      "id": "ep07_c063",
+      "원본": "work/ep07/merged/ep07_017.png",
+      "세로범위": [
+        2581,
+        9976
+      ],
+      "검증용파일": "assets/ep07/cuts/full_res/clean/ep07_c063.png",
+      "전사발화수": 0
+    }
+  ]
+}

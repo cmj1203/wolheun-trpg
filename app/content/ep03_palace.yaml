@@ -1,0 +1,2559 @@
+# 3화 실제 엔진용 대본. 원작 컷 직접 참조는 생성 CG 교체 전 검증 상태다.
+{
+  "id": "ep03_palace",
+  "title": "궁 안의 방",
+  "episode": "3화",
+  "source": "웹툰 「월흔」 3화 ep03_c001~ep03_c061",
+  "rating": "15세 이용가",
+  "start": "ep03_c001",
+  "sheet": {
+    "name": "아시나",
+    "abilities": {
+      "재치": 1,
+      "손재주": 1,
+      "매력": 2,
+      "근력": 0,
+      "교양": 1
+    },
+    "tracks": {
+      "체력": 4,
+      "정신력": 4,
+      "의심": 0,
+      "집착": 0,
+      "호감": 0,
+      "귀찌": 7,
+      "탈주": 0,
+      "행운": 6
+    },
+    "items": [
+      {
+        "id": "magic_bag",
+        "file": "assets/ep01/gen/items/item_magic_bag.png",
+        "name": "마법 가방",
+        "desc": "보기보다 훨씬 많이 들어가는 마법 가방. 여행 짐과 낡은 지도가 들어 있다.",
+        "states": [
+          {
+            "flag": "가방_끈",
+            "label": "끈 끊김",
+            "desc": "끈이 끊어져 손으로 쥐고 다닌다."
+          },
+          {
+            "flag": "짐_쏟음",
+            "label": "짐 쏟아짐",
+            "desc": "호위가 뒤집어 짐이 모래에 쏟아졌다."
+          }
+        ]
+      },
+      {
+        "id": "earring",
+        "file": "assets/ep01/gen/items/item_earring.png",
+        "name": "마법 귀찌",
+        "desc": "귓불에 달린 마법 귀찌."
+      },
+      {
+        "id": "map",
+        "file": "assets/ep01/gen/items/item_map.png",
+        "name": "낡은 지도",
+        "desc": "사막 한가운데서는 별 도움이 되지 않는 지도.",
+        "container": {
+          "item": "magic_bag",
+          "unless": "flag:지도_꺼냄 || flag:짐_쏟음"
+        },
+        "states": [
+          {
+            "flag": "지도_찢김",
+            "label": "찢김",
+            "desc": "한 귀퉁이가 찢겨 나갔다."
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "file": "assets/ep01/gen/items/item_pin.png",
+        "name": "가는 핀",
+        "desc": "옷 안쪽에 숨겨 둔 가늘고 단단한 핀.",
+        "hidden": true
+      }
+    ],
+    "tension": 3
+  },
+  "cast": {
+    "나레이션": {
+      "display": "",
+      "style": "narration"
+    },
+    "GM": {
+      "display": "GM",
+      "style": "gm",
+      "sprite": "gm"
+    },
+    "아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "sprite": "asina_hood",
+      "sprite_alt": {
+        "if": "flag:후드_벗음",
+        "sprite": "asina"
+      },
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "속마음": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "남자": {
+      "display": "붉은 눈의 남자",
+      "style": "speech",
+      "sprite": "man",
+      "lore": "베히다트",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    },
+    "ep03_나레이션": {
+      "display": "",
+      "style": "narration"
+    },
+    "ep03_아시나": {
+      "display": "아시나",
+      "style": "speech",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep03_독백": {
+      "display": "아시나",
+      "style": "thought",
+      "lore": "아시나",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "flustered",
+        "scared",
+        "indignant",
+        "smug",
+        "tired"
+      ]
+    },
+    "ep03_시녀": {
+      "display": "시녀",
+      "style": "speech",
+      "lore": "안내 시녀",
+      "presentation": "cg",
+      "faces": ["neutral"]
+    },
+    "ep03_목욕시녀": {
+      "display": "시녀",
+      "style": "speech",
+      "lore": "목욕 시녀",
+      "presentation": "cg",
+      "faces": ["neutral"]
+    },
+    "ep03_보고자": {
+      "display": "청록 터번의 남자",
+      "style": "speech",
+      "lore": "청록 터번 보고자",
+      "presentation": "cg",
+      "faces": ["neutral"]
+    },
+    "ep03_시하드": {
+      "display": "시하드",
+      "style": "speech",
+      "lore": "베히다트",
+      "faces": [
+        "neutral",
+        "smile",
+        "surprised",
+        "wary",
+        "sneer",
+        "dumbfounded",
+        "menacing",
+        "intrigued"
+      ]
+    },
+    "ep03_시종": {
+      "display": "시종",
+      "style": "speech",
+      "lore": "알림 시종",
+      "presentation": "cg",
+      "faces": ["neutral"]
+    },
+    "ep03_대족장": {
+      "display": "다라의 대족장",
+      "style": "speech",
+      "lore": "잘릴",
+      "presentation": "cg",
+      "faces": ["neutral", "scared"]
+    },
+    "ep03_잘릴": {
+      "display": "잘릴",
+      "style": "speech",
+      "lore": "잘릴",
+      "presentation": "cg",
+      "faces": ["neutral", "scared"]
+    },
+    "ep03_잘릴독백": {
+      "display": "잘릴",
+      "style": "thought",
+      "lore": "잘릴",
+      "presentation": "cg",
+      "faces": ["neutral", "scared"]
+    }
+  },
+  "backgrounds": {},
+  "sprites": {
+    "asina_hood": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_neutral_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_smile": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_smile_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_surprised": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_surprised.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_wary": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_wary_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_flustered": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_flustered_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_scared": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_scared_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_indignant": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_indignant_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_smug": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_smug_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_hood_tired": {
+      "label": "아시나(후드)",
+      "file": "assets/ep01/gen/hood/asina_hood_tired_r91.png",
+      "placeholder": "asina"
+    },
+    "asina": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_neutral_r91.png",
+      "placeholder": "asina",
+      "alt": {
+        "if": "!item:magic_bag",
+        "id": "asina_nobag"
+      }
+    },
+    "asina_smile": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_smile_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_surprised": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_surprised.png",
+      "placeholder": "asina"
+    },
+    "asina_wary": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_wary_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_flustered": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_flustered_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_scared": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_scared_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_indignant": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_indignant_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_smug": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_smug_r91.png",
+      "placeholder": "asina"
+    },
+    "asina_tired": {
+      "label": "아시나",
+      "file": "assets/ep01/gen/asina/asina_tired_r91.png",
+      "placeholder": "asina"
+    },
+    "man": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_neutral.png",
+      "placeholder": "man"
+    },
+    "man_sneer": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_sneer.png",
+      "placeholder": "man"
+    },
+    "man_dumbfounded": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_dumbfounded.png",
+      "placeholder": "man"
+    },
+    "man_menacing": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_menacing.png",
+      "placeholder": "man"
+    },
+    "man_intrigued": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_intrigued.png",
+      "placeholder": "man"
+    },
+    "gm": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_neutral.png",
+      "placeholder": "gm"
+    },
+    "gm_smile": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_smile.png",
+      "placeholder": "gm"
+    },
+    "gm_thinking": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_thinking.png",
+      "placeholder": "gm"
+    },
+    "gm_surprised": {
+      "label": "GM 사막여우",
+      "file": "assets/ep01/gen/gm/gm_surprised.png",
+      "placeholder": "gm"
+    },
+    "man_smile": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_smile.png",
+      "placeholder": "man"
+    },
+    "man_surprised": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_surprised.png",
+      "placeholder": "man"
+    },
+    "man_wary": {
+      "label": "붉은 눈의 남자",
+      "file": "assets/sprites/pilot/behidat_wary.png",
+      "placeholder": "man"
+    },
+    "asina_nobag": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_neutral_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_smile": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_smile_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_surprised": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_surprised_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_wary": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_wary_v5.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_flustered": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_flustered_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_scared": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_scared_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_indignant": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_indignant_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_smug": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_smug_v7r92.png",
+      "placeholder": "asina"
+    },
+    "asina_nobag_tired": {
+      "label": "아시나",
+      "file": "assets/ep02/gen/no_bag/asina_tired_v7r92.png",
+      "placeholder": "asina"
+    }
+  },
+  "cgs": {
+    "ep03_cg_001": {
+      "label": "3화 1컷",
+      "file": "assets/ep03/gen/ep03_c001.png",
+      "fit": "cover"
+    },
+    "ep03_cg_002": {
+      "label": "3화 2컷",
+      "file": "assets/ep03/gen/ep03_c002.png",
+      "fit": "cover"
+    },
+    "ep03_cg_003": {
+      "label": "3화 3컷",
+      "file": "assets/ep03/gen/ep03_c003.png",
+      "fit": "cover"
+    },
+    "ep03_cg_004": {
+      "label": "3화 4컷",
+      "file": "assets/ep03/gen/ep03_c003.png",
+      "fit": "cover"
+    },
+    "ep03_cg_005": {
+      "label": "3화 5컷",
+      "file": "assets/ep03/gen/ep03_c005.png",
+      "fit": "cover"
+    },
+    "ep03_cg_006": {
+      "label": "3화 6컷",
+      "file": "assets/ep03/gen/ep03_c005.png",
+      "fit": "cover"
+    },
+    "ep03_cg_007": {
+      "label": "3화 7컷",
+      "file": "assets/ep03/gen/source/ep03_c007.png",
+      "fit": "contain"
+    },
+    "ep03_cg_008": {
+      "label": "3화 8컷",
+      "file": "assets/ep03/gen/ep03_c008.png",
+      "fit": "cover"
+    },
+    "ep03_cg_009": {
+      "label": "3화 9컷",
+      "file": "assets/ep03/gen/source/ep03_c009.png",
+      "fit": "contain"
+    },
+    "ep03_cg_010": {
+      "label": "3화 10컷",
+      "file": "assets/ep03/gen/ep03_c010.png",
+      "fit": "cover"
+    },
+    "ep03_cg_011": {
+      "label": "3화 11컷",
+      "file": "assets/ep03/gen/ep03_c010.png",
+      "fit": "cover"
+    },
+    "ep03_cg_012": {
+      "label": "3화 12컷",
+      "file": "assets/ep03/gen/source/ep03_c012.png",
+      "fit": "contain"
+    },
+    "ep03_cg_013": {
+      "label": "3화 13컷",
+      "file": "assets/ep03/gen/source/ep03_c013.png",
+      "fit": "contain"
+    },
+    "ep03_cg_014": {
+      "label": "3화 14컷",
+      "file": "assets/ep03/gen/ep03_c014.png",
+      "fit": "cover"
+    },
+    "ep03_cg_015": {
+      "label": "3화 15컷",
+      "file": "assets/ep03/gen/ep03_c014.png",
+      "fit": "cover"
+    },
+    "ep03_cg_016": {
+      "label": "3화 16컷",
+      "file": "assets/ep03/gen/ep03_c016.png",
+      "fit": "cover"
+    },
+    "ep03_cg_017": {
+      "label": "3화 17컷",
+      "file": "assets/ep03/gen/ep03_c017.png",
+      "fit": "cover"
+    },
+    "ep03_cg_018": {
+      "label": "3화 18컷",
+      "file": "assets/ep03/gen/ep03_c017.png",
+      "fit": "cover"
+    },
+    "ep03_cg_019": {
+      "label": "3화 19컷",
+      "file": "assets/ep03/gen/source/ep03_c019.png",
+      "fit": "contain"
+    },
+    "ep03_cg_020": {
+      "label": "3화 20컷",
+      "file": "assets/ep03/gen/source/ep03_c020.png",
+      "fit": "contain"
+    },
+    "ep03_cg_021": {
+      "label": "3화 21컷",
+      "file": "assets/ep03/gen/source/ep03_c021.png",
+      "fit": "contain"
+    },
+    "ep03_cg_022": {
+      "label": "3화 22컷",
+      "file": "assets/ep03/gen/source/ep03_c022.png",
+      "fit": "contain"
+    },
+    "ep03_cg_023": {
+      "label": "3화 23컷",
+      "file": "assets/ep03/gen/source/ep03_c023.png",
+      "fit": "contain"
+    },
+    "ep03_cg_024": {
+      "label": "3화 24컷",
+      "file": "assets/ep03/gen/source/ep03_c024.png",
+      "fit": "contain"
+    },
+    "ep03_cg_025": {
+      "label": "3화 25컷",
+      "file": "assets/ep03/gen/source/ep03_c025.png",
+      "fit": "contain"
+    },
+    "ep03_cg_026": {
+      "label": "3화 26컷",
+      "file": "assets/ep03/gen/source/ep03_c026.png",
+      "fit": "contain"
+    },
+    "ep03_cg_027": {
+      "label": "3화 27컷",
+      "file": "assets/ep03/gen/source/ep03_c027.png",
+      "fit": "contain"
+    },
+    "ep03_cg_028": {
+      "label": "3화 28컷",
+      "file": "assets/ep03/gen/source/ep03_c028.png",
+      "fit": "contain"
+    },
+    "ep03_cg_029": {
+      "label": "3화 29컷",
+      "file": "assets/ep03/gen/source/ep03_c029.png",
+      "fit": "contain"
+    },
+    "ep03_cg_030": {
+      "label": "3화 30컷",
+      "file": "assets/ep03/gen/source/ep03_c030.png",
+      "fit": "contain"
+    },
+    "ep03_cg_031": {
+      "label": "3화 31컷",
+      "file": "assets/ep03/gen/source/ep03_c031.png",
+      "fit": "contain"
+    },
+    "ep03_cg_032": {
+      "label": "3화 32컷",
+      "file": "assets/ep03/gen/source/ep03_c032.png",
+      "fit": "contain"
+    },
+    "ep03_cg_033": {
+      "label": "3화 33컷",
+      "file": "assets/ep03/gen/source/ep03_c033.png",
+      "fit": "contain"
+    },
+    "ep03_cg_034": {
+      "label": "3화 34컷",
+      "file": "assets/ep03/gen/source/ep03_c034.png",
+      "fit": "contain"
+    },
+    "ep03_cg_035": {
+      "label": "3화 35컷",
+      "file": "assets/ep03/gen/source/ep03_c035.png",
+      "fit": "contain"
+    },
+    "ep03_cg_036": {
+      "label": "3화 36컷",
+      "file": "assets/ep03/gen/source/ep03_c036.png",
+      "fit": "contain"
+    },
+    "ep03_cg_037": {
+      "label": "3화 37컷",
+      "file": "assets/ep03/gen/source/ep03_c037.png",
+      "fit": "contain"
+    },
+    "ep03_cg_038": {
+      "label": "3화 38컷",
+      "file": "assets/ep03/gen/source/ep03_c038.png",
+      "fit": "contain"
+    },
+    "ep03_cg_039": {
+      "label": "3화 39컷",
+      "file": "assets/ep03/gen/source/ep03_c039.png",
+      "fit": "contain"
+    },
+    "ep03_cg_040": {
+      "label": "3화 40컷",
+      "file": "assets/ep03/gen/source/ep03_c040.png",
+      "fit": "contain"
+    },
+    "ep03_cg_041": {
+      "label": "3화 41컷",
+      "file": "assets/ep03/gen/source/ep03_c041.png",
+      "fit": "contain"
+    },
+    "ep03_cg_042": {
+      "label": "3화 42컷",
+      "file": "assets/ep03/gen/source/ep03_c042.png",
+      "fit": "contain"
+    },
+    "ep03_cg_043": {
+      "label": "3화 43컷",
+      "file": "assets/ep03/gen/source/ep03_c043.png",
+      "fit": "contain"
+    },
+    "ep03_cg_044": {
+      "label": "3화 44컷",
+      "file": "assets/ep03/gen/source/ep03_c044.png",
+      "fit": "contain"
+    },
+    "ep03_cg_045": {
+      "label": "3화 45컷",
+      "file": "assets/ep03/gen/source/ep03_c045.png",
+      "fit": "contain"
+    },
+    "ep03_cg_046": {
+      "label": "3화 46컷",
+      "file": "assets/ep03/gen/source/ep03_c046.png",
+      "fit": "contain"
+    },
+    "ep03_cg_047": {
+      "label": "3화 47컷",
+      "file": "assets/ep03/gen/source/ep03_c047.png",
+      "fit": "contain"
+    },
+    "ep03_cg_048": {
+      "label": "3화 48컷",
+      "file": "assets/ep03/gen/source/ep03_c048.png",
+      "fit": "contain"
+    },
+    "ep03_cg_049": {
+      "label": "3화 49컷",
+      "file": "assets/ep03/gen/source/ep03_c049.png",
+      "fit": "contain"
+    },
+    "ep03_cg_050": {
+      "label": "3화 50컷",
+      "file": "assets/ep03/gen/source/ep03_c050.png",
+      "fit": "contain"
+    },
+    "ep03_cg_051": {
+      "label": "3화 51컷",
+      "file": "assets/ep03/gen/source/ep03_c051.png",
+      "fit": "contain"
+    },
+    "ep03_cg_052": {
+      "label": "3화 52컷",
+      "file": "assets/ep03/gen/source/ep03_c052.png",
+      "fit": "contain"
+    },
+    "ep03_cg_053": {
+      "label": "3화 53컷",
+      "file": "assets/ep03/gen/source/ep03_c053.png",
+      "fit": "contain"
+    },
+    "ep03_cg_054": {
+      "label": "3화 54컷",
+      "file": "assets/ep03/gen/source/ep03_c054.png",
+      "fit": "contain"
+    },
+    "ep03_cg_055": {
+      "label": "3화 55컷",
+      "file": "assets/ep03/gen/source/ep03_c055.png",
+      "fit": "contain"
+    },
+    "ep03_cg_056": {
+      "label": "3화 56컷",
+      "file": "assets/ep03/gen/source/ep03_c056.png",
+      "fit": "contain"
+    },
+    "ep03_cg_057": {
+      "label": "3화 57컷",
+      "file": "assets/ep03/gen/source/ep03_c057.png",
+      "fit": "contain"
+    },
+    "ep03_cg_058": {
+      "label": "3화 58컷",
+      "file": "assets/ep03/gen/source/ep03_c058.png",
+      "fit": "contain"
+    },
+    "ep03_cg_059": {
+      "label": "3화 59컷",
+      "file": "assets/ep03/gen/source/ep03_c059.png",
+      "fit": "contain"
+    },
+    "ep03_cg_060": {
+      "label": "3화 60컷",
+      "file": "assets/ep03/gen/source/ep03_c060.png",
+      "fit": "contain"
+    },
+    "ep03_cg_061": {
+      "label": "3화 61컷",
+      "file": "assets/ep03/gen/source/ep03_c061.png",
+      "fit": "contain"
+    }
+  },
+  "facts": [
+    {
+      "if": "flag:ep03_시작 && !flag:ep03_하렘_앎",
+      "text": "아시나는 시녀를 따라가지만 목적지를 아직 듣지 못했다. 방의 용도와 아이라라는 말은 아직 모른다.",
+      "state_guard": [
+        "하렘",
+        "아이라"
+      ]
+    },
+    {
+      "if": "flag:ep03_하렘_앎 && !flag:ep03_유일한아이라_앎",
+      "text": "아시나는 하렘에 들어왔다는 말만 들었다. 입실자의 수와 아이라라는 설명은 아직 듣지 못했다.",
+      "state_guard": [
+        "유일한 아이라",
+        "유일한 후궁"
+      ]
+    },
+    {
+      "if": "flag:ep03_짐_수중없음",
+      "text": "여행복과 가방은 목욕 때 손을 떠났다. 짐과 치부책은 돌아오지 않았다. 삽입 그림은 아시나의 걱정과 기억이며 보관 장소·처리자는 모른다.",
+      "state_guard": [
+        "짐을 되찾",
+        "가방을 되찾",
+        "치부책을 되찾",
+        "보관소에",
+        "압수한 시녀"
+      ]
+    },
+    {
+      "if": "flag:ep03_귀찌_변장설명",
+      "text": "귀찌는 착용 중이며 갈색 머리·갈색 눈의 변장을 유지한다. 은발 삽입은 설명이고 실제 변장 해제가 아니다. 시녀에게 기능을 말하지 않았다.",
+      "state_guard": [
+        "변장이 풀려",
+        "은발이 드러",
+        "붉은 눈이 드러"
+      ]
+    },
+    {
+      "if": "flag:ep03_시작",
+      "text": "아시나는 붉은 휘장 방과 뒤의 접견실에 없었다. 관객이 본 궁정 대화는 아시나의 경험·인물 기억·직접 얻은 정보가 아니다.",
+      "state_guard": [
+        "잘릴에게 들",
+        "잘릴을 만났",
+        "접견실에서 들",
+        "총기가 흐려졌다는 소문을 들"
+      ]
+    },
+    {
+      "if": "flag:ep03_복장_청록복",
+      "text": "아시나는 금색 머리장식·귀찌·보석과 청록 궁정복을 착용한다. 여행복과 사막 후드를 입고 있지 않다.",
+      "state_guard": [
+        "후드를 뒤집어",
+        "여행복 소매",
+        "베일을 걷"
+      ]
+    }
+  ],
+  "beats": {
+    "ep03_c001": {
+      "title": "궁 안으로",
+      "cut": "ep03_c001",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_001"
+        }
+      ],
+      "next": "ep03_c002",
+      "effects": {
+        "flags": {
+          "후속_시작": true,
+          "ep03_시작": true,
+          "ep03_복장_여행복": true,
+          "후드_벗음": true
+        }
+      }
+    },
+    "ep03_c002": {
+      "title": "궁 안으로",
+      "cut": "ep03_c002",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시녀": "아가씨.",
+          "cg": "ep03_cg_002"
+        },
+        {
+          "ep03_시녀": "따라오세요.",
+          "cg": "ep03_cg_002"
+        }
+      ],
+      "next": "ep03_c003"
+    },
+    "ep03_c003": {
+      "title": "궁 안으로",
+      "cut": "ep03_c003",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "여긴 어디지?",
+          "cg": "ep03_cg_003"
+        },
+        {
+          "ep03_독백": "엄청나게 넓어…",
+          "cg": "ep03_cg_003"
+        },
+        {
+          "ep03_시녀": "들어가시지요.",
+          "cg": "ep03_cg_003"
+        }
+      ],
+      "next": "ep03_c004"
+    },
+    "ep03_c004": {
+      "title": "궁 안으로",
+      "cut": "ep03_c004",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "…!",
+          "cg": "ep03_cg_004"
+        }
+      ],
+      "next": "ep03_c005"
+    },
+    "ep03_c005": {
+      "title": "목욕실",
+      "cut": "ep03_c005",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "뭐야, 이 사람들은!",
+          "cg": "ep03_cg_005"
+        }
+      ],
+      "next": "ep03_c006"
+    },
+    "ep03_c006": {
+      "title": "목욕실",
+      "cut": "ep03_c006",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_006"
+        }
+      ],
+      "next": "ep03_c007"
+    },
+    "ep03_c007": {
+      "title": "목욕실",
+      "cut": "ep03_c007",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "다짜고짜 멱살을?!",
+          "cg": "ep03_cg_007"
+        }
+      ],
+      "next": "ep03_c008"
+    },
+    "ep03_c008": {
+      "title": "목욕실",
+      "cut": "ep03_c008",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "꺄악! 어딜 손대요!",
+          "cg": "ep03_cg_008"
+        },
+        {
+          "ep03_아시나": "대체 왜 이래요!",
+          "cg": "ep03_cg_008"
+        },
+        {
+          "ep03_아시나": "이러지 마세요 언니들!",
+          "cg": "ep03_cg_008"
+        }
+      ],
+      "next": "ep03_c009",
+      "effects": {
+        "lose": [
+          "magic_bag",
+          "map"
+        ],
+        "flags": {
+          "ep03_짐_수중없음": true,
+          "ep03_복장_여행복": false,
+          "ep03_복장_수건": true
+        }
+      }
+    },
+    "ep03_c009": {
+      "title": "목욕실",
+      "cut": "ep03_c009",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_009"
+        }
+      ],
+      "next": "ep03_c010"
+    },
+    "ep03_c010": {
+      "title": "목욕실",
+      "cut": "ep03_c010",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "어어어?",
+          "cg": "ep03_cg_010"
+        }
+      ],
+      "next": "ep03_c011"
+    },
+    "ep03_c011": {
+      "title": "목욕실",
+      "cut": "ep03_c011",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "꺄악!!",
+          "cg": "ep03_cg_011"
+        }
+      ],
+      "next": "ep03_c012"
+    },
+    "ep03_c012": {
+      "title": "목욕실",
+      "cut": "ep03_c012",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "제발 예고라도 하고 해달라고!",
+          "cg": "ep03_cg_012"
+        }
+      ],
+      "next": "ep03_c013"
+    },
+    "ep03_c013": {
+      "title": "목욕실",
+      "cut": "ep03_c013",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "하아… 말을 말자.",
+          "cg": "ep03_cg_013"
+        },
+        {
+          "ep03_독백": "끌려온 주제에 잠자코 있어야지.",
+          "cg": "ep03_cg_013"
+        }
+      ],
+      "next": "ep03_c014"
+    },
+    "ep03_c014": {
+      "title": "목욕실",
+      "cut": "ep03_c014",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_014"
+        }
+      ],
+      "next": "ep03_c015"
+    },
+    "ep03_c015": {
+      "title": "목욕실",
+      "cut": "ep03_c015",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "후우…",
+          "cg": "ep03_cg_015"
+        }
+      ],
+      "next": "ep03_c016"
+    },
+    "ep03_c016": {
+      "title": "목욕실",
+      "cut": "ep03_c016",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_016"
+        }
+      ],
+      "next": "ep03_c017"
+    },
+    "ep03_c017": {
+      "title": "건네받은 옷",
+      "cut": "ep03_c017",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_목욕시녀": "이제 이걸 입으십시오.",
+          "cg": "ep03_cg_017"
+        },
+        {
+          "ep03_아시나": "!",
+          "cg": "ep03_cg_017"
+        }
+      ],
+      "next": "ep03_c018"
+    },
+    "ep03_c018": {
+      "title": "건네받은 옷",
+      "cut": "ep03_c018",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "이…이걸 입으라고요?",
+          "cg": "ep03_cg_018"
+        }
+      ],
+      "next": "ep03_c019"
+    },
+    "ep03_c019": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c019",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_019"
+        }
+      ],
+      "next": "ep03_c020"
+    },
+    "ep03_c020": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c020",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_020"
+        }
+      ],
+      "next": "ep03_c021"
+    },
+    "ep03_c021": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c021",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_021"
+        }
+      ],
+      "next": "ep03_c022"
+    },
+    "ep03_c022": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c022",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_022"
+        }
+      ],
+      "next": "ep03_c023"
+    },
+    "ep03_c023": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c023",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_보고자"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_보고자": "시하드시여,",
+          "cg": "ep03_cg_023"
+        },
+        {
+          "ep03_보고자": "무슨 흥겨운 일이라도 있으신가 봅니다.",
+          "cg": "ep03_cg_023"
+        },
+        {
+          "ep03_시하드": "아…",
+          "cg": "ep03_cg_023"
+        },
+        {
+          "ep03_시하드": "있긴 있지.",
+          "cg": "ep03_cg_023"
+        }
+      ],
+      "next": "ep03_c024"
+    },
+    "ep03_c024": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c024",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_023"
+        }
+      ],
+      "next": "ep03_c025"
+    },
+    "ep03_c025": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c025",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시하드": "쥐새끼… 아니,",
+          "cg": "ep03_cg_023"
+        }
+      ],
+      "next": "ep03_c026"
+    },
+    "ep03_c026": {
+      "perspective": "audience",
+      "title": "붉은 휘장",
+      "cut": "ep03_c026",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시하드": "고양이를 잡아왔거든.",
+          "cg": "ep03_cg_026"
+        }
+      ],
+      "next": "ep03_c026_asina"
+    },
+    "ep03_c026_asina": {
+      "title": "붉은 휘장",
+      "cut": "ep03_c026",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "정말…",
+          "cg": "ep03_cg_026"
+        }
+      ],
+      "next": "ep03_c027"
+    },
+    "ep03_c027": {
+      "title": "사라진 짐",
+      "cut": "ep03_c027",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "여기 여자들은 이런 옷을 입는 거야?",
+          "cg": "ep03_cg_027"
+        },
+        {
+          "ep03_독백": "가슴 아래로 천이 없잖아!",
+          "cg": "ep03_cg_027"
+        }
+      ],
+      "next": "ep03_c028",
+      "effects": {
+        "flags": {
+          "ep03_복장_수건": false,
+          "ep03_복장_청록복": true
+        }
+      }
+    },
+    "ep03_c028": {
+      "title": "사라진 짐",
+      "cut": "ep03_c028",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "…안 입으면 기절시켜서라도 입힐 기세라 입긴 입었다만.",
+          "cg": "ep03_cg_028"
+        }
+      ],
+      "next": "ep03_c029"
+    },
+    "ep03_c029": {
+      "title": "사라진 짐",
+      "cut": "ep03_c029",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "허억!",
+          "cg": "ep03_cg_029"
+        },
+        {
+          "ep03_독백": "그러고 보니 내 짐들은?",
+          "cg": "ep03_cg_029"
+        }
+      ],
+      "next": "ep03_c030"
+    },
+    "ep03_c030": {
+      "title": "사라진 짐",
+      "cut": "ep03_c030",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_029"
+        }
+      ],
+      "next": "ep03_c031"
+    },
+    "ep03_c031": {
+      "title": "사라진 짐",
+      "cut": "ep03_c031",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "아까 옷 벗으면서 강탈 당한 건가?",
+          "cg": "ep03_cg_031"
+        }
+      ],
+      "next": "ep03_c032"
+    },
+    "ep03_c032": {
+      "title": "사라진 짐",
+      "cut": "ep03_c032",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "안돼-!!",
+          "cg": "ep03_cg_032"
+        },
+        {
+          "ep03_독백": "내 지도, 돈, 옷…",
+          "cg": "ep03_cg_032"
+        },
+        {
+          "ep03_독백": "그리고 미소년 초상화 모음집!!",
+          "cg": "ep03_cg_032"
+        }
+      ],
+      "next": "ep03_c033"
+    },
+    "ep03_c033": {
+      "title": "사라진 짐",
+      "cut": "ep03_c033",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "무엇보다 치부책! 그게 없으면 안되는데.",
+          "cg": "ep03_cg_033"
+        },
+        {
+          "ep03_독백": "여행 중 위급상황에 내 신분을 증명해 줄 유일한 물건이니까…",
+          "cg": "ep03_cg_033",
+          "sets": "ep03_치부책_중요성"
+        }
+      ],
+      "next": "ep03_c034"
+    },
+    "ep03_c034": {
+      "title": "사라진 짐",
+      "cut": "ep03_c034",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "막막하다…",
+          "cg": "ep03_cg_034"
+        },
+        {
+          "ep03_독백": "이 넓은 곳에서 어떻게 짐을 찾지…",
+          "cg": "ep03_cg_034"
+        }
+      ],
+      "next": "ep03_c035"
+    },
+    "ep03_c035": {
+      "title": "몸에 지닌 것",
+      "cut": "ep03_c035",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "그래도…",
+          "cg": "ep03_cg_034"
+        }
+      ],
+      "next": "ep03_c036"
+    },
+    "ep03_c036": {
+      "title": "몸에 지닌 것",
+      "cut": "ep03_c036",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "제일 중요한 건 몸에 지니고 있어서 다행이라 해야 할지…",
+          "cg": "ep03_cg_036"
+        },
+        {
+          "ep03_독백": "마법이 걸린 특수한 귀찌.",
+          "cg": "ep03_cg_036"
+        },
+        {
+          "ep03_독백": "은발에 붉은 눈동자인 본모습을 감추고,",
+          "cg": "ep03_cg_036"
+        },
+        {
+          "ep03_독백": "갈색 머리 갈색 눈으로 보이게 해준다.",
+          "cg": "ep03_cg_036"
+        },
+        {
+          "ep03_독백": "이게 있는 덕에 그동안 정체를 들키지 않고 마음껏 여행할 수 있었지…",
+          "cg": "ep03_cg_036",
+          "sets": "ep03_귀찌_변장설명"
+        }
+      ],
+      "next": "ep03_c037"
+    },
+    "ep03_c037": {
+      "title": "몸에 지닌 것",
+      "cut": "ep03_c037",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_036"
+        }
+      ],
+      "next": "ep03_c038"
+    },
+    "ep03_c038": {
+      "title": "몸에 지닌 것",
+      "cut": "ep03_c038",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시녀": "뭐하세요?",
+          "cg": "ep03_cg_038"
+        },
+        {
+          "ep03_시녀": "이쪽으로 오세요.",
+          "cg": "ep03_cg_038"
+        }
+      ],
+      "next": "ep03_c039"
+    },
+    "ep03_c039": {
+      "title": "안쪽 방",
+      "cut": "ep03_c039",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_039"
+        }
+      ],
+      "next": "ep03_c040"
+    },
+    "ep03_c040": {
+      "title": "안쪽 방",
+      "cut": "ep03_c040",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시녀": "여기로.",
+          "cg": "ep03_cg_039"
+        },
+        {
+          "ep03_독백": "…뭐지, 이 찝찝한 느낌은?",
+          "cg": "ep03_cg_039"
+        },
+        {
+          "ep03_독백": "점점 더 깊숙한 곳으로 가고 있는 것 같은 게… 어디로 가는 거야, 도대체.",
+          "cg": "ep03_cg_039"
+        },
+        {
+          "ep03_시녀": "자,",
+          "cg": "ep03_cg_039"
+        },
+        {
+          "ep03_시녀": "아가씨께서 하렘에서 지내실 곳은 이곳입니다.",
+          "cg": "ep03_cg_040",
+          "sets": "ep03_하렘_앎"
+        }
+      ],
+      "next": "ep03_c041"
+    },
+    "ep03_c041": {
+      "title": "낯선 방",
+      "cut": "ep03_c041",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "오, 엄청 화려한 방인데.",
+          "cg": "ep03_cg_041"
+        }
+      ],
+      "next": "ep03_c042"
+    },
+    "ep03_c042": {
+      "title": "낯선 방",
+      "cut": "ep03_c042",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "…잠깐,",
+          "cg": "ep03_cg_042"
+        },
+        {
+          "ep03_독백": "하렘?",
+          "cg": "ep03_cg_042"
+        }
+      ],
+      "next": "ep03_c043"
+    },
+    "ep03_c043": {
+      "title": "낯선 방",
+      "cut": "ep03_c043",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "하렘이요?",
+          "cg": "ep03_cg_043"
+        },
+        {
+          "ep03_시녀": "네, 하렘.",
+          "cg": "ep03_cg_043"
+        }
+      ],
+      "next": "ep03_c044"
+    },
+    "ep03_c044": {
+      "title": "낯선 방",
+      "cut": "ep03_c044",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "남자가 여자를 단체로 집어넣고 자기 맘대로 갖고 논다는 그곳?",
+          "cg": "ep03_cg_044"
+        },
+        {
+          "ep03_시녀": "네, 그렇습니다.",
+          "cg": "ep03_cg_044"
+        }
+      ],
+      "next": "ep03_c045"
+    },
+    "ep03_c045": {
+      "title": "낯선 방",
+      "cut": "ep03_c045",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_045"
+        }
+      ],
+      "next": "ep03_c046"
+    },
+    "ep03_c046": {
+      "title": "다른 생각",
+      "cut": "ep03_c046",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "날 하렘에 집어넣다니!",
+          "cg": "ep03_cg_046"
+        },
+        {
+          "ep03_독백": "미친 거 아냐? 차라리 감옥에 가둬라!",
+          "cg": "ep03_cg_046"
+        },
+        {
+          "ep03_독백": "분명 그놈 짓이겠지?",
+          "cg": "ep03_cg_046"
+        },
+        {
+          "ep03_독백": "바보, 멍청이, 미친놈!",
+          "cg": "ep03_cg_046"
+        },
+        {
+          "ep03_독백": "잘생긴 낯짝이 아깝다, 나쁜 놈아!",
+          "cg": "ep03_cg_046"
+        },
+        {
+          "ep03_시녀": "일어나세요, 아가씨. 바닥이 찹니다.",
+          "cg": "ep03_cg_046"
+        },
+        {
+          "ep03_시녀": "하렘에 들어온 건 영광중의 영광이라고요. 기뻐하셔야죠.",
+          "cg": "ep03_cg_046"
+        }
+      ],
+      "conversation": {
+        "situation": "아시나는 하렘에 들어왔고, 눈앞의 안내 시녀가 입실을 영광이라고 말했다. 시녀는 이 대우를 기쁘게 여긴다.",
+        "goal": "아시나가 실제로 건넨 말과 몸짓을 안내 시녀의 기존 가치관과 존댓말로 받는다.",
+        "speakers": ["ep03_나레이션", "ep03_시녀"],
+        "must_not": [
+          "아시나가 입력하지 않은 항의나 질문을 대신 말하지 않는다.",
+          "하렘을 나가거나 물건을 돌려받거나 신분이 공개되었다고 확정하지 않는다."
+        ],
+        "state_guard": [],
+        "echo_only": [],
+        "talk_fallback": [],
+        "deflect": [],
+        "cg": "ep03_cg_046",
+        "next": "ep03_i01_custom_tail"
+      },
+      "choices": [
+        {
+          "id": "ep03_i01_protest",
+          "text": "부당한 대우라고 항의한다",
+          "lines": [
+            {
+              "ep03_아시나": "말이 돼? 정신 차려! 남자와 여자는 무조건 한 쌍이어야 한다고!",
+              "cg": "ep03_cg_046"
+            },
+            {
+              "ep03_아시나": "여러 명의 여자랑 놀아나는 곳에 들어온 건데, 어떻게 영광이야!",
+              "cg": "ep03_cg_046"
+            },
+            {
+              "ep03_아시나": "당신들은 장난감 취급 당하고 있는 거야.",
+              "cg": "ep03_cg_046"
+            },
+            {
+              "ep03_아시나": "이건 부당한 대우라고! 정신 차려!",
+              "cg": "ep03_cg_046"
+            }
+          ],
+          "effects": {
+            "flags": {
+              "ep03_항의_직접": true
+            }
+          },
+          "next": "ep03_c047"
+        },
+        {
+          "id": "ep03_i01_ask",
+          "text": "왜 영광이라고 생각하는지 묻는다",
+          "lines": [
+            {
+              "ep03_아시나": "남자의 장난감 취급을 받는 게, 어떻게 영광이죠?",
+              "cg": "ep03_cg_046"
+            }
+          ],
+          "effects": {
+            "flags": {
+              "ep03_시녀가치관_질문": true
+            }
+          },
+          "next": "ep03_c047"
+        }
+      ]
+    },
+    "ep03_i01_custom_tail": {
+      "title": "다른 생각",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {"ep03_나레이션": "", "cg": "ep03_cg_047"},
+        {"ep03_나레이션": "", "cg": "ep03_cg_048"}
+      ],
+      "effects": {
+        "flags": {"ep03_금색신발_벗음": true}
+      },
+      "next": "ep03_c049"
+    },
+    "ep03_c047": {
+      "title": "다른 생각",
+      "cut": "ep03_c047",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시녀": "무슨 부당한 대우라는 거죠?",
+          "cg": "ep03_cg_047"
+        },
+        {
+          "ep03_시녀": "그분께서 절 장난감으로라도 여겨 주신다면, 그저 기쁠 뿐입니다.",
+          "cg": "ep03_cg_047"
+        }
+      ],
+      "next": "ep03_c048"
+    },
+    "ep03_c048": {
+      "title": "다른 생각",
+      "cut": "ep03_c048",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_독백": "글렀어… 말이 안 통해…",
+          "cg": "ep03_cg_048"
+        },
+        {
+          "ep03_독백": "이 사람들 다 세뇌당했어…",
+          "cg": "ep03_cg_048"
+        },
+        {
+          "ep03_아시나": "하아…",
+          "cg": "ep03_cg_048"
+        },
+        {
+          "ep03_아시나": "리메시아여…",
+          "cg": "ep03_cg_048"
+        }
+      ],
+      "next": "ep03_c049",
+      "effects": {
+        "flags": {
+          "ep03_금색신발_벗음": true
+        }
+      }
+    },
+    "ep03_c049": {
+      "title": "조용한 방",
+      "cut": "ep03_c049",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_049"
+        }
+      ],
+      "conversation": {
+        "situation": "아시나는 하렘 침실에서 방이 조용하다는 것을 알아차렸다. 안내 시녀가 곁에 있다.",
+        "goal": "지금 건넨 질문이나 몸짓에 반응하되, 아직 장면에서 밝히지 않은 설명을 먼저 하지 않는다.",
+        "speakers": ["ep03_나레이션", "ep03_시녀"],
+        "must_not": [
+          "아시나의 다음 질문을 대신 쓰지 않는다.",
+          "다른 입실자의 명단이나 시하드의 의도를 지어내지 않는다."
+        ],
+        "state_guard": [],
+        "echo_only": [],
+        "talk_fallback": [],
+        "deflect": [],
+        "cg": "ep03_cg_049",
+        "next": "ep03_i02_custom_tail"
+      },
+      "choices": [
+        {
+          "id": "ep03_i02_quiet",
+          "text": "방이 조용한 이유를 묻는다",
+          "lines": [
+            {
+              "ep03_아시나": "…근데, 왜 이렇게 조용하죠?",
+              "cg": "ep03_cg_049"
+            },
+            {
+              "ep03_아시나": "다른 여자들은 어디 있길래…",
+              "cg": "ep03_cg_049"
+            }
+          ],
+          "effects": {
+            "flags": {
+              "ep03_조용한방_질문": true
+            }
+          },
+          "next": "ep03_c050"
+        },
+        {
+          "id": "ep03_i02_others",
+          "text": "다른 입실자가 있는지 묻는다",
+          "lines": [
+            {
+              "ep03_아시나": "이곳에 저 말고 다른 분도 계신가요?",
+              "cg": "ep03_cg_049"
+            }
+          ],
+          "effects": {
+            "flags": {
+              "ep03_다른입실자_질문": true
+            }
+          },
+          "next": "ep03_c050"
+        }
+      ]
+    },
+    "ep03_i02_custom_tail": {
+      "title": "조용한 방",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시녀": "아가씨께서 하렘의 유일한 '아이라'시니까요.",
+          "cg": "ep03_cg_050",
+          "sets": "ep03_유일한아이라_앎"
+        },
+        {"ep03_나레이션": "", "cg": "ep03_cg_051"}
+      ],
+      "next": "ep03_c052"
+    },
+    "ep03_c050": {
+      "title": "조용한 방",
+      "cut": "ep03_c050",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": "ep03_시녀"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시녀": "그야,",
+          "cg": "ep03_cg_050"
+        },
+        {
+          "ep03_시녀": "아가씨께서 하렘의 유일한 '아이라'시니까요.",
+          "cg": "ep03_cg_050",
+          "sets": "ep03_유일한아이라_앎"
+        }
+      ],
+      "next": "ep03_c051"
+    },
+    "ep03_c051": {
+      "title": "조용한 방",
+      "cut": "ep03_c051",
+      "cast": {
+        "left": "ep03_아시나",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_아시나": "하렘에…",
+          "cg": "ep03_cg_051"
+        },
+        {
+          "ep03_아시나": "나 혼자라고?",
+          "cg": "ep03_cg_051"
+        }
+      ],
+      "next": "ep03_c052"
+    },
+    "ep03_c052": {
+      "perspective": "audience",
+      "title": "접견",
+      "cut": "ep03_c052",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_대족장"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시종": "시하드시여, 다라의 대족장께서 오셨습니다.",
+          "cg": "ep03_cg_052"
+        },
+        {
+          "ep03_시하드": "들여라.",
+          "cg": "ep03_cg_052"
+        },
+        {
+          "ep03_대족장": "다라의 잘릴, 위대하신 라 쿤을 뵈옵니다.",
+          "cg": "ep03_cg_052",
+          "sets": "ep03_관객_잘릴접견"
+        }
+      ],
+      "next": "ep03_c053"
+    },
+    "ep03_c053": {
+      "perspective": "audience",
+      "title": "접견",
+      "cut": "ep03_c053",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시하드": "그래, 대족장이 무슨 일이지?",
+          "cg": "ep03_cg_053"
+        },
+        {
+          "ep03_잘릴": "시하드께서 아슈마에 성지에서 무사히 도착하셨다는 소식을 듣고 인사차 온 겁니다.",
+          "cg": "ep03_cg_053"
+        }
+      ],
+      "next": "ep03_c054"
+    },
+    "ep03_c054": {
+      "perspective": "audience",
+      "title": "접견",
+      "cut": "ep03_c054",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_잘릴": "그러고 보니,",
+          "cg": "ep03_cg_054"
+        }
+      ],
+      "next": "ep03_c055"
+    },
+    "ep03_c055": {
+      "perspective": "audience",
+      "title": "석류",
+      "cut": "ep03_c055",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_잘릴": "하얀 피부의 여자를 하렘에 들이셨다고 들었습니다.",
+          "cg": "ep03_cg_054"
+        },
+        {
+          "ep03_잘릴": "예전에야 노예들도 하렘에 들였다지만…",
+          "cg": "ep03_cg_054"
+        },
+        {
+          "ep03_잘릴": "그런 혈통도 알 수 없는 미천한 여자를 그런 중요한 곳에 두시다니.",
+          "cg": "ep03_cg_054"
+        },
+        {
+          "ep03_잘릴": "소신 그 소식을 듣고 무척이나 놀랐습니다.",
+          "cg": "ep03_cg_054"
+        },
+        {
+          "ep03_잘릴": "정말 라 쿤의 총기가 흐려졌다는 소문이 사실인 줄 알고…",
+          "cg": "ep03_cg_054",
+          "sets": "ep03_관객_총기소문"
+        },
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_055"
+        }
+      ],
+      "next": "ep03_c056"
+    },
+    "ep03_c056": {
+      "perspective": "audience",
+      "title": "석류",
+      "cut": "ep03_c056",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_056"
+        }
+      ],
+      "next": "ep03_c057"
+    },
+    "ep03_c057": {
+      "perspective": "audience",
+      "title": "석류",
+      "cut": "ep03_c057",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시하드": "감히,",
+          "cg": "ep03_cg_057"
+        },
+        {
+          "ep03_시하드": "내게 시비를 거는 건가, 잘릴.",
+          "cg": "ep03_cg_057"
+        }
+      ],
+      "next": "ep03_c058"
+    },
+    "ep03_c058": {
+      "perspective": "audience",
+      "title": "석류",
+      "cut": "ep03_c058",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_잘릴": "…!",
+          "cg": "ep03_cg_058"
+        },
+        {
+          "ep03_잘릴독백": "압도되는 살기…",
+          "cg": "ep03_cg_058"
+        },
+        {
+          "ep03_잘릴독백": "정말 죽을 수도 있다!",
+          "cg": "ep03_cg_058"
+        },
+        {
+          "ep03_잘릴": "저, 저는 그저 걱정이 되어-",
+          "cg": "ep03_cg_058"
+        },
+        {
+          "ep03_시하드": "그딴 건 필요 없다.",
+          "cg": "ep03_cg_058"
+        }
+      ],
+      "next": "ep03_c059"
+    },
+    "ep03_c059": {
+      "perspective": "audience",
+      "title": "석류",
+      "cut": "ep03_c059",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시하드": "꺼져라.",
+          "cg": "ep03_cg_058"
+        }
+      ],
+      "next": "ep03_c060"
+    },
+    "ep03_c060": {
+      "perspective": "audience",
+      "title": "문이 닫힌 뒤",
+      "cut": "ep03_c060",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": "ep03_잘릴"
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_나레이션": "",
+          "cg": "ep03_cg_060"
+        }
+      ],
+      "next": "ep03_c061"
+    },
+    "ep03_c061": {
+      "perspective": "audience",
+      "title": "문이 닫힌 뒤",
+      "cut": "ep03_c061",
+      "cast": {
+        "left": "ep03_시하드",
+        "center": null,
+        "right": null
+      },
+      "time": 0,
+      "lines": [
+        {
+          "ep03_시하드": "어디…",
+          "cg": "ep03_cg_061"
+        },
+        {
+          "ep03_시하드": "얼마나 까부는지 지켜봐 주지.",
+          "cg": "ep03_cg_061",
+          "sets": "ep03_완료"
+        }
+      ],
+      "ending": {
+        "id": "ep03_boundary",
+        "title": "3화",
+        "summary": "아시나는 새 방에 남아 있고, 접견실의 문은 닫혔다.",
+        "next_hook": "이어지는 장면은 4화에서 계속된다."
+      }
+    }
+  },
+  "atlas": {
+    "chapters": [
+      {
+        "id": "ep03",
+        "label": "3화",
+        "nodes": [
+          "ep03_s01",
+          "ep03_s02",
+          "ep03_s03",
+          "ep03_s04",
+          "ep03_s05",
+          "ep03_s06",
+          "ep03_s07",
+          "ep03_decision01",
+          "ep03_s08",
+          "ep03_decision02",
+          "ep03_s09",
+          "ep03_s10",
+          "ep03_s11",
+          "ep03_s12"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ep03_s01",
+        "label": "궁 안으로 안내받다",
+        "col": 18,
+        "row": 3,
+        "beats": [
+          "ep03_c001",
+          "ep03_c002",
+          "ep03_c003",
+          "ep03_c004"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s02",
+        "label": "목욕 시녀들과 대면",
+        "col": 19,
+        "row": 3,
+        "beats": [
+          "ep03_c005",
+          "ep03_c006",
+          "ep03_c007",
+          "ep03_c008",
+          "ep03_c009",
+          "ep03_c010",
+          "ep03_c011",
+          "ep03_c012",
+          "ep03_c013",
+          "ep03_c014",
+          "ep03_c015",
+          "ep03_c016"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s03",
+        "label": "새 옷을 건네받다",
+        "col": 20,
+        "row": 3,
+        "beats": [
+          "ep03_c017",
+          "ep03_c018"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s04",
+        "label": "붉은 의자와 호피",
+        "col": 21,
+        "row": 3,
+        "beats": [
+          "ep03_c019",
+          "ep03_c020",
+          "ep03_c021",
+          "ep03_c022",
+          "ep03_c023",
+          "ep03_c024",
+          "ep03_c025",
+          "ep03_c026",
+          "ep03_c026_asina"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s05",
+        "label": "낯선 옷차림",
+        "col": 22,
+        "row": 3,
+        "beats": [
+          "ep03_c027",
+          "ep03_c028",
+          "ep03_c029",
+          "ep03_c030",
+          "ep03_c031",
+          "ep03_c032",
+          "ep03_c033",
+          "ep03_c034"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s06",
+        "label": "몸에 지닌 물건",
+        "col": 23,
+        "row": 3,
+        "beats": [
+          "ep03_c035",
+          "ep03_c036",
+          "ep03_c037",
+          "ep03_c038"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s07",
+        "label": "시녀를 따라 안쪽으로",
+        "col": 24,
+        "row": 3,
+        "beats": [
+          "ep03_c039",
+          "ep03_c040",
+          "ep03_c041",
+          "ep03_c042",
+          "ep03_c043",
+          "ep03_c044",
+          "ep03_c045"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_decision01",
+        "label": "하렘 입실에 반발",
+        "col": 25,
+        "row": 3,
+        "beats": [
+          "ep03_c046"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s08",
+        "label": "엇갈린 하렘 인식",
+        "col": 26,
+        "row": 3,
+        "beats": [
+          "ep03_c047",
+          "ep03_c048",
+          "ep03_i01_custom_tail"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_decision02",
+        "label": "다른 입실자 묻기",
+        "col": 27,
+        "row": 3,
+        "beats": [
+          "ep03_c049"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s09",
+        "label": "유일한 아이라",
+        "col": 28,
+        "row": 3,
+        "beats": [
+          "ep03_c050",
+          "ep03_c051",
+          "ep03_i02_custom_tail"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s10",
+        "label": "대족장의 방문",
+        "col": 29,
+        "row": 3,
+        "beats": [
+          "ep03_c052",
+          "ep03_c053",
+          "ep03_c054"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s11",
+        "label": "하렘 입실을 문제 삼다",
+        "col": 30,
+        "row": 3,
+        "beats": [
+          "ep03_c055",
+          "ep03_c056",
+          "ep03_c057",
+          "ep03_c058",
+          "ep03_c059"
+        ],
+        "ending": false
+      },
+      {
+        "id": "ep03_s12",
+        "label": "잘릴의 퇴장",
+        "col": 31,
+        "row": 3,
+        "beats": [
+          "ep03_c060",
+          "ep03_c061"
+        ],
+        "ending": false
+      }
+    ],
+    "edges": [
+      [
+        "ep03_s01",
+        "ep03_s02"
+      ],
+      [
+        "ep03_s02",
+        "ep03_s03"
+      ],
+      [
+        "ep03_s03",
+        "ep03_s04"
+      ],
+      [
+        "ep03_s04",
+        "ep03_s05"
+      ],
+      [
+        "ep03_s05",
+        "ep03_s06"
+      ],
+      [
+        "ep03_s06",
+        "ep03_s07"
+      ],
+      [
+        "ep03_s07",
+        "ep03_decision01"
+      ],
+      [
+        "ep03_decision01",
+        "ep03_s08"
+      ],
+      [
+        "ep03_s08",
+        "ep03_decision02"
+      ],
+      [
+        "ep03_decision02",
+        "ep03_s09"
+      ],
+      [
+        "ep03_s09",
+        "ep03_s10"
+      ],
+      [
+        "ep03_s10",
+        "ep03_s11"
+      ],
+      [
+        "ep03_s11",
+        "ep03_s12"
+      ]
+    ]
+  }
+}

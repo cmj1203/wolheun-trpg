@@ -1,0 +1,193 @@
+{
+  "method": "50차와 같은 눈 개구부 끝의 x축 투영. 그림 출력에서 수동 판독하며 아이라인 날개는 제외한다. 앞머리에 가린 끝은 눈꺼풀 연장으로 추정한다. 좌표 ±1~2px, 홍채·높이 ±1px. 이번에는 눈별 가로 변형이나 공통 눈 폭으로 정규화하지 않았다.",
+  "target": 1.067,
+  "sprites": {
+    "dumbfounded": {
+      "before_corners": [
+        481,
+        502,
+        524,
+        550
+      ],
+      "after_corners": [
+        479,
+        501,
+        525,
+        550
+      ],
+      "before_height": [
+        8,
+        9
+      ],
+      "after_height": [
+        10,
+        11
+      ],
+      "before_iris": [
+        6,
+        7
+      ],
+      "after_iris": [
+        9,
+        9
+      ],
+      "verdict": "열린 눈·넓은 흰자·작게 벌린 입의 어이없음 유지. 반려본의 가늘어진 눈 제거.",
+      "before_DE": 0.936,
+      "after_DE": 1.021
+    },
+    "surprised": {
+      "before_corners": [
+        474,
+        501,
+        525,
+        551
+      ],
+      "after_corners": [
+        475,
+        500,
+        526,
+        551
+      ],
+      "before_height": [
+        10,
+        11
+      ],
+      "after_height": [
+        14,
+        14
+      ],
+      "before_iris": [
+        10,
+        10
+      ],
+      "after_iris": [
+        11,
+        11
+      ],
+      "verdict": "크게 열린 눈과 열린 입의 놀람 유지. 눈 높이·홍채가 원본보다 줄지 않음.",
+      "before_DE": 0.906,
+      "after_DE": 1.04
+    },
+    "intrigued": {
+      "before_corners": [
+        480,
+        502,
+        525,
+        550
+      ],
+      "after_corners": [
+        480,
+        502,
+        526,
+        551
+      ],
+      "before_height": [
+        6,
+        7
+      ],
+      "after_height": [
+        7,
+        8
+      ],
+      "before_iris": [
+        7,
+        10
+      ],
+      "after_iris": [
+        10,
+        10
+      ],
+      "verdict": "관심 있는 시선 유지. 홍채 선명도 개선, 눈 아래 사각 얼룩 없음.",
+      "before_DE": 0.979,
+      "after_DE": 1.021
+    },
+    "neutral": {
+      "before_corners": [
+        480,
+        502,
+        526,
+        549
+      ],
+      "after_corners": [
+        480,
+        502,
+        526,
+        551
+      ],
+      "before_height": [
+        6,
+        7
+      ],
+      "after_height": [
+        7,
+        7
+      ],
+      "before_iris": [
+        6,
+        9
+      ],
+      "after_iris": [
+        9,
+        10
+      ],
+      "verdict": "무표정 유지. 적색 홍채와 검은 동공이 분리되어 보이며 흐린 작은 점 문제 해소.",
+      "before_DE": 1.067,
+      "after_DE": 1.021
+    },
+    "smile": {
+      "before_corners": [
+        477,
+        501,
+        525,
+        549
+      ],
+      "after_corners": [
+        478,
+        501,
+        526,
+        551
+      ],
+      "before_height": [
+        6,
+        7
+      ],
+      "after_height": [
+        6,
+        7
+      ],
+      "before_iris": [
+        8,
+        9
+      ],
+      "after_iris": [
+        9,
+        10
+      ],
+      "verdict": "미소 유지. 왼눈 아래 옅은 분홍 사각 얼룩과 경계 없음.",
+      "before_DE": 1.0,
+      "after_DE": 1.042
+    }
+  },
+  "cg_swing": {
+    "before_corners": [
+      1000,
+      1023,
+      1059,
+      1078
+    ],
+    "after_corners": [
+      1008,
+      1030,
+      1053,
+      1076
+    ],
+    "verdict": "자기 원본의 사선 눈 개구부와 적색 홍채 유지. 납작한 왼눈·두꺼운 윗선·잔상·스티커 경계 제거. 간격 미세 교정도 GPT가 동일 얼굴 전체에서 수행했으며 눈별 로컬 변형은 하지 않음.",
+    "before_DE": 1.714,
+    "after_DE": 1.022
+  },
+  "unchanged_pass": [
+    "menacing",
+    "sneer",
+    "wary"
+  ]
+}

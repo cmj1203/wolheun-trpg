@@ -1,0 +1,40 @@
+{
+  "candidate_id": "ep06_c001",
+  "state": "actualPNG",
+  "pid": 24937,
+  "pgid": 24937,
+  "supervisor_pid": 24935,
+  "supervisor_pgid": 24935,
+  "started_at": "2026-11-09T06:10:12.946731+00:00",
+  "exit_observed_at": "2026-11-09T06:15:32.793Z",
+  "exit_code": 0,
+  "input": "/Users/choeminju/월흔_trpg/assets/ep06/gen/inputs-original-v1/ep06_c001.png",
+  "input_sha256": "d5842415eed2faa7f578337d98443974d19a2f313ce2987eceb263fd34742a08",
+  "auxiliary_inputs": [],
+  "log": "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/native/ep06_c001-native.jsonl",
+  "output": {
+    "path": "/Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c001.png",
+    "sha256": "0a3d103d98518ec8aa7f32278ec5acd2fbf548fe0115116b8a3daef11687f5dd",
+    "width": 1672,
+    "height": 941,
+    "format": "png",
+    "bytes": 1928926,
+    "png_signature": true
+  },
+  "native_generated_source": "/Users/choeminju/.codex/generated_images/01a1beed-b972-75e3-ab55-9aed1594e8ed/exec-085b850b-09c2-45ff-a9ac-8e3b081f0709.png",
+  "native_source_sha256": "0a3d103d98518ec8aa7f32278ec5acd2fbf548fe0115116b8a3daef11687f5dd",
+  "native_copy_matches": true,
+  "native_copy_command": "/bin/zsh -lc 'cp -n /Users/choeminju/.codex/generated_images/01a1beed-b972-75e3-ab55-9aed1594e8ed/exec-085b850b-09c2-45ff-a9ac-8e3b081f0709.png /Users/choeminju/월흔_trpg/assets/ep06/gen/ep06_c001.png'",
+  "cli_zero_used_as_success_criterion": false,
+  "dimension_note": "1672×941은 정확한 16:9와 교차곱 차이 8이다. 재생성·크롭하지 않고 미검수 기술 항목으로 남김.",
+  "independentApproved": false,
+  "installed": false,
+  "qa_status": "독립 원작 나란히 대조 미실시",
+  "source_cut_ids": [
+    "ep06_c001"
+  ],
+  "anchor_ids": [
+    "ep06_c001:lines[0]",
+    "ep06_c001:lines[1]"
+  ]
+}

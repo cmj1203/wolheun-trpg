@@ -1,0 +1,30 @@
+{
+ "title": "(3) Discord | \"The character's affection level in the top left corner of the game displays \"no change\" and does not\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 2,
+ "msgs": [
+  {
+   "t": "2026-10-23T10:19:25.389Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "The character's affection level in the top left corner of the game displays \"no change\" and does not increase.\n,\n\n\nIphone 15 pro / iOS 26.7.1\n,\n\n\n18:00 pm GMT+8 Taiwan\n,",
+   "emb": "",
+   "att": 3,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-10-23T21:16:31.802Z",
+   "a": "Frontia_sion",
+   "bot": false,
+   "txt": "Hi 유저, this is Sion from the Frontia team  Thank you for the clear report and the screenshot, it really helps us look into this.\n\nTo find out why 凜 and 悠太 keep showing \"no change\", could you tell us a bit more?\n\nThe name of the episode you're playing\n,\nRoughly how many scenes you've played with 凜 and 悠太 since starting (or since the values stopped changing)\n,\nWhich AI model you're using for this play\n,\nWhether it was always \"no change\" from the start, or it used to change and then stopped\n,\n\nIf any of this involves account details, like your login email or star history, please don't share it here. Send it to us through in-app MY → 1:1 inquiry or DM instead, so your personal info stays private.\n\nThanks again for taking the time to report this. We'll get back to you here once we've checked it.",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

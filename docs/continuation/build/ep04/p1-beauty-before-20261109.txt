@@ -1,0 +1,85 @@
+bun test v1.4.2 (744846f84)
+
+tests/ep04_beauty_recall.test.ts:
+26 | function delivered(events: readonly GameEvent[]) {
+27 |   return events.filter((event) => event.type === 'line');
+28 | }
+29 | 
+30 | function assertNoMemory(events: readonly GameEvent[]) {
+31 |   expect(delivered(events).filter((event) => event.cg === 'ep04_c058_source')).toEqual([]);
+                                                                                    ^
+error: expect(received).toEqual(expected)
+
+- []
++ [
++   {
++     "by": "script",
++     "cg": "ep04_c058_source",
++     "display": "아시나",
++     "speaker": "ep04_thought",
++     "style": "thought",
++     "text": "…아, 그때.",
++     "type": "line",
++   },
++   {
++     "by": "script",
++     "cg": "ep04_c058_source",
++     "display": "아시나",
++     "speaker": "ep04_thought",
++     "style": "thought",
++     "text": "하, 대체 어디가 미소녀냐면서 비웃었으면서!",
++     "type": "line",
++   },
++ ]
+
+- Expected  - 1
++ Received  + 20
+
+      at assertNoMemory (/Users/choeminju/월흔_trpg/app/tests/ep04_beauty_recall.test.ts:31:80)
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep04_beauty_recall.test.ts:58:3)
+(fail) 실제 미인계 없는 행동20 저장의 retort는 거짓 회상·장면·CG 없이 효과와 종료를 보존한다 [6.07ms]
+(pass) 실제 legacy 미인계 발화·행동 경로는 원문 회상과 그림 순서를 보존한다 [13.59ms]
+(pass) 실제 action 미인계 발화·행동 경로는 원문 회상과 그림 순서를 보존한다 [11.17ms]
+(pass) 실제 speech 미인계 발화·행동 경로는 원문 회상과 그림 순서를 보존한다 [7.41ms]
+26 | function delivered(events: readonly GameEvent[]) {
+27 |   return events.filter((event) => event.type === 'line');
+28 | }
+29 | 
+30 | function assertNoMemory(events: readonly GameEvent[]) {
+31 |   expect(delivered(events).filter((event) => event.cg === 'ep04_c058_source')).toEqual([]);
+                                                                                    ^
+error: expect(received).toEqual(expected)
+
+- []
++ [
++   {
++     "by": "script",
++     "cg": "ep04_c058_source",
++     "display": "아시나",
++     "speaker": "ep04_thought",
++     "style": "thought",
++     "text": "…아, 그때.",
++     "type": "line",
++   },
++   {
++     "by": "script",
++     "cg": "ep04_c058_source",
++     "display": "아시나",
++     "speaker": "ep04_thought",
++     "style": "thought",
++     "text": "하, 대체 어디가 미소녀냐면서 비웃었으면서!",
++     "type": "line",
++   },
++ ]
+
+- Expected  - 1
++ Received  + 20
+
+      at assertNoMemory (/Users/choeminju/월흔_trpg/app/tests/ep04_beauty_recall.test.ts:31:80)
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep04_beauty_recall.test.ts:147:5)
+(fail) 미인계 없는 거리 확보의 hit·mixed는 회상 없이 거리 성공과 젖음 인식을 유지한다 [0.70ms]
+
+ 3 pass
+ 2 fail
+ 36 expect() calls
+Ran 5 tests across 1 file. [232.00ms]

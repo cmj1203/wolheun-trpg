@@ -1,0 +1,48 @@
+{
+  "schema": "ep04-framing-correction-evidence/v1",
+  "candidate_slot": "ep04_c007_a_wedding",
+  "job": "ep04_c007_a_wedding_revision01",
+  "actual_output": "assets/ep04/gen/ep04_c007_a_wedding_fix1.png",
+  "raw_native_output": "assets/ep04/gen/ep04_c007_a_wedding_revision01.png",
+  "sha256": "f09eab15e597808be093337c196a649bab34df2e20a70daf347322d8e92e6b35",
+  "bytes": 3053375,
+  "actual_size": [
+    1672,
+    941
+  ],
+  "native_remote_source": "/Users/choeminju/.codex/generated_images/01a1bed2-f4f5-7583-b5f8-944ce36ed1d5/exec-3419d1d7-a59a-4d24-816f-96fb9da14125.png",
+  "native_receipt": "docs/continuation/build/ep04/art/generation/ep04_c007_a_wedding_revision01-result.json",
+  "source_input": "assets/ep04/gen/inputs/ep04_c007_a_wedding_revision01-selected.png",
+  "source_window": [
+    0,
+    344,
+    2000,
+    2900
+  ],
+  "change_type": "전체 프레이밍 변경·국소 마스크 편집 아님",
+  "changed_pixels": 1563445,
+  "total_pixels": 1573352,
+  "changed_bbox": [
+    0,
+    0,
+    1672,
+    941
+  ],
+  "local_diagnostic_region": [
+    790,
+    800,
+    1000,
+    915
+  ],
+  "local_mask_was_used_for_native_edit": false,
+  "local_mask_semantics": "기존 생성 손 영역의 진단용 사각형. 원작 의복/가림 마스크라고 주장하지 않음.",
+  "outside_local_changed_pixels": 1539295,
+  "outside_local_preserved": false,
+  "actual_change_mask": "docs/continuation/build/ep04/art/comparisons/ep04_c007_a_wedding_fix1-actual-change-mask.png",
+  "local_diagnostic_mask": "docs/continuation/build/ep04/art/comparisons/ep04_c007_a_wedding_fix1-local-diagnostic-mask.png",
+  "source_comparison": "docs/continuation/build/ep04/art/comparisons/ep04_c007_a_wedding_fix1-source-comparison.png",
+  "independentApproved": false,
+  "installed": false,
+  "held": true,
+  "held_reason": "프레이밍으로 손 노출은 제거됐으나 요청한 국소 영역 밖 픽셀 보존을 충족하지 못함. 원작에 없는 의복 가림은 생성하지 않음."
+}

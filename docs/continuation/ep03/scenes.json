@@ -1,0 +1,1175 @@
+{
+  "episode": 3,
+  "source_pages": [
+    {
+      "path": "work/ep03/merged/ep03_001.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_002.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_003.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_004.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_005.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_006.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_007.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_008.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_009.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_010.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_011.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_012.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_013.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_014.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_015.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    },
+    {
+      "path": "work/ep03/merged/ep03_016.png",
+      "inspection": "원해상도 컷 타일과 컷 밖 영역 직접 확인"
+    }
+  ],
+  "cut_count": 61,
+  "unresolved": [
+    {
+      "cut_id": "ep03_c033",
+      "type": "소품 문자",
+      "count": 1,
+      "status": "판독 불가",
+      "detail": "치부책 펼친 면의 비한글 문자 영역, 원해상도 확대 후에도 뜻 미확정"
+    },
+    {
+      "cut_id": "ep03_c054",
+      "type": "말풍선 문자",
+      "count": 2,
+      "status": "판독 불가",
+      "detail": "첫 두 흘림문자 말풍선, 화자와 뜻 미확정. 뒤 한글 발화와 분리"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ep03_s01",
+      "title": "궁 안으로 안내받다",
+      "cut_ids": [
+        "ep03_c001",
+        "ep03_c002",
+        "ep03_c003",
+        "ep03_c004"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c001",
+          "original_path": "work/ep03/merged/ep03_001.png",
+          "psd": "3화_001.psd",
+          "y_range": [
+            565,
+            3329
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c002",
+          "original_path": "work/ep03/merged/ep03_001.png",
+          "psd": "3화_001.psd",
+          "y_range": [
+            3603,
+            7128
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c003",
+          "original_path": "work/ep03/merged/ep03_001.png",
+          "psd": "3화_001.psd",
+          "y_range": [
+            7432,
+            22290
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c004",
+          "original_path": "work/ep03/merged/ep03_002.png",
+          "psd": "3화_002.psd",
+          "y_range": [
+            284,
+            1978
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "왕궁 회랑·정원 앞 문",
+      "events": [
+        "아시나를 시녀가 부른다",
+        "넓은 궁 안을 따라가 문을 연다"
+      ],
+      "entry_state": "2화 재포획 뒤 왕궁에 계류, 여행복·가방 유지, 북대륙 귀족설은 수행원의 추측",
+      "exit_state": "목적지를 모른 채 목욕 시녀들 앞에 도착",
+      "fixed_development": "궁 안 안내와 입실",
+      "variable_actions": [
+        "이동 중 시선·표정 정도만 각색"
+      ],
+      "input_points": [],
+      "reveals": [],
+      "required_assets": [
+        "왕궁 돔 외관 배경",
+        "아치 회랑·정원·문 배경",
+        "아시나 여행복 입식",
+        "쪽머리 안내 시녀 입식"
+      ]
+    },
+    {
+      "id": "ep03_s02",
+      "title": "목욕을 당하다",
+      "cut_ids": [
+        "ep03_c005",
+        "ep03_c006",
+        "ep03_c007",
+        "ep03_c008",
+        "ep03_c009",
+        "ep03_c010",
+        "ep03_c011",
+        "ep03_c012",
+        "ep03_c013",
+        "ep03_c014",
+        "ep03_c015",
+        "ep03_c016"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c005",
+          "original_path": "work/ep03/merged/ep03_002.png",
+          "psd": "3화_002.psd",
+          "y_range": [
+            2063,
+            6230
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c006",
+          "original_path": "work/ep03/merged/ep03_002.png",
+          "psd": "3화_002.psd",
+          "y_range": [
+            7846,
+            9242
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c007",
+          "original_path": "work/ep03/merged/ep03_002.png",
+          "psd": "3화_002.psd",
+          "y_range": [
+            10456,
+            14517
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c008",
+          "original_path": "work/ep03/merged/ep03_002.png",
+          "psd": "3화_002.psd",
+          "y_range": [
+            15283,
+            21254
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c009",
+          "original_path": "work/ep03/merged/ep03_002.png",
+          "psd": "3화_002.psd",
+          "y_range": [
+            21681,
+            27459
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c010",
+          "original_path": "work/ep03/merged/ep03_003.png",
+          "psd": "3화_003.psd",
+          "y_range": [
+            156,
+            6238
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c011",
+          "original_path": "work/ep03/merged/ep03_003.png",
+          "psd": "3화_003.psd",
+          "y_range": [
+            6821,
+            11360
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c012",
+          "original_path": "work/ep03/merged/ep03_003.png",
+          "psd": "3화_003.psd",
+          "y_range": [
+            12212,
+            19158
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c013",
+          "original_path": "work/ep03/merged/ep03_003.png",
+          "psd": "3화_003.psd",
+          "y_range": [
+            19462,
+            24147
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c014",
+          "original_path": "work/ep03/merged/ep03_004.png",
+          "psd": "3화_004.psd",
+          "y_range": [
+            419,
+            3291
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c015",
+          "original_path": "work/ep03/merged/ep03_004.png",
+          "psd": "3화_004.psd",
+          "y_range": [
+            3356,
+            4328
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c016",
+          "original_path": "work/ep03/merged/ep03_004.png",
+          "psd": "3화_004.psd",
+          "y_range": [
+            4466,
+            8127
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "궁 안 목욕실",
+      "events": [
+        "목욕 시녀들이 아시나의 여행복을 벗긴다",
+        "가방·옷이 떨어지고 아시나가 욕조에 들어간다",
+        "몸과 머리를 씻긴 뒤 흰 수건을 두른다"
+      ],
+      "entry_state": "여행복·가방을 지닌 채 목적 불명의 시녀들과 마주함",
+      "exit_state": "목욕 완료, 갈색 변장 유지, 귀찌는 몸에 남고 여행복·가방은 손에 없음",
+      "fixed_development": "목욕과 탈의 순서 유지, 상해·귀찌 압수 없음",
+      "variable_actions": [
+        "항의의 강도·표현만 각색, 새 판정이나 동의 획득으로 취급하지 않음"
+      ],
+      "input_points": [],
+      "reveals": [],
+      "required_assets": [
+        "목욕실·큰 욕조 배경",
+        "흰 수건 아시나 입식 또는 원작 기반 비노출 구도 CG",
+        "목욕 시녀 3명 입식",
+        "옷·가방 바닥 소품"
+      ]
+    },
+    {
+      "id": "ep03_s03",
+      "title": "새 옷을 건네받다",
+      "cut_ids": [
+        "ep03_c017",
+        "ep03_c018"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c017",
+          "original_path": "work/ep03/merged/ep03_004.png",
+          "psd": "3화_004.psd",
+          "y_range": [
+            8178,
+            11240
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c018",
+          "original_path": "work/ep03/merged/ep03_004.png",
+          "psd": "3화_004.psd",
+          "y_range": [
+            11954,
+            16070
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "목욕실 착의 공간",
+      "events": [
+        "청록옷 시녀가 옷을 건넨다",
+        "아시나가 그 옷을 입으라는 말에 당황한다"
+      ],
+      "entry_state": "흰 수건 차림, 갈색 머리·눈과 귀찌 유지",
+      "exit_state": "새 옷이 제시됨, 아직 하렘 행선지는 미공개",
+      "fixed_development": "옷 제시와 당황 유지",
+      "variable_actions": [
+        "표정만 조절, 탈출·복장 선택을 성공 가능한 판정처럼 제시하지 않음"
+      ],
+      "input_points": [],
+      "reveals": [],
+      "required_assets": [
+        "청록옷 시녀 입식",
+        "수건 아시나 놀람 표정",
+        "새 옷 소품"
+      ]
+    },
+    {
+      "id": "ep03_s04",
+      "title": "고양이를 잡아왔다는 시하드",
+      "cut_ids": [
+        "ep03_c019",
+        "ep03_c020",
+        "ep03_c021",
+        "ep03_c022",
+        "ep03_c023",
+        "ep03_c024",
+        "ep03_c025",
+        "ep03_c026"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c019",
+          "original_path": "work/ep03/merged/ep03_004.png",
+          "psd": "3화_004.psd",
+          "y_range": [
+            19043,
+            23900
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c020",
+          "original_path": "work/ep03/merged/ep03_005.png",
+          "psd": "3화_005.psd",
+          "y_range": [
+            228,
+            5618
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c021",
+          "original_path": "work/ep03/merged/ep03_005.png",
+          "psd": "3화_005.psd",
+          "y_range": [
+            6947,
+            9544
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c022",
+          "original_path": "work/ep03/merged/ep03_005.png",
+          "psd": "3화_005.psd",
+          "y_range": [
+            11220,
+            13715
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c023",
+          "original_path": "work/ep03/merged/ep03_005.png",
+          "psd": "3화_005.psd",
+          "y_range": [
+            13802,
+            24902
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c024",
+          "original_path": "work/ep03/merged/ep03_005.png",
+          "psd": "3화_005.psd",
+          "y_range": [
+            24976,
+            25902
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c025",
+          "original_path": "work/ep03/merged/ep03_006.png",
+          "psd": "3화_006.psd",
+          "y_range": [
+            469,
+            1857
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c026",
+          "original_path": "work/ep03/merged/ep03_006.png",
+          "psd": "3화_006.psd",
+          "y_range": [
+            1896,
+            8934
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "왕궁의 붉은 휘장 방·착의 공간 교차",
+      "events": [
+        "시하드가 기대앉아 여행복 아시나를 떠올린다",
+        "문서를 든 청록 터번 보고자가 흥겨운 일을 묻는다",
+        "시하드가 쥐새끼를 고양이로 고쳐 말하고 새 옷의 아시나로 전환한다"
+      ],
+      "entry_state": "아시나는 착의 중, 궁정 대화에 없음",
+      "exit_state": "관객만 시하드의 흥미를 듣고 아시나의 새 차림을 보기 시작함",
+      "fixed_development": "궁정 대화와 회상·착의 전환 순서 유지",
+      "variable_actions": [
+        "아시나 입력 없음"
+      ],
+      "input_points": [],
+      "reveals": [
+        {
+          "id": "ep03_r01",
+          "cut_id": "ep03_c026",
+          "fact": "시하드가 고양이를 잡아왔다고 비유한다",
+          "audience": "관객만, 아시나는 모름"
+        }
+      ],
+      "required_assets": [
+        "호피·붉은 의자·휘장 배경",
+        "터번 없는 남색·금색 복장 시하드 입식",
+        "청록 터번 보고자 입식·문서 소품",
+        "여행복 아시나 회상 이미지"
+      ]
+    },
+    {
+      "id": "ep03_s05",
+      "title": "옷과 사라진 짐",
+      "cut_ids": [
+        "ep03_c027",
+        "ep03_c028",
+        "ep03_c029",
+        "ep03_c030",
+        "ep03_c031",
+        "ep03_c032",
+        "ep03_c033",
+        "ep03_c034"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c027",
+          "original_path": "work/ep03/merged/ep03_006.png",
+          "psd": "3화_006.psd",
+          "y_range": [
+            10304,
+            19490
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c028",
+          "original_path": "work/ep03/merged/ep03_006.png",
+          "psd": "3화_006.psd",
+          "y_range": [
+            21589,
+            23884
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c029",
+          "original_path": "work/ep03/merged/ep03_007.png",
+          "psd": "3화_007.psd",
+          "y_range": [
+            592,
+            4418
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c030",
+          "original_path": "work/ep03/merged/ep03_007.png",
+          "psd": "3화_007.psd",
+          "y_range": [
+            4887,
+            6689
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c031",
+          "original_path": "work/ep03/merged/ep03_007.png",
+          "psd": "3화_007.psd",
+          "y_range": [
+            6788,
+            9338
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c032",
+          "original_path": "work/ep03/merged/ep03_007.png",
+          "psd": "3화_007.psd",
+          "y_range": [
+            10353,
+            15444
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c033",
+          "original_path": "work/ep03/merged/ep03_007.png",
+          "psd": "3화_007.psd",
+          "y_range": [
+            16090,
+            20145
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c034",
+          "original_path": "work/ep03/merged/ep03_007.png",
+          "psd": "3화_007.psd",
+          "y_range": [
+            21543,
+            25893
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "착의 공간·소지품 상상",
+      "events": [
+        "새 청록 옷이 아시나에게 입혀져 있다",
+        "짐의 부재를 알아차린다",
+        "지도·돈·옷·미소년 초상화 모음집과 치부책을 걱정한다"
+      ],
+      "entry_state": "새 옷 착용, 짐을 아직 찾지 않음",
+      "exit_state": "치부책이 신분 증명에 필요함을 관객이 알지만 짐 보관 장소는 미확인",
+      "fixed_development": "짐이 없다는 걱정과 치부책의 중요성 유지",
+      "variable_actions": [
+        "짐 회수 우선순위는 이후 선택으로 남김, 이 장면에서 압수자·보관 장소를 만들어 알려주지 않음"
+      ],
+      "input_points": [],
+      "reveals": [
+        {
+          "id": "ep03_r02",
+          "cut_id": "ep03_c033",
+          "fact": "치부책은 여행 중 신분을 증명할 유일한 물건이라는 아시나의 생각",
+          "audience": "아시나의 독백을 보는 관객, 시녀는 듣지 않음"
+        }
+      ],
+      "required_assets": [
+        "청록 복장 아시나 입식·희화화",
+        "여행복·가방·지도·동전·초상화 소품",
+        "치부책 펼친 CG"
+      ]
+    },
+    {
+      "id": "ep03_s06",
+      "title": "귀찌의 변장 마법",
+      "cut_ids": [
+        "ep03_c035",
+        "ep03_c036",
+        "ep03_c037",
+        "ep03_c038"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c035",
+          "original_path": "work/ep03/merged/ep03_008.png",
+          "psd": "3화_008.psd",
+          "y_range": [
+            340,
+            2252
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c036",
+          "original_path": "work/ep03/merged/ep03_008.png",
+          "psd": "3화_008.psd",
+          "y_range": [
+            2595,
+            18171
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c037",
+          "original_path": "work/ep03/merged/ep03_008.png",
+          "psd": "3화_008.psd",
+          "y_range": [
+            18487,
+            18894
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c038",
+          "original_path": "work/ep03/merged/ep03_008.png",
+          "psd": "3화_008.psd",
+          "y_range": [
+            18994,
+            22719
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "착의 공간·귀찌 기능 삽입",
+      "events": [
+        "아시나가 귀찌를 몸에 지닌 것을 확인한다",
+        "은발·붉은 눈을 갈색 머리·눈으로 보이게 하는 마법을 독백한다",
+        "시녀가 다시 부른다"
+      ],
+      "entry_state": "짐은 없지만 귀찌 착용 중",
+      "exit_state": "귀찌 기능을 관객에게 설명, 실제 변장은 유지한 채 이동 준비",
+      "fixed_development": "c036 설명은 독백과 대비 이미지이며 변장 해제 사건이 아님",
+      "variable_actions": [
+        "귀찌를 빼는 입력·제거 판정을 만들지 않음"
+      ],
+      "input_points": [],
+      "reveals": [
+        {
+          "id": "ep03_r03",
+          "cut_id": "ep03_c036",
+          "fact": "마법 귀찌가 은발·붉은 눈의 본모습을 갈색 머리·갈색 눈으로 감춘다",
+          "audience": "아시나가 원래 알던 사실을 관객에게 독백, 주변 인물은 모름"
+        }
+      ],
+      "required_assets": [
+        "귓불 귀찌 확대 CG",
+        "은발·붉은 눈 본모습 대비 이미지",
+        "갈색 변장·청록 복장 아시나",
+        "쪽머리 안내 시녀"
+      ]
+    },
+    {
+      "id": "ep03_s07",
+      "title": "하렘에 도착하다",
+      "cut_ids": [
+        "ep03_c039",
+        "ep03_c040",
+        "ep03_c041",
+        "ep03_c042",
+        "ep03_c043",
+        "ep03_c044",
+        "ep03_c045"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c039",
+          "original_path": "work/ep03/merged/ep03_009.png",
+          "psd": "3화_009.psd",
+          "y_range": [
+            570,
+            2122
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c040",
+          "original_path": "work/ep03/merged/ep03_009.png",
+          "psd": "3화_009.psd",
+          "y_range": [
+            2518,
+            23183
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c041",
+          "original_path": "work/ep03/merged/ep03_010.png",
+          "psd": "3화_010.psd",
+          "y_range": [
+            816,
+            3100
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c042",
+          "original_path": "work/ep03/merged/ep03_010.png",
+          "psd": "3화_010.psd",
+          "y_range": [
+            3435,
+            8906
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c043",
+          "original_path": "work/ep03/merged/ep03_010.png",
+          "psd": "3화_010.psd",
+          "y_range": [
+            9883,
+            13532
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c044",
+          "original_path": "work/ep03/merged/ep03_010.png",
+          "psd": "3화_010.psd",
+          "y_range": [
+            13543,
+            19326
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c045",
+          "original_path": "work/ep03/merged/ep03_010.png",
+          "psd": "3화_010.psd",
+          "y_range": [
+            19710,
+            24265
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "왕궁 바깥 회랑·하렘 침실",
+      "events": [
+        "시녀를 따라 노을 진 회랑을 지난다",
+        "화려한 침실을 보여 준 뒤 하렘에서 지낼 방이라고 말한다",
+        "아시나가 하렘을 재확인하고 주저앉는다"
+      ],
+      "entry_state": "아시나는 아직 목적지를 모름",
+      "exit_state": "하렘 입실을 통보받고 충격, 현장 여성 수는 미공개",
+      "fixed_development": "c040 설명 전에는 하렘을 목적지 이름으로 먼저 표시하지 않음",
+      "variable_actions": [
+        "지켜보기·되묻기 반응은 연출에 포함, 필수 행동 입력 없음"
+      ],
+      "input_points": [],
+      "reveals": [
+        {
+          "id": "ep03_r04",
+          "cut_id": "ep03_c040",
+          "fact": "시녀가 이곳을 아시나가 하렘에서 지낼 방이라고 알린다",
+          "audience": "아시나와 관객"
+        }
+      ],
+      "required_assets": [
+        "노을 회랑 배경",
+        "천개·붉은 휘장·침대의 하렘 침실 배경",
+        "청록복 아시나·안내 시녀 입식",
+        "하렘 상상 삽화는 현장 CG와 구별"
+      ]
+    },
+    {
+      "id": "ep03_s08",
+      "title": "서로 다른 가치관",
+      "cut_ids": [
+        "ep03_c046",
+        "ep03_c047",
+        "ep03_c048"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c046",
+          "original_path": "work/ep03/merged/ep03_011.png",
+          "psd": "3화_011.psd",
+          "y_range": [
+            128,
+            22940
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c047",
+          "original_path": "work/ep03/merged/ep03_011.png",
+          "psd": "3화_011.psd",
+          "y_range": [
+            22972,
+            29680
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c048",
+          "original_path": "work/ep03/merged/ep03_012.png",
+          "psd": "3화_012.psd",
+          "y_range": [
+            49,
+            11474
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "하렘 침실",
+      "events": [
+        "아시나가 속으로 시하드를 욕한다",
+        "시녀는 하렘 입실을 영광이라 한다",
+        "아시나가 부당함을 주장하나 시녀가 반박한다",
+        "대화가 통하지 않는다고 여긴 아시나가 신발을 벗고 침대에 엎드린다"
+      ],
+      "entry_state": "하렘 입실에 충격, 강제 착의·구금 상태",
+      "exit_state": "거부 의사와 가치관 차이가 드러남, 하렘 이탈은 성립하지 않음",
+      "fixed_development": "입실 반대와 시녀의 기존 가치관, 침대에 엎드리는 흐름 유지",
+      "variable_actions": [
+        "항의의 논거·시녀에게 요구하는 말은 바뀔 수 있음",
+        "발화 기록은 뒤 대화에 계승하되 귀찌·치부책을 저절로 폭로하지 않음"
+      ],
+      "input_points": [
+        {
+          "id": "ep03_i01",
+          "cut_id": "ep03_c046",
+          "kind": "선택적 발화",
+          "condition": "시녀가 하렘을 영광이라 말한 뒤, 원작 항의 발화를 대신할 때 한 번만",
+          "intent": "거부 이유를 밝히거나 시녀의 관점을 묻기",
+          "outcome": "시녀의 개인적 답과 관계의 말투가 달라질 수 있음, 원작 신념·입실 상태는 유지",
+          "roll": "대화만으로 주사위를 굴리지 않음",
+          "skip": "입력하지 않으면 원작 항의 대사로 진행"
+        }
+      ],
+      "reveals": [
+        {
+          "id": "ep03_r05",
+          "cut_id": "ep03_c047",
+          "fact": "시녀는 시하드가 자신을 장난감으로 여겨 줘도 기쁘다고 말한다",
+          "audience": "아시나와 관객, 세뇌 여부는 확정 아님"
+        }
+      ],
+      "required_assets": [
+        "청록복 아시나 분노·지침·엎드림 CG",
+        "안내 시녀 단호함·황홀 표정",
+        "시하드 회상 얼굴",
+        "벗은 청록·회청색 바탕에 금테를 두른 굽 신발 소품(c027·c038·c048 직접 근거)"
+      ]
+    },
+    {
+      "id": "ep03_s09",
+      "title": "유일한 아이라",
+      "cut_ids": [
+        "ep03_c049",
+        "ep03_c050",
+        "ep03_c051"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c049",
+          "original_path": "work/ep03/merged/ep03_012.png",
+          "psd": "3화_012.psd",
+          "y_range": [
+            12055,
+            17104
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c050",
+          "original_path": "work/ep03/merged/ep03_012.png",
+          "psd": "3화_012.psd",
+          "y_range": [
+            17471,
+            27485
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c051",
+          "original_path": "work/ep03/merged/ep03_013.png",
+          "psd": "3화_013.psd",
+          "y_range": [
+            87,
+            4091
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "하렘 침실",
+      "events": [
+        "조용한 방에서 아시나가 다른 여자들의 위치를 묻는다",
+        "시녀가 유일한 아이라라고 답한다",
+        "아시나가 혼자냐고 되묻는다"
+      ],
+      "entry_state": "아시나는 여러 여자가 있을 것이라 생각함",
+      "exit_state": "유일한 아이라는 시녀 설명을 들음, 그 뜻의 상세 정의는 아직 없음",
+      "fixed_development": "유일한 아이라는 공개는 c050 이전에 당기지 않음",
+      "variable_actions": [
+        "질문 표현·다시 묻는 방식은 바뀔 수 있음"
+      ],
+      "input_points": [
+        {
+          "id": "ep03_i02",
+          "cut_id": "ep03_c049",
+          "kind": "선택적 질문",
+          "condition": "침대에서 쉬다가 조용함을 알아차린 뒤 한 번만",
+          "intent": "다른 입실자나 자신이 놓인 처지를 시녀에게 묻기",
+          "outcome": "c050의 유일한 아이라 정보로 답하고 c051 반응으로 잇기, 다른 여성의 명단·시하드의 연애사 창작 금지",
+          "roll": "정보 확인 질문은 판정 없음",
+          "skip": "질문 입력을 생략하면 원작 질문·응답 재생"
+        }
+      ],
+      "reveals": [
+        {
+          "id": "ep03_r06",
+          "cut_id": "ep03_c050",
+          "fact": "시녀가 아시나를 하렘의 유일한 아이라라고 한다",
+          "audience": "아시나와 관객, 전지적 증명으로 바꾸지 않음"
+        }
+      ],
+      "required_assets": [
+        "침대 위 아시나 입식·CG",
+        "쪽머리 시녀 입식",
+        "하렘 침실 배경"
+      ]
+    },
+    {
+      "id": "ep03_s10",
+      "title": "다라의 잘릴을 맞다",
+      "cut_ids": [
+        "ep03_c052",
+        "ep03_c053",
+        "ep03_c054"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c052",
+          "original_path": "work/ep03/merged/ep03_013.png",
+          "psd": "3화_013.psd",
+          "y_range": [
+            6593,
+            19319
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c053",
+          "original_path": "work/ep03/merged/ep03_013.png",
+          "psd": "3화_013.psd",
+          "y_range": [
+            20430,
+            24642
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c054",
+          "original_path": "work/ep03/merged/ep03_014.png",
+          "psd": "3화_014.psd",
+          "y_range": [
+            470,
+            3862
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "왕궁 접견실",
+      "events": [
+        "시종이 다라의 대족장 도착을 알린다",
+        "시하드가 입장을 허락한다",
+        "잘릴이 실명과 라 쿤 호칭으로 인사한다",
+        "귀환 축하 인사와 석류 그릇으로 손이 향하는 장면이 이어진다"
+      ],
+      "entry_state": "아시나는 하렘에 남음, 시하드는 별도 공간에서 접견",
+      "exit_state": "다라의 대족장 잘릴이 등장하고 궁정 대화 진행",
+      "fixed_development": "아시나 없는 궁정 장면, 플레이어 행동 입력 없음",
+      "variable_actions": [
+        "아시나 입력 없음"
+      ],
+      "input_points": [],
+      "reveals": [
+        {
+          "id": "ep03_r07",
+          "cut_id": "ep03_c052",
+          "fact": "방문자는 다라의 대족장 잘릴이고 시하드에게 라 쿤이라고 인사한다",
+          "audience": "관객만, 아시나의 인물 지식에 저장하지 않음"
+        }
+      ],
+      "required_assets": [
+        "왕궁 접견실·알현 문 배경",
+        "c053 원본의 흰 터번·밝은 크림색 상하의·금색 허리띠와 목장식의 시하드. c020 남색 옷과 분리",
+        "녹색 보석 터번·주황 어깨천 잘릴",
+        "석류 그릇·반지 낀 손 CG"
+      ]
+    },
+    {
+      "id": "ep03_s11",
+      "title": "하렘 소식과 위협",
+      "cut_ids": [
+        "ep03_c055",
+        "ep03_c056",
+        "ep03_c057",
+        "ep03_c058",
+        "ep03_c059"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c055",
+          "original_path": "work/ep03/merged/ep03_014.png",
+          "psd": "3화_014.psd",
+          "y_range": [
+            4186,
+            21039
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c056",
+          "original_path": "work/ep03/merged/ep03_014.png",
+          "psd": "3화_014.psd",
+          "y_range": [
+            21277,
+            26132
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c057",
+          "original_path": "work/ep03/merged/ep03_015.png",
+          "psd": "3화_015.psd",
+          "y_range": [
+            245,
+            5018
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c058",
+          "original_path": "work/ep03/merged/ep03_015.png",
+          "psd": "3화_015.psd",
+          "y_range": [
+            5276,
+            17580
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c059",
+          "original_path": "work/ep03/merged/ep03_015.png",
+          "psd": "3화_015.psd",
+          "y_range": [
+            17813,
+            20224
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "왕궁 접견실",
+      "events": [
+        "잘릴이 하얀 피부의 여자와 혈통을 문제 삼는다",
+        "시하드의 총기가 흐려졌다는 소문을 거론한다",
+        "시하드가 석류를 움켜쥐어 터뜨리고 잘릴을 위협한다",
+        "잘릴이 변명하나 시하드가 꺼지라 한다"
+      ],
+      "entry_state": "잘릴이 인사 중, 아시나는 대화를 모름",
+      "exit_state": "잘릴은 살해되지 않고 퇴장 명령을 받음",
+      "fixed_development": "하렘 소식·소문은 잘릴 발언, 실제 총기 저하·처형·피로 확정하지 않음",
+      "variable_actions": [
+        "아시나 입력 없음"
+      ],
+      "input_points": [],
+      "reveals": [
+        {
+          "id": "ep03_r08",
+          "cut_id": "ep03_c055",
+          "fact": "잘릴은 하렘에 들인 여자 소식을 알고 총기 저하 소문을 거론한다",
+          "audience": "관객만, 소문은 사실 확정 아님"
+        },
+        {
+          "id": "ep03_r09",
+          "cut_id": "ep03_c057",
+          "fact": "시하드가 잘릴의 발언을 시비로 받아들이고 직접 위협한다",
+          "audience": "관객만, 아시나가 목격한 일 아님"
+        }
+      ],
+      "required_assets": [
+        "석류 파열·붉은 즙 CG",
+        "시하드 붉은 눈·위협 표정",
+        "잘릴 당황·공포 표정",
+        "검붉은 축객 대사 연출"
+      ]
+    },
+    {
+      "id": "ep03_s12",
+      "title": "퇴장 뒤의 말",
+      "cut_ids": [
+        "ep03_c060",
+        "ep03_c061"
+      ],
+      "source_cuts": [
+        {
+          "cut_id": "ep03_c060",
+          "original_path": "work/ep03/merged/ep03_015.png",
+          "psd": "3화_015.psd",
+          "y_range": [
+            21321,
+            24191
+          ],
+          "kind": "panel"
+        },
+        {
+          "cut_id": "ep03_c061",
+          "original_path": "work/ep03/merged/ep03_016.png",
+          "psd": "3화_016.psd",
+          "y_range": [
+            593,
+            10216
+          ],
+          "kind": "panel"
+        }
+      ],
+      "location": "접견실 문·접견실",
+      "events": [
+        "잘릴이 살아서 퇴장한다",
+        "홀로 남은 시하드가 석류즙을 핥으며 지켜보겠다고 말한다"
+      ],
+      "entry_state": "퇴장 명령 직후, 위협은 있었으나 살해 없음",
+      "exit_state": "아시나는 하렘에서 시녀의 설명을 들은 상태, 시하드는 궁정에 홀로 남음",
+      "fixed_development": "마지막 발언 대상을 실명으로 보충하거나 다음 화 사건을 예고하지 않음",
+      "variable_actions": [
+        "아시나 입력 없음"
+      ],
+      "input_points": [],
+      "reveals": [],
+      "required_assets": [
+        "접견실 퇴장 문 CG",
+        "혼자 남은 시하드·손가락의 석류즙 CG"
+      ]
+    }
+  ]
+}

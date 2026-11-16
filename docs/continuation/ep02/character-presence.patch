@@ -1,0 +1,22 @@
+*** Begin Patch
+*** Update File: app/src/engine/engine.ts
+@@
+-import { edgesOf, facesPerson } from './scenario.ts';
++import { edgesOf, facesPerson, hasCharacter } from './scenario.ts';
+@@
+-    if (!beat.ending && this.scenario.stage) state.flags['상대_곁'] = Object.values(beat.cast ?? {}).includes(this.scenario.stage.who);
++    if (!beat.ending && this.scenario.stage) state.flags['상대_곁'] = hasCharacter(this.scenario, beat, this.scenario.stage.who);
+@@
+-      if (!Object.values(beat.cast ?? {}).includes(identity.with)) return 'self';
++      if (!hasCharacter(this.scenario, beat, identity.with)) return 'self';
+@@
+-    if (read.kind === 'talk' || !canRoll || !danger || isPermission(text) || !Object.values(beat.cast ?? {}).includes(danger.with)) return 'go';
++    if (read.kind === 'talk' || !canRoll || !danger || isPermission(text) || !hasCharacter(this.scenario, beat, danger.with)) return 'go';
+*** Update File: app/src/gm/gm.ts
+@@
+-import { edgesOf, facesPerson, linesOfBeat, typedFallbackLines } from '../engine/scenario.ts';
++import { edgesOf, facesPerson, hasCharacter, linesOfBeat, typedFallbackLines } from '../engine/scenario.ts';
+@@
+-  if (!stage || stage.near.includes(ctx.beat.id) || ctx.free.speakers.includes(stage.who) || Object.values(ctx.beat.cast ?? {}).includes(stage.who)) return [];
++  if (!stage || stage.near.includes(ctx.beat.id) || ctx.free.speakers.includes(stage.who) || hasCharacter(ctx.scenario, ctx.beat, stage.who)) return [];
+*** End Patch

@@ -50,3 +50,19 @@ export function fakeClock(start = 1_000_000) {
     },
   };
 }
+
+/** 모델 없는 wire fixture의 단어 tokenizer. 실제 예산 상한은 llm_budget64에서 별도로 검증한다. */
+export async function tokenBudgetFixture(req: Request): Promise<Response | undefined> {
+  const path = new URL(req.url).pathname;
+  if (path === '/props') return Response.json({ default_generation_settings: { n_ctx: 8192 }, total_slots: 1 });
+  if (path === '/apply-template') {
+    const body: { messages: { role: string; content: string }[] } = await req.json();
+    return Response.json({ prompt: body.messages.map(message => `${message.role}\n${message.content}`).join('\n') });
+  }
+  if (path === '/tokenize') {
+    const body: { content: string; add_special: boolean } = await req.json();
+    const count = body.content.split(/\s+/u).filter(Boolean).length + Number(body.add_special);
+    return Response.json({ tokens: Array.from({ length: count }, () => 1) });
+  }
+  return undefined;
+}

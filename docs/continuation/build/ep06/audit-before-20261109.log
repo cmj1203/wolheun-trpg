@@ -1,0 +1,975 @@
+bun test v1.4.2 (744846f84)
+
+app/tests/ep06_audit_lines.test.ts:
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_아시나",
+      "speech",
+-     "덕분에 잘 지냈다마다요.",
++     "덕분에 잘 지냈다 마다요.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+-     "라 쿤께선 지난밤 평안하셨는지요?",
++     "라 쿤께선 지난밤 평안 하셨는지요?",
+    ],
+  ]
+
+- Expected  - 2
++ Received  + 2
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c001: 원문 대사와 화자·발화 종류를 보존한다 [0.42ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_라독백",
+      "thought",
+      "손이 부드럽군.",
+    ],
+    [
+      "ep06_라독백",
+      "thought",
+      "나시르의 말도 일리가 있겠어.",
+    ],
+    [
+      "ep06_청발회상",
+      "thought",
+-     "행동이 과격하긴 하나,",
+-   ],
+-   [
+-     "ep06_청발회상",
+-     "thought",
+-     "말투나 생김새… 그리고 풍기는 느낌이 심상치 않은게.",
++     "행동이 과격하긴 하나, 말투나 생김새… 그리고 풍기는 느낌이 심상치 않은게.",
+    ],
+    [
+      "ep06_청발회상",
+      "thought",
+      "왠지 북대륙의 귀족 자제 같습니다.",
+    ],
+  ]
+
+- Expected  - 6
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c007: 원문 대사와 화자·발화 종류를 보존한다 [0.06ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_라",
+      "speech",
+-     "크라차에 가는 목적은?",
++     "크라챠에 가는 목적은?",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "말했잖아요.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "단순한 여-",
+    ],
+    [
+      "ep06_라",
+      "speech",
+      "단순한 여행.",
+    ],
+    [
+      "ep06_라",
+      "speech",
+-     "-이라고 한 번만 더 내뱉는다면,",
+-   ],
+-   [
+-     "ep06_라",
+-     "speech",
+-     "지금 당장 그 입을 막아 주지.",
++     "-이라고 한 번만 더 내뱉는다면, 지금 당장 그 입을 막아 주지.",
+    ],
+  ]
+
+- Expected  - 7
++ Received  + 2
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c008: 원문 대사와 화자·발화 종류를 보존한다 [0.04ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_독백",
+      "thought",
+      "내 본능은 이 남자를 피하라고 하고 있다는 거다.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "…그, 대추야자가 맛있다고 해서!",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+-     "크라차산 대추야자가 유명하잖아요.",
++     "크라챠산 대추야자가 유명하잖아요.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "그래서 가려고 했던 거예요.",
+    ],
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c011: 원문 대사와 화자·발화 종류를 보존한다 [0.04ms]
+(pass) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c024: 원문 대사와 화자·발화 종류를 보존한다
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르",
+      "speech",
+      "또 뵙게 되어 반갑습니다. 아시나님.",
+    ],
+    [
+      "ep06_나시르",
+      "speech",
+-     "옷을 갈아입으시니 몰라보겠습니다.",
++     "옷을 갈아 입으시니 몰라보겠습니다.",
+    ],
+    [
+      "ep06_나시르",
+      "speech",
+-     "아주 어여쁘시네요. 라 쿤께서는 좋으시겠습니다.",
++     "아주 어여쁘시네요.",
++   ],
++   [
++     "ep06_나시르",
++     "speech",
++     "라 쿤께서는 좋으시겠습니다.",
+    ],
+  ]
+
+- Expected  - 2
++ Received  + 7
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c025: 원문 대사와 화자·발화 종류를 보존한다 [0.04ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+-     "ep06_아시나",
++     "ep06_라",
+      "speech",
+-     "당연하죠, 전 미소녀니까.",
++     "당연한 말씀!",
+    ],
+    [
+-     "ep06_미확정풍선",
+-     "narration",
+-     "이 상황에서도 입은 살아있군.",
++     "ep06_라",
++     "speech",
++     "이제 나의 애첩이 될 사람 아닌가.",
++   ],
++   [
++     "ep06_독백",
++     "thought",
++     "입은 비뚤어졌어도 말을 똑바로 하시지?",
+    ],
+  ]
+
+- Expected  - 5
++ Received  + 10
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c026: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+-     "ep06_한숨미확정",
++     "ep06_나시르",
+      "speech",
+      "하아…",
+    ],
+    [
+      "ep06_라",
+      "speech",
+      "데려가라.",
+    ],
+    [
+-     "ep06_독백미확정",
++     "ep06_나시르독백",
+      "thought",
+-     "왜 날 자꾸 어디론가 보내는 거야?!",
++     "왜 날 불렀나 했더니…",
+    ],
+  ]
+
+- Expected  - 3
++ Received  + 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c027: 원문 대사와 화자·발화 종류를 보존한다 [0.04ms]
+(pass) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c029: 원문 대사와 화자·발화 종류를 보존한다
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_라",
+      "speech",
+      "…뭐,",
+    ],
+    [
+-     "ep06_라",
+-     "speech",
+-     "애초에 겁박으로는 입을 열지 않는 위인인듯하니.",
++     "ep06_라독백",
++     "thought",
++     "겁박한 건 맞으니.",
+    ],
+    [
+      "ep06_라",
+      "speech",
+      "너라면 말로 구슬려 낼 수 있겠지.",
+    ],
+    [
+      "ep06_라",
+      "speech",
+      "그 여자 진짜 정체가 뭔지 알아내라.",
+    ],
+    [
+      "ep06_나시르",
+      "speech",
+      "예, 시하드시여.",
+    ],
+  ]
+
+- Expected  - 3
++ Received  + 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c032: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르",
+      "speech",
+-     "크라차와 페시안이 현재 적대 관계라는 것을요.",
++     "크라챠와 페시안이 현재 적대 관계라는 것을요.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "…!",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "아니요, 그건 몰랐는데요.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+-     "크라차가 페시안 건국에 반대하는 사람들이 모여서 만든 나라라는 것만 알았지…",
++     "크라챠가 페시안 건국에 반대하는 사람들이 모여서 만든 나라라는 것만 알았지…",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "사이가 안 좋다는 말은 처음 듣는데…",
+    ],
+  ]
+
+- Expected  - 2
++ Received  + 2
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c046: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르",
+      "speech",
+-     "최근 크라차와 페시안 사이에 마찰이 있었습니다.",
++     "아마 최근 마찰이 잦아서 그럴 겁니다.",
+    ],
+    [
+      "ep06_나시르",
+      "speech",
+-     "그것 때문에 분위기가 안 좋죠.",
++     "근 1년 새에 급속히 분위기가 안 좋아져서요.",
+    ],
+    [
+      "ep06_나시르",
+      "speech",
+-     "아시나님은 모르셨던 모양입니다.",
++     "아직 북대륙까지 소식이 닿지 않았나 보군요.",
+    ],
+  ]
+
+- Expected  - 3
++ Received  + 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c047: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_아시나",
+      "speech",
+-     "…아무래도 북에 있는 기록은 몇 년 늦기 마련이니까요.",
++     "아무래도 그런가 봐요.",
+    ],
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c048: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+- []
++ [
++   [
++     "ep06_독백",
++     "thought",
++     "이제야 알겠다.",
++   ],
++ ]
+
+- Expected  - 1
++ Received  + 7
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c049: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르",
+      "speech",
+      "그렇군요.",
+    ],
+    [
+-     "ep06_아시나",
+-     "speech",
+-     "날 그렇게 죄인 취급했던 것도 이해가 가네요.",
++     "ep06_독백",
++     "thought",
++     "날 그렇게 경계했던 이유가 이거였구나.",
+    ],
+  ]
+
+- Expected  - 3
++ Received  + 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c051: 원문 대사와 화자·발화 종류를 보존한다 [0.04ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_독백",
+      "thought",
+-     "하필이면 적국의 왕한테 크라차 가는 길을 물어봤다니.",
++     "이유도 묻지 않고 자신을 죽이려 했던 사람.",
+    ],
+    [
+      "ep06_독백",
+      "thought",
+-     "심지어 감옥에서도 탈출하고",
+-   ],
+-   [
+-     "ep06_독백",
+-     "thought",
+-     "ㅋㅋㅋㅋㅋ",
+-   ],
+-   [
+-     "ep06_독백",
+-     "thought",
+-     "딱 봐도 수상한 짓 했네… 내가…",
++     "크라챠에 간다는 이유만으로 나를 간자로 몰아갔던 사람.",
+    ],
+  ]
+
+- Expected  - 12
++ Received  + 2
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c052: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_독백",
+      "thought",
+-     "감옥에 넣은 게 감사한 처사였다…",
++     "감옥에 가거나 죽지 않은 것만으로도 다행이야.",
+    ],
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c053: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+-     "ep06_나시르",
+-     "speech",
+-     "이번엔 제가 물어봐도 될까요?",
++     "ep06_독백",
++     "thought",
++     "근데, 굳이 사막을 건너서 크라챠에 가는 게 무모한 일이라 한 건 왜일까?",
+    ],
+    [
+-     "ep06_아시나",
+-     "speech",
+-     "네. 그럼요.",
+-   ],
+-   [
+-     "ep06_나시르",
+-     "speech",
+-     "사막 이야기가 나와서 말입니다.",
++     "ep06_독백",
++     "thought",
++     "사막이야 돌아가면 되잖아?",
+    ],
+  ]
+
+- Expected  - 11
++ Received  + 6
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c054: 원문 대사와 화자·발화 종류를 보존한다 [0.04ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르",
+      "speech",
+-     "크라차로 가는 길에 안내인들이,",
++     "크라챠는 북대륙에서 오지 않는 이상 자르다를 지나서 갈 수밖에 없습니다.",
+    ],
+    [
+-     "ep06_나시르",
+-     "speech",
+-     "사막을 가로지르지 않고 우회해서 가는 방향을 추천하지 않았습니까?",
++     "ep06_독백",
++     "thought",
++     "그, 그렇구나.",
+    ],
+    [
+-     "ep06_나시르",
+-     "speech",
+-     "크라차로 가는 북인들은 다 그렇게 가던데",
+-   ],
+-   [
+-     "ep06_아시나",
+-     "speech",
+-     "알아요. 그렇게 가라고 했었죠. 제가 거절했지만.",
++     "ep06_독백",
++     "thought",
++     "이것도 몰랐다고 하면 의심하겠지.",
+    ],
+  ]
+
+- Expected  - 12
++ Received  + 7
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c055: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르",
+      "speech",
+-     "…그러면 더더욱 모르겠군요.",
++     "그런데 왜 여행을 하시는지 여쭤봐도 되겠습니까?",
+    ],
+    [
+-     "ep06_나시르",
+-     "speech",
+-     "왜 죽을 위험을 감수하면서까지 사막에 가셨던 건지.",
+-   ],
+-   [
+-     "ep06_나시르독백",
++     "ep06_독백",
+      "thought",
+-     "지금까지 했던 말로는 이자가 말하는 게 진실인지 알 수 없다.",
++     "라 쿤한테 말했던 것처럼 여행자라고 하기엔 이제 위험부담이 너무 크다.",
+    ],
+    [
+-     "ep06_나시르독백",
++     "ep06_독백",
+      "thought",
+-     "하지만 사막에 간 이유까지 거짓말하면 티가 나기 마련이지.",
++     "하지만 어중간하게 거짓말을 하면 들통날 거고…",
+    ],
+  ]
+
+- Expected  - 10
++ Received  + 5
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c056: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+-     "ep06_나시르독백",
++     "ep06_독백",
+      "thought",
+-     "그러니 이제는 보여라,",
++     "그러니 거짓을 섞지 않는 게 낫겠지.",
+    ],
+    [
+-     "ep06_나시르독백",
+-     "thought",
+-     "그 아름다운 얼굴 뒤에 숨기고 있는 게 뭔지-",
++     "ep06_아시나",
++     "speech",
++     "저는 어릴 때부터 여행을 하고 싶었어요.",
+    ],
+  ]
+
+- Expected  - 5
++ Received  + 5
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c057: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_아시나",
+      "speech",
+-     "북대륙은 말이죠.",
++     "끝없이 펼쳐진다는 사막, 새하얀 눈으로 뒤덮인 설산.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+-     "계절마다 산의 색이 달라지고,",
++     "내려다볼 수 없는 절벽과 수평선 너머가 보이지 않는 바다.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+-     "들판은 푸르고 아름다워요.",
++     "그런 것들을 직접 보고 싶었죠.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+      "하지만,",
+    ],
+  ]
+
+- Expected  - 3
++ Received  + 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c058: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_아시나",
+      "speech",
+-     "모래로 이루어진 바다는 없죠.",
++     "사막은 생각했던 것보다 훨씬 척박하고 쓸쓸한 곳이더라구요.",
++   ],
++   [
++     "ep06_아시나",
++     "speech",
++     "모래투성이 바람은 따갑고, 풍경은 외롭고…",
+    ],
+  ]
+
+- Expected  - 1
++ Received  + 6
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c059: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+-     "ep06_아시나",
+-     "speech",
+-     "그래서 그 광경이 보고 싶었어요.",
++     "ep06_독백",
++     "thought",
++     "여행길이 생각보다 낭만적이지 않다는 건 알고 있었다.",
++   ],
++   [
++     "ep06_독백",
++     "thought",
++     "하지만 살고 싶다는 것 외에 다른 감정이 들지 않았던 곳은 그곳이 처음이었다.",
+    ],
+    [
+      "ep06_나시르",
+      "speech",
+-     "그러셨군요…",
++     "그러셨군요.",
+    ],
+    [
+      "ep06_나시르독백",
+      "thought",
+-     "나 역시 이곳에서 나고 자라며 사막을 보긴 했지만,",
++     "태어나서 사막을 벗어나본 적 없는 나로선…",
+    ],
+  ]
+
+- Expected  - 5
++ Received  + 10
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c060: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르독백",
+      "thought",
+-     "저런 기분은 한 번도 받지 못했다.",
++     "저런 시각으로 볼 수도 있구나…",
+    ],
+    [
+-     "ep06_나시르",
++     "ep06_아시나",
+      "speech",
+-     "그래서,",
++     "그래서 생각했어요.",
+    ],
+    [
+-     "ep06_나시르",
++     "ep06_아시나",
+      "speech",
+-     "직접 사막을 본 소감은 어떻습니까?",
++     "직접 겪어보길 잘했다고.",
+    ],
+  ]
+
+- Expected  - 5
++ Received  + 5
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c061: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_아시나",
+      "speech",
+-     "사막은…",
++     "그렇게 고되지 않았다면 말로만 듣던 지식으로만 남아있을 뻔했잖아요.",
+    ],
+    [
+      "ep06_아시나",
+      "speech",
+-     "상상했던 것보다 더 예뻤어요.",
++     "그게 기쁘기도 하고 놀랍기도 했어요.",
+    ],
+    [
+-     "ep06_아시나미확정",
+-     "narration",
+-     "타는듯한 더위에 녹아 사라져도 좋을 만큼.",
++     "ep06_아시나",
++     "speech",
++     "역시,",
++   ],
++   [
++     "ep06_아시나",
++     "speech",
++     "나와서 직접 경험하지 않았다면 이런 기분을 느낄 수 없었겠죠.",
+    ],
+  ]
+
+- Expected  - 5
++ Received  + 10
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c062: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+-     "ep06_아시나",
++     "ep06_나시르",
+      "speech",
+-     "그런곳이 죽음의 사막이라 불린다니…",
+-   ],
+-   [
+-     "ep06_아시나",
+-     "speech",
+-     "좀 놀랐어요.",
++     "멋진 생각이네요.",
+    ],
+  ]
+
+- Expected  - 7
++ Received  + 2
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c063: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+-     "ep06_나시르독백",
+-     "thought",
+-     "이 여자는 진실을 말하고 있다.",
+-   ],
+-   [
+      "ep06_나시르",
+      "speech",
+-     "네, 죽음의 사막을 아름답다고 하는 사람은",
++     "아시나 님은 참 멋진 분이시군요.",
+    ],
+    [
+-     "ep06_나시르",
++     "ep06_아시나",
+      "speech",
+-     "세상에 아시나님밖에 없을 겁니다.",
++     "그, 그렇게 띄워주시면 부끄러운데요…",
+    ],
+  ]
+
+- Expected  - 8
++ Received  + 3
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c064: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+59 | }
+60 | 
+61 | describe('6화 최종 원작 감사 29컷의 실제 재생', () => {
+62 |   for (const correction of corrections) {
+63 |     test(correction.cut + ': 원문 대사와 화자·발화 종류를 보존한다', () => {
+64 |       expect(actual.get(correction.cut) ?? []).toEqual(correction.lines);
+                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      "ep06_나시르독백",
+      "thought",
+-     "저런 눈빛을 보면 누구라도 인정할 수밖에 없겠어.",
++     "그런 이유로 그곳을 가려고 했던 것인가?",
+    ],
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep06_audit_lines.test.ts:64:48)
+(fail) 6화 최종 원작 감사 29컷의 실제 재생 > ep06_c065: 원문 대사와 화자·발화 종류를 보존한다 [0.03ms]
+(pass) 6화 최종 원작 감사 29컷의 실제 재생 > 교정 대사를 재생해도 판정이나 모델 호출 없이 도서실에서 끝난다 [0.06ms]
+
+ 3 pass
+ 27 fail
+ 32 expect() calls
+Ran 30 tests across 1 file. [17.00ms]

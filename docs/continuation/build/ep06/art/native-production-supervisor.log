@@ -1,0 +1,3 @@
+{"event": "CAPACITY_WAIT", "candidate_id": "ep06_c002", "reason": "실제 전역 점유가 3개라 호출 전 보류"}
+{"event": "CAPACITY_WAIT", "candidate_id": "ep06_c002", "reason": "실제 전역 점유가 3개라 호출 전 보류"}
+{"event": "BATCH_COMPLETE", "candidate_id": "", "reason": "실제 native PNG 75개 제작. 독립 검수·설치는 모두 미실시."}

@@ -1,0 +1,13 @@
+bun test v1.4.2 (744846f84)
+
+tests/ep04_beauty_recall.test.ts:
+(pass) 실제 미인계 없는 행동20 저장의 retort는 거짓 회상·장면·CG 없이 효과와 종료를 보존한다 [1.68ms]
+(pass) 실제 legacy 미인계 발화·행동 경로는 원문 회상과 그림 순서를 보존한다 [11.39ms]
+(pass) 실제 action 미인계 발화·행동 경로는 원문 회상과 그림 순서를 보존한다 [12.78ms]
+(pass) 실제 speech 미인계 발화·행동 경로는 원문 회상과 그림 순서를 보존한다 [9.59ms]
+(pass) 미인계 없는 거리 확보의 hit·mixed는 회상 없이 거리 성공과 젖음 인식을 유지한다 [0.74ms]
+
+ 5 pass
+ 0 fail
+ 63 expect() calls
+Ran 5 tests across 1 file. [153.00ms]

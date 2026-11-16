@@ -1,0 +1,10 @@
+{
+  "상태": "native 종료",
+  "후보": "ep04_c011_a_earring",
+  "candidate_slot": "ep04_c011_a_earring",
+  "pid": 12776,
+  "pgid": 12776,
+  "exit_code": 0,
+  "출력_존재": true,
+  "종료": "2026-11-09T06:03:37.349448+00:00"
+}

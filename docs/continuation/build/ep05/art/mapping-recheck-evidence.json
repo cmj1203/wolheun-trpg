@@ -1,0 +1,51 @@
+{
+  "stage": "매핑 재확인 완료·부모 GO 대기",
+  "checked_at": "2026-11-09T05:58:19.609Z",
+  "yaml_sha256": "71ad9f9c0de8d9137e6ac46a186edf549ede05c11e06a38ae65a2ff8fbb1e274",
+  "source_audit_sha256": "23fb3373ebe4744824c7fbb53861055cbca4b984416900a5a51d88dbb92b4fe8",
+  "original_cuts": 55,
+  "source_order_matches": true,
+  "yaml_line_anchors": 102,
+  "choice_anchors": 6,
+  "additional_silent_or_subline_anchors": 9,
+  "total_anchors": 117,
+  "unique_required_candidates": 74,
+  "existing_candidates": 21,
+  "existing_candidate_provenance_checked": 21,
+  "independent_qa_pass": 0,
+  "tool_failure_preserved": "ep05_c002_p01 moderation_blocked",
+  "mapped_remaining": 52,
+  "validation_errors": [],
+  "input_hash_changes": [],
+  "panel_gap_errors": [],
+  "source_bounds_errors": [],
+  "ls_exit_code": 0,
+  "ls_path_count": 81,
+  "artifacts": [
+    {
+      "path": "docs/continuation/build/ep05/art/mapping.md",
+      "sha256": "a5a05ba0aafaffac4ff551f76ab0f6b00dc5e578c19bab99656894bc2c47d7c6"
+    },
+    {
+      "path": "docs/continuation/build/ep05/art/mapping.json",
+      "sha256": "031c010ab1f1480ab79c59ff4f33b443a2b79574abea38ee3c055a9b1b48e0f9"
+    },
+    {
+      "path": "docs/continuation/build/ep05/art/candidate-manifest.json",
+      "sha256": "520f9f7b794bc00999cc590212e53aa1fb828bba354f4b72ce317e2faeb20ccb"
+    }
+  ],
+  "generation_calls_this_stage": 0,
+  "reconciliation_ids": [
+    "조정-01",
+    "조정-02",
+    "조정-03",
+    "조정-04",
+    "조정-05",
+    "조정-06",
+    "조정-07",
+    "조정-08",
+    "조정-09"
+  ],
+  "limitations": "추가 앵커 연결은 YAML 소유자 통합 필요. 독립 Claude 이미지 QA·설치·플레이 QA는 미실시. 기존 후보 재생성 금지. 기존 외부 차단은 우회하지 않는다."
+}

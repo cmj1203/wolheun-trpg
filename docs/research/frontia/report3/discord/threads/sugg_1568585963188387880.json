@@ -1,0 +1,74 @@
+{
+ "title": "(3) Discord | \"Stat for Creator\" | 프론티아",
+ "h": "프론티아",
+ "tags": [],
+ "n": 6,
+ "msgs": [
+  {
+   "t": "2026-11-07T11:20:36.542Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "I need stat for each episode that we publish \n\n\nwhen player leave this episode\n,\nwho is play our episode\n,",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-11-07T13:39:05.977Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "I think we should get stats but maybe some different ones\n\nSomething like what games typically do\n\n1) Total plays\n2) total returning players (people who have played the episode more than once)\n3) Average daily players\n4) Average play time\n\nSeeing who is playing the episodes is kinda useless and can somewhat be a violation of privacy (idk how else to put it but not everyone wants to be known).",
+   "emb": "",
+   "att": 0,
+   "reacts": "2",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-11-07T17:34:09.369Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "I think we should get stats but maybe some different ones  Something like what games typically do  1) Total plays 2) total returning players (people who have played the episode more than once) 3) Average daily players 4) Average play time  Seeing who is playing the episodes is kinda useless and can somewhat be a violation of privacy (idk how else to put it but not everyone wants to be known).",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "I think we should get stats but maybe some different ones  Something like what games typically do  1",
+   "sys": ""
+  },
+  {
+   "t": "2026-11-07T17:34:55.521Z",
+   "a": "유저",
+   "bot": false,
+   "txt": "Sorry i mean who is play our episode some kind of demographic",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "Sorry i mean who is play our episode some kind of demographic",
+   "sys": ""
+  },
+  {
+   "t": "2026-11-07T17:35:15.036Z",
+   "a": "유저",
+   "bot": true,
+   "txt": "Yep yep",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  },
+  {
+   "t": "2026-11-07T17:35:51.158Z",
+   "a": "",
+   "bot": false,
+   "txt": "Or somthing like the most model player choose",
+   "emb": "",
+   "att": 0,
+   "reacts": "",
+   "reply": "",
+   "sys": ""
+  }
+ ]
+}

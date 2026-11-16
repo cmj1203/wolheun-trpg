@@ -1,0 +1,9 @@
+{
+  "supervisor_pid": 49784,
+  "exit_code": 75,
+  "candidate_not_launched": "ep06_c002",
+  "reason": "실제 전역 점유 상한을 실행 직전에 확인하여 native를 시작하지 않고 보류함",
+  "actual_native_at_hold": 3,
+  "native_retry": false,
+  "resumption": "점유가 비면 실행기를 재개하며 첫 완료 후보와 기존 영수증은 건너뜀"
+}

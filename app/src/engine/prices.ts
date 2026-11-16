@@ -1,6 +1,21 @@
 import { evalCond, type CondContext } from './conditions.ts';
 import { nextU32 } from './dice.ts';
-import type { FlagValue, FreeSpec, ItemSpec, Outcome, PriceSpec, Tier } from './types.ts';
+import { TRACKS, TRACK_INFO, type Effects, type FlagValue, type FreeSpec, type ItemSpec, type Outcome, type PriceSpec, type Tier, type Track } from './types.ts';
+
+export interface PriceContext extends CondContext {
+  lockedTracks?: readonly Track[];
+}
+
+/** 문맥이 있으면 바닥·상한·이미 잃은 물건을 제외한 실제 인라인 비용만 센다. */
+export function hasInlineCost(effects: Effects | undefined, ctx?: PriceContext): boolean {
+  return TRACKS.some(track => {
+    if (ctx?.lockedTracks?.includes(track)) return false;
+    const delta = effects?.tracks?.[track] ?? 0;
+    return track === '의심' || track === '집착'
+      ? delta > 0 && (!ctx || ctx.tracks[track] < TRACK_INFO[track].max)
+      : delta < 0 && (!ctx || ctx.tracks[track] > 0);
+  }) || Boolean(effects?.lose?.some(id => !ctx || ctx.items.includes(id)));
+}
 
 /** 한 판에 한 번뿐인 대가가 이미 나왔음을 남기는 플래그 이름. */
 export function onceFlag(id: string): string {
@@ -12,11 +27,15 @@ export function onceFlag(id: string): string {
  * 결과에 price 목록이 있으면 그것, 없으면 비트 표 전체. 7~9 는 soft 만, 6- 는 hard 가 하나라도 있으면 hard 만.
  * 조건(if)에 안 맞거나 once 가 이미 쓰인 것은 뺀다. 이 장면에서 이미 뽑힌 것은 다른 후보가 남아 있는 한 뒤로 미룬다.
  */
-export function priceCandidates(free: FreeSpec, outcome: Outcome, tier: Tier, ctx: CondContext, flags: Record<string, FlagValue>, used: readonly string[], item?: ItemSpec, spoken = true): PriceSpec[] {
+export function priceCandidates(free: FreeSpec, outcome: Outcome, tier: Tier, ctx: PriceContext, flags: Record<string, FlagValue>, used: readonly string[], item?: ItemSpec, spoken = true, actualCost = false): PriceSpec[] {
   if (tier === 'hit' || tier === 'crit') return [];
-  const table = (free.prices ?? []).filter((p) => !p.spoken || spoken);
-  // 쓴 물건의 대가는 장면 표에서 찾는다. 없으면 결과별 후보와 기존 추첨 규칙을 따른다.
-  const preferred = item && item.id !== 'earring' ? table.filter((p) =>
+  const table = (free.prices ?? []).filter((p) => (!p.spoken || spoken) && (!actualCost ||
+    hasInlineCost(p.effects, ctx) ||
+    Object.entries(p.effects?.flags ?? {}).some(([key, value]) => ctx.flags[key] !== value) ||
+    p.effects?.lose?.some(id => ctx.items.includes(id))));
+  const listed = outcome.price ? outcome.price.flatMap((id) => table.filter((p) => p.id === id)) : table;
+  // 물건 대가의 우선순위도 이 결과에서 허용한 후보 안에서만 적용한다.
+  const preferred = item && item.id !== 'earring' ? listed.filter((p) =>
     p.tag === '소지품' && p.weight === (tier === 'mixed' ? 'soft' : 'hard') &&
     (p.if === undefined || evalCond(p.if, ctx)) && !(p.once && flags[onceFlag(p.id)] === true) &&
     (p.effects?.lose?.includes(item.id) || item.states?.some((s) => p.effects?.flags?.[s.flag] === true))) : [];
@@ -24,9 +43,8 @@ export function priceCandidates(free: FreeSpec, outcome: Outcome, tier: Tier, ct
     const fresh = preferred.filter((p) => !used.includes(p.id));
     return fresh.length ? fresh : preferred;
   }
-  const listed = outcome.price ? outcome.price.flatMap((id) => table.filter((p) => p.id === id)) : table;
   let pool = listed.filter((p) => (tier === 'mixed' ? p.weight === 'soft' : true) && (p.if === undefined || evalCond(p.if, ctx)) && !(p.once && flags[onceFlag(p.id)] === true));
-  if (tier === 'miss' && pool.some((p) => p.weight === 'hard')) pool = pool.filter((p) => p.weight === 'hard');
+  if ((tier === 'miss' || tier === 'fumble') && pool.some((p) => p.weight === 'hard')) pool = pool.filter((p) => p.weight === 'hard');
   const fresh = pool.filter((p) => !used.includes(p.id));
   return fresh.length ? fresh : pool;
 }

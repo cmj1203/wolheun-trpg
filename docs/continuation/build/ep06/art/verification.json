@@ -1,0 +1,1077 @@
+{
+  "episode": 6,
+  "stage": "ready-for-generation",
+  "art_ready": false,
+  "generation_authorized": false,
+  "result": "매핑 검증 통과. 생성은 부모 GO와 슬롯 배정까지 대기.",
+  "counts": {
+    "original_pages": 16,
+    "original_cuts": 65,
+    "outside_cut_speech_ranges": 2,
+    "current_beats": 79,
+    "current_cg_references": 65,
+    "current_line_anchors": 157,
+    "current_silent_line_anchors": 7,
+    "current_branch_narration_anchors": 6,
+    "choice_anchors": 12,
+    "derived_silent_panel_steps": 1,
+    "display_anchor_assignments": 158,
+    "cross_cut_same_image_reuse_groups": 5,
+    "extra_internal_panel_candidates": 15,
+    "required_unique_candidates": 75,
+    "existing_generated_candidates": 0,
+    "independent_qa_pass": 0,
+    "new_generation_calls": 0,
+    "existing_source_inputs": 4
+  },
+  "validation": {
+    "kind": "상주 커널에서 저장된 JSON 파싱·현재 YAML 줄·원작 전사·좌표·경로·SHA-256 전수 대조",
+    "errors": [],
+    "original_order_complete": true,
+    "literal_anchor_ids_unique": true,
+    "literal_yaml_rows_exact": true,
+    "source_speech_texts_checked": 144,
+    "source_speech_text_mismatches": [],
+    "source_quote_count": 145,
+    "non_speech_source_quotes": [
+      {
+        "cut": "ep06_c036",
+        "text": "크롬웰 / 시그렌",
+        "classification": "지도 소품 표기",
+        "candidate_filename": "assets/ep06/gen/ep06_c036_map.png",
+        "handling": "대사로 새로 읽지 않고 원작 지도 소품의 크롬웰·시그렌 표기를 보존한다."
+      }
+    ],
+    "all_candidate_anchors_covered": true,
+    "input_hash_changes": [],
+    "source_panel_order": "cuts.json 65개 원래 순서 보존. 내부 분리는 panel_provenance 순번과 earliest_reveal_anchor로 제한. c029 두 번째 패널은 소유자 재조정이 필요한 파생 무언 단계.",
+    "unique_candidate_count": 75,
+    "missing_candidate_outputs_expected": 75,
+    "actual_generated_outputs": 0,
+    "qa_pass_count": 0,
+    "application_tests": "문서 전용 매핑 단계라 앱·모델·서버·브라우저 테스트는 실행하지 않음."
+  },
+  "input_path_checks": [
+    {
+      "path": "work/ep06/merged/ep06_001.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 28231
+    },
+    {
+      "path": "work/ep06/merged/ep06_002.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 29136
+    },
+    {
+      "path": "work/ep06/merged/ep06_003.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 25674
+    },
+    {
+      "path": "work/ep06/merged/ep06_004.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 21236
+    },
+    {
+      "path": "work/ep06/merged/ep06_005.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 26384
+    },
+    {
+      "path": "work/ep06/merged/ep06_006.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 22371
+    },
+    {
+      "path": "work/ep06/merged/ep06_007.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 24881
+    },
+    {
+      "path": "work/ep06/merged/ep06_008.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 25423
+    },
+    {
+      "path": "work/ep06/merged/ep06_009.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 24000
+    },
+    {
+      "path": "work/ep06/merged/ep06_010.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 24245
+    },
+    {
+      "path": "work/ep06/merged/ep06_011.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 24565
+    },
+    {
+      "path": "work/ep06/merged/ep06_012.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 26931
+    },
+    {
+      "path": "work/ep06/merged/ep06_013.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 25044
+    },
+    {
+      "path": "work/ep06/merged/ep06_014.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 28752
+    },
+    {
+      "path": "work/ep06/merged/ep06_015.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 26528
+    },
+    {
+      "path": "work/ep06/merged/ep06_016.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 28080
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c001.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5695
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c002.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4158
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c003.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3186
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c004.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 1037
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c005.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 2963
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c006.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 7294
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c007.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 13008
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c008.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 14928
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c009.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5108
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c010.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 9775
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c011.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 9064
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c012.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 7418
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c013.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4409
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c014.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5878
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c015.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3730
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c016.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4802
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c017.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 9055
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c018.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4619
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c019.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3151
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c020.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 9477
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c021.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5496
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c022.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5393
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c023.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4367
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c024.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5467
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c025.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4669
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c026.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 6027
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c027.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4758
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c028.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3721
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c029.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 7180
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c030.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 1162
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c031.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 6529
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c032.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 9005
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c033.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 2177
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c034.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3476
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c035.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3361
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c036.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 6458
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c037.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5904
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c038.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 2983
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c039.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 10383
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c040.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 2099
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c041.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5257
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c042.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 1308
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c043.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3344
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c044.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 1770
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c045.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4518
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c046.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 14646
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c047.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5334
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c048.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 1250
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c049.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 580
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c050.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 480
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c051.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4513
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c052.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 7558
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c053.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 2743
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c054.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4304
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c055.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 6663
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c056.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 8933
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c057.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 7661
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c058.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 8073
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c059.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3169
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c060.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 9672
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c061.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4612
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c062.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 12227
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c063.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 3071
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c064.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 6587
+    },
+    {
+      "path": "assets/ep06/cuts/full_res/clean/ep06_c065.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5135
+    },
+    {
+      "path": "assets/ep06/gen/source/ep06_gap025.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 1867
+    },
+    {
+      "path": "assets/ep06/gen/source/ep06_c025.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 4669
+    },
+    {
+      "path": "assets/ep06/gen/source/ep06_c024.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 5467
+    },
+    {
+      "path": "assets/ep06/gen/source/ep06_gap014.png",
+      "exists": true,
+      "sha256_match": true,
+      "width": 2000,
+      "height": 2828
+    }
+  ],
+  "planned_candidate_existence_checks": [
+    {
+      "path": "assets/ep06/gen/ep06_c001.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c002.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c003.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c005.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c006.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c007_hand.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c007_eye.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c007_memory.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c008_room.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c008_pair.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c008_threat.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c009.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c010.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c011_face.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c011_feet.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c012.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c013.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c014.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c015.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c016.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c017_room.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c017_turn.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c018.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c019.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c020.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c021.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c022.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c023.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c024.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c025.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c026.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c027.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c028.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c029_ra.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c029_nod.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c030.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c031.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c032_order.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c032_accept.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c033.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c034.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c035.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c036_map.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c036_table.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c037.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c038.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c039.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c041.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c042.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c043.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c045.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c046_question.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c046_reaction.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c046_hands.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c047.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c049.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c050.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c051.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c052_hood.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c052_escape.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c053.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c054.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c055.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c056_nasir.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c056_ashina.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c057.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c058.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c059.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c060_ashina.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c060_nasir.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c062_present.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c062_desert.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c063.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c064.png",
+      "exists": false
+    },
+    {
+      "path": "assets/ep06/gen/ep06_c065.png",
+      "exists": false
+    }
+  ],
+  "artifact_sha256": {
+    "mapping.md": "e89326ac0e201f1c16f74f0c2bfa5a18128d553a6ae6c45919a243b122b5770e",
+    "mapping.json": "6373af12daf2f7b54fadccb1c29e56e0b57c09ad81588e84b0ff3dfe661bf01b",
+    "candidate-manifest.json": "9589d5bac1cc0352d0503605c65ca90b34cad33f1dc3b74464dad379c6271abe"
+  },
+  "ls": {
+    "command": "ls -ld (기록된 원본 16개·클린 컷 65개·기존 원문 크롭 4개·산출물 3개)",
+    "exit_code": 0,
+    "listed_paths": [
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_001.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_002.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_003.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_004.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_005.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_006.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_007.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_008.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_009.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_010.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_011.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_012.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_013.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_014.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_015.png",
+      "/Users/choeminju/월흔_trpg/work/ep06/merged/ep06_016.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c001.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c002.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c003.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c004.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c005.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c006.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c007.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c008.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c009.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c010.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c011.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c012.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c013.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c014.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c015.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c016.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c017.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c018.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c019.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c020.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c021.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c022.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c023.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c024.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c025.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c026.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c027.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c028.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c029.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c030.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c031.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c032.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c033.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c034.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c035.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c036.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c037.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c038.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c039.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c040.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c041.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c042.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c043.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c044.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c045.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c046.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c047.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c048.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c049.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c050.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c051.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c052.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c053.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c054.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c055.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c056.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c057.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c058.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c059.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c060.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c061.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c062.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c063.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c064.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c065.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap025.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c025.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c024.png",
+      "/Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap014.png",
+      "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/mapping.md",
+      "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/mapping.json",
+      "/Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/candidate-manifest.json"
+    ],
+    "stdout": "-rw-r--r--   1   501    20  7413897 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c029.png\n-rw-r--r--   1   501    20 38459106 Nov 03 11:21 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_001.png\n-rw-r--r--   1   501    20 29216209 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c007.png\n-rw-r--r--   1   501    20  6011456 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c018.png\n-rw-r--r--   1   501    20 63228478 Nov 03 11:29 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_011.png\n-rw-r--r--   1   501    20 12252005 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c017.png\n-rw-r--r--   1   501    20 37673163 Nov 03 11:30 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_012.png\n-rw-r--r--   1   501    20  4319606 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c028.png\n-rw-r--r--   1   501    20   761843 Nov 09 04:37 /Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/candidate-manifest.json\n-rw-r--r--   1   501    20 39696783 Nov 03 11:28 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_010.png\n-rw-r--r--   1   501    20 46490281 Nov 03 11:32 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_015.png\n-rw-r--r--   1   501    20 46545226 Nov 03 11:31 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_014.png\n-rw-r--r--   1   501    20  3271837 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c002.png\n-rw-r--r--   1   501    20  9866493 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c016.png\n-rw-r--r--   1   501    20  6442179 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c023.png\n-rw-r--r--   1   501    20 10372181 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c022.png\n-rw-r--r--   1   501    20  7225438 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c001.png\n-rw-r--r--   1   501    20  1127374 Nov 09 04:37 /Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/mapping.json\n-rw-r--r--   1   501    20 57777110 Nov 03 11:30 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_013.png\n-rw-r--r--   1   501    20 63147549 Nov 03 11:27 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_009.png\n-rw-r--r--   1   501    20 41902246 Nov 03 11:32 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_016.png\n-rw-r--r--   1   501    20  7934426 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c012.png\n-rw-r--r--   1   501    20  7538035 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c011.png\n-rw-r--r--   1   501    20  1222245 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c004.png\n-rw-r--r--   1   501    20  2101035 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c005.png\n-rw-r--r--   1   501    20  6063476 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c027.png\n-rw-r--r--   1   501    20  3268819 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c015.png\n-rw-r--r--   1   501    20  3221640 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c021.png\n-rw-r--r--   1   501    20 44279639 Nov 03 11:25 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_005.png\n-rw-r--r--   1   501    20 40139671 Nov 03 11:27 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_008.png\n-rw-r--r--   1   501    20 41058228 Nov 03 11:25 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_006.png\n-rw-r--r--   1   501    20    93336 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c050.png\n-rw-r--r--   1   501    20  2711342 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c003.png\n-rw-r--r--   1   501    20 12923072 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c020.png\n-rw-r--r--   1   501    20    43054 Nov 09 04:37 /Users/choeminju/월흔_trpg/docs/continuation/build/ep06/art/mapping.md\n-rw-r--r--   1   501    20 39846143 Nov 03 11:26 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_007.png\n-rw-r--r--   1   501    20  4523851 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c024.png\n-rw-r--r--   1   501    20  5628155 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c025.png\n-rw-r--r--   1   501    20  4448507 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c013.png\n-rw-r--r--   1   501    20  9342868 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c060.png\n-rw-r--r--   1   501    20   206510 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c040.png\n-rw-r--r--   1   501    20 12682204 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c019.png\n-rw-r--r--   1   501    20  5486166 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c014.png\n-rw-r--r--   1   501    20 19597028 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c008.png\n-rw-r--r--   1   501    20  2476175 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c035.png\n-rw-r--r--   1   501    20  5246374 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c037.png\n-rw-r--r--   1   501    20  3410537 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c064.png\n-rw-r--r--   1   501    20 66951970 Nov 03 11:21 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_002.png\n-rw-r--r--   1   501    20 18510062 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c032.png\n-rw-r--r--   1   501    20  3528488 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c009.png\n-rw-r--r--   1   501    20  5688189 Nov 09 02:23 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c024.png\n-rw-r--r--   1   501    20 11275236 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c006.png\n-rw-r--r--   1   501    20 15186115 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c062.png\n-rw-r--r--   1   501    20   486646 Nov 09 02:15 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap014.png\n-rw-r--r--   1   501    20 15653506 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c010.png\n-rw-r--r--   1   501    20 14586096 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c055.png\n-rw-r--r--   1   501    20 41357018 Nov 03 11:21 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_003.png\n-rw-r--r--   1   501    20 19148829 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c031.png\n-rw-r--r--   1   501    20  6543919 Nov 09 02:17 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_c025.png\n-rw-r--r--   1   501    20 15105315 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c036.png\n-rw-r--r--   1   501    20  3660141 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c034.png\n-rw-r--r--   1   501    20  4174677 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c033.png\n-rw-r--r--   1   501    20  8355244 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c026.png\n-rw-r--r--   1   501    20  1928762 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c061.png\n-rw-r--r--   1   501    20  3984138 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c063.png\n-rw-r--r--   1   501    20 27326479 Nov 03 11:24 /Users/choeminju/월흔_trpg/work/ep06/merged/ep06_004.png\n-rw-r--r--   1   501    20 32315974 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c039.png\n-rw-r--r--   1   501    20  3546689 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c038.png\n-rw-r--r--   1   501    20  1322103 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c053.png\n-rw-r--r--   1   501    20   573630 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c030.png\n-rw-r--r--   1   501    20   126488 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c049.png\n-rw-r--r--   1   501    20 28095950 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c052.png\n-rw-r--r--   1   501    20 10644397 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c041.png\n-rw-r--r--   1   501    20  4604561 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c059.png\n-rw-r--r--   1   501    20  4146299 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c065.png\n-rw-r--r--   1   501    20  8304059 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c047.png\n-rw-r--r--   1   501    20   191932 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c042.png\n-rw-r--r--   1   501    20  2580767 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c045.png\n-rw-r--r--   1   501    20   351218 Nov 09 02:16 /Users/choeminju/월흔_trpg/assets/ep06/gen/source/ep06_gap025.png\n-rw-r--r--   1   501    20  8074653 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c056.png\n-rw-r--r--   1   501    20 16971344 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c046.png\n-rw-r--r--   1   501    20 16702655 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c058.png\n-rw-r--r--   1   501    20   127314 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c044.png\n-rw-r--r--   1   501    20  2785350 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c054.png\n-rw-r--r--   1   501    20  5329337 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c051.png\n-rw-r--r--   1   501    20   186128 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c048.png\n-rw-r--r--   1   501    20  4188047 Nov 03 11:35 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c043.png\n-rw-r--r--   1   501    20  6871392 Nov 03 11:36 /Users/choeminju/월흔_trpg/assets/ep06/cuts/full_res/clean/ep06_c057.png\n",
+    "stderr": ""
+  },
+  "scope": {
+    "written": [
+      "docs/continuation/build/ep06/art/mapping.md",
+      "docs/continuation/build/ep06/art/mapping.json",
+      "docs/continuation/build/ep06/art/candidate-manifest.json",
+      "docs/continuation/build/ep06/art/verification.json"
+    ],
+    "yaml_changed": false,
+    "source_documents_changed": false,
+    "asset_files_changed": false,
+    "other_episode_assets_changed": false,
+    "shared_engine_types_gm_ui_lore_changed": false,
+    "native_calls_started": 0,
+    "slots_acquired": 0,
+    "cancellation_or_regeneration": 0
+  },
+  "remaining": {
+    "parent_action": "명시 GO 및 전역 슬롯 배정",
+    "generation": "미실시",
+    "independent_claude_source_side_by_side_qa": "75개 모두 미실시",
+    "yaml_installation": "미실시. 내부 패널 12컷·인접 재사용 5컷·c014 앞 여백은 소유자 재조정 필요.",
+    "reconciliation_detail": "mapping.json/reconciliations"
+  }
+}

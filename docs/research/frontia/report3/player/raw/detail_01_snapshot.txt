@@ -1,0 +1,2937 @@
+[p1 "프론티아 | 내가 주인공이 되는 AI 플레이드라마" | space "프론티아 분석 리포트"(45): 3 managed, 0 untracked — p1* "프론티아 | 내가 주인공이 되는 AI 플레이드라마", p2 "(3) Discord | #💬｜lounge-한국어 | 프론티아", p3 "기본 용어 정리 · Frontia Studio Guide"]
+root
+  container
+    anchor [ref=41, url=https://frontia.ai/]
+      image
+    anchor [ref=42, url=https://frontia.ai/home]
+      paragraph
+        text "드라마"
+    anchor [ref=43, url=https://frontia.ai/scroll]
+      paragraph
+        text "노벨"
+    search
+      searchbox "에피소드 검색" [ref=44]
+        text "에피소드 검색"
+      button "태그 검색" [ref=45]
+        svg_root
+      button "에피소드 검색" [ref=46]
+        svg_root
+    anchor [ref=47, url=https://frontia.ai/payment?source=home]
+      image
+    button "최근 기록" [ref=48]
+      svg_root
+    button "채팅" [ref=49]
+      svg_root
+    button "프로필" [ref=50]
+      image
+  container
+    button [ref=51]
+      text "내게 맞춤"
+    button [ref=52]
+      text "랭킹"
+    button [ref=53]
+      text "NEW"
+    button [ref=54]
+      text "요즘 인기"
+    button [ref=55]
+      text "어른용"
+    button [ref=56]
+      text "연프"
+    button [ref=57]
+      text "드라마"
+    button [ref=58]
+      text "로맨스판타지"
+    button [ref=59]
+      text "BL"
+    button [ref=60]
+      text "판타지/무협"
+    button [ref=61]
+      text "학원/일상"
+    button [ref=62]
+      text "미스터리"
+    button [ref=63]
+      text "시뮬레이션"
+  container
+    container
+      image
+      image
+      heading
+        text "TS 세계관 해리 포터에 빙의했다"
+      unordered_list
+        list_item
+          button "해리포터 태그로 검색" [ref=90, loc=css:button[aria-label="해리포터 태그로 검색"]]
+            svg_root
+            text "해리포터"
+        list_item
+          button "로맨스코미디 태그로 검색" [ref=91, loc=css:button[aria-label="로맨스코미디 태그로 검색"]]
+            svg_root
+            text "로맨스코미디"
+        list_item
+          button "말포이 태그로 검색" [ref=92, loc=css:button[aria-label="말포이 태그로 검색"]]
+            svg_root
+            text "말포이"
+        list_item
+          button "2차창작 태그로 검색" [ref=93, loc=css:button[aria-label="2차창작 태그로 검색"]]
+            svg_root
+            text "2차창작"
+        list_item
+          button "남성향 태그로 검색" [ref=94, loc=css:button[aria-label="남성향 태그로 검색"]]
+            svg_root
+            text "남성향"
+      button [ref=95]
+        svg_root
+        text "바로 플레이"
+      button [ref=96]
+        svg_root
+        text "상세 정보"
+      button "1번째 배너" [ref=97]
+      button "2번째 배너" [ref=98]
+      button "3번째 배너" [ref=99]
+      button "4번째 배너" [ref=100]
+      button "5번째 배너" [ref=101]
+      image
+      image
+      heading
+        text "잿빛 캔버스"
+      unordered_list
+        list_item
+          button "로맨스 태그로 검색" [ref=102, loc=css:button[aria-label="로맨스 태그로 검색"]]
+            svg_root
+            text "로맨스"
+        list_item
+          button "스릴러 태그로 검색" [ref=103, loc=css:button[aria-label="스릴러 태그로 검색"]]
+            svg_root
+            text "스릴러"
+        list_item
+          button "여성향 태그로 검색" [ref=104]
+            svg_root
+            text "여성향"
+        list_item
+          button "삼각관계 태그로 검색" [ref=105, loc=css:button[aria-label="삼각관계 태그로 검색"]]
+            svg_root
+            text "삼각관계"
+        list_item
+          button "집착 태그로 검색" [ref=106, loc=css:button[aria-label="집착 태그로 검색"]]
+            svg_root
+            text "집착"
+      button [ref=107]
+        svg_root
+        text "바로 플레이"
+      button [ref=108]
+        svg_root
+        text "상세 정보"
+      button "1번째 배너" [ref=109]
+      button "2번째 배너" [ref=110]
+      button "3번째 배너" [ref=111]
+      button "4번째 배너" [ref=112]
+      button "5번째 배너" [ref=113]
+      image
+      image
+      heading
+        text "미드나잇 클로저"
+      unordered_list
+        list_item
+          button "여성향 태그로 검색" [ref=114]
+            svg_root
+            text "여성향"
+        list_item
+          button "어반판타지 태그로 검색" [ref=115, loc=css:button[aria-label="어반판타지 태그로 검색"]]
+            svg_root
+            text "어반판타지"
+        list_item
+          button "악마 태그로 검색" [ref=116, loc=css:button[aria-label="악마 태그로 검색"]]
+            svg_root
+            text "악마"
+        list_item
+          button "계약 태그로 검색" [ref=117, loc=css:button[aria-label="계약 태그로 검색"]]
+            svg_root
+            text "계약"
+        list_item
+          button "복수극 태그로 검색" [ref=118, loc=css:button[aria-label="복수극 태그로 검색"]]
+            svg_root
+            text "복수극"
+      button [ref=119]
+        svg_root
+        text "바로 플레이"
+      button [ref=120]
+        svg_root
+        text "상세 정보"
+      button "1번째 배너" [ref=121]
+      button "2번째 배너" [ref=122]
+      button "3번째 배너" [ref=123]
+      button "4번째 배너" [ref=124]
+      button "5번째 배너" [ref=125]
+      image
+      image
+      heading
+        text "제4회 콘테스트 「입학 통지서」"
+      paragraph
+        text "콘테스트 수상하면 내 작품이 해외 무대로!"
+      button [ref=126]
+        text "참여 방법 보기"
+      button "1번째 배너" [ref=127]
+      button "2번째 배너" [ref=128]
+      button "3번째 배너" [ref=129]
+      button "4번째 배너" [ref=130]
+      button "5번째 배너" [ref=131]
+      image
+      image
+      heading
+        text "디렉터 수익 창출"
+      paragraph
+        text "프론티아에서 최고의 수익을 만들어보세요!"
+      button [ref=132]
+        text "바로가기"
+      button "1번째 배너" [ref=133]
+      button "2번째 배너" [ref=134]
+      button "3번째 배너" [ref=135]
+      button "4번째 배너" [ref=136]
+      button "5번째 배너" [ref=137]
+      button "이전" [ref=138]
+        svg_root
+      button "다음" [ref=139]
+        svg_root
+    heading
+      text "「메기는 처음이라」와 비슷한 에피소드"
+    button "이전" [ref=140]
+      svg_root
+    button "다음" [ref=141]
+      svg_root
+    region "「메기는 처음이라」와 비슷한 에피소드"
+      anchor [ref=142, url=https://frontia.ai/episodes/6adeb48d9d896405e98e6ecc?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        image
+        svg_root
+        paragraph
+          text "연애메이트"
+        svg_root
+        paragraph
+          text "220만+"
+        paragraph
+          text "오월"
+      anchor [ref=143, url=https://frontia.ai/episodes/6ad29884f092782346e6a38d?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        image
+        paragraph
+          text "넥스트페이스"
+        svg_root
+        paragraph
+          text "91만+"
+        paragraph
+          text "모아드림"
+        image
+      anchor [ref=144, url=https://frontia.ai/episodes/6aed32c1219af000479e6e4c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        image
+        paragraph
+          text "러브페어링"
+        svg_root
+        paragraph
+          text "17만+"
+        paragraph
+          text "연애스토리"
+        image
+      anchor [ref=145, url=https://frontia.ai/episodes/6acd07199e6fa4198447ddc9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        image
+        paragraph
+          text "한양연회"
+        svg_root
+        paragraph
+          text "704만+"
+        paragraph
+          text "몽돌"
+        image
+      anchor [ref=146, url=https://frontia.ai/episodes/6ab772d0fe4105b660e89857?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        svg_root
+        paragraph
+          text "로그아웃 프렌드존 시즌2"
+        svg_root
+        paragraph
+          text "70만+"
+        paragraph
+          text "짱돌"
+        image
+      anchor [ref=147, url=https://frontia.ai/episodes/6ae4e08cb8bd9b1bdd91edc5?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        image
+        paragraph
+          text "한양춘몽"
+        svg_root
+        paragraph
+          text "186만+"
+        paragraph
+          text "몽돌"
+        image
+      anchor [ref=148, url=https://frontia.ai/episodes/6ab9f9bc3faba6980d13b780?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        svg_root
+        paragraph
+          text "우리 사이에 밤이 생겼다."
+        svg_root
+        paragraph
+          text "70만+"
+        paragraph
+          text "세계"
+        image
+      anchor [ref=149, url=https://frontia.ai/episodes/6aadebb80629968a1d5162f2?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        svg_root
+        paragraph
+          text "게스트하우스 파티"
+        svg_root
+        paragraph
+          text "57만+"
+        paragraph
+          text "란이"
+      anchor [ref=150, url=https://frontia.ai/episodes/6adaeba621e87fcc21fea874?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        image
+        paragraph
+          text "새봄공연예술고등학교"
+        svg_root
+        paragraph
+          text "37만+"
+        paragraph
+          text "나비랑"
+        image
+      anchor [ref=151, url=https://frontia.ai/episodes/6ae18fe944473f301c97a059?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_similar_to_recent_play]
+        image
+        image
+        paragraph
+          text "여친 알바 구함"
+        svg_root
+        paragraph
+          text "12만+"
+        paragraph
+          text "나비랑"
+        image
+    heading
+      text "실시간 트렌딩 TOP 50"
+    button "이전" [ref=152]
+      svg_root
+    button "다음" [ref=153]
+      svg_root
+    region "실시간 트렌딩 TOP 50"
+      text "1"
+      anchor [ref=154, url=https://frontia.ai/episodes/6ac6007c7b675ba1761e5b95?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "메기는 처음이라"
+        svg_root
+        text "2506만+"
+        text "roro"
+        image
+      text "2"
+      anchor [ref=155, url=https://frontia.ai/episodes/6adeb48d9d896405e98e6ecc?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "연애메이트"
+        svg_root
+        text "220만+"
+        text "오월"
+      text "3"
+      anchor [ref=156, url=https://frontia.ai/episodes/6adbad083054bede74bbd2df?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "연서대학교 : 밤의 캠퍼스"
+        svg_root
+        text "160만+"
+        text "rose"
+        image
+      text "4"
+      anchor [ref=157, url=https://frontia.ai/episodes/6acd07199e6fa4198447ddc9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "한양연회"
+        svg_root
+        text "704만+"
+        text "몽돌"
+        image
+      text "5"
+      anchor [ref=158, url=https://frontia.ai/episodes/6ae4e08cb8bd9b1bdd91edc5?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "한양춘몽"
+        svg_root
+        text "186만+"
+        text "몽돌"
+        image
+      text "6"
+      anchor [ref=159, url=https://frontia.ai/episodes/6ad29884f092782346e6a38d?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "넥스트페이스"
+        svg_root
+        text "91만+"
+        text "모아드림"
+        image
+      text "7"
+      anchor [ref=160, url=https://frontia.ai/episodes/6aec09343c249a4bcea03803?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "한울고 IF : 일주일만 신세 질게"
+        svg_root
+        text "14만+"
+        text "라떼"
+        image
+      text "8"
+      anchor [ref=161, url=https://frontia.ai/episodes/6ae558acd75dd8d47e2da312?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "학교 다녀오겠습니다"
+        svg_root
+        text "50만+"
+        text "roro"
+        image
+      text "9"
+      anchor [ref=162, url=https://frontia.ai/episodes/6acbb26d44407535745dd602?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "VIP"
+        svg_root
+        text "103만+"
+        text "zzimi"
+        image
+      text "10"
+      anchor [ref=163, url=https://frontia.ai/episodes/6adf60534b7da825247de6eb?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "야쿠자, 아저씨의 첫사랑"
+        svg_root
+        text "20만+"
+        text "Shia"
+        image
+      text "11"
+      anchor [ref=164, url=https://frontia.ai/episodes/6aed32c1219af000479e6e4c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "러브페어링"
+        svg_root
+        text "17만+"
+        text "연애스토리"
+        image
+      text "12"
+      anchor [ref=165, url=https://frontia.ai/episodes/6adcc69ec4d420edb7a168cb?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "재벌들의 연애"
+        svg_root
+        text "35만+"
+        text "Shia"
+        image
+      text "13"
+      anchor [ref=166, url=https://frontia.ai/episodes/6af08ca805f920c31cc3e86e?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "전남친 or 아저씨"
+        svg_root
+        text "4만+"
+        text "zzimi"
+        image
+      text "14"
+      anchor [ref=167, url=https://frontia.ai/episodes/6ad8b595d9696f422ab9610c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "반짝반짝, 소다팝"
+        svg_root
+        text "90만+"
+        text "블루웨일"
+        image
+      text "15"
+      anchor [ref=168, url=https://frontia.ai/episodes/6adc1026fdd671eb92dc716f?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "싸움금지!"
+        svg_root
+        text "12만+"
+        text "프로필1553"
+        image
+      text "16"
+      anchor [ref=169, url=https://frontia.ai/episodes/6af151ecaa1b717911a0c758?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "소꿉친구네 하숙집에 입주했습니다"
+        svg_root
+        text "1만+"
+        text "도트"
+      text "17"
+      anchor [ref=170, url=https://frontia.ai/episodes/6aedc15fe27ad692c1d358a8?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "홍콩 청춘백서"
+        svg_root
+        text "12만+"
+        text "Dorosi도로시"
+        image
+      text "18"
+      anchor [ref=171, url=https://frontia.ai/episodes/6aee79477aba4867afd7a312?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "LL：이든 그레이엄"
+        svg_root
+        text "2만+"
+        text "12122"
+      text "19"
+      anchor [ref=172, url=https://frontia.ai/episodes/6ad4a095db0db480f788b304?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "계약 연애"
+        svg_root
+        text "12만+"
+        text "세계"
+        image
+      text "20"
+      anchor [ref=173, url=https://frontia.ai/episodes/6adb5ceb787db39a99a1d872?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "제복 입은 이웃집 남자들"
+        svg_root
+        text "43만+"
+        text "zzimi"
+        image
+      text "21"
+      anchor [ref=174, url=https://frontia.ai/episodes/6adaeba621e87fcc21fea874?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "새봄공연예술고등학교"
+        svg_root
+        text "37만+"
+        text "나비랑"
+        image
+      text "22"
+      anchor [ref=175, url=https://frontia.ai/episodes/6ad0f1cee91fb588de7378ed?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "(나만 아는) 폭군을 다루는 방법"
+        svg_root
+        text "14만+"
+        text "헬라"
+        image
+      text "23"
+      anchor [ref=176, url=https://frontia.ai/episodes/6acaf6d6f6f21f864841f629?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "전 애인이 학교에 있다"
+        svg_root
+        text "38만+"
+        text "Rumi"
+        image
+      text "24"
+      anchor [ref=177, url=https://frontia.ai/episodes/6ad47856ff01e803c4e58c69?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "교회 오빠"
+        svg_root
+        text "6만+"
+        text "zzimi"
+        image
+      text "25"
+      anchor [ref=178, url=https://frontia.ai/episodes/6ae18fe944473f301c97a059?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "여친 알바 구함"
+        svg_root
+        text "12만+"
+        text "나비랑"
+        image
+      text "26"
+      anchor [ref=179, url=https://frontia.ai/episodes/6aed2a1e950e0e45a646921c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "첫사랑.zip"
+        svg_root
+        text "4만+"
+        text "danbi"
+      text "27"
+      anchor [ref=180, url=https://frontia.ai/episodes/6ad0ff0e203d2ead41d866a6?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "S급 에스퍼들의 은밀한 신입 교육"
+        svg_root
+        text "20만+"
+        text "텐시"
+      text "28"
+      anchor [ref=181, url=https://frontia.ai/episodes/6ae7024f6509f22a957d4b76?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "연애관측소"
+        svg_root
+        text "8만+"
+        text "란이"
+      text "29"
+      anchor [ref=182, url=https://frontia.ai/episodes/6aeccb9085260e273fd009ef?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "이번엔 절대 안 좋아해!"
+        svg_root
+        text "4만+"
+        text "테디"
+      text "30"
+      anchor [ref=183, url=https://frontia.ai/episodes/6ae02413734593db0ac5c097?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "괴담에서 퇴근하는 법"
+        svg_root
+        text "3만+"
+        text "헬라"
+        image
+      text "31"
+      anchor [ref=184, url=https://frontia.ai/episodes/6aedd97fabef018b5b5f8c93?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "엘프 숲의 번식 포로"
+        svg_root
+        text "14만+"
+        text "네온"
+        image
+      text "32"
+      anchor [ref=185, url=https://frontia.ai/episodes/6acce7f224ae777b677380ea?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "CASE:00 — BLIND SPOT"
+        svg_root
+        text "6만+"
+        text "소소한주"
+        image
+      text "33"
+      anchor [ref=186, url=https://frontia.ai/episodes/6adc848d32999031ae26e1eb?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "정조역전 : 동아리"
+        svg_root
+        text "183만+"
+        text "썸웨어"
+        image
+      text "34"
+      anchor [ref=187, url=https://frontia.ai/episodes/6af00977baa1af4a924078a3?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "천령학궁 아카데미"
+        svg_root
+        text "6만+"
+        text "Shia"
+        image
+      text "35"
+      anchor [ref=188, url=https://frontia.ai/episodes/6adcaf483054bede74621684?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "​천사들의 전쟁 : 타락의 계절"
+        svg_root
+        text "5만+"
+        text "구리씨"
+      text "36"
+      anchor [ref=189, url=https://frontia.ai/episodes/6aeeb6e3f6d3357ffa18bbd0?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "버려진 황후는 옆 나라 왕비가 됩니다"
+        svg_root
+        text "1만+"
+        text "리라"
+      text "37"
+      anchor [ref=190, url=https://frontia.ai/episodes/6ad5c5392ead6b112760cc86?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "뉴구세여?"
+        svg_root
+        text "27만+"
+        text "매듭달스물사흘"
+        image
+      text "38"
+      anchor [ref=191, url=https://frontia.ai/episodes/6ae5eb5bfe7645cbe711d565?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "나를 구원하소서"
+        svg_root
+        text "8만+"
+        text "카라"
+      text "39"
+      anchor [ref=192, url=https://frontia.ai/episodes/6ad625aecf7071136a966b5c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "남성용 바니걸 수트가 명품인 세계"
+        svg_root
+        text "7만+"
+        text "분홍립스틱"
+      text "40"
+      anchor [ref=193, url=https://frontia.ai/episodes/6aecb69748096d48912336d8?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        svg_root
+        paragraph
+          text "신부수업"
+        svg_root
+        text "14만+"
+        text "썸웨어"
+        image
+      text "41"
+      anchor [ref=194, url=https://frontia.ai/episodes/6af09c11713611cd273dcf3d?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "헤어지자고 한 건 너였잖아"
+        svg_root
+        text "9,732"
+        text "브릿지"
+      text "42"
+      anchor [ref=195, url=https://frontia.ai/episodes/6ad1a34289c0ed07d73f0450?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "남자친구 주문했더니 네 명이 배송됐다"
+        svg_root
+        text "4만+"
+        text "란이"
+      text "43"
+      anchor [ref=196, url=https://frontia.ai/episodes/6af2004c0202e8f314b1ad1f?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "《짝》"
+        svg_root
+        text "2만+"
+        text "블루웨일"
+        image
+      text "44"
+      anchor [ref=197, url=https://frontia.ai/episodes/6adcb8780e7f748dd425cf76?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "여자친구있는 소꿉친구와 동거중입니다"
+        svg_root
+        text "7만+"
+        text "먕먕"
+      text "45"
+      anchor [ref=198, url=https://frontia.ai/episodes/6ae001b9062deb77e3353a8d?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "남친 대행 서비스"
+        svg_root
+        text "5만+"
+        text "note"
+      text "46"
+      anchor [ref=199, url=https://frontia.ai/episodes/6adc8d82c4d420edb77c860b?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "누디아: 살색의 아이돌"
+        svg_root
+        text "19만+"
+        text "네온"
+        image
+      text "47"
+      anchor [ref=200, url=https://frontia.ai/episodes/6ae60480d75dd8d47e944487?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        image
+        paragraph
+          text "시크릿 미션 in 러브 게임 - 교토"
+        svg_root
+        text "4만+"
+        text "구리씨"
+      text "48"
+      anchor [ref=201, url=https://frontia.ai/episodes/6ad4606cc1012aafbbf6ad1a?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "은화 보육원 꼬맹이"
+        svg_root
+        text "3만+"
+        text "론론"
+      text "49"
+      anchor [ref=202, url=https://frontia.ai/episodes/6acc58a181c5e1db46c633e5?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        svg_root
+        paragraph
+          text "너는 나를 기억하지 못한다"
+        svg_root
+        text "17만+"
+        text "rose"
+        image
+      text "50"
+      anchor [ref=203, url=https://frontia.ai/episodes/6ad6164b15b0346e29702caa?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_realtime_ranking]
+        image
+        paragraph
+          text "서열학교 전학생"
+        svg_root
+        text "71만+"
+        text "코무기"
+    heading
+      text "화제의 신작들 구경하고 가세요~"
+    button "이전" [ref=204]
+      svg_root
+    button "다음" [ref=205]
+      svg_root
+    region "화제의 신작들 구경하고 가세요~"
+      anchor [ref=206, url=https://frontia.ai/episodes/6aecd86a815821d243753491?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "엘리시온 마법대학교"
+        svg_root
+        paragraph
+          text "2만+"
+        paragraph
+          text "꾸꾸"
+      anchor [ref=207, url=https://frontia.ai/episodes/6ae5eb5bfe7645cbe711d565?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "나를 구원하소서"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "카라"
+      anchor [ref=208, url=https://frontia.ai/episodes/6ae481d054f83d4895f2b4f3?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "거짓 신부의 첫날밤"
+        svg_root
+        paragraph
+          text "8,112"
+        paragraph
+          text "츄르츄르"
+      anchor [ref=209, url=https://frontia.ai/episodes/6ae478175423702d5656b208?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "F급부터 역주행하는 히어로 라이프"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "도토리묵"
+      anchor [ref=210, url=https://frontia.ai/episodes/6ae44675057d58b4fcd72195?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "🎃 우리 집에 누가 산다"
+        svg_root
+        paragraph
+          text "4,324"
+        paragraph
+          text "꾸꾸"
+      anchor [ref=211, url=https://frontia.ai/episodes/6ae0c51eeb87e9372daca9b7?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "제로 드라이브:소모품 지휘관이 되었다"
+        svg_root
+        paragraph
+          text "2,653"
+        paragraph
+          text "철야반"
+      anchor [ref=212, url=https://frontia.ai/episodes/6ae04471b6c6677a1966c78d?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "비극 수집가의 골동품점"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "까망이"
+      anchor [ref=213, url=https://frontia.ai/episodes/6ae043a545d049877ecb9756?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "마계 배송 착오"
+        svg_root
+        paragraph
+          text "8,717"
+        paragraph
+          text "헬로월드"
+    heading
+      text "인기 디렉터의 새 작품이 도착했어요🎁"
+    button "이전" [ref=214]
+      svg_root
+    button "다음" [ref=215]
+      svg_root
+    region "인기 디렉터의 새 작품이 도착했어요🎁"
+      anchor [ref=216, url=https://frontia.ai/episodes/6af00977baa1af4a924078a3?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "천령학궁 아카데미"
+        svg_root
+        paragraph
+          text "6만+"
+        paragraph
+          text "Shia"
+        image
+      anchor [ref=217, url=https://frontia.ai/episodes/6af00a876163535540625a91?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "천령도원 (天靈道院)"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "김영"
+        image
+      anchor [ref=218, url=https://frontia.ai/episodes/6aec3ad9c7ca97321b0d4187?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "오늘 급식은 좀비 🧟‍♂️"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "프로필1553"
+        image
+      anchor [ref=219, url=https://frontia.ai/episodes/6ae5b4ca057d58b4fca98504?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "역천: 천마선발전"
+        svg_root
+        paragraph
+          text "13만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=220, url=https://frontia.ai/episodes/6aeb385ec6b280721013fd38?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "잔인한 첫사랑"
+        svg_root
+        paragraph
+          text "4만+"
+        paragraph
+          text "rose"
+        image
+      anchor [ref=221, url=https://frontia.ai/episodes/6aeb1e407b22a6cbcad6a543?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "팀, Vesper"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "블루웨일"
+        image
+      anchor [ref=222, url=https://frontia.ai/episodes/6ae636d1414cd58f81ed1bcc?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "레퀴엠 - Requiem"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "마브"
+        image
+      anchor [ref=223, url=https://frontia.ai/episodes/6ac8a3ead3a04d5233cefdfb?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "「인간잔재」 체험판"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "북극토끼"
+        image
+    heading
+      text "정주행각, 오늘 밤 순삭 주의"
+    button "이전" [ref=224]
+      svg_root
+    button "다음" [ref=225]
+      svg_root
+    region "정주행각, 오늘 밤 순삭 주의"
+      anchor [ref=226, url=https://frontia.ai/episodes/69c14a8e8da5acb608f21af7?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "괴물 대공의 제물"
+        svg_root
+        paragraph
+          text "54만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=227, url=https://frontia.ai/episodes/6a9d1632137d8689523ef02f?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "날 괴롭히던 놈의 러트가 시작됐다"
+        svg_root
+        paragraph
+          text "26만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=228, url=https://frontia.ai/episodes/6a3e91870b19b80580d2b86c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "귀신남친"
+        svg_root
+        paragraph
+          text "46만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=229, url=https://frontia.ai/episodes/6ab72abe710e42c0903e47a2?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "망겜999Lv 회귀자 : ERDIA"
+        svg_root
+        paragraph
+          text "10만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=230, url=https://frontia.ai/episodes/6aa7f037a4e6ab25bd98cf30?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "옆집에 사는 제복 아저씨들"
+        svg_root
+        paragraph
+          text "9만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=231, url=https://frontia.ai/episodes/6a845af98c9901e35360feba?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "『니힐테라』"
+        svg_root
+        paragraph
+          text "54만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=232, url=https://frontia.ai/episodes/6a912d700c51873603b1bb65?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "페일브렌치"
+        svg_root
+        paragraph
+          text "21만+"
+        paragraph
+          text "찌르래기"
+        image
+      anchor [ref=233, url=https://frontia.ai/episodes/6ab7446c65cc1ee97a0378a4?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "국산 좀비를 애용합시다"
+        svg_root
+        paragraph
+          text "7만+"
+        paragraph
+          text "프로필1553"
+        image
+      anchor [ref=234, url=https://frontia.ai/episodes/69c8d9e6fed819fa0d0d74ca?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "남잔데 성녀로 소환됐습니다"
+        svg_root
+        paragraph
+          text "44만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=235, url=https://frontia.ai/episodes/6ab23f6267b5c44ed4b90bc9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "잡았다. 후배님🖤"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "보라"
+      anchor [ref=236, url=https://frontia.ai/episodes/6a05aae317f97fe94c6d1962?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "대륜황궁생존기"
+        svg_root
+        paragraph
+          text "71만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=237, url=https://frontia.ai/episodes/69bb96d8d8688699541c99ad?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "내 말만 듣는 재앙급 에스퍼 길들이기"
+        svg_root
+        paragraph
+          text "151만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=238, url=https://frontia.ai/episodes/6a71cb0eba37d50b6e16e8e4?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "마피아 게임"
+        svg_root
+        paragraph
+          text "23만+"
+        paragraph
+          text "마브"
+        image
+      anchor [ref=239, url=https://frontia.ai/episodes/6a48b1c544fb47a342bf7713?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "아르카디아 황실아카데미"
+        svg_root
+        paragraph
+          text "32만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=240, url=https://frontia.ai/episodes/69bba55ed8688699541eafd0?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "재앙급 에스퍼 길들이기 (S)"
+        svg_root
+        paragraph
+          text "32만+"
+        paragraph
+          text "헬라"
+        image
+    heading
+      text "가끔은 현실 말고, 상상 속으로 퇴근"
+    button "이전" [ref=241]
+      svg_root
+    button "다음" [ref=242]
+      svg_root
+    region "가끔은 현실 말고, 상상 속으로 퇴근"
+      anchor [ref=243, url=https://frontia.ai/episodes/6ac4d79a30f2157f103b76f5?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "연애'하자'!"
+        svg_root
+        paragraph
+          text "12만+"
+        paragraph
+          text "에라모르거따"
+        image
+      anchor [ref=244, url=https://frontia.ai/episodes/6a205d90b15fff1c644fc358?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "성운고등학교"
+        svg_root
+        paragraph
+          text "277만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=245, url=https://frontia.ai/episodes/6ad08e30dad47a46a961620a?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "무림학관에 입학합니다"
+        svg_root
+        paragraph
+          text "20만+"
+        paragraph
+          text "hyun1"
+      anchor [ref=246, url=https://frontia.ai/episodes/6ac62ae8b7b3048c42a2e437?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "BOSS"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "zzimi"
+        image
+      anchor [ref=247, url=https://frontia.ai/episodes/69ff3e1a751f43c322eb76fd?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "류운고등학교"
+        svg_root
+        paragraph
+          text "398만+"
+        paragraph
+          text "yual"
+      anchor [ref=248, url=https://frontia.ai/episodes/6aace2a169d40b6ec9206d9d?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "깡패 아저씨는 나만 예뻐해"
+        svg_root
+        paragraph
+          text "11만+"
+        paragraph
+          text "꼬미"
+      anchor [ref=249, url=https://frontia.ai/episodes/6abbb809313cb670ede5562b?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "악역 영애의 해피엔딩을 위하여"
+        svg_root
+        paragraph
+          text "24만+"
+        paragraph
+          text "보라"
+      anchor [ref=250, url=https://frontia.ai/episodes/6acb2201bb8d471cf7b7f1fe?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "RAIN"
+        svg_root
+        paragraph
+          text "14만+"
+        paragraph
+          text "김왹져"
+        image
+      anchor [ref=251, url=https://frontia.ai/episodes/6acce29073aa32c58bb2ebd0?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "우리들의 이야기"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "Shia"
+        image
+      anchor [ref=252, url=https://frontia.ai/episodes/6ac48857308b6051ed3dbba6?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "MATERA"
+        svg_root
+        paragraph
+          text "22만+"
+        paragraph
+          text "블루웨일"
+        image
+      anchor [ref=253, url=https://frontia.ai/episodes/6a068f1f751f43c322e6bbe9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "더 히어로즈: 새 시대의 영웅들"
+        svg_root
+        paragraph
+          text "369만+"
+        paragraph
+          text "김왹져"
+        image
+      anchor [ref=254, url=https://frontia.ai/episodes/6a8b1d2944e0cb90b23656c8?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "《무림천하》"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "김영"
+        image
+      anchor [ref=255, url=https://frontia.ai/episodes/6a8b22425056648b3c736147?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "검과 마법의 아카데미: 텔로스"
+        svg_root
+        paragraph
+          text "399만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=256, url=https://frontia.ai/episodes/6ad65af923e976461c6476ed?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "내 삶의 불청객"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "론론"
+    heading
+      text "Re: 제로부터 시작하는 학교 생활"
+    button "이전" [ref=257]
+      svg_root
+    button "다음" [ref=258]
+      svg_root
+    region "Re: 제로부터 시작하는 학교 생활"
+      anchor [ref=259, url=https://frontia.ai/episodes/6a8108d17e1f48d1175c377b?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "아카데미에 입학했습니다"
+        svg_root
+        paragraph
+          text "29만+"
+        paragraph
+          text "김영"
+        image
+      anchor [ref=260, url=https://frontia.ai/episodes/6acbc399f6f21f8648e364a9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "천사들의 전쟁"
+        svg_root
+        paragraph
+          text "2만+"
+        paragraph
+          text "구리씨"
+      anchor [ref=261, url=https://frontia.ai/episodes/6ae29fcea5031b362745725e?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "낙하산 지휘관과 반항하는 서열 1위"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "마소"
+      anchor [ref=262, url=https://frontia.ai/episodes/6ad6164b15b0346e29702caa?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "서열학교 전학생"
+        svg_root
+        paragraph
+          text "71만+"
+        paragraph
+          text "코무기"
+      anchor [ref=263, url=https://frontia.ai/episodes/697094b43a09919cbdc8e932?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "Page17"
+        svg_root
+        paragraph
+          text "17만+"
+        paragraph
+          text "모모"
+        image
+      anchor [ref=264, url=https://frontia.ai/episodes/6abf375dc9987b19ce6e0689?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "골목길의 그 애가 우리 부 선배?"
+        svg_root
+        paragraph
+          text "8,966"
+        paragraph
+          text "츄르"
+      anchor [ref=265, url=https://frontia.ai/episodes/6a205d90b15fff1c644fc358?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "성운고등학교"
+        svg_root
+        paragraph
+          text "277만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=266, url=https://frontia.ai/episodes/6a7af8453ffc3d05b03e3e83?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "썸띵 예술 고등학교 ☆정식발매!!"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "김영"
+        image
+      anchor [ref=267, url=https://frontia.ai/episodes/6ac9e143787c74a075c2b89c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "어서 오세요, 알파 클래스에"
+        svg_root
+        paragraph
+          text "2만+"
+        paragraph
+          text "김영"
+        image
+      anchor [ref=268, url=https://frontia.ai/episodes/69ff3e1a751f43c322eb76fd?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "류운고등학교"
+        svg_root
+        paragraph
+          text "398만+"
+        paragraph
+          text "yual"
+    heading
+      text "주인공들의 뜨거운 반응!"
+    button "이전" [ref=269]
+      svg_root
+    button "다음" [ref=270]
+      svg_root
+    region "주인공들의 뜨거운 반응!"
+      anchor [ref=271, url=https://frontia.ai/episodes/6a94506c4fe584378f29103d?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "이규호"
+        paragraph
+          text "캐릭터도 잘 만들었고 재밌네요 스토리도 잘 만들었어요"
+        svg_root
+        svg_root
+        paragraph
+          text "1"
+      anchor [ref=272, url=https://frontia.ai/episodes/6ab787e265cc1ee97a19c7d1?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "에라모르거따"
+        paragraph
+          text "림체, 림체, 그림체 완존 제 스퇄! 깔끔 명확한 선화와 부드러운듯 섬세한 채색. 무엇보다 캐릭터는 비쥬얼이죠. 눈이 정말 매력적입니다."
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+      anchor [ref=273, url=https://frontia.ai/episodes/6aa8aadab85ce10b5c20973e?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "이재"
+        paragraph
+          text "여성 캐릭터들이 너무 예쁩니다. ㅠㅠ 특히 강단아... 묘한 매력이... 지금까지 긴 생머리만 좋아하는 줄 알았는데 강단아 보고서 아, 난 단발도 좋아하�..."
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+      anchor [ref=274, url=https://frontia.ai/episodes/6a78898046ab3392db4225ee?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "인교"
+        paragraph
+          text "생각보다 굉장히 몰입되고 재밌네요. 어장 치는 중인데 티 안나게 하려니 힘드네요...넘 재밌다."
+        svg_root
+        svg_root
+        paragraph
+          text "1"
+      anchor [ref=275, url=https://frontia.ai/episodes/69dbb631fae3eb0e6ea86401?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "이누6728"
+        paragraph
+          text "리버스로 오필리아가 유저인 것도 맛도리 일 거 같습니다. 재밌게 할께요!"
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+      anchor [ref=276, url=https://frontia.ai/episodes/6ab4afded73f46867e936093?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "지원3351"
+        paragraph
+          text "비상!! 오해리 고하이 둘다 절 골랐는데 누굴 골라야될지 심히 고민되네요... 상처받는걸 싫어해서 제가..."
+        svg_root
+        svg_root
+        paragraph
+          text "3"
+      anchor [ref=277, url=https://frontia.ai/episodes/6a6a0125b84f0f5687e46c4a?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "유나이스0697"
+        paragraph
+          text "참, 좋아요. 캐릭터,배경 그리고 음악도 모두 투굿..."
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+      anchor [ref=278, url=https://frontia.ai/episodes/6aa8aadab85ce10b5c20973e?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "베리"
+        paragraph
+          text "하 남자 캐릭터들 너무 다 매력 넘쳐요…… 하루 종일 이것만 하고 싶을 정도로 과몰입해서 하고있음 … 아니 진짜 태윤이랑 사귀고 싶어져요…. 전학 ..."
+        svg_root
+        svg_root
+        paragraph
+          text "4"
+      anchor [ref=279, url=https://frontia.ai/episodes/6ab31ccaec17c397101e7b4f?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "신동윤5110"
+        paragraph
+          text "정말 흥미진진하고 재미있는 신작이 나왔네요! 보자마자 기대되는 마음으로 바로 플레이해서 즐겨보려고 합니다. 의학에 대한 전반적인 퀄리티와 완�..."
+        svg_root
+        svg_root
+        paragraph
+          text "3"
+      anchor [ref=280, url=https://frontia.ai/episodes/697094b43a09919cbdc8e932?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "르윈"
+        paragraph
+          text "꽤 전에 만드신 작품이지만 뒤늦게나마 뒷북을 치자면 청춘이라는 말에 딱 맞는 작품인 것 같습니다. 밴드를 그만두고 흩어진 이유또한 현실적이여서 ..."
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+      anchor [ref=281, url=https://frontia.ai/episodes/6a5ca1c09197bd836a211ab5?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "조이슈"
+        paragraph
+          text "ㅠㅠ캐릭터도 세계관도 다 넘나 맘에들어요!🥺🩷"
+        svg_root
+        svg_root
+        paragraph
+          text "0"
+      anchor [ref=282, url=https://frontia.ai/episodes/6aa42c432d29fc9a6a3a7fbb?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "현진2"
+        paragraph
+          text "사진 에피소드 글써서 넘기니깐 선택지 나왔어요 재밌게 하는 중입니다 최고예요 !"
+        svg_root
+        svg_root
+        paragraph
+          text "1"
+      anchor [ref=283, url=https://frontia.ai/episodes/6ab4afded73f46867e936093?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "천설아1491"
+        paragraph
+          text "너무 몰입 잘되구 설레고 재밌어서 새벽에 여기에만 스타를 얼마나 썼는지 모르겠아요... 새벽에 잘못 꽂히면 과소비 해대는 사람으로써... 새벽에 들�..."
+        svg_root
+        svg_root
+        paragraph
+          text "3"
+      anchor [ref=284, url=https://frontia.ai/episodes/6a5ca1c09197bd836a211ab5?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "이현욱"
+        paragraph
+          text "제가 캐릭터 설정을 이상하게 잡아서 그런지 관리청에서 계속 의심받네요. 이거 재밌네요"
+        svg_root
+        svg_root
+        paragraph
+          text "4"
+      anchor [ref=285, url=https://frontia.ai/episodes/6aa8aadab85ce10b5c20973e?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "진이2359"
+        paragraph
+          text "진짜 학생때로 돌아가 풋풋한 느낌을 받아서 너무 재미있고.. 오랜만에 설렘을 느낀거같아요.. ㅎㅎ 다들잘생기고 이뻐요! 최고"
+        svg_root
+        svg_root
+        paragraph
+          text "1"
+      anchor [ref=286, url=https://frontia.ai/episodes/6a7c798bf2c11ba46ff3d838?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "지원8441"
+        paragraph
+          text "추리 연프라니,,💚 너므 흥미진진해서 스타 계속 쓰게되는 것 같아요!!!! ㅜ"
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+      anchor [ref=287, url=https://frontia.ai/episodes/6a8d281f0009d6c9f93c2fee?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "개굴"
+        paragraph
+          text "헉 어떡해 캐릭터 너무 이뻐효💕"
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+      anchor [ref=288, url=https://frontia.ai/episodes/6a50f87968b2ef0104fedcf1?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "지원8441"
+        paragraph
+          text "진짜 개갸개설레요!!!!! 진짜 너무 잘생기고 이쁜 캐릭터들이라 몰입 쩔어요 !!!!!><>< 집착남 최공 ! ㅎ"
+        svg_root
+        svg_root
+        paragraph
+          text "1"
+      anchor [ref=289, url=https://frontia.ai/episodes/6a749e4b01d5d81f44756756?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "가야7763"
+        paragraph
+          text "너무 재밌어요👍 스타를 몇번 충전했는지 모르겠어요 앞으로의 작품도 기대하겠습니당😍😍"
+        svg_root
+        svg_root
+        paragraph
+          text "1"
+      anchor [ref=290, url=https://frontia.ai/episodes/6a61244b5987dbcc5fa2f39e?source=home_recommend&viewMode=page&panel=comments&chip_alias=home-for-you&section_content_type=comment_card_curation]
+        image
+        image
+        paragraph
+          text "조이슈"
+        paragraph
+          text "와 등장인물 55명이라니..... 진짜 대단하세요!!! 천하제일이닝되보겟슴다 ㅋㅋㅋ"
+        svg_root
+        svg_root
+        paragraph
+          text "2"
+    heading
+      text "황태자의 청혼, 거절해도 될까요?"
+    button "이전" [ref=291]
+      svg_root
+    button "다음" [ref=292]
+      svg_root
+    region "황태자의 청혼, 거절해도 될까요?"
+      anchor [ref=293, url=https://frontia.ai/episodes/698f39b6531a9f1d155ad2f7?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "태양이 삼킨 달"
+        svg_root
+        paragraph
+          text "17만+"
+        paragraph
+          text "슈아슈아"
+      anchor [ref=294, url=https://frontia.ai/episodes/6a05aae317f97fe94c6d1962?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "대륜황궁생존기"
+        svg_root
+        paragraph
+          text "71만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=295, url=https://frontia.ai/episodes/6ac73d69604672872d122e02?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "악역인데 남주가 집착한다"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "월별"
+      anchor [ref=296, url=https://frontia.ai/episodes/6ae1409c42f5502c1323c6f4?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "공작부인은 상복을 벗지 않는다"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "리타"
+      anchor [ref=297, url=https://frontia.ai/episodes/69ad97ec909e938a44d01d24?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "파혼당한 악녀에 빙의했다."
+        svg_root
+        paragraph
+          text "64만+"
+        paragraph
+          text "킹크랩"
+      anchor [ref=298, url=https://frontia.ai/episodes/6aa759ea4360dcc1682ed561?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "막내 영애는 독립하고 싶다"
+        svg_root
+        paragraph
+          text "5,869"
+        paragraph
+          text "꽉왁이"
+      anchor [ref=299, url=https://frontia.ai/episodes/6abbb809313cb670ede5562b?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "악역 영애의 해피엔딩을 위하여"
+        svg_root
+        paragraph
+          text "24만+"
+        paragraph
+          text "보라"
+      anchor [ref=300, url=https://frontia.ai/episodes/69c14a8e8da5acb608f21af7?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "괴물 대공의 제물"
+        svg_root
+        paragraph
+          text "54만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=301, url=https://frontia.ai/episodes/69e8f280fa0e23f650cf51f9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "사랑하오..부인"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "유키유키"
+      anchor [ref=302, url=https://frontia.ai/episodes/6a115698c2d19b5e500c503f?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "대한의 왕세자"
+        svg_root
+        paragraph
+          text "52만+"
+        paragraph
+          text "나나구이"
+        image
+    heading
+      text "언니가 아는데, 현실엔 이런 남자 없더라"
+    button "이전" [ref=303]
+      svg_root
+    button "다음" [ref=304]
+      svg_root
+    region "언니가 아는데, 현실엔 이런 남자 없더라"
+      anchor [ref=305, url=https://frontia.ai/episodes/69ad97ec909e938a44d01d24?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "파혼당한 악녀에 빙의했다."
+        svg_root
+        paragraph
+          text "64만+"
+        paragraph
+          text "킹크랩"
+      anchor [ref=306, url=https://frontia.ai/episodes/6a05aae317f97fe94c6d1962?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "대륜황궁생존기"
+        svg_root
+        paragraph
+          text "71만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=307, url=https://frontia.ai/episodes/69bba55ed8688699541eafd0?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "재앙급 에스퍼 길들이기 (S)"
+        svg_root
+        paragraph
+          text "32만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=308, url=https://frontia.ai/episodes/698f39b6531a9f1d155ad2f7?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "태양이 삼킨 달"
+        svg_root
+        paragraph
+          text "17만+"
+        paragraph
+          text "슈아슈아"
+      anchor [ref=309, url=https://frontia.ai/episodes/6ac3a6dc63f90e8278ed07ce?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "제가 사신수의 주인이라고요?"
+        svg_root
+        paragraph
+          text "4만+"
+        paragraph
+          text "네리아"
+      anchor [ref=310, url=https://frontia.ai/episodes/6abbb809313cb670ede5562b?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "악역 영애의 해피엔딩을 위하여"
+        svg_root
+        paragraph
+          text "24만+"
+        paragraph
+          text "보라"
+      anchor [ref=311, url=https://frontia.ai/episodes/6ad24bdbf092782346b0f22e?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "이혼장에는 옥새를 찍어주세요"
+        svg_root
+        paragraph
+          text "4만+"
+        paragraph
+          text "세레나"
+      anchor [ref=312, url=https://frontia.ai/episodes/6ad0fdf689c0ed07d7cc7c22?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "미드나잇 클로저"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "할로"
+      anchor [ref=313, url=https://frontia.ai/episodes/697094593a09919cbdc8df45?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "페로몬 트랩"
+        svg_root
+        paragraph
+          text "31만+"
+        paragraph
+          text "모모"
+        image
+      anchor [ref=314, url=https://frontia.ai/episodes/6a4cb811eec8815b8736c824?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "묵시록"
+        svg_root
+        paragraph
+          text "18만+"
+        paragraph
+          text "프로필1553"
+        image
+      anchor [ref=315, url=https://frontia.ai/episodes/69a436124b80effd86c4d1e5?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "에스테리아 연대기 ˢᵃᶠᵉ"
+        svg_root
+        paragraph
+          text "53만+"
+        paragraph
+          text "김왹져"
+        image
+      anchor [ref=316, url=https://frontia.ai/episodes/6a48b1c544fb47a342bf7713?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "아르카디아 황실아카데미"
+        svg_root
+        paragraph
+          text "32만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=317, url=https://frontia.ai/episodes/6970960b3a09919cbdc8ea44?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "7회차 용사에게 죽어버렸다"
+        svg_root
+        paragraph
+          text "19만+"
+        paragraph
+          text "라이언"
+    button [ref=318]
+      image
+    heading
+      text "여기까지 내려온 스파이7426님께, 한 편 더"
+    button "이전" [ref=319]
+      svg_root
+    button "다음" [ref=320]
+      svg_root
+    region "여기까지 내려온 스파이7426님께, 한 편 더"
+      anchor [ref=321, url=https://frontia.ai/episodes/69c14a8e8da5acb608f21af7?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "괴물 대공의 제물"
+        svg_root
+        paragraph
+          text "54만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=322, url=https://frontia.ai/episodes/69c8d9e6fed819fa0d0d74ca?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "남잔데 성녀로 소환됐습니다"
+        svg_root
+        paragraph
+          text "44만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=323, url=https://frontia.ai/episodes/6a3e91870b19b80580d2b86c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "귀신남친"
+        svg_root
+        paragraph
+          text "46만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=324, url=https://frontia.ai/episodes/69a42bf04b80effd86c30080?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "에스테리아 연대기"
+        svg_root
+        paragraph
+          text "571만+"
+        paragraph
+          text "김왹져"
+        image
+      anchor [ref=325, url=https://frontia.ai/episodes/697094593a09919cbdc8df45?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "페로몬 트랩"
+        svg_root
+        paragraph
+          text "31만+"
+        paragraph
+          text "모모"
+        image
+      anchor [ref=326, url=https://frontia.ai/episodes/6a8b22425056648b3c736147?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "검과 마법의 아카데미: 텔로스"
+        svg_root
+        paragraph
+          text "399만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=327, url=https://frontia.ai/episodes/6a48b1c544fb47a342bf7713?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "아르카디아 황실아카데미"
+        svg_root
+        paragraph
+          text "32만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=328, url=https://frontia.ai/episodes/69f9ee7c6d86eaf40e4b0c67?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "그림자의 밤(그림자의연가 성인버전)"
+        svg_root
+        paragraph
+          text "21만+"
+        paragraph
+          text "짜루"
+      anchor [ref=329, url=https://frontia.ai/episodes/6a115698c2d19b5e500c503f?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "대한의 왕세자"
+        svg_root
+        paragraph
+          text "52만+"
+        paragraph
+          text "나나구이"
+        image
+      anchor [ref=330, url=https://frontia.ai/episodes/69c6720366b5b074d42884a6?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "해결사 조직의 인간 캣닢이 됨"
+        svg_root
+        paragraph
+          text "30만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=331, url=https://frontia.ai/episodes/69bf369c279d51edf35a9f50?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "『황혼의 늑대』"
+        svg_root
+        paragraph
+          text "30만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=332, url=https://frontia.ai/episodes/69bb96d8d8688699541c99ad?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "내 말만 듣는 재앙급 에스퍼 길들이기"
+        svg_root
+        paragraph
+          text "151만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=333, url=https://frontia.ai/episodes/6a2d6ed2fd2017fdf58b6e6c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "3AM 러브레터"
+        svg_root
+        paragraph
+          text "19만+"
+        paragraph
+          text "BetOn"
+        image
+      anchor [ref=334, url=https://frontia.ai/episodes/6a068f1f751f43c322e6bbe9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "더 히어로즈: 새 시대의 영웅들"
+        svg_root
+        paragraph
+          text "369만+"
+        paragraph
+          text "김왹져"
+        image
+      anchor [ref=335, url=https://frontia.ai/episodes/6989b7b0c3240723e066261c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "천일야화"
+        svg_root
+        paragraph
+          text "98만+"
+        paragraph
+          text "김왹져"
+        image
+      anchor [ref=336, url=https://frontia.ai/episodes/6a845af98c9901e35360feba?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "『니힐테라』"
+        svg_root
+        paragraph
+          text "54만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=337, url=https://frontia.ai/episodes/6a33fcb39a13e9ff7a52d7ee?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "원나잇 상대가 과대표였다 🔞"
+        svg_root
+        paragraph
+          text "44만+"
+        paragraph
+          text "후타리"
+      anchor [ref=338, url=https://frontia.ai/episodes/69d7ea3719fb90a4fd63c808?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "빌어먹을 성좌따위!"
+        svg_root
+        paragraph
+          text "287만+"
+        paragraph
+          text "김왹져"
+        image
+      anchor [ref=339, url=https://frontia.ai/episodes/6a71cb0eba37d50b6e16e8e4?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "마피아 게임"
+        svg_root
+        paragraph
+          text "23만+"
+        paragraph
+          text "마브"
+        image
+    heading
+      text "그냥 다 같이 사귀자, 괜찮지? #역하렘"
+    button "이전" [ref=340]
+      svg_root
+    button "다음" [ref=341]
+      svg_root
+    region "그냥 다 같이 사귀자, 괜찮지? #역하렘"
+      anchor [ref=342, url=https://frontia.ai/episodes/6ab407b1275273b2bd9be55c?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "죽이기 전에 쓰다듬어도 되나요?"
+        svg_root
+        paragraph
+          text "9만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=343, url=https://frontia.ai/episodes/6aa759ea4360dcc1682ed561?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "막내 영애는 독립하고 싶다"
+        svg_root
+        paragraph
+          text "5,869"
+        paragraph
+          text "꽉왁이"
+      anchor [ref=344, url=https://frontia.ai/episodes/6a48b1c544fb47a342bf7713?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "아르카디아 황실아카데미"
+        svg_root
+        paragraph
+          text "32만+"
+        paragraph
+          text "김욕망"
+        image
+      anchor [ref=345, url=https://frontia.ai/episodes/6acbc399f6f21f8648e364a9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "천사들의 전쟁"
+        svg_root
+        paragraph
+          text "2만+"
+        paragraph
+          text "구리씨"
+      anchor [ref=346, url=https://frontia.ai/episodes/69bb96d8d8688699541c99ad?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "내 말만 듣는 재앙급 에스퍼 길들이기"
+        svg_root
+        paragraph
+          text "151만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=347, url=https://frontia.ai/episodes/6aafc18845136ce6599e7633?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "오빠와 오빠친구는 너무 위험해"
+        svg_root
+        paragraph
+          text "5만+"
+        paragraph
+          text "분홍립스틱"
+      anchor [ref=348, url=https://frontia.ai/episodes/6ad0f80acddc4e1a212d0c34?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "할로윈의 마지막 제물: 그들의 초대장"
+        svg_root
+        paragraph
+          text "2만+"
+        paragraph
+          text "네리아"
+      anchor [ref=349, url=https://frontia.ai/episodes/6ae043a545d049877ecb9756?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "마계 배송 착오"
+        svg_root
+        paragraph
+          text "8,717"
+        paragraph
+          text "헬로월드"
+      anchor [ref=350, url=https://frontia.ai/episodes/6aaaafcef787a157cfd55e60?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "주워온 강아지가 사람이 됐다"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "꽉왁이"
+      anchor [ref=351, url=https://frontia.ai/episodes/6a63676a64be79bb528c425d?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "낙인찍힌 짐승들의 주인이 되었습니다."
+        svg_root
+        paragraph
+          text "2만+"
+        paragraph
+          text "냉동참치"
+        image
+      anchor [ref=352, url=https://frontia.ai/episodes/6aa641e007c3b64386da30f2?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "《 Fleur du Péché 》"
+        svg_root
+        paragraph
+          text "13만+"
+        paragraph
+          text "제레미"
+      anchor [ref=353, url=https://frontia.ai/episodes/6aa9434940e5b75a979773fa?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "막내 영애는 독립하고 싶다"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "꽉왁이"
+      anchor [ref=354, url=https://frontia.ai/episodes/69bba55ed8688699541eafd0?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "재앙급 에스퍼 길들이기 (S)"
+        svg_root
+        paragraph
+          text "32만+"
+        paragraph
+          text "헬라"
+        image
+      anchor [ref=355, url=https://frontia.ai/episodes/6ae02413734593db0ac5c097?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "괴담에서 퇴근하는 법"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "헬라"
+        image
+    heading
+      text "시대극·스릴러·판타지까지, 골라 보는 장르별 대표작"
+    button "이전" [ref=356]
+      svg_root
+    button "다음" [ref=357]
+      svg_root
+    region "시대극·스릴러·판타지까지, 골라 보는 장르별 대표작"
+      anchor [ref=358, url=https://frontia.ai/episodes/6ad796fcb71b88072d3d49dd?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "인외전 A-104"
+        svg_root
+        paragraph
+          text "8,761"
+        paragraph
+          text "루리오"
+      anchor [ref=359, url=https://frontia.ai/episodes/6ae5eb5bfe7645cbe711d565?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "나를 구원하소서"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "카라"
+      anchor [ref=360, url=https://frontia.ai/episodes/6ad08e30dad47a46a961620a?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "무림학관에 입학합니다"
+        svg_root
+        paragraph
+          text "20만+"
+        paragraph
+          text "hyun1"
+      anchor [ref=361, url=https://frontia.ai/episodes/69f9ee7c6d86eaf40e4b0c67?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "그림자의 밤(그림자의연가 성인버전)"
+        svg_root
+        paragraph
+          text "21만+"
+        paragraph
+          text "짜루"
+      anchor [ref=362, url=https://frontia.ai/episodes/6ac3b3ca3ec8bc2217c2c7a1?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "서리꽃: 서리 속에도 꽃은 피는가"
+        svg_root
+        paragraph
+          text "23만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=363, url=https://frontia.ai/episodes/6ac1e982c01030d7caa2cb29?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        svg_root
+        paragraph
+          text "DEAD SIGHT : 총성의 시대"
+        svg_root
+        paragraph
+          text "2만+"
+        paragraph
+          text "남김없이주는나무"
+      anchor [ref=364, url=https://frontia.ai/episodes/69e0abd6976e8642740540c9?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "사랑을 위한 판타지"
+        svg_root
+        paragraph
+          text "8만+"
+        paragraph
+          text "족젭"
+      anchor [ref=365, url=https://frontia.ai/episodes/6abdf223b742c01bc2f2e146?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "오늘의 운세"
+        svg_root
+        paragraph
+          text "3,307"
+        paragraph
+          text "짱돌"
+        image
+      anchor [ref=366, url=https://frontia.ai/episodes/6a8b22425056648b3c736147?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "검과 마법의 아카데미: 텔로스"
+        svg_root
+        paragraph
+          text "399만+"
+        paragraph
+          text "매듭달스물사흘"
+        image
+      anchor [ref=367, url=https://frontia.ai/episodes/6a32b3daeca7e8be555772d7?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "프린세스 메이커"
+        svg_root
+        paragraph
+          text "4만+"
+        paragraph
+          text "냉동참치"
+        image
+      anchor [ref=368, url=https://frontia.ai/episodes/6acce29073aa32c58bb2ebd0?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "우리들의 이야기"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "Shia"
+        image
+      anchor [ref=369, url=https://frontia.ai/episodes/6ad1b080369d2c01da9f0a4b?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        svg_root
+        paragraph
+          text "트릭 오어 트릿: 영혼을 걸고"
+        svg_root
+        paragraph
+          text "3만+"
+        paragraph
+          text "분홍립스틱"
+      anchor [ref=370, url=https://frontia.ai/episodes/6a71cb0eba37d50b6e16e8e4?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        paragraph
+          text "마피아 게임"
+        svg_root
+        paragraph
+          text "23만+"
+        paragraph
+          text "마브"
+        image
+      anchor [ref=371, url=https://frontia.ai/episodes/6ae1c14d12acccbdd51fcbe2?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "격리구역"
+        svg_root
+        paragraph
+          text "2,610"
+        paragraph
+          text "우주젤리폭탄"
+      anchor [ref=372, url=https://frontia.ai/episodes/6ae06d970e5bd42680c5530a?source=home_recommend&viewMode=page&chip_alias=home-for-you&section_content_type=episode_segment_curation]
+        image
+        image
+        paragraph
+          text "스타트라인 : IDOL PROJECT"
+        svg_root
+        paragraph
+          text "1만+"
+        paragraph
+          text "Rabe"
+    heading
+      text "나만의 이야기를 만드세요"
+    paragraph
+      text "지금 새로운 아이디어가 떠올랐나요? 프론티아에서 직접 만들어보세요!"
+    anchor [ref=373, loc=href:/studio, url=https://frontia.ai/studio]
+      paragraph
+        text "에피소드 만들기"
+      svg_root
+    anchor [ref=374, loc=href:https://discord.gg/263kmpsZuw, url=https://discord.gg/263kmpsZuw]
+      paragraph
+        text "디스코드 커뮤니티"
+    image
+    image
+    image
+    paragraph
+      text "딥그로브(주)"
+      text "| 대표:"
+      text "나봉민"
+    paragraph
+      text "서울특별시 강남구 테헤란로 151, 7층"
+    paragraph
+      text "사업자 등록번호:"
+      text "656-86-04308"
+    paragraph
+      text "대표번호:"
+      text "070-5100-1314"
+    paragraph
+      text "문의:"
+      text "contact@deepgrov.io"
+    anchor "X" [ref=375, loc=css:a[aria-label="X"], url=https://x.com/officialfrontia]
+      svg_root
+    anchor "Instagram" [ref=376, loc=css:a[aria-label="Instagram"], url=https://www.instagram.com/frontia_ai/]
+      svg_root
+    anchor "YouTube" [ref=377, loc=css:a[aria-label="YouTube"], url=https://www.youtube.com/channel/UCaMHJjrN6ZCeBHLPnkO-CGQ]
+      svg_root
+    paragraph
+      text "Copyright 2025 Deepgrov Co., Ltd. All rights reserved."
+    anchor [ref=378, loc=href:/terms/service, url=https://frontia.ai/terms/service]
+      paragraph
+        text "서비스 이용약관"
+    anchor [ref=379, loc=href:/terms/privacy, url=https://frontia.ai/terms/privacy]
+      paragraph
+        text "개인정보처리방침"
+    anchor [ref=380, loc=href:/terms/youth, url=https://frontia.ai/terms/youth]
+      paragraph
+        text "청소년 보호정책"
+    anchor [ref=381, loc=href:https://help.frontia.ai/ko, url=https://help.frontia.ai/ko]
+      paragraph
+        text "고객센터"
+  container "Notifications alt+T"
+  dialog "에피소드 상세"
+    heading
+      text "에피소드 상세"
+    container
+      container [ref=64]
+        container
+          container
+            container
+              container
+                container
+                  image
+                  button "썸네일 크게보기" [ref=382, loc=css:button[aria-label="썸네일 크게보기"]]
+                    image
+                container
+                  image
+                  container
+                    video
+                    button "배경 음악" [ref=383, loc=css:button[aria-label="배경 음악"]]
+                      image
+              container
+                button [ref=66]
+                  svg_root
+                  paragraph
+                    text "드라마"
+                button [ref=67]
+                  svg_root
+                  paragraph
+                    text "노벨"
+            container
+              paragraph
+                text "연애/로맨스"
+              heading
+                text "메기는 처음이라"
+            container
+              container
+                button [ref=68]
+                  svg_root
+                  text "이어하기"
+                button [ref=384]
+                  svg_root
+                  text "새로 플레이"
+              container
+                button "좋아요 1,235" [ref=69, loc=css:button[aria-label="좋아요 1,235"]]
+                  svg_root
+                  text "1,235"
+                button "공유하기" [ref=70, loc=css:button[aria-label="공유하기"]]
+                  svg_root
+                button "더보기" [ref=71]
+                  svg_root
+            container
+              container
+                container
+                  paragraph
+                    text "2026.10.22 V93 업데이트"
+                  paragraph
+                    text "연애/로맨스 · 기타"
+                  container
+                    svg_root
+                    paragraph
+                      text "2506만+"
+                container
+                  container
+                    text "[Playlist 🎧]"
+                    anchor [ref=72, url=https://youtu.be/A2gf2gTc0wM]
+                      text "https://youtu.be/A2gf2gTc0wM"
+                    text ""여러분의 마지막 사랑이 되러 왔어요"❤️‍🔥 연프에 메기로 들어간 날 듣는 OST 17곡 안녕하세요, 연프 시리즈로 다시 돌아온 roro입니다 🙇‍♀️ �..."
+                  button [ref=73]
+                    paragraph
+                      text "더보기"
+                    svg_root
+              container
+                container
+                  anchor [ref=74, loc=href:/users/profile/69707747274abbdeb81d3c15?source=episode_detail, url=https://frontia.ai/users/profile/69707747274abbdeb81d3c15?source=episode_detail]
+                    image
+                    container
+                      container
+                        paragraph
+                          text "roro"
+                        image
+                      paragraph
+                        text "팔로워"
+                        text "2,152"
+                  button [ref=385]
+                    paragraph
+                      text "팔로우"
+                container
+                  anchor "연애리얼리티 태그로 검색" [ref=75, loc=css:a[aria-label="연애리얼리티 태그로 검색"], url=https://frontia.ai/search?query=%23%EC%97%B0%EC%95%A0%EB%A6%AC%EC%96%BC%EB%A6%AC%ED%8B%B0]
+                    text "연애리얼리티"
+                  anchor "다인로맨스 태그로 검색" [ref=76, loc=css:a[aria-label="다인로맨스 태그로 검색"], url=https://frontia.ai/search?query=%23%EB%8B%A4%EC%9D%B8%EB%A1%9C%EB%A7%A8%EC%8A%A4]
+                    text "다인로맨스"
+                  anchor "삼각관계 태그로 검색" [ref=77, loc=css:a[aria-label="삼각관계 태그로 검색"], url=https://frontia.ai/search?query=%23%EC%82%BC%EA%B0%81%EA%B4%80%EA%B3%84]
+                    text "삼각관계"
+                  anchor "심리전 태그로 검색" [ref=78, loc=css:a[aria-label="심리전 태그로 검색"], url=https://frontia.ai/search?query=%23%EC%8B%AC%EB%A6%AC%EC%A0%84]
+                    text "심리전"
+                  anchor "메기 태그로 검색" [ref=79, loc=css:a[aria-label="메기 태그로 검색"], url=https://frontia.ai/search?query=%23%EB%A9%94%EA%B8%B0]
+                    text "메기"
+                  anchor "커플매칭 태그로 검색" [ref=80, loc=css:a[aria-label="커플매칭 태그로 검색"], url=https://frontia.ai/search?query=%23%EC%BB%A4%ED%94%8C%EB%A7%A4%EC%B9%AD]
+                    text "커플매칭"
+                  anchor "비밀투표 태그로 검색" [ref=81, loc=css:a[aria-label="비밀투표 태그로 검색"], url=https://frontia.ai/search?query=%23%EB%B9%84%EB%B0%80%ED%88%AC%ED%91%9C]
+                    text "비밀투표"
+                  anchor "헤븐존 태그로 검색" [ref=82, loc=css:a[aria-label="헤븐존 태그로 검색"], url=https://frontia.ai/search?query=%23%ED%97%A4%EB%B8%90%EC%A1%B4]
+                    text "헤븐존"
+                  anchor "섬데이트 태그로 검색" [ref=83, loc=css:a[aria-label="섬데이트 태그로 검색"], url=https://frontia.ai/search?query=%23%EC%84%AC%EB%8D%B0%EC%9D%B4%ED%8A%B8]
+                    text "섬데이트"
+                  anchor "최종매칭 태그로 검색" [ref=84, loc=css:a[aria-label="최종매칭 태그로 검색"], url=https://frontia.ai/search?query=%23%EC%B5%9C%EC%A2%85%EB%A7%A4%EC%B9%AD]
+                    text "최종매칭"
+                container
+                  container
+                    svg_root
+                    container
+                      paragraph
+                        text "7"
+                      paragraph
+                        text "/"
+                        text "2003"
+                  button [ref=85]
+                    svg_root
+                    container
+                      container
+                        paragraph
+                          text "1"
+                        paragraph
+                          text "/"
+                          text "47"
+                      svg_root
+          container
+            container
+              button [ref=86]
+                heading
+                  text "댓글"
+                heading
+                  text "1110"
+                svg_root
+              group "댓글"
+                button "이전" [ref=87]
+                  svg_root
+                button "다음" [ref=88]
+                  svg_root
+            container [ref=386]
+              container
+                button [ref=387]
+                  image
+                  paragraph
+                    text "김해인6822"
+                  paragraph
+                    text "12일 전"
+                  paragraph
+                    text "수정됨"
+                  paragraph
+                    text "주둥이 쿠빈 보고온사람은 하트"
+                button "더보기" [ref=388]
+                  svg_root
+              container
+                button [ref=389]
+                  image
+                  paragraph
+                    text "민서1197"
+                  paragraph
+                    text "10일 전"
+                  paragraph
+                    text "선바 보고왔는데 표정개쳐웃겨서 해보러옴"
+                button "더보기" [ref=390]
+                  svg_root
+              container
+                button [ref=391]
+                  image
+                  paragraph
+                    text "프리윌리"
+                  paragraph
+                    text "28일 전"
+                  paragraph
+                    text "로로님 작품은 진짜 범접할수 없는 영역으로 느껴지네요. 독학과 기본적인 ai툴과 플랜으론 절대 따라갈수 없는 퀄리티. 로로님 작품 할때마다 너무 재..."
+                button "더보기" [ref=392]
+                  svg_root
+              container
+                button [ref=393]
+                  image
+                  paragraph
+                    text "남도하6962"
+                  paragraph
+                    text "28일 전"
+                  paragraph
+                    text "수정됨"
+                  paragraph
+                    text "예전 로로님 연프 생각나서 좋아요. 다만 한명은 말 한마디에 자기 혼자 세계에 빠져서 대화 핀트가 좀 어긋나고 호칭이 자꾸왔다갔다 거려서 혼자 겉�..."
+                button "더보기" [ref=394]
+                  svg_root
+              container
+                button [ref=395]
+                  image
+                  paragraph
+                    text "콜리"
+                  paragraph
+                    text "28일 전"
+                  paragraph
+                    text "나의 빛, 나의 소금, 나의 태양, 나의 달, 나의 별, 나의 우주, 나의 희망, 나의 행복, 나의 구원, 나의 안식처, 나의 자랑, 나의 영원, 나의 시작과 끝, 나�..."
+                button "더보기" [ref=396]
+                  svg_root
+              container
+                button [ref=397]
+                  image
+                  paragraph
+                    text "꿀벌"
+                  paragraph
+                    text "28일 전"
+                  paragraph
+                    text "잠깐만요 저 지금 너무 좋아서 집 안에서 박수 치면서 돌아다니는 중임 😶‍🌫️"
+                button "더보기" [ref=398]
+                  svg_root
+              container
+                button [ref=399]
+                  image
+                  paragraph
+                    text "몽돌"
+                  image
+                  paragraph
+                    text "28일 전"
+                  paragraph
+                    text "와우!!"
+                button "더보기" [ref=400]
+                  svg_root
+              button [ref=401]
+                svg_root
+                paragraph
+                  text "댓글 1110개 더보기"
+          container
+            heading
+              text "등장인물"
+            heading
+              text "8"
+            button "이전" [ref=402]
+              svg_root
+            button "다음" [ref=403]
+              svg_root
+            container
+              button [ref=404]
+                image
+                image
+                paragraph
+                  text "윤세라"
+              button [ref=405]
+                image
+                image
+                paragraph
+                  text "한여름"
+              button [ref=406]
+                image
+                image
+                paragraph
+                  text "윤희수"
+              button [ref=407]
+                image
+                image
+                paragraph
+                  text "최아린"
+              button [ref=408]
+                image
+                image
+                paragraph
+                  text "마상구"
+              button [ref=409]
+                image
+                image
+                paragraph
+                  text "강태웅"
+              button [ref=410]
+                image
+                image
+                paragraph
+                  text "서도하"
+              button [ref=411]
+                image
+                image
+                paragraph
+                  text "앤드류"
+          container
+            heading
+              text "미리보기"
+            heading
+              text "8"
+            button "이전" [ref=412]
+              svg_root
+            button "다음" [ref=413]
+              svg_root
+            container
+              button "미리보기 이미지 1 크게보기" [ref=414, loc=css:button[aria-label="미리보기 이미지 1 크게보기"]]
+                image
+              button "미리보기 이미지 2 크게보기" [ref=415, loc=css:button[aria-label="미리보기 이미지 2 크게보기"]]
+                image
+              button "미리보기 이미지 3 크게보기" [ref=416, loc=css:button[aria-label="미리보기 이미지 3 크게보기"]]
+                image
+              button "미리보기 이미지 4 크게보기" [ref=417, loc=css:button[aria-label="미리보기 이미지 4 크게보기"]]
+                image
+              button "미리보기 이미지 5 크게보기" [ref=418, loc=css:button[aria-label="미리보기 이미지 5 크게보기"]]
+                image
+              button "미리보기 이미지 6 크게보기" [ref=419, loc=css:button[aria-label="미리보기 이미지 6 크게보기"]]
+                image
+              button "미리보기 이미지 7 크게보기" [ref=420, loc=css:button[aria-label="미리보기 이미지 7 크게보기"]]
+                image
+              button "미리보기 이미지 8 크게보기" [ref=421, loc=css:button[aria-label="미리보기 이미지 8 크게보기"]]
+                image
+          container
+            heading
+              text "이 에피소드와 비슷해요!"
+            button "이전" [ref=422]
+              svg_root
+            button "다음" [ref=423]
+              svg_root
+            container
+              anchor [ref=424, loc=href:/episodes/6adeb48d9d896405e98e6ecc?source=episode_detail, url=https://frontia.ai/episodes/6adeb48d9d896405e98e6ecc?source=episode_detail]
+                image
+                image
+                svg_root
+                paragraph
+                  text "연애메이트"
+                svg_root
+                text "220만+"
+                text "오월"
+              anchor [ref=425, loc=href:/episodes/6ad29884f092782346e6a38d?source=episode_detail, url=https://frontia.ai/episodes/6ad29884f092782346e6a38d?source=episode_detail]
+                image
+                image
+                paragraph
+                  text "넥스트페이스"
+                svg_root
+                text "91만+"
+                text "모아드림"
+                image
+              anchor [ref=426, loc=href:/episodes/6aed32c1219af000479e6e4c?source=episode_detail, url=https://frontia.ai/episodes/6aed32c1219af000479e6e4c?source=episode_detail]
+                image
+                image
+                paragraph
+                  text "러브페어링"
+                svg_root
+                text "17만+"
+                text "연애스토리"
+                image
+              anchor [ref=427, loc=href:/episodes/6acd07199e6fa4198447ddc9?source=episode_detail, url=https://frontia.ai/episodes/6acd07199e6fa4198447ddc9?source=episode_detail]
+                image
+                image
+                paragraph
+                  text "한양연회"
+                svg_root
+                text "704만+"
+                text "몽돌"
+                image
+              anchor [ref=428, loc=href:/episodes/6ab772d0fe4105b660e89857?source=episode_detail, url=https://frontia.ai/episodes/6ab772d0fe4105b660e89857?source=episode_detail]
+                image
+                svg_root
+                paragraph
+                  text "로그아웃 프렌드존 시즌2"
+                svg_root
+                text "70만+"
+                text "짱돌"
+                image
+              anchor [ref=429, loc=href:/episodes/6ae4e08cb8bd9b1bdd91edc5?source=episode_detail, url=https://frontia.ai/episodes/6ae4e08cb8bd9b1bdd91edc5?source=episode_detail]
+                image
+                image
+                paragraph
+                  text "한양춘몽"
+                svg_root
+                text "186만+"
+                text "몽돌"
+                image
+              anchor [ref=430, loc=href:/episodes/6ab9f9bc3faba6980d13b780?source=episode_detail, url=https://frontia.ai/episodes/6ab9f9bc3faba6980d13b780?source=episode_detail]
+                image
+                svg_root
+                paragraph
+                  text "우리 사이에 밤이 생겼다."
+                svg_root
+                text "70만+"
+                text "세계"
+                image
+              anchor [ref=431, loc=href:/episodes/6aadebb80629968a1d5162f2?source=episode_detail, url=https://frontia.ai/episodes/6aadebb80629968a1d5162f2?source=episode_detail]
+                image
+                svg_root
+                paragraph
+                  text "게스트하우스 파티"
+                svg_root
+                text "57만+"
+                text "란이"
+              anchor [ref=432, loc=href:/episodes/6adaeba621e87fcc21fea874?source=episode_detail, url=https://frontia.ai/episodes/6adaeba621e87fcc21fea874?source=episode_detail]
+                image
+                image
+                paragraph
+                  text "새봄공연예술고등학교"
+                svg_root
+                text "37만+"
+                text "나비랑"
+                image
+              anchor [ref=433, loc=href:/episodes/6ae18fe944473f301c97a059?source=episode_detail, url=https://frontia.ai/episodes/6ae18fe944473f301c97a059?source=episode_detail]
+                image
+                image
+                paragraph
+                  text "여친 알바 구함"
+                svg_root
+                text "12만+"
+                text "나비랑"
+                image
+          container
+            heading
+              text "디렉터의 다른 에피소드"
+            button "이전" [ref=434]
+              svg_root
+            button "다음" [ref=435]
+              svg_root
+            container
+              anchor [ref=436, loc=href:/episodes/6ae558acd75dd8d47e2da312?source=episode_detail, url=https://frontia.ai/episodes/6ae558acd75dd8d47e2da312?source=episode_detail]
+                image
+                image
+                paragraph
+                  text "학교 다녀오겠습니다"
+                svg_root
+                text "50만+"
+                text "roro"
+                image
+              anchor [ref=437, loc=href:/episodes/6a71a33fbe6a0ff13b534c31?source=episode_detail, url=https://frontia.ai/episodes/6a71a33fbe6a0ff13b534c31?source=episode_detail]
+                image
+                paragraph
+                  text "연하남×연상녀 in Bali"
+                svg_root
+                text "52만+"
+                text "roro"
+                image
+              anchor [ref=438, loc=href:/episodes/6a645edb664a647eae0ae15a?source=episode_detail, url=https://frontia.ai/episodes/6a645edb664a647eae0ae15a?source=episode_detail]
+                image
+                svg_root
+                paragraph
+                  text "솔로 인 헬 in Hawaii"
+                svg_root
+                text "17만+"
+                text "roro"
+                image
+              anchor [ref=439, loc=href:/episodes/6a432dd82e2e7cd6aa98a7db?source=episode_detail, url=https://frontia.ai/episodes/6a432dd82e2e7cd6aa98a7db?source=episode_detail]
+                image
+                paragraph
+                  text "모솔남녀"
+                svg_root
+                text "265만+"
+                text "roro"
+                image
+              anchor [ref=440, loc=href:/episodes/6a322498548c035d5f1f281f?source=episode_detail, url=https://frontia.ai/episodes/6a322498548c035d5f1f281f?source=episode_detail]
+                image
+                paragraph
+                  text "첫사랑, 터치다운!"
+                svg_root
+                text "225만+"
+                text "roro"
+                image
+              anchor [ref=441, loc=href:/episodes/69e14e37fae3eb0e6e8a07bf?source=episode_detail, url=https://frontia.ai/episodes/69e14e37fae3eb0e6e8a07bf?source=episode_detail]
+                image
+                paragraph
+                  text "하트하우스 in miyako"
+                svg_root
+                text "1903만+"
+                text "roro"
+                image
+              anchor [ref=442, loc=href:/episodes/69d1c257a658e075e5dd36e3?source=episode_detail, url=https://frontia.ai/episodes/69d1c257a658e075e5dd36e3?source=episode_detail]
+                image
+                paragraph
+                  text "너에게 한 걸음"
+                svg_root
+                text "58만+"
+                text "roro"
+                image
+              anchor [ref=443, loc=href:/episodes/69bec4d3279d51edf34ba78a?source=episode_detail, url=https://frontia.ai/episodes/69bec4d3279d51edf34ba78a?source=episode_detail]
+                image
+                paragraph
+                  text "일간남친"
+                svg_root
+                text "68만+"
+                text "roro"
+                image
+              anchor [ref=444, loc=href:/episodes/69bd30ce5d335064796fae5a?source=episode_detail, url=https://frontia.ai/episodes/69bd30ce5d335064796fae5a?source=episode_detail]
+                image
+                paragraph
+                  text "환승 시그널"
+                svg_root
+                text "1256만+"
+                text "roro"
+                image
+              anchor [ref=445, loc=href:/episodes/69afd8816c089cdd5b003a9a?source=episode_detail, url=https://frontia.ai/episodes/69afd8816c089cdd5b003a9a?source=episode_detail]
+                image
+                paragraph
+                  text "솔로 인 헬"
+                svg_root
+                text "3111만+"
+                text "roro"
+                image
+              anchor [ref=446, loc=href:/episodes/698756fe469bbc0b5645f5a3?source=episode_detail, url=https://frontia.ai/episodes/698756fe469bbc0b5645f5a3?source=episode_detail]
+                image
+                paragraph
+                  text "하트하우스"
+                svg_root
+                text "874만+"
+                text "roro"
+                image
+              anchor [ref=447, loc=href:/episodes/69839368eb8d7f90bf407806?source=episode_detail, url=https://frontia.ai/episodes/69839368eb8d7f90bf407806?source=episode_detail]
+                image
+                paragraph
+                  text "MIDNIGHT BAND"
+                svg_root
+                text "28만+"
+                text "roro"
+                image
+      button "닫기" [ref=89, loc=css:button[aria-label="닫기"]]
+        svg_root

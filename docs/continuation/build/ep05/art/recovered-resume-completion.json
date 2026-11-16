@@ -1,0 +1,479 @@
+{
+  "episode": 5,
+  "completed_at": "2026-11-09T06:55:28.814546+00:00",
+  "scope": "원래 safe55 처리 완료·전체74개 그림 완성 아님",
+  "safe_scope": 55,
+  "recorded_actualPNG": 56,
+  "pending_eligible": 0,
+  "recovery_new_calls": 34,
+  "orphan_reused_without_generation": "ep05_c028_p02",
+  "orphan_original_exit": null,
+  "maximum_native_groups_before_new_call": 2,
+  "scope_conflicts": [],
+  "actual_output_checks": [
+    {
+      "id": "ep05_c010_p02",
+      "path": "assets/ep05/gen/ep05_c010_p02.png",
+      "bytes": 2666486,
+      "receipt_bytes": 2666486,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c014_p01",
+      "path": "assets/ep05/gen/ep05_c014_p01.png",
+      "bytes": 2316346,
+      "receipt_bytes": 2316346,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c015_p01",
+      "path": "assets/ep05/gen/ep05_c015_p01.png",
+      "bytes": 2127955,
+      "receipt_bytes": 2127955,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c016_p01",
+      "path": "assets/ep05/gen/ep05_c016_p01.png",
+      "bytes": 1948655,
+      "receipt_bytes": 1948655,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c017_p01",
+      "path": "assets/ep05/gen/ep05_c017_p01.png",
+      "bytes": 2560687,
+      "receipt_bytes": 2560687,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c018_p01",
+      "path": "assets/ep05/gen/ep05_c018_p01.png",
+      "bytes": 1160858,
+      "receipt_bytes": 1160858,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c019_p01",
+      "path": "assets/ep05/gen/ep05_c019_p01.png",
+      "bytes": 1986449,
+      "receipt_bytes": 1986449,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c020_p01",
+      "path": "assets/ep05/gen/ep05_c020_p01.png",
+      "bytes": 2499049,
+      "receipt_bytes": 2499049,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c021_p01",
+      "path": "assets/ep05/gen/ep05_c021_p01.png",
+      "bytes": 2486915,
+      "receipt_bytes": 2486915,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c022_p01",
+      "path": "assets/ep05/gen/ep05_c022_p01.png",
+      "bytes": 2063021,
+      "receipt_bytes": 2063021,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c023_p01",
+      "path": "assets/ep05/gen/ep05_c023_p01.png",
+      "bytes": 2077513,
+      "receipt_bytes": 2077513,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c024_p01",
+      "path": "assets/ep05/gen/ep05_c024_p01.png",
+      "bytes": 1640949,
+      "receipt_bytes": 1640949,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c025_p01",
+      "path": "assets/ep05/gen/ep05_c025_p01.png",
+      "bytes": 2222681,
+      "receipt_bytes": 2222681,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c011_p01",
+      "path": "assets/ep05/gen/ep05_c011_p01.png",
+      "bytes": 2245287,
+      "receipt_bytes": 2245287,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c012_p01",
+      "path": "assets/ep05/gen/ep05_c012_p01.png",
+      "bytes": 2039382,
+      "receipt_bytes": 2039382,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c013_p01",
+      "path": "assets/ep05/gen/ep05_c013_p01.png",
+      "bytes": 1768610,
+      "receipt_bytes": 1768610,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c013_p02",
+      "path": "assets/ep05/gen/ep05_c013_p02.png",
+      "bytes": 2533899,
+      "receipt_bytes": 2533899,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c026_p01",
+      "path": "assets/ep05/gen/ep05_c026_p01.png",
+      "bytes": 2263480,
+      "receipt_bytes": 2263480,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c027_p01",
+      "path": "assets/ep05/gen/ep05_c027_p01.png",
+      "bytes": 2236404,
+      "receipt_bytes": 2236404,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c028_p01",
+      "path": "assets/ep05/gen/ep05_c028_p01.png",
+      "bytes": 3364739,
+      "receipt_bytes": 3364739,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c028_p02",
+      "path": "assets/ep05/gen/ep05_c028_p02.png",
+      "bytes": 3655466,
+      "receipt_bytes": 3655466,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c028_p03",
+      "path": "assets/ep05/gen/ep05_c028_p03.png",
+      "bytes": 2871120,
+      "receipt_bytes": 2871120,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c029_p01",
+      "path": "assets/ep05/gen/ep05_c029_p01.png",
+      "bytes": 2905340,
+      "receipt_bytes": 2905340,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c033_p01",
+      "path": "assets/ep05/gen/ep05_c033_p01.png",
+      "bytes": 2075739,
+      "receipt_bytes": 2075739,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c035_p01",
+      "path": "assets/ep05/gen/ep05_c035_p01.png",
+      "bytes": 1867892,
+      "receipt_bytes": 1867892,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c036_p01",
+      "path": "assets/ep05/gen/ep05_c036_p01.png",
+      "bytes": 2199547,
+      "receipt_bytes": 2199547,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c037_p01",
+      "path": "assets/ep05/gen/ep05_c037_p01.png",
+      "bytes": 2631763,
+      "receipt_bytes": 2631763,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c038_p01",
+      "path": "assets/ep05/gen/ep05_c038_p01.png",
+      "bytes": 2531431,
+      "receipt_bytes": 2531431,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c038_p02",
+      "path": "assets/ep05/gen/ep05_c038_p02.png",
+      "bytes": 2128315,
+      "receipt_bytes": 2128315,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c040_p01",
+      "path": "assets/ep05/gen/ep05_c040_p01.png",
+      "bytes": 2807518,
+      "receipt_bytes": 2807518,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c041_p01",
+      "path": "assets/ep05/gen/ep05_c041_p01.png",
+      "bytes": 2275225,
+      "receipt_bytes": 2275225,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c042_p01",
+      "path": "assets/ep05/gen/ep05_c042_p01.png",
+      "bytes": 2961885,
+      "receipt_bytes": 2961885,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c042_p03",
+      "path": "assets/ep05/gen/ep05_c042_p03.png",
+      "bytes": 2002120,
+      "receipt_bytes": 2002120,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c042_p04",
+      "path": "assets/ep05/gen/ep05_c042_p04.png",
+      "bytes": 1832656,
+      "receipt_bytes": 1832656,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c042_p05",
+      "path": "assets/ep05/gen/ep05_c042_p05.png",
+      "bytes": 2204291,
+      "receipt_bytes": 2204291,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c042_p06",
+      "path": "assets/ep05/gen/ep05_c042_p06.png",
+      "bytes": 2210095,
+      "receipt_bytes": 2210095,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c042_p07",
+      "path": "assets/ep05/gen/ep05_c042_p07.png",
+      "bytes": 2723427,
+      "receipt_bytes": 2723427,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c043_p01",
+      "path": "assets/ep05/gen/ep05_c043_p01.png",
+      "bytes": 2014861,
+      "receipt_bytes": 2014861,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c043_p02",
+      "path": "assets/ep05/gen/ep05_c043_p02.png",
+      "bytes": 2816601,
+      "receipt_bytes": 2816601,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c044_p01",
+      "path": "assets/ep05/gen/ep05_c044_p01.png",
+      "bytes": 2874662,
+      "receipt_bytes": 2874662,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c044_p02",
+      "path": "assets/ep05/gen/ep05_c044_p02.png",
+      "bytes": 2432352,
+      "receipt_bytes": 2432352,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c045_p01",
+      "path": "assets/ep05/gen/ep05_c045_p01.png",
+      "bytes": 2659738,
+      "receipt_bytes": 2659738,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c046_p01",
+      "path": "assets/ep05/gen/ep05_c046_p01.png",
+      "bytes": 1046882,
+      "receipt_bytes": 1046882,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c047_p01",
+      "path": "assets/ep05/gen/ep05_c047_p01.png",
+      "bytes": 2687224,
+      "receipt_bytes": 2687224,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c047_p02",
+      "path": "assets/ep05/gen/ep05_c047_p02.png",
+      "bytes": 2636726,
+      "receipt_bytes": 2636726,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c048_p01",
+      "path": "assets/ep05/gen/ep05_c048_p01.png",
+      "bytes": 1861601,
+      "receipt_bytes": 1861601,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c049_p01",
+      "path": "assets/ep05/gen/ep05_c049_p01.png",
+      "bytes": 2500656,
+      "receipt_bytes": 2500656,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c049_p02",
+      "path": "assets/ep05/gen/ep05_c049_p02.png",
+      "bytes": 2442295,
+      "receipt_bytes": 2442295,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c050_p01",
+      "path": "assets/ep05/gen/ep05_c050_p01.png",
+      "bytes": 2862051,
+      "receipt_bytes": 2862051,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c051_p01",
+      "path": "assets/ep05/gen/ep05_c051_p01.png",
+      "bytes": 2128507,
+      "receipt_bytes": 2128507,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c052_p02",
+      "path": "assets/ep05/gen/ep05_c052_p02.png",
+      "bytes": 3065470,
+      "receipt_bytes": 3065470,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c053_p01",
+      "path": "assets/ep05/gen/ep05_c053_p01.png",
+      "bytes": 3313523,
+      "receipt_bytes": 3313523,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c053_p02",
+      "path": "assets/ep05/gen/ep05_c053_p02.png",
+      "bytes": 2466169,
+      "receipt_bytes": 2466169,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c055_p01",
+      "path": "assets/ep05/gen/ep05_c055_p01.png",
+      "bytes": 2510467,
+      "receipt_bytes": 2510467,
+      "exists": true,
+      "size_matches": true
+    },
+    {
+      "id": "ep05_c055_p02",
+      "path": "assets/ep05/gen/ep05_c055_p02.png",
+      "bytes": 3488553,
+      "receipt_bytes": 3488553,
+      "exists": true,
+      "size_matches": true
+    }
+  ],
+  "preserved_original_output": {
+    "path": "assets/ep05/gen/ep05_c001_p01.png",
+    "bytes": 2421940
+  },
+  "held": 15,
+  "terminalBlocked": 1,
+  "terminal_ids": [
+    "ep05_c002_p01"
+  ],
+  "textReuse": 2,
+  "independentApproved": 0,
+  "installed": 0,
+  "qa_status": "독립 Claude 원작 나란히 QA 대기",
+  "service_blocker": null,
+  "art_READY": false,
+  "producer": {
+    "pid": 25562,
+    "pgid": 25562,
+    "ppid": 1,
+    "phase": "completed"
+  },
+  "root_cause_limit": "원래 shutdown 호출자는 미확정. stop 파일 발동 증거 없음. control 필드는 파일명 메타데이터였다.",
+  "final_manifest": "docs/continuation/build/ep05/art/safe-resume-manifest.json",
+  "checks": "기존 영수증과 승인 목록을 대조하고 지정 출력55개 실존·크기 확인. 파일시스템 전체 재집계·기존 통과 테스트·매핑·그림 QA 재실행 없음."
+}

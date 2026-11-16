@@ -1,0 +1,38 @@
+{
+  "asset_id": "ep04_c004",
+  "source_page": "/Users/choeminju/월흔_trpg/work/ep04/merged/ep04_001.png",
+  "source_page_sha256": "a33f00098cf7bbc5800a2260b062d194d55e9de131bc1f0823344d63427c7988",
+  "source_cut_window": [
+    0,
+    12898,
+    2000,
+    16521
+  ],
+  "selected_window": [
+    0,
+    12898,
+    2000,
+    16521
+  ],
+  "raw_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/source/ep04_c004.png",
+  "selected_source": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c004-selected.png",
+  "selected_size": [
+    2000,
+    3623
+  ],
+  "inputs": [
+    {
+      "path": "/Users/choeminju/월흔_trpg/assets/ep04/gen/inputs/ep04_c004-selected.png",
+      "role": "실제 선택 원작 전체",
+      "size": [
+        2000,
+        3623
+      ],
+      "local_y": [
+        0,
+        3623
+      ]
+    }
+  ],
+  "transform": "원작 추출·RGB PNG. 그림 내용 보정·새 창작 없음."
+}

@@ -1,0 +1,313 @@
+bun test v1.4.2 (744846f84)
+
+app/tests/ep09_cg_alias.test.ts:
+94 |     foreshadow: [...(base.foreshadow ?? []), ...(chapter.foreshadow ?? [])],
+95 |     fates: [...(base.fates ?? []), ...(chapter.fates ?? [])],
+96 |     atlas: connectAtlas(base, chapter, boundaries),
+97 |   };
+98 |   const problems = checkScenario(scenario);
+99 |   if (problems.length) throw new ScenarioError(`후속 연결 검증 실패:\n- ${problems.join('\n- ')}`);
+                                  ^
+ScenarioError: 후속 연결 검증 실패:
+- cast.아시나.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.아시나.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.아시나.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.아시나.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.아시나.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.아시나.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.아시나.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.아시나.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- cast.속마음.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.속마음.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.속마음.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.속마음.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.속마음.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.속마음.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.속마음.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.속마음.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.ep03_아시나.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.ep03_독백.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.ep04_asina.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.ep04_thought.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.ep07_아시나.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_flustered", "ep09_c009_flustered", "ep09_c075_flustered", "ep09_c075_flustered", "ep09_c068_flustered"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- cast.ep07_독백.faces: 없는 입식 "ep09_c009_tired", "ep09_c009_tired", "ep09_c075_tired", "ep09_c075_tired", "ep09_c068_tired"
+- beats.b01_sand: 대사 "심지어 물도 다 떨어져 가고…" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.b02_people: 대사 "응?" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b02_people: 대사 "사람?!" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b02_people: 대사 "이봐요! 저기요!" 의 face "smile": 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- beats.b02_people: 대사 "살았다…!!" 의 face "smile": 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- beats.b02_people: 대사 "이봐요! 저기요!" 의 face "smile": 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- beats.b03_ask: 대사 "저… 저기…" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.b03_ask: 대사 "혹시 크라차까지 가는 길을 아시나요?" 의 face "smile": 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- beats.b03_met: 대사 "저… 저기…" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.b04_blade: 대사 "억울해…" 의 face "indignant": 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- beats.b04_blade: 대사 "잠깐만요, 잠깐! 나 아직 아무 말도 안 했어요!" 의 face "scared": 없는 입식 "ep09_c009_scared", "ep09_c009_scared", "ep09_c075_scared", "ep09_c075_scared", "ep09_c068_scared"
+- beats.b04_blade: 대사 "그것 좀 치워봐요! 난 죽이면 안 돼요." 의 face "indignant": 없는 입식 "ep09_c009_indignant", "ep09_c009_indignant", "ep09_c075_indignant", "ep09_c075_indignant", "ep09_c068_indignant"
+- beats.b05_why: 대사 "미소녀니까요." 의 face "smug": 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- beats.b05_why: 대사 "미소녀니까요." 의 face "smug": 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- beats.b05_why: 대사 "미소녀니까요." 의 face "smug": 없는 입식 "ep09_c009_smug", "ep09_c009_smug", "ep09_c075_smug", "ep09_c075_smug", "ep09_c068_smug"
+- beats.b06_swing: 대사 "미친―! 피해야 돼!!" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b07_rule: 대사 "가… 갑자기 휘두르는 법이 어디 있어요!!" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b07_rule: 대사 "반칙이지!!!" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b07_rule: 대사 "마치… 한여름의 태양 같아." 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b07_rule: 대사 "뭐, 뭐야" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b08_gaze: 대사 "사람 얼굴을 그렇게 빤히 보는 건 실례라고요." 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.b08_gaze: 대사 "뭘 봐요! 구경났어요?" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.b09_verdict: 대사 "뭬야?!" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.b09_verdict: 대사 "…뭐, 뭐예요." 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.b09_verdict: 대사 "…뭐, 뭐예요." 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.b09_verdict: 대사 "…네? 뭐가요?" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.r3_flee: 대사 "뭐야, 왜 안 쫓아와…? 아니, 지금은 뛰어!" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.r3_slip: 대사 "터번에 호위까지… 저런 사람들한테 길을 물었다간 무슨 꼴을 당할지 몰라." 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.r3_dusk: 대사 "물도 힘도 얼마 안 남았어. 어떻게든 오늘 밤을 넘겨야 해." 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.r3_night: 대사 "다, 당신 누구예요?! 여긴 어떻게…!" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.r3_night: 대사 "다, 당신은 아까 그…! 여긴 어떻게…!" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.r4_walk: 대사 "네, 네! 걱정 마요. 제가 얼마나 쓸모 있는 사람인데요!" 의 face "smile": 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- beats.r4_walk: 대사 "…네? 저를 데려가겠다고요?" 의 face "surprised": 없는 입식 "ep09_c009_surprised", "ep09_c009_surprised", "ep09_c075_surprised", "ep09_c075_surprised", "ep09_c068_surprised"
+- beats.r4_walk: 대사 "…잠깐. 해가 왼쪽에 있는데, 왜 우리는 북쪽으로 걷는 거야?" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.r5_price: 대사 "살았… 나? 아니, 내 입으로 내 값을 매겨 버린 거 아니야?" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.r5_price: 대사 "살았… 나? 대체 나를 어디로 데려가는 거야?" 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+- beats.e_road: 대사 "저건… 마을이야. 진짜로 건넜어!" 의 face "smile": 없는 입식 "ep09_c009_smile", "ep09_c009_smile", "ep09_c075_smile", "ep09_c075_smile", "ep09_c068_smile"
+- beats.e_deal: 대사 "일단 따라가자. 어디로 가는지는… 걸으면서 알아내면 되지." 의 face "wary": 없는 입식 "ep09_c009_wary", "ep09_c009_wary", "ep09_c075_wary", "ep09_c075_wary", "ep09_c068_wary"
+      at connectChapter (/Users/choeminju/월흔_trpg/app/src/engine/continuation.ts:99:30)
+      at async <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:26:28)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > 실제 1~9화 로더 결과가 시나리오와 공유 로어 검증을 통과한다 [66.87ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_아시나는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.23ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_독백는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.03ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_밤아시나는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.03ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_밤독백는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_카림는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.13ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제독백는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.03ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_수행자는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_수행자독백는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_나시르는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_나시르독백는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_상상는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_장발는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_대족장는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.02ms]
+34 | 
+35 |   for (const [actor, cast] of Object.entries(chapter.cast).filter(([, cast]) => cast.style === 'speech' || cast.style === 'thought')) {
+36 |     test(`${actor}는 로어 인물의 정확한 표정과 원작 CG를 사용한다`, async () => {
+37 |       const faces = cast.lore ? canonicalFaces[cast.lore] : undefined;
+38 |       if (!faces) throw new Error(`인물 표정 계약이 없다: ${actor}`);
+39 |       expect(cast.presentation).toBe('cg');
+                                     ^
+error: expect(received).toBe(expected)
+
+Expected: "cg"
+Received: undefined
+
+      at <anonymous> (/Users/choeminju/월흔_trpg/app/tests/ep09_cg_alias.test.ts:39:33)
+(fail) 9화 원작 CG 별칭과 실제 캠페인 > ep09_동행는 로어 인물의 정확한 표정과 원작 CG를 사용한다 [0.01ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제는 공유 반응의 정확한 표정과 모든 고정 줄의 실재 CG를 지원한다 [0.15ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제의 CG 없음 출력은 실제 엔진이 거절한다 [0.41ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제의 없는 CG 출력은 실제 엔진이 거절한다 [0.05ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제의 미승인 표정 출력은 실제 엔진이 거절한다 [0.03ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제독백는 공유 반응의 정확한 표정과 모든 고정 줄의 실재 CG를 지원한다 [0.03ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제독백의 CG 없음 출력은 실제 엔진이 거절한다 [0.02ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제독백의 없는 CG 출력은 실제 엔진이 거절한다 [0.02ms]
+(pass) 9화 원작 CG 별칭과 실제 캠페인 > ep09_황제독백의 미승인 표정 출력은 실제 엔진이 거절한다 [0.03ms]
+
+ 10 pass
+ 14 fail
+ 199 expect() calls
+Ran 24 tests across 1 file. [92.00ms]

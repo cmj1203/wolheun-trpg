@@ -1,0 +1,14 @@
+bun test v1.4.2 (744846f84)
+
+tests/ep09_palace.test.ts:
+(pass) 9화 내부 진행 > 회상과 짐 거래는 입력이나 판정 없이 반환 유보까지 이어진다 [2.62ms]
+(pass) 9화 내부 진행 > ep09_protest → ep09_breath: 짐을 얻거나 탈출을 확정하지 않고 내부 경계에서 끝난다 [2.00ms]
+(pass) 9화 내부 진행 > ep09_protest → ep09_gaze: 짐을 얻거나 탈출을 확정하지 않고 내부 경계에서 끝난다 [0.99ms]
+(pass) 9화 내부 진행 > ep09_silent → ep09_breath: 짐을 얻거나 탈출을 확정하지 않고 내부 경계에서 끝난다 [0.89ms]
+(pass) 9화 내부 진행 > ep09_silent → ep09_gaze: 짐을 얻거나 탈출을 확정하지 않고 내부 경계에서 끝난다 [1.86ms]
+(pass) 9화 내부 진행 > 비공개 독백과 상상은 들리는 발언으로 재생하지 않는다 [0.81ms]
+
+ 6 pass
+ 0 fail
+ 117 expect() calls
+Ran 6 tests across 1 file. [30.00ms]

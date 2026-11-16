@@ -1,5 +1,5 @@
 // 퍼저(scripts/fuzz.ts)가 찾은 버그를 하나씩 고정하는 시험과, 퍼저 자체의 짧은 회귀 실행.
-import { describe, expect, test } from 'bun:test';
+import { describe, expect, spyOn, test } from 'bun:test';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -33,7 +33,7 @@ async function playToEnd(engine: Engine, start: { state: GameState; step: Step }
 
 /** 큰 즉흥 행동으로 읽는 GM(LLM 이 낼 수 있는 해석). risk 를 주면 정체를 밝히는 말로도 읽는다. */
 const boldGm = (deed: string, risk?: 'identity') =>
-  new FakeGm((): Interpretation => ({ kind: 'improv', stat: '재치', difficulty: 0, label: '즉흥', absurd: false, bold: true, deed, ...(risk ? { risk } : {}), source: 'llm', meta: META }));
+  new FakeGm((): Interpretation => ({ kind: 'improv', stat: '재치', difficulty: 0, label: '즉흥', absurd: false, bold: true, deed, target: 'local', ...(risk ? { risk } : {}), source: 'llm', meta: META }));
 
 const interject = (text: string, scene: string | null): Action => ({ type: 'interject', text, scene, shown: [], pending: [] });
 
@@ -92,7 +92,7 @@ describe('퍼저가 찾은 버그: 그만두기 확인이 남는 자리', () => 
   test('의도 카드가 떠 있을 때 질문 모드로 그만두겠다고 하면, 확인 창의 답은 그만두기에 간다', async () => {
     const engine = new Engine(scenario, boldGm('그의 칼을 붙잡았다'), fakeClock().now, false);
     const first = engine.newGame(2, 'i');
-    const carded = await engine.act(first.state, { type: 'free', text: '칼을 붙잡는다' });
+    const carded = await engine.act(first.state, { type: 'free', text: '(칼을 붙잡는다)' });
     expect(carded.state.pendingIntent).toBeDefined();
     const asked = await engine.act(carded.state, { type: 'ask', text: '그만할래', scene: first.state.beat });
     expect(asked.state.pendingRisk).toBeDefined();
@@ -102,12 +102,46 @@ describe('퍼저가 찾은 버그: 그만두기 확인이 남는 자리', () => 
   });
 });
 
-test('끝난 판에 끼어들기 말고 다른 행동은 받지 않는다', async () => {
+test('끝난 판은 끼어들기와 GM 질문만 받고 질문은 결과를 보존한다', async () => {
   const engine = new Engine(scenario, new LocalGm(null, lore), fakeClock().now, true);
   const { state } = await playToEnd(engine, engine.newGame(5, 'e'));
-  for (const action of [{ type: 'confirm', ok: true }, { type: 'free', text: '응' }, { type: 'ask', text: '그만할래' }] as Action[]) {
+  const before = structuredClone(state);
+  for (const action of [
+    { type: 'confirm', ok: true }, { type: 'free', text: '응' },
+    { type: 'luck', use: true }, { type: 'choose', id: 'x' }, { type: 'approach', id: 'run' },
+  ] satisfies Action[]) {
     await expect(engine.act(state, action)).rejects.toBeInstanceOf(GameError);
   }
+  for (const text of ['행운이 뭐야', '그만할래']) {
+    const after = await engine.act(state, { type: 'ask', text, scene: state.beat });
+    expect(after.state.ending).toBe(state.ending);
+    expect(after.state.beat).toBe(state.beat);
+    expect(after.state.rng).toBe(state.rng);
+    expect(after.state.tracks).toEqual(state.tracks);
+    expect(after.state.items).toEqual(state.items);
+    expect(after.state.flags).toEqual(state.flags);
+    expect(after.state.pendingRisk).toBeUndefined();
+    const a = summarize(scenario, state);
+    const b = summarize(scenario, after.state);
+    expect([b.decisions, b.checks, b.ending]).toEqual([a.decisions, a.checks, a.ending]);
+    expect(after.step.events.some((e) => e.type === 'echo' && e.text === text)).toBe(true);
+    expect(after.step.events.some((e) => e.type === 'line')).toBe(true);
+  }
+  expect(state).toEqual(before);
+  const { playGame } = await import('../scripts/fuzz.ts');
+  const report = await playGame({ scenario, lore, corpus: [] }, 5, {
+    luck: true, chaos: 0,
+    ops: [
+      { op: 'act', action: { type: 'free', text: '그만할래' }, advance: 0 },
+      { op: 'act', action: { type: 'confirm', ok: true }, advance: 0 },
+      { op: 'act', action: { type: 'ask', text: '행운이 뭐야' }, advance: 0 },
+      { op: 'act', action: interject('안녕', null), advance: 0 },
+    ],
+  });
+  expect(report.violation).toBeUndefined();
+  expect(report.ending).toBe('quit');
+  expect(report.acts).toBe(4);
+  expect(report.errors).toBe(0);
 });
 
 describe('퍼저·감사가 찾은 버그: 끝난 판과 잘못된 끼어들기', () => {
@@ -169,7 +203,7 @@ describe('퍼저·감사가 찾은 버그: 불러온 판의 확인 창', () => {
   test('의도 카드가 떠 있던 저장을 불러와도 카드를 다시 띄운다', async () => {
     const engine = new Engine(scenario, boldGm('그의 칼을 붙잡았다'), fakeClock().now, false);
     const first = engine.newGame(2, 'i');
-    const carded = await engine.act(first.state, { type: 'free', text: '칼을 붙잡는다' });
+    const carded = await engine.act(first.state, { type: 'free', text: '(칼을 붙잡는다)' });
     const shown = carded.step.events.find((e) => e.type === 'confirm');
     expect(shown).toBeDefined();
     const step = engine.resume(engine.noteSlot(carded.state, 'load', 'x'));
@@ -206,7 +240,7 @@ describe('퍼저·감사가 찾은 버그: 불러온 판의 확인 창', () => {
     let { state } = engine.newGame(1, 'c');
     ({ state } = await engine.act(state, { type: 'approach', id: 'run' }));
     expect(Object.values(scenario.beats[state.beat]?.cast ?? {})).toContain('남자');
-    const carded = await engine.act(state, { type: 'free', text: '나는 공녀다 하고 남자의 팔을 붙잡는다' });
+    const carded = await engine.act(state, { type: 'free', text: '나는 공녀다 (남자의 팔을 붙잡는다)' });
     expect(carded.state.pendingIntent).toBeDefined();
     const no = await engine.act(carded.state, { type: 'confirm', ok: false });
     expect(no.state.tracks.의심).toBe(state.tracks.의심);
@@ -342,6 +376,95 @@ describe('퍼저·감사가 찾은 버그: 서버', () => {
     } finally {
       await s.stop();
     }
+  });
+});
+
+describe('행운 oracle 회귀', () => {
+  type Check = Extract<GameState['log'][number], { kind: 'check' }>;
+  const cases = [
+    { name: '일반 실패', tier: 'miss', high: false },
+    { name: '낮은 합계 대실패', tier: 'fumble', high: false },
+    { name: '7 초과 대실패', tier: 'fumble', high: true },
+  ] as const;
+
+  async function fixture(row: (typeof cases)[number]) {
+    const sheet = row.high
+      ? { ...scenario.sheet, abilities: { 재치: 8, 손재주: 8, 매력: 8, 근력: 8, 교양: 8 } }
+      : scenario.sheet;
+    const env = { scenario: { ...scenario, sheet }, lore, corpus: [] };
+    const engine = new Engine(env.scenario, new LocalGm(null, lore), fakeClock().now, true);
+    for (let seed = 1; seed <= 400; seed++) {
+      const first = engine.newGame(seed, 'oracle');
+      const r = await engine.act(first.state, { type: 'approach', id: 'run' });
+      const check = r.state.log.findLast((e) => e.kind === 'check');
+      if (r.state.pendingLuck && check?.kind === 'check' && check.roll.tier === row.tier && (!row.high || check.roll.total > 7)) {
+        return { env, seed };
+      }
+    }
+    throw new Error(`실제 행운 판정을 찾지 못했다: ${row.name}`);
+  }
+
+  async function replay(row: (typeof cases)[number], mutate?: (check: Check, previous: Check) => void) {
+    const { env, seed } = await fixture(row);
+    const { playGame } = await import('../scripts/fuzz.ts');
+    const original = Engine.prototype.act;
+    let changed = false;
+    const spy = spyOn(Engine.prototype, 'act').mockImplementation(async function (this: Engine, state, action, onEvent, viewpoint) {
+      const result = await original.call(this, state, action, onEvent, viewpoint);
+      if (mutate && state.pendingLuck && action.type === 'luck' && action.use) {
+        const previous = state.log.findLast((e) => e.kind === 'check');
+        const check = result.state.log.findLast((e) => e.kind === 'check');
+        if (previous?.kind !== 'check' || check?.kind !== 'check') throw new Error('실제 판정 기록이 없다');
+        mutate(check, previous);
+        changed = true;
+      }
+      return result;
+    });
+    try {
+      const report = await playGame(env, seed, {
+        luck: true, chaos: 0,
+        ops: [
+          { op: 'act', action: { type: 'approach', id: 'run' }, advance: 0 },
+          { op: 'act', action: { type: 'luck', use: true }, advance: 0 },
+        ],
+      });
+      if (mutate) expect(changed).toBe(true);
+      return report;
+    } finally {
+      spy.mockRestore();
+    }
+  }
+
+  for (const row of cases) {
+    test(`${row.name}: 실제 행운 구제를 허용한다`, async () => {
+      const report = await replay(row);
+      expect(report.violation).toBeUndefined();
+      expect(report.acts).toBe(2);
+      expect(report.errors).toBe(0);
+    });
+  }
+
+  const mutations: readonly { name: string; mutate: (check: Check, previous: Check) => void }[] = [
+    { name: '잘못된 합계', mutate: (c) => { c.roll.total++; } },
+    { name: '성공 단계 변조', mutate: (c) => { c.roll.tier = 'hit'; } },
+    { name: '행운 사용량 변조', mutate: (c) => { c.roll.luck = 0; } },
+    { name: '주사위 변조', mutate: (c) => { c.roll.dice = [6, 6]; } },
+    { name: '판정 바깥 기록 변조', mutate: (c) => { c.at++; } },
+    { name: '구제 출처 변조', mutate: (c) => { if (c.roll.rescuedFrom) delete c.roll.rescuedFrom; else c.roll.rescuedFrom = 'fumble'; } },
+  ];
+  for (const row of [cases[0], cases[2]]) {
+    for (const mutation of mutations) {
+      test(`${row.name}: ${mutation.name}를 거부한다`, async () => {
+        const report = await replay(row, mutation.mutate);
+        expect(report.violation?.at).toBe(1);
+        expect(report.violation?.why).toBe('행운이 판정 기록을 잘못 고쳤다');
+      });
+    }
+  }
+  test('7 초과 대실패: 합계를 7로 낮추는 구제를 거부한다', async () => {
+    const report = await replay(cases[2], (c) => { c.roll.total = 7; });
+    expect(report.violation?.at).toBe(1);
+    expect(report.violation?.why).toBe('행운이 판정 기록을 잘못 고쳤다');
   });
 });
 

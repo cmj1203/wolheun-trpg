@@ -1,0 +1,2 @@
+tests/continuation_perspective.test.ts(55,63): error TS2339: Property 'beats' does not exist on type 'object'.
+tests/continuation_perspective.test.ts(57,41): error TS2339: Property 'beats' does not exist on type 'object'.

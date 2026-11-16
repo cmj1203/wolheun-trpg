@@ -1,0 +1,1021 @@
+{
+  "episode": 10,
+  "cut_count": 78,
+  "dialogue_count": 93,
+  "cuts": [
+    {
+      "cut": "ep10_c001",
+      "source": "work/ep10/merged/ep10_001.png",
+      "range": [
+        1598,
+        7882
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "푸른 타일 욕조와 밤하늘이 보이는 아치창을 길게 보여 준다.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c001.png"
+    },
+    {
+      "cut": "ep10_c002",
+      "source": "work/ep10/merged/ep10_001.png",
+      "range": [
+        8738,
+        11519
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "물소리 뒤 아시나가 한숨을 내쉰다.",
+      "costume": "인물 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c002.png"
+    },
+    {
+      "cut": "ep10_c003",
+      "source": "work/ep10/merged/ep10_001.png",
+      "range": [
+        12511,
+        17606
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "욕조 가장자리의 옷·가방 아래로 목욕 중인 아시나가 보인다.",
+      "costume": "목욕 차림, 갈색 머리·갈색 눈, 귀찌 착용; 옷은 욕조 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c003.png"
+    },
+    {
+      "cut": "ep10_c004",
+      "source": "work/ep10/merged/ep10_001.png",
+      "range": [
+        18494,
+        21623
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나의 긴장한 옆얼굴과 독백.",
+      "costume": "목욕 차림, 갈색 머리·갈색 눈, 귀찌",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c004.png"
+    },
+    {
+      "cut": "ep10_c005",
+      "source": "work/ep10/merged/ep10_002.png",
+      "range": [
+        544,
+        17774
+      ],
+      "dialogue": 3,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "붉은 눈의 왕과 푸른 눈의 긴 머리 남성, 뱀에 둘러싸인 아시나의 비유 이미지가 이어진다.",
+      "costume": "왕: 붉은 옷·흰 목덮개·금색 머리 사슬·귀장식. 다른 남성: 어두운 긴 머리·푸른 옷·금색 머리 사슬·목장식. 아시나: 남색 드레스(인상 이미지)",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c005.png"
+    },
+    {
+      "cut": "ep10_c006",
+      "source": "work/ep10/merged/ep10_002.png",
+      "range": [
+        17774,
+        18105
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "여백과 물방울·물소리로 현재 목욕 장면을 잇는다.",
+      "costume": "인물 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c006.png"
+    },
+    {
+      "cut": "ep10_c007",
+      "source": "work/ep10/merged/ep10_002.png",
+      "range": [
+        18780,
+        24586
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 물속에서 숨을 내쉬는 효과 글자가 붙는다.",
+      "costume": "목욕 차림, 갈색 긴 머리, 귀찌",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c007.png"
+    },
+    {
+      "cut": "ep10_c008",
+      "source": "work/ep10/merged/ep10_003.png",
+      "range": [
+        335,
+        7910
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "귀 가까이의 빛을 보고 아시나가 놀란다.",
+      "costume": "목욕 차림, 갈색 머리·갈색 눈, 붉은 보석 귀찌",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c008.png"
+    },
+    {
+      "cut": "ep10_c009",
+      "source": "work/ep10/merged/ep10_003.png",
+      "range": [
+        8592,
+        11378
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 귀찌의 색 변화를 확인한다.",
+      "costume": "목욕 차림, 갈색 머리, 붉은 보석 귀찌",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c009.png"
+    },
+    {
+      "cut": "ep10_c010",
+      "source": "work/ep10/merged/ep10_003.png",
+      "range": [
+        13072,
+        13561
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "푸른 테두리와 여백으로 다음 동작을 잇는다.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c010.png"
+    },
+    {
+      "cut": "ep10_c011",
+      "source": "work/ep10/merged/ep10_003.png",
+      "range": [
+        13561,
+        17010
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "욕조 밖 가방에 손을 뻗으며 변색이 예상보다 빠르다고 생각한다.",
+      "costume": "목욕 중인 아시나의 팔; 밝은 가방",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c011.png"
+    },
+    {
+      "cut": "ep10_c012",
+      "source": "work/ep10/merged/ep10_003.png",
+      "range": [
+        18491,
+        19997
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "귀찌를 내려놓는 동작의 효과 글자와 여백.",
+      "costume": "신체·복장 판별할 새 정보 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c012.png"
+    },
+    {
+      "cut": "ep10_c013",
+      "source": "work/ep10/merged/ep10_003.png",
+      "range": [
+        21358,
+        24284
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "손바닥에 붉게 빛나는 귀찌 두 개가 놓인다.",
+      "costume": "아시나의 맨손, 귀에서 뺀 보석 귀찌 두 개",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c013.png"
+    },
+    {
+      "cut": "ep10_c014",
+      "source": "work/ep10/merged/ep10_004.png",
+      "range": [
+        360,
+        8673
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "마법진을 띄워 임시로 마법을 푼다. 은백색 긴 머리가 보인다.",
+      "costume": "목욕 차림의 등·은백색 긴 머리, 손의 마법진",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c014.png"
+    },
+    {
+      "cut": "ep10_c015",
+      "source": "work/ep10/merged/ep10_004.png",
+      "range": [
+        8713,
+        10106
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "푸른 식물 장식과 여백으로 장소 전환을 잇는다.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c015.png"
+    },
+    {
+      "cut": "ep10_c016",
+      "source": "work/ep10/merged/ep10_004.png",
+      "range": [
+        10106,
+        11659
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아치형 출입구 너머 방을 보여 준다.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c016.png"
+    },
+    {
+      "cut": "ep10_c017",
+      "source": "work/ep10/merged/ep10_004.png",
+      "range": [
+        13942,
+        18466
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "누르가 거울 앞에 앉은 아시나의 긴 머리를 빗는다.",
+      "costume": "아시나: 남색 드레스·갈색 긴 머리·어두운 다리 덮개. 누르: 초록 짧은 상의·맨허리·초록 긴 치마, 갈색 단발 반묶음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c017.png"
+    },
+    {
+      "cut": "ep10_c018",
+      "source": "work/ep10/merged/ep10_004.png",
+      "range": [
+        21135,
+        26114
+      ],
+      "dialogue": 4,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "붉어진 눈의 아시나와 머리를 손질하는 누르. 눈의 마법만 풀었다는 상자가 붙는다.",
+      "costume": "아시나: 남색 드레스·금색 테두리·흰 속옷감, 갈색 머리·붉은 눈, 머리쓰개 없음. 누르: 초록 짧은 상의·맨허리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c018.png"
+    },
+    {
+      "cut": "ep10_c019",
+      "source": "work/ep10/merged/ep10_005.png",
+      "range": [
+        140,
+        13685
+      ],
+      "dialogue": 3,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "누르가 머리를 손질하다 왕이 기다린다고 알린다. 뒤이어 왕의 발과 옷자락이 나타난다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈. 누르: 초록 상의·긴 치마·청회색 허리띠. 왕: 어두운 긴 옷·금색 테두리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c019.png"
+    },
+    {
+      "cut": "ep10_c020",
+      "source": "work/ep10/merged/ep10_005.png",
+      "range": [
+        14099,
+        14444
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕의 등장 뒤 짧은 여백·연결부.",
+      "costume": "복장 세부 새 정보 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c020.png"
+    },
+    {
+      "cut": "ep10_c021",
+      "source": "work/ep10/merged/ep10_005.png",
+      "range": [
+        15141,
+        18414
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 양옆 가구에 손을 댄 채 당황한다.",
+      "costume": "아시나: 남색 드레스·갈색 긴 머리·붉은 눈·흰 안쪽 치마·문양 허리띠; 왕은 이 컷에 보이지 않음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c021.png"
+    },
+    {
+      "cut": "ep10_c022",
+      "source": "work/ep10/merged/ep10_005.png",
+      "range": [
+        20177,
+        26004
+      ],
+      "dialogue": 3,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 잦은 방문을 따지고 왕이 애첩을 만나러 온다고 답한다.",
+      "costume": "아시나: 남색 드레스·갈색 머리. 베히다트: 어두운 겉옷·금색 테두리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c022.png"
+    },
+    {
+      "cut": "ep10_c023",
+      "source": "work/ep10/merged/ep10_006.png",
+      "range": [
+        881,
+        4277
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "외관을 배경으로 아시나의 작은 투덜거림이 붙는다.",
+      "costume": "인물은 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c023.png"
+    },
+    {
+      "cut": "ep10_c024",
+      "source": "work/ep10/merged/ep10_006.png",
+      "range": [
+        6473,
+        7054
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "대화 사이 짧은 여백.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c024.png"
+    },
+    {
+      "cut": "ep10_c025",
+      "source": "work/ep10/merged/ep10_006.png",
+      "range": [
+        7507,
+        8558
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 아시나의 긴 머리카락을 손으로 든다.",
+      "costume": "베히다트의 맨손과 갈색 긴 머리; 옷 일부만 보임",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c025.png"
+    },
+    {
+      "cut": "ep10_c026",
+      "source": "work/ep10/merged/ep10_006.png",
+      "range": [
+        8563,
+        12174
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 여행할 때 머리가 불편하지 않느냐고 묻는다.",
+      "costume": "베히다트: 어두운 겉옷·금색 테두리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c026.png"
+    },
+    {
+      "cut": "ep10_c027",
+      "source": "work/ep10/merged/ep10_006.png",
+      "range": [
+        12174,
+        27395
+      ],
+      "dialogue": 7,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 여행 시작 때 자르려 했지만 주변 반대로 그냥 두었다고 말한다. 손에 감긴 머리카락이 보인다.",
+      "costume": "아시나: 남색 드레스·갈색 긴 머리·붉은 눈. 베히다트: 어두운 옷·금색 사슬",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c027.png"
+    },
+    {
+      "cut": "ep10_c028",
+      "source": "work/ep10/merged/ep10_006.png",
+      "range": [
+        27405,
+        27924
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "말이 끝난 뒤 짧은 여백.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c028.png"
+    },
+    {
+      "cut": "ep10_c029",
+      "source": "work/ep10/merged/ep10_007.png",
+      "range": [
+        351,
+        4854
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "방 외관을 끼고 왕이 형제를 묻고 아시나가 외동이며 사촌과 자랐다고 답한다.",
+      "costume": "두 사람 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c029.png"
+    },
+    {
+      "cut": "ep10_c030",
+      "source": "work/ep10/merged/ep10_007.png",
+      "range": [
+        4953,
+        10143
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 앉는 치맛자락과 짚은 손을 보여 준다. '푹신' 효과 글자가 있다.",
+      "costume": "아시나: 남색 긴 드레스·금색 장식·흰 안쪽 치마·문양 허리띠; 왕은 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c030.png"
+    },
+    {
+      "cut": "ep10_c031",
+      "source": "work/ep10/merged/ep10_007.png",
+      "range": [
+        13556,
+        19148
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 아시나의 이름을 낮게 되뇌며 다가온다.",
+      "costume": "베히다트: 어두운 겉옷·금색 테두리·맨가슴·금색 사슬",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c031.png"
+    },
+    {
+      "cut": "ep10_c032",
+      "source": "work/ep10/merged/ep10_007.png",
+      "range": [
+        19691,
+        23146
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 이름을 되묻고 아시나가 이유를 묻는다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈; 왕의 손·머리카락 접촉",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c032.png"
+    },
+    {
+      "cut": "ep10_c033",
+      "source": "work/ep10/merged/ep10_007.png",
+      "range": [
+        23772,
+        25645
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "발걸음 효과 글자가 두 사람 사이의 접근을 잇는다.",
+      "costume": "발·옷자락 일부; 새 복장 정보 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c033.png"
+    },
+    {
+      "cut": "ep10_c034",
+      "source": "work/ep10/merged/ep10_008.png",
+      "range": [
+        450,
+        15777
+      ],
+      "dialogue": 5,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "진짜 이름인지 묻는 왕과 웃으며 답하는 아시나. 왕의 판단이 별도 상자로 이어진다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈. 베히다트: 어두운 옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c034.png"
+    },
+    {
+      "cut": "ep10_c035",
+      "source": "work/ep10/merged/ep10_008.png",
+      "range": [
+        16484,
+        21244
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 아버지의 가족투표 이야기를 한다. 왕의 관찰이 겹친다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c035.png"
+    },
+    {
+      "cut": "ep10_c036",
+      "source": "work/ep10/merged/ep10_008.png",
+      "range": [
+        21845,
+        23308
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 이름의 뜻을 말한다.",
+      "costume": "아시나: 갈색 머리·붉은 눈, 드레스 상단",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c036.png"
+    },
+    {
+      "cut": "ep10_c037",
+      "source": "work/ep10/merged/ep10_008.png",
+      "range": [
+        24591,
+        28462
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕의 시선과 손이 이어지고 내면 문장이 붙는다.",
+      "costume": "손과 갈색 머리카락; 새 복장 정보 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c037.png"
+    },
+    {
+      "cut": "ep10_c038",
+      "source": "work/ep10/merged/ep10_009.png",
+      "range": [
+        665,
+        5783
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 말을 꺼낸다.",
+      "costume": "베히다트: 은회색 머리·붉은 눈·금색 테두리의 어두운 겉옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c038.png"
+    },
+    {
+      "cut": "ep10_c039",
+      "source": "work/ep10/merged/ep10_009.png",
+      "range": [
+        6723,
+        15238
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 아시나가 사랑받고 자랐다고 말한다.",
+      "costume": "베히다트: 어두운 겉옷·금색 사슬. 아시나: 남색 드레스·갈색 머리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c039.png"
+    },
+    {
+      "cut": "ep10_c040",
+      "source": "work/ep10/merged/ep10_009.png",
+      "range": [
+        15763,
+        19697
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕의 붉은 눈과 옆얼굴을 가깝게 보여 준다.",
+      "costume": "베히다트의 은회색 머리·붉은 눈, 복장은 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c040.png"
+    },
+    {
+      "cut": "ep10_c041",
+      "source": "work/ep10/merged/ep10_009.png",
+      "range": [
+        22619,
+        25915
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "침상 끝에 앉은 아시나와 서서 머리 부근에 손을 대는 왕을 함께 보여 준다.",
+      "costume": "아시나: 남색 긴 드레스·갈색 머리. 베히다트: 어두운 긴 겉옷·금갈색 테두리·허리 장식·맨가슴",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c041.png"
+    },
+    {
+      "cut": "ep10_c042",
+      "source": "work/ep10/merged/ep10_010.png",
+      "range": [
+        443,
+        2110
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 더 궁금해졌다고 말한다.",
+      "costume": "인물 일부/장식 배경; 새 복장 정보 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c042.png"
+    },
+    {
+      "cut": "ep10_c043",
+      "source": "work/ep10/merged/ep10_010.png",
+      "range": [
+        2166,
+        7254
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 사랑받고 자란 아시나가 집을 떠나 고생하는 이유를 묻는다.",
+      "costume": "아시나: 남색 드레스·갈색 머리. 왕: 어두운 옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c043.png"
+    },
+    {
+      "cut": "ep10_c044",
+      "source": "work/ep10/merged/ep10_010.png",
+      "range": [
+        8633,
+        14325
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 왕은 왜 집에만 있느냐고 되묻는다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c044.png"
+    },
+    {
+      "cut": "ep10_c045",
+      "source": "work/ep10/merged/ep10_010.png",
+      "range": [
+        15332,
+        22394
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 '그쪽'이라는 호칭을 짚자 아시나가 움찔한다.",
+      "costume": "왕: 어두운 겉옷·금색 테두리. 아시나: 남색 드레스",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c045.png"
+    },
+    {
+      "cut": "ep10_c046",
+      "source": "work/ep10/merged/ep10_010.png",
+      "range": [
+        23723,
+        27505
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 다른 호칭들을 제안하고 왕이 거절한다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈. 왕: 어두운 옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c046.png"
+    },
+    {
+      "cut": "ep10_c047",
+      "source": "work/ep10/merged/ep10_011.png",
+      "range": [
+        1390,
+        5298
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 시하드시여라는 호칭의 뜻을 묻는다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c047.png"
+    },
+    {
+      "cut": "ep10_c048",
+      "source": "work/ep10/merged/ep10_011.png",
+      "range": [
+        5554,
+        9383
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "나시르를 떠올리는 삽입 모습과 질문이 이어진다.",
+      "costume": "나시르(회상): 어두운 긴 머리·푸른 옷·흰 목 부근 천·금색 장식",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c048.png"
+    },
+    {
+      "cut": "ep10_c049",
+      "source": "work/ep10/merged/ep10_011.png",
+      "range": [
+        10178,
+        16617
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 시하드의 뜻을 설명한다.",
+      "costume": "베히다트: 가슴 열린 어두운 겉옷·금색 테두리·사슬",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c049.png"
+    },
+    {
+      "cut": "ep10_c050",
+      "source": "work/ep10/merged/ep10_011.png",
+      "range": [
+        18041,
+        21908
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 결국 어떤 호칭을 써야 하는지 묻는다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c050.png"
+    },
+    {
+      "cut": "ep10_c051",
+      "source": "work/ep10/merged/ep10_012.png",
+      "range": [
+        648,
+        5064
+      ],
+      "dialogue": 4,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 이름·칭호를 속으로 나누어 생각한다.",
+      "costume": "아시나의 얼굴/갈색 머리, 남색 드레스 일부",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c051.png"
+    },
+    {
+      "cut": "ep10_c052",
+      "source": "work/ep10/merged/ep10_012.png",
+      "range": [
+        7132,
+        17891
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 베히라고 중얼거리다가 베히님이라는 호칭을 제안한다.",
+      "costume": "아시나: 갈색 머리·붉은 눈·남색 드레스",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c052.png"
+    },
+    {
+      "cut": "ep10_c053",
+      "source": "work/ep10/merged/ep10_012.png",
+      "range": [
+        18210,
+        24327
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "꽃을 곁들인 연출 속에서 왕이 웃으며 호칭을 받아들인다.",
+      "costume": "베히다트: 은회색 머리·붉은 눈·어두운 겉옷·금색 테두리·사슬",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c053.png"
+    },
+    {
+      "cut": "ep10_c054",
+      "source": "work/ep10/merged/ep10_013.png",
+      "range": [
+        870,
+        6538
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕의 웃음을 보고 아시나가 얼굴을 붉힌다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c054.png"
+    },
+    {
+      "cut": "ep10_c055",
+      "source": "work/ep10/merged/ep10_013.png",
+      "range": [
+        6628,
+        12973
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 관심의 이유를 묻고 왕의 직무를 비꼰다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c055.png"
+    },
+    {
+      "cut": "ep10_c056",
+      "source": "work/ep10/merged/ep10_013.png",
+      "range": [
+        15391,
+        27489
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 아시나 쪽으로 다가오며 반해서라고 답한다.",
+      "costume": "베히다트: 어두운 겉옷·금색 테두리·금색 사슬. 아시나: 남색 드레스",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c056.png"
+    },
+    {
+      "cut": "ep10_c057",
+      "source": "work/ep10/merged/ep10_014.png",
+      "range": [
+        572,
+        3195
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 그 말을 믿지 못하고 반박한다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c057.png"
+    },
+    {
+      "cut": "ep10_c058",
+      "source": "work/ep10/merged/ep10_014.png",
+      "range": [
+        4818,
+        9154
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕의 손이 아시나의 손목을 잡는다. '왁' 효과 글자가 있다.",
+      "costume": "두 사람의 맨손·아시나의 팔; 옷·얼굴은 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c058.png"
+    },
+    {
+      "cut": "ep10_c059",
+      "source": "work/ep10/merged/ep10_014.png",
+      "range": [
+        10987,
+        20082
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "손목을 잡은 왕이 가까이 다가오며 묻는다.",
+      "costume": "베히다트: 어두운 겉옷·금색 테두리. 아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c059.png"
+    },
+    {
+      "cut": "ep10_c060",
+      "source": "work/ep10/merged/ep10_014.png",
+      "range": [
+        20289,
+        27379
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 얼굴을 가까이 가져가며 아시나를 붙잡는 동작.",
+      "costume": "베히다트의 손과 어두운 옷, 아시나의 갈색 머리·남색 드레스",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c060.png"
+    },
+    {
+      "cut": "ep10_c061",
+      "source": "work/ep10/merged/ep10_015.png",
+      "range": [
+        737,
+        2107
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "분홍빛 장식과 여백으로 입맞춤 직전을 잇는다.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c061.png"
+    },
+    {
+      "cut": "ep10_c062",
+      "source": "work/ep10/merged/ep10_015.png",
+      "range": [
+        3338,
+        7618
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 아시나에게 입을 맞춘다.",
+      "costume": "아시나: 갈색 머리·붉은 눈, 남색 드레스. 베히다트: 어두운 옷·금색 테두리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c062.png"
+    },
+    {
+      "cut": "ep10_c063",
+      "source": "work/ep10/merged/ep10_015.png",
+      "range": [
+        9993,
+        12944
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "접촉 속 아시나의 막힌 소리가 나온다.",
+      "costume": "아시나: 갈색 머리, 얼굴 확대. 왕의 손 일부",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c063.png"
+    },
+    {
+      "cut": "ep10_c064",
+      "source": "work/ep10/merged/ep10_015.png",
+      "range": [
+        13661,
+        20728
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 왕의 갑작스러운 행동에 놀란다.",
+      "costume": "아시나: 남색 드레스·갈색 머리. 왕: 어두운 겉옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c064.png"
+    },
+    {
+      "cut": "ep10_c065",
+      "source": "work/ep10/merged/ep10_015.png",
+      "range": [
+        21210,
+        25942
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "입맞춤이 이어지고 접촉 효과음이 붙는다.",
+      "costume": "두 인물의 얼굴·손, 아시나의 갈색 머리, 왕의 어두운 옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c065.png"
+    },
+    {
+      "cut": "ep10_c066",
+      "source": "work/ep10/merged/ep10_016.png",
+      "range": [
+        110,
+        3964
+      ],
+      "dialogue": 2,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 위험하다고 느끼고 벗어나야 한다고 생각한다.",
+      "costume": "아시나: 남색 드레스·갈색 머리. 왕: 어두운 옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c066.png"
+    },
+    {
+      "cut": "ep10_c067",
+      "source": "work/ep10/merged/ep10_016.png",
+      "range": [
+        5565,
+        6630
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "급작스러운 움직임의 효과 글자와 여백.",
+      "costume": "몸 일부만 보임; 복장 새 정보 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c067.png"
+    },
+    {
+      "cut": "ep10_c068",
+      "source": "work/ep10/merged/ep10_016.png",
+      "range": [
+        8375,
+        13282
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "두 사람이 떨어지며 아시나가 숨을 고른다.",
+      "costume": "아시나: 남색 드레스·갈색 머리. 왕: 어두운 겉옷",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c068.png"
+    },
+    {
+      "cut": "ep10_c069",
+      "source": "work/ep10/merged/ep10_016.png",
+      "range": [
+        13770,
+        18363
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 왕이 먼저 물러났음을 깨닫는다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c069.png"
+    },
+    {
+      "cut": "ep10_c070",
+      "source": "work/ep10/merged/ep10_016.png",
+      "range": [
+        18849,
+        20089
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "말줄임표만 든 풍선과 분홍빛 여백.",
+      "costume": "등장인물 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c070.png"
+    },
+    {
+      "cut": "ep10_c071",
+      "source": "work/ep10/merged/ep10_016.png",
+      "range": [
+        20467,
+        29064
+      ],
+      "dialogue": 3,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 입가를 가리며 스스로를 돌아본다. 별도 독백 상자들이 붙는다.",
+      "costume": "베히다트: 어두운 겉옷·금색 테두리·사슬·은회색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c071.png"
+    },
+    {
+      "cut": "ep10_c072",
+      "source": "work/ep10/merged/ep10_017.png",
+      "range": [
+        192,
+        6298
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 아시나가 남자를 모른다고 말한다.",
+      "costume": "베히다트: 어두운 겉옷·금색 테두리. 아시나: 갈색 머리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c072.png"
+    },
+    {
+      "cut": "ep10_c073",
+      "source": "work/ep10/merged/ep10_017.png",
+      "range": [
+        7713,
+        12585
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 왜 알아야 하냐고 반문한다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c073.png"
+    },
+    {
+      "cut": "ep10_c074",
+      "source": "work/ep10/merged/ep10_017.png",
+      "range": [
+        14167,
+        14915
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕의 대답 앞부분이 여백에 놓인다.",
+      "costume": "인물 그림 없음",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c074.png"
+    },
+    {
+      "cut": "ep10_c075",
+      "source": "work/ep10/merged/ep10_017.png",
+      "range": [
+        15969,
+        19012
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 멈추지 않았을 것이라 말하며 아시나에게 다시 가까이 있다.",
+      "costume": "베히다트: 어두운 옷·금색 테두리. 아시나: 남색 드레스·갈색 머리",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c075.png"
+    },
+    {
+      "cut": "ep10_c076",
+      "source": "work/ep10/merged/ep10_017.png",
+      "range": [
+        20683,
+        23450
+      ],
+      "dialogue": 0,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "얼굴을 붉힌 아시나가 아랫입술을 깨문다. '꾸욱' 효과 글자가 있다.",
+      "costume": "아시나의 갈색 머리·입 부근 확대; 복장은 화면 밖",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c076.png"
+    },
+    {
+      "cut": "ep10_c077",
+      "source": "work/ep10/merged/ep10_017.png",
+      "range": [
+        23992,
+        29217
+      ],
+      "dialogue": 1,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "아시나가 자신에게 왜 이러느냐고 묻는다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈. 왕: 어두운 겉옷·금색 사슬",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c077.png"
+    },
+    {
+      "cut": "ep10_c078",
+      "source": "work/ep10/merged/ep10_018.png",
+      "range": [
+        467,
+        26493
+      ],
+      "dialogue": 4,
+      "art": "기존 원본 정제 컷 · GPT 편집·확장 대기",
+      "event": "왕이 반했다고 다시 답하고, 억지로 몸을 취하지 않는 것과 눈색 변화를 모르는 척하는 것을 그 이유로 든다. 아시나는 놀라고 왕은 손가락으로 입술 부근을 건드린다.",
+      "costume": "아시나: 남색 드레스·갈색 머리·붉은 눈. 베히다트: 가슴 열린 어두운 겉옷·금색 테두리·사슬·은회색 머리·붉은 눈",
+      "server_asset": "assets/ep10/cuts/full_res/clean/ep10_c078.png"
+    }
+  ]
+}
